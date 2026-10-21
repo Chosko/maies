@@ -167,6 +167,47 @@ describe('stylesheets', () => {
   })
 })
 
+function sheet(name: string): string {
+  const entry = stylesheets().find(([path]) => path.endsWith(`/styles/${name}`))
+  if (!entry) throw new Error(`missing stylesheet ${name}`)
+  return entry[1]
+}
+
+function ruleBody(css: string, selector: string): string | undefined {
+  const escaped = selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  return css.match(new RegExp(`(?:^|[}\\s])${escaped}\\s*\\{([^}]*)\\}`))?.[1]
+}
+
+function pixels(value: string): number {
+  const variables = new Map(expectedVariables())
+  const expression = value
+    .replace(/var\((--[\w-]+)\)/g, (_, name: string) => variables.get(name) ?? 'NaN')
+    .replace(/calc/g, '')
+    .replace(/px/g, '')
+  return Number(new Function(`return (${expression})`)())
+}
+
+describe('screen title', () => {
+  it('keeps the centred screen-title style on the phone', () => {
+    const body = ruleBody(sheet('base.css'), '.titolo-schermata') ?? ''
+    const values = new Map(propertyValues(body))
+    expect(values.get('text-align')).toBe('center')
+    expect(values.get('font-size')).toBe('var(--type-screen-title-size)')
+    expect(values.get('line-height')).toBe('var(--type-screen-title-line)')
+  })
+
+  it('is 24px on 32px and left-aligned on the computer', () => {
+    const computer = sheet('computer.css')
+    const media = computer.slice(computer.indexOf('@media (min-width: 768px)'))
+    const body = ruleBody(media, '.titolo-schermata')
+    expect(body).toBeDefined()
+    const values = new Map(propertyValues(body ?? ''))
+    expect(values.get('text-align')).toBe('left')
+    expect(pixels(values.get('font-size') ?? '')).toBe(24)
+    expect(pixels(values.get('line-height') ?? '')).toBe(32)
+  })
+})
+
 describe('placeholder screens', () => {
   it.each(['/esercizi', '/vocaboli', '/dizionario', '/grammatica'])(
     'stand on the background with the flag and inside a card at %s',

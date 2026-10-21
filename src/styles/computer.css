@@ -21,6 +21,12 @@
     padding: calc(var(--space-7) * 2) var(--space-6);
   }
 
+  .titolo-schermata {
+    text-align: left;
+    font-size: calc(var(--type-screen-title-size) * 24 / 19);
+    line-height: calc(var(--type-screen-title-line) + var(--space-1));
+  }
+
   .carta {
     padding: calc(var(--space-7) + var(--space-2)) calc(var(--space-5) * 2)
       calc(var(--space-7) + var(--space-1));
