@@ -30,7 +30,7 @@ Context:
 
 Done: 2026-10-21, commit `67a15ff` (7 files, +551/-8). The screen title is "Esercizi" as in the boards, not the placeholder's "Esercizi di traduzione".
 
-## [ ] 3. Task 16 — Documentazione della feature esercizi-traduzione
+## [x] 3. Task 16 — Documentazione della feature esercizi-traduzione
 
 Depends on: 1, 2
 
@@ -39,6 +39,8 @@ Context: none
 ```prompt
 /task-implement 16 --review
 ```
+
+Done: 2026-10-21, commit `9828384` (2 files, +20/-1).
 
 ## [x] 4. Task 17 — Verifica della risposta con normalizzazione
 
@@ -65,7 +67,7 @@ Context:
 
 Done: 2026-10-21, commit `c3d0e51` (3 files, +320/-1).
 
-## [ ] 6. Task 19 — Schermata Vocaboli al posto del segnaposto
+## [~] 6. Task 19 — Schermata Vocaboli al posto del segnaposto
 
 Depends on: 2, 5
 
@@ -99,7 +101,7 @@ Context: none
 
 Done: 2026-10-21, commit `40733b9` (5 files, +174/-1).
 
-## [ ] 9. Task 22 — Schermata Dizionario al posto del segnaposto
+## [~] 9. Task 22 — Schermata Dizionario al posto del segnaposto
 
 Depends on: 2, 8
 
@@ -132,7 +134,7 @@ Context: none
 
 Done: 2026-10-21, commit `2077cd5` (7 files, +274/-1). `@types/markdown-it` is not needed — `markdown-it` 15.0.3 ships its own types, so only `markdown-it` was added.
 
-## [ ] 12. Task 25 — Schermata Grammatica con l'elenco delle lezioni
+## [~] 12. Task 25 — Schermata Grammatica con l'elenco delle lezioni
 
 Depends on: 2, 11
 
