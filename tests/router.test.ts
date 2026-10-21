@@ -31,21 +31,20 @@ describe('router', () => {
     expect(wrapper.text()).not.toContain('in arrivo')
   })
 
+  it('renders the vocabulary screen at /vocaboli', async () => {
+    const { router, wrapper } = await mountAt('/vocaboli')
+    expect(router.currentRoute.value.path).toBe('/vocaboli')
+    expect(wrapper.get('h1').text()).toBe('Vocaboli')
+    expect(wrapper.find('main .carta').exists()).toBe(true)
+    expect(wrapper.text()).not.toContain('in arrivo')
+  })
+
   it('renders the dictionary screen at /dizionario', async () => {
     const { router, wrapper } = await mountAt('/dizionario')
     expect(router.currentRoute.value.path).toBe('/dizionario')
     expect(wrapper.get('h1').text()).toBe('Dizionario')
     expect(wrapper.find('main .carta').exists()).toBe(true)
     expect(wrapper.text()).not.toContain('in arrivo')
-  })
-
-  it.each([
-    ['/vocaboli', 'Allenamento vocaboli'],
-  ])('renders the screen at %s with its title', async (path, title) => {
-    const { router, wrapper } = await mountAt(path)
-    expect(router.currentRoute.value.path).toBe(path)
-    expect(wrapper.get('h1').text()).toBe(title)
-    expect(wrapper.text()).toContain('in arrivo')
   })
 
   it('renders the grammar screen at /grammatica', async () => {

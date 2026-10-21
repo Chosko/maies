@@ -82,7 +82,7 @@ describe('application shell', () => {
     const fondo = wrapper.get('.fondo')
     expect(fondo.find('svg.bandiera').exists()).toBe(true)
     expect(fondo.find('nav[aria-label="Sezioni"]').exists()).toBe(true)
-    expect(fondo.get('main').text()).toContain('Allenamento vocaboli')
+    expect(fondo.get('main').text()).toContain('Vocaboli')
     expect(wrapper.findAll('.fondo')).toHaveLength(1)
     wrapper.unmount()
   })

@@ -186,7 +186,7 @@ Feature: allenamento-vocaboli
 
 ## 19. Schermata Vocaboli al posto del segnaposto
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/views/VocaboliView.vue, tests/vocaboli.test.ts, tests/router.test.ts
 Preconditions: 2, 3, 15, 18

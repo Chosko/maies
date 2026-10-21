@@ -549,3 +549,112 @@
   font-size: var(--type-lesson-size);
   line-height: var(--type-lesson-line);
 }
+
+/* Allenamento vocaboli: domanda ed esito; il nessun materiale e il campo
+   riprendono le classi degli esercizi. */
+.vocabolo-domanda {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--space-2) + var(--space-1) / 2);
+  padding: var(--space-3) 0 var(--space-1);
+  text-align: center;
+}
+
+.vocabolo-domanda-esito {
+  gap: var(--space-2);
+  padding: 0;
+}
+
+.vocabolo-parola {
+  color: var(--color-ink-strong);
+  font-size: var(--type-word-size);
+  line-height: var(--type-word-line);
+  font-weight: var(--type-word-weight);
+  overflow-wrap: anywhere;
+}
+
+.vocabolo-parola-esito {
+  font-size: calc(var(--type-word-size) * 15 / 17);
+  line-height: calc(var(--type-word-line) - var(--space-1));
+}
+
+.vocabolo-carta-esito {
+  gap: var(--space-5);
+}
+
+.vocabolo-esito {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--space-2) + var(--space-1) / 2);
+}
+
+.vocabolo-esito-icona {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-pill);
+}
+
+.vocabolo-esito-icona svg {
+  width: 18px;
+  height: 18px;
+}
+
+.vocabolo-esito-sbagliato .vocabolo-esito-icona svg {
+  width: 16px;
+  height: 16px;
+}
+
+.vocabolo-esito-parola {
+  font-size: var(--type-answer-size);
+  line-height: var(--type-button-line);
+  font-weight: 600;
+}
+
+.vocabolo-esito-giusto .vocabolo-esito-icona {
+  background: var(--color-accent);
+  color: var(--color-on-action);
+}
+
+.vocabolo-esito-giusto .vocabolo-esito-parola {
+  color: var(--color-accent);
+}
+
+.vocabolo-esito-sbagliato .vocabolo-esito-icona {
+  background: var(--color-wrong);
+  color: var(--color-on-wrong);
+}
+
+.vocabolo-esito-sbagliato .vocabolo-esito-parola {
+  color: var(--color-wrong);
+}
+
+.vocabolo-risposta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.vocabolo-risposta-sara {
+  color: var(--color-ink-answer);
+  font-size: var(--type-answer-size);
+  line-height: var(--type-answer-line);
+  font-weight: var(--type-answer-weight);
+}
+
+.vocabolo-traduzione {
+  color: var(--color-accent);
+  font-size: var(--type-correct-size);
+  line-height: var(--type-correct-line);
+  font-weight: var(--type-correct-weight);
+}
+
+.vocabolo-alternativa {
+  color: var(--color-ink-soft);
+  font-size: var(--type-body-size);
+  line-height: calc(var(--type-lesson-line) + var(--space-1) / 2);
+}

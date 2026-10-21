@@ -155,4 +155,10 @@
     padding: var(--space-2) calc(var(--space-5) * 2);
     border-radius: var(--radius-xl);
   }
+
+  /* Vocaboli: la carta segue quella degli esercizi. */
+  .vocabolo-risposta-sara {
+    font-size: calc(var(--type-answer-size) * 18 / 17);
+    line-height: calc(var(--type-answer-line) + var(--space-1) / 2);
+  }
 }

@@ -181,16 +181,4 @@ describe('placeholder screens', () => {
       expect(fondo.find('main .carta').exists()).toBe(true)
     },
   )
-
-  it.each(['/vocaboli'])(
-    'still say the content is coming at %s',
-    async (path) => {
-      const router = createAppRouter()
-      await router.push(path)
-      await router.isReady()
-      const wrapper = mount(App, { global: { plugins: [router] } })
-      await flushPromises()
-      expect(wrapper.get('main .carta').text()).toContain('in arrivo')
-    },
-  )
 })
