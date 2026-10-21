@@ -94,6 +94,7 @@ Depends on: 6
 Needs: agent+human
 
 Context:
+- 2026-10-21 (amend): esegui il passo come `/context-build --attended --commit`, così il context layer finisce in un commit e i passi successivi, che girano in worktree creati da `main`, lo vedono. È una richiesta dell'utente.
 - 2026-10-21 parked: approval gate — approvare il piano della Fase 1 di `/context-build` (layout flat sotto `.claude/context/`: `INDEX.md`, `app-shell.md`, `styles-tokens.md`, `build-test-deploy.md`)?
 
 ```prompt
