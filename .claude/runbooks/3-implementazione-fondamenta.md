@@ -104,7 +104,7 @@ Context:
 
 Done: 2026-10-21, commit `38e3fc2` (5 files, +275/-0). Layout flat: `INDEX.md`, `app-shell.md`, `styles-tokens.md`, `build-test-deploy.md`; `design/` resta fuori dal layer come riferimento canonico.
 
-## [~] 8. Task 6 — Schema delle lezioni e test di validità dei contenuti
+## [x] 8. Task 6 — Schema delle lezioni e test di validità dei contenuti
 
 Depends on: 1, 7
 
@@ -114,21 +114,25 @@ Context: none
 /task-implement 6 --review --rounds 2
 ```
 
-## [ ] 9. Task 7 — Catalogo dei contenuti in sola lettura
+Done: 2026-10-21, commit `689c7d7` (7 files, +589/-3). Il test legge i file di lezione con `node:fs`, non con `import.meta.glob` (la cache di Vitest congelava il glob); per questo `@types/node@22` e `// @vitest-environment node` nei due file di test. zod 4.6.7.
+
+## [~] 9. Task 7 — Catalogo dei contenuti in sola lettura
 
 Depends on: 1, 8, 7
 
-Context: none
+Context:
+- 2026-10-21 (from step 8): `tests/validazione.test.ts` verifica che l'app importi dallo schema solo tipi, anche tramite import relativi come `'./schema'`: un import di valori dallo schema in `src/contenuti/catalogo.ts` fa fallire il test. zod installato è la 4.6.7.
 
 ```prompt
 /task-implement 7 --review
 ```
 
-## [ ] 10. Task 8 — Skill di progetto per aggiungere il materiale di una lezione
+## [~] 10. Task 8 — Skill di progetto per aggiungere il materiale di una lezione
 
 Depends on: 8, 7
 
-Context: none
+Context:
+- 2026-10-21 (from step 8): il test di validità (`npm test`) legge i file di `contenuti/lezioni/` con `node:fs` a ogni esecuzione, quindi un file appena scritto viene controllato subito, senza cache da svuotare.
 
 ```prompt
 /task-implement 8 --review
@@ -138,7 +142,8 @@ Context: none
 
 Depends on: 8, 9, 10, 7
 
-Context: none
+Context:
+- 2026-10-21 (from step 8): scostamenti da registrare nella documentazione: lettura dei file con `node:fs` invece di `import.meta.glob`, `@types/node@22` e ambiente `node` per file nei due test, zod 4.6.7, controllo che l'app importi dallo schema solo tipi.
 
 ```prompt
 /task-implement 9 --review
