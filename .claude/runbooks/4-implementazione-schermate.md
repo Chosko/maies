@@ -134,7 +134,7 @@ Context: none
 
 Done: 2026-10-21, commit `2077cd5` (7 files, +274/-1). `@types/markdown-it` is not needed — `markdown-it` 15.0.3 ships its own types, so only `markdown-it` was added.
 
-## [~] 12. Task 25 — Schermata Grammatica con l'elenco delle lezioni
+## [x] 12. Task 25 — Schermata Grammatica con l'elenco delle lezioni
 
 Depends on: 2, 11
 
@@ -146,11 +146,14 @@ Context:
 /task-implement 25 --review
 ```
 
+Done: 2026-10-21, commit `7c2f655` (7 files, +245/-7). The screen title is "Grammatica" as in the board, not the placeholder's "Schede di grammatica".
+
 ## [ ] 13. Task 26 — Pagina della lezione con le schede e stile del testo
 
 Depends on: 11, 12
 
-Context: none
+Context:
+- 2026-10-21 (from step 12): each Grammatica list entry is a plain `<a href="#/grammatica/<id>">`, not a `RouterLink`; task 26 must register the `/grammatica/:id` sub-route for the links to work. The screen takes `catalogo?: Catalogo` as a prop, defaulting to the app's catalogue.
 
 ```prompt
 /task-implement 26 --review --rounds 2
