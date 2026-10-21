@@ -117,7 +117,7 @@ Con l'utente parla in italiano.
 
 Done: 2026-10-21, commit `9e850d1` (4 files, +150/-2). Feature `dizionario-vocaboli`; ordine alfabetico e ricerca bilingue, volutamente diversa dalla verifica delle risposte dell'allenamento.
 
-## [ ] 7. Architettare le schede di grammatica
+## [x] 7. Architettare le schede di grammatica
 
 Depends on: 2
 
@@ -132,6 +132,8 @@ Adotta il formato dei file di lezione così come lo fissa il documento della fun
 
 Con l'utente parla in italiano.
 ```
+
+Done: 2026-10-21, commit `2b51be9` (3 files, +156/-0). Feature `schede-grammatica`; markdown-it con HTML disattivato; resta aperta la questione delle tabelle, che il formato delle lezioni non ammette.
 
 ## [ ] 8. Scrivere il piano di produzione
 
