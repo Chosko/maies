@@ -119,6 +119,25 @@ risposta dell'allenamento vocaboli. Il componente della rotta `#/dizionario`
 Il perché di queste scelte è nel documento di feature
 [`.claude/domain/features/dizionario-vocaboli.md`](.claude/domain/features/dizionario-vocaboli.md).
 
+## Grammatica
+
+La schermata Grammatica, su `#/grammatica`, elenca le lezioni che hanno
+schede, ognuna con i titoli delle sue schede; toccandone una si apre la
+pagina della lezione su `#/grammatica/<id-lezione>`, con tutte le sue schede
+una sotto l'altra. È solo lettura: non usa i progressi e non registra nulla.
+Senza schede nel catalogo, o per una lezione che non esiste o non ne ha, la
+schermata mostra un messaggio al posto delle schede.
+
+Il testo di ogni scheda è Markdown, convertito in HTML con `markdown-it`
+senza HTML grezzo: un tag scritto nel file resta testo. La logica, senza
+interfaccia, sta in `src/grammatica/`: `elenco()` in `elenco.ts` sceglie e
+ordina le lezioni con schede e `html()` in `markdown.ts` è l'unico punto in
+cui il Markdown diventa HTML. I componenti delle due rotte sono
+`src/views/GrammaticaView.vue` e `src/views/GrammaticaLezioneView.vue`.
+
+Il perché di queste scelte è nel documento di feature
+[`.claude/domain/features/schede-grammatica.md`](.claude/domain/features/schede-grammatica.md).
+
 ## Pubblicazione
 
 Ogni push su `main` avvia la GitHub Action `.github/workflows/deploy.yml`,

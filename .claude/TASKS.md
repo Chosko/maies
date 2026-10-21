@@ -266,7 +266,7 @@ Feature: schede-grammatica
 
 ## 27. Update documentation for feature `schede-grammatica`
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: README.md
 Preconditions: 24, 25, 26
