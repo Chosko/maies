@@ -19,6 +19,7 @@ layer.
 | [features/aggiunta-materiale-lezione.md](./features/aggiunta-materiale-lezione.md) | Formato dei file di lezione e identificatori stabili, catalogo dei contenuti, test di validità, procedimento di Claude per aggiungere materiale |
 | [features/ripetizione-errori.md](./features/ripetizione-errori.md) | Progressi nel browser per id globale, algoritmo a tre livelli, sessione di ripasso usata da esercizi e vocaboli |
 | [features/esercizi-traduzione.md](./features/esercizi-traduzione.md) | Schermata degli esercizi: ciclo risposta, soluzione e autovalutazione, frase successiva dalla sessione di ripasso |
+| [features/allenamento-vocaboli.md](./features/allenamento-vocaboli.md) | Schermata dei vocaboli: verifica automatica con normalizzazione, ciclo risposta, esito e Avanti, vocabolo successivo dalla sessione di ripasso |
 
 ## Features
 

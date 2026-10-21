@@ -50,9 +50,9 @@ ricorda cosa ha sbagliato.
 1. Sara avvia una sessione sui vocaboli.
 2. L'app mostra una parola in italiano, privilegiando quelle sbagliate in
    passato; Sara scrive la traduzione inglese.
-3. L'app controlla da sola la risposta, ignorando maiuscole e spazi superflui
-   e accettando ogni traduzione prevista per quella parola, e mostra quella
-   corretta in caso di errore.
+3. L'app controlla da sola la risposta, ignorando maiuscole, spazi
+   superflui, apostrofi tipografici e punteggiatura finale, e accettando ogni
+   traduzione prevista per quella parola; poi mostra le traduzioni corrette.
 4. La sessione continua finché Sara non si ferma.
 
 Fuori dall'allenamento, Sara può consultare la lista completa dei vocaboli
@@ -118,9 +118,9 @@ fermarsi. Serve il flusso "Ripasso con gli esercizi".
 
 Una sessione aperta sui vocaboli di tutte le lezioni: l'app mostra una
 parola in italiano, Sara scrive la traduzione inglese e l'app la verifica
-da sola, accettando ogni traduzione prevista e ignorando maiuscole e spazi
-superflui; in caso di errore mostra la risposta corretta. Continua finché
-Sara non si ferma. Serve il flusso "Ripasso dei vocaboli".
+da sola, accettando ogni traduzione prevista e ignorando maiuscole, spazi
+superflui, apostrofi tipografici e punteggiatura finale; poi mostra le
+traduzioni corrette. Continua finché Sara non si ferma. Serve il flusso "Ripasso dei vocaboli".
 
 ### Dizionario dei vocaboli
 

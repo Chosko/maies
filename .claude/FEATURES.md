@@ -37,3 +37,12 @@ Source: product-design.md § Esercizi di traduzione
 Tasks: none
 
 ---
+
+## allenamento-vocaboli — Schermata dell'allenamento vocaboli con verifica automatica
+
+Status: [NEW]
+Doc: .claude/domain/features/allenamento-vocaboli.md
+Source: product-design.md § Allenamento vocaboli
+Tasks: none
+
+---
