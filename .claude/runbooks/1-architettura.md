@@ -135,7 +135,7 @@ Con l'utente parla in italiano.
 
 Done: 2026-10-21, commit `2b51be9` (3 files, +156/-0). Feature `schede-grammatica`; markdown-it con HTML disattivato; resta aperta la questione delle tabelle, che il formato delle lezioni non ammette.
 
-## [ ] 8. Scrivere il piano di produzione
+## [x] 8. Scrivere il piano di produzione
 
 Depends on: 1, 2, 3, 4, 5, 6, 7
 
@@ -150,6 +150,8 @@ Il progetto non ha una roadmap (`/product-roadmap` non è stato eseguito, e non 
 
 Con l'utente parla in italiano.
 ```
+
+Done: 2026-10-21, commit `1ea4bef` (1 file, +19/-0). Nessuna milestone (`Roadmap: none`): tutte le funzionalità nel blocco Unscheduled, quindi `pianificazione-task` usa i due gruppi fondamenta/schermate.
 
 ## Do not re-propose
 

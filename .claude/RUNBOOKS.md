@@ -6,11 +6,11 @@ Last runbook number: 2
 
 ## 1. architettura — Architettare le funzionalità di maies e scrivere il piano di produzione
 
-Status: [PENDING]
+Status: [DONE]
 File: .claude/runbooks/1-architettura.md
 Created: 2026-10-21
 Source: /product-design run
-Steps: 7/8
+Steps: 8/8
 
 ---
 
