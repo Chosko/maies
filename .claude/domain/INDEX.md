@@ -20,6 +20,7 @@ layer.
 | [features/ripetizione-errori.md](./features/ripetizione-errori.md) | Progressi nel browser per id globale, algoritmo a tre livelli, sessione di ripasso usata da esercizi e vocaboli |
 | [features/esercizi-traduzione.md](./features/esercizi-traduzione.md) | Schermata degli esercizi: ciclo risposta, soluzione e autovalutazione, frase successiva dalla sessione di ripasso |
 | [features/allenamento-vocaboli.md](./features/allenamento-vocaboli.md) | Schermata dei vocaboli: verifica automatica con normalizzazione, ciclo risposta, esito e Avanti, vocabolo successivo dalla sessione di ripasso |
+| [features/dizionario-vocaboli.md](./features/dizionario-vocaboli.md) | Schermata del dizionario: vocaboli in ordine alfabetico, ricerca in italiano e inglese |
 
 ## Features
 

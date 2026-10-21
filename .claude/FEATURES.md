@@ -46,3 +46,12 @@ Source: product-design.md § Allenamento vocaboli
 Tasks: none
 
 ---
+
+## dizionario-vocaboli — Schermata del dizionario dei vocaboli con ricerca
+
+Status: [NEW]
+Doc: .claude/domain/features/dizionario-vocaboli.md
+Source: product-design.md § Dizionario dei vocaboli
+Tasks: none
+
+---

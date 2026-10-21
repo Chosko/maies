@@ -56,7 +56,8 @@ ricorda cosa ha sbagliato.
 4. La sessione continua finché Sara non si ferma.
 
 Fuori dall'allenamento, Sara può consultare la lista completa dei vocaboli
-con le loro traduzioni, come un piccolo dizionario.
+con le loro traduzioni, come un piccolo dizionario in ordine alfabetico, e
+cercarvi una parola in italiano o in inglese.
 
 ### Ripasso della grammatica
 
@@ -125,7 +126,9 @@ traduzioni corrette. Continua finché Sara non si ferma. Serve il flusso "Ripass
 ### Dizionario dei vocaboli
 
 La lista completa dei vocaboli con le loro traduzioni, da consultare fuori
-dall'allenamento. Serve il flusso "Ripasso dei vocaboli".
+dall'allenamento: in ordine alfabetico della parola italiana, con una
+ricerca che trova sia la parola italiana sia le traduzioni inglesi. Serve
+il flusso "Ripasso dei vocaboli".
 
 ### Schede di grammatica
 
