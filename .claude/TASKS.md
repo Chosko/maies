@@ -126,7 +126,7 @@ Feature: ripetizione-errori
 
 ## 13. Update documentation for feature `ripetizione-errori`
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: README.md
 Preconditions: 10, 11, 12

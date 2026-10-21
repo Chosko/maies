@@ -39,6 +39,23 @@ Il formato dei file, gli identificatori stabili e il perché sono nel
 documento di feature
 [`.claude/domain/features/aggiunta-materiale-lezione.md`](.claude/domain/features/aggiunta-materiale-lezione.md).
 
+## Progressi e ripasso
+
+I progressi stanno nel `localStorage` del dispositivo, sotto la chiave
+`maies.progressi`: un livello per ogni frase e vocabolo, indicizzato per id
+globale. Non si sincronizzano tra dispositivi e in navigazione privata vanno
+persi alla chiusura; se il browser non permette di leggerli, l'app lavora
+solo in memoria.
+
+Esercizi e vocaboli scelgono il prossimo elemento dalla sessione di ripasso
+in `src/ripasso/`: `creaSessione('frasi')` o `creaSessione('vocaboli')`
+propone un elemento con `prossimoElemento()` e ne registra l'esito con
+`registraEsito(idGlobale, esito)`. Tutte le sessioni dell'app condividono un
+solo archivio dei progressi.
+
+L'algoritmo a tre livelli e il perché sono nel documento di feature
+[`.claude/domain/features/ripetizione-errori.md`](.claude/domain/features/ripetizione-errori.md).
+
 ## Pubblicazione
 
 Ogni push su `main` avvia la GitHub Action `.github/workflows/deploy.yml`,
