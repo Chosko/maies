@@ -36,10 +36,10 @@ Steps: 16/16
 
 ## 4. implementazione-schermate — Implementare esercizi, vocaboli, dizionario e schede di grammatica
 
-Status: [RUNNING]
+Status: [DONE]
 File: .claude/runbooks/4-implementazione-schermate.md
 Created: 2026-10-21
 Source: runbook pianificazione-task
-Steps: 14/15
+Steps: 15/15
 
 ---

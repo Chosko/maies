@@ -181,7 +181,7 @@ Context: none
 
 Done: 2026-10-21, commit `249a730` (2 files, +20/-1).
 
-## [ ] 15. Aggiornare il context layer
+## [x] 15. Aggiornare il context layer
 
 Depends on: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14
 
@@ -190,6 +190,8 @@ Context: none
 ```prompt
 /context-update
 ```
+
+Done: 2026-10-21, commit `040e677` (6 files, +141/-26). INDEX.md's Last updated was already today, so the smart range was taken from the last commit touching it; screens moved out of `app-shell.md` into a new `schermate.md`.
 
 ## Do not re-propose
 
