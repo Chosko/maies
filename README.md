@@ -56,6 +56,25 @@ solo archivio dei progressi.
 L'algoritmo a tre livelli e il perché sono nel documento di feature
 [`.claude/domain/features/ripetizione-errori.md`](.claude/domain/features/ripetizione-errori.md).
 
+## Esercizi
+
+La schermata Esercizi propone frasi italiane, mescolate tra tutte le
+lezioni, da tradurre in inglese. Sara scrive la traduzione e la conferma,
+poi vede la traduzione corretta, le varianti accettabili e il titolo della
+lezione, e segna da sola se la risposta era giusta o sbagliata: l'app non
+confronta la risposta con le traduzioni. Ogni frase la sceglie la sessione
+di ripasso di tipo `'frasi'`, che registra anche l'esito; a ogni ingresso
+nella schermata si apre una sessione nuova. Senza frasi nel catalogo la
+schermata mostra un messaggio al posto dell'esercizio.
+
+La logica del ciclo, senza interfaccia, è `creaCiclo()` in
+`src/esercizi/ciclo.ts`; il componente della rotta `#/esercizi` è
+`src/views/EserciziView.vue`, che mostra la fase corrente del ciclo e gli
+inoltra le azioni.
+
+Il perché di queste scelte è nel documento di feature
+[`.claude/domain/features/esercizi-traduzione.md`](.claude/domain/features/esercizi-traduzione.md).
+
 ## Pubblicazione
 
 Ogni push su `main` avvia la GitHub Action `.github/workflows/deploy.yml`,

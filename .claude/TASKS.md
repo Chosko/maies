@@ -156,7 +156,7 @@ Feature: esercizi-traduzione
 
 ## 16. Update documentation for feature `esercizi-traduzione`
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: README.md
 Preconditions: 14, 15
