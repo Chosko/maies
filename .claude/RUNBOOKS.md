@@ -26,12 +26,11 @@ Steps: 8/8
 
 ## 3. implementazione-fondamenta — Implementare lo scheletro dell'app, l'aggiunta del materiale e la ripetizione degli errori
 
-Status: [FAILED]
+Status: [PENDING]
 File: .claude/runbooks/3-implementazione-fondamenta.md
 Created: 2026-10-21
 Source: runbook pianificazione-task
-Steps: 3/16
-Failed at: step 4 — push rifiutato: manca lo scope `workflow` per `.github/workflows/deploy.yml`
+Steps: 4/16
 
 ---
 

@@ -42,7 +42,7 @@ Context:
 
 Done: 2026-10-21, commit `b218f9d` (10 files, +328/-52). `FondoBandiera` spostato in `App.vue` (le viste non lo usano più); il nome "maies" usa lo stile `sheet-title` (21px) perché i token non hanno uno stile a 22px.
 
-## [!] 4. Task 4 — Pubblicazione automatica su GitHub Pages
+## [x] 4. Task 4 — Pubblicazione automatica su GitHub Pages
 
 Depends on: 1
 
@@ -57,7 +57,7 @@ Context:
 /task-implement 4 --review
 ```
 
-Done: push rifiutato — il token GitHub della sessione cloud non ha lo scope `workflow`, quindi `.github/workflows/deploy.yml` non può arrivare su `origin`. 2026-10-21, commit `39006f9` (2 files, +47/-1), solo in locale su `main`.
+Done: 2026-10-21, commit `9bef5ea`, `016eced` (2 files, +47/-1). Il workflow è stato pubblicato dall'utente (`9bef5ea`, identico a quello del task), perché il token della sessione cloud non aveva lo scope `workflow`.
 
 ## [ ] 5. Task 5 — Documentazione della feature scheletro-e-pubblicazione
 
