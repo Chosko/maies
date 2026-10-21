@@ -73,7 +73,7 @@ Con l'utente parla in italiano.
 
 Done: 2026-10-21, commit `096b664` (5 files, +180/-3). Task 14-16; gate passato da solo; il titolo della lezione sopra la domanda segue la tavola `EserciziDomanda`, non il documento di feature.
 
-## [ ] 5. Scrivere i task dell'allenamento vocaboli
+## [x] 5. Scrivere i task dell'allenamento vocaboli
 
 Depends on: 3
 
@@ -86,6 +86,8 @@ Esegui `/task-add feature=<slug>` per ogni documento di feature nato dalla funzi
 
 Con l'utente parla in italiano.
 ```
+
+Done: 2026-10-21, commit `c62099f` (6 files, +259/-3). Task 17-20; gate passato da solo; su computer la carta dei vocaboli segue la schermata Esercizi (le tavole esistono solo per il telefono).
 
 ## [ ] 6. Scrivere i task del dizionario dei vocaboli
 
