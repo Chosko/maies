@@ -1,6 +1,6 @@
 # Tasks
 
-Last task number: 13
+Last task number: 16
 
 ---
 
@@ -131,5 +131,35 @@ Target: claude
 Files: README.md
 Preconditions: 10, 11, 12
 Feature: ripetizione-errori
+
+---
+
+## 14. Ciclo dell'esercizio di traduzione
+
+Status: [MISSING]
+Target: claude
+Files: src/esercizi/ciclo.ts, tests/ciclo-esercizi.test.ts
+Preconditions: 7, 12
+Feature: esercizi-traduzione
+
+---
+
+## 15. Schermata Esercizi al posto del segnaposto
+
+Status: [MISSING]
+Target: claude
+Files: src/views/EserciziView.vue, tests/esercizi.test.ts, tests/router.test.ts
+Preconditions: 2, 3, 14
+Feature: esercizi-traduzione
+
+---
+
+## 16. Update documentation for feature `esercizi-traduzione`
+
+Status: [MISSING]
+Target: claude
+Files: README.md
+Preconditions: 14, 15
+Feature: esercizi-traduzione
 
 ---
