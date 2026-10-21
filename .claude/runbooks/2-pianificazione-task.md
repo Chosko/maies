@@ -5,7 +5,7 @@ Last step number: 8
 Execution policy: attended
 Sequencing: i task si scrivono nell'ordine di `.claude/PLAN.md`, così i numeri dei task seguono l'ordine di costruzione.
 
-## [ ] 1. Scrivere i task dello scheletro dell'app e della pubblicazione
+## [x] 1. Scrivere i task dello scheletro dell'app e della pubblicazione
 
 Depends on: none
 
@@ -22,6 +22,8 @@ Ogni azione che richiede l'utente (per esempio attivare GitHub Pages o il domini
 
 Con l'utente parla in italiano.
 ```
+
+Done: 2026-10-21, commit `7b085e8` (7 files, +278/-3). Task 1-5; creata la cartella `.claude/tasks/`, che git non aveva conservato (`/task-setup` resta al suo posto nel piano); punto di passaggio telefono/computer a 768px, non indicato dal design.
 
 ## [ ] 2. Scrivere i task dell'aggiunta del materiale da una lezione
 

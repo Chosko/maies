@@ -16,10 +16,10 @@ Steps: 8/8
 
 ## 2. pianificazione-task — Scrivere i task di ogni funzionalità e creare i runbook di implementazione
 
-Status: [PENDING]
+Status: [RUNNING]
 File: .claude/runbooks/2-pianificazione-task.md
 Created: 2026-10-21
 Source: /product-design run
-Steps: 0/8
+Steps: 1/8
 
 ---
