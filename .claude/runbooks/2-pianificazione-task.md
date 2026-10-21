@@ -116,6 +116,7 @@ Needs: agent+human
 Context:
 - 2026-10-21 (amend): nel runbook `implementazione-fondamenta`, subito dopo l'ultimo task della funzionalità `scheletro-e-pubblicazione`, aggiungi due passi che dipendono da esso: `/task-setup` (genera gli script `.claude/external/run-*.sh`, ora che Vitest esiste) e poi `/context-build` (crea il context layer, nel layout flat predefinito). I task delle altre funzionalità dipendono da `/context-build`.
 - 2026-10-21 (amend): ogni runbook di implementazione termina con un passo `/context-update`, che dipende da tutti i passi del runbook.
+- 2026-10-21 (amend): eccezione alla modalità unattended dei runbook di implementazione, voluta dall'utente: i passi `/task-setup` e `/context-build` di `implementazione-fondamenta` devono aspettare l'utente prima di proseguire. Scrivili con `Needs: agent+human` e con il prompt `/task-setup --attended` e `/context-build --attended`, così ogni loro conferma e domanda si ferma in attesa dell'utente (sotto la policy unattended il passo resta in pausa finché l'utente non risponde, e i passi che dipendono da `/context-build` non partono prima).
 
 ```prompt
 Crea con `/runbook-create` i runbook di implementazione che coprono tutti i task `[TODO]` di `.claude/TASKS.md`, ognuno con un passo `/task-implement <n>` per task. Va per ultimo: richiede che tutti i task esistano.
