@@ -19,3 +19,12 @@ Source: product-design.md § Aggiunta del materiale da una lezione
 Tasks: none
 
 ---
+
+## ripetizione-errori — Progressi per dispositivo e scelta del prossimo elemento da ripassare
+
+Status: [NEW]
+Doc: .claude/domain/features/ripetizione-errori.md
+Source: product-design.md § Ripetizione degli errori
+Tasks: none
+
+---
