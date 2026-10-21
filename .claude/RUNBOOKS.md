@@ -26,11 +26,11 @@ Steps: 8/8
 
 ## 3. implementazione-fondamenta — Implementare lo scheletro dell'app, l'aggiunta del materiale e la ripetizione degli errori
 
-Status: [PENDING]
+Status: [RUNNING]
 File: .claude/runbooks/3-implementazione-fondamenta.md
 Created: 2026-10-21
 Source: runbook pianificazione-task
-Steps: 4/16
+Steps: 5/16
 
 ---
 

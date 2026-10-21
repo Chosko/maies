@@ -59,7 +59,7 @@ Context:
 
 Done: 2026-10-21, commit `9bef5ea`, `016eced` (2 files, +47/-1). Il workflow è stato pubblicato dall'utente (`9bef5ea`, identico a quello del task), perché il token della sessione cloud non aveva lo scope `workflow`.
 
-## [ ] 5. Task 5 — Documentazione della feature scheletro-e-pubblicazione
+## [x] 5. Task 5 — Documentazione della feature scheletro-e-pubblicazione
 
 Depends on: 1, 2, 3, 4
 
@@ -69,6 +69,8 @@ Context:
 ```prompt
 /task-implement 5 --review
 ```
+
+Done: 2026-10-21, commit `1ed7883` (2 files, +36/-1).
 
 ## [ ] 6. Generare gli script dei test esterni
 
