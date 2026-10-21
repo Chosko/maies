@@ -22,16 +22,17 @@ Business modelling: out of scope
 | 3 — write-back | Fill product-design.md | done |
 | 4 — high-level features | Identify the feature set, user-experience angle | done |
 | 5 — feature write-back | Record the feature set in product-design.md | done |
-| 6 — technical direction | Decide the product's technical foundations | not started |
-| 7 — technical write-back | Record the direction in technical-direction.md | not started |
+| 6 — technical direction | Decide the product's technical foundations | done |
+| 7 — technical write-back | Record the direction in technical-direction.md | done |
 
 ## Current stage
 
-**PHASE 6 — technical direction: in progress**
+**Process complete.**
 
-product-design.md è completo, con sei funzionalità di alto livello.
-technical-direction.md è ancora uno stub. Prossimo passo: decidere stack,
-formato dei contenuti, salvataggio dei progressi e pubblicazione.
+- product-design.md — prodotto, utente, flussi, decisioni e sei funzionalità di alto livello.
+- technical-direction.md — Vue 3 + Vite + TypeScript, contenuti JSON per lezione, progressi in localStorage, GitHub Pages su maies.chosko.com.
+
+Prossimo passo: `/architect <funzionalità>`, poi `/task-add feature=<slug>`.
 
 ## Decisions worth keeping
 
@@ -39,3 +40,6 @@ formato dei contenuti, salvataggio dei progressi e pubblicazione.
 - Traduzioni corrette per autovalutazione: una frase ha troppe traduzioni valide per un controllo automatico senza AI.
 - Vocaboli aggiunti a mano passano da Claude in chat, non dall'app: dati salvati solo nel browser andrebbero persi e non comparirebbero sugli altri dispositivi.
 - Progressi per dispositivo, senza sincronizzazione: sincronizzare senza server richiederebbe un servizio esterno; da rivedere solo se mancherà.
+- Vue invece di Svelte: è il framework che Sara già conosce, la differenza di prestazioni a questa scala è trascurabile.
+- Router in modalità hash: GitHub Pages non reindirizza gli indirizzi interni di una SPA.
+- Mai i PDF originali nel repository: repository e sito sono pubblici.
