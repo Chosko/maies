@@ -3,19 +3,18 @@
 ## Overview
 
 The application frame every screen lives in: bootstrap, root component,
-routing, navigation bar and background. The screens themselves are in
+routing, navigation bar and the background wrapper. The screens themselves are in
 [schermate.md](./schermate.md).
 
 - `src/main.ts` — entry point: installs the design tokens, imports the three
   global stylesheets, mounts `App` with the router on `#app`.
-- `src/App.vue` — root: `FondoBandiera` wrapping `NavBar` and `RouterView`.
+- `src/App.vue` — root: a single `div.fondo` (glow background) wrapping
+  `NavBar` and `RouterView`.
 - `src/router/index.ts` — route table and router factory.
 - `src/components/NavBar.vue` — the four-item navigation bar.
-- `src/components/FondoBandiera.vue` — screen background with the
-  line-drawn Union Jack SVG; renders its slot on top.
 Tests: `tests/router.test.ts`, `tests/navbar.test.ts`, and the
 "placeholder screens" block of `tests/tokens.test.ts` (every route renders
-on the flag background inside a `main .carta`).
+inside the one `.fondo`, within a `main .carta`, with no flag).
 
 ## Public API
 
@@ -27,8 +26,6 @@ on the flag background inside a `main .carta`).
 - `src/components/NavBar.vue` — no props. Reads the current route via
   `useRoute()`. Renders `header.barra` with `span.barra-nome` ("maies") and
   `nav[aria-label="Sezioni"]` holding one `a.voce` per screen.
-- `src/components/FondoBandiera.vue` — no props, one default slot. Renders
-  `div.fondo` > `svg.bandiera` (aria-hidden) + slot.
 
 ## Internal patterns
 
@@ -45,10 +42,6 @@ on the flag background inside a `main .carta`).
   after the screen via CSS `order`; on computer `computer.css` turns it into
   a header bar at the top (`order: 0`).
   Markup order in `App.vue` (bar before view) is not visual order.
-- `FondoBandiera` generates the flag geometry once at setup
-  (`generaBandiera()`: perspective-warped cross, diagonals, border paths)
-  and namespaces its SVG gradient/mask ids with `useId()` so several
-  instances never collide.
 - Components and views use global classes from the stylesheets, not
   scoped styles. No component uses `<style>`.
 - UI text is Italian, addressed with "tu" (see design voice rules).
@@ -69,7 +62,7 @@ on the flag background inside a `main .carta`).
   logic modules.
 
 - [styles-tokens.md](./styles-tokens.md) — every class used here
-  (`fondo`, `bandiera*`, `barra*`, `voce*`) is
+  (`fondo`, `barra*`, `voce*`) is
   styled there; phone vs computer layout lives there.
 - [build-test-deploy.md](./build-test-deploy.md) — how the tests mount the
   app (jsdom, `@vue/test-utils`) and why hash history suits GitHub Pages.
@@ -79,8 +72,6 @@ on the flag background inside a `main .carta`).
 - Adding, renaming or reordering a route or screen: `src/router/index.ts`
   and the `voci` array in `src/components/NavBar.vue`.
 - Changing a navigation icon or the current-item rule (`corrente()`).
-- Changing the flag drawing or its gradients: `generaBandiera()` and the
-  template of `src/components/FondoBandiera.vue`.
 - Mounting the whole app in a test: the helper `mountAppAt()` in
   `tests/navbar.test.ts`. `tests/router.test.ts` also stubs
   `window.scrollTo`, which the lesson page calls and jsdom lacks.

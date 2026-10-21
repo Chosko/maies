@@ -11,7 +11,7 @@ properties. No component carries scoped styles.
 - `src/styles/base.css` — reset, `body` typography and colours, headings,
   links, form-control font, placeholder colour, `.titolo-schermata`.
 - `src/styles/elements.css` — common elements at phone size: `.fondo`
-  (glow background), `.bandiera*` (flag), `.schermata` (screen column),
+  (glow background), `.schermata` (screen column),
   `.carta`, `.carta-pila` / `.carta-dietro` (card peeking behind),
   `.bottone`, `.bottone-principale`, `.bottone-secondario`, `.etichetta`,
   `.campo`, `.cerchio-icona`, `.barra*` and `.voce*` (navigation); then one
@@ -55,6 +55,9 @@ Enforced by `tests/tokens.test.ts` over every `src/**/*.css` file and every
 - **One breakpoint, one place**: the only width media query in the whole
   stylesheet set is `@media (min-width: 768px)`, in `computer.css`. Every
   phone/computer difference goes in that block.
+- **No background flag**: no stylesheet carries a `.bandiera` rule or uses a
+  `--color-flag-*` variable. `tokens.ts` generates those variables anyway,
+  because they are tokens of `design/tokens.json`.
 
 Other conventions:
 

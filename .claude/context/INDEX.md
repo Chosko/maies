@@ -12,7 +12,7 @@ why it is built this way, see [../domain/INDEX.md](../domain/INDEX.md).
 
 | File | Covers | Status |
 | --- | --- | --- |
-| [app-shell.md](./app-shell.md) | App bootstrap, `App.vue`, router and routes, navigation bar, flag background | complete |
+| [app-shell.md](./app-shell.md) | App bootstrap, `App.vue`, router and routes, navigation bar, glow background wrapper | complete |
 | [schermate.md](./schermate.md) | The screen views — Esercizi, Vocaboli, Dizionario, Grammatica and the lesson page — and their logic modules: exercise and drill cycles, answer check, dictionary sort and search, grammar list, Markdown rendering | complete |
 | [styles-tokens.md](./styles-tokens.md) | Design tokens turned into CSS variables, the global stylesheets, the single 768px breakpoint and the rules the tests enforce on CSS | complete |
 | [build-test-deploy.md](./build-test-deploy.md) | npm scripts, Vite/TypeScript config, `index.html`, test layout, the GitHub Pages workflow and custom domain | complete |
