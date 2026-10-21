@@ -26,7 +26,7 @@ Feature: scheletro-e-pubblicazione
 
 ## 3. Barra di navigazione e layout responsivo del guscio
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/App.vue, src/components/NavBar.vue, src/styles/, tests/navbar.test.ts
 Preconditions: 1, 2

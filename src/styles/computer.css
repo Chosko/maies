@@ -38,4 +38,69 @@
   .bottone {
     height: 52px;
   }
+
+  /* Barra in alto: il nome a sinistra, le voci in una pillola a destra. */
+  .barra {
+    position: relative;
+    order: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-5) calc(var(--space-5) * 2);
+    border-top: none;
+    border-bottom: 1px solid var(--color-header-line);
+    background: none;
+  }
+
+  .barra-nome {
+    display: block;
+    color: var(--color-ink-strong);
+    font-size: var(--type-sheet-title-size);
+    line-height: var(--type-sheet-title-line);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .barra-voci {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    padding: calc(var(--space-1) * 1.25);
+    border: 1px solid var(--color-nav-pill-line);
+    border-radius: var(--radius-pill);
+    background: var(--color-nav-pill);
+  }
+
+  .voce {
+    flex-direction: row;
+    gap: var(--space-2);
+    min-height: 0;
+    height: 44px;
+    padding: 0 calc(var(--space-4) + var(--space-1) / 2);
+    border-radius: var(--radius-pill);
+    color: var(--color-nav-idle-wide);
+    font-size: var(--type-lesson-size);
+    line-height: var(--type-lesson-line);
+  }
+
+  .voce-icona {
+    width: auto;
+    height: auto;
+  }
+
+  .voce-icona svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .voce-corrente {
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+  }
+
+  .voce-corrente .voce-icona {
+    background: none;
+  }
 }
