@@ -180,7 +180,7 @@ Context:
 
 Done: 2026-10-21, commit `995b7c8` (3 files, +122/-1).
 
-## [~] 14. Task 12 — Sessione di ripasso per frasi e vocaboli
+## [x] 14. Task 12 — Sessione di ripasso per frasi e vocaboli
 
 Depends on: 9, 12, 13, 7
 
@@ -193,11 +193,14 @@ Context:
 /task-implement 12 --review --rounds 2
 ```
 
-## [ ] 15. Task 13 — Documentazione della feature ripetizione-errori
+Done: 2026-10-21, commit `7fe5e1c` (3 files, +337/-1). Senza archivio indicato tutte le sessioni dell'app condividono un unico archivio, creato al primo uso; la finestra di esclusione è propria di ogni sessione.
+
+## [~] 15. Task 13 — Documentazione della feature ripetizione-errori
 
 Depends on: 12, 13, 14, 7
 
-Context: none
+Context:
+- 2026-10-21 (from steps 12–14): scelte da registrare nella documentazione. Sessione `creaSessione(tipo, { catalogo?, archivio?, casualita? })` → `{ prossimoElemento(), registraEsito(idGlobale, esito) }`; un archivio unico condiviso dalle sessioni dell'app, creato al primo uso; l'archivio legge la chiave una volta e, se la lettura fallisce, lavora solo in memoria senza più scrivere; ogni sessione registra solo esiti del proprio tipo; finestra di esclusione in memoria e propria di ogni sessione, che con pochi candidati limita la frequenza di un elemento da ripassare (al massimo uno ogni 4 proposte).
 
 ```prompt
 /task-implement 13 --review
