@@ -1,6 +1,14 @@
+<script setup lang="ts">
+import FondoBandiera from '../components/FondoBandiera.vue'
+</script>
+
 <template>
-  <main>
-    <h1>Schede di grammatica</h1>
-    <p>Contenuto in arrivo.</p>
-  </main>
+  <FondoBandiera>
+    <main class="schermata">
+      <h1 class="titolo-schermata">Schede di grammatica</h1>
+      <section class="carta">
+        <p>Contenuto in arrivo.</p>
+      </section>
+    </main>
+  </FondoBandiera>
 </template>

@@ -16,7 +16,7 @@ Feature: scheletro-e-pubblicazione
 
 ## 2. Stile di base generato dai token del design
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/styles/, src/main.ts, index.html, src/views/*.vue, tests/tokens.test.ts
 Preconditions: 1
