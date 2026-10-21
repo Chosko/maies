@@ -5,7 +5,7 @@ Last step number: 16
 Execution policy: unattended
 Parallelism: 4
 
-## [ ] 1. Task 1 — Creare il progetto Vue con router e schermate segnaposto
+## [x] 1. Task 1 — Creare il progetto Vue con router e schermate segnaposto
 
 Depends on: none
 
@@ -14,6 +14,8 @@ Context: none
 ```prompt
 /task-implement 1 --review
 ```
+
+Done: 2026-10-21, commit `3027988` (15 files, +2835/-1). TypeScript fissato a `~6.0.3` (vue-tsc non supporta TS 7) e jsdom a `^29` (la 30 chiede Node ≥ 22.22.2).
 
 ## [ ] 2. Task 2 — Stile di base generato dai token del design
 
@@ -41,7 +43,9 @@ Depends on: 1
 
 Needs: agent+human
 
-Context: none
+Context:
+- 2026-10-21 (from step 1): il progetto è stato verificato su Node 22.22.0; jsdom 30 e alcune dipendenze indirette chiedono Node ≥ 22.22.2, quindi la Action può usare Node 22 (meglio l'ultima 22.x) ma non deve presupporre un Node più vecchio.
+- 2026-10-21 (dall'utente): GitHub Pages è già configurato nelle impostazioni del repository; l'intervento manuale del task 4 è già fatto e non va richiesto. Scrivere solo il workflow. La verifica con `gh api repos/Chosko/maies/pages` non è possibile da una sessione cloud (il proxy blocca quel percorso): annotarlo nel report senza fermarsi.
 
 ```prompt
 /task-implement 4 --review
