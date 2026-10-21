@@ -1,6 +1,6 @@
 # Tasks
 
-Last task number: 20
+Last task number: 23
 
 ---
 
@@ -201,5 +201,35 @@ Target: claude
 Files: README.md
 Preconditions: 17, 18, 19
 Feature: allenamento-vocaboli
+
+---
+
+## 21. Voci ordinate e filtro di ricerca del dizionario
+
+Status: [MISSING]
+Target: claude
+Files: src/dizionario/voci.ts, src/dizionario/filtro.ts, tests/voci.test.ts, tests/filtro.test.ts
+Preconditions: 1, 7
+Feature: dizionario-vocaboli
+
+---
+
+## 22. Schermata Dizionario al posto del segnaposto
+
+Status: [MISSING]
+Target: claude
+Files: src/views/DizionarioView.vue, tests/dizionario.test.ts, tests/router.test.ts
+Preconditions: 2, 3, 7, 21
+Feature: dizionario-vocaboli
+
+---
+
+## 23. Update documentation for feature `dizionario-vocaboli`
+
+Status: [MISSING]
+Target: claude
+Files: README.md
+Preconditions: 21, 22
+Feature: dizionario-vocaboli
 
 ---

@@ -49,10 +49,10 @@ Tasks: 17, 18, 19, 20
 
 ## dizionario-vocaboli — Schermata del dizionario dei vocaboli con ricerca
 
-Status: [NEW]
+Status: [PLANNED]
 Doc: .claude/domain/features/dizionario-vocaboli.md
 Source: product-design.md § Dizionario dei vocaboli
-Tasks: none
+Tasks: 21, 22, 23
 
 ---
 
