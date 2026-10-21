@@ -142,7 +142,7 @@ Context:
 
 Done: 2026-10-21, commit `04c3e4a` (3 files, +116/-1). Aggiunto `tests/skill-aggiunta-materiale.test.ts`, non previsto dal task, che controlla frontmatter e rimandi della skill.
 
-## [~] 11. Task 9 — Documentazione della feature aggiunta-materiale-lezione
+## [x] 11. Task 9 — Documentazione della feature aggiunta-materiale-lezione
 
 Depends on: 8, 9, 10, 7
 
@@ -152,6 +152,8 @@ Context:
 ```prompt
 /task-implement 9 --review
 ```
+
+Done: 2026-10-21, commit `9e407e4` (2 files, +24/-1).
 
 ## [x] 12. Task 10 — Livelli e archivio dei progressi nel browser
 
