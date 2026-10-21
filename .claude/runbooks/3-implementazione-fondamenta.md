@@ -116,7 +116,7 @@ Context: none
 
 Done: 2026-10-21, commit `689c7d7` (7 files, +589/-3). Il test legge i file di lezione con `node:fs`, non con `import.meta.glob` (la cache di Vitest congelava il glob); per questo `@types/node@22` e `// @vitest-environment node` nei due file di test. zod 4.6.7.
 
-## [~] 9. Task 7 — Catalogo dei contenuti in sola lettura
+## [x] 9. Task 7 — Catalogo dei contenuti in sola lettura
 
 Depends on: 1, 8, 7
 
@@ -126,6 +126,8 @@ Context:
 ```prompt
 /task-implement 7 --review
 ```
+
+Done: 2026-10-21, commit `d9eaf5f` (3 files, +285/-1).
 
 ## [x] 10. Task 8 — Skill di progetto per aggiungere il materiale di una lezione
 
@@ -140,7 +142,7 @@ Context:
 
 Done: 2026-10-21, commit `04c3e4a` (3 files, +116/-1). Aggiunto `tests/skill-aggiunta-materiale.test.ts`, non previsto dal task, che controlla frontmatter e rimandi della skill.
 
-## [ ] 11. Task 9 — Documentazione della feature aggiunta-materiale-lezione
+## [~] 11. Task 9 — Documentazione della feature aggiunta-materiale-lezione
 
 Depends on: 8, 9, 10, 7
 
@@ -176,13 +178,14 @@ Context:
 
 Done: 2026-10-21, commit `995b7c8` (3 files, +122/-1).
 
-## [ ] 14. Task 12 — Sessione di ripasso per frasi e vocaboli
+## [~] 14. Task 12 — Sessione di ripasso per frasi e vocaboli
 
 Depends on: 9, 12, 13, 7
 
 Context:
 - 2026-10-21 (from step 12): livelli `'da-ripassare' | 'normale' | 'consolidato'` (salvati così in `maies.progressi`). `src/ripasso/livelli.ts` esporta `LIVELLI`, `PESI`, `LIVELLO_INIZIALE`, `isLivello`, `nuovoLivello(attuale, esito)` con esito `'giusto' | 'sbagliato'`; `src/ripasso/archivio.ts` esporta `creaArchivio(salvataggio?)` → `{ leggiLivello, salvaLivello }` e `CHIAVE_PROGRESSI`. L'archivio legge la chiave una sola volta alla creazione; se la lettura fallisce lavora solo in memoria e non scrive più.
 - 2026-10-21 (from step 13): il selettore è `scegli<T extends Candidato>(candidati: readonly T[], esclusi: Iterable<string>, casualita: () => number): T | null`, con `Candidato = { id: string; livello: Livello }`; restituisce il candidato così com'è (si possono passare gli elementi del catalogo arricchiti con `livello`) e `null` quando non c'è nessuno. Esporta anche il tipo `Casualita`.
+- 2026-10-21 (from step 9): `costruisciCatalogo(moduli)` riceve l'oggetto di `import.meta.glob` con `import: 'default'` (percorso → lezione) e ordina le lezioni per id; si può usare per cataloghi finti nei test. Frasi e vocaboli hanno in più `idGlobale` e `idLezione`; una ricerca per id inesistente restituisce `undefined`. Il catalogo dell'app è vuoto finché non esiste `contenuti/lezioni/`.
 
 ```prompt
 /task-implement 12 --review --rounds 2
