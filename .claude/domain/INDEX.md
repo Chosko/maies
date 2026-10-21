@@ -16,6 +16,7 @@ layer.
 | [product-design.md](./product-design.md) | Il design del prodotto: cos'è, utenti, flussi, decisioni, funzionalità di alto livello |
 | [technical-direction.md](./technical-direction.md) | Le fondamenta tecniche del prodotto: stack, topologia, dati, hosting |
 | [features/scheletro-e-pubblicazione.md](./features/scheletro-e-pubblicazione.md) | Scheletro dell'app: progetto Vue, rotte e navigazione, layout responsivo, pubblicazione su GitHub Pages |
+| [features/aggiunta-materiale-lezione.md](./features/aggiunta-materiale-lezione.md) | Formato dei file di lezione e identificatori stabili, catalogo dei contenuti, test di validità, procedimento di Claude per aggiungere materiale |
 
 ## Features
 

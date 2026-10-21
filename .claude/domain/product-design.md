@@ -30,7 +30,8 @@ ricorda cosa ha sbagliato.
    per gli argomenti trattati, e li aggiunge al repository.
 4. Alla pubblicazione successiva, Sara trova il nuovo materiale nell'app,
    su qualsiasi dispositivo. Allo stesso modo, un vocabolo che Sara vuole
-   aggiungere a mano lo passa a Claude in chat.
+   aggiungere a mano lo passa a Claude in chat: finisce nella lezione che
+   lei indica o, se non ne indica nessuna, nell'ultima arrivata.
 
 ### Ripasso con gli esercizi
 
