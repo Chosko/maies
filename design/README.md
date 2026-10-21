@@ -24,4 +24,6 @@ l'aspetto dell'interfaccia senza aprire gli artifact originali:
 | Grammatica, lezione | `schermate/GrammaticaLezione.dc.html` |
 
 Quando il design cambia negli artifact, questa cartella si aggiorna copiando
-di nuovo i file.
+di nuovo i file. `design-system.md` e `tokens.json` sono senza la bandiera di
+sfondo e i token `flag-*`, che l'artifact del design system e le schermate
+`.dc.html` mostrano ancora: per l'app vale questa copia.

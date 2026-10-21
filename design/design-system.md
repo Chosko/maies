@@ -10,11 +10,10 @@ L'app parla a Sara in italiano, con il tu, in frasi brevi e semplici: "Com’era
 
 ## Fondamenta visive
 
-Un solo tema, scuro. L'atmosfera viene da tre elementi.
+Un solo tema, scuro. L'atmosfera viene da due elementi.
 
 - **Il bagliore.** Lo sfondo di ogni schermata è un gradiente radiale che scende dall'alto: `glow` al centro, `glow-mid` al 48%, `ground` dal 78% (radial-gradient 130% 55% at 50% 0%). Su computer è più largo e basso (90% 65%).
 - **Le carte.** Il contenuto vive in carte con gradiente diagonale a 165° da `card-top` a `card-mid` (45%) a `card-end`, bordo di 1px `card-line`, angoli `radius-lg`. Negli esercizi e nei vocaboli una seconda carta `peek` spunta 9px sopra quella corrente, rientrata di 18px per lato: la sessione non finisce.
-- **La bandiera a linee.** Dietro la metà bassa di ogni schermata c'è la Union Jack disegnata solo con linee sottili, deformata come un telo che ondeggia in prospettiva e si stringe verso destra. La croce è un fascio di 7 linee per braccio in `flag-red`, le diagonali 5 linee per braccio in `flag-white`, il bordo 4 linee in `flag-blue`, con opacità 0,52, 0,40 e 0,24 e spessore 0,8-0,9px. Sfuma a zero verso l'alto (fra y 430 e 650 su 844) e ha dietro un bagliore `flag-glow` in basso a sinistra. Su computer parte dall'angolo in basso a sinistra e occupa tre quarti dell'altezza. Le carte e la barra di navigazione stanno sopra la bandiera.
 
 Il bottone principale è l'unico altro gradiente: orizzontale da `action-start` a `action-end`, con testo `on-action`.
 
