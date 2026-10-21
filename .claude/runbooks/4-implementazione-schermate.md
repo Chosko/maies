@@ -19,7 +19,8 @@ Context: none
 
 Depends on: 1
 
-Context: none
+Context:
+- 2026-10-21 (from step 1): `creaCiclo(opzioni?)` in `src/esercizi/ciclo.ts` exposes `avvio()`, `conferma(testo)`, `segna('giusta' | 'sbagliata')` and a read-only reactive `stato` (`fase`, `frase`, `testo`, `titoloLezione`); phases are `'in-attesa-di-risposta'`, `'soluzione-mostrata'`, `'nessun-materiale'`. The cycle starts in `'nessun-materiale'` until `avvio()`, so the screen must call `avvio()` synchronously in setup to avoid flashing the no-material message.
 
 ```prompt
 /task-implement 15 --review
@@ -49,7 +50,8 @@ Context: none
 
 Depends on: 1, 4
 
-Context: none
+Context:
+- 2026-10-21 (from step 4): `verifica()` returns the existing `Esito` type of `src/ripasso/livelli.ts` (`'giusto' | 'sbagliato'`), not the "giusta | sbagliata" literals of the task body and feature document; it can be passed to `registraEsito` as is. Whitespace normalisation treats any whitespace (tabs, newlines) as a space.
 
 ```prompt
 /task-implement 18 --review --rounds 2
@@ -107,7 +109,7 @@ Context: none
 /task-implement 23 --review
 ```
 
-## [~] 11. Task 24 — Elenco della grammatica e conversione del Markdown delle schede
+## [x] 11. Task 24 — Elenco della grammatica e conversione del Markdown delle schede
 
 Depends on: none
 
@@ -117,11 +119,14 @@ Context: none
 /task-implement 24 --review --rounds 2
 ```
 
+Done: 2026-10-21, commit `2077cd5` (7 files, +274/-1). `@types/markdown-it` is not needed — `markdown-it` 15.0.3 ships its own types, so only `markdown-it` was added.
+
 ## [ ] 12. Task 25 — Schermata Grammatica con l'elenco delle lezioni
 
 Depends on: 2, 11
 
-Context: none
+Context:
+- 2026-10-21 (from step 11): `elenco()` returns `VoceGrammatica` entries shaped `{ id, title, schede: string[] }` (`title` as in `LezioneCatalogo`); task 25 uses these names.
 
 ```prompt
 /task-implement 25 --review
