@@ -165,6 +165,13 @@ describe('stylesheets', () => {
     )
     expect(queries).toEqual([[expect.any(String), '@media (min-width: 768px)']])
   })
+
+  it('style no background flag', () => {
+    for (const [path, css] of stylesheets()) {
+      expect(css, path).not.toMatch(/\.bandiera/)
+      expect(css, path).not.toMatch(/--color-flag-/)
+    }
+  })
 })
 
 function sheet(name: string): string {
@@ -210,7 +217,7 @@ describe('screen title', () => {
 
 describe('placeholder screens', () => {
   it.each(['/esercizi', '/vocaboli', '/dizionario', '/grammatica'])(
-    'stand on the background with the flag and inside a card at %s',
+    'stand on the background without the flag and inside a card at %s',
     async (path) => {
       const router = createAppRouter()
       await router.push(path)
@@ -218,7 +225,7 @@ describe('placeholder screens', () => {
       const wrapper = mount(App, { global: { plugins: [router] } })
       await flushPromises()
       const fondo = wrapper.get('.fondo')
-      expect(fondo.find('svg.bandiera').exists()).toBe(true)
+      expect(wrapper.find('.bandiera').exists()).toBe(false)
       expect(fondo.find('main .carta').exists()).toBe(true)
     },
   )

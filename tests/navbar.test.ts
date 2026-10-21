@@ -77,10 +77,10 @@ describe('navigation bar', () => {
 })
 
 describe('application shell', () => {
-  it('holds the navigation bar and the screen on the flag background', async () => {
+  it('holds the navigation bar and the screen on the background, without the flag', async () => {
     const { wrapper } = await mountAppAt('/vocaboli')
     const fondo = wrapper.get('.fondo')
-    expect(fondo.find('svg.bandiera').exists()).toBe(true)
+    expect(wrapper.find('.bandiera').exists()).toBe(false)
     expect(fondo.find('nav[aria-label="Sezioni"]').exists()).toBe(true)
     expect(fondo.get('main').text()).toContain('Vocaboli')
     expect(wrapper.findAll('.fondo')).toHaveLength(1)

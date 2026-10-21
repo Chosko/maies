@@ -2,8 +2,7 @@
    Le varianti per computer sono in computer.css. */
 
 /* Fondo con il bagliore che scende dall'alto. Ritaglia senza diventare un
-   contenitore di scorrimento, così la barra resta fissa; dove clip manca la
-   bandiera è già ritagliata dal proprio SVG. */
+   contenitore di scorrimento, così la barra resta fissa. */
 .fondo {
   position: relative;
   isolation: isolate;
@@ -18,39 +17,6 @@
     var(--color-glow-mid) 48%,
     var(--color-ground) 78%
   );
-}
-
-/* Bandiera a linee dietro la metà bassa, sotto il contenuto. */
-.bandiera {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: -1;
-  width: 100%;
-  height: 50%;
-  pointer-events: none;
-}
-
-.bandiera-bagliore {
-  stop-color: var(--color-flag-glow);
-}
-
-.bandiera-bordo {
-  stroke: var(--color-flag-blue);
-  stroke-width: 0.8;
-  opacity: 0.24;
-}
-
-.bandiera-diagonali {
-  stroke: var(--color-flag-white);
-  stroke-width: 0.8;
-  opacity: 0.4;
-}
-
-.bandiera-croce {
-  stroke: var(--color-flag-red);
-  stroke-width: 0.9;
-  opacity: 0.52;
 }
 
 /* Colonna della schermata. */
