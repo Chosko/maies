@@ -5,7 +5,7 @@ Last step number: 15
 Execution policy: unattended
 Parallelism: 4
 
-## [~] 1. Task 14 — Ciclo dell'esercizio di traduzione
+## [x] 1. Task 14 — Ciclo dell'esercizio di traduzione
 
 Depends on: none
 
@@ -14,6 +14,8 @@ Context: none
 ```prompt
 /task-implement 14 --review --rounds 2
 ```
+
+Done: 2026-10-21, commit `501385d` (3 files, +306/-1). The cycle starts in `'nessun-materiale'` until `avvio()` is called — a state the feature document does not describe.
 
 ## [ ] 2. Task 15 — Schermata Esercizi al posto del segnaposto
 
