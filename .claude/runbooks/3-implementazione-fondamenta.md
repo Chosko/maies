@@ -29,7 +29,7 @@ Context: none
 
 Done: 2026-10-21, commit `a23d4b0` (14 files, +632/-17). Aggiunti `src/components/FondoBandiera.vue` (fondo e bandiera, con slot) e `css: true` nella config di Vitest, non previsti dal task.
 
-## [ ] 3. Task 3 — Barra di navigazione e layout responsivo del guscio
+## [x] 3. Task 3 — Barra di navigazione e layout responsivo del guscio
 
 Depends on: 1, 2
 
@@ -39,6 +39,8 @@ Context:
 ```prompt
 /task-implement 3 --review
 ```
+
+Done: 2026-10-21, commit `b218f9d` (10 files, +328/-52). `FondoBandiera` spostato in `App.vue` (le viste non lo usano più); il nome "maies" usa lo stile `sheet-title` (21px) perché i token non hanno uno stile a 22px.
 
 ## [ ] 4. Task 4 — Pubblicazione automatica su GitHub Pages
 
@@ -59,7 +61,8 @@ Context:
 
 Depends on: 1, 2, 3, 4
 
-Context: none
+Context:
+- 2026-10-21 (from steps 1–3): scostamenti dal documento di feature da registrare. TypeScript `~6.0.3` e jsdom `^29` per compatibilità; un solo blocco `@media (min-width: 768px)` in `src/styles/computer.css`, protetto da test; variabili dei token generate a runtime da `src/styles/tokens.ts`; `FondoBandiera` nel guscio (`App.vue`); barra del telefono `sticky` in fondo al flusso; il nome "maies" a 21px (`sheet-title`) invece di 22px per mancanza di un token.
 
 ```prompt
 /task-implement 5 --review

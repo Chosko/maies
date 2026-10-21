@@ -30,7 +30,7 @@ Status: [RUNNING]
 File: .claude/runbooks/3-implementazione-fondamenta.md
 Created: 2026-10-21
 Source: runbook pianificazione-task
-Steps: 2/16
+Steps: 3/16
 
 ---
 
