@@ -63,7 +63,7 @@ Con l'utente parla in italiano.
 
 Done: 2026-10-21, commit `4f41b95` (3 files, +165/-0). Feature `ripetizione-errori`; algoritmo a tre livelli (da ripassare 6, normale 3, consolidato 1).
 
-## [ ] 4. Architettare gli esercizi di traduzione
+## [x] 4. Architettare gli esercizi di traduzione
 
 Depends on: 2, 3
 
@@ -78,6 +78,8 @@ Adotta il formato dei file di lezione e l'interfaccia della ripetizione degli er
 
 Con l'utente parla in italiano.
 ```
+
+Done: 2026-10-21, commit `7650dfe` (3 files, +151/-0). Feature `esercizi-traduzione`; autovalutazione pura, nessun confronto automatico con le traduzioni previste.
 
 ## [ ] 5. Architettare l'allenamento vocaboli
 
