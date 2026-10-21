@@ -208,7 +208,7 @@ Context:
 
 Done: 2026-10-21, commit `c3154da` (2 files, +18/-1). Le schermate non usano ancora la sessione di ripasso (arriva con i task 14 e successivi): il README la presenta come il punto da cui la prenderanno.
 
-## [~] 16. Aggiornare il context layer
+## [x] 16. Aggiornare il context layer
 
 Depends on: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
 
@@ -217,6 +217,8 @@ Context: none
 ```prompt
 /context-update
 ```
+
+Done: 2026-10-21, commit `264c22a` (4 files, +171/-4). Ambito `38e3fc2..HEAD` invece del filtro per data, che escludeva i commit dello stesso giorno; aggiunti `contenuti.md` e `ripasso.md`.
 
 ## Do not re-propose
 
