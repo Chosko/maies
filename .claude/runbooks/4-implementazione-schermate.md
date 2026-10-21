@@ -5,7 +5,7 @@ Last step number: 15
 Execution policy: unattended
 Parallelism: 4
 
-## [ ] 1. Task 14 — Ciclo dell'esercizio di traduzione
+## [~] 1. Task 14 — Ciclo dell'esercizio di traduzione
 
 Depends on: none
 
@@ -35,7 +35,7 @@ Context: none
 /task-implement 16 --review
 ```
 
-## [ ] 4. Task 17 — Verifica della risposta con normalizzazione
+## [~] 4. Task 17 — Verifica della risposta con normalizzazione
 
 Depends on: none
 
@@ -75,7 +75,7 @@ Context: none
 /task-implement 20 --review
 ```
 
-## [ ] 8. Task 21 — Voci ordinate e filtro di ricerca del dizionario
+## [x] 8. Task 21 — Voci ordinate e filtro di ricerca del dizionario
 
 Depends on: none
 
@@ -84,6 +84,8 @@ Context: none
 ```prompt
 /task-implement 21 --review
 ```
+
+Done: 2026-10-21, commit `40733b9` (5 files, +174/-1).
 
 ## [ ] 9. Task 22 — Schermata Dizionario al posto del segnaposto
 
@@ -105,7 +107,7 @@ Context: none
 /task-implement 23 --review
 ```
 
-## [ ] 11. Task 24 — Elenco della grammatica e conversione del Markdown delle schede
+## [~] 11. Task 24 — Elenco della grammatica e conversione del Markdown delle schede
 
 Depends on: none
 
