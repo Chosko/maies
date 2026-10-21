@@ -127,7 +127,7 @@ Context:
 /task-implement 7 --review
 ```
 
-## [~] 10. Task 8 — Skill di progetto per aggiungere il materiale di una lezione
+## [x] 10. Task 8 — Skill di progetto per aggiungere il materiale di una lezione
 
 Depends on: 8, 7
 
@@ -137,6 +137,8 @@ Context:
 ```prompt
 /task-implement 8 --review
 ```
+
+Done: 2026-10-21, commit `04c3e4a` (3 files, +116/-1). Aggiunto `tests/skill-aggiunta-materiale.test.ts`, non previsto dal task, che controlla frontmatter e rimandi della skill.
 
 ## [ ] 11. Task 9 — Documentazione della feature aggiunta-materiale-lezione
 
