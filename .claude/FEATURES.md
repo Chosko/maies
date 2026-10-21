@@ -31,7 +31,7 @@ Tasks: 10, 11, 12, 13
 
 ## esercizi-traduzione — Schermata degli esercizi di traduzione con autovalutazione
 
-Status: [PLANNED]
+Status: [DONE]
 Doc: .claude/domain/features/esercizi-traduzione.md
 Source: product-design.md § Esercizi di traduzione
 Tasks: 14, 15, 16
@@ -40,7 +40,7 @@ Tasks: 14, 15, 16
 
 ## allenamento-vocaboli — Schermata dell'allenamento vocaboli con verifica automatica
 
-Status: [PLANNED]
+Status: [DONE]
 Doc: .claude/domain/features/allenamento-vocaboli.md
 Source: product-design.md § Allenamento vocaboli
 Tasks: 17, 18, 19, 20
@@ -49,7 +49,7 @@ Tasks: 17, 18, 19, 20
 
 ## dizionario-vocaboli — Schermata del dizionario dei vocaboli con ricerca
 
-Status: [PLANNED]
+Status: [DONE]
 Doc: .claude/domain/features/dizionario-vocaboli.md
 Source: product-design.md § Dizionario dei vocaboli
 Tasks: 21, 22, 23
@@ -58,7 +58,7 @@ Tasks: 21, 22, 23
 
 ## schede-grammatica — Schermata delle schede di grammatica divise per lezione
 
-Status: [PLANNED]
+Status: [DONE]
 Doc: .claude/domain/features/schede-grammatica.md
 Source: product-design.md § Schede di grammatica
 Tasks: 24, 25, 26, 27
