@@ -24,7 +24,7 @@ Il bottone principale è l'unico altro gradiente: orizzontale da `action-start` 
 
 ## Tipografia
 
-Una sola famiglia, Poppins (Google Fonts, pesi 400, 500 e 600), con `system-ui` come ripiego. La frase o la parola da tradurre è lo stile più grande della schermata ed è centrata; tutto il resto è allineato a sinistra, tranne il titolo della schermata. Gli stili sono in `tokens.json`.
+Una sola famiglia, Poppins (Google Fonts, pesi 400, 500 e 600), con `system-ui` come ripiego. La frase o la parola da tradurre è lo stile più grande della schermata ed è centrata; tutto il resto è allineato a sinistra, tranne il titolo della schermata, che sul telefono è centrato. Su computer il titolo della schermata è allineato a sinistra, a 24px/32px. Gli stili sono in `tokens.json`.
 
 ## Forme e spazi
 
