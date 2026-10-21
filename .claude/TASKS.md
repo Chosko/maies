@@ -1,6 +1,6 @@
 # Tasks
 
-Last task number: 16
+Last task number: 20
 
 ---
 
@@ -161,5 +161,45 @@ Target: claude
 Files: README.md
 Preconditions: 14, 15
 Feature: esercizi-traduzione
+
+---
+
+## 17. Verifica della risposta con normalizzazione
+
+Status: [MISSING]
+Target: claude
+Files: src/vocaboli/verifica.ts, tests/verifica.test.ts
+Preconditions: 1
+Feature: allenamento-vocaboli
+
+---
+
+## 18. Ciclo dell'allenamento vocaboli
+
+Status: [MISSING]
+Target: claude
+Files: src/vocaboli/ciclo.ts, tests/ciclo-vocaboli.test.ts
+Preconditions: 7, 12, 17
+Feature: allenamento-vocaboli
+
+---
+
+## 19. Schermata Vocaboli al posto del segnaposto
+
+Status: [MISSING]
+Target: claude
+Files: src/views/VocaboliView.vue, tests/vocaboli.test.ts, tests/router.test.ts
+Preconditions: 2, 3, 18
+Feature: allenamento-vocaboli
+
+---
+
+## 20. Update documentation for feature `allenamento-vocaboli`
+
+Status: [MISSING]
+Target: claude
+Files: README.md
+Preconditions: 17, 18, 19
+Feature: allenamento-vocaboli
 
 ---

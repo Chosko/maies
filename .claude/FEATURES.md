@@ -40,10 +40,10 @@ Tasks: 14, 15, 16
 
 ## allenamento-vocaboli — Schermata dell'allenamento vocaboli con verifica automatica
 
-Status: [NEW]
+Status: [PLANNED]
 Doc: .claude/domain/features/allenamento-vocaboli.md
 Source: product-design.md § Allenamento vocaboli
-Tasks: none
+Tasks: 17, 18, 19, 20
 
 ---
 
