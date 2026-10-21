@@ -66,7 +66,7 @@ Feature: aggiunta-materiale-lezione
 
 ## 7. Catalogo dei contenuti in sola lettura
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/contenuti/catalogo.ts, tests/catalogo.test.ts
 Preconditions: 1, 6
