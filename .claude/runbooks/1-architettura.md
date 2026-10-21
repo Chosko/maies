@@ -43,7 +43,7 @@ Con l'utente parla in italiano.
 
 Done: 2026-10-21, commit `5f5a24c` (4 files, +238/-1). Feature `aggiunta-materiale-lezione`; include anche il catalogo dei contenuti di sola lettura, che le altre funzionalità adottano.
 
-## [ ] 3. Architettare la ripetizione degli errori
+## [x] 3. Architettare la ripetizione degli errori
 
 Depends on: 2
 
@@ -60,6 +60,8 @@ L'algoritmo di ripetizione è lasciato aperto da `.claude/domain/technical-direc
 
 Con l'utente parla in italiano.
 ```
+
+Done: 2026-10-21, commit `4f41b95` (3 files, +165/-0). Feature `ripetizione-errori`; algoritmo a tre livelli (da ripassare 6, normale 3, consolidato 1).
 
 ## [ ] 4. Architettare gli esercizi di traduzione
 
