@@ -36,7 +36,7 @@ Context: none
 /task-implement 16 --review
 ```
 
-## [~] 4. Task 17 — Verifica della risposta con normalizzazione
+## [x] 4. Task 17 — Verifica della risposta con normalizzazione
 
 Depends on: none
 
@@ -45,6 +45,8 @@ Context: none
 ```prompt
 /task-implement 17 --review
 ```
+
+Done: 2026-10-21, commit `812a64d` (3 files, +170/-1). `verifica()` returns the existing `Esito` (`'giusto' | 'sbagliato'`), not the "giusta | sbagliata" literals of the task body.
 
 ## [ ] 5. Task 18 — Ciclo dell'allenamento vocaboli
 
