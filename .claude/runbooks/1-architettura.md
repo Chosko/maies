@@ -99,7 +99,7 @@ Con l'utente parla in italiano.
 
 Done: 2026-10-21, commit `2253956` (4 files, +189/-6). Feature `allenamento-vocaboli`; la verifica ignora anche apostrofi tipografici e punteggiatura finale (product-design.md aggiornato); articoli e "to" valgono solo se elencati nel file della lezione.
 
-## [ ] 6. Architettare il dizionario dei vocaboli
+## [x] 6. Architettare il dizionario dei vocaboli
 
 Depends on: 2
 
@@ -114,6 +114,8 @@ Adotta il formato dei file di lezione così come lo fissa il documento della fun
 
 Con l'utente parla in italiano.
 ```
+
+Done: 2026-10-21, commit `9e850d1` (4 files, +150/-2). Feature `dizionario-vocaboli`; ordine alfabetico e ricerca bilingue, volutamente diversa dalla verifica delle risposte dell'allenamento.
 
 ## [ ] 7. Architettare le schede di grammatica
 
