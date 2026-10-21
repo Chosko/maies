@@ -4,7 +4,7 @@
 
 ## scheletro-e-pubblicazione — Scheletro dell'app navigabile e pubblicazione su GitHub Pages
 
-Status: [PLANNED]
+Status: [DONE]
 Doc: .claude/domain/features/scheletro-e-pubblicazione.md
 Source: prompt
 Tasks: 1, 2, 3, 4, 5
