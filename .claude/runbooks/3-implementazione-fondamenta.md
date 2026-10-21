@@ -144,7 +144,7 @@ Context: none
 /task-implement 9 --review
 ```
 
-## [~] 12. Task 10 — Livelli e archivio dei progressi nel browser
+## [x] 12. Task 10 — Livelli e archivio dei progressi nel browser
 
 Depends on: 1, 7
 
@@ -154,11 +154,14 @@ Context: none
 /task-implement 10 --review --rounds 2
 ```
 
-## [ ] 13. Task 11 — Selettore pesato del prossimo elemento
+Done: 2026-10-21, commit `011423a` (5 files, +321/-1).
+
+## [~] 13. Task 11 — Selettore pesato del prossimo elemento
 
 Depends on: 12, 7
 
-Context: none
+Context:
+- 2026-10-21 (from step 12): livelli `'da-ripassare' | 'normale' | 'consolidato'` (salvati così in `maies.progressi`). `src/ripasso/livelli.ts` esporta `LIVELLI`, `PESI`, `LIVELLO_INIZIALE`, `isLivello`, `nuovoLivello(attuale, esito)` con esito `'giusto' | 'sbagliato'`; `src/ripasso/archivio.ts` esporta `creaArchivio(salvataggio?)` → `{ leggiLivello, salvaLivello }` e `CHIAVE_PROGRESSI`. L'archivio legge la chiave una sola volta alla creazione; se la lettura fallisce lavora solo in memoria e non scrive più.
 
 ```prompt
 /task-implement 11 --review --rounds 2
@@ -168,7 +171,8 @@ Context: none
 
 Depends on: 9, 12, 13, 7
 
-Context: none
+Context:
+- 2026-10-21 (from step 12): livelli `'da-ripassare' | 'normale' | 'consolidato'` (salvati così in `maies.progressi`). `src/ripasso/livelli.ts` esporta `LIVELLI`, `PESI`, `LIVELLO_INIZIALE`, `isLivello`, `nuovoLivello(attuale, esito)` con esito `'giusto' | 'sbagliato'`; `src/ripasso/archivio.ts` esporta `creaArchivio(salvataggio?)` → `{ leggiLivello, salvaLivello }` e `CHIAVE_PROGRESSI`. L'archivio legge la chiave una sola volta alla creazione; se la lettura fallisce lavora solo in memoria e non scrive più.
 
 ```prompt
 /task-implement 12 --review --rounds 2
