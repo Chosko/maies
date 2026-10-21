@@ -101,7 +101,7 @@ Context: none
 
 Done: 2026-10-21, commit `40733b9` (5 files, +174/-1).
 
-## [~] 9. Task 22 — Schermata Dizionario al posto del segnaposto
+## [x] 9. Task 22 — Schermata Dizionario al posto del segnaposto
 
 Depends on: 2, 8
 
@@ -111,6 +111,8 @@ Context:
 ```prompt
 /task-implement 22 --review
 ```
+
+Done: 2026-10-21, commit `94c9f69` (8 files, +420/-9). The screen title is "Dizionario" as in the board, not "Dizionario dei vocaboli"; the empty-state copy ("Ancora nessun vocabolo") is the agent's own, as no board fixes it.
 
 ## [ ] 10. Task 23 — Documentazione della feature dizionario-vocaboli
 
@@ -148,7 +150,7 @@ Context:
 
 Done: 2026-10-21, commit `7c2f655` (7 files, +245/-7). The screen title is "Grammatica" as in the board, not the placeholder's "Schede di grammatica".
 
-## [ ] 13. Task 26 — Pagina della lezione con le schede e stile del testo
+## [~] 13. Task 26 — Pagina della lezione con le schede e stile del testo
 
 Depends on: 11, 12
 
