@@ -28,3 +28,12 @@ Source: product-design.md § Ripetizione degli errori
 Tasks: none
 
 ---
+
+## esercizi-traduzione — Schermata degli esercizi di traduzione con autovalutazione
+
+Status: [NEW]
+Doc: .claude/domain/features/esercizi-traduzione.md
+Source: product-design.md § Esercizi di traduzione
+Tasks: none
+
+---
