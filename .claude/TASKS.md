@@ -116,7 +116,7 @@ Feature: ripetizione-errori
 
 ## 12. Sessione di ripasso per frasi e vocaboli
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/ripasso/sessione.ts, tests/sessione.test.ts
 Preconditions: 7, 10, 11
