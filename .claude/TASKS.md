@@ -6,7 +6,7 @@ Last task number: 27
 
 ## 1. Creare il progetto Vue con router e schermate segnaposto
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: package.json, package-lock.json, .gitignore, index.html, vite.config.ts, tsconfig.json, src/main.ts, src/App.vue, src/router/index.ts, src/views/EserciziView.vue, src/views/VocaboliView.vue, src/views/DizionarioView.vue, src/views/GrammaticaView.vue, tests/router.test.ts
 Preconditions: none
