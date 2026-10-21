@@ -20,6 +20,6 @@ Status: [RUNNING]
 File: .claude/runbooks/2-pianificazione-task.md
 Created: 2026-10-21
 Source: /product-design run
-Steps: 5/8
+Steps: 6/8
 
 ---

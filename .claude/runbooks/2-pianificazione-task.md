@@ -89,7 +89,7 @@ Con l'utente parla in italiano.
 
 Done: 2026-10-21, commit `c62099f` (6 files, +259/-3). Task 17-20; gate passato da solo; su computer la carta dei vocaboli segue la schermata Esercizi (le tavole esistono solo per il telefono).
 
-## [ ] 6. Scrivere i task del dizionario dei vocaboli
+## [x] 6. Scrivere i task del dizionario dei vocaboli
 
 Depends on: 2
 
@@ -102,6 +102,8 @@ Esegui `/task-add feature=<slug>` per ogni documento di feature nato dalla funzi
 
 Con l'utente parla in italiano.
 ```
+
+Done: 2026-10-21, commit `911805a` (5 files, +191/-3). Task 21-23; gate passati da soli.
 
 ## [ ] 7. Scrivere i task delle schede di grammatica
 
