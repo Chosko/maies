@@ -81,7 +81,7 @@ Context:
 
 Done: 2026-10-21, commit `4451399` (8 files, +608/-27). The screen title is "Vocaboli" as in the boards, not "Allenamento vocaboli"; no route is a placeholder any more, so the "still say the content is coming" test was removed.
 
-## [ ] 7. Task 20 — Documentazione della feature allenamento-vocaboli
+## [~] 7. Task 20 — Documentazione della feature allenamento-vocaboli
 
 Depends on: 4, 5, 6
 
@@ -116,7 +116,7 @@ Context:
 
 Done: 2026-10-21, commit `94c9f69` (8 files, +420/-9). The screen title is "Dizionario" as in the board, not "Dizionario dei vocaboli"; the empty-state copy ("Ancora nessun vocabolo") is the agent's own, as no board fixes it.
 
-## [~] 10. Task 23 — Documentazione della feature dizionario-vocaboli
+## [x] 10. Task 23 — Documentazione della feature dizionario-vocaboli
 
 Depends on: 8, 9
 
@@ -125,6 +125,8 @@ Context: none
 ```prompt
 /task-implement 23 --review
 ```
+
+Done: 2026-10-21, commit `fa00032` (2 files, +21/-1).
 
 ## [x] 11. Task 24 — Elenco della grammatica e conversione del Markdown delle schede
 
