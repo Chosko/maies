@@ -12,6 +12,9 @@ layer.
 
 | File | Covers |
 | --- | --- |
+| [design-process.md](./design-process.md) | Stato del processo di `/product-design`: metodo, fasi, fase corrente |
+| [product-design.md](./product-design.md) | Il design del prodotto: cos'è, utenti, flussi, decisioni, funzionalità di alto livello |
+| [technical-direction.md](./technical-direction.md) | Le fondamenta tecniche del prodotto: stack, topologia, dati, hosting |
 
 ## Features
 
