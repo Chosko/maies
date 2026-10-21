@@ -81,7 +81,7 @@ Con l'utente parla in italiano.
 
 Done: 2026-10-21, commit `7650dfe` (3 files, +151/-0). Feature `esercizi-traduzione`; autovalutazione pura, nessun confronto automatico con le traduzioni previste.
 
-## [ ] 5. Architettare l'allenamento vocaboli
+## [x] 5. Architettare l'allenamento vocaboli
 
 Depends on: 2, 3
 
@@ -96,6 +96,8 @@ Adotta il formato dei file di lezione e l'interfaccia della ripetizione degli er
 
 Con l'utente parla in italiano.
 ```
+
+Done: 2026-10-21, commit `2253956` (4 files, +189/-6). Feature `allenamento-vocaboli`; la verifica ignora anche apostrofi tipografici e punteggiatura finale (product-design.md aggiornato); articoli e "to" valgono solo se elencati nel file della lezione.
 
 ## [ ] 6. Architettare il dizionario dei vocaboli
 
