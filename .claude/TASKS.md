@@ -36,7 +36,7 @@ Feature: scheletro-e-pubblicazione
 
 ## 4. Pubblicazione automatica su GitHub Pages
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude+human
 Files: .github/workflows/deploy.yml, package.json
 Preconditions: 1
