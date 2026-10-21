@@ -17,7 +17,7 @@ Context: none
 
 Done: 2026-10-21, commit `501385d` (3 files, +306/-1). The cycle starts in `'nessun-materiale'` until `avvio()` is called — a state the feature document does not describe.
 
-## [ ] 2. Task 15 — Schermata Esercizi al posto del segnaposto
+## [~] 2. Task 15 — Schermata Esercizi al posto del segnaposto
 
 Depends on: 1
 
@@ -50,7 +50,7 @@ Context: none
 
 Done: 2026-10-21, commit `812a64d` (3 files, +170/-1). `verifica()` returns the existing `Esito` (`'giusto' | 'sbagliato'`), not the "giusta | sbagliata" literals of the task body.
 
-## [ ] 5. Task 18 — Ciclo dell'allenamento vocaboli
+## [x] 5. Task 18 — Ciclo dell'allenamento vocaboli
 
 Depends on: 1, 4
 
@@ -61,11 +61,14 @@ Context:
 /task-implement 18 --review --rounds 2
 ```
 
+Done: 2026-10-21, commit `c3d0e51` (3 files, +320/-1).
+
 ## [ ] 6. Task 19 — Schermata Vocaboli al posto del segnaposto
 
 Depends on: 2, 5
 
-Context: none
+Context:
+- 2026-10-21 (from step 5): `creaCiclo` in `src/vocaboli/ciclo.ts` exposes phases `'in-attesa-di-risposta' | 'esito-mostrato' | 'nessun-materiale'` and a state of `fase`, `vocabolo`, `testo`, `esito` (the `Esito` type, `'giusto' | 'sbagliato'`) and `titoloLezione`.
 
 ```prompt
 /task-implement 19 --review
