@@ -23,8 +23,15 @@ describe('router', () => {
     expect(router.currentRoute.value.path).toBe('/esercizi')
   })
 
+  it('renders the exercises screen at /esercizi', async () => {
+    const { router, wrapper } = await mountAt('/esercizi')
+    expect(router.currentRoute.value.path).toBe('/esercizi')
+    expect(wrapper.get('h1').text()).toBe('Esercizi')
+    expect(wrapper.find('main .carta').exists()).toBe(true)
+    expect(wrapper.text()).not.toContain('in arrivo')
+  })
+
   it.each([
-    ['/esercizi', 'Esercizi di traduzione'],
     ['/vocaboli', 'Allenamento vocaboli'],
     ['/dizionario', 'Dizionario dei vocaboli'],
     ['/grammatica', 'Schede di grammatica'],

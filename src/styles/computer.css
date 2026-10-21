@@ -103,4 +103,40 @@
   .voce-corrente .voce-icona {
     background: none;
   }
+
+  /* Esercizi: frase più grande, risposte affiancate, esito su una riga. */
+  .esercizio-lezione {
+    font-size: var(--type-body-size);
+    line-height: calc(var(--type-lesson-line) + var(--space-1) / 2);
+  }
+
+  .esercizio-frase {
+    font-size: calc(var(--type-sentence-size) * 32 / 25);
+    line-height: calc(var(--type-sentence-line) + var(--space-2));
+  }
+
+  .esercizio-risposte {
+    gap: var(--space-6);
+  }
+
+  .esercizio-risposta-sara {
+    font-size: calc(var(--type-answer-size) * 18 / 17);
+    line-height: calc(var(--type-answer-line) + var(--space-1) / 2);
+  }
+
+  .esercizio-esito {
+    margin-top: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .esercizio-esito-bottoni {
+    flex-direction: row;
+  }
+
+  .esercizio-esito-bottoni .bottone {
+    width: 160px;
+  }
 }

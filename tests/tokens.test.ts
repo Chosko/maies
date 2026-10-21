@@ -178,8 +178,19 @@ describe('placeholder screens', () => {
       await flushPromises()
       const fondo = wrapper.get('.fondo')
       expect(fondo.find('svg.bandiera').exists()).toBe(true)
-      const carta = fondo.get('main .carta')
-      expect(carta.text()).toContain('in arrivo')
+      expect(fondo.find('main .carta').exists()).toBe(true)
+    },
+  )
+
+  it.each(['/vocaboli', '/dizionario', '/grammatica'])(
+    'still say the content is coming at %s',
+    async (path) => {
+      const router = createAppRouter()
+      await router.push(path)
+      await router.isReady()
+      const wrapper = mount(App, { global: { plugins: [router] } })
+      await flushPromises()
+      expect(wrapper.get('main .carta').text()).toContain('in arrivo')
     },
   )
 })

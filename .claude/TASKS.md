@@ -146,7 +146,7 @@ Feature: esercizi-traduzione
 
 ## 15. Schermata Esercizi al posto del segnaposto
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/views/EserciziView.vue, tests/esercizi.test.ts, tests/router.test.ts
 Preconditions: 2, 3, 14
