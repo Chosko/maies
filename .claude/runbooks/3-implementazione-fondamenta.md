@@ -72,7 +72,7 @@ Context:
 
 Done: 2026-10-21, commit `1ed7883` (2 files, +36/-1).
 
-## [ ] 6. Generare gli script dei test esterni
+## [x] 6. Generare gli script dei test esterni
 
 Depends on: 5
 
@@ -84,6 +84,8 @@ Context:
 ```prompt
 /task-setup --attended
 ```
+
+Done: 2026-10-21, commit `5eddc4b` (4 files, +144/-0). Il backlog esisteva già: aggiunti solo i quattro file di `.claude/external/`, con script di test che lanciano `npm test`.
 
 ## [ ] 7. Creare il context layer
 
