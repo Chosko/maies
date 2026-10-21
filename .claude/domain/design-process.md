@@ -18,8 +18,8 @@ Business modelling: out of scope
 | --- | --- | --- |
 | 0 — gate + resume | Verify the domain layer; resume or start fresh | done |
 | 1 — orient + stub | Detect greenfield/brownfield, create the documents | done |
-| 2 — interview | Product, users, experience, big decisions | not started |
-| 3 — write-back | Fill product-design.md | not started |
+| 2 — interview | Product, users, experience, big decisions | done |
+| 3 — write-back | Fill product-design.md | done |
 | 4 — high-level features | Identify the feature set, user-experience angle | not started |
 | 5 — feature write-back | Record the feature set in product-design.md | not started |
 | 6 — technical direction | Decide the product's technical foundations | not started |
@@ -27,8 +27,14 @@ Business modelling: out of scope
 
 ## Current stage
 
-**PHASE 2 — interview: not started**
+**PHASE 4 — high-level features: not started**
 
-Documenti creati come stub; nessun contenuto di prodotto ancora raccolto.
-Prossimo passo: l'intervista sul prodotto, gli utenti, i flussi e le grandi
-decisioni.
+Intervista chiusa e product-design.md scritto (prodotto, utente, flussi,
+decisioni). Prossimo passo: identificare le funzionalità di alto livello.
+
+## Decisions worth keeping
+
+- Nessuna AI nell'app: il materiale lo genera Claude nel repository dai PDF passati in chat — niente chiavi API né costi d'uso, e resta un sito statico.
+- Traduzioni corrette per autovalutazione: una frase ha troppe traduzioni valide per un controllo automatico senza AI.
+- Vocaboli aggiunti a mano passano da Claude in chat, non dall'app: dati salvati solo nel browser andrebbero persi e non comparirebbero sugli altri dispositivi.
+- Progressi per dispositivo, senza sincronizzazione: sincronizzare senza server richiederebbe un servizio esterno; da rivedere solo se mancherà.
