@@ -154,7 +154,7 @@ Context:
 
 Done: 2026-10-21, commit `7c2f655` (7 files, +245/-7). The screen title is "Grammatica" as in the board, not the placeholder's "Schede di grammatica".
 
-## [~] 13. Task 26 — Pagina della lezione con le schede e stile del testo
+## [x] 13. Task 26 — Pagina della lezione con le schede e stile del testo
 
 Depends on: 11, 12
 
@@ -164,6 +164,8 @@ Context:
 ```prompt
 /task-implement 26 --review --rounds 2
 ```
+
+Done: 2026-10-21, commit `04513f9` (6 files, +378/-2). The empty-state copy ("Questa lezione non esiste", "Questa lezione non ha schede") is the agent's own, as the feature document fixes none; the real catalogue is empty, so the router test checks the unknown-lesson state.
 
 ## [ ] 14. Task 27 — Documentazione della feature schede-grammatica
 
