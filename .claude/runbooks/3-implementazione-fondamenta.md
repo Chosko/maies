@@ -195,7 +195,7 @@ Context:
 
 Done: 2026-10-21, commit `7fe5e1c` (3 files, +337/-1). Senza archivio indicato tutte le sessioni dell'app condividono un unico archivio, creato al primo uso; la finestra di esclusione è propria di ogni sessione.
 
-## [~] 15. Task 13 — Documentazione della feature ripetizione-errori
+## [x] 15. Task 13 — Documentazione della feature ripetizione-errori
 
 Depends on: 12, 13, 14, 7
 
@@ -206,7 +206,9 @@ Context:
 /task-implement 13 --review
 ```
 
-## [ ] 16. Aggiornare il context layer
+Done: 2026-10-21, commit `c3154da` (2 files, +18/-1). Le schermate non usano ancora la sessione di ripasso (arriva con i task 14 e successivi): il README la presenta come il punto da cui la prenderanno.
+
+## [~] 16. Aggiornare il context layer
 
 Depends on: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
 
