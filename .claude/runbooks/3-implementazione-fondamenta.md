@@ -156,7 +156,7 @@ Context: none
 
 Done: 2026-10-21, commit `011423a` (5 files, +321/-1).
 
-## [~] 13. Task 11 — Selettore pesato del prossimo elemento
+## [x] 13. Task 11 — Selettore pesato del prossimo elemento
 
 Depends on: 12, 7
 
@@ -167,12 +167,15 @@ Context:
 /task-implement 11 --review --rounds 2
 ```
 
+Done: 2026-10-21, commit `995b7c8` (3 files, +122/-1).
+
 ## [ ] 14. Task 12 — Sessione di ripasso per frasi e vocaboli
 
 Depends on: 9, 12, 13, 7
 
 Context:
 - 2026-10-21 (from step 12): livelli `'da-ripassare' | 'normale' | 'consolidato'` (salvati così in `maies.progressi`). `src/ripasso/livelli.ts` esporta `LIVELLI`, `PESI`, `LIVELLO_INIZIALE`, `isLivello`, `nuovoLivello(attuale, esito)` con esito `'giusto' | 'sbagliato'`; `src/ripasso/archivio.ts` esporta `creaArchivio(salvataggio?)` → `{ leggiLivello, salvaLivello }` e `CHIAVE_PROGRESSI`. L'archivio legge la chiave una sola volta alla creazione; se la lettura fallisce lavora solo in memoria e non scrive più.
+- 2026-10-21 (from step 13): il selettore è `scegli<T extends Candidato>(candidati: readonly T[], esclusi: Iterable<string>, casualita: () => number): T | null`, con `Candidato = { id: string; livello: Livello }`; restituisce il candidato così com'è (si possono passare gli elementi del catalogo arricchiti con `livello`) e `null` quando non c'è nessuno. Esporta anche il tipo `Casualita`.
 
 ```prompt
 /task-implement 12 --review --rounds 2
