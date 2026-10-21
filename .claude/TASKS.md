@@ -236,7 +236,7 @@ Feature: dizionario-vocaboli
 
 ## 24. Elenco della grammatica e conversione del Markdown delle schede
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: package.json, package-lock.json, src/grammatica/elenco.ts, src/grammatica/markdown.ts, tests/elenco-grammatica.test.ts, tests/markdown.test.ts
 Preconditions: 1, 7
