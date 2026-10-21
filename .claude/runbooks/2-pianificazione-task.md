@@ -121,7 +121,7 @@ Con l'utente parla in italiano.
 
 Done: 2026-10-21, commit `c7f0029` (6 files, +256/-3). Task 24-27; gate passati da soli; `markdown-it` con `html: false` esplicito, perché il preset `commonmark` lascia attivo l'HTML grezzo.
 
-## [ ] 8. Creare i runbook di implementazione
+## [x] 8. Creare i runbook di implementazione
 
 Depends on: 1, 2, 3, 4, 5, 6, 7
 
@@ -143,6 +143,8 @@ Decisioni già prese con l'utente:
 
 Con l'utente parla in italiano.
 ```
+
+Done: 2026-10-21, commit `a897ca9` (3 files, +357/-1). Runbook `implementazione-fondamenta` (16 passi) e `implementazione-schermate` (15 passi), da eseguire in quest'ordine; gate passato da solo; i task nuovi sono `[MISSING]`, non `[TODO]`; `/task-setup` senza `--commit` può lasciare l'albero sporco al passo successivo.
 
 ## Do not re-propose
 
