@@ -136,7 +136,7 @@ Feature: ripetizione-errori
 
 ## 14. Ciclo dell'esercizio di traduzione
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/esercizi/ciclo.ts, tests/ciclo-esercizi.test.ts
 Preconditions: 7, 12
