@@ -76,7 +76,7 @@ Feature: aggiunta-materiale-lezione
 
 ## 8. Skill di progetto per aggiungere il materiale di una lezione
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: .claude/skills/aggiunta-materiale/SKILL.md
 Preconditions: 6
