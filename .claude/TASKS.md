@@ -256,7 +256,7 @@ Feature: schede-grammatica
 
 ## 26. Pagina della lezione con le schede e stile del testo
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/views/GrammaticaLezioneView.vue, src/router/index.ts, src/styles/, tests/grammatica-lezione.test.ts, tests/router.test.ts
 Preconditions: 2, 3, 7, 24, 25

@@ -1,9 +1,10 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { mount, flushPromises } from '@vue/test-utils'
 import App from '../src/App.vue'
 import { createAppRouter } from '../src/router'
 
 async function mountAt(path: string) {
+  vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
   const router = createAppRouter()
   await router.push(path)
   await router.isReady()
@@ -53,6 +54,14 @@ describe('router', () => {
     expect(wrapper.get('h1').text()).toBe('Grammatica')
     expect(wrapper.find('main .carta').exists()).toBe(true)
     expect(wrapper.text()).not.toContain('in arrivo')
+  })
+
+  it('renders the lesson page at /grammatica/<id>', async () => {
+    const { router, wrapper } = await mountAt('/grammatica/01-lezione')
+    expect(router.currentRoute.value.path).toBe('/grammatica/01-lezione')
+    expect(wrapper.find('a[aria-label="Torna all’elenco della grammatica"]').exists()).toBe(true)
+    expect(wrapper.find('main .carta').exists()).toBe(true)
+    expect(wrapper.get('a.voce-corrente').text()).toBe('Grammatica')
   })
 
   it('uses hash history', () => {

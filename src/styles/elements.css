@@ -658,3 +658,110 @@
   font-size: var(--type-body-size);
   line-height: calc(var(--type-lesson-line) + var(--space-1) / 2);
 }
+
+/* Grammatica: la pagina della lezione. */
+.grammatica-lezione {
+  gap: var(--space-5);
+}
+
+.grammatica-lezione-testata {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.scheda {
+  gap: var(--space-3);
+  padding: var(--space-6) var(--space-card);
+  color: var(--color-ink-body);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line);
+}
+
+.scheda-titolo {
+  margin-bottom: var(--space-1);
+  color: var(--color-ink-strong);
+  font-size: var(--type-sheet-title-size);
+  line-height: var(--type-sheet-title-line);
+  font-weight: var(--type-sheet-title-weight);
+}
+
+/* Il testo convertito dal Markdown: le regole valgono solo qui dentro. */
+.scheda-testo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.scheda-testo > * {
+  margin: 0;
+}
+
+/* Le intestazioni del testo restano sotto il titolo della scheda. */
+.scheda-testo h1,
+.scheda-testo h2,
+.scheda-testo h3,
+.scheda-testo h4,
+.scheda-testo h5,
+.scheda-testo h6 {
+  margin-top: var(--space-2);
+  color: var(--color-ink-strong);
+  font-size: calc(var(--type-body-size) * 16 / 15);
+  line-height: var(--type-body-line);
+  font-weight: 600;
+}
+
+.scheda-testo ul,
+.scheda-testo ol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-left: var(--space-5);
+}
+
+.scheda-testo li > ul,
+.scheda-testo li > ol {
+  margin-top: var(--space-1);
+}
+
+.scheda-testo li::marker {
+  color: var(--color-accent);
+}
+
+.scheda-testo strong {
+  color: var(--color-ink-strong);
+  font-weight: 600;
+}
+
+.scheda-testo em {
+  font-style: italic;
+}
+
+.scheda-testo blockquote {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-row-line);
+  border-radius: var(--radius-sm);
+  background: var(--color-field);
+  color: var(--color-ink-answer);
+}
+
+.scheda-testo blockquote > * {
+  margin: 0;
+}
+
+.scheda-testo blockquote strong {
+  color: var(--color-accent);
+}
+
+.scheda-testo code {
+  padding: 0 var(--space-1);
+  border: 1px solid var(--color-row-line);
+  background: var(--color-field);
+  color: var(--color-ink-answer);
+  font-family: inherit;
+  font-size: inherit;
+}
