@@ -176,7 +176,7 @@ Feature: allenamento-vocaboli
 
 ## 18. Ciclo dell'allenamento vocaboli
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/vocaboli/ciclo.ts, tests/ciclo-vocaboli.test.ts
 Preconditions: 7, 12, 14, 17
