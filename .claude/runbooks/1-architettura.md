@@ -23,7 +23,7 @@ Con l'utente parla in italiano.
 
 Done: 2026-10-21, commit `200fdb7` (3 files, +132/-0). Feature `scheletro-e-pubblicazione`; dominio, sorgente "GitHub Actions" e HTTPS di Pages vanno impostati a mano (GitHub ignora il CNAME con il deploy via Action); il sito si pubblica solo da `main`.
 
-## [ ] 2. Architettare l'aggiunta del materiale da una lezione
+## [x] 2. Architettare l'aggiunta del materiale da una lezione
 
 Depends on: 1
 
@@ -40,6 +40,8 @@ Il materiale non viene generato dall'app: è Claude a scrivere i file nel reposi
 
 Con l'utente parla in italiano.
 ```
+
+Done: 2026-10-21, commit `5f5a24c` (4 files, +238/-1). Feature `aggiunta-materiale-lezione`; include anche il catalogo dei contenuti di sola lettura, che le altre funzionalità adottano.
 
 ## [ ] 3. Architettare la ripetizione degli errori
 
