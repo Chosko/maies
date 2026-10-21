@@ -196,7 +196,7 @@ Feature: allenamento-vocaboli
 
 ## 20. Update documentation for feature `allenamento-vocaboli`
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: README.md
 Preconditions: 17, 18, 19

@@ -75,6 +75,30 @@ inoltra le azioni.
 Il perché di queste scelte è nel documento di feature
 [`.claude/domain/features/esercizi-traduzione.md`](.claude/domain/features/esercizi-traduzione.md).
 
+## Vocaboli
+
+La schermata Vocaboli propone parole italiane, mescolate tra tutte le
+lezioni, da tradurre in inglese. Qui l'esito lo decide l'app: la risposta è
+giusta se coincide con una delle traduzioni elencate in `en`, dopo aver
+normalizzato entrambe le parti allo stesso modo — senza badare a maiuscole,
+spazi superflui, apostrofi tipografici e punteggiatura finale. Poi Sara
+vede l'esito, la sua risposta, la traduzione principale, le altre accettate
+e il titolo della lezione, e con "Avanti" passa al vocabolo successivo. Ogni
+vocabolo lo sceglie la sessione di ripasso di tipo `'vocaboli'`, che
+registra anche l'esito; a ogni ingresso nella schermata si apre una sessione
+nuova. Senza vocaboli nel catalogo la schermata mostra un messaggio al posto
+dell'allenamento.
+
+La logica sta in `src/vocaboli/`: la verifica con la normalizzazione è
+`verifica()` in `src/vocaboli/verifica.ts`, unico punto in cui vive la
+regola di confronto, e il ciclo senza interfaccia è `creaCiclo()` in
+`src/vocaboli/ciclo.ts`. Il componente della rotta `#/vocaboli` è
+`src/views/VocaboliView.vue`, che mostra la fase corrente del ciclo e gli
+inoltra le azioni.
+
+Il perché di queste scelte è nel documento di feature
+[`.claude/domain/features/allenamento-vocaboli.md`](.claude/domain/features/allenamento-vocaboli.md).
+
 ## Dizionario
 
 La schermata Dizionario elenca tutti i vocaboli di tutte le lezioni, in
