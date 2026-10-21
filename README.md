@@ -16,6 +16,29 @@ Dopo `npm install`:
 | `npm run typecheck` | Controlla i tipi con `vue-tsc`. |
 | `npm run build` | Compila il sito statico in `dist/`. |
 
+## Contenuti
+
+Il materiale di ripasso sta in `contenuti/lezioni/`, un file JSON per
+lezione. Lo scrive solo Claude, con la skill di progetto
+[`aggiunta-materiale`](.claude/skills/aggiunta-materiale/SKILL.md), quando
+in chat arriva un PDF, una foto o un vocabolo. I PDF e le foto originali non
+entrano mai nel repository, che è pubblico.
+
+L'app legge le lezioni alla compilazione dal catalogo in sola lettura
+`src/contenuti/catalogo.ts`. Lo schema zod `src/contenuti/schema.ts` è
+l'unica definizione del formato: zod è una dipendenza di sviluppo e l'app
+importa dallo schema solo tipi, cosa che un test verifica.
+
+Il test di validità (`tests/contenuti.test.ts`) fa parte di `npm test`:
+rilegge la cartella con `node:fs` a ogni esecuzione, quindi controlla subito
+un file appena scritto, e un file malformato ferma la pubblicazione. I test
+che leggono i file girano nell'ambiente `node` di Vitest, con i tipi di
+`@types/node`.
+
+Il formato dei file, gli identificatori stabili e il perché sono nel
+documento di feature
+[`.claude/domain/features/aggiunta-materiale-lezione.md`](.claude/domain/features/aggiunta-materiale-lezione.md).
+
 ## Pubblicazione
 
 Ogni push su `main` avvia la GitHub Action `.github/workflows/deploy.yml`,

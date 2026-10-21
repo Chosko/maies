@@ -86,7 +86,7 @@ Feature: aggiunta-materiale-lezione
 
 ## 9. Update documentation for feature `aggiunta-materiale-lezione`
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: README.md
 Preconditions: 6, 7, 8
