@@ -1,6 +1,6 @@
 # Tasks
 
-Last task number: 5
+Last task number: 9
 
 ---
 
@@ -51,5 +51,45 @@ Target: claude
 Files: README.md
 Preconditions: 1, 2, 3, 4
 Feature: scheletro-e-pubblicazione
+
+---
+
+## 6. Schema delle lezioni e test di validità dei contenuti
+
+Status: [MISSING]
+Target: claude
+Files: package.json, package-lock.json, src/contenuti/schema.ts, src/contenuti/validazione.ts, tests/validazione.test.ts, tests/contenuti.test.ts
+Preconditions: 1
+Feature: aggiunta-materiale-lezione
+
+---
+
+## 7. Catalogo dei contenuti in sola lettura
+
+Status: [MISSING]
+Target: claude
+Files: src/contenuti/catalogo.ts, tests/catalogo.test.ts
+Preconditions: 1, 6
+Feature: aggiunta-materiale-lezione
+
+---
+
+## 8. Skill di progetto per aggiungere il materiale di una lezione
+
+Status: [MISSING]
+Target: claude
+Files: .claude/skills/aggiunta-materiale/SKILL.md
+Preconditions: 6
+Feature: aggiunta-materiale-lezione
+
+---
+
+## 9. Update documentation for feature `aggiunta-materiale-lezione`
+
+Status: [MISSING]
+Target: claude
+Files: README.md
+Preconditions: 6, 7, 8
+Feature: aggiunta-materiale-lezione
 
 ---

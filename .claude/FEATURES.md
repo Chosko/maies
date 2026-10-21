@@ -13,10 +13,10 @@ Tasks: 1, 2, 3, 4, 5
 
 ## aggiunta-materiale-lezione — Formato dei file di lezione, catalogo dei contenuti e procedimento di aggiunta
 
-Status: [NEW]
+Status: [PLANNED]
 Doc: .claude/domain/features/aggiunta-materiale-lezione.md
 Source: product-design.md § Aggiunta del materiale da una lezione
-Tasks: none
+Tasks: 6, 7, 8, 9
 
 ---
 
