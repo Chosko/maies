@@ -81,7 +81,7 @@ Context:
 
 Done: 2026-10-21, commit `4451399` (8 files, +608/-27). The screen title is "Vocaboli" as in the boards, not "Allenamento vocaboli"; no route is a placeholder any more, so the "still say the content is coming" test was removed.
 
-## [~] 7. Task 20 — Documentazione della feature allenamento-vocaboli
+## [x] 7. Task 20 — Documentazione della feature allenamento-vocaboli
 
 Depends on: 4, 5, 6
 
@@ -90,6 +90,8 @@ Context: none
 ```prompt
 /task-implement 20 --review
 ```
+
+Done: 2026-10-21, commit `c0e4376` (2 files, +24/-1).
 
 ## [x] 8. Task 21 — Voci ordinate e filtro di ricerca del dizionario
 
@@ -167,7 +169,7 @@ Context:
 
 Done: 2026-10-21, commit `04513f9` (6 files, +378/-2). The empty-state copy ("Questa lezione non esiste", "Questa lezione non ha schede") is the agent's own, as the feature document fixes none; the real catalogue is empty, so the router test checks the unknown-lesson state.
 
-## [ ] 14. Task 27 — Documentazione della feature schede-grammatica
+## [~] 14. Task 27 — Documentazione della feature schede-grammatica
 
 Depends on: 11, 12, 13
 
