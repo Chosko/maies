@@ -63,7 +63,8 @@ Depends on: 5
 
 Needs: agent+human
 
-Context: none
+Context:
+- 2026-10-21 (amend): esegui il passo come `/task-setup --attended --commit`, così lo scaffolding finisce in un commit e il passo 7 (`/context-build --attended`) trova l'albero pulito. È una richiesta dell'utente.
 
 ```prompt
 /task-setup --attended
