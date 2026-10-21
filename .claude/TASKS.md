@@ -56,7 +56,7 @@ Feature: scheletro-e-pubblicazione
 
 ## 6. Schema delle lezioni e test di validità dei contenuti
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: package.json, package-lock.json, src/contenuti/schema.ts, src/contenuti/validazione.ts, tests/validazione.test.ts, tests/contenuti.test.ts
 Preconditions: 1
