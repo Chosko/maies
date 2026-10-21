@@ -21,6 +21,7 @@ layer.
 | [features/esercizi-traduzione.md](./features/esercizi-traduzione.md) | Schermata degli esercizi: ciclo risposta, soluzione e autovalutazione, frase successiva dalla sessione di ripasso |
 | [features/allenamento-vocaboli.md](./features/allenamento-vocaboli.md) | Schermata dei vocaboli: verifica automatica con normalizzazione, ciclo risposta, esito e Avanti, vocabolo successivo dalla sessione di ripasso |
 | [features/dizionario-vocaboli.md](./features/dizionario-vocaboli.md) | Schermata del dizionario: vocaboli in ordine alfabetico, ricerca in italiano e inglese |
+| [features/schede-grammatica.md](./features/schede-grammatica.md) | Schermata della grammatica: lezioni con schede in ordine di arrivo, schede di una lezione in un'unica pagina, Markdown convertito con markdown-it senza HTML |
 
 ## Features
 

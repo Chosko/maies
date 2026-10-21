@@ -55,3 +55,12 @@ Source: product-design.md § Dizionario dei vocaboli
 Tasks: none
 
 ---
+
+## schede-grammatica — Schermata delle schede di grammatica divise per lezione
+
+Status: [NEW]
+Doc: .claude/domain/features/schede-grammatica.md
+Source: product-design.md § Schede di grammatica
+Tasks: none
+
+---
