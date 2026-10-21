@@ -20,17 +20,18 @@ Business modelling: out of scope
 | 1 — orient + stub | Detect greenfield/brownfield, create the documents | done |
 | 2 — interview | Product, users, experience, big decisions | done |
 | 3 — write-back | Fill product-design.md | done |
-| 4 — high-level features | Identify the feature set, user-experience angle | not started |
-| 5 — feature write-back | Record the feature set in product-design.md | not started |
+| 4 — high-level features | Identify the feature set, user-experience angle | done |
+| 5 — feature write-back | Record the feature set in product-design.md | done |
 | 6 — technical direction | Decide the product's technical foundations | not started |
 | 7 — technical write-back | Record the direction in technical-direction.md | not started |
 
 ## Current stage
 
-**PHASE 4 — high-level features: not started**
+**PHASE 6 — technical direction: in progress**
 
-Intervista chiusa e product-design.md scritto (prodotto, utente, flussi,
-decisioni). Prossimo passo: identificare le funzionalità di alto livello.
+product-design.md è completo, con sei funzionalità di alto livello.
+technical-direction.md è ancora uno stub. Prossimo passo: decidere stack,
+formato dei contenuti, salvataggio dei progressi e pubblicazione.
 
 ## Decisions worth keeping
 

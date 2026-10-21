@@ -94,5 +94,49 @@ con le loro traduzioni, come un piccolo dizionario.
 
 ## High-level features
 
-<Da scrivere in PHASE 5: una sottosezione per funzionalità, dal punto di
-vista dell'esperienza utente.>
+### Aggiunta del materiale da una lezione
+
+Quando Sara passa in chat un PDF, una foto o un elenco di vocaboli, Claude
+ne ricava il materiale di ripasso e lo aggiunge al repository nel formato
+che l'app legge: frasi italiane da tradurre con la traduzione inglese
+corretta e le varianti accettabili, vocaboli con le loro traduzioni, e una
+scheda di grammatica per ogni argomento trattato. Il materiale resta
+associato alla lezione da cui viene. Serve il flusso "Arriva una nuova
+lezione"; non è una schermata dell'app, ma il modo in cui l'app riceve
+contenuti nuovi.
+
+### Esercizi di traduzione
+
+Una sessione aperta di frasi in italiano da tradurre in inglese, mescolate
+tra tutte le lezioni. Sara scrive la sua traduzione, la conferma, vede la
+traduzione corretta con le varianti accettabili e segna da sola se era
+giusta o sbagliata; poi arriva la frase successiva, finché non decide di
+fermarsi. Serve il flusso "Ripasso con gli esercizi".
+
+### Allenamento vocaboli
+
+Una sessione aperta sui vocaboli di tutte le lezioni: l'app mostra una
+parola in italiano, Sara scrive la traduzione inglese e l'app la verifica
+da sola, accettando ogni traduzione prevista e ignorando maiuscole e spazi
+superflui; in caso di errore mostra la risposta corretta. Continua finché
+Sara non si ferma. Serve il flusso "Ripasso dei vocaboli".
+
+### Dizionario dei vocaboli
+
+La lista completa dei vocaboli con le loro traduzioni, da consultare fuori
+dall'allenamento. Serve il flusso "Ripasso dei vocaboli".
+
+### Schede di grammatica
+
+Le schede degli argomenti di grammatica, organizzate per lezione/PDF: Sara
+sceglie una lezione e legge le regole viste in quella lezione. Solo
+consultazione, senza esercizi propri. Serve il flusso "Ripasso della
+grammatica".
+
+### Ripetizione degli errori
+
+Su ogni dispositivo, l'app ricorda quali frasi e quali vocaboli Sara ha
+sbagliato e li ripropone più spesso negli esercizi di traduzione e
+nell'allenamento vocaboli, finché non li risponde correttamente. È
+condivisa dalle due sessioni di allenamento, che le chiedono cosa
+proporre dopo.
