@@ -246,7 +246,7 @@ Feature: schede-grammatica
 
 ## 25. Schermata Grammatica con l'elenco delle lezioni al posto del segnaposto
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/views/GrammaticaView.vue, tests/grammatica.test.ts, tests/router.test.ts
 Preconditions: 2, 3, 7, 15, 24

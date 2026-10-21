@@ -139,4 +139,9 @@
   .esercizio-esito-bottoni .bottone {
     width: 160px;
   }
+
+  /* Grammatica: l'elenco nella colonna della carta degli esercizi. */
+  .grammatica-voce {
+    padding: var(--space-6) calc(var(--space-5) * 2);
+  }
 }

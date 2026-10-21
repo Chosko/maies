@@ -34,12 +34,19 @@ describe('router', () => {
   it.each([
     ['/vocaboli', 'Allenamento vocaboli'],
     ['/dizionario', 'Dizionario dei vocaboli'],
-    ['/grammatica', 'Schede di grammatica'],
   ])('renders the screen at %s with its title', async (path, title) => {
     const { router, wrapper } = await mountAt(path)
     expect(router.currentRoute.value.path).toBe(path)
     expect(wrapper.get('h1').text()).toBe(title)
     expect(wrapper.text()).toContain('in arrivo')
+  })
+
+  it('renders the grammar screen at /grammatica', async () => {
+    const { router, wrapper } = await mountAt('/grammatica')
+    expect(router.currentRoute.value.path).toBe('/grammatica')
+    expect(wrapper.get('h1').text()).toBe('Grammatica')
+    expect(wrapper.find('main .carta').exists()).toBe(true)
+    expect(wrapper.text()).not.toContain('in arrivo')
   })
 
   it('uses hash history', () => {

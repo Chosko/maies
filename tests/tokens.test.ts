@@ -182,7 +182,7 @@ describe('placeholder screens', () => {
     },
   )
 
-  it.each(['/vocaboli', '/dizionario', '/grammatica'])(
+  it.each(['/vocaboli', '/dizionario'])(
     'still say the content is coming at %s',
     async (path) => {
       const router = createAppRouter()
