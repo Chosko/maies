@@ -41,7 +41,7 @@ Con l'utente parla in italiano.
 
 Done: 2026-10-21, commit `c3e5a76` (6 files, +208/-3). Task 6-9; una cartella `contenuti/lezioni/` assente vale come vuota, quindi niente `.gitkeep`.
 
-## [ ] 3. Scrivere i task della ripetizione degli errori
+## [x] 3. Scrivere i task della ripetizione degli errori
 
 Depends on: 2
 
@@ -54,6 +54,8 @@ Esegui `/task-add feature=<slug>` per ogni documento di feature nato dalla funzi
 
 Con l'utente parla in italiano.
 ```
+
+Done: 2026-10-21, commit `7e67d71` (6 files, +224/-3). Task 10-13; gate di approvazione passato da solo su istruzione dell'utente; il task 12 dipende anche dal catalogo (task 7).
 
 ## [ ] 4. Scrivere i task degli esercizi di traduzione
 
