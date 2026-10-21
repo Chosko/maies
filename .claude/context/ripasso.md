@@ -57,7 +57,8 @@ Tests: `tests/livelli.test.ts`, `tests/archivio.test.ts`,
 
 - [contenuti.md](./contenuti.md) — `catalogo`, `FraseCatalogo`,
   `VocaboloCatalogo` and the `idGlobale` key.
-- [app-shell.md](./app-shell.md) — the screens that will drive sessions.
+- [schermate.md](./schermate.md) — the Esercizi and Vocaboli cycles that
+  drive sessions.
 
 ## When to read the source
 

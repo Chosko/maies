@@ -3,7 +3,8 @@
 ## Overview
 
 The application frame every screen lives in: bootstrap, root component,
-routing, navigation bar, background, and the four screen views.
+routing, navigation bar and background. The screens themselves are in
+[schermate.md](./schermate.md).
 
 - `src/main.ts` — entry point: installs the design tokens, imports the three
   global stylesheets, mounts `App` with the router on `#app`.
@@ -12,26 +13,22 @@ routing, navigation bar, background, and the four screen views.
 - `src/components/NavBar.vue` — the four-item navigation bar.
 - `src/components/FondoBandiera.vue` — screen background with the
   line-drawn Union Jack SVG; renders its slot on top.
-- `src/views/EserciziView.vue`, `VocaboliView.vue`, `DizionarioView.vue`,
-  `GrammaticaView.vue` — one view per screen; each is a placeholder
-  (`main.schermata` > title > `section.carta` with "Contenuto in arrivo.").
-
 Tests: `tests/router.test.ts`, `tests/navbar.test.ts`, and the
-"placeholder screens" block of `tests/tokens.test.ts`.
+"placeholder screens" block of `tests/tokens.test.ts` (every route renders
+on the flag background inside a `main .carta`).
 
 ## Public API
 
 - `src/router/index.ts::createAppRouter(): Router` — builds a fresh router
   each call (tests rely on this to get isolated instances). Hash history.
   Routes: `/` → redirect `/esercizi`; named routes `esercizi`, `vocaboli`,
-  `dizionario`, `grammatica`; catch-all `/:pathMatch(.*)*` → redirect
-  `/esercizi`.
+  `dizionario`, `grammatica`, `grammatica-lezione` (`/grammatica/:id`);
+  catch-all `/:pathMatch(.*)*` → redirect `/esercizi`.
 - `src/components/NavBar.vue` — no props. Reads the current route via
   `useRoute()`. Renders `header.barra` with `span.barra-nome` ("maies") and
   `nav[aria-label="Sezioni"]` holding one `a.voce` per screen.
 - `src/components/FondoBandiera.vue` — no props, one default slot. Renders
   `div.fondo` > `svg.bandiera` (aria-hidden) + slot.
-- Views — no props, no state yet.
 
 ## Internal patterns
 
@@ -52,8 +49,8 @@ Tests: `tests/router.test.ts`, `tests/navbar.test.ts`, and the
   (`generaBandiera()`: perspective-warped cross, diagonals, border paths)
   and namespaces its SVG gradient/mask ids with `useId()` so several
   instances never collide.
-- The views reuse global classes (`schermata`, `titolo-schermata`, `carta`)
-  from the stylesheets, not scoped styles. No component uses `<style>`.
+- Components and views use global classes from the stylesheets, not
+  scoped styles. No component uses `<style>`.
 - UI text is Italian, addressed with "tu" (see design voice rules).
 
 ## Domain dependencies
@@ -63,17 +60,16 @@ Tests: `tests/router.test.ts`, `tests/navbar.test.ts`, and the
 - Screens, navigation and responsive layout:
   `.claude/domain/features/scheletro-e-pubblicazione.md`
   (§ Architecture, § Interfaces and contracts).
-- Each placeholder view will be replaced by its feature:
-  `.claude/domain/features/esercizi-traduzione.md`,
-  `allenamento-vocaboli.md`, `dizionario-vocaboli.md`,
-  `schede-grammatica.md`.
 - Icons, voice and screen look: `design/design-system.md`,
   `design/schermate/*.dc.html`.
 
 ## Cross-references
 
+- [schermate.md](./schermate.md) — the views the routes mount and their
+  logic modules.
+
 - [styles-tokens.md](./styles-tokens.md) — every class used here
-  (`fondo`, `bandiera*`, `barra*`, `voce*`, `schermata`, `carta`) is
+  (`fondo`, `bandiera*`, `barra*`, `voce*`) is
   styled there; phone vs computer layout lives there.
 - [build-test-deploy.md](./build-test-deploy.md) — how the tests mount the
   app (jsdom, `@vue/test-utils`) and why hash history suits GitHub Pages.
@@ -85,6 +81,7 @@ Tests: `tests/router.test.ts`, `tests/navbar.test.ts`, and the
 - Changing a navigation icon or the current-item rule (`corrente()`).
 - Changing the flag drawing or its gradients: `generaBandiera()` and the
   template of `src/components/FondoBandiera.vue`.
-- Implementing a screen: the matching file under `src/views/`, plus the
-  mount helper `mountAppAt()` in `tests/navbar.test.ts` for test patterns.
+- Mounting the whole app in a test: the helper `mountAppAt()` in
+  `tests/navbar.test.ts`. `tests/router.test.ts` also stubs
+  `window.scrollTo`, which the lesson page calls and jsdom lacks.
 - Changing what `main.ts` installs or mounts.

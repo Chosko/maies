@@ -14,9 +14,14 @@ properties. No component carries scoped styles.
   (glow background), `.bandiera*` (flag), `.schermata` (screen column),
   `.carta`, `.carta-pila` / `.carta-dietro` (card peeking behind),
   `.bottone`, `.bottone-principale`, `.bottone-secondario`, `.etichetta`,
-  `.campo`, `.cerchio-icona`, `.barra*` and `.voce*` (navigation).
+  `.campo`, `.cerchio-icona`, `.barra*` and `.voce*` (navigation); then one
+  commented block per screen: `.esercizio-*` (including the
+  `.esercizio-vuoto*` empty state every screen reuses), `.grammatica-*`,
+  `.dizionario-*`, `.vocabolo-*`, and the lesson page's
+  `.grammatica-lezione*`, `.scheda*`.
 - `src/styles/computer.css` — the computer variants, all inside one
-  `@media (min-width: 768px)` block.
+  `@media (min-width: 768px)` block, shared elements first, then a block for
+  each screen that changes on computer.
 - `design/tokens.json` — token source (copied from the design system; edit
   only when the design changes).
 
@@ -59,6 +64,9 @@ Other conventions:
   trapped in a scroll container.
 - The `.carta-pila` peek effect needs the front and back cards in the same
   container (comment in `elements.css`).
+- Rules for the HTML converted from Markdown are all scoped under
+  `.scheda-testo` (`.scheda-testo h6`, `ol`, `blockquote`, `code`, …), never
+  bare element selectors.
 - Global stylesheets are imported in `main.ts` order: base, elements,
   computer; the token `<style>` is prepended so it comes first.
 
@@ -74,8 +82,10 @@ Other conventions:
 
 ## Cross-references
 
-- [app-shell.md](./app-shell.md) — the components and views that use these
+- [app-shell.md](./app-shell.md) — the shell components that use these
   classes.
+- [schermate.md](./schermate.md) — the screen views that use the
+  per-screen classes.
 - [build-test-deploy.md](./build-test-deploy.md) — `css: true` in the Vitest
   config, needed by the stylesheet tests.
 
@@ -86,5 +96,7 @@ Other conventions:
 - Adding or restyling a shared element (card, button, field): the matching
   block in `src/styles/elements.css`, then its override in `computer.css`.
 - Any change to the computer layout: `src/styles/computer.css`.
+- Restyling one screen: its commented block in `elements.css`, then the
+  same screen's block in `computer.css`, if it has one.
 - A stylesheet test fails: the parsing helpers (`propertyValues`,
   `topLevelParts`, `bareLengths`) at the top of `tests/tokens.test.ts`.

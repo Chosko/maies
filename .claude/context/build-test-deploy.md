@@ -6,7 +6,7 @@ Tooling and publication. No server: the build is a static site.
 
 - `package.json` — scripts `dev` (vite), `test` (vitest run), `typecheck`
   (vue-tsc --noEmit), `build` (vite build → `dist/`). Runtime deps: `vue`,
-  `vue-router`; `zod` and `@types/node` are dev-only.
+  `vue-router`, `markdown-it`; `zod` and `@types/node` are dev-only.
 - `vite.config.ts` — `base: '/'`, `@vitejs/plugin-vue`; Vitest block:
   `environment: 'jsdom'`, `include: ['tests/**/*.test.ts']`, `css: true`.
 - `tsconfig.json` — strict, bundler resolution, `verbatimModuleSyntax`
@@ -19,8 +19,8 @@ Tooling and publication. No server: the build is a static site.
   typecheck, test, build, upload `dist/` and deploy to GitHub Pages.
 - `tests/` — flat folder of `*.test.ts`, one per module or area, named
   after it (`router`, `navbar`, `tokens`, `catalogo`, `sessione`, …).
-- `README.md` — commands, where lesson content and progress live, and the
-  one-time Pages setup (Italian).
+- `README.md` — commands, where lesson content and progress live, one
+  section per screen, and the one-time Pages setup (Italian).
 
 `dist/` and `node_modules/` are git-ignored build output.
 
