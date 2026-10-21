@@ -17,7 +17,7 @@ Context: none
 
 Done: 2026-10-21, commit `501385d` (3 files, +306/-1). The cycle starts in `'nessun-materiale'` until `avvio()` is called — a state the feature document does not describe.
 
-## [~] 2. Task 15 — Schermata Esercizi al posto del segnaposto
+## [x] 2. Task 15 — Schermata Esercizi al posto del segnaposto
 
 Depends on: 1
 
@@ -27,6 +27,8 @@ Context:
 ```prompt
 /task-implement 15 --review
 ```
+
+Done: 2026-10-21, commit `67a15ff` (7 files, +551/-8). The screen title is "Esercizi" as in the boards, not the placeholder's "Esercizi di traduzione".
 
 ## [ ] 3. Task 16 — Documentazione della feature esercizi-traduzione
 
@@ -69,6 +71,7 @@ Depends on: 2, 5
 
 Context:
 - 2026-10-21 (from step 5): `creaCiclo` in `src/vocaboli/ciclo.ts` exposes phases `'in-attesa-di-risposta' | 'esito-mostrato' | 'nessun-materiale'` and a state of `fase`, `vocabolo`, `testo`, `esito` (the `Esito` type, `'giusto' | 'sbagliato'`) and `titoloLezione`.
+- 2026-10-21 (from step 2): the Esercizi screen takes its cycle as a prop `creaCiclo?: () => CicloEsercizio` defaulting to the app's cycle (not `provide`) — a pattern the other screens can follow. `tests/tokens.test.ts` "placeholder screens" checks "in arrivo" only for the routes still placeholders: drop this route from that list. Screen styles go at the end of `src/styles/elements.css` and in the 768px block of `src/styles/computer.css`, where parallel steps may conflict on rebase.
 
 ```prompt
 /task-implement 19 --review
@@ -100,7 +103,8 @@ Done: 2026-10-21, commit `40733b9` (5 files, +174/-1).
 
 Depends on: 2, 8
 
-Context: none
+Context:
+- 2026-10-21 (from step 2): the Esercizi screen takes its cycle as a prop `creaCiclo?: () => CicloEsercizio` defaulting to the app's cycle (not `provide`) — a pattern the other screens can follow. `tests/tokens.test.ts` "placeholder screens" checks "in arrivo" only for the routes still placeholders: drop this route from that list. Screen styles go at the end of `src/styles/elements.css` and in the 768px block of `src/styles/computer.css`, where parallel steps may conflict on rebase.
 
 ```prompt
 /task-implement 22 --review
@@ -134,6 +138,7 @@ Depends on: 2, 11
 
 Context:
 - 2026-10-21 (from step 11): `elenco()` returns `VoceGrammatica` entries shaped `{ id, title, schede: string[] }` (`title` as in `LezioneCatalogo`); task 25 uses these names.
+- 2026-10-21 (from step 2): the Esercizi screen takes its cycle as a prop `creaCiclo?: () => CicloEsercizio` defaulting to the app's cycle (not `provide`) — a pattern the other screens can follow. `tests/tokens.test.ts` "placeholder screens" checks "in arrivo" only for the routes still placeholders: drop this route from that list. Screen styles go at the end of `src/styles/elements.css` and in the 768px block of `src/styles/computer.css`, where parallel steps may conflict on rebase.
 
 ```prompt
 /task-implement 25 --review
