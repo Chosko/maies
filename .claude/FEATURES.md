@@ -58,9 +58,9 @@ Tasks: 21, 22, 23
 
 ## schede-grammatica — Schermata delle schede di grammatica divise per lezione
 
-Status: [NEW]
+Status: [PLANNED]
 Doc: .claude/domain/features/schede-grammatica.md
 Source: product-design.md § Schede di grammatica
-Tasks: none
+Tasks: 24, 25, 26, 27
 
 ---

@@ -1,6 +1,6 @@
 # Tasks
 
-Last task number: 23
+Last task number: 27
 
 ---
 
@@ -231,5 +231,45 @@ Target: claude
 Files: README.md
 Preconditions: 21, 22
 Feature: dizionario-vocaboli
+
+---
+
+## 24. Elenco della grammatica e conversione del Markdown delle schede
+
+Status: [MISSING]
+Target: claude
+Files: package.json, package-lock.json, src/grammatica/elenco.ts, src/grammatica/markdown.ts, tests/elenco-grammatica.test.ts, tests/markdown.test.ts
+Preconditions: 1, 7
+Feature: schede-grammatica
+
+---
+
+## 25. Schermata Grammatica con l'elenco delle lezioni al posto del segnaposto
+
+Status: [MISSING]
+Target: claude
+Files: src/views/GrammaticaView.vue, tests/grammatica.test.ts, tests/router.test.ts
+Preconditions: 2, 3, 7, 24
+Feature: schede-grammatica
+
+---
+
+## 26. Pagina della lezione con le schede e stile del testo
+
+Status: [MISSING]
+Target: claude
+Files: src/views/GrammaticaLezioneView.vue, src/router/index.ts, src/styles/, tests/grammatica-lezione.test.ts, tests/router.test.ts
+Preconditions: 2, 3, 7, 24, 25
+Feature: schede-grammatica
+
+---
+
+## 27. Update documentation for feature `schede-grammatica`
+
+Status: [MISSING]
+Target: claude
+Files: README.md
+Preconditions: 24, 25, 26
+Feature: schede-grammatica
 
 ---
