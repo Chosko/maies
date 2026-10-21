@@ -46,7 +46,7 @@ Feature: scheletro-e-pubblicazione
 
 ## 5. Update documentation for feature `scheletro-e-pubblicazione`
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: README.md
 Preconditions: 1, 2, 3, 4
