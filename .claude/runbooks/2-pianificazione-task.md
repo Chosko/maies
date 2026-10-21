@@ -57,7 +57,7 @@ Con l'utente parla in italiano.
 
 Done: 2026-10-21, commit `7e67d71` (6 files, +224/-3). Task 10-13; gate di approvazione passato da solo su istruzione dell'utente; il task 12 dipende anche dal catalogo (task 7).
 
-## [ ] 4. Scrivere i task degli esercizi di traduzione
+## [x] 4. Scrivere i task degli esercizi di traduzione
 
 Depends on: 3
 
@@ -70,6 +70,8 @@ Esegui `/task-add feature=<slug>` per ogni documento di feature nato dalla funzi
 
 Con l'utente parla in italiano.
 ```
+
+Done: 2026-10-21, commit `096b664` (5 files, +180/-3). Task 14-16; gate passato da solo; il titolo della lezione sopra la domanda segue la tavola `EserciziDomanda`, non il documento di feature.
 
 ## [ ] 5. Scrivere i task dell'allenamento vocaboli
 
