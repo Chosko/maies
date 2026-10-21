@@ -169,7 +169,7 @@ Context:
 
 Done: 2026-10-21, commit `04513f9` (6 files, +378/-2). The empty-state copy ("Questa lezione non esiste", "Questa lezione non ha schede") is the agent's own, as the feature document fixes none; the real catalogue is empty, so the router test checks the unknown-lesson state.
 
-## [~] 14. Task 27 — Documentazione della feature schede-grammatica
+## [x] 14. Task 27 — Documentazione della feature schede-grammatica
 
 Depends on: 11, 12, 13
 
@@ -178,6 +178,8 @@ Context: none
 ```prompt
 /task-implement 27 --review
 ```
+
+Done: 2026-10-21, commit `249a730` (2 files, +20/-1).
 
 ## [ ] 15. Aggiornare il context layer
 

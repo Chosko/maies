@@ -40,6 +40,6 @@ Status: [RUNNING]
 File: .claude/runbooks/4-implementazione-schermate.md
 Created: 2026-10-21
 Source: runbook pianificazione-task
-Steps: 13/15
+Steps: 14/15
 
 ---
