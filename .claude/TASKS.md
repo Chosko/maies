@@ -96,7 +96,7 @@ Feature: aggiunta-materiale-lezione
 
 ## 10. Livelli e archivio dei progressi nel browser
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/ripasso/livelli.ts, src/ripasso/archivio.ts, tests/livelli.test.ts, tests/archivio.test.ts
 Preconditions: 1
