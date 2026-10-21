@@ -4,6 +4,11 @@ Interaction policy: unattended
 Pipeline dashboard policy: on
 Parallel policy: 4
 
+For any task involving the codebase, start by reading
+`.claude/context/INDEX.md`. Then read only the context files relevant to
+your task. Open source files only when the relevant context file's "When to
+read the source" section indicates it is necessary.
+
 For product and domain knowledge — what this product is, how its
 features are designed, and why the architecture is what it is — read
 `.claude/domain/INDEX.md`, then only the domain files relevant to your
