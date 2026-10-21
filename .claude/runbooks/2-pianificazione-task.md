@@ -25,7 +25,7 @@ Con l'utente parla in italiano.
 
 Done: 2026-10-21, commit `7b085e8` (7 files, +278/-3). Task 1-5; creata la cartella `.claude/tasks/`, che git non aveva conservato (`/task-setup` resta al suo posto nel piano); punto di passaggio telefono/computer a 768px, non indicato dal design.
 
-## [ ] 2. Scrivere i task dell'aggiunta del materiale da una lezione
+## [x] 2. Scrivere i task dell'aggiunta del materiale da una lezione
 
 Depends on: 1
 
@@ -38,6 +38,8 @@ Esegui `/task-add feature=<slug>` per ogni documento di feature nato dalla funzi
 
 Con l'utente parla in italiano.
 ```
+
+Done: 2026-10-21, commit `c3e5a76` (6 files, +208/-3). Task 6-9; una cartella `contenuti/lezioni/` assente vale come vuota, quindi niente `.gitkeep`.
 
 ## [ ] 3. Scrivere i task della ripetizione degli errori
 
