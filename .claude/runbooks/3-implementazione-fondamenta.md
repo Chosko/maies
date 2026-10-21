@@ -17,7 +17,7 @@ Context: none
 
 Done: 2026-10-21, commit `3027988` (15 files, +2835/-1). TypeScript fissato a `~6.0.3` (vue-tsc non supporta TS 7) e jsdom a `^29` (la 30 chiede Node ≥ 22.22.2).
 
-## [ ] 2. Task 2 — Stile di base generato dai token del design
+## [x] 2. Task 2 — Stile di base generato dai token del design
 
 Depends on: 1
 
@@ -27,11 +27,14 @@ Context: none
 /task-implement 2 --review
 ```
 
+Done: 2026-10-21, commit `a23d4b0` (14 files, +632/-17). Aggiunti `src/components/FondoBandiera.vue` (fondo e bandiera, con slot) e `css: true` nella config di Vitest, non previsti dal task.
+
 ## [ ] 3. Task 3 — Barra di navigazione e layout responsivo del guscio
 
 Depends on: 1, 2
 
-Context: none
+Context:
+- 2026-10-21 (from step 2): esiste un solo blocco `@media (min-width: 768px)`, in `src/styles/computer.css`, e un test fa fallire la suite se ne compare un secondo: le regole della barra per il computer vanno lì. Un test di guardia rifiuta colori, font, raggi e spazi scritti a mano negli stili: usare le variabili `--color-*`, `--font-sans`, `--type-*`, `--space-*`, `--radius-*`. `FondoBandiera` avvolge per ora ciascuna delle quattro viste: il guscio probabilmente deve spostarlo in `App.vue`.
 
 ```prompt
 /task-implement 3 --review
@@ -46,6 +49,7 @@ Needs: agent+human
 Context:
 - 2026-10-21 (from step 1): il progetto è stato verificato su Node 22.22.0; jsdom 30 e alcune dipendenze indirette chiedono Node ≥ 22.22.2, quindi la Action può usare Node 22 (meglio l'ultima 22.x) ma non deve presupporre un Node più vecchio.
 - 2026-10-21 (dall'utente): GitHub Pages è già configurato nelle impostazioni del repository; l'intervento manuale del task 4 è già fatto e non va richiesto. Scrivere solo il workflow. La verifica con `gh api repos/Chosko/maies/pages` non è possibile da una sessione cloud (il proxy blocca quel percorso): annotarlo nel report senza fermarsi.
+- 2026-10-21 (dall'utente): la sorgente di Pages era "Deploy from a branch"; l'utente l'ha impostata su "GitHub Actions" (confermato), come prevede il task. Il workflow resta quello del task (azioni ufficiali di Pages, nessun branch `gh-pages`).
 
 ```prompt
 /task-implement 4 --review
