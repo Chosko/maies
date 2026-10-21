@@ -5,7 +5,7 @@ Last step number: 8
 Execution policy: attended
 Sequencing: lo scheletro e il formato dei contenuti vengono prima perché ogni altra funzionalità li usa; la ripetizione prima delle sessioni che la interrogano.
 
-## [ ] 1. Architettare lo scheletro dell'app e la pubblicazione
+## [x] 1. Architettare lo scheletro dell'app e la pubblicazione
 
 Depends on: none
 
@@ -20,6 +20,8 @@ Questa funzionalità non è una sezione di `.claude/domain/product-design.md`: �
 
 Con l'utente parla in italiano.
 ```
+
+Done: 2026-10-21, commit `200fdb7` (3 files, +132/-0). Feature `scheletro-e-pubblicazione`; dominio, sorgente "GitHub Actions" e HTTPS di Pages vanno impostati a mano (GitHub ignora il CNAME con il deploy via Action); il sito si pubblica solo da `main`.
 
 ## [ ] 2. Architettare l'aggiunta del materiale da una lezione
 

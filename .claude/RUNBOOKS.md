@@ -10,7 +10,7 @@ Status: [PENDING]
 File: .claude/runbooks/1-architettura.md
 Created: 2026-10-21
 Source: /product-design run
-Steps: 0/8
+Steps: 1/8
 
 ---
 
