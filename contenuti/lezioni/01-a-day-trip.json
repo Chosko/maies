@@ -1,0 +1,335 @@
+{
+  "id": "01-a-day-trip",
+  "title": "Una gita di un giorno: il futuro e le proposte",
+  "sentences": [
+    {
+      "id": "f01",
+      "it": "Hai freddo? Chiudo la finestra.",
+      "en": "Are you cold? I'll close the window.",
+      "alternatives": [
+        "Are you cold? I will close the window.",
+        "Are you cold? I'll shut the window.",
+        "Are you cold? I will shut the window."
+      ]
+    },
+    {
+      "id": "f02",
+      "it": "Il telefono sta suonando: rispondo io!",
+      "en": "The phone is ringing: I'll answer it!",
+      "alternatives": [
+        "The phone is ringing: I will answer it!",
+        "The phone's ringing: I'll answer it!"
+      ]
+    },
+    {
+      "id": "f03",
+      "it": "Ottima idea! Porto io i panini.",
+      "en": "Great idea! I'll bring the sandwiches.",
+      "alternatives": [
+        "Great idea! I will bring the sandwiches.",
+        "That's a great idea! I'll bring the sandwiches."
+      ]
+    },
+    {
+      "id": "f04",
+      "it": "Quest'estate Marco ha intenzione di visitare Londra con i suoi genitori.",
+      "en": "Marco is going to visit London with his parents this summer.",
+      "alternatives": [
+        "This summer Marco is going to visit London with his parents."
+      ]
+    },
+    {
+      "id": "f05",
+      "it": "L'anno prossimo ho intenzione di comprare una macchina nuova.",
+      "en": "I'm going to buy a new car next year.",
+      "alternatives": [
+        "I am going to buy a new car next year.",
+        "Next year I'm going to buy a new car.",
+        "Next year I am going to buy a new car."
+      ]
+    },
+    {
+      "id": "f06",
+      "it": "I tuoi amici verranno alla festa? No, non verranno.",
+      "en": "Are your friends going to come to the party? No, they're not.",
+      "alternatives": [
+        "Are your friends going to come to the party? No, they aren't.",
+        "Are your friends going to come to the party? No, they are not."
+      ]
+    },
+    {
+      "id": "f07",
+      "it": "Stasera ceno al ristorante con mia sorella.",
+      "en": "I'm having dinner at a restaurant with my sister tonight.",
+      "alternatives": [
+        "Tonight I'm having dinner at a restaurant with my sister.",
+        "I am having dinner at a restaurant with my sister tonight."
+      ]
+    },
+    {
+      "id": "f08",
+      "it": "Sabato vado in spiaggia con la mia migliore amica.",
+      "en": "I'm going to the beach with my best friend on Saturday.",
+      "alternatives": [
+        "On Saturday I'm going to the beach with my best friend.",
+        "I am going to the beach with my best friend on Saturday."
+      ]
+    },
+    {
+      "id": "f09",
+      "it": "Mi dispiace, domani vedo i miei nonni.",
+      "en": "I'm sorry, I'm seeing my grandparents tomorrow.",
+      "alternatives": [
+        "I'm sorry, I'm meeting my grandparents tomorrow.",
+        "Sorry, I'm seeing my grandparents tomorrow.",
+        "I am sorry, I am seeing my grandparents tomorrow."
+      ]
+    },
+    {
+      "id": "f10",
+      "it": "Hai programmi per domenica?",
+      "en": "Do you have any plans for Sunday?",
+      "alternatives": [
+        "Have you got any plans for Sunday?",
+        "Do you have plans for Sunday?"
+      ]
+    },
+    {
+      "id": "f11",
+      "it": "Andiamo a Roma per una gita di un giorno!",
+      "en": "Let's go to Rome for a day trip!",
+      "alternatives": [
+        "Let's go on a day trip to Rome!",
+        "Let's go to Rome for the day!"
+      ]
+    },
+    {
+      "id": "f12",
+      "it": "Potremmo visitare il museo principale.",
+      "en": "We could visit the main museum.",
+      "alternatives": [
+        "We could go to the main museum."
+      ]
+    },
+    {
+      "id": "f13",
+      "it": "Che ne dici di partire domenica mattina?",
+      "en": "What about leaving on Sunday morning?",
+      "alternatives": [
+        "How about leaving on Sunday morning?"
+      ]
+    },
+    {
+      "id": "f14",
+      "it": "Perché non invitiamo anche i tuoi cugini?",
+      "en": "Why don't we invite your cousins too?",
+      "alternatives": [
+        "Why don't we invite your cousins as well?",
+        "Why don't we also invite your cousins?"
+      ]
+    },
+    {
+      "id": "f15",
+      "it": "Andiamo al cinema stasera?",
+      "en": "Shall we go to the cinema tonight?",
+      "alternatives": [
+        "Shall we go to the cinema this evening?",
+        "Shall we go to the movies tonight?"
+      ]
+    },
+    {
+      "id": "f16",
+      "it": "Pensi che dovremmo prenotare un tavolo?",
+      "en": "Do you think we should book a table?",
+      "alternatives": [
+        "Do you think we should reserve a table?"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "v01",
+      "it": "gita di un giorno",
+      "en": [
+        "day trip"
+      ]
+    },
+    {
+      "id": "v02",
+      "it": "finestra",
+      "en": [
+        "window"
+      ]
+    },
+    {
+      "id": "v03",
+      "it": "chiudere",
+      "en": [
+        "to close",
+        "close",
+        "to shut",
+        "shut"
+      ]
+    },
+    {
+      "id": "v04",
+      "it": "stazione",
+      "en": [
+        "station"
+      ]
+    },
+    {
+      "id": "v05",
+      "it": "venire a prendere (qualcuno)",
+      "en": [
+        "to come and get",
+        "come and get",
+        "to pick up",
+        "pick up"
+      ]
+    },
+    {
+      "id": "v06",
+      "it": "fidanzata",
+      "en": [
+        "girlfriend"
+      ]
+    },
+    {
+      "id": "v07",
+      "it": "genitori",
+      "en": [
+        "parents"
+      ]
+    },
+    {
+      "id": "v08",
+      "it": "vacanze",
+      "en": [
+        "holidays",
+        "holiday",
+        "vacation"
+      ]
+    },
+    {
+      "id": "v09",
+      "it": "festa",
+      "en": [
+        "party"
+      ]
+    },
+    {
+      "id": "v10",
+      "it": "stasera",
+      "en": [
+        "tonight",
+        "this evening"
+      ]
+    },
+    {
+      "id": "v11",
+      "it": "incontrare",
+      "en": [
+        "to meet",
+        "meet"
+      ]
+    },
+    {
+      "id": "v12",
+      "it": "cena",
+      "en": [
+        "dinner"
+      ]
+    },
+    {
+      "id": "v13",
+      "it": "programmi",
+      "en": [
+        "plans"
+      ]
+    },
+    {
+      "id": "v14",
+      "it": "fine settimana",
+      "en": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "v15",
+      "it": "spiaggia",
+      "en": [
+        "beach"
+      ]
+    },
+    {
+      "id": "v16",
+      "it": "migliore amico",
+      "en": [
+        "best friend"
+      ]
+    },
+    {
+      "id": "v17",
+      "it": "cattedrale",
+      "en": [
+        "cathedral"
+      ]
+    },
+    {
+      "id": "v18",
+      "it": "principale",
+      "en": [
+        "main"
+      ]
+    },
+    {
+      "id": "v19",
+      "it": "invitare",
+      "en": [
+        "to invite",
+        "invite"
+      ]
+    },
+    {
+      "id": "v20",
+      "it": "sabato",
+      "en": [
+        "Saturday"
+      ]
+    },
+    {
+      "id": "v21",
+      "it": "decisione spontanea",
+      "en": [
+        "spontaneous decision"
+      ]
+    },
+    {
+      "id": "v22",
+      "it": "intenzione",
+      "en": [
+        "intention"
+      ]
+    },
+    {
+      "id": "v23",
+      "it": "suggerimento",
+      "en": [
+        "suggestion"
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g01",
+      "title": "Il futuro: will, going to e present continuous",
+      "body": "In inglese il futuro si esprime in tre modi, a seconda di **che cosa** stai dicendo.\n\n## Decisioni spontanee: *will* + infinito\n\nSi usa quando decidi qualcosa **nel momento in cui parli**. Di solito si contrae: *I'll*, *you'll*, *he'll*…\n\n- *It's so cold in here!* — *Sorry! I'll close the window.*\n- *Mum, I'm at the station!* — *Oh ok, Dad will come and get you.*\n\n## Intenzioni: *going to* + infinito\n\nSi usa per qualcosa che **hai intenzione** di fare, già deciso ma non ancora organizzato.\n\n- *Tom is going to go to Paris with his girlfriend this summer.*\n- *Are your parents going to come for the holidays?* — *No, they're not.*\n\n## Programmi fissi: present continuous\n\nSoggetto + *to be* + verbo in *-ing*. Si usa per un programma **già organizzato**, spesso con un giorno o un'ora.\n\n- *Are you coming to the party tonight?* — *No, I'm not. I'm meeting some friends for dinner.*\n- *Do you have any plans for the weekend?* — *Yes, I'm going to the beach with my best friend!*\n\n## Attenzione\n\n| Frase | Che cosa esprime |\n| --- | --- |\n| *I'm going to the beach* | programma fisso (present continuous) |\n| *I'm going to go to the beach* | intenzione (*going to* + infinito) |\n\nIn italiano spesso basta il presente (\"domani vado al mare\"): in inglese bisogna scegliere la forma giusta."
+    },
+    {
+      "id": "g02",
+      "title": "Fare proposte",
+      "body": "Per proporre qualcosa a qualcuno si usano queste espressioni:\n\n- *Let's…* — Facciamo…: *Let's go to Vienna for the day!*\n- *We could…* — Potremmo…: *We could go to the main cathedral.*\n- *Why don't we…?* — Perché non…?: *Why don't we invite them to come too?*\n- *What about…?* — Che ne dici di…? Dopo *What about* il verbo va in *-ing*: *What about going on Saturday?*\n- *Shall we…?* — …?: *Shall we go to the cinema?*\n- *Do you think we should…?* — Pensi che dovremmo…?\n\nPer rispondere:\n\n- per accettare: *That's a great idea!*, *Ok, that sounds great!*\n- per rifiutare con gentilezza: *I'm sorry, I'm meeting friends that day.*"
+    }
+  ]
+}
