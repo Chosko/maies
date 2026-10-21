@@ -87,7 +87,7 @@ Context:
 
 Done: 2026-10-21, commit `5eddc4b` (4 files, +144/-0). Il backlog esisteva già: aggiunti solo i quattro file di `.claude/external/`, con script di test che lanciano `npm test`.
 
-## [ ] 7. Creare il context layer
+## [x] 7. Creare il context layer
 
 Depends on: 6
 
@@ -102,7 +102,9 @@ Context:
 /context-build --attended
 ```
 
-## [ ] 8. Task 6 — Schema delle lezioni e test di validità dei contenuti
+Done: 2026-10-21, commit `38e3fc2` (5 files, +275/-0). Layout flat: `INDEX.md`, `app-shell.md`, `styles-tokens.md`, `build-test-deploy.md`; `design/` resta fuori dal layer come riferimento canonico.
+
+## [~] 8. Task 6 — Schema delle lezioni e test di validità dei contenuti
 
 Depends on: 1, 7
 
@@ -142,7 +144,7 @@ Context: none
 /task-implement 9 --review
 ```
 
-## [ ] 12. Task 10 — Livelli e archivio dei progressi nel browser
+## [~] 12. Task 10 — Livelli e archivio dei progressi nel browser
 
 Depends on: 1, 7
 
