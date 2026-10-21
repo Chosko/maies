@@ -105,7 +105,7 @@ Con l'utente parla in italiano.
 
 Done: 2026-10-21, commit `911805a` (5 files, +191/-3). Task 21-23; gate passati da soli.
 
-## [ ] 7. Scrivere i task delle schede di grammatica
+## [x] 7. Scrivere i task delle schede di grammatica
 
 Depends on: 2
 
@@ -118,6 +118,8 @@ Esegui `/task-add feature=<slug>` per ogni documento di feature nato dalla funzi
 
 Con l'utente parla in italiano.
 ```
+
+Done: 2026-10-21, commit `c7f0029` (6 files, +256/-3). Task 24-27; gate passati da soli; `markdown-it` con `html: false` esplicito, perché il preset `commonmark` lascia attivo l'HTML grezzo.
 
 ## [ ] 8. Creare i runbook di implementazione
 
