@@ -78,6 +78,9 @@ Vue Test Utils. È una schermata della parte "Interfaccia" della topologia.
     è lo stesso dopo una risposta giusta e dopo una sbagliata.
   - **Nessun materiale:** un messaggio che dice che non ci sono ancora
     vocaboli su cui allenarsi.
+  - **Aspetto:** segue `design/schermate/VocaboliDomanda.dc.html`,
+    `VocaboliGiusta.dc.html` e `VocaboliSbagliata.dc.html`; il messaggio
+    senza materiale ha la forma di `EserciziVuoto.dc.html`.
 
 ## Data and state
 

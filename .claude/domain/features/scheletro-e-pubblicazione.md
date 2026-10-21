@@ -58,13 +58,20 @@ in modalità hash, Vite, Vitest con Vue Test Utils, GitHub Pages.
   schermate e sottorotte.
 - **Barra di navigazione** — un componente con le quattro voci, che
   evidenzia quella corrente. Sul telefono è una barra di schede fissa in
-  basso, a portata di pollice; sul computer si sposta in alto o di lato.
-  Stesse voci, stesso ordine, su ogni schermo.
+  basso, a portata di pollice; sul computer è una pillola in alto a destra
+  accanto al nome "maies". Stesse voci, stesso ordine, su ogni schermo.
+  L'aspetto è quello delle schermate in `design/schermate/`: la barra in
+  basso in qualunque schermata da telefono, quella in alto in
+  `EserciziComputer.dc.html`.
 - **Schermate segnaposto** — un componente per schermata, sostituito dalla
   funzionalità che ne porta il contenuto.
-- **Stile di base** — CSS semplice con variabili per colori, spazi e
-  caratteri, scritto mobile-first, con un solo punto di passaggio tra
-  layout telefono e computer. Le schermate future ne usano le variabili.
+- **Stile di base** — CSS semplice, scritto mobile-first, con un solo punto
+  di passaggio tra layout telefono e computer. Una variabile CSS per ogni
+  token di `design/tokens.json`, generata dal file e non trascritta a mano,
+  così una copia nuova del design aggiorna lo stile; il carattere Poppins;
+  gli elementi comuni descritti in `design/design-system.md` (fondo con
+  bagliore e bandiera a linee, carte, bottoni, campi, cerchi icona), che le
+  schermate future riusano.
 - **Pipeline di pubblicazione** — una GitHub Action che, a ogni push sul
   branch principale (`main`), installa le dipendenze, esegue il controllo
   dei tipi e i test, compila e pubblica su GitHub Pages. Se uno di questi

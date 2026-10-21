@@ -70,7 +70,9 @@ parte "Interfaccia" della topologia.
   scheletro e leggibili su telefono e computer.
 
 La barra di navigazione evidenzia Grammatica anche sulla pagina di una
-lezione.
+lezione. L'elenco segue `design/schermate/GrammaticaElenco.dc.html` e la
+pagina della lezione `GrammaticaLezione.dc.html`; i messaggi senza schede
+hanno la forma di `EserciziVuoto.dc.html`.
 
 ## Data and state
 

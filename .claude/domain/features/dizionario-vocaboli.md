@@ -65,6 +65,9 @@ Vue Test Utils. È una schermata della parte "Interfaccia" della topologia.
     vocaboli, al posto di campo e lista.
   - **Nessun risultato:** un messaggio che dice che la ricerca non ha
     trovato vocaboli, sotto il campo.
+  - **Aspetto:** segue `design/schermate/Dizionario.dc.html` e
+    `DizionarioRicerca.dc.html`; il messaggio senza materiale ha la forma di
+    `EserciziVuoto.dc.html`.
 
 ## Data and state
 

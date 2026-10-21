@@ -81,7 +81,13 @@ una single-page application.
   validità dei file di lezione e, con Vue Test Utils in un DOM simulato,
   per i componenti. Nessun test in un browser reale (Playwright, Chromium
   o simili), in nessun caso.
-- **Interfaccia responsiva:** utilizzabile sia su telefono sia su computer.
+- **Interfaccia:** segue il design approvato, copiato in `design/` (vedi
+  `design/README.md`): un solo tema scuro, carattere Poppins da Google
+  Fonts, utilizzabile sia su telefono sia su computer. Colori, caratteri,
+  spazi e raggi del codice vengono solo dai token di `design/tokens.json`,
+  trasformati in variabili CSS, mai da valori scritti a mano; dove il
+  testo di `design/design-system.md` e le schermate non coincidono,
+  valgono le schermate.
 
 ## Explicitly open decisions
 

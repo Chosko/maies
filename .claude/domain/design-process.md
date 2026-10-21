@@ -44,3 +44,4 @@ Funzionalità architettate e ordinate in `.claude/PLAN.md`. Prossimo passo: `/ru
 - Router in modalità hash: GitHub Pages non reindirizza gli indirizzi interni di una SPA.
 - Mai i PDF originali nel repository: repository e sito sono pubblici.
 - Nessun test in un browser reale: appesantisce lo sviluppo, e per un'app di queste dimensioni il DOM simulato basta.
+- Il design approvato vive copiato in `design/`: chi implementa lo legge dal repository, senza dipendere dagli artifact di Claude Design.

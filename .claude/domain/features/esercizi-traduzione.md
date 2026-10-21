@@ -63,6 +63,12 @@ Vue Test Utils. È una schermata della parte "Interfaccia" della topologia.
     la frase, più i pulsanti "Giusta" e "Sbagliata".
   - **Nessun materiale:** un messaggio che dice che non ci sono ancora frasi
     da tradurre.
+  - **Aspetto:** segue `design/schermate/EserciziDomanda.dc.html` (domanda),
+    `EserciziVuoto.dc.html` (nessun materiale) ed `EserciziComputer.dc.html`
+    (soluzione, su computer). La soluzione su telefono non ha una tavola
+    propria: tiene la carta e i margini della domanda, con il contenuto e i
+    due pulsanti della soluzione su computer impilati come in
+    `VocaboliGiusta.dc.html`.
 
 ## Data and state
 
