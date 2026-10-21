@@ -6,7 +6,7 @@ Tooling and publication. No server: the build is a static site.
 
 - `package.json` — scripts `dev` (vite), `test` (vitest run), `typecheck`
   (vue-tsc --noEmit), `build` (vite build → `dist/`). Runtime deps: `vue`,
-  `vue-router`.
+  `vue-router`; `zod` and `@types/node` are dev-only.
 - `vite.config.ts` — `base: '/'`, `@vitejs/plugin-vue`; Vitest block:
   `environment: 'jsdom'`, `include: ['tests/**/*.test.ts']`, `css: true`.
 - `tsconfig.json` — strict, bundler resolution, `verbatimModuleSyntax`
@@ -17,9 +17,10 @@ Tooling and publication. No server: the build is a static site.
 - `CNAME` — `maies.chosko.com`.
 - `.github/workflows/deploy.yml` — on push to `main`: `npm ci`,
   typecheck, test, build, upload `dist/` and deploy to GitHub Pages.
-- `tests/` — flat folder of `*.test.ts`, one per area:
-  `router.test.ts`, `navbar.test.ts`, `tokens.test.ts`.
-- `README.md` — commands and the one-time Pages setup (Italian).
+- `tests/` — flat folder of `*.test.ts`, one per module or area, named
+  after it (`router`, `navbar`, `tokens`, `catalogo`, `sessione`, …).
+- `README.md` — commands, where lesson content and progress live, and the
+  one-time Pages setup (Italian).
 
 `dist/` and `node_modules/` are git-ignored build output.
 
@@ -34,6 +35,13 @@ Tooling and publication. No server: the build is a static site.
   the build job, so the site stays at the previous version.
 - Tests mount the real `App` with a fresh `createAppRouter()` via
   `@vue/test-utils`, then `await router.isReady()` and `flushPromises()`.
+- Tests run in `jsdom`; a test that reads files from disk opts into Node
+  with a first line `// @vitest-environment node` plus
+  `/// <reference types="node" />` (`@types/node` is not in `tsconfig`'s
+  `types`).
+- **Lesson files gate publication too**: `tests/contenuti.test.ts` validates
+  `contenuti/lezioni/` inside `npm test` (rules in
+  [contenuti.md](./contenuti.md)).
 - `css: true` lets tests import stylesheets; `tokens.test.ts` reads them
   with `import.meta.glob` to lint them (rules in
   [styles-tokens.md](./styles-tokens.md)).
@@ -54,6 +62,8 @@ Tooling and publication. No server: the build is a static site.
   router/navbar tests cover.
 - [styles-tokens.md](./styles-tokens.md) — the stylesheet rules
   `tokens.test.ts` enforces.
+- [contenuti.md](./contenuti.md) — the content validity test and the
+  zod-out-of-the-bundle check.
 
 ## When to read the source
 
