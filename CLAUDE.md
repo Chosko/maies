@@ -1,5 +1,19 @@
 # maies
 
+Interaction policy: unattended
+Pipeline dashboard policy: on
+Parallel policy: 4
+
+For product and domain knowledge — what this product is, how its
+features are designed, and why the architecture is what it is — read
+`.claude/domain/INDEX.md`, then only the domain files relevant to your
+task.
+
+## Lingua
+
+Lo sviluppo di questo progetto si svolge in italiano: con l'utente si
+comunica sempre in italiano, domande e report compresi.
+
 <!-- chosko-llm:editing-discipline:begin v0.1.0 -->
 
 ## Editing Discipline
@@ -79,3 +93,9 @@ The PowerShell tool runs PowerShell. Never pass PowerShell syntax
 never pass bash syntax to the PowerShell tool. Match the command syntax to
 the tool you are calling.
 <!-- chosko-llm:tool-usage-policy:end -->
+
+## Tasks implementation
+
+Testing policy for /task-implement: full-tdd
+
+This project has a test suite. Always run the tests-first sequence.
