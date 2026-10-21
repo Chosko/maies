@@ -216,7 +216,7 @@ Feature: dizionario-vocaboli
 
 ## 22. Schermata Dizionario al posto del segnaposto
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/views/DizionarioView.vue, tests/dizionario.test.ts, tests/router.test.ts
 Preconditions: 2, 3, 7, 15, 21

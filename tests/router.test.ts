@@ -31,9 +31,16 @@ describe('router', () => {
     expect(wrapper.text()).not.toContain('in arrivo')
   })
 
+  it('renders the dictionary screen at /dizionario', async () => {
+    const { router, wrapper } = await mountAt('/dizionario')
+    expect(router.currentRoute.value.path).toBe('/dizionario')
+    expect(wrapper.get('h1').text()).toBe('Dizionario')
+    expect(wrapper.find('main .carta').exists()).toBe(true)
+    expect(wrapper.text()).not.toContain('in arrivo')
+  })
+
   it.each([
     ['/vocaboli', 'Allenamento vocaboli'],
-    ['/dizionario', 'Dizionario dei vocaboli'],
   ])('renders the screen at %s with its title', async (path, title) => {
     const { router, wrapper } = await mountAt(path)
     expect(router.currentRoute.value.path).toBe(path)

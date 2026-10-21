@@ -62,7 +62,7 @@ describe('navigation bar', () => {
     await wrapper.get('a[href="#/dizionario"]').trigger('click')
     await flushPromises()
     expect(router.currentRoute.value.path).toBe('/dizionario')
-    expect(wrapper.get('h1').text()).toBe('Dizionario dei vocaboli')
+    expect(wrapper.get('h1').text()).toBe('Dizionario')
     expect(wrapper.get('a[aria-current="page"]').text()).toBe('Dizionario')
     wrapper.unmount()
   })

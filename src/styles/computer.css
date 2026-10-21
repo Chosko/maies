@@ -144,4 +144,15 @@
   .grammatica-voce {
     padding: var(--space-6) calc(var(--space-5) * 2);
   }
+
+  /* Dizionario: la lista è una carta come quella degli esercizi, alta quanto le voci. */
+  .dizionario {
+    padding: calc(var(--space-7) * 2) var(--space-6);
+  }
+
+  .dizionario-lista {
+    flex: none;
+    padding: var(--space-2) calc(var(--space-5) * 2);
+    border-radius: var(--radius-xl);
+  }
 }

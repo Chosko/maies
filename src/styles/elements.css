@@ -421,3 +421,131 @@
   width: 18px;
   height: 18px;
 }
+
+/* Dizionario: campo di ricerca a pillola sopra la lista dei vocaboli. */
+.dizionario {
+  gap: var(--space-5);
+  padding-bottom: var(--space-4);
+}
+
+.dizionario-ricerca {
+  position: relative;
+}
+
+.dizionario-etichetta {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.dizionario-lente {
+  position: absolute;
+  top: 15px;
+  left: calc(var(--space-4) + var(--space-1) / 2);
+  display: flex;
+  color: var(--color-label);
+  pointer-events: none;
+}
+
+.dizionario-lente svg {
+  width: 22px;
+  height: 22px;
+}
+
+.dizionario-campo {
+  width: 100%;
+  height: 52px;
+  padding: 0 calc(var(--space-4) + var(--space-1) / 2) 0 calc(var(--space-6) * 2 + var(--space-1) / 2);
+  border: 1px solid var(--color-field-line);
+  border-radius: var(--radius-pill);
+  background: var(--color-chip);
+  color: var(--color-ink-strong);
+  font-size: var(--type-button-size);
+  line-height: var(--type-button-line);
+  font-weight: 400;
+  outline: none;
+}
+
+.dizionario-campo:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 0.5px var(--color-accent);
+}
+
+.dizionario-lista {
+  flex: 1;
+  gap: 0;
+  padding: var(--space-1) var(--space-5);
+  background: linear-gradient(
+    180deg,
+    var(--color-card-top) 0%,
+    var(--color-card-mid) 40%,
+    var(--color-card-end) 100%
+  );
+}
+
+.dizionario-voce {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-row-line);
+}
+
+.dizionario-voce-it {
+  color: var(--color-ink-strong);
+  font-size: var(--type-button-size);
+  line-height: var(--type-button-line);
+  font-weight: 500;
+}
+
+.dizionario-voce-en {
+  color: var(--color-label);
+  font-size: var(--type-lesson-size);
+  line-height: var(--type-lesson-line);
+}
+
+.dizionario-voce-principale {
+  color: var(--color-accent);
+}
+
+.dizionario-nessun-risultato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: calc(var(--space-6) * 2) var(--space-2);
+  text-align: center;
+}
+
+.dizionario-nessun-risultato-icona {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-pill);
+  background: var(--color-card-end);
+  color: var(--color-accent);
+}
+
+.dizionario-nessun-risultato-icona svg {
+  width: 24px;
+  height: 24px;
+}
+
+.dizionario-nessun-risultato-titolo {
+  color: var(--color-ink-strong);
+  font-size: var(--type-answer-size);
+  line-height: var(--type-answer-line);
+  font-weight: 500;
+}
+
+.dizionario-nessun-risultato-testo {
+  color: var(--color-ink-muted);
+  font-size: var(--type-lesson-size);
+  line-height: var(--type-lesson-line);
+}
