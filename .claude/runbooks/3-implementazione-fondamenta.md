@@ -87,13 +87,14 @@ Context:
 
 Done: 2026-10-21, commit `5eddc4b` (4 files, +144/-0). Il backlog esisteva già: aggiunti solo i quattro file di `.claude/external/`, con script di test che lanciano `npm test`.
 
-## [ ] 7. Creare il context layer
+## [P] 7. Creare il context layer
 
 Depends on: 6
 
 Needs: agent+human
 
-Context: none
+Context:
+- 2026-10-21 parked: approval gate — approvare il piano della Fase 1 di `/context-build` (layout flat sotto `.claude/context/`: `INDEX.md`, `app-shell.md`, `styles-tokens.md`, `build-test-deploy.md`)?
 
 ```prompt
 /context-build --attended
