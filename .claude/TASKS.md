@@ -206,7 +206,7 @@ Feature: allenamento-vocaboli
 
 ## 21. Voci ordinate e filtro di ricerca del dizionario
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/dizionario/voci.ts, src/dizionario/filtro.ts, tests/voci.test.ts, tests/filtro.test.ts
 Preconditions: 1, 7
