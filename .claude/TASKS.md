@@ -1,6 +1,6 @@
 # Tasks
 
-Last task number: 9
+Last task number: 13
 
 ---
 
@@ -91,5 +91,45 @@ Target: claude
 Files: README.md
 Preconditions: 6, 7, 8
 Feature: aggiunta-materiale-lezione
+
+---
+
+## 10. Livelli e archivio dei progressi nel browser
+
+Status: [MISSING]
+Target: claude
+Files: src/ripasso/livelli.ts, src/ripasso/archivio.ts, tests/livelli.test.ts, tests/archivio.test.ts
+Preconditions: 1
+Feature: ripetizione-errori
+
+---
+
+## 11. Selettore pesato del prossimo elemento
+
+Status: [MISSING]
+Target: claude
+Files: src/ripasso/selettore.ts, tests/selettore.test.ts
+Preconditions: 10
+Feature: ripetizione-errori
+
+---
+
+## 12. Sessione di ripasso per frasi e vocaboli
+
+Status: [MISSING]
+Target: claude
+Files: src/ripasso/sessione.ts, tests/sessione.test.ts
+Preconditions: 7, 10, 11
+Feature: ripetizione-errori
+
+---
+
+## 13. Update documentation for feature `ripetizione-errori`
+
+Status: [MISSING]
+Target: claude
+Files: README.md
+Preconditions: 10, 11, 12
+Feature: ripetizione-errori
 
 ---
