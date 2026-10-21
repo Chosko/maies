@@ -166,7 +166,7 @@ Feature: esercizi-traduzione
 
 ## 17. Verifica della risposta con normalizzazione
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/vocaboli/verifica.ts, tests/verifica.test.ts
 Preconditions: 1
