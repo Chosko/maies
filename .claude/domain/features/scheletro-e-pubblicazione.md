@@ -70,7 +70,7 @@ in modalità hash, Vite, Vitest con Vue Test Utils, GitHub Pages.
   token di `design/tokens.json`, generata dal file e non trascritta a mano,
   così una copia nuova del design aggiorna lo stile; il carattere Poppins;
   gli elementi comuni descritti in `design/design-system.md` (fondo con
-  bagliore e bandiera a linee, carte, bottoni, campi, cerchi icona), che le
+  bagliore, carte, bottoni, campi, cerchi icona), che le
   schermate future riusano.
 - **Pipeline di pubblicazione** — una GitHub Action che, a ogni push sul
   branch principale (`main`), installa le dipendenze, esegue il controllo
