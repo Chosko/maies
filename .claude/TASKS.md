@@ -179,7 +179,7 @@ Feature: allenamento-vocaboli
 Status: [MISSING]
 Target: claude
 Files: src/vocaboli/ciclo.ts, tests/ciclo-vocaboli.test.ts
-Preconditions: 7, 12, 17
+Preconditions: 7, 12, 14, 17
 Feature: allenamento-vocaboli
 
 ---
@@ -189,7 +189,7 @@ Feature: allenamento-vocaboli
 Status: [MISSING]
 Target: claude
 Files: src/views/VocaboliView.vue, tests/vocaboli.test.ts, tests/router.test.ts
-Preconditions: 2, 3, 18
+Preconditions: 2, 3, 15, 18
 Feature: allenamento-vocaboli
 
 ---
@@ -219,7 +219,7 @@ Feature: dizionario-vocaboli
 Status: [MISSING]
 Target: claude
 Files: src/views/DizionarioView.vue, tests/dizionario.test.ts, tests/router.test.ts
-Preconditions: 2, 3, 7, 21
+Preconditions: 2, 3, 7, 15, 21
 Feature: dizionario-vocaboli
 
 ---
@@ -249,7 +249,7 @@ Feature: schede-grammatica
 Status: [MISSING]
 Target: claude
 Files: src/views/GrammaticaView.vue, tests/grammatica.test.ts, tests/router.test.ts
-Preconditions: 2, 3, 7, 24
+Preconditions: 2, 3, 7, 15, 24
 Feature: schede-grammatica
 
 ---

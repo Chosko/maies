@@ -47,7 +47,7 @@ Context: none
 
 ## [ ] 5. Task 18 — Ciclo dell'allenamento vocaboli
 
-Depends on: 4
+Depends on: 1, 4
 
 Context: none
 
@@ -57,7 +57,7 @@ Context: none
 
 ## [ ] 6. Task 19 — Schermata Vocaboli al posto del segnaposto
 
-Depends on: 5
+Depends on: 2, 5
 
 Context: none
 
@@ -87,7 +87,7 @@ Context: none
 
 ## [ ] 9. Task 22 — Schermata Dizionario al posto del segnaposto
 
-Depends on: 8
+Depends on: 2, 8
 
 Context: none
 
@@ -117,7 +117,7 @@ Context: none
 
 ## [ ] 12. Task 25 — Schermata Grammatica con l'elenco delle lezioni
 
-Depends on: 11
+Depends on: 2, 11
 
 Context: none
 
