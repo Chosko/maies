@@ -1,6 +1,6 @@
 # Runbooks
 
-Last runbook number: 2
+Last runbook number: 4
 
 ---
 
@@ -21,5 +21,25 @@ File: .claude/runbooks/2-pianificazione-task.md
 Created: 2026-10-21
 Source: /product-design run
 Steps: 7/8
+
+---
+
+## 3. implementazione-fondamenta — Implementare lo scheletro dell'app, l'aggiunta del materiale e la ripetizione degli errori
+
+Status: [PENDING]
+File: .claude/runbooks/3-implementazione-fondamenta.md
+Created: 2026-10-21
+Source: runbook pianificazione-task
+Steps: 0/16
+
+---
+
+## 4. implementazione-schermate — Implementare esercizi, vocaboli, dizionario e schede di grammatica
+
+Status: [PENDING]
+File: .claude/runbooks/4-implementazione-schermate.md
+Created: 2026-10-21
+Source: runbook pianificazione-task
+Steps: 0/15
 
 ---
