@@ -67,7 +67,7 @@ Context:
 
 Done: 2026-10-21, commit `c3d0e51` (3 files, +320/-1).
 
-## [~] 6. Task 19 — Schermata Vocaboli al posto del segnaposto
+## [x] 6. Task 19 — Schermata Vocaboli al posto del segnaposto
 
 Depends on: 2, 5
 
@@ -78,6 +78,8 @@ Context:
 ```prompt
 /task-implement 19 --review
 ```
+
+Done: 2026-10-21, commit `4451399` (8 files, +608/-27). The screen title is "Vocaboli" as in the boards, not "Allenamento vocaboli"; no route is a placeholder any more, so the "still say the content is coming" test was removed.
 
 ## [ ] 7. Task 20 — Documentazione della feature allenamento-vocaboli
 
@@ -114,7 +116,7 @@ Context:
 
 Done: 2026-10-21, commit `94c9f69` (8 files, +420/-9). The screen title is "Dizionario" as in the board, not "Dizionario dei vocaboli"; the empty-state copy ("Ancora nessun vocabolo") is the agent's own, as no board fixes it.
 
-## [ ] 10. Task 23 — Documentazione della feature dizionario-vocaboli
+## [~] 10. Task 23 — Documentazione della feature dizionario-vocaboli
 
 Depends on: 8, 9
 
