@@ -75,6 +75,26 @@ inoltra le azioni.
 Il perché di queste scelte è nel documento di feature
 [`.claude/domain/features/esercizi-traduzione.md`](.claude/domain/features/esercizi-traduzione.md).
 
+## Dizionario
+
+La schermata Dizionario elenca tutti i vocaboli di tutte le lezioni, in
+ordine alfabetico italiano della parola `it`, ognuno con la traduzione
+principale e le altre traduzioni accettate. Il campo di ricerca in cima
+filtra la lista mentre Sara scrive, cercando sia nell'italiano sia nelle
+traduzioni inglesi, senza distinguere maiuscole e accenti. È solo
+consultazione: non usa i progressi e non registra nulla. Senza vocaboli nel
+catalogo la schermata mostra un messaggio al posto di campo e lista; una
+ricerca che non trova nulla lo dice sotto il campo.
+
+La logica, senza interfaccia, sta in `src/dizionario/`: `voci()` in
+`voci.ts` ordina i vocaboli del catalogo e `filtra()` in `filtro.ts` è
+l'unico punto in cui vive la regola di ricerca, diversa dalla verifica della
+risposta dell'allenamento vocaboli. Il componente della rotta `#/dizionario`
+è `src/views/DizionarioView.vue`.
+
+Il perché di queste scelte è nel documento di feature
+[`.claude/domain/features/dizionario-vocaboli.md`](.claude/domain/features/dizionario-vocaboli.md).
+
 ## Pubblicazione
 
 Ogni push su `main` avvia la GitHub Action `.github/workflows/deploy.yml`,

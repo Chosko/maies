@@ -226,7 +226,7 @@ Feature: dizionario-vocaboli
 
 ## 23. Update documentation for feature `dizionario-vocaboli`
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: README.md
 Preconditions: 21, 22
