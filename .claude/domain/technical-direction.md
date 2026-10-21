@@ -77,8 +77,10 @@ una single-page application.
   materiale rielaborato, mai i documenti originali della scuola.
 - **Osservabilità:** nessuna.
 - **Test:** Vitest per la logica (controllo delle risposte ai vocaboli,
-  scelta degli elementi da riproporre, salvataggio dei progressi), per i
-  componenti e per la validità dei file di lezione.
+  scelta degli elementi da riproporre, salvataggio dei progressi), per la
+  validità dei file di lezione e, con Vue Test Utils in un DOM simulato,
+  per i componenti. Nessun test in un browser reale (Playwright, Chromium
+  o simili), in nessun caso.
 - **Interfaccia responsiva:** utilizzabile sia su telefono sia su computer.
 
 ## Explicitly open decisions
@@ -88,5 +90,3 @@ una single-page application.
 - **Sincronizzazione dei progressi tra dispositivi:** non prevista; da
   rivedere solo se i progressi separati per dispositivo si rivelano un
   problema. Richiederebbe un servizio esterno.
-- **Algoritmo di ripetizione degli errori:** non deciso qui; lo sceglie
-  `/architect` progettando la funzionalità "Ripetizione degli errori".

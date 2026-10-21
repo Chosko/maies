@@ -32,7 +32,7 @@ Business modelling: out of scope
 - product-design.md — prodotto, utente, flussi, decisioni e sei funzionalità di alto livello.
 - technical-direction.md — Vue 3 + Vite + TypeScript, contenuti JSON per lezione, progressi in localStorage, GitHub Pages su maies.chosko.com.
 
-Prossimo passo: `/architect <funzionalità>`, poi `/task-add feature=<slug>`.
+Funzionalità architettate e ordinate in `.claude/PLAN.md`. Prossimo passo: `/runbook-run pianificazione-task`, dopo il design della UI.
 
 ## Decisions worth keeping
 
@@ -43,3 +43,4 @@ Prossimo passo: `/architect <funzionalità>`, poi `/task-add feature=<slug>`.
 - Vue invece di Svelte: è il framework che Sara già conosce, la differenza di prestazioni a questa scala è trascurabile.
 - Router in modalità hash: GitHub Pages non reindirizza gli indirizzi interni di una SPA.
 - Mai i PDF originali nel repository: repository e sito sono pubblici.
+- Nessun test in un browser reale: appesantisce lo sviluppo, e per un'app di queste dimensioni il DOM simulato basta.
