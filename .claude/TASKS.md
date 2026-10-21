@@ -106,7 +106,7 @@ Feature: ripetizione-errori
 
 ## 11. Selettore pesato del prossimo elemento
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/ripasso/selettore.ts, tests/selettore.test.ts
 Preconditions: 10
