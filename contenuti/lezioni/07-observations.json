@@ -1,0 +1,384 @@
+{
+  "id": "07-observations",
+  "title": "Osservazioni: past simple, past continuous e while",
+  "sentences": [
+    {
+      "id": "f01",
+      "it": "Ieri sera ho guardato un film con mia sorella.",
+      "en": "Last night I watched a film with my sister.",
+      "alternatives": [
+        "I watched a film with my sister last night.",
+        "Last night I watched a movie with my sister.",
+        "I watched a movie with my sister last night."
+      ]
+    },
+    {
+      "id": "f02",
+      "it": "Ieri sono andata al supermercato.",
+      "en": "Yesterday I went to the supermarket.",
+      "alternatives": [
+        "I went to the supermarket yesterday."
+      ]
+    },
+    {
+      "id": "f03",
+      "it": "Stavo leggendo il giornale quando è squillato il telefono.",
+      "en": "I was reading the newspaper when the phone rang.",
+      "alternatives": [
+        "I was reading the paper when the phone rang."
+      ]
+    },
+    {
+      "id": "f04",
+      "it": "Mentre facevo la doccia, è andata via l'acqua.",
+      "en": "While I was taking a shower, the water turned off.",
+      "alternatives": [
+        "While I was having a shower, the water turned off.",
+        "The water turned off while I was taking a shower.",
+        "The water turned off while I was having a shower."
+      ]
+    },
+    {
+      "id": "f05",
+      "it": "Mentre tornavo a casa a piedi, ho visto un arcobaleno.",
+      "en": "While I was walking home, I saw a rainbow.",
+      "alternatives": [
+        "I saw a rainbow while I was walking home."
+      ]
+    },
+    {
+      "id": "f06",
+      "it": "Ha cominciato a piovere mentre il presidente stava parlando.",
+      "en": "It started to rain while the president was speaking.",
+      "alternatives": [
+        "It started raining while the president was speaking.",
+        "It began to rain while the president was speaking.",
+        "It started to rain while the president was talking.",
+        "It started raining while the president was talking."
+      ]
+    },
+    {
+      "id": "f07",
+      "it": "Cosa hai visto mentre camminavi?",
+      "en": "What did you see while you were walking?",
+      "alternatives": []
+    },
+    {
+      "id": "f08",
+      "it": "Mentre guidavamo abbiamo bucato una gomma.",
+      "en": "While we were driving we got a flat tire.",
+      "alternatives": [
+        "While we were driving we got a flat tyre.",
+        "We got a flat tire while we were driving.",
+        "We got a flat tyre while we were driving."
+      ]
+    },
+    {
+      "id": "f09",
+      "it": "Mentre io cucinavo, mio marito apparecchiava la tavola.",
+      "en": "While I was cooking, my husband was setting the table.",
+      "alternatives": [
+        "My husband was setting the table while I was cooking.",
+        "While I was cooking, my husband was laying the table.",
+        "My husband was laying the table while I was cooking."
+      ]
+    },
+    {
+      "id": "f10",
+      "it": "Mentre dormivamo, qualcuno ha bussato alla porta.",
+      "en": "While we were sleeping, someone knocked on the door.",
+      "alternatives": [
+        "While we were sleeping, somebody knocked on the door.",
+        "Someone knocked on the door while we were sleeping.",
+        "Somebody knocked on the door while we were sleeping."
+      ]
+    },
+    {
+      "id": "f11",
+      "it": "Quando ero bambina amavo la pioggia.",
+      "en": "When I was a child I loved the rain.",
+      "alternatives": [
+        "When I was a child, I loved the rain.",
+        "When I was little I loved the rain.",
+        "When I was little, I loved the rain."
+      ]
+    },
+    {
+      "id": "f12",
+      "it": "Prima siamo andati in California, poi siamo andati in macchina a Los Angeles.",
+      "en": "First we went to California, then we drove to Los Angeles.",
+      "alternatives": [
+        "First, we went to California, then we drove to Los Angeles.",
+        "First we went to California and then we drove to Los Angeles."
+      ]
+    },
+    {
+      "id": "f13",
+      "it": "Dopo di che, abbiamo visitato una foresta enorme.",
+      "en": "After that, we visited a huge forest.",
+      "alternatives": [
+        "After that we visited a huge forest.",
+        "After that, we visited an enormous forest."
+      ]
+    },
+    {
+      "id": "f14",
+      "it": "Successivamente ho fatto una passeggiata fuori.",
+      "en": "Next, I took a walk outside.",
+      "alternatives": [
+        "Next I took a walk outside.",
+        "Next, I went for a walk outside.",
+        "Next I went for a walk outside."
+      ]
+    },
+    {
+      "id": "f15",
+      "it": "Infine siamo tornati a casa.",
+      "en": "Finally, we went back home.",
+      "alternatives": [
+        "Finally we went back home.",
+        "Finally, we came back home.",
+        "Finally, we returned home."
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "v01",
+      "it": "mentre",
+      "en": [
+        "while"
+      ]
+    },
+    {
+      "id": "v02",
+      "it": "nello stesso momento",
+      "en": [
+        "at the same time"
+      ]
+    },
+    {
+      "id": "v03",
+      "it": "ieri",
+      "en": [
+        "yesterday"
+      ]
+    },
+    {
+      "id": "v04",
+      "it": "ieri sera",
+      "en": [
+        "last night"
+      ]
+    },
+    {
+      "id": "v05",
+      "it": "il fine settimana scorso",
+      "en": [
+        "last weekend"
+      ]
+    },
+    {
+      "id": "v06",
+      "it": "guardare un film",
+      "en": [
+        "to watch a film",
+        "watch a film",
+        "to watch a movie",
+        "watch a movie"
+      ]
+    },
+    {
+      "id": "v07",
+      "it": "supermercato",
+      "en": [
+        "supermarket"
+      ]
+    },
+    {
+      "id": "v08",
+      "it": "leggere il giornale",
+      "en": [
+        "to read the newspaper",
+        "read the newspaper"
+      ]
+    },
+    {
+      "id": "v09",
+      "it": "fare la doccia",
+      "en": [
+        "to take a shower",
+        "take a shower",
+        "to have a shower",
+        "have a shower"
+      ]
+    },
+    {
+      "id": "v10",
+      "it": "spegnersi",
+      "en": [
+        "to turn off",
+        "turn off"
+      ]
+    },
+    {
+      "id": "v11",
+      "it": "arcobaleno",
+      "en": [
+        "rainbow"
+      ]
+    },
+    {
+      "id": "v12",
+      "it": "piovere",
+      "en": [
+        "to rain",
+        "rain"
+      ]
+    },
+    {
+      "id": "v13",
+      "it": "presidente",
+      "en": [
+        "president"
+      ]
+    },
+    {
+      "id": "v14",
+      "it": "attento (che osserva)",
+      "en": [
+        "observant"
+      ]
+    },
+    {
+      "id": "v15",
+      "it": "fare una passeggiata",
+      "en": [
+        "to take a walk",
+        "take a walk",
+        "to go for a walk",
+        "go for a walk"
+      ]
+    },
+    {
+      "id": "v16",
+      "it": "fuori",
+      "en": [
+        "outside"
+      ]
+    },
+    {
+      "id": "v17",
+      "it": "interrompere",
+      "en": [
+        "to interrupt",
+        "interrupt"
+      ]
+    },
+    {
+      "id": "v18",
+      "it": "guidare",
+      "en": [
+        "to drive",
+        "drive"
+      ]
+    },
+    {
+      "id": "v19",
+      "it": "bucare una gomma",
+      "en": [
+        "to get a flat tire",
+        "get a flat tire",
+        "to get a flat tyre",
+        "get a flat tyre"
+      ]
+    },
+    {
+      "id": "v20",
+      "it": "foresta",
+      "en": [
+        "forest"
+      ]
+    },
+    {
+      "id": "v21",
+      "it": "apparecchiare la tavola",
+      "en": [
+        "to set the table",
+        "set the table",
+        "to lay the table",
+        "lay the table"
+      ]
+    },
+    {
+      "id": "v22",
+      "it": "bussare",
+      "en": [
+        "to knock",
+        "knock"
+      ]
+    },
+    {
+      "id": "v23",
+      "it": "racconto",
+      "en": [
+        "story"
+      ]
+    },
+    {
+      "id": "v24",
+      "it": "avverbio di sequenza",
+      "en": [
+        "adverb of sequencing"
+      ]
+    },
+    {
+      "id": "v25",
+      "it": "prima di tutto",
+      "en": [
+        "first",
+        "first of all"
+      ]
+    },
+    {
+      "id": "v26",
+      "it": "poi",
+      "en": [
+        "then"
+      ]
+    },
+    {
+      "id": "v27",
+      "it": "dopo di che",
+      "en": [
+        "after that"
+      ]
+    },
+    {
+      "id": "v28",
+      "it": "successivamente",
+      "en": [
+        "next"
+      ]
+    },
+    {
+      "id": "v29",
+      "it": "infine",
+      "en": [
+        "finally"
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g01",
+      "title": "Past simple e past continuous con while",
+      "body": "## Past simple\n\nRacconta un'azione **conclusa** nel passato.\n\n- verbi **regolari**: si aggiunge **-ed** (*watch* → *watched*);\n- verbi **irregolari**: hanno una forma propria (*go* → *went*, *see* → *saw*).\n\n- *Last weekend, I watched a film.* — Il fine settimana scorso ho guardato un film.\n- *Yesterday I went to the supermarket.* — Ieri sono andato al supermercato.\n\n## Past continuous\n\n**was / were + verbo in -ing.** Descrive un'azione **più lunga, in corso**, spesso come sfondo, come l'imperfetto italiano o \"stavo facendo\".\n\n- *I was reading the newspaper.* — Stavo leggendo il giornale.\n\n## Insieme, con while\n\nIl past simple indica l'azione **più breve** che **interrompe** quella più lunga al past continuous. *While* (mentre) introduce l'azione che succede **nello stesso momento**, di solito al past continuous.\n\n- *While I **was taking** a shower, the water **turned off**.* — Mentre facevo la doccia, è andata via l'acqua.\n- *While I **was walking** home, I **saw** a rainbow.* — Mentre tornavo a casa, ho visto un arcobaleno.\n- *It **rained** while the president **was speaking**.* — Ha piovuto mentre il presidente parlava.\n\nSe le due azioni lunghe si svolgono insieme, tutte e due vanno al past continuous: *While I was cooking, he was setting the table.*\n\n## Attenzione\n\nAlcuni verbi non si usano nella forma in *-ing*: *be*, *love*, *hate*, *need*, *believe*… Si dice *When I was a child I **loved** the rain*, non *I was loving*."
+    },
+    {
+      "id": "g02",
+      "title": "Gli avverbi di sequenza nei racconti",
+      "body": "Danno l'ordine delle azioni in un racconto al passato:\n\n1. *First* — Prima (di tutto)\n2. *Then* — Poi\n3. *After that* — Dopo di che\n4. *Next* — Successivamente\n5. *Finally* — Infine\n\n*First, we went to California and saw the Redwood Forest. Then we drove to Los Angeles. While we were driving we got a flat tire.*\n\n*Finally* chiude il racconto: è l'ultima azione."
+    }
+  ]
+}
