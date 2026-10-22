@@ -1,0 +1,394 @@
+{
+  "id": "04-getting-fit",
+  "title": "Rimettersi in forma: gli avverbi di modo",
+  "sentences": [
+    {
+      "id": "f01",
+      "it": "Respira profondamente e solleva le braccia lentamente.",
+      "en": "Breathe deeply and lift your arms slowly.",
+      "alternatives": [
+        "Breathe deeply and slowly lift your arms."
+      ]
+    },
+    {
+      "id": "f02",
+      "it": "Prima di tutto, riscaldiamoci.",
+      "en": "First, let's warm up.",
+      "alternatives": [
+        "First of all, let's warm up.",
+        "First, let us warm up.",
+        "First of all, let us warm up."
+      ]
+    },
+    {
+      "id": "f03",
+      "it": "Fai jogging per la stanza e muovi il corpo energicamente.",
+      "en": "Jog around the room and move your body energetically.",
+      "alternatives": []
+    },
+    {
+      "id": "f04",
+      "it": "Fermati e marcia sul posto a ritmo regolare.",
+      "en": "Stop and march steadily on the spot.",
+      "alternatives": [
+        "Stop and march on the spot steadily."
+      ]
+    },
+    {
+      "id": "f05",
+      "it": "Allunga le gambe per aumentare la flessibilità.",
+      "en": "Stretch your legs to increase flexibility.",
+      "alternatives": [
+        "Stretch your legs to increase your flexibility.",
+        "Stretch your legs to boost flexibility.",
+        "Stretch your legs to boost your flexibility."
+      ]
+    },
+    {
+      "id": "f06",
+      "it": "Ho un obiettivo: voglio rimettermi in forma entro l'estate.",
+      "en": "I have a goal: I want to get fit by the summer.",
+      "alternatives": [
+        "I have a goal: I want to get fit by summer.",
+        "I've got a goal: I want to get fit by the summer.",
+        "I've got a goal: I want to get fit by summer."
+      ]
+    },
+    {
+      "id": "f07",
+      "it": "Cosa fai per raggiungere il tuo obiettivo?",
+      "en": "What do you do to achieve your goal?",
+      "alternatives": [
+        "What do you do to reach your goal?"
+      ]
+    },
+    {
+      "id": "f08",
+      "it": "Hai un obiettivo di forma fisica?",
+      "en": "Do you have a fitness goal?",
+      "alternatives": [
+        "Have you got a fitness goal?"
+      ]
+    },
+    {
+      "id": "f09",
+      "it": "Mia sorella solleva i pesi con forza.",
+      "en": "My sister lifts weights powerfully.",
+      "alternatives": [
+        "My sister lifts the weights powerfully."
+      ]
+    },
+    {
+      "id": "f10",
+      "it": "Dopo l'allenamento respiro con calma.",
+      "en": "After the workout I breathe calmly.",
+      "alternatives": [
+        "I breathe calmly after the workout.",
+        "After my workout I breathe calmly.",
+        "I breathe calmly after my workout."
+      ]
+    },
+    {
+      "id": "f11",
+      "it": "Questo allenamento brucia molte calorie.",
+      "en": "This workout burns a lot of calories.",
+      "alternatives": [
+        "This workout burns lots of calories.",
+        "This workout burns many calories."
+      ]
+    },
+    {
+      "id": "f12",
+      "it": "Non ti serve nessuna attrezzatura.",
+      "en": "You don't need any equipment.",
+      "alternatives": [
+        "You do not need any equipment.",
+        "You won't need any equipment.",
+        "You will not need any equipment."
+      ]
+    },
+    {
+      "id": "f13",
+      "it": "Marco cammina lentamente perché è stanco.",
+      "en": "Marco walks slowly because he's tired.",
+      "alternatives": [
+        "Marco walks slowly because he is tired."
+      ]
+    },
+    {
+      "id": "f14",
+      "it": "Ora muoviti energicamente per due minuti.",
+      "en": "Now move energetically for two minutes.",
+      "alternatives": []
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "v01",
+      "it": "rimettersi in forma",
+      "en": [
+        "to get fit",
+        "get fit"
+      ]
+    },
+    {
+      "id": "v02",
+      "it": "fare stretching",
+      "en": [
+        "to stretch",
+        "stretch"
+      ]
+    },
+    {
+      "id": "v03",
+      "it": "marciare",
+      "en": [
+        "to march",
+        "march"
+      ]
+    },
+    {
+      "id": "v04",
+      "it": "sollevare",
+      "en": [
+        "to lift",
+        "lift"
+      ]
+    },
+    {
+      "id": "v05",
+      "it": "respirare",
+      "en": [
+        "to breathe",
+        "breathe"
+      ]
+    },
+    {
+      "id": "v06",
+      "it": "fare jogging",
+      "en": [
+        "to jog",
+        "jog"
+      ]
+    },
+    {
+      "id": "v07",
+      "it": "muoversi",
+      "en": [
+        "to move",
+        "move"
+      ]
+    },
+    {
+      "id": "v08",
+      "it": "obiettivo",
+      "en": [
+        "goal"
+      ]
+    },
+    {
+      "id": "v09",
+      "it": "obiettivo di forma fisica",
+      "en": [
+        "fitness goal"
+      ]
+    },
+    {
+      "id": "v10",
+      "it": "raggiungere (un obiettivo)",
+      "en": [
+        "to achieve",
+        "achieve",
+        "to reach",
+        "reach"
+      ]
+    },
+    {
+      "id": "v11",
+      "it": "avverbio di modo",
+      "en": [
+        "adverb of manner"
+      ]
+    },
+    {
+      "id": "v12",
+      "it": "profondo",
+      "en": [
+        "deep"
+      ]
+    },
+    {
+      "id": "v13",
+      "it": "profondamente",
+      "en": [
+        "deeply"
+      ]
+    },
+    {
+      "id": "v14",
+      "it": "potente",
+      "en": [
+        "powerful"
+      ]
+    },
+    {
+      "id": "v15",
+      "it": "con forza",
+      "en": [
+        "powerfully"
+      ]
+    },
+    {
+      "id": "v16",
+      "it": "lentamente",
+      "en": [
+        "slowly"
+      ]
+    },
+    {
+      "id": "v17",
+      "it": "energicamente",
+      "en": [
+        "energetically"
+      ]
+    },
+    {
+      "id": "v18",
+      "it": "a ritmo regolare",
+      "en": [
+        "steadily"
+      ]
+    },
+    {
+      "id": "v19",
+      "it": "con calma",
+      "en": [
+        "calmly"
+      ]
+    },
+    {
+      "id": "v20",
+      "it": "programma di allenamento",
+      "en": [
+        "training routine",
+        "workout routine"
+      ]
+    },
+    {
+      "id": "v21",
+      "it": "allenamento",
+      "en": [
+        "workout",
+        "training"
+      ]
+    },
+    {
+      "id": "v22",
+      "it": "allenamento aerobico",
+      "en": [
+        "aerobic workout"
+      ]
+    },
+    {
+      "id": "v23",
+      "it": "aumentare",
+      "en": [
+        "to boost",
+        "boost",
+        "to increase",
+        "increase"
+      ]
+    },
+    {
+      "id": "v24",
+      "it": "energia",
+      "en": [
+        "energy"
+      ]
+    },
+    {
+      "id": "v25",
+      "it": "bruciare calorie",
+      "en": [
+        "to burn calories",
+        "burn calories"
+      ]
+    },
+    {
+      "id": "v26",
+      "it": "attrezzatura",
+      "en": [
+        "equipment"
+      ]
+    },
+    {
+      "id": "v27",
+      "it": "riscaldarsi",
+      "en": [
+        "to warm up",
+        "warm up"
+      ]
+    },
+    {
+      "id": "v28",
+      "it": "gambe",
+      "en": [
+        "legs"
+      ]
+    },
+    {
+      "id": "v29",
+      "it": "braccia",
+      "en": [
+        "arms"
+      ]
+    },
+    {
+      "id": "v30",
+      "it": "corpo",
+      "en": [
+        "body"
+      ]
+    },
+    {
+      "id": "v31",
+      "it": "flessibilità",
+      "en": [
+        "flexibility"
+      ]
+    },
+    {
+      "id": "v32",
+      "it": "sul posto",
+      "en": [
+        "on the spot"
+      ]
+    },
+    {
+      "id": "v33",
+      "it": "stanza",
+      "en": [
+        "room"
+      ]
+    },
+    {
+      "id": "v34",
+      "it": "pesi",
+      "en": [
+        "weights"
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g01",
+      "title": "Gli avverbi di modo",
+      "body": "Gli avverbi di modo descrivono **come** si fa una cosa, come gli avverbi italiani in *-mente*.\n\n## Come si formano\n\nDi solito si aggiunge **-ly** all'aggettivo:\n\n| Aggettivo | Avverbio |\n| --- | --- |\n| *deep* (profondo) | *deeply* (profondamente) |\n| *powerful* (potente) | *powerfully* (con forza) |\n| *slow* (lento) | *slowly* (lentamente) |\n| *calm* (calmo) | *calmly* (con calma) |\n\nAttenzione all'ortografia:\n\n- aggettivo in **-y** → **-ily**: *steady* → *steadily*;\n- aggettivo in **-ic** → **-ically**: *energetic* → *energetically*.\n\n## Dove si mettono\n\nDi solito **dopo il verbo**, oppure dopo il complemento se il verbo ne ha uno:\n\n- *Breathe **deeply** and lift your arms out **slowly**.*\n- *Lift your arms **powerfully**.*\n- *Move your body **energetically**!*"
+    },
+    {
+      "id": "g02",
+      "title": "Descrivere una routine di allenamento",
+      "body": "Per guidare qualcuno in un allenamento si usa l'**imperativo**, cioè il verbo senza soggetto: *Breathe*, *Stretch*, *Jog*, *Stop*. Per includere anche te stesso si usa *Let's* + verbo: *Let's warm up.*\n\nLe parole di sequenza dicono in che ordine fare gli esercizi:\n\n- *First…* — Prima di tutto…\n- *Now…* — Ora…\n- *Next…* — Poi…\n\n*First, let's warm up. Breathe deeply and stretch your legs to increase flexibility. Now, jog around the room and move your body energetically! Stop and march steadily on the spot. Next, lift your arms slowly into another stretch and breathe calmly.*"
+    }
+  ]
+}
