@@ -1,0 +1,340 @@
+{
+  "id": "06-new-in-town",
+  "title": "Nuovo in città: le tag questions",
+  "sentences": [
+    {
+      "id": "f01",
+      "it": "La lavanderia è in questa via, vero?",
+      "en": "The dry cleaner's is on this street, isn't it?",
+      "alternatives": [
+        "The dry cleaners is on this street, isn't it?",
+        "The dry cleaner is on this street, isn't it?"
+      ]
+    },
+    {
+      "id": "f02",
+      "it": "Sei nuovo in città, vero?",
+      "en": "You're new in town, aren't you?",
+      "alternatives": [
+        "You are new in town, aren't you?"
+      ]
+    },
+    {
+      "id": "f03",
+      "it": "Non sei di Glasgow, vero?",
+      "en": "You aren't from Glasgow, are you?",
+      "alternatives": [
+        "You're not from Glasgow, are you?",
+        "You are not from Glasgow, are you?"
+      ]
+    },
+    {
+      "id": "f04",
+      "it": "Tua sorella lavora in una caffetteria, vero?",
+      "en": "Your sister works in a coffee shop, doesn't she?",
+      "alternatives": [
+        "Your sister works at a coffee shop, doesn't she?"
+      ]
+    },
+    {
+      "id": "f05",
+      "it": "Il meccanico può riparare la mia macchina domani, vero?",
+      "en": "The mechanic can fix my car tomorrow, can't he?",
+      "alternatives": [
+        "The mechanic can repair my car tomorrow, can't he?",
+        "The auto mechanic can fix my car tomorrow, can't he?",
+        "The auto mechanic can repair my car tomorrow, can't he?"
+      ]
+    },
+    {
+      "id": "f06",
+      "it": "Non verrai alla festa a sorpresa, vero?",
+      "en": "You won't come to the surprise party, will you?",
+      "alternatives": [
+        "You will not come to the surprise party, will you?",
+        "You aren't coming to the surprise party, are you?",
+        "You're not coming to the surprise party, are you?"
+      ]
+    },
+    {
+      "id": "f07",
+      "it": "Ci siamo già conosciuti, vero?",
+      "en": "We've met before, haven't we?",
+      "alternatives": [
+        "We have met before, haven't we?"
+      ]
+    },
+    {
+      "id": "f08",
+      "it": "Ci siamo conosciuti alla festa di Sara il mese scorso, vero?",
+      "en": "We met at Sara's party last month, didn't we?",
+      "alternatives": []
+    },
+    {
+      "id": "f09",
+      "it": "Non l'hai detto a Lucy, vero?",
+      "en": "You didn't tell Lucy, did you?",
+      "alternatives": [
+        "You did not tell Lucy, did you?"
+      ]
+    },
+    {
+      "id": "f10",
+      "it": "Certo che no! So che è un segreto.",
+      "en": "Of course I didn't! I know it's a secret.",
+      "alternatives": [
+        "Of course I didn't! I know it is a secret.",
+        "Of course not! I know it's a secret.",
+        "Of course not! I know it is a secret."
+      ]
+    },
+    {
+      "id": "f11",
+      "it": "La vostra azienda è stata fondata nel 2005, vero?",
+      "en": "Your company was founded in 2005, wasn't it?",
+      "alternatives": []
+    },
+    {
+      "id": "f12",
+      "it": "Hai lavorato molto in Spagna, vero?",
+      "en": "You've done a lot of work in Spain, haven't you?",
+      "alternatives": [
+        "You have done a lot of work in Spain, haven't you?",
+        "You've worked a lot in Spain, haven't you?",
+        "You have worked a lot in Spain, haven't you?"
+      ]
+    },
+    {
+      "id": "f13",
+      "it": "Mi sono trasferito in Spagna e ho lavorato come rappresentante di vendita.",
+      "en": "I transferred to Spain and worked as a sales representative.",
+      "alternatives": [
+        "I moved to Spain and worked as a sales representative.",
+        "I transferred to Spain and worked as a sales rep.",
+        "I moved to Spain and worked as a sales rep."
+      ]
+    },
+    {
+      "id": "f14",
+      "it": "I tuoi figli vanno alla scuola elementare, vero?",
+      "en": "Your children go to elementary school, don't they?",
+      "alternatives": [
+        "Your children go to primary school, don't they?",
+        "Your kids go to elementary school, don't they?",
+        "Your kids go to primary school, don't they?"
+      ]
+    },
+    {
+      "id": "f15",
+      "it": "Lei non deve scoprirlo!",
+      "en": "She can't find out!",
+      "alternatives": [
+        "She cannot find out!",
+        "She mustn't find out!"
+      ]
+    },
+    {
+      "id": "f16",
+      "it": "Hai portato il cane dal toelettatore, vero?",
+      "en": "You took the dog to the pet groomer, didn't you?",
+      "alternatives": [
+        "You took the dog to the groomer, didn't you?",
+        "You've taken the dog to the pet groomer, haven't you?",
+        "You have taken the dog to the pet groomer, haven't you?"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "v01",
+      "it": "domanda di conferma",
+      "en": [
+        "tag question",
+        "question tag"
+      ]
+    },
+    {
+      "id": "v02",
+      "it": "nuovo in città",
+      "en": [
+        "new in town"
+      ]
+    },
+    {
+      "id": "v03",
+      "it": "girare per la città",
+      "en": [
+        "to get around town",
+        "get around town"
+      ]
+    },
+    {
+      "id": "v04",
+      "it": "via",
+      "en": [
+        "street"
+      ]
+    },
+    {
+      "id": "v05",
+      "it": "toelettatore per animali",
+      "en": [
+        "pet groomer",
+        "groomer"
+      ]
+    },
+    {
+      "id": "v06",
+      "it": "caffetteria",
+      "en": [
+        "coffee shop"
+      ]
+    },
+    {
+      "id": "v07",
+      "it": "asilo nido",
+      "en": [
+        "daycare center",
+        "daycare centre",
+        "daycare"
+      ]
+    },
+    {
+      "id": "v08",
+      "it": "lavanderia (a secco)",
+      "en": [
+        "dry cleaner's",
+        "dry cleaners",
+        "dry cleaner"
+      ]
+    },
+    {
+      "id": "v09",
+      "it": "scuola elementare",
+      "en": [
+        "elementary school",
+        "primary school"
+      ]
+    },
+    {
+      "id": "v10",
+      "it": "meccanico",
+      "en": [
+        "auto mechanic",
+        "mechanic"
+      ]
+    },
+    {
+      "id": "v11",
+      "it": "riparare",
+      "en": [
+        "to fix",
+        "fix",
+        "to repair",
+        "repair"
+      ]
+    },
+    {
+      "id": "v12",
+      "it": "colloquio di lavoro",
+      "en": [
+        "job interview"
+      ]
+    },
+    {
+      "id": "v13",
+      "it": "azienda",
+      "en": [
+        "company"
+      ]
+    },
+    {
+      "id": "v14",
+      "it": "fondare",
+      "en": [
+        "to found",
+        "found"
+      ]
+    },
+    {
+      "id": "v15",
+      "it": "trasferirsi",
+      "en": [
+        "to transfer",
+        "transfer",
+        "to move",
+        "move"
+      ]
+    },
+    {
+      "id": "v16",
+      "it": "rappresentante di vendita",
+      "en": [
+        "sales representative",
+        "sales rep"
+      ]
+    },
+    {
+      "id": "v17",
+      "it": "partecipare",
+      "en": [
+        "to participate",
+        "participate",
+        "to take part",
+        "take part"
+      ]
+    },
+    {
+      "id": "v18",
+      "it": "dialogo",
+      "en": [
+        "dialogue",
+        "dialog"
+      ]
+    },
+    {
+      "id": "v19",
+      "it": "festa a sorpresa",
+      "en": [
+        "surprise party"
+      ]
+    },
+    {
+      "id": "v20",
+      "it": "segreto",
+      "en": [
+        "secret"
+      ]
+    },
+    {
+      "id": "v21",
+      "it": "scoprire (venire a sapere)",
+      "en": [
+        "to find out",
+        "find out"
+      ]
+    },
+    {
+      "id": "v22",
+      "it": "il mese scorso",
+      "en": [
+        "last month"
+      ]
+    },
+    {
+      "id": "v23",
+      "it": "figli",
+      "en": [
+        "children",
+        "kids"
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g01",
+      "title": "Le tag questions",
+      "body": "Le *tag questions* sono le brevi domande in fondo alla frase con cui chiedi **conferma** di una cosa che pensi sia vera, come l'italiano \"…, vero?\" o \"…, no?\". Si usano con tutti i pronomi.\n\n- *The dry cleaner is on this street, **isn't it**?* — La lavanderia è in questa via, vero?\n- *You're new in town, **aren't you**?* — Sei nuovo in città, vero?\n\n## Come si costruiscono\n\n**ausiliare + pronome soggetto**, con la polarità **opposta** a quella della frase:\n\n- frase **affermativa** → tag **negativa**: *You're from Glasgow, **aren't you**?*\n- frase **negativa** → tag **affermativa**: *You aren't from Glasgow, **are you**?*\n\nIl pronome riprende il soggetto: *The dry cleaner* → *it*, *your sister* → *she*.\n\n## Attenzione al tempo\n\nL'ausiliare della tag è quello del tempo della frase:\n\n| Tempo | Esempio |\n| --- | --- |\n| *to be* al presente | *You're new in town, aren't you?* |\n| present simple | *Your sister works here, doesn't she?* |\n| past simple | *You didn't tell Lucy, did you?* |\n| past simple di *to be* | *Your company was founded in 2005, wasn't it?* |\n| present perfect | *We've met before, haven't we?* |\n| *can* | *He can fix it, can't he?* |\n| futuro con *will* | *You won't tell her, will you?* |\n\nQuando la frase non ha un ausiliare (present simple e past simple affermativi) la tag usa *do*, *does* o *did*.\n\n## Nei dialoghi\n\n- *Your company was founded in 2005, wasn't it?* — utile in un colloquio di lavoro.\n- *You've done a lot of work in Spain, haven't you?* — *Yes, that's right.*\n- *You didn't tell Lucy about the surprise party, did you?* — *Of course I didn't! I know it's a secret.*"
+    }
+  ]
+}
