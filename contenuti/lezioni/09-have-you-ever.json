@@ -1,0 +1,507 @@
+{
+  "id": "09-have-you-ever",
+  "title": "Have you ever? Il present perfect per le esperienze",
+  "sentences": [
+    {
+      "id": "f01",
+      "it": "Sono stata in Giappone, ma non sono mai stata in Cina.",
+      "en": "I've been to Japan, but I've never been to China.",
+      "alternatives": [
+        "I have been to Japan, but I have never been to China.",
+        "I've been to Japan, but I haven't been to China.",
+        "I have been to Japan, but I have not been to China."
+      ]
+    },
+    {
+      "id": "f02",
+      "it": "Mio fratello ha corso una maratona.",
+      "en": "My brother has run a marathon.",
+      "alternatives": [
+        "My brother's run a marathon."
+      ]
+    },
+    {
+      "id": "f03",
+      "it": "Hai mai mangiato il sushi? Sì.",
+      "en": "Have you ever eaten sushi? Yes, I have.",
+      "alternatives": []
+    },
+    {
+      "id": "f04",
+      "it": "Tua madre ha mai volato in elicottero? No.",
+      "en": "Has your mother ever flown in a helicopter? No, she hasn't.",
+      "alternatives": [
+        "Has your mother ever flown by helicopter? No, she hasn't.",
+        "Has your mum ever flown in a helicopter? No, she hasn't.",
+        "Has your mum ever flown by helicopter? No, she hasn't.",
+        "Has your mother ever flown in a helicopter? No, she has not."
+      ]
+    },
+    {
+      "id": "f05",
+      "it": "Non mi sono mai rotto un osso.",
+      "en": "I've never broken a bone.",
+      "alternatives": [
+        "I have never broken a bone."
+      ]
+    },
+    {
+      "id": "f06",
+      "it": "I tuoi amici sono mai andati in campeggio? Sì.",
+      "en": "Have your friends ever been camping? Yes, they have.",
+      "alternatives": [
+        "Have your friends ever gone camping? Yes, they have."
+      ]
+    },
+    {
+      "id": "f07",
+      "it": "Luca è andato a Londra e ora è lì.",
+      "en": "Luca has gone to London and he's there now.",
+      "alternatives": [
+        "Luca has gone to London and he is there now.",
+        "Luca's gone to London and he's there now."
+      ]
+    },
+    {
+      "id": "f08",
+      "it": "Luca è stato a Londra, ma ora è tornato.",
+      "en": "Luca has been to London, but now he's back.",
+      "alternatives": [
+        "Luca has been to London, but now he is back.",
+        "Luca has been to London, but he's back now.",
+        "Luca's been to London, but now he's back."
+      ]
+    },
+    {
+      "id": "f09",
+      "it": "Sono andata in Australia l'anno scorso.",
+      "en": "I went to Australia last year.",
+      "alternatives": [
+        "Last year I went to Australia."
+      ]
+    },
+    {
+      "id": "f10",
+      "it": "Sei mai stato a Parigi? Sì, ci sono andato tre anni fa.",
+      "en": "Have you ever been to Paris? Yes, I went there three years ago.",
+      "alternatives": [
+        "Have you ever been to Paris? Yes, I have. I went there three years ago."
+      ]
+    },
+    {
+      "id": "f11",
+      "it": "Hai mai vinto un premio? Quando l'hai vinto?",
+      "en": "Have you ever won a prize? When did you win it?",
+      "alternatives": []
+    },
+    {
+      "id": "f12",
+      "it": "Ho vinto un trofeo quando ero al liceo.",
+      "en": "I won a trophy when I was in high school.",
+      "alternatives": [
+        "I won a trophy when I was at high school."
+      ]
+    },
+    {
+      "id": "f13",
+      "it": "Non ho mai rubato niente!",
+      "en": "I've never stolen anything!",
+      "alternatives": [
+        "I have never stolen anything!"
+      ]
+    },
+    {
+      "id": "f14",
+      "it": "Lei non ha mai infranto la legge.",
+      "en": "She has never broken the law.",
+      "alternatives": [
+        "She's never broken the law."
+      ]
+    },
+    {
+      "id": "f15",
+      "it": "Hai mai visto una stella cadente?",
+      "en": "Have you ever seen a shooting star?",
+      "alternatives": []
+    },
+    {
+      "id": "f16",
+      "it": "Ho bevuto tequila una volta, quando ero all'università.",
+      "en": "I drank tequila once, when I was at university.",
+      "alternatives": [
+        "I drank tequila once when I was at university.",
+        "I drank tequila once, when I was in college.",
+        "I drank tequila once when I was in college."
+      ]
+    },
+    {
+      "id": "f17",
+      "it": "Anch'io ho viaggiato in giro per l'Europa.",
+      "en": "I've travelled round Europe too.",
+      "alternatives": [
+        "I have travelled round Europe too.",
+        "I've travelled around Europe too.",
+        "I have travelled around Europe too.",
+        "I've traveled around Europe too."
+      ]
+    },
+    {
+      "id": "f18",
+      "it": "Non ho mai guidato una Porsche. Neanch'io.",
+      "en": "I've never driven a Porsche. I haven't either.",
+      "alternatives": [
+        "I have never driven a Porsche. I haven't either.",
+        "I've never driven a Porsche. Neither have I.",
+        "I've never driven a Porsche. Me neither."
+      ]
+    },
+    {
+      "id": "f19",
+      "it": "Hai conosciuto la tua anima gemella?",
+      "en": "Have you met your soulmate?",
+      "alternatives": []
+    },
+    {
+      "id": "f20",
+      "it": "Non ho studiato per l'esame di domani.",
+      "en": "I haven't studied for tomorrow's exam.",
+      "alternatives": [
+        "I have not studied for tomorrow's exam.",
+        "I haven't studied for the exam tomorrow."
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "v01",
+      "it": "esperienza",
+      "en": [
+        "experience"
+      ]
+    },
+    {
+      "id": "v02",
+      "it": "participio passato",
+      "en": [
+        "past participle"
+      ]
+    },
+    {
+      "id": "v03",
+      "it": "mai (nelle domande)",
+      "en": [
+        "ever"
+      ]
+    },
+    {
+      "id": "v04",
+      "it": "mai (nelle frasi affermative)",
+      "en": [
+        "never"
+      ]
+    },
+    {
+      "id": "v05",
+      "it": "anche (in fondo alla frase)",
+      "en": [
+        "too"
+      ]
+    },
+    {
+      "id": "v06",
+      "it": "neanche (in fondo alla frase)",
+      "en": [
+        "either"
+      ]
+    },
+    {
+      "id": "v07",
+      "it": "una volta",
+      "en": [
+        "once"
+      ]
+    },
+    {
+      "id": "v08",
+      "it": "fa (tre anni fa)",
+      "en": [
+        "ago"
+      ]
+    },
+    {
+      "id": "v09",
+      "it": "arrampicarsi",
+      "en": [
+        "to climb",
+        "climb"
+      ]
+    },
+    {
+      "id": "v10",
+      "it": "studiare",
+      "en": [
+        "to study",
+        "study"
+      ]
+    },
+    {
+      "id": "v11",
+      "it": "viaggiare",
+      "en": [
+        "to travel",
+        "travel"
+      ]
+    },
+    {
+      "id": "v12",
+      "it": "rompere",
+      "en": [
+        "to break",
+        "break"
+      ]
+    },
+    {
+      "id": "v13",
+      "it": "bere",
+      "en": [
+        "to drink",
+        "drink"
+      ]
+    },
+    {
+      "id": "v14",
+      "it": "volare",
+      "en": [
+        "to fly",
+        "fly"
+      ]
+    },
+    {
+      "id": "v15",
+      "it": "mangiare",
+      "en": [
+        "to eat",
+        "eat"
+      ]
+    },
+    {
+      "id": "v16",
+      "it": "perdere",
+      "en": [
+        "to lose",
+        "lose"
+      ]
+    },
+    {
+      "id": "v17",
+      "it": "correre",
+      "en": [
+        "to run",
+        "run"
+      ]
+    },
+    {
+      "id": "v18",
+      "it": "vedere",
+      "en": [
+        "to see",
+        "see"
+      ]
+    },
+    {
+      "id": "v19",
+      "it": "dormire",
+      "en": [
+        "to sleep",
+        "sleep"
+      ]
+    },
+    {
+      "id": "v20",
+      "it": "rubare",
+      "en": [
+        "to steal",
+        "steal"
+      ]
+    },
+    {
+      "id": "v21",
+      "it": "vincere",
+      "en": [
+        "to win",
+        "win"
+      ]
+    },
+    {
+      "id": "v22",
+      "it": "infrangere la legge",
+      "en": [
+        "to break the law",
+        "break the law"
+      ]
+    },
+    {
+      "id": "v23",
+      "it": "andare in campeggio",
+      "en": [
+        "to go camping",
+        "go camping"
+      ]
+    },
+    {
+      "id": "v24",
+      "it": "osso",
+      "en": [
+        "bone"
+      ]
+    },
+    {
+      "id": "v25",
+      "it": "elicottero",
+      "en": [
+        "helicopter"
+      ]
+    },
+    {
+      "id": "v26",
+      "it": "stella",
+      "en": [
+        "star"
+      ]
+    },
+    {
+      "id": "v27",
+      "it": "stella cadente",
+      "en": [
+        "shooting star"
+      ]
+    },
+    {
+      "id": "v28",
+      "it": "premio",
+      "en": [
+        "prize"
+      ]
+    },
+    {
+      "id": "v29",
+      "it": "trofeo",
+      "en": [
+        "trophy"
+      ]
+    },
+    {
+      "id": "v30",
+      "it": "recitazione",
+      "en": [
+        "acting"
+      ]
+    },
+    {
+      "id": "v31",
+      "it": "recitare",
+      "en": [
+        "to act",
+        "act"
+      ]
+    },
+    {
+      "id": "v32",
+      "it": "commedia (a teatro)",
+      "en": [
+        "play"
+      ]
+    },
+    {
+      "id": "v33",
+      "it": "adolescente",
+      "en": [
+        "teenager"
+      ]
+    },
+    {
+      "id": "v34",
+      "it": "barzelletta",
+      "en": [
+        "joke"
+      ]
+    },
+    {
+      "id": "v35",
+      "it": "incidente stradale",
+      "en": [
+        "car accident"
+      ]
+    },
+    {
+      "id": "v36",
+      "it": "cuore spezzato",
+      "en": [
+        "broken heart"
+      ]
+    },
+    {
+      "id": "v37",
+      "it": "maratona",
+      "en": [
+        "marathon"
+      ]
+    },
+    {
+      "id": "v38",
+      "it": "anima gemella",
+      "en": [
+        "soulmate"
+      ]
+    },
+    {
+      "id": "v39",
+      "it": "pollo",
+      "en": [
+        "chicken"
+      ]
+    },
+    {
+      "id": "v40",
+      "it": "liceo",
+      "en": [
+        "high school"
+      ]
+    },
+    {
+      "id": "v41",
+      "it": "università",
+      "en": [
+        "university",
+        "college"
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g01",
+      "title": "Il present perfect per le esperienze",
+      "body": "Il *present perfect* si usa per parlare di **esperienze** fatte nella vita, **senza dire quando**.\n\n- *I have been to Australia. I haven't been to Japan.* — Sono stato in Australia. Non sono stato in Giappone.\n\n## Come si forma\n\n**soggetto + *have/has* + participio passato**\n\n- *I have eaten sushi.* — Ho mangiato il sushi.\n- *She has drunk tequila.* — Lei ha bevuto tequila.\n\n| Affermativa | Negativa | Domanda |\n| --- | --- | --- |\n| *I have broken* | *I haven't broken* | *Have I broken?* |\n| *You have broken* | *You haven't broken* | *Have you broken?* |\n| *He/She/It has broken* | *He/She/It hasn't broken* | *Has he/she/it broken?* |\n| *We have broken* | *We haven't broken* | *Have we broken?* |\n| *They have broken* | *They haven't broken* | *Have they broken?* |\n\nQui *have* è un **ausiliare**: nelle frasi affermative e negative sta dopo il soggetto, nelle domande davanti.\n\n- *Have you ever flown to Australia?* — *No, I haven't flown to Australia.*\n- *Has your girlfriend run a marathon?* — *No, she hasn't run a marathon.*\n\n## Il participio passato\n\n- Nei verbi **regolari** è uguale al *past simple* e finisce in **-ed**: *cooked*, *played*, *walked*.\n- I verbi **irregolari** vanno imparati a memoria.\n\n| Infinito | Past simple | Participio passato | Italiano |\n| --- | --- | --- | --- |\n| *climb* | *climbed* | *climbed* | arrampicarsi |\n| *study* | *studied* | *studied* | studiare |\n| *travel* | *travelled* | *travelled* | viaggiare |\n| *be* | *was/were* | *been* | essere, stare |\n| *break* | *broke* | *broken* | rompere |\n| *drink* | *drank* | *drunk* | bere |\n| *drive* | *drove* | *driven* | guidare |\n| *eat* | *ate* | *eaten* | mangiare |\n| *fly* | *flew* | *flown* | volare |\n| *go* | *went* | *been/gone* | andare |\n| *have* | *had* | *had* | avere |\n| *lose* | *lost* | *lost* | perdere |\n| *meet* | *met* | *met* | incontrare |\n| *run* | *ran* | *run* | correre |\n| *see* | *saw* | *seen* | vedere |\n| *sleep* | *slept* | *slept* | dormire |\n| *steal* | *stole* | *stolen* | rubare |\n| *win* | *won* | *won* | vincere |"
+    },
+    {
+      "id": "g02",
+      "title": "Been e gone",
+      "body": "Il verbo *go* ha due participi passati, *been* e *gone*. Sono corretti tutti e due, ma il significato cambia.\n\n- ***been***: la persona è andata **ed è tornata**.\n  *He's been to Japan.* — È stato in Giappone (ora non è lì, è tornato).\n- ***gone***: la persona è andata **e non è ancora tornata**.\n  *He's gone to Japan.* — È andato in Giappone (ed è ancora lì).\n\nPer le esperienze si usa quindi *been*: *Have you ever been to Japan?*"
+    },
+    {
+      "id": "g03",
+      "title": "Ever, never e le risposte brevi",
+      "body": "## Ever nelle domande\n\nPer chiedere se una persona ha **mai** fatto una cosa nella vita:\n\n***Have/Has* + soggetto + *ever* + participio passato**\n\n- *Have you ever eaten sushi?* — Hai mai mangiato il sushi?\n- *Has Kate ever travelled to London?* — Kate è mai stata a Londra?\n\n## Never nelle risposte\n\nPer un'esperienza che **non si è mai** fatta:\n\n**soggetto + *have/has* + *never* + participio passato**\n\n- *I have never eaten sushi.* — Non ho mai mangiato il sushi.\n- *Kate has never travelled to London.* — Kate non è mai stata a Londra.\n\n*Never* è già negativo: la frase resta **affermativa** (*I have never*, non *I haven't never*).\n\n## Le risposte brevi\n\n***Yes/No*, soggetto + *have/has* (o *haven't/hasn't*)**\n\n- *Have you ever eaten sushi?* — *Yes, I have.*\n- *Has she ever broken a bone?* — *No, she hasn't.*\n- *Have they ever been camping?* — *Yes, they have.*\n\nDopo la risposta breve si può aggiungere la frase con *never* per sottolineare la negazione:\n\n- *No, I haven't. I've never stolen.* — No! Non ho mai rubato!\n- *Have they ever slept under the stars?* — *No, they haven't. They've never slept under the stars.*"
+    },
+    {
+      "id": "g04",
+      "title": "Present perfect o past simple",
+      "body": "Se **non dici quando** è successo, usa il *present perfect*. Se il **momento è specificato**, usa il *past simple*.\n\n- *I've been to Japan.* — present perfect: nella mia vita.\n- *I went to Japan last year.* — past simple: l'anno scorso.\n\nSpesso si comincia con il present perfect per introdurre l'esperienza e si continua con il past simple per raccontarne i dettagli:\n\n- *I have been to Australia once. I went there two years ago.* — Sono andato in Australia una volta. Ci sono andato due anni fa.\n\n## Esempi di dialogo\n\n- *Have you ever been to Japan?* — *Yes, I have.*\n- *When did you go?* — *I went 5 years ago.*\n- *Have you ever won a prize?* — *Yes, I have. I've won a math prize.*\n- *When did you win it?* — *I won it when I was in high school.*\n\nLe domande con *When…?* vogliono sempre il past simple, perché chiedono il momento."
+    },
+    {
+      "id": "g05",
+      "title": "Too e either",
+      "body": "Per dire di aver avuto la **stessa esperienza** di un'altra persona:\n\n- *too* (anche) nelle frasi **affermative**;\n- *either* (neanche) nelle frasi **negative**.\n\nTutti e due vanno **in fondo alla frase**.\n\n- *Have you ever drunk tequila?* — *Yes, I have. Have you?*\n- *Yes, I've drunk tequila, **too**. I drank it once when I was in college.* — Sì, anch'io ho bevuto tequila. L'ho bevuta una volta quando ero all'università.\n- *And have you ever broken a bone?* — *No, I haven't. And you?*\n- *No, I haven't **either**.* — No, neanch'io.\n\nAltri esempi:\n\n- *I've flown to New York too.* — Anch'io sono andato in aereo a New York.\n- *I haven't driven a Porsche either.* — Neanch'io ho mai guidato una Porsche."
+    }
+  ]
+}
