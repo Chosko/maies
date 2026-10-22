@@ -166,11 +166,49 @@ describe('stylesheets', () => {
     expect(queries).toEqual([[expect.any(String), '@media (min-width: 768px)']])
   })
 
-  it('style no background flag', () => {
-    for (const [path, css] of stylesheets()) {
-      expect(css, path).not.toMatch(/\.bandiera/)
-      expect(css, path).not.toMatch(/--color-flag-/)
+  it('colour the dotted flag with the flag tokens and their opacities', () => {
+    const elements = sheet('elements.css')
+    const attesi: [string, string, string][] = [
+      ['.bandiera-fondo', 'var(--color-flag-blue)', '0.35'],
+      ['.bandiera-diagonali', 'var(--color-flag-white)', '0.4'],
+      ['.bandiera-croce', 'var(--color-flag-red)', '0.6'],
+    ]
+    for (const [selettore, colore, opacita] of attesi) {
+      const values = new Map(propertyValues(ruleBody(elements, selettore) ?? ''))
+      expect(values.get('fill'), selettore).toBe(colore)
+      expect(values.get('opacity'), selettore).toBe(opacita)
     }
+    const bandiera = new Map(propertyValues(ruleBody(elements, '.bandiera') ?? ''))
+    expect(bandiera.get('pointer-events')).toBe('none')
+    expect(bandiera.get('z-index')).toBe('-1')
+  })
+
+  it('give the list cards the quieter gradient', () => {
+    const elements = sheet('elements.css')
+    expect(ruleBody(elements, '.dizionario-lista')?.replace(/\s+/g, ' ')).toContain(
+      'linear-gradient( 180deg, var(--color-card-list-top) 0%, var(--color-peek) 40%, var(--color-card-end) 100% )',
+    )
+    expect(ruleBody(elements, '.grammatica-voce')?.replace(/\s+/g, ' ')).toContain(
+      'linear-gradient( 165deg, var(--color-card-list-top) 0%, var(--color-peek) 55%, var(--color-card-end) 100% )',
+    )
+  })
+
+  it('turn the wrong-answer card red', () => {
+    const elements = sheet('elements.css')
+    const carta = ruleBody(elements, '.vocabolo-carta-sbagliata')?.replace(/\s+/g, ' ') ?? ''
+    expect(carta).toContain(
+      'linear-gradient( 165deg, var(--color-wrong-top) 0%, var(--color-wrong-mid) 45%, var(--color-wrong-end) 100% )',
+    )
+    expect(carta).toContain('border-color: var(--color-wrong-line)')
+    const colore = (selettore: string, proprieta: string) =>
+      new Map(propertyValues(ruleBody(elements, selettore) ?? '')).get(proprieta)
+    expect(colore('.vocabolo-carta-sbagliata .esercizio-divisore', 'border-top-color')).toBe(
+      'var(--color-wrong-divider)',
+    )
+    expect(colore('.vocabolo-carta-sbagliata .etichetta', 'color')).toBe('var(--color-wrong-label)')
+    expect(colore('.vocabolo-carta-sbagliata .esercizio-lezione', 'color')).toBe(
+      'var(--color-wrong-lesson)',
+    )
   })
 })
 
@@ -217,7 +255,7 @@ describe('screen title', () => {
 
 describe('placeholder screens', () => {
   it.each(['/esercizi', '/vocaboli', '/dizionario', '/grammatica'])(
-    'stand on the background without the flag and inside a card at %s',
+    'stand on the background with the dotted flag and inside a card at %s',
     async (path) => {
       const router = createAppRouter()
       await router.push(path)
@@ -225,7 +263,8 @@ describe('placeholder screens', () => {
       const wrapper = mount(App, { global: { plugins: [router] } })
       await flushPromises()
       const fondo = wrapper.get('.fondo')
-      expect(wrapper.find('.bandiera').exists()).toBe(false)
+      expect(wrapper.findAll('svg.bandiera')).toHaveLength(1)
+      expect(fondo.find('svg.bandiera').exists()).toBe(true)
       expect(fondo.find('main .carta').exists()).toBe(true)
     },
   )

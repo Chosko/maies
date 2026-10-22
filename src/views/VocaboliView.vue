@@ -113,7 +113,10 @@ function invio(azione: () => void): (evento: KeyboardEvent) => void {
     <template v-else>
       <div class="carta-pila">
         <div class="carta-dietro" aria-hidden="true"></div>
-        <article class="carta vocabolo-carta-esito">
+        <article
+          class="carta vocabolo-carta-esito"
+          :class="{ 'vocabolo-carta-sbagliata': stato.esito === 'sbagliato' }"
+        >
           <div
             class="vocabolo-esito"
             :class="stato.esito === 'giusto' ? 'vocabolo-esito-giusto' : 'vocabolo-esito-sbagliato'"

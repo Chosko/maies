@@ -11,61 +11,53 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;display=swap">
 <style>
 body{margin:0}
-a{color:#3EE0CF}a:hover{color:#8BEDE2}
-input::placeholder{color:#6F8E8A}
+a{color:#8DB4FF}a:hover{color:#B9D0FF}
+input::placeholder{color:#7480A6}
 </style>
 </helmet>
-<div style="position: relative; width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; display: flex; flex-direction: column; background: radial-gradient(130% 55% at 50% 0%, #0E4D4A 0%, #08201F 48%, #050708 78%); font-family: Poppins, 'Segoe UI', system-ui, sans-serif; color: #EEF6F5">
+<div style="position: relative; width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; display: flex; flex-direction: column; background: radial-gradient(130% 55% at 50% 0%, #13235A 0%, #0A1430 48%, #05070D 78%); font-family: Poppins, 'Segoe UI', system-ui, sans-serif; color: #EEF2FA">
 <svg aria-hidden="true" width="390" height="844" viewBox="0 0 390 844" style="position: absolute; left: 0; top: 0; pointer-events: none">
-<defs>
-<radialGradient id="di-bagliore" cx="40" cy="730" r="260" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1F6E6A" stop-opacity="0.55"></stop><stop offset="1" stop-color="#1F6E6A" stop-opacity="0"></stop></radialGradient>
-<linearGradient id="di-sfuma" x1="0" y1="430" x2="0" y2="650" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000000"></stop><stop offset="1" stop-color="#FFFFFF"></stop></linearGradient>
-<mask id="di-maschera" maskUnits="userSpaceOnUse" x="0" y="0" width="390" height="844"><rect x="0" y="0" width="390" height="844" fill="url(#di-sfuma)"></rect></mask>
-</defs>
-<rect x="0" y="0" width="390" height="844" fill="url(#di-bagliore)"></rect>
-<g mask="url(#di-maschera)" fill="none" stroke-linecap="round">
-<path d="{{bordo}}" stroke="#7FA8E0" stroke-width="0.8" opacity="{{opBordo}}"></path>
-<path d="{{diagonali}}" stroke="#FFFFFF" stroke-width="0.8" opacity="{{opDiag}}"></path>
-<path d="{{croce}}" stroke="#FF6B7D" stroke-width="0.9" opacity="{{opCroce}}"></path>
-</g>
+<path d="{{puntiBlu}}" fill="#3B5BC0" opacity="0.35"></path>
+<path d="{{puntiBianchi}}" fill="#FFFFFF" opacity="0.4"></path>
+<path d="{{puntiRossi}}" fill="#FF5A6E" opacity="0.6"></path>
 </svg>
 <main style="position: relative; z-index: 1; flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 20px; padding: 60px 20px 16px">
 <h1 style="margin: 0; text-align: center; font-size: 19px; line-height: 28px; font-weight: 500">Dizionario</h1>
 <div style="position: relative">
 <label for="cerca" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Cerca un vocabolo</label>
-<span aria-hidden="true" style="position: absolute; left: 18px; top: 15px; display: flex; color: #93B4B0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg></span>
-<input id="cerca" type="search" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Cerca in italiano o in inglese" value="{{q}}" onChange="{{cerca}}" style="box-sizing: border-box; width: 100%; height: 52px; padding: 0 18px 0 50px; border-radius: 999px; border: 1px solid #24403F; background: #0A1617; color: #FFFFFF; font-family: inherit; font-size: 16px; outline: none">
+<span aria-hidden="true" style="position: absolute; left: 18px; top: 15px; display: flex; color: #A9B7DA"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg></span>
+<input id="cerca" type="search" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Cerca in italiano o in inglese" value="{{q}}" onChange="{{cerca}}" style="box-sizing: border-box; width: 100%; height: 52px; padding: 0 18px 0 50px; border-radius: 999px; border: 1px solid #2A3A6E; background: #0A1230; color: #FFFFFF; font-family: inherit; font-size: 16px; outline: none">
 </div>
-<section aria-label="Vocaboli" style="flex: 1; min-height: 0; overflow-y: auto; padding: 4px 20px; border-radius: 22px; border: 1px solid #1B4A48; background: linear-gradient(180deg, #10423F 0%, #0B2628 40%, #0A1A1C 100%)">
+<section aria-label="Vocaboli" style="flex: 1; min-height: 0; overflow-y: auto; padding: 4px 20px; border-radius: 22px; border: 1px solid #2A3F82; background: linear-gradient(180deg, #1A2D68 0%, #101C45 40%, #0B132E 100%)">
 <sc-for list="{{voci}}" as="v" hint-placeholder-count="8">
-<div style="display: flex; flex-direction: column; gap: 2px; padding: 13px 0; border-bottom: 1px solid #1E3E3D">
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 13px 0; border-bottom: 1px solid #22336B">
 <span style="font-size: 16px; line-height: 24px; font-weight: 500; color: #FFFFFF">{{v.it}}</span>
-<span lang="en" style="font-size: 14px; line-height: 21px; color: #93B4B0"><span style="color: #3EE0CF">{{v.main}}</span>{{v.altre}}</span>
+<span lang="en" style="font-size: 14px; line-height: 21px; color: #A9B7DA"><span style="color: #8DB4FF">{{v.main}}</span>{{v.altre}}</span>
 </div>
 </sc-for>
 <sc-if value="{{vuoto}}" hint-placeholder-val="{{false}}">
 <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 48px 8px; text-align: center">
-<span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 999px; background: #0A1D1F; border: 1px solid #24504E; color: #3EE0CF"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg></span>
+<span style="display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 999px; background: #0B132E; border: 1px solid #2E4380; color: #8DB4FF"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg></span>
 <p style="margin: 0; font-size: 17px; line-height: 25px; font-weight: 500; color: #FFFFFF">Nessun vocabolo contiene “{{q}}”</p>
-<p style="margin: 0; font-size: 14px; line-height: 21px; color: #B7C9C7">Controlla come l’hai scritto.</p>
+<p style="margin: 0; font-size: 14px; line-height: 21px; color: #B4BED8">Controlla come l’hai scritto.</p>
 </div>
 </sc-if>
 </section>
 </main>
-<nav aria-label="Sezioni" style="position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #070A0B; border-top: 1px solid #172022; padding: 8px 4px 24px">
-<a href="EserciziDomanda.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 56px; text-decoration: none; font-size: 12px; color: #8A9A99">
+<nav aria-label="Sezioni" style="position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #05081A; border-top: 1px solid #141D3D; padding: 8px 4px 24px">
+<a href="EserciziDomanda.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 56px; text-decoration: none; font-size: 12px; color: #8C95B3">
 <span style="display: flex; align-items: center; justify-content: center; width: 48px; height: 30px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4z"></path><path d="M14 6l4 4"></path></svg></span>
 <span>Esercizi</span>
 </a>
-<a href="VocaboliDomanda.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 56px; text-decoration: none; font-size: 12px; color: #8A9A99">
+<a href="VocaboliDomanda.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 56px; text-decoration: none; font-size: 12px; color: #8C95B3">
 <span style="display: flex; align-items: center; justify-content: center; width: 48px; height: 30px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="13" height="13" rx="2"></rect><path d="M8 4h11a2 2 0 0 1 2 2v11"></path></svg></span>
 <span>Vocaboli</span>
 </a>
-<a href="Dizionario.dc.html" aria-current="page" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 56px; text-decoration: none; font-size: 12px; font-weight: 500; color: #3EE0CF">
-<span style="display: flex; align-items: center; justify-content: center; width: 48px; height: 30px; border-radius: 999px; background: #0F3B3A"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4z"></path><path d="M5 17a3 3 0 0 1 3-3h10"></path></svg></span>
+<a href="Dizionario.dc.html" aria-current="page" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 56px; text-decoration: none; font-size: 12px; font-weight: 500; color: #8DB4FF">
+<span style="display: flex; align-items: center; justify-content: center; width: 48px; height: 30px; border-radius: 999px; background: #1A2A5E"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4z"></path><path d="M5 17a3 3 0 0 1 3-3h10"></path></svg></span>
 <span>Dizionario</span>
 </a>
-<a href="GrammaticaElenco.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 56px; text-decoration: none; font-size: 12px; color: #8A9A99">
+<a href="GrammaticaElenco.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 56px; text-decoration: none; font-size: 12px; color: #8C95B3">
 <span style="display: flex; align-items: center; justify-content: center; width: 48px; height: 30px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h14"></path><path d="M5 12h14"></path><path d="M5 18h9"></path></svg></span>
 <span>Grammatica</span>
 </a>
@@ -90,35 +82,30 @@ const VOCI = [
 function norm(s) {
 return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[’‘ʼ]/g, "'").replace(/\s+/g, ' ').trim();
 }
-function generaBandiera() {
-const P = (u, v) => {
-const s = u / 60, t = v / 30;
-const x = -30 + s * 450 + 25 * (t - 0.5) * (1 - s);
-const top = 470 + s * 220, bot = 900 - s * 110;
-const y = top + t * (bot - top) + 35 * Math.sin(3 * s + 0.3) * (1 - 0.5 * s);
-return x.toFixed(1) + ' ' + y.toFixed(1);
-};
-const L = (u0, v0, u1, v1) => {
-const p = [];
-for (let i = 0; i <= 32; i++) p.push(P(u0 + (u1 - u0) * i / 32, v0 + (v1 - v0) * i / 32));
-return 'M' + p.join(' L');
-};
-const croce = [], diagonali = [];
-for (let k = -3; k <= 3; k++) {
-croce.push(L(0, 15 + k, 60, 15 + k));
-croce.push(L(30 + k, 0, 30 + k, 30));
+function zona(u, v) {
+if (Math.abs(v - 15) < 3 || Math.abs(u - 30) < 3) return 'r';
+if (Math.abs(v - 15) < 5 || Math.abs(u - 30) < 5) return 'w';
+const d1 = Math.abs(u - 2 * v) / Math.sqrt(5), d2 = Math.abs(u + 2 * v - 60) / Math.sqrt(5);
+if (d1 < 1 || d2 < 1) return 'r';
+if (d1 < 3 || d2 < 3) return 'w';
+return 'b';
 }
-for (const d of [-2.5, -1.25, 0, 1.25, 2.5]) {
-const c = d * Math.sqrt(5);
-let v0 = Math.max(0, -c / 2), v1 = Math.min(30, (60 - c) / 2);
-diagonali.push(L(2 * v0 + c, v0, 2 * v1 + c, v1));
-v0 = Math.max(0, c / 2); v1 = Math.min(30, (60 + c) / 2);
-diagonali.push(L(60 + c - 2 * v0, v0, 60 + c - 2 * v1, v1));
+function generaPunti() {
+const out = { r: [], w: [], b: [] };
+const x0 = 60, y0 = 470, W = 560, H = 280, passo = 8, cx = 330, cy = 600;
+for (let y = y0; y <= y0 + H; y += passo) {
+for (let x = x0; x <= x0 + W; x += passo) {
+if (x < -5 || x > 395) continue;
+const u = (x - x0) / W * 60, v = (y - y0) / H * 30;
+const dist = Math.hypot((x - cx) / 190, (y - cy) / 120);
+const f = Math.max(0, 1 - dist * dist);
+const r = +(0.3 + 1.9 * f).toFixed(2);
+if (r > 0.45) out[zona(u, v)].push('M' + (x - r).toFixed(1) + ' ' + y.toFixed(1) + 'a' + r + ' ' + r + ' 0 1 0 ' + (2 * r) + ' 0a' + r + ' ' + r + ' 0 1 0 ' + (-2 * r) + ' 0');
 }
-const bordo = [L(0, 0, 60, 0), L(0, 30, 60, 30), L(0, 0, 0, 30), L(60, 0, 60, 30)];
-return { croce: croce.join(' '), diagonali: diagonali.join(' '), bordo: bordo.join(' '), opCroce: 0.52, opDiag: 0.4, opBordo: 0.24 };
 }
-const BANDIERA = generaBandiera();
+return { puntiRossi: out.r.join(''), puntiBianchi: out.w.join(''), puntiBlu: out.b.join('') };
+}
+const PUNTI = generaPunti();
 class Component extends DCLogic {
 renderVals() {
 const s = this.state || {};
@@ -128,7 +115,7 @@ const voci = VOCI
 .filter((v) => !nq || norm(v.it).includes(nq) || v.en.some((t) => norm(t).includes(nq)))
 .map((v) => ({ it: v.it, main: v.en[0], altre: v.en.length > 1 ? ', ' + v.en.slice(1).join(', ') : '' }));
 return {
-...BANDIERA,
+...PUNTI,
 q,
 cerca: (e) => this.setState({ q: e.target.value }),
 voci,

@@ -10,6 +10,11 @@
     );
   }
 
+  .bandiera {
+    height: 75%;
+    aspect-ratio: auto;
+  }
+
   .schermata {
     width: 100%;
     max-width: 760px;

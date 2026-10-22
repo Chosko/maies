@@ -11,99 +11,86 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;display=swap">
 <style>
 body{margin:0}
-a{color:#3EE0CF}a:hover{color:#8BEDE2}
+a{color:#8DB4FF}a:hover{color:#B9D0FF}
 </style>
 </helmet>
-<div style="position: relative; overflow: hidden; min-height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; background: radial-gradient(90% 65% at 50% 0%, #0E4D4A 0%, #08201F 45%, #050708 80%); font-family: Poppins, 'Segoe UI', system-ui, sans-serif; color: #EEF6F5">
-<svg aria-hidden="true" viewBox="-20 420 430 430" preserveAspectRatio="xMinYMax meet" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 75%; pointer-events: none">
-<defs>
-<radialGradient id="ec-bagliore" cx="40" cy="730" r="260" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1F6E6A" stop-opacity="0.55"></stop><stop offset="1" stop-color="#1F6E6A" stop-opacity="0"></stop></radialGradient>
-<linearGradient id="ec-sfuma" x1="0" y1="430" x2="0" y2="650" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#000000"></stop><stop offset="1" stop-color="#FFFFFF"></stop></linearGradient>
-<mask id="ec-maschera" maskUnits="userSpaceOnUse" x="-40" y="380" width="480" height="540"><rect x="-40" y="380" width="480" height="540" fill="url(#ec-sfuma)"></rect></mask>
-</defs>
-<rect x="-40" y="380" width="480" height="540" fill="url(#ec-bagliore)"></rect>
-<g mask="url(#ec-maschera)" fill="none" stroke-linecap="round">
-<path d="{{bordo}}" stroke="#7FA8E0" stroke-width="0.8" opacity="{{opBordo}}"></path>
-<path d="{{diagonali}}" stroke="#FFFFFF" stroke-width="0.8" opacity="{{opDiag}}"></path>
-<path d="{{croce}}" stroke="#FF6B7D" stroke-width="0.9" opacity="{{opCroce}}"></path>
-</g>
+<div style="position: relative; overflow: hidden; min-height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; background: radial-gradient(90% 65% at 50% 0%, #13235A 0%, #0A1430 45%, #05070D 80%); font-family: Poppins, 'Segoe UI', system-ui, sans-serif; color: #EEF2FA">
+<svg aria-hidden="true" viewBox="0 420 400 400" preserveAspectRatio="xMaxYMax meet" style="position: absolute; right: 0; bottom: 0; width: 100%; height: 75%; pointer-events: none">
+<path d="{{puntiBlu}}" fill="#3B5BC0" opacity="0.35"></path>
+<path d="{{puntiBianchi}}" fill="#FFFFFF" opacity="0.4"></path>
+<path d="{{puntiRossi}}" fill="#FF5A6E" opacity="0.6"></path>
 </svg>
-<header style="position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 40px; border-bottom: 1px solid #14302F">
+<header style="position: relative; z-index: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 40px; border-bottom: 1px solid #16244F">
 <span style="font-size: 22px; line-height: 32px; font-weight: 600; letter-spacing: -0.01em; color: #FFFFFF">maies</span>
-<nav aria-label="Sezioni" style="display: flex; flex-wrap: wrap; gap: 4px; padding: 5px; border-radius: 999px; background: #0A1415; border: 1px solid #1C2C2D">
-<a href="#" aria-current="page" style="display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px; background: #0F3B3A; color: #3EE0CF; font-size: 14px; font-weight: 500; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4z"></path><path d="M14 6l4 4"></path></svg>Esercizi</a>
-<a href="#" style="display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px; color: #A3B5B3; font-size: 14px; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="13" height="13" rx="2"></rect><path d="M8 4h11a2 2 0 0 1 2 2v11"></path></svg>Vocaboli</a>
-<a href="#" style="display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px; color: #A3B5B3; font-size: 14px; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4z"></path><path d="M5 17a3 3 0 0 1 3-3h10"></path></svg>Dizionario</a>
-<a href="#" style="display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px; color: #A3B5B3; font-size: 14px; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h14"></path><path d="M5 12h14"></path><path d="M5 18h9"></path></svg>Grammatica</a>
+<nav aria-label="Sezioni" style="display: flex; flex-wrap: wrap; gap: 4px; padding: 5px; border-radius: 999px; background: #0A1230; border: 1px solid #1E2A55">
+<a href="#" aria-current="page" style="display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px; background: #1A2A5E; color: #8DB4FF; font-size: 14px; font-weight: 500; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4z"></path><path d="M14 6l4 4"></path></svg>Esercizi</a>
+<a href="#" style="display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px; color: #A9B4D0; font-size: 14px; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="13" height="13" rx="2"></rect><path d="M8 4h11a2 2 0 0 1 2 2v11"></path></svg>Vocaboli</a>
+<a href="#" style="display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px; color: #A9B4D0; font-size: 14px; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4z"></path><path d="M5 17a3 3 0 0 1 3-3h10"></path></svg>Dizionario</a>
+<a href="#" style="display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px; color: #A9B4D0; font-size: 14px; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h14"></path><path d="M5 12h14"></path><path d="M5 18h9"></path></svg>Grammatica</a>
 </nav>
 </header>
 <main style="position: relative; z-index: 1; flex: 1; width: 100%; max-width: 760px; margin: 0 auto; box-sizing: border-box; display: flex; flex-direction: column; gap: 28px; padding: 56px 24px">
 <h1 style="margin: 0; font-size: 24px; line-height: 32px; font-weight: 500">Esercizi</h1>
 <div style="position: relative">
-<div aria-hidden="true" style="position: absolute; top: -10px; left: 24px; right: 24px; height: 48px; border-radius: 22px; background: #0C2F2F; border: 1px solid #154040"></div>
-<article style="position: relative; display: flex; flex-direction: column; gap: 22px; padding: 36px 40px 32px; border-radius: 26px; border: 1px solid #1B4A48; background: linear-gradient(165deg, #12524E 0%, #0C3335 45%, #0A1D1F 100%)">
+<div aria-hidden="true" style="position: absolute; top: -10px; left: 24px; right: 24px; height: 48px; border-radius: 22px; background: #101C45; border: 1px solid #1E2E66"></div>
+<article style="position: relative; display: flex; flex-direction: column; gap: 22px; padding: 36px 40px 32px; border-radius: 26px; border: 1px solid #2A3F82; background: linear-gradient(165deg, #1C3170 0%, #122051 45%, #0B132E 100%)">
 <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
-<span style="font-size: 15px; line-height: 22px; color: #A3CDC8">Present continuous</span>
+<span style="font-size: 15px; line-height: 22px; color: #B9C6E6">Present continuous</span>
 <p style="margin: 0; font-size: 32px; line-height: 42px; font-weight: 500; color: #FFFFFF; text-wrap: balance">Sto leggendo un libro molto interessante.</p>
 </div>
-<div aria-hidden="true" style="border-top: 1px solid #24504E"></div>
+<div aria-hidden="true" style="border-top: 1px solid #2E4380"></div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 24px">
 <div style="display: flex; flex-direction: column; gap: 4px">
-<div style="font-size: 13px; line-height: 18px; color: #93B4B0">La tua risposta</div>
-<p lang="en" style="margin: 0; font-size: 18px; line-height: 27px; color: #E6EFEE">I read a very interesting book.</p>
+<div style="font-size: 13px; line-height: 18px; color: #A9B7DA">La tua risposta</div>
+<p lang="en" style="margin: 0; font-size: 18px; line-height: 27px; color: #E6EBF5">I read a very interesting book.</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 4px">
-<div style="font-size: 13px; line-height: 18px; color: #93B4B0">Corretta</div>
-<p lang="en" style="margin: 0; font-size: 20px; line-height: 28px; font-weight: 600; color: #3EE0CF">I am reading a very interesting book.</p>
-<div style="margin-top: 10px; font-size: 13px; line-height: 18px; color: #93B4B0">Va bene anche</div>
-<p lang="en" style="margin: 0; font-size: 15px; line-height: 22px; color: #CFDDDB">I’m reading a very interesting book.</p>
+<div style="font-size: 13px; line-height: 18px; color: #A9B7DA">Corretta</div>
+<p lang="en" style="margin: 0; font-size: 20px; line-height: 28px; font-weight: 600; color: #8DB4FF">I am reading a very interesting book.</p>
+<div style="margin-top: 10px; font-size: 13px; line-height: 18px; color: #A9B7DA">Va bene anche</div>
+<p lang="en" style="margin: 0; font-size: 15px; line-height: 22px; color: #D3DBEE">I’m reading a very interesting book.</p>
 </div>
 </div>
 </article>
 </div>
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
-<div style="font-size: 15px; line-height: 22px; color: #B7C9C7">Com’era la tua risposta?</div>
+<div style="font-size: 15px; line-height: 22px; color: #B4BED8">Com’era la tua risposta?</div>
 <div style="display: flex; gap: 12px">
-<button type="button" style="width: 160px; height: 52px; border: 1px solid #27393B; border-radius: 999px; background: #121819; color: #EEF6F5; font-family: inherit; font-size: 15px; font-weight: 500">Sbagliata</button>
-<button type="button" style="width: 160px; height: 52px; border: none; border-radius: 999px; background: linear-gradient(90deg, #2BD9C8 0%, #1597B5 100%); color: #052826; font-family: inherit; font-size: 15px; font-weight: 600">Giusta</button>
+<button type="button" style="width: 160px; height: 52px; border: 1px solid #2C3A66; border-radius: 999px; background: #10162E; color: #EEF2FA; font-family: inherit; font-size: 15px; font-weight: 500">Sbagliata</button>
+<button type="button" style="width: 160px; height: 52px; border: none; border-radius: 999px; background: linear-gradient(90deg, #FFFFFF 0%, #C7D6FF 100%); color: #0B1A4A; font-family: inherit; font-size: 15px; font-weight: 600">Giusta</button>
 </div>
 </div>
 </main>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
-function generaBandiera() {
-const P = (u, v) => {
-const s = u / 60, t = v / 30;
-const x = -30 + s * 450 + 25 * (t - 0.5) * (1 - s);
-const top = 470 + s * 220, bot = 900 - s * 110;
-const y = top + t * (bot - top) + 35 * Math.sin(3 * s + 0.3) * (1 - 0.5 * s);
-return x.toFixed(1) + ' ' + y.toFixed(1);
-};
-const L = (u0, v0, u1, v1) => {
-const p = [];
-for (let i = 0; i <= 32; i++) p.push(P(u0 + (u1 - u0) * i / 32, v0 + (v1 - v0) * i / 32));
-return 'M' + p.join(' L');
-};
-const croce = [], diagonali = [];
-for (let k = -3; k <= 3; k++) {
-croce.push(L(0, 15 + k, 60, 15 + k));
-croce.push(L(30 + k, 0, 30 + k, 30));
+function zona(u, v) {
+if (Math.abs(v - 15) < 3 || Math.abs(u - 30) < 3) return 'r';
+if (Math.abs(v - 15) < 5 || Math.abs(u - 30) < 5) return 'w';
+const d1 = Math.abs(u - 2 * v) / Math.sqrt(5), d2 = Math.abs(u + 2 * v - 60) / Math.sqrt(5);
+if (d1 < 1 || d2 < 1) return 'r';
+if (d1 < 3 || d2 < 3) return 'w';
+return 'b';
 }
-for (const d of [-2.5, -1.25, 0, 1.25, 2.5]) {
-const c = d * Math.sqrt(5);
-let v0 = Math.max(0, -c / 2), v1 = Math.min(30, (60 - c) / 2);
-diagonali.push(L(2 * v0 + c, v0, 2 * v1 + c, v1));
-v0 = Math.max(0, c / 2); v1 = Math.min(30, (60 + c) / 2);
-diagonali.push(L(60 + c - 2 * v0, v0, 60 + c - 2 * v1, v1));
+function generaPunti() {
+const out = { r: [], w: [], b: [] };
+const x0 = 60, y0 = 470, W = 560, H = 280, passo = 8, cx = 330, cy = 600;
+for (let y = y0; y <= y0 + H; y += passo) {
+for (let x = x0; x <= x0 + W; x += passo) {
+if (x < -5 || x > 395) continue;
+const u = (x - x0) / W * 60, v = (y - y0) / H * 30;
+const dist = Math.hypot((x - cx) / 190, (y - cy) / 120);
+const f = Math.max(0, 1 - dist * dist);
+const r = +(0.3 + 1.9 * f).toFixed(2);
+if (r > 0.45) out[zona(u, v)].push('M' + (x - r).toFixed(1) + ' ' + y.toFixed(1) + 'a' + r + ' ' + r + ' 0 1 0 ' + (2 * r) + ' 0a' + r + ' ' + r + ' 0 1 0 ' + (-2 * r) + ' 0');
 }
-const bordo = [L(0, 0, 60, 0), L(0, 30, 60, 30), L(0, 0, 0, 30), L(60, 0, 60, 30)];
-return { croce: croce.join(' '), diagonali: diagonali.join(' '), bordo: bordo.join(' '), opCroce: 0.52, opDiag: 0.4, opBordo: 0.24 };
 }
-const BANDIERA = generaBandiera();
+return { puntiRossi: out.r.join(''), puntiBianchi: out.w.join(''), puntiBlu: out.b.join('') };
+}
+const PUNTI = generaPunti();
 class Component extends DCLogic {
 renderVals() {
-return { ...BANDIERA };
+return { ...PUNTI };
 }
 }
 </script>

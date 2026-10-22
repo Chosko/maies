@@ -3,8 +3,8 @@
 Copia nel repository del design approvato, da cui l'implementazione legge
 l'aspetto dell'interfaccia senza aprire gli artifact originali:
 
-- `design-system.md` e `tokens.json`: il design system "maies"
-  (https://claude.ai/artifact/YQrPUSfie5TD46Qd6Kbavu).
+- `design-system.md` (il `README.md` dell'artifact) e `tokens.json`: il
+  design system "maies" (https://claude.ai/artifact/YQrPUSfie5TD46Qd6Kbavu).
 - `schermate/*.dc.html`: le schermate confermate della canvas "maies UI"
   (https://claude.ai/artifact/VDTMJ6aAJBEhdUhAT2JxTQ), righe "Esercizi e
   vocaboli" e "Dizionario, grammatica e computer". Sono markup di
@@ -23,7 +23,9 @@ l'aspetto dell'interfaccia senza aprire gli artifact originali:
 | Grammatica, elenco | `schermate/GrammaticaElenco.dc.html` |
 | Grammatica, lezione | `schermate/GrammaticaLezione.dc.html` |
 
-Quando il design cambia negli artifact, questa cartella si aggiorna copiando
-di nuovo i file. `design-system.md` e `tokens.json` sono senza la bandiera di
-sfondo e i token `flag-*`, che l'artifact del design system e le schermate
-`.dc.html` mostrano ancora: per l'app vale questa copia.
+Il logo è l'icona dell'app, negli asset del design system: in
+`public/maies-icona.svg` (sorgente vettoriale, favicon) e
+`public/maies-icona-512.png` (512 × 512, icona della schermata home).
+
+Quando il design cambia negli artifact, questa cartella e le icone in
+`public/` si aggiornano copiando di nuovo i file.

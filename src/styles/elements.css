@@ -19,6 +19,32 @@
   );
 }
 
+/* Bandiera a punti in basso a destra, sotto il contenuto. */
+.bandiera {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  pointer-events: none;
+}
+
+.bandiera-fondo {
+  fill: var(--color-flag-blue);
+  opacity: 0.35;
+}
+
+.bandiera-diagonali {
+  fill: var(--color-flag-white);
+  opacity: 0.4;
+}
+
+.bandiera-croce {
+  fill: var(--color-flag-red);
+  opacity: 0.6;
+}
+
 /* Colonna della schermata. */
 .schermata {
   flex: 1;
@@ -347,6 +373,12 @@
   padding: var(--space-5);
   color: var(--color-ink);
   text-decoration: none;
+  background: linear-gradient(
+    165deg,
+    var(--color-card-list-top) 0%,
+    var(--color-peek) 55%,
+    var(--color-card-end) 100%
+  );
 }
 
 .grammatica-voce-testo {
@@ -446,8 +478,8 @@
   padding: var(--space-1) var(--space-5);
   background: linear-gradient(
     180deg,
-    var(--color-card-top) 0%,
-    var(--color-card-mid) 40%,
+    var(--color-card-list-top) 0%,
+    var(--color-peek) 40%,
     var(--color-card-end) 100%
   );
 }
@@ -547,6 +579,29 @@
 
 .vocabolo-carta-esito {
   gap: var(--space-5);
+}
+
+/* L'esito Sbagliata vira la carta al rosso; la traduzione resta in accent. */
+.vocabolo-carta-sbagliata {
+  border-color: var(--color-wrong-line);
+  background: linear-gradient(
+    165deg,
+    var(--color-wrong-top) 0%,
+    var(--color-wrong-mid) 45%,
+    var(--color-wrong-end) 100%
+  );
+}
+
+.vocabolo-carta-sbagliata .esercizio-divisore {
+  border-top-color: var(--color-wrong-divider);
+}
+
+.vocabolo-carta-sbagliata .etichetta {
+  color: var(--color-wrong-label);
+}
+
+.vocabolo-carta-sbagliata .esercizio-lezione {
+  color: var(--color-wrong-lesson);
 }
 
 .vocabolo-esito {

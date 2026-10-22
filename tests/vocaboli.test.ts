@@ -134,6 +134,7 @@ describe('schermata Vocaboli', () => {
     expect(testi(wrapper, '.vocabolo-alternativa')).toEqual(['term 1'])
     expect(bottone(wrapper, 'Avanti').exists()).toBe(true)
     expect(wrapper.findAll('button').map((b) => b.text())).not.toContain('Conferma')
+    expect(carta.classes()).not.toContain('vocabolo-carta-sbagliata')
     expect(archivio.leggiLivello('01-a/v1')).toBe('consolidato')
   })
 
@@ -150,6 +151,7 @@ describe('schermata Vocaboli', () => {
     expect(testi(wrapper, '.vocabolo-traduzione')).toEqual(['word 1'])
     expect(testi(wrapper, '.vocabolo-alternativa')).toEqual(['term 1'])
     expect(bottone(wrapper, 'Avanti').exists()).toBe(true)
+    expect(carta.classes()).toContain('vocabolo-carta-sbagliata')
     expect(archivio.leggiLivello('01-a/v1')).toBe('da-ripassare')
   })
 

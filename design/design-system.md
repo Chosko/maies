@@ -10,16 +10,19 @@ L'app parla a Sara in italiano, con il tu, in frasi brevi e semplici: "Com’era
 
 ## Fondamenta visive
 
-Un solo tema, scuro. L'atmosfera viene da due elementi.
+Un solo tema, scuro. L'atmosfera viene da tre elementi.
 
-- **Il bagliore.** Lo sfondo di ogni schermata è un gradiente radiale che scende dall'alto: `glow` al centro, `glow-mid` al 48%, `ground` dal 78% (radial-gradient 130% 55% at 50% 0%). Su computer è più largo e basso (90% 65%).
-- **Le carte.** Il contenuto vive in carte con gradiente diagonale a 165° da `card-top` a `card-mid` (45%) a `card-end`, bordo di 1px `card-line`, angoli `radius-lg`. Negli esercizi e nei vocaboli una seconda carta `peek` spunta 9px sopra quella corrente, rientrata di 18px per lato: la sessione non finisce.
+- **Il bagliore.** Lo sfondo di ogni schermata è un gradiente radiale blu notte che scende dall'alto: `glow` al centro, `glow-mid` al 48%, `ground` dal 78% (radial-gradient 130% 55% at 50% 0%). Su computer è più largo e basso (90% 65%).
+- **Le carte.** Il contenuto vive in carte con gradiente diagonale a 165° da `card-top` a `card-mid` (45%) a `card-end`, bordo di 1px `card-line`, angoli `radius-lg`. Le carte di elenco (grammatica, dizionario) usano un gradiente più quieto che parte da `card-list-top`. Negli esercizi e nei vocaboli una seconda carta `peek` spunta 9px sopra quella corrente, rientrata di 18px per lato: la sessione non finisce. La carta dell'esito Sbagliata vira al rosso: gradiente da `wrong-top` a `wrong-mid` a `wrong-end`, bordo `wrong-line`, etichette `wrong-label` e `wrong-lesson`; la traduzione corretta resta in `accent`.
+- **La bandiera a punti.** In basso a destra di ogni schermata si intravede un frammento della Union Jack fatto di puntini, come una retinatura: `flag-red` sulla croce (opacità 0,6), `flag-white` sulle diagonali (0,4), `flag-blue` sul fondo (0,35). È solo un accenno: si vedono l'incrocio della croce e un pezzo di diagonale che escono dal bordo destro. I puntini sono su una griglia di 8px, al massimo 2,2px di raggio al centro del frammento, e rimpiccioliscono fino a sparire verso il centro dello schermo. Su computer il frammento sta nell'angolo in basso a destra della pagina. Le carte e la barra di navigazione stanno sopra.
 
-Il bottone principale è l'unico altro gradiente: orizzontale da `action-start` a `action-end`, con testo `on-action`.
+Il bottone principale è l'unico altro gradiente: una pillola bianca che sfuma appena verso l'azzurro, da `action-start` a `action-end`, con testo `on-action`.
 
 ## Colore
 
-`accent` è il colore di ciò che è giusto e attivo: traduzione corretta, esito Giusta, voce attiva, campo con il fuoco. `wrong` compare solo sull'esito Sbagliata dei vocaboli e sempre con la croce e la parola, mai da solo. Il testo ha una scala di chiari dal più forte al più tenue: `ink-strong` per ciò che va tradotto, `ink` per l'interfaccia, `ink-answer` per la risposta di Sara, `ink-body` e `ink-soft` per i testi lunghi e le alternative, `ink-muted`, `lesson` e `label` per il contorno. Tutti hanno almeno 4,5:1 sul fondo e su ogni tappa del gradiente delle carte, tranne `label`, che arriva a 4,0:1 su `card-top`. Per questo le etichette `label` stanno solo dalla metà della carta in giù, dove il fondo è già `card-mid` o più scuro (6,1:1 e oltre). Sul bottone principale il testo è sempre `on-action`, mai bianco.
+I colori sono quelli della bandiera, ognuno con un significato. Il blu è l'app e ciò che è giusto: fondo, carte e `accent`, l'azzurro della traduzione corretta, dell'esito Giusta, della voce attiva e del campo con il fuoco. Il rosso è solo l'errore: la carta dell'esito Sbagliata e `wrong`, che compare sempre con la croce e la parola, mai da solo. Il bianco è l'azione: il bottone principale. Fuori da questi usi il rosso compare solo nei puntini della bandiera.
+
+Il testo ha una scala di chiari dal più forte al più tenue: `ink-strong` per ciò che va tradotto, `ink` per l'interfaccia, `ink-answer` per la risposta di Sara, `ink-body` e `ink-soft` per i testi lunghi e le alternative, `ink-muted`, `lesson` e `label` per il contorno. Tutti hanno almeno 6:1 sul fondo e su ogni tappa del gradiente delle carte; sulla carta d'errore `wrong-label` e `wrong-lesson` arrivano ad almeno 6,5:1. Il testo segnaposto `placeholder` è il più tenue, 4,7:1 su `chip`.
 
 ## Tipografia
 
@@ -47,4 +50,4 @@ Tratto lineare su griglia di 24px, spessore 1,8px, estremità e giunzioni arroto
 
 ## Logo
 
-Non c'è un logo: il nome è "maies" in minuscolo, Poppins 600.
+Il logo è l'icona dell'app: la Union Jack fatta di puntini, centrata su un quadrato con il gradiente delle carte (`card-top`, `card-mid`, `card-end`), che sfuma in tutte le direzioni verso il blu. Usa gli stessi colori dei puntini dello sfondo: croce `flag-red`, diagonali `flag-white`, fondo `flag-blue`. I file sono nel gruppo Logos: `maies-icona.svg` è il sorgente vettoriale, `maies-icona-512.png` la versione 512 × 512. L'icona è quadrata e senza angoli arrotondati, perché li arrotonda il telefono. Accanto all'icona o nella barra in alto su computer il nome resta "maies" in minuscolo, Poppins 600; non esiste un logotipo diverso.
