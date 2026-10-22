@@ -1,0 +1,412 @@
+{
+  "id": "08-a-hotel-review",
+  "title": "Scrivere la recensione di un albergo",
+  "sentences": [
+    {
+      "id": "f01",
+      "it": "L'albergo è in una posizione scadente: non è vicino a nessun ristorante.",
+      "en": "The hotel is in a poor location: it isn't near any restaurants.",
+      "alternatives": [
+        "The hotel is in a poor location: it's not near any restaurants.",
+        "The hotel is in a poor location: it is not near any restaurants."
+      ]
+    },
+    {
+      "id": "f02",
+      "it": "Il bar dell'albergo era troppo caro per quello che offriva.",
+      "en": "The hotel bar was overpriced.",
+      "alternatives": []
+    },
+    {
+      "id": "f03",
+      "it": "La camera era pulitissima, ma il bagno era sporchissimo.",
+      "en": "The room was spotless, but the bathroom was filthy.",
+      "alternatives": [
+        "The bedroom was spotless, but the bathroom was filthy."
+      ]
+    },
+    {
+      "id": "f04",
+      "it": "Il personale era molto disponibile ed educato.",
+      "en": "The staff were very helpful and polite.",
+      "alternatives": [
+        "The staff was very helpful and polite."
+      ]
+    },
+    {
+      "id": "f05",
+      "it": "La colazione era inclusa nel prezzo?",
+      "en": "Was breakfast included in the price?",
+      "alternatives": [
+        "Was the breakfast included in the price?"
+      ]
+    },
+    {
+      "id": "f06",
+      "it": "L'albergo ha una piscina, una palestra e una sauna.",
+      "en": "The hotel has a pool, a gym and a sauna.",
+      "alternatives": [
+        "The hotel has a pool, a gym, and a sauna.",
+        "The hotel has a swimming pool, a gym and a sauna.",
+        "The hotel has a swimming pool, a gym, and a sauna."
+      ]
+    },
+    {
+      "id": "f07",
+      "it": "Il rapporto qualità-prezzo era ottimo.",
+      "en": "It was excellent value for money.",
+      "alternatives": [
+        "It was great value for money.",
+        "The value for money was excellent."
+      ]
+    },
+    {
+      "id": "f08",
+      "it": "Ho dormito bene perché il letto era molto comodo.",
+      "en": "I slept well because the bed was very comfortable.",
+      "alternatives": [
+        "I slept well because the bed was really comfortable."
+      ]
+    },
+    {
+      "id": "f09",
+      "it": "Dovrebbero comprare dei materassi nuovi.",
+      "en": "They should buy new mattresses.",
+      "alternatives": [
+        "They should buy some new mattresses."
+      ]
+    },
+    {
+      "id": "f10",
+      "it": "Potrebbero migliorare la pulizia delle camere.",
+      "en": "They could improve the cleanliness of the rooms.",
+      "alternatives": []
+    },
+    {
+      "id": "f11",
+      "it": "Consiglierei di installare un condizionatore in ogni camera.",
+      "en": "I would recommend installing an air conditioner in every room.",
+      "alternatives": [
+        "I'd recommend installing an air conditioner in every room.",
+        "I would recommend installing an air conditioner in each room.",
+        "I'd recommend installing an air conditioner in each room."
+      ]
+    },
+    {
+      "id": "f12",
+      "it": "Consiglio di prenotare una camera con vista sul mare.",
+      "en": "I recommend booking a room with a sea view.",
+      "alternatives": [
+        "I would recommend booking a room with a sea view.",
+        "I'd recommend booking a room with a sea view."
+      ]
+    },
+    {
+      "id": "f13",
+      "it": "Gli ospiti sarebbero più contenti con una colazione migliore.",
+      "en": "The guests would be happier with a better breakfast.",
+      "alternatives": [
+        "Guests would be happier with a better breakfast."
+      ]
+    },
+    {
+      "id": "f14",
+      "it": "Dovrebbero aprire la piscina anche la sera.",
+      "en": "They should open the pool in the evening too.",
+      "alternatives": [
+        "They should also open the pool in the evening.",
+        "They should open the swimming pool in the evening too.",
+        "They should also open the swimming pool in the evening."
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "v01",
+      "it": "recensione",
+      "en": [
+        "review"
+      ]
+    },
+    {
+      "id": "v02",
+      "it": "recensione di un albergo",
+      "en": [
+        "hotel review"
+      ]
+    },
+    {
+      "id": "v03",
+      "it": "albergo",
+      "en": [
+        "hotel"
+      ]
+    },
+    {
+      "id": "v04",
+      "it": "scadente",
+      "en": [
+        "poor"
+      ]
+    },
+    {
+      "id": "v05",
+      "it": "posizione",
+      "en": [
+        "location"
+      ]
+    },
+    {
+      "id": "v06",
+      "it": "troppo caro (per quello che offre)",
+      "en": [
+        "overpriced"
+      ]
+    },
+    {
+      "id": "v07",
+      "it": "pulitissimo",
+      "en": [
+        "spotless"
+      ]
+    },
+    {
+      "id": "v08",
+      "it": "sporchissimo",
+      "en": [
+        "filthy"
+      ]
+    },
+    {
+      "id": "v09",
+      "it": "pulito",
+      "en": [
+        "clean"
+      ]
+    },
+    {
+      "id": "v10",
+      "it": "sporco",
+      "en": [
+        "dirty"
+      ]
+    },
+    {
+      "id": "v11",
+      "it": "bagno",
+      "en": [
+        "bathroom"
+      ]
+    },
+    {
+      "id": "v12",
+      "it": "piscina",
+      "en": [
+        "pool",
+        "swimming pool"
+      ]
+    },
+    {
+      "id": "v13",
+      "it": "idromassaggio",
+      "en": [
+        "Jacuzzi",
+        "hot tub"
+      ]
+    },
+    {
+      "id": "v14",
+      "it": "sauna",
+      "en": [
+        "sauna"
+      ]
+    },
+    {
+      "id": "v15",
+      "it": "servizi",
+      "en": [
+        "services"
+      ]
+    },
+    {
+      "id": "v16",
+      "it": "personale",
+      "en": [
+        "staff"
+      ]
+    },
+    {
+      "id": "v17",
+      "it": "atteggiamento",
+      "en": [
+        "attitude"
+      ]
+    },
+    {
+      "id": "v18",
+      "it": "disponibile (che aiuta)",
+      "en": [
+        "helpful"
+      ]
+    },
+    {
+      "id": "v19",
+      "it": "educato",
+      "en": [
+        "polite"
+      ]
+    },
+    {
+      "id": "v20",
+      "it": "pulizia",
+      "en": [
+        "cleanliness"
+      ]
+    },
+    {
+      "id": "v21",
+      "it": "comodità",
+      "en": [
+        "comfort"
+      ]
+    },
+    {
+      "id": "v22",
+      "it": "comodo",
+      "en": [
+        "comfortable"
+      ]
+    },
+    {
+      "id": "v23",
+      "it": "rapporto qualità-prezzo",
+      "en": [
+        "value for money"
+      ]
+    },
+    {
+      "id": "v24",
+      "it": "prezzo",
+      "en": [
+        "price"
+      ]
+    },
+    {
+      "id": "v25",
+      "it": "ragionevole",
+      "en": [
+        "reasonable"
+      ]
+    },
+    {
+      "id": "v26",
+      "it": "incluso",
+      "en": [
+        "included"
+      ]
+    },
+    {
+      "id": "v27",
+      "it": "colazione",
+      "en": [
+        "breakfast"
+      ]
+    },
+    {
+      "id": "v28",
+      "it": "gratuito (offerto)",
+      "en": [
+        "complimentary",
+        "free"
+      ]
+    },
+    {
+      "id": "v29",
+      "it": "centro commerciale",
+      "en": [
+        "shopping centre",
+        "shopping center",
+        "shopping mall",
+        "mall"
+      ]
+    },
+    {
+      "id": "v30",
+      "it": "ospite (di un albergo)",
+      "en": [
+        "guest"
+      ]
+    },
+    {
+      "id": "v31",
+      "it": "materasso",
+      "en": [
+        "mattress"
+      ]
+    },
+    {
+      "id": "v32",
+      "it": "condizionatore",
+      "en": [
+        "air conditioner"
+      ]
+    },
+    {
+      "id": "v33",
+      "it": "installare",
+      "en": [
+        "to install",
+        "install"
+      ]
+    },
+    {
+      "id": "v34",
+      "it": "migliorare",
+      "en": [
+        "to improve",
+        "improve"
+      ]
+    },
+    {
+      "id": "v35",
+      "it": "miglioramento",
+      "en": [
+        "improvement"
+      ]
+    },
+    {
+      "id": "v36",
+      "it": "qualità",
+      "en": [
+        "quality"
+      ]
+    },
+    {
+      "id": "v37",
+      "it": "consigliare",
+      "en": [
+        "to recommend",
+        "recommend"
+      ]
+    },
+    {
+      "id": "v38",
+      "it": "vista sul mare",
+      "en": [
+        "sea view"
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g01",
+      "title": "Scrivere una recensione d'albergo",
+      "body": "Una recensione serve a far capire agli altri **com'era** l'albergo. Gli aspetti più importanti da descrivere sono:\n\n- ***Location*** (posizione): dov'è l'albergo? È vicino al centro, ai ristoranti, ai centri commerciali?\n- ***Staff attitude*** (atteggiamento del personale): il personale era disponibile? Era educato?\n- ***Cleanliness*** (pulizia): l'albergo e la camera erano puliti?\n- ***Comfort*** (comodità): hai dormito bene? Com'erano i mobili? Come ti sei sentito in camera?\n- ***Overall value for money*** (rapporto qualità-prezzo): il prezzo era ragionevole? La colazione era inclusa?\n- ***Services offered*** (servizi offerti): quali servizi extra offriva l'albergo? Per esempio *pool*, *gym*, *Jacuzzi*, *sauna*.\n\n## Aggettivi utili\n\n| Aggettivo | Significato | Esempio |\n| --- | --- | --- |\n| *poor* | scadente | *The hotel is in a poor location. It isn't near any restaurants.* |\n| *overpriced* | troppo caro per quello che offre | *The restaurant was overpriced. The food wasn't very good, but it cost a lot!* |\n| *spotless* | pulitissimo | *The bathroom was spotless!* |\n| *filthy* | sporchissimo | *The room was filthy.* |\n\nUna recensione si scrive di solito al **passato**, perché racconta un soggiorno già concluso: *The staff **were** very polite.*"
+    },
+    {
+      "id": "g02",
+      "title": "Suggerire miglioramenti: recommend + -ing",
+      "body": "Le recensioni servono anche agli alberghi, che le usano per rendere più contenti gli ospiti. Per suggerire un miglioramento si usano *should* e *could* + infinito senza *to*, come per dare consigli, oppure *recommend* + verbo in **-ing**.\n\n- *They **should buy** new mattresses for the beds. The old ones are uncomfortable.* — Dovrebbero comprare materassi nuovi.\n- *They **could improve** the quality of the complimentary breakfast.* — Potrebbero migliorare la qualità della colazione offerta.\n- *I **would recommend installing** air conditioners in the rooms, because they get very hot in the summer.* — Consiglierei di installare dei condizionatori nelle camere.\n\n## Attenzione\n\n- Dopo *recommend* il verbo va in **-ing**: *I recommend booking early*, non *I recommend to book*. In italiano invece si dice \"consiglio **di** prenotare\".\n- *I would recommend* (*I'd recommend*) è più cortese di *I recommend*: è il condizionale \"consiglierei\"."
+    }
+  ]
+}
