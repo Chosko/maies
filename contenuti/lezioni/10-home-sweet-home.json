@@ -1,0 +1,472 @@
+{
+  "id": "10-home-sweet-home",
+  "title": "Casa dolce casa: descrivere la casa e scrivere un annuncio",
+  "sentences": [
+    {
+      "id": "f01",
+      "it": "Vivo in un piccolo appartamento appena fuori dal centro.",
+      "en": "I live in a small apartment just outside the city centre.",
+      "alternatives": [
+        "I live in a small apartment just outside the city center.",
+        "I live in a small flat just outside the city centre.",
+        "I live in a small flat just outside the city center.",
+        "I live in a small apartment just outside the centre of the city.",
+        "I live in a small apartment just outside the center of the city."
+      ]
+    },
+    {
+      "id": "f02",
+      "it": "Il mio quartiere è calmo e tranquillo.",
+      "en": "My neighbourhood is calm and quiet.",
+      "alternatives": [
+        "My neighborhood is calm and quiet."
+      ]
+    },
+    {
+      "id": "f03",
+      "it": "C'è un piccolo balcone dove il mio gatto guarda gli uccelli.",
+      "en": "There is a small balcony where my cat watches the birds.",
+      "alternatives": [
+        "There's a small balcony where my cat watches the birds.",
+        "There is a little balcony where my cat watches the birds.",
+        "There's a little balcony where my cat watches the birds."
+      ]
+    },
+    {
+      "id": "f04",
+      "it": "Ci sono negozi e ristoranti nelle vicinanze.",
+      "en": "There are shops and restaurants nearby.",
+      "alternatives": []
+    },
+    {
+      "id": "f05",
+      "it": "Se potessi cambiare una cosa, renderei la cucina più grande.",
+      "en": "If I could change one thing, I would make the kitchen bigger.",
+      "alternatives": [
+        "If I could change one thing, I'd make the kitchen bigger."
+      ]
+    },
+    {
+      "id": "f06",
+      "it": "Aggiungerei una vasca da bagno al bagno.",
+      "en": "I would add a bathtub to the bathroom.",
+      "alternatives": [
+        "I'd add a bathtub to the bathroom.",
+        "I would add a bath to the bathroom.",
+        "I'd add a bath to the bathroom."
+      ]
+    },
+    {
+      "id": "f07",
+      "it": "Preferisci un attico in città o una baita vicino a un lago?",
+      "en": "Do you prefer a penthouse in the city or a cabin near a lake?",
+      "alternatives": [
+        "Would you prefer a penthouse in the city or a cabin near a lake?",
+        "Do you prefer a penthouse in the city or a cabin by a lake?"
+      ]
+    },
+    {
+      "id": "f08",
+      "it": "La mia casa dei sogni è enorme e spaziosa.",
+      "en": "My dream home is huge and spacious.",
+      "alternatives": [
+        "My dream home is massive and spacious.",
+        "My dream house is huge and spacious.",
+        "My dream house is massive and spacious."
+      ]
+    },
+    {
+      "id": "f09",
+      "it": "La camera di mia figlia è minuscola ma carina.",
+      "en": "My daughter's bedroom is tiny but cute.",
+      "alternatives": [
+        "My daughter's room is tiny but cute."
+      ]
+    },
+    {
+      "id": "f10",
+      "it": "Il soggiorno è caldo e accogliente.",
+      "en": "The living room is warm and cozy.",
+      "alternatives": [
+        "The living room is warm and cosy."
+      ]
+    },
+    {
+      "id": "f11",
+      "it": "Che stile ha la tua casa?",
+      "en": "What style does your home have?",
+      "alternatives": [
+        "What kind of style does your home have?",
+        "What style does your house have?",
+        "What kind of style does your house have?"
+      ]
+    },
+    {
+      "id": "f12",
+      "it": "Questo è un bellissimo appartamento con due camere da letto nel cuore della città.",
+      "en": "This is a beautiful two-bedroom flat in the heart of the city.",
+      "alternatives": [
+        "This is a beautiful two-bedroom apartment in the heart of the city."
+      ]
+    },
+    {
+      "id": "f13",
+      "it": "È vicino a un parco e a un mercato dei contadini.",
+      "en": "It is close to a park and a farmers market.",
+      "alternatives": [
+        "It's close to a park and a farmers market.",
+        "It is close to a park and a farmers' market.",
+        "It's close to a park and a farmers' market.",
+        "It is near a park and a farmers market.",
+        "It's near a park and a farmers market."
+      ]
+    },
+    {
+      "id": "f14",
+      "it": "Ti piacerà andare a piedi al teatro.",
+      "en": "You'll enjoy walking to the theatre.",
+      "alternatives": [
+        "You will enjoy walking to the theatre.",
+        "You'll enjoy walking to the theater.",
+        "You will enjoy walking to the theater."
+      ]
+    },
+    {
+      "id": "f15",
+      "it": "Potrai rilassarti nel tuo spazio accogliente.",
+      "en": "You'll be able to relax in your own cozy space.",
+      "alternatives": [
+        "You will be able to relax in your own cozy space.",
+        "You'll be able to relax in your own cosy space.",
+        "You will be able to relax in your own cosy space.",
+        "You'll be able to relax in your cozy space."
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "v01",
+      "it": "casa dei sogni",
+      "en": [
+        "dream home",
+        "dream house"
+      ]
+    },
+    {
+      "id": "v02",
+      "it": "descrizione",
+      "en": [
+        "description"
+      ]
+    },
+    {
+      "id": "v03",
+      "it": "annuncio",
+      "en": [
+        "advertisement",
+        "advert",
+        "ad"
+      ]
+    },
+    {
+      "id": "v04",
+      "it": "attico",
+      "en": [
+        "penthouse"
+      ]
+    },
+    {
+      "id": "v05",
+      "it": "baita",
+      "en": [
+        "cabin"
+      ]
+    },
+    {
+      "id": "v06",
+      "it": "lago",
+      "en": [
+        "lake"
+      ]
+    },
+    {
+      "id": "v07",
+      "it": "dimensioni",
+      "en": [
+        "size"
+      ]
+    },
+    {
+      "id": "v08",
+      "it": "vicini di casa",
+      "en": [
+        "neighbours",
+        "neighbors"
+      ]
+    },
+    {
+      "id": "v09",
+      "it": "tranquillo",
+      "en": [
+        "quiet",
+        "calm"
+      ]
+    },
+    {
+      "id": "v10",
+      "it": "balcone",
+      "en": [
+        "balcony"
+      ]
+    },
+    {
+      "id": "v11",
+      "it": "gatto",
+      "en": [
+        "cat"
+      ]
+    },
+    {
+      "id": "v12",
+      "it": "uccelli",
+      "en": [
+        "birds"
+      ]
+    },
+    {
+      "id": "v13",
+      "it": "negozi",
+      "en": [
+        "shops"
+      ]
+    },
+    {
+      "id": "v14",
+      "it": "nelle vicinanze",
+      "en": [
+        "nearby"
+      ]
+    },
+    {
+      "id": "v15",
+      "it": "cinema",
+      "en": [
+        "cinema",
+        "movie theater",
+        "movie theatre"
+      ]
+    },
+    {
+      "id": "v16",
+      "it": "teatro",
+      "en": [
+        "theatre",
+        "theater"
+      ]
+    },
+    {
+      "id": "v17",
+      "it": "parco",
+      "en": [
+        "park"
+      ]
+    },
+    {
+      "id": "v18",
+      "it": "mercato dei contadini",
+      "en": [
+        "farmers market",
+        "farmers' market"
+      ]
+    },
+    {
+      "id": "v19",
+      "it": "cucina (stanza)",
+      "en": [
+        "kitchen"
+      ]
+    },
+    {
+      "id": "v20",
+      "it": "camera da letto",
+      "en": [
+        "bedroom"
+      ]
+    },
+    {
+      "id": "v21",
+      "it": "vasca da bagno",
+      "en": [
+        "bathtub",
+        "bath"
+      ]
+    },
+    {
+      "id": "v22",
+      "it": "piccolo",
+      "en": [
+        "small",
+        "little"
+      ]
+    },
+    {
+      "id": "v23",
+      "it": "minuscolo",
+      "en": [
+        "tiny"
+      ]
+    },
+    {
+      "id": "v24",
+      "it": "carino",
+      "en": [
+        "cute"
+      ]
+    },
+    {
+      "id": "v25",
+      "it": "grande",
+      "en": [
+        "big"
+      ]
+    },
+    {
+      "id": "v26",
+      "it": "enorme",
+      "en": [
+        "huge",
+        "massive"
+      ]
+    },
+    {
+      "id": "v27",
+      "it": "spazioso",
+      "en": [
+        "spacious"
+      ]
+    },
+    {
+      "id": "v28",
+      "it": "accogliente",
+      "en": [
+        "cozy",
+        "cosy"
+      ]
+    },
+    {
+      "id": "v29",
+      "it": "caldo (accogliente)",
+      "en": [
+        "warm"
+      ]
+    },
+    {
+      "id": "v30",
+      "it": "piacevole",
+      "en": [
+        "pleasant"
+      ]
+    },
+    {
+      "id": "v31",
+      "it": "stile",
+      "en": [
+        "style"
+      ]
+    },
+    {
+      "id": "v32",
+      "it": "moderno",
+      "en": [
+        "modern"
+      ]
+    },
+    {
+      "id": "v33",
+      "it": "d'epoca",
+      "en": [
+        "vintage"
+      ]
+    },
+    {
+      "id": "v34",
+      "it": "classico",
+      "en": [
+        "classic"
+      ]
+    },
+    {
+      "id": "v35",
+      "it": "rilassato",
+      "en": [
+        "relaxed"
+      ]
+    },
+    {
+      "id": "v36",
+      "it": "antico",
+      "en": [
+        "antique"
+      ]
+    },
+    {
+      "id": "v37",
+      "it": "appartamento con due camere da letto",
+      "en": [
+        "two-bedroom flat",
+        "two-bedroom apartment"
+      ]
+    },
+    {
+      "id": "v38",
+      "it": "nel cuore della città",
+      "en": [
+        "in the heart of the city"
+      ]
+    },
+    {
+      "id": "v39",
+      "it": "vicino a",
+      "en": [
+        "close to",
+        "near"
+      ]
+    },
+    {
+      "id": "v40",
+      "it": "rilassarsi",
+      "en": [
+        "to relax",
+        "relax"
+      ]
+    },
+    {
+      "id": "v41",
+      "it": "sfuggire",
+      "en": [
+        "to escape",
+        "escape"
+      ]
+    },
+    {
+      "id": "v42",
+      "it": "frenesia",
+      "en": [
+        "excitement",
+        "hustle and bustle"
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g01",
+      "title": "Descrivere la propria casa",
+      "body": "Per descrivere dove vivi pensa a: le **dimensioni**, la **posizione**, **quante stanze** ci sono, i **vicini**…\n\n*I live in a small apartment just outside the center of the city. My neighborhood is calm and quiet. There is a small balcony where my cat likes to sit and watch the birds and the neighbors. There are shops, restaurants and supermarkets nearby. There is even a small movie theater.*\n\n- *There is* + singolare, *there are* + plurale: *There **is** a small balcony*, *There **are** shops nearby*.\n- *Nearby* (nelle vicinanze) va in fondo alla frase.\n\n## Aggettivi e sinonimi\n\n| Piccolo | Grande | Accogliente |\n| --- | --- | --- |\n| *small* | *big* | *comfortable* |\n| *tiny* (minuscolo) | *huge* (enorme) | *cozy* (accogliente) |\n| *cute* (carino) | *massive* (enorme) | *warm* (caldo) |\n| *little* | *spacious* (spazioso) | *pleasant* (piacevole) |\n\nStili: *modern*, *vintage*, *classic*, *relaxed*, *antique*.\n\n## Che cosa cambieresti\n\nPer dire che cosa cambieresti si usa ***If I could* + verbo, *I would* + verbo**:\n\n- *If I could change one thing, I would make the balcony bigger, and I would add a bathtub to the bathroom.* — Se potessi cambiare una cosa, renderei il balcone più grande e aggiungerei una vasca al bagno.\n\n*I would* si contrae in *I'd*: *I'd add a bathtub.*"
+    },
+    {
+      "id": "g02",
+      "title": "Scrivere un annuncio",
+      "body": "Un annuncio trasforma la descrizione della casa in un invito a sceglierla. Si usano molti aggettivi positivi, uno dopo l'altro **prima del nome**, separati da virgole:\n\n*This is a beautiful, spacious, modern and very bright two-bedroom flat in the heart of the city. It is close to shops and restaurants and a park.*\n\nGli aggettivi in inglese non prendono la -s al plurale e non cambiano con il genere: *a modern flat*, *two modern flats*.\n\n## Frasi utili\n\n- *in the heart of the city* — nel cuore della città\n- *It is close to…* — È vicino a…\n- *You'll enjoy* + verbo in **-ing** — Ti piacerà…: *You'll enjoy walking to the theater and the local farmers market.*\n- *You'll be able to* + infinito — Potrai…: *You'll be able to relax and escape the excitement of the city in your own cozy space.*\n\nL'annuncio parla direttamente al lettore con *you* e usa il futuro con *will*, perché descrive come sarà vivere lì."
+    }
+  ]
+}
