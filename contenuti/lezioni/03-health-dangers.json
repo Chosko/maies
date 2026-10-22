@@ -1,0 +1,576 @@
+{
+  "id": "03-health-dangers",
+  "title": "Pericoli per la salute: i verbi modali e i consigli",
+  "sentences": [
+    {
+      "id": "f01",
+      "it": "Dovresti indossare la mascherina quando l'aria è inquinata.",
+      "en": "You should wear a mask when the air is polluted.",
+      "alternatives": [
+        "You should wear a mask when the air's polluted."
+      ]
+    },
+    {
+      "id": "f02",
+      "it": "Non dovresti mangiare tanti hamburger: sono malsani.",
+      "en": "You shouldn't eat so many hamburgers: they're unhealthy.",
+      "alternatives": [
+        "You shouldn't eat so many hamburgers: they are unhealthy.",
+        "You should not eat so many hamburgers: they're unhealthy.",
+        "You should not eat so many hamburgers: they are unhealthy."
+      ]
+    },
+    {
+      "id": "f03",
+      "it": "In Inghilterra devi guidare sul lato sinistro della strada.",
+      "en": "In England you must drive on the left side of the road.",
+      "alternatives": [
+        "You must drive on the left side of the road in England.",
+        "In England you must drive on the left-hand side of the road."
+      ]
+    },
+    {
+      "id": "f04",
+      "it": "Le fabbriche non devono gettare rifiuti nel fiume.",
+      "en": "Factories mustn't throw waste into the river.",
+      "alternatives": [
+        "Factories must not throw waste into the river.",
+        "Factories mustn't throw waste in the river.",
+        "Factories must not throw waste in the river."
+      ]
+    },
+    {
+      "id": "f05",
+      "it": "Stasera potrebbe piovere.",
+      "en": "It might rain tonight.",
+      "alternatives": [
+        "It may rain tonight.",
+        "It could rain tonight.",
+        "It might rain this evening.",
+        "It may rain this evening.",
+        "It could rain this evening."
+      ]
+    },
+    {
+      "id": "f06",
+      "it": "Potrei andare in palestra più tardi.",
+      "en": "I might go to the gym later.",
+      "alternatives": [
+        "I may go to the gym later.",
+        "I could go to the gym later."
+      ]
+    },
+    {
+      "id": "f07",
+      "it": "Posso aprire la finestra?",
+      "en": "May I open the window?",
+      "alternatives": [
+        "Can I open the window?",
+        "Could I open the window?"
+      ]
+    },
+    {
+      "id": "f08",
+      "it": "Mio fratello sa nuotare molto bene.",
+      "en": "My brother can swim very well.",
+      "alternatives": []
+    },
+    {
+      "id": "f09",
+      "it": "Sono molto stressata per il lavoro: cosa dovrei fare?",
+      "en": "I'm very stressed about work: what should I do?",
+      "alternatives": [
+        "I am very stressed about work: what should I do?",
+        "I'm very stressed about my work: what should I do?",
+        "I am very stressed about my work: what should I do?"
+      ]
+    },
+    {
+      "id": "f10",
+      "it": "Potresti metterti a dieta.",
+      "en": "You could go on a diet.",
+      "alternatives": []
+    },
+    {
+      "id": "f11",
+      "it": "Perché non vai dal medico?",
+      "en": "Why don't you go to the doctor?",
+      "alternatives": [
+        "Why don't you go to the doctor's?",
+        "Why don't you see a doctor?"
+      ]
+    },
+    {
+      "id": "f12",
+      "it": "Che ne dici di fare più esercizio?",
+      "en": "How about doing more exercise?",
+      "alternatives": [
+        "What about doing more exercise?"
+      ]
+    },
+    {
+      "id": "f13",
+      "it": "Che ne dici di andare a correre domani mattina?",
+      "en": "How about going running tomorrow morning?",
+      "alternatives": [
+        "What about going running tomorrow morning?",
+        "How about going for a jog tomorrow morning?",
+        "What about going for a jog tomorrow morning?"
+      ]
+    },
+    {
+      "id": "f14",
+      "it": "Non bere alcolici se prendi le medicine.",
+      "en": "Don't drink alcohol if you take medicine.",
+      "alternatives": [
+        "Do not drink alcohol if you take medicine.",
+        "Don't drink alcohol if you're taking medicine.",
+        "Don't drink alcohol if you are taking medicine.",
+        "Do not drink alcohol if you are taking medicine."
+      ]
+    },
+    {
+      "id": "f15",
+      "it": "Dovresti fare delle pause mentre lavori.",
+      "en": "You should take breaks while you're working.",
+      "alternatives": [
+        "You should take breaks while you are working.",
+        "You should take breaks while you work."
+      ]
+    },
+    {
+      "id": "f16",
+      "it": "Pensi che il tuo quartiere sia inquinato? Sì, credo di sì.",
+      "en": "Do you think your neighbourhood is polluted? Yes, I think so.",
+      "alternatives": [
+        "Do you think your neighborhood is polluted? Yes, I think so."
+      ]
+    },
+    {
+      "id": "f17",
+      "it": "Pensi che i fertilizzanti siano nocivi? Non credo.",
+      "en": "Do you think fertilizers are harmful? I don't think so.",
+      "alternatives": [
+        "Do you think fertilisers are harmful? I don't think so.",
+        "Do you think fertilizers are harmful? I do not think so.",
+        "Do you think fertilisers are harmful? I do not think so."
+      ]
+    },
+    {
+      "id": "f18",
+      "it": "Pensi che passerai l'esame? Spero di sì.",
+      "en": "Do you think you'll pass the exam? I hope so.",
+      "alternatives": [
+        "Do you think you will pass the exam? I hope so."
+      ]
+    },
+    {
+      "id": "f19",
+      "it": "Pensi che domani la spiaggia sarà affollata? Spero di no.",
+      "en": "Do you think the beach will be crowded tomorrow? I hope not.",
+      "alternatives": [
+        "Do you think the beach is going to be crowded tomorrow? I hope not."
+      ]
+    },
+    {
+      "id": "f20",
+      "it": "Mio padre è molto in forma perché fa esercizio ogni giorno.",
+      "en": "My father is very fit because he does exercise every day.",
+      "alternatives": [
+        "My father is very fit because he exercises every day.",
+        "My dad is very fit because he does exercise every day.",
+        "My dad is very fit because he exercises every day."
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "v01",
+      "it": "salute",
+      "en": [
+        "health"
+      ]
+    },
+    {
+      "id": "v02",
+      "it": "rischio per la salute",
+      "en": [
+        "health risk"
+      ]
+    },
+    {
+      "id": "v03",
+      "it": "verbo modale",
+      "en": [
+        "modal verb"
+      ]
+    },
+    {
+      "id": "v04",
+      "it": "consiglio",
+      "en": [
+        "advice"
+      ]
+    },
+    {
+      "id": "v05",
+      "it": "bloccato",
+      "en": [
+        "stuck"
+      ]
+    },
+    {
+      "id": "v06",
+      "it": "inquinamento dell'acqua",
+      "en": [
+        "water pollution"
+      ]
+    },
+    {
+      "id": "v07",
+      "it": "inquinamento dell'aria",
+      "en": [
+        "air pollution"
+      ]
+    },
+    {
+      "id": "v08",
+      "it": "gola",
+      "en": [
+        "throat"
+      ]
+    },
+    {
+      "id": "v09",
+      "it": "mascherina",
+      "en": [
+        "mask"
+      ]
+    },
+    {
+      "id": "v10",
+      "it": "pesticida",
+      "en": [
+        "pesticide"
+      ]
+    },
+    {
+      "id": "v11",
+      "it": "nocivo",
+      "en": [
+        "harmful"
+      ]
+    },
+    {
+      "id": "v12",
+      "it": "stress",
+      "en": [
+        "stress"
+      ]
+    },
+    {
+      "id": "v13",
+      "it": "fertilizzante",
+      "en": [
+        "fertilizer",
+        "fertiliser"
+      ]
+    },
+    {
+      "id": "v14",
+      "it": "vegetariano",
+      "en": [
+        "vegetarian"
+      ]
+    },
+    {
+      "id": "v15",
+      "it": "radiazioni dei cellulari",
+      "en": [
+        "cellphone radiation",
+        "mobile phone radiation"
+      ]
+    },
+    {
+      "id": "v16",
+      "it": "auricolari",
+      "en": [
+        "earphones"
+      ]
+    },
+    {
+      "id": "v17",
+      "it": "abitudine",
+      "en": [
+        "habit"
+      ]
+    },
+    {
+      "id": "v18",
+      "it": "fabbrica",
+      "en": [
+        "factory"
+      ]
+    },
+    {
+      "id": "v19",
+      "it": "inquinare",
+      "en": [
+        "to pollute",
+        "pollute"
+      ]
+    },
+    {
+      "id": "v20",
+      "it": "pettegolezzo",
+      "en": [
+        "gossip"
+      ]
+    },
+    {
+      "id": "v21",
+      "it": "rifiuti",
+      "en": [
+        "waste"
+      ]
+    },
+    {
+      "id": "v22",
+      "it": "legge",
+      "en": [
+        "law"
+      ]
+    },
+    {
+      "id": "v23",
+      "it": "prendere le medicine",
+      "en": [
+        "to take medicine",
+        "take medicine"
+      ]
+    },
+    {
+      "id": "v24",
+      "it": "droghe",
+      "en": [
+        "drugs"
+      ]
+    },
+    {
+      "id": "v25",
+      "it": "farsi fare un massaggio",
+      "en": [
+        "to have a massage",
+        "have a massage",
+        "to get a massage",
+        "get a massage"
+      ]
+    },
+    {
+      "id": "v26",
+      "it": "fare esercizio",
+      "en": [
+        "to do exercise",
+        "do exercise",
+        "to exercise",
+        "exercise"
+      ]
+    },
+    {
+      "id": "v27",
+      "it": "mettersi a dieta",
+      "en": [
+        "to go on a diet",
+        "go on a diet"
+      ]
+    },
+    {
+      "id": "v28",
+      "it": "perdere peso",
+      "en": [
+        "to lose weight",
+        "lose weight"
+      ]
+    },
+    {
+      "id": "v29",
+      "it": "ingrassare",
+      "en": [
+        "to gain weight",
+        "gain weight",
+        "to put on weight",
+        "put on weight"
+      ]
+    },
+    {
+      "id": "v30",
+      "it": "bere alcolici",
+      "en": [
+        "to drink alcohol",
+        "drink alcohol"
+      ]
+    },
+    {
+      "id": "v31",
+      "it": "inquinato",
+      "en": [
+        "polluted"
+      ]
+    },
+    {
+      "id": "v32",
+      "it": "stressato",
+      "en": [
+        "stressed"
+      ]
+    },
+    {
+      "id": "v33",
+      "it": "affollato",
+      "en": [
+        "crowded"
+      ]
+    },
+    {
+      "id": "v34",
+      "it": "in forma",
+      "en": [
+        "fit"
+      ]
+    },
+    {
+      "id": "v35",
+      "it": "che fa bene alla salute",
+      "en": [
+        "good for your health"
+      ]
+    },
+    {
+      "id": "v36",
+      "it": "che fa male alla salute",
+      "en": [
+        "bad for your health"
+      ]
+    },
+    {
+      "id": "v37",
+      "it": "sano",
+      "en": [
+        "healthy"
+      ]
+    },
+    {
+      "id": "v38",
+      "it": "malsano",
+      "en": [
+        "unhealthy"
+      ]
+    },
+    {
+      "id": "v39",
+      "it": "palestra",
+      "en": [
+        "gym"
+      ]
+    },
+    {
+      "id": "v40",
+      "it": "nuotare",
+      "en": [
+        "to swim",
+        "swim"
+      ]
+    },
+    {
+      "id": "v41",
+      "it": "andare a correre",
+      "en": [
+        "to go running",
+        "go running",
+        "to go for a jog",
+        "go for a jog",
+        "to go jogging",
+        "go jogging"
+      ]
+    },
+    {
+      "id": "v42",
+      "it": "medico",
+      "en": [
+        "doctor"
+      ]
+    },
+    {
+      "id": "v43",
+      "it": "fare una pausa",
+      "en": [
+        "to take a break",
+        "take a break"
+      ]
+    },
+    {
+      "id": "v44",
+      "it": "esame",
+      "en": [
+        "exam"
+      ]
+    },
+    {
+      "id": "v45",
+      "it": "ripassare",
+      "en": [
+        "to revise",
+        "revise",
+        "to review",
+        "review"
+      ]
+    },
+    {
+      "id": "v46",
+      "it": "compagno di classe",
+      "en": [
+        "classmate"
+      ]
+    },
+    {
+      "id": "v47",
+      "it": "vietare",
+      "en": [
+        "to ban",
+        "ban"
+      ]
+    },
+    {
+      "id": "v48",
+      "it": "cambiamento climatico",
+      "en": [
+        "climate change"
+      ]
+    },
+    {
+      "id": "v49",
+      "it": "quartiere",
+      "en": [
+        "neighbourhood",
+        "neighborhood"
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g01",
+      "title": "I verbi modali",
+      "body": "I verbi modali sono verbi ausiliari: dopo di loro viene il **bare infinitive**, cioè l'infinito senza *to*.\n\n- *Factories must respect laws about waste.* — Le fabbriche devono rispettare le leggi sui rifiuti.\n\nA differenza dell'ausiliare *do*, i modali **non prendono la -s** alla terza persona: tutte le persone hanno la stessa forma.\n\n**soggetto + verbo modale + bare infinitive**\n\n- *You should go home.* / *She should go home.* — Tu dovresti / Lei dovrebbe andare a casa.\n\n## A che cosa servono\n\n| Verbo modale | Negativa | Uso |\n| --- | --- | --- |\n| *could* | *could not* / *couldn't* | abilità, possibilità, consiglio, permesso informale |\n| *may* | *may not* | permesso formale, possibilità |\n| *might* | *might not* | possibilità |\n| *should* | *should not* / *shouldn't* | consiglio |\n| *must* | *must not* / *mustn't* | obblighi, raccomandazioni |\n\nAltri modali di uso comune:\n\n- *shall* — per suggerire qualcosa, solo con *I* e *we*: *Shall I open the window?* — Apro la finestra?\n- *will* — per formare il futuro semplice: *I will drive to work.* — Andrò al lavoro in auto.\n- *can* — per la capacità di fare qualcosa: *I can cook.* — So cucinare.\n\n## Possibilità: could, may, might\n\nQuando descrivono la possibilità di fare qualcosa, *could*, *may* e *might* sono intercambiabili.\n\n- *You could go right or left to get to my house.* — Potresti andare a destra o a sinistra per arrivare a casa mia.\n- *We may go to the centre by car or by tram.* — Potremmo andare in centro in macchina o in tram.\n- *I might call you later.* — Potrei chiamarti più tardi.\n\n## Consiglio e obbligo: should, must\n\n*Should* / *shouldn't* danno un consiglio; *must* descrive un obbligo.\n\n- *You should wear a mask in the city.* — Dovresti indossare una mascherina in città.\n- *You shouldn't drink too much alcohol!* — Non dovresti bere tanto alcol!\n- *You must drive on the right side of the road in Italy.* — Devi guidare sul lato destro della strada in Italia."
+    },
+    {
+      "id": "g02",
+      "title": "Dare consigli",
+      "body": "Per dare un consiglio a qualcuno ci sono due gruppi di espressioni.\n\n## Con il bare infinitive\n\n*should*, *shouldn't*, *could*, *don't*, *why don't you* + infinito senza *to*:\n\n- *You should stop smoking.* — Dovresti smettere di fumare.\n- *You shouldn't drink alcohol.* — Non dovresti bere alcol.\n- *You could go to the gym.* — Potresti andare in palestra.\n- *Don't smoke.* — Non fumare.\n- *Why don't you go swimming?* — Perché non vai a nuotare?\n\n## Con il gerundio\n\n*How about* / *What about* + verbo in **-ing**:\n\n- *How about seeing a doctor?* — Che ne dici di andare dal medico?\n- *What about eating healthy food?* — Che ne dici di mangiare del cibo sano?\n\n## Esempio di dialogo\n\n- *I'm very stressed about my exams. What should I do?* — Sono molto stressato per gli esami. Cosa devo fare?\n- *You should take breaks while you are studying.* — Dovresti fare delle pause durante lo studio.\n- *Why don't you revise with your classmates?* — Perché non ripassi con i tuoi compagni di classe?\n- *How about going for a jog?* — Che ne dici di andare a correre?"
+    },
+    {
+      "id": "g03",
+      "title": "Rispondere con so: I think so, I hope so",
+      "body": "Per rispondere a una domanda senza ripeterla tutta si usa *so*.\n\n## I think so / I don't think so\n\n*I think so* dice che credi che una cosa sia vera; secondo il tono può indicare un po' di incertezza. Al negativo si dice *I don't think so*.\n\n- *Do you think London's parks are polluted?* — *Yes, I think so.* (Sì, credo di sì.)\n- *Do you think smoking should be banned completely?* — *I don't think so.* (Non credo.)\n\n## I hope so / I hope not\n\nCon *hope* al posto di *think* dici che **vorresti** che una cosa succedesse, o che non succedesse.\n\n- *Do you think we can reverse climate change?* — *I hope so.* (Spero di sì.)\n- *Do you think that drugs will ever be legalised?* — *I hope not.* (Spero di no.)\n\n## Attenzione\n\nLe due negative si costruiscono in modo diverso: *I **don't** think so*, ma *I hope **not*** (mai *I don't hope so*)."
+    }
+  ]
+}
