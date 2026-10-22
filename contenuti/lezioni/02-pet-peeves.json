@@ -1,0 +1,374 @@
+{
+  "id": "02-pet-peeves",
+  "title": "Pet peeves: lamentarsi e fare richieste gentili",
+  "sentences": [
+    {
+      "id": "f01",
+      "it": "Non sopporto quando la gente arriva in ritardo.",
+      "en": "I can't stand it when people arrive late.",
+      "alternatives": [
+        "I cannot stand it when people arrive late.",
+        "I can't stand it when people are late.",
+        "I cannot stand it when people are late."
+      ]
+    },
+    {
+      "id": "f02",
+      "it": "Mi dà sui nervi quando qualcuno mangia rumorosamente.",
+      "en": "It gets on my nerves when someone eats noisily.",
+      "alternatives": [
+        "It gets on my nerves when somebody eats noisily."
+      ]
+    },
+    {
+      "id": "f03",
+      "it": "Mi fa impazzire stare seduto per ore in un ingorgo.",
+      "en": "It drives me crazy to sit in a traffic jam for hours.",
+      "alternatives": [
+        "It drives me crazy to sit for hours in a traffic jam.",
+        "Sitting in a traffic jam for hours drives me crazy.",
+        "Sitting for hours in a traffic jam drives me crazy."
+      ]
+    },
+    {
+      "id": "f04",
+      "it": "Odio quando qualcuno fuma vicino a me.",
+      "en": "I hate it when someone smokes near me.",
+      "alternatives": [
+        "I hate it when somebody smokes near me."
+      ]
+    },
+    {
+      "id": "f05",
+      "it": "Una delle cose che mi danno più fastidio è quando la gente parla ad alta voce al telefono.",
+      "en": "One of my biggest pet peeves is when people talk loudly on the phone.",
+      "alternatives": [
+        "One of my biggest pet peeves is when people talk loudly on their phone.",
+        "One of my biggest pet peeves is when people talk loudly on their phones."
+      ]
+    },
+    {
+      "id": "f06",
+      "it": "Mi dà fastidio quando mio fratello si mangia le unghie.",
+      "en": "It bothers me when my brother bites his nails.",
+      "alternatives": [
+        "It annoys me when my brother bites his nails.",
+        "It bugs me when my brother bites his nails."
+      ]
+    },
+    {
+      "id": "f07",
+      "it": "Qual è la cosa che ti dà più fastidio?",
+      "en": "What's your pet peeve?",
+      "alternatives": [
+        "What is your pet peeve?",
+        "What's your biggest pet peeve?",
+        "What is your biggest pet peeve?"
+      ]
+    },
+    {
+      "id": "f08",
+      "it": "Mi irrita tantissimo quando le coppie si baciano in pubblico.",
+      "en": "It annoys me to no end when couples kiss in public.",
+      "alternatives": [
+        "It really annoys me when couples kiss in public."
+      ]
+    },
+    {
+      "id": "f09",
+      "it": "Mi fa impazzire vedere qualcuno che fuma in pubblico.",
+      "en": "It drives me crazy to see someone smoking in public.",
+      "alternatives": [
+        "It drives me crazy to see somebody smoking in public."
+      ]
+    },
+    {
+      "id": "f10",
+      "it": "Potresti per favore smettere di fare le bolle?",
+      "en": "Could you please stop blowing bubbles?",
+      "alternatives": [
+        "Could you stop blowing bubbles, please?"
+      ]
+    },
+    {
+      "id": "f11",
+      "it": "Potresti per favore smettere di mangiarti le unghie?",
+      "en": "Could you please stop biting your nails?",
+      "alternatives": [
+        "Could you stop biting your nails, please?"
+      ]
+    },
+    {
+      "id": "f12",
+      "it": "Le sarei grato se potesse fumare da un'altra parte.",
+      "en": "I'd appreciate it if you could smoke elsewhere.",
+      "alternatives": [
+        "I would appreciate it if you could smoke elsewhere.",
+        "I'd appreciate it if you could smoke somewhere else.",
+        "I would appreciate it if you could smoke somewhere else."
+      ]
+    },
+    {
+      "id": "f13",
+      "it": "Ti sarei grata se potessi parlare più piano.",
+      "en": "I'd appreciate it if you could speak more quietly.",
+      "alternatives": [
+        "I would appreciate it if you could speak more quietly.",
+        "I'd appreciate it if you could talk more quietly.",
+        "I would appreciate it if you could talk more quietly."
+      ]
+    },
+    {
+      "id": "f14",
+      "it": "Mi scusi, le dispiacerebbe non fumare qui?",
+      "en": "Excuse me, but would you mind not smoking here?",
+      "alternatives": [
+        "Excuse me, would you mind not smoking here?"
+      ]
+    },
+    {
+      "id": "f15",
+      "it": "Scusa, ti dispiacerebbe abbassare la voce?",
+      "en": "Excuse me, but would you mind lowering your voice?",
+      "alternatives": [
+        "Excuse me, would you mind lowering your voice?",
+        "Excuse me, but would you mind keeping your voice down?",
+        "Excuse me, would you mind keeping your voice down?"
+      ]
+    },
+    {
+      "id": "f16",
+      "it": "Sarebbe fantastico se potessi arrivare in orario.",
+      "en": "It would be great if you could arrive on time.",
+      "alternatives": [
+        "It'd be great if you could arrive on time.",
+        "It would be great if you could be on time.",
+        "It'd be great if you could be on time."
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "v01",
+      "it": "la cosa che dà più fastidio",
+      "en": [
+        "pet peeve"
+      ]
+    },
+    {
+      "id": "v02",
+      "it": "fastidioso",
+      "en": [
+        "annoying"
+      ]
+    },
+    {
+      "id": "v03",
+      "it": "cattiva abitudine",
+      "en": [
+        "bad habit"
+      ]
+    },
+    {
+      "id": "v04",
+      "it": "frustrato",
+      "en": [
+        "frustrated"
+      ]
+    },
+    {
+      "id": "v05",
+      "it": "mangiarsi le unghie",
+      "en": [
+        "to bite your nails",
+        "bite your nails",
+        "to bite one's nails",
+        "bite one's nails"
+      ]
+    },
+    {
+      "id": "v06",
+      "it": "traffico",
+      "en": [
+        "traffic"
+      ]
+    },
+    {
+      "id": "v07",
+      "it": "ingorgo",
+      "en": [
+        "traffic jam"
+      ]
+    },
+    {
+      "id": "v08",
+      "it": "fumare",
+      "en": [
+        "to smoke",
+        "smoke"
+      ]
+    },
+    {
+      "id": "v09",
+      "it": "in pubblico",
+      "en": [
+        "in public"
+      ]
+    },
+    {
+      "id": "v10",
+      "it": "guidatore",
+      "en": [
+        "driver"
+      ]
+    },
+    {
+      "id": "v11",
+      "it": "rumorosamente",
+      "en": [
+        "noisily"
+      ]
+    },
+    {
+      "id": "v12",
+      "it": "ad alta voce",
+      "en": [
+        "loudly"
+      ]
+    },
+    {
+      "id": "v13",
+      "it": "coppia",
+      "en": [
+        "couple"
+      ]
+    },
+    {
+      "id": "v14",
+      "it": "baciarsi",
+      "en": [
+        "to kiss",
+        "kiss"
+      ]
+    },
+    {
+      "id": "v15",
+      "it": "arrivare in ritardo",
+      "en": [
+        "to arrive late",
+        "arrive late",
+        "to be late",
+        "be late"
+      ]
+    },
+    {
+      "id": "v16",
+      "it": "lamentarsi",
+      "en": [
+        "to complain",
+        "complain"
+      ]
+    },
+    {
+      "id": "v17",
+      "it": "non sopportare",
+      "en": [
+        "can't stand",
+        "cannot stand"
+      ]
+    },
+    {
+      "id": "v18",
+      "it": "dare sui nervi",
+      "en": [
+        "to get on someone's nerves",
+        "get on someone's nerves"
+      ]
+    },
+    {
+      "id": "v19",
+      "it": "infastidire",
+      "en": [
+        "to annoy",
+        "annoy",
+        "to bother",
+        "bother",
+        "to bug",
+        "bug"
+      ]
+    },
+    {
+      "id": "v20",
+      "it": "odiare",
+      "en": [
+        "to hate",
+        "hate"
+      ]
+    },
+    {
+      "id": "v21",
+      "it": "far impazzire",
+      "en": [
+        "to drive crazy",
+        "drive crazy"
+      ]
+    },
+    {
+      "id": "v22",
+      "it": "fare le bolle (con la gomma)",
+      "en": [
+        "to blow bubbles",
+        "blow bubbles"
+      ]
+    },
+    {
+      "id": "v23",
+      "it": "smettere",
+      "en": [
+        "to stop",
+        "stop"
+      ]
+    },
+    {
+      "id": "v24",
+      "it": "richiesta gentile",
+      "en": [
+        "polite request"
+      ]
+    },
+    {
+      "id": "v25",
+      "it": "irritazione",
+      "en": [
+        "irritation"
+      ]
+    },
+    {
+      "id": "v26",
+      "it": "da un'altra parte",
+      "en": [
+        "elsewhere",
+        "somewhere else"
+      ]
+    },
+    {
+      "id": "v27",
+      "it": "in orario",
+      "en": [
+        "on time"
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g01",
+      "title": "Lamentarsi: le frasi per dire che cosa ti dà fastidio",
+      "body": "Un *peeve* è una cosa fastidiosa, per esempio una cattiva abitudine degli altri. Il tuo *pet peeve* è **quella che ti dà più fastidio** di tutte: *What's your pet peeve?* — Qual è la cosa che ti dà più fastidio?\n\n## Le frasi\n\nTutte si completano con *when* + una frase:\n\n- *I can't stand it when…* — Non sopporto quando…\n- *It gets on my nerves when…* — Mi dà sui nervi quando…\n- *It annoys me to no end when…* — Mi irrita tantissimo quando…\n- *It bugs me when…* — Mi dà fastidio quando… (informale)\n- *It bothers me when…* — Mi dà fastidio quando…\n- *I hate it when…* — Odio quando…\n- *It drives me crazy when…* — Mi fa impazzire quando…\n- *One of my biggest pet peeves is when…* — Una delle cose che mi danno più fastidio è quando…\n\n*I can't stand it when someone blows bubbles in public.*\n\n## Attenzione\n\n- Con *I can't stand* e *I hate* serve *it* prima di *when*: *I hate **it** when…*, mai *I hate when…*\n- Dopo *It drives me crazy* puoi usare anche *to* + infinito: *It drives me crazy **to see** someone biting their nails.*"
+    },
+    {
+      "id": "g02",
+      "title": "Le richieste gentili",
+      "body": "Per trasformare l'irritazione in una richiesta gentile si usano queste strutture:\n\n- *Could you please stop* + verbo in *-ing*? — Potresti per favore smettere di…?: *Could you please stop blowing bubbles?*\n- *I'd appreciate it if you could* + infinito — Ti sarei grato se potessi…: *I'd appreciate it if you could smoke elsewhere.*\n- *Excuse me, but would you mind* + verbo in *-ing*? — Scusa, ti dispiacerebbe…?: *Excuse me, but would you mind not doing that?*\n- *It would be great if you could* + infinito — Sarebbe fantastico se potessi…: *It would be great if you could try to arrive on time.*\n\n## Attenzione\n\n- Dopo *stop* e *would you mind* il verbo va in *-ing*.\n- Per chiedere a qualcuno di **non** fare una cosa: *would you mind **not** + -ing* (*would you mind not smoking here?*).\n- *I'd* è la forma contratta di *I would*."
+    }
+  ]
+}
