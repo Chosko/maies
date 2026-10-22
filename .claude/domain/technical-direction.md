@@ -22,8 +22,9 @@ nessuna ne richiede un altro.
 
 ## Topology / architecture
 
-Un monolite frontend: una sola applicazione, nessun servizio. Al suo
-interno, tre parti con confini netti:
+Un monolite frontend: una sola applicazione, nessun servizio, compilata in
+due edizioni — la principale e quella "kids", che mostra solo vocaboli e
+dizionario. Al suo interno, tre parti con confini netti:
 
 - **Contenuti** — il caricamento dei file delle lezioni e il loro modello
   (lezioni, frasi, vocaboli, schede), di sola lettura per l'app.
@@ -35,7 +36,7 @@ interno, tre parti con confini netti:
 ## Data and storage
 
 - **Contenuti:** un file JSON per lezione in una cartella dedicata del
-  repository, con frasi (italiano, traduzione corretta, varianti
+  repository, una cartella per edizione, con frasi (italiano, traduzione corretta, varianti
   accettabili), vocaboli (italiano, traduzioni inglesi accettate) e schede
   di grammatica (titolo, testo in Markdown). Ogni elemento ha un
   identificatore stabile, così i progressi sopravvivono a modifiche dei
@@ -44,7 +45,8 @@ interno, tre parti con confini netti:
   test, così un file malformato blocca la pubblicazione invece di arrivare
   nell'app.
 - **Progressi:** `localStorage` del browser, per dispositivo, indicizzati
-  per identificatore di elemento. Nessuna sincronizzazione.
+  per identificatore di elemento, sotto una chiave per edizione perché le
+  due edizioni condividono il dominio. Nessuna sincronizzazione.
 - **PDF e foto originali:** mai salvati nel repository; vi entra solo il
   materiale rielaborato.
 
@@ -57,10 +59,11 @@ fuori dall'app, quando Claude scrive i file delle lezioni.
 ## Hosting and deployment
 
 - **GitHub Pages**, con il dominio personalizzato `maies.chosko.com` (record
-  CNAME già configurato verso GitHub); il sito è servito alla radice `/`.
+  CNAME già configurato verso GitHub); l'edizione principale è servita alla
+  radice `/`, quella kids sotto `/kids/`.
 - **Pubblicazione:** una GitHub Action che, a ogni push sul branch
-  principale, installa le dipendenze, esegue i test, compila e pubblica su
-  GitHub Pages. Un test fallito blocca la pubblicazione.
+  principale, installa le dipendenze, esegue i test, compila le due edizioni
+  e le pubblica insieme su GitHub Pages. Un test fallito blocca la pubblicazione.
 - Un solo ambiente: produzione. Lo sviluppo locale usa il server di Vite.
 
 ## Inter-component protocols
@@ -71,8 +74,8 @@ una single-page application.
 
 ## Cross-cutting concerns
 
-- **Autenticazione:** nessuna; una sola utente, nessun dato personale sul
-  server.
+- **Autenticazione:** nessuna; ogni utente apre la propria edizione, nessun
+  dato personale sul server.
 - **Privacy:** il repository e il sito sono pubblici; vi entra solo
   materiale rielaborato, mai i documenti originali della scuola.
 - **Osservabilità:** nessuna.

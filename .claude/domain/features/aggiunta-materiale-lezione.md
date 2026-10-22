@@ -55,25 +55,27 @@ Fuori:
 Costruito sullo stack di [technical-direction.md](../technical-direction.md):
 TypeScript, Vite e Vitest. È la parte "Contenuti" della sua topologia.
 
-- **File di lezione:** un file JSON per lezione nella cartella
-  `contenuti/lezioni/` del repository. È l'unica fonte del materiale e lo
-  scrive solo Claude.
+- **File di lezione:** un file JSON per lezione, in una cartella per
+  edizione del sito: `contenuti/lezioni/` per la principale e
+  `contenuti/kids/` per quella kids, le cui lezioni hanno solo vocaboli
+  (frasi e schede vuote, nello stesso formato). È l'unica fonte del
+  materiale e lo scrive solo Claude.
 - **Schema dei contenuti:** una definizione zod della lezione e dei suoi
   elementi. Da questa sola definizione derivano i tipi TypeScript usati
   dall'app e la validazione usata nel test, quindi tipi e schema non possono
   divergere. zod si usa solo in sviluppo: l'app ne importa soltanto i tipi.
-- **Catalogo dei contenuti:** carica tutti i file di lezione alla
-  compilazione, con l'importazione statica di Vite, e li espone in sola
+- **Catalogo dei contenuti:** carica tutti i file di lezione della
+  cartella dell'edizione alla compilazione, con l'importazione statica di Vite, e li espone in sola
   lettura con gli identificatori globali già calcolati. Le altre
   funzionalità leggono i contenuti solo da qui, mai dai file.
 - **Test di validità dei contenuti:** una suite Vitest che passa ogni file
-  della cartella allo schema e poi controlla i vincoli tra file (vedi
+  di ciascuna cartella allo schema e poi controlla i vincoli tra file (vedi
   *Interfaces and contracts*). Gira nella pipeline di pubblicazione di
   [scheletro-e-pubblicazione](./scheletro-e-pubblicazione.md): se fallisce,
   il sito non si pubblica.
 - **Skill di aggiunta del materiale:** una skill del progetto sotto
   `.claude/skills/` che una sessione di Claude usa quando Sara passa in
-  chat un PDF, una foto o un vocabolo. Esegue il procedimento descritto in
+  chat un PDF, una foto, un vocabolo o una lista di vocaboli per i kids. Esegue il procedimento descritto in
   *Procedimento di Claude*: questo documento ne fissa il comportamento e la
   skill ne è l'esecuzione.
 
@@ -149,7 +151,9 @@ mostrano che non c'è ancora materiale.
 
 ### Test di validità
 
-Fallisce, nominando il file e l'elemento colpevoli, quando:
+Controlla ogni cartella per conto suo: i vincoli tra file valgono dentro
+una cartella, mai tra le due. Fallisce, nominando il file e l'elemento
+colpevoli, quando:
 
 - un file non rispetta lo schema;
 - il nome del file non coincide con l'`id` della lezione, o l'id non ha la
@@ -193,6 +197,11 @@ Lo esegue la skill di aggiunta del materiale.
 7. Fare commit del solo file di lezione, più le eventuali lezioni precedenti
    arricchite al passo 3. L'originale non si salva mai nel repository: se è
    arrivato come file nella cartella di lavoro, si lascia fuori dal commit.
+
+**Una lista di vocaboli per i kids** (una foto o un elenco che Sara indica
+come per i kids): una lezione nuova in `contenuti/kids/` con i soli
+vocaboli, secondo i passi 1–3 e 6–7 qui sopra applicati a quella cartella.
+Numeri, duplicati e lezione più recente si cercano solo lì.
 
 **Un vocabolo singolo passato in chat:**
 

@@ -52,12 +52,17 @@ in modalità hash, Vite, Vitest con Vue Test Utils, GitHub Pages.
 - **Guscio dell'applicazione** — il componente radice. Contiene la barra di
   navigazione e lo spazio in cui il router mostra la schermata corrente.
   Imposta la lingua della pagina (italiano) e il titolo "maies".
-- **Router** — Vue Router con cronologia hash. Associa ogni schermata al
-  suo indirizzo e porta `#/` e ogni indirizzo sconosciuto agli Esercizi.
-  È l'unico punto in cui le funzionalità successive registrano le proprie
-  schermate e sottorotte.
-- **Barra di navigazione** — un componente con le quattro voci, che
-  evidenzia quella corrente. Sul telefono è una barra di schede fissa in
+- **Edizioni** — lo stesso codice si compila in due edizioni: la
+  principale e quella "kids", con solo Vocaboli e Dizionario. Un solo
+  interruttore di compilazione sceglie l'edizione; da lui dipendono la base
+  del sito, la cartella dei contenuti, le rotte e la chiave dei progressi.
+- **Router** — Vue Router con cronologia hash. Associa ogni schermata
+  dell'edizione al suo indirizzo e porta `#/` e ogni indirizzo sconosciuto
+  alla prima schermata dell'edizione: gli Esercizi nella principale, i
+  Vocaboli nella kids. È l'unico punto in cui le funzionalità successive
+  registrano le proprie schermate e sottorotte.
+- **Barra di navigazione** — un componente con una voce per ogni schermata
+  che il router dell'edizione ha, che evidenzia quella corrente. Sul telefono è una barra di schede fissa in
   basso, a portata di pollice; sul computer è una pillola in alto a destra
   accanto al nome "maies". Stesse voci, stesso ordine, su ogni schermo.
   L'aspetto è quello delle schermate in `design/schermate/`: la barra in
@@ -74,8 +79,9 @@ in modalità hash, Vite, Vitest con Vue Test Utils, GitHub Pages.
   schermate future riusano.
 - **Pipeline di pubblicazione** — una GitHub Action che, a ogni push sul
   branch principale (`main`), installa le dipendenze, esegue il controllo
-  dei tipi e i test, compila e pubblica su GitHub Pages. Se uno di questi
-  passi fallisce, il sito non viene pubblicato.
+  dei tipi e i test, compila le due edizioni e le pubblica insieme su
+  GitHub Pages. Se uno di questi passi fallisce, il sito non viene
+  pubblicato.
 
 ## Data and state
 
@@ -88,10 +94,13 @@ ricaricamento della pagina.
 - **Indirizzi delle schermate:** `#/esercizi` (Esercizi di traduzione),
   `#/vocaboli` (Allenamento vocaboli), `#/dizionario` (Dizionario dei
   vocaboli), `#/grammatica` (Schede di grammatica). `#/` e ogni indirizzo
-  sconosciuto portano a `#/esercizi`. Le funzionalità successive mantengono
-  questi indirizzi e possono aggiungere sottorotte sotto il proprio.
-- **Base del sito:** l'applicazione è compilata per essere servita alla
-  radice `/` del dominio, non sotto il nome del repository.
+  sconosciuto portano a `#/esercizi`. L'edizione kids ha solo `#/vocaboli`
+  e `#/dizionario`, e ogni altro indirizzo porta a `#/vocaboli`. Le
+  funzionalità successive mantengono questi indirizzi e possono aggiungere
+  sottorotte sotto il proprio.
+- **Base del sito:** l'edizione principale è compilata per essere servita
+  alla radice `/` del dominio, non sotto il nome del repository; quella kids
+  sotto `/kids/`.
 - **Comandi del progetto:** sviluppo locale con il server di Vite;
   comandi separati per test, controllo dei tipi e compilazione, ognuno con
   esito non nullo in caso di fallimento. La Action usa gli stessi comandi.

@@ -20,6 +20,12 @@ lunghezza variabile a seconda del tempo che ha quel giorno. Oggi ripassa
 direttamente sul materiale ricevuto, che non la mette alla prova e non le
 ricorda cosa ha sbagliato.
 
+La figlia di Sara usa una versione ridotta, "kids": solo l'allenamento sui
+vocaboli e il dizionario, sulle liste di vocaboli che impara a scuola. Sara
+le passa a Claude in chat come foto, indicando che sono per i kids; la
+figlia ripassa dal proprio dispositivo, al proprio indirizzo, senza vedere
+il materiale di Sara.
+
 ## User experience and key flows
 
 ### Arriva una nuova lezione
@@ -67,8 +73,11 @@ cercarvi una parola in italiano o in inglese.
 
 ## Design decisions
 
-- **Uso personale.** Una sola utente: niente account, login, condivisione o
-  gestione di più persone.
+- **Uso personale, due edizioni.** Niente account, login o condivisione:
+  Sara e la figlia hanno ognuna una propria copia del sito, con il proprio
+  indirizzo, il proprio materiale e i propri progressi. Le due copie non
+  proteggono il materiale l'una dall'altra: il sito e il repository sono
+  pubblici.
 - **Sito statico, senza intelligenza artificiale nell'app.** maies gira su
   GitHub Pages. Il materiale di ripasso non viene generato dall'app: lo
   scrive Claude nel repository a partire da ciò che Sara gli passa in chat.

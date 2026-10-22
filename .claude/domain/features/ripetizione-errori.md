@@ -85,8 +85,10 @@ escono più spesso di quelli già saputi.
 
 ### Progressi salvati
 
-- Una sola chiave di `localStorage` contiene un oggetto con un numero di
-  versione del formato e una mappa da id globale (per esempio
+- Una chiave di `localStorage` per edizione del sito (`maies.progressi`, e
+  `maies.kids.progressi` per l'edizione kids, che condivide il dominio e i
+  cui id si sovrappongono a quelli della principale) contiene un oggetto con
+  un numero di versione del formato e una mappa da id globale (per esempio
   `03-present-continuous/v07`) al livello dell'elemento. Frasi e vocaboli
   condividono la mappa, perché i loro id non si sovrappongono.
 - Si salvano solo gli elementi che hanno ricevuto almeno un esito.
