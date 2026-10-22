@@ -4,19 +4,27 @@
 
 Tooling and publication. No server: the build is a static site.
 
-- `package.json` — scripts `dev` (vite), `test` (vitest run), `typecheck`
-  (vue-tsc --noEmit), `build` (vite build → `dist/`). Runtime deps: `vue`,
+- `package.json` — scripts `dev` (vite; `-- --mode kids` for the kids
+  edition), `test` (vitest run), `typecheck` (vue-tsc --noEmit), `build`
+  (`vite build && vite build --mode kids` → `dist/` and `dist/kids/`). Runtime deps: `vue`,
   `vue-router`, `markdown-it`; `zod` and `@types/node` are dev-only.
-- `vite.config.ts` — `base: '/'`, `@vitejs/plugin-vue`; Vitest block:
-  `environment: 'jsdom'`, `include: ['tests/**/*.test.ts']`, `css: true`.
+- `vite.config.ts` — a function of the mode: `base` `/` (kids: `/kids/`),
+  `build.outDir` `dist` (kids: `dist/kids`), alias `@lezioni` →
+  `contenuti/lezioni` (kids: `contenuti/kids`), `@vitejs/plugin-vue`; Vitest
+  block: `environment: 'jsdom'`, `include: ['tests/**/*.test.ts']`,
+  `css: true`.
 - `tsconfig.json` — strict, bundler resolution, `verbatimModuleSyntax`
   (type-only imports must use `import type`), `noEmit`; covers `src/`,
   `tests/`, `vite.config.ts`.
-- `index.html` — `lang="it"`, loads Poppins from Google Fonts, mounts
-  `/src/main.ts` on `#app`.
+- `index.html` — `lang="it"`, favicon `/maies-icona.svg` and
+  `apple-touch-icon` `/maies-icona-512.png`, loads Poppins from Google Fonts,
+  mounts `/src/main.ts` on `#app`.
+- `public/` — the app icon files, copied into both editions (Vite prefixes
+  their URLs with each edition's base).
 - `CNAME` — `maies.chosko.com`.
 - `.github/workflows/deploy.yml` — on push to `main`: `npm ci`,
-  typecheck, test, build, upload `dist/` and deploy to GitHub Pages.
+  typecheck, test, build, upload `dist/` (both editions) and deploy to
+  GitHub Pages.
 - `tests/` — flat folder of `*.test.ts`, one per module or area, named
   after it (`router`, `navbar`, `tokens`, `catalogo`, `sessione`, …).
 - `README.md` — commands, where lesson content and progress live, one
@@ -45,8 +53,10 @@ Tooling and publication. No server: the build is a static site.
 - `css: true` lets tests import stylesheets; `tokens.test.ts` reads them
   with `import.meta.glob` to lint them (rules in
   [styles-tokens.md](./styles-tokens.md)).
-- `base: '/'` matches the custom domain at the root; hash routing avoids
-  needing Pages rewrites.
+- `base: '/'` matches the custom domain at the root and `/kids/` serves the
+  kids edition from `dist/kids/`; hash routing avoids needing Pages rewrites.
+- `tests/vite-config.test.ts` calls the config function for both modes and
+  pins the build script; `tests/icona.test.ts` pins the icon links.
 - Project testing policy is full TDD (see `CLAUDE.md`): tests first.
 
 ## Domain dependencies
@@ -72,5 +82,7 @@ Tooling and publication. No server: the build is a static site.
   `vite.config.ts`.
 - Changing the publish pipeline, Node version or triggers:
   `.github/workflows/deploy.yml`.
+- Adding an edition or changing what the kids mode switches:
+  `vite.config.ts`, `src/edizione.ts` and `tests/vite-config.test.ts`.
 - Changing fonts loaded or page metadata: `index.html`.
 - A `vue-tsc` error about imports: `tsconfig.json` options.

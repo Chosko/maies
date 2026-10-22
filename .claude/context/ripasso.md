@@ -22,8 +22,10 @@ Tests: `tests/livelli.test.ts`, `tests/archivio.test.ts`,
   (`normale`), `PESI` (6 / 3 / 1), `isLivello()`,
   `nuovoLivello(attuale, esito)`: wrong → `da-ripassare`; right → one step
   up (`da-ripassare` → `normale` → `consolidato`).
-- `archivio.ts` — `CHIAVE_PROGRESSI = 'maies.progressi'`;
-  `creaArchivio(salvataggio?: Storage | null): ArchivioProgressi` with
+- `archivio.ts` — `CHIAVE_PROGRESSI`, the edition's key
+  (`chiaveProgressi(EDIZIONE)`: `maies.progressi`, or `maies.kids.progressi`
+  in the kids edition); `creaArchivio(salvataggio?: Storage | null,
+  chiave = CHIAVE_PROGRESSI): ArchivioProgressi` with
   `leggiLivello(idGlobale)` and `salvaLivello(idGlobale, livello)`.
 - `selettore.ts` — `scegli(candidati, esclusi, casualita): T | null` over
   `{ id, livello }` candidates; `Casualita` is `() => number` in [0, 1).
@@ -34,6 +36,8 @@ Tests: `tests/livelli.test.ts`, `tests/archivio.test.ts`,
 
 ## Internal patterns
 
+- **One key per edition**: both editions share the domain and their lesson
+  ids overlap, so the kids edition never reads or writes the main key.
 - **Stored shape:** `{ versione: 1, livelli: { [idGlobale]: Livello } }`. A
   missing, unparsable or other-version value, or an unknown level, reads as
   `LIVELLO_INIZIALE`.

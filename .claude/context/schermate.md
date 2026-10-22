@@ -61,6 +61,8 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `vocaboli`,
   checked result on `conferma()`. Both key the session by `idGlobale`.
 - Vocaboli moves focus to "Avanti" on the result and ignores held-down
   Enter (`evento.repeat`), so one Enter never confirms and advances.
+- Vocaboli adds `vocabolo-carta-sbagliata` to the result card on a wrong
+  answer; the red styling is all CSS (`styles-tokens.md`).
 - **The only `v-html`** is the lesson page's `.scheda-testo`, fed by
   `html()`, which never passes raw HTML through.
 - The lesson page reads `route.params.id`, scrolls to top on each id change,

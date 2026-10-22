@@ -11,7 +11,7 @@ properties. No component carries scoped styles.
 - `src/styles/base.css` — reset, `body` typography and colours, headings,
   links, form-control font, placeholder colour, `.titolo-schermata`.
 - `src/styles/elements.css` — common elements at phone size: `.fondo`
-  (glow background), `.schermata` (screen column),
+  (glow background), `.bandiera*` (dotted flag), `.schermata` (screen column),
   `.carta`, `.carta-pila` / `.carta-dietro` (card peeking behind),
   `.bottone`, `.bottone-principale`, `.bottone-secondario`, `.etichetta`,
   `.campo`, `.cerchio-icona`, `.barra*` and `.voce*` (navigation); then one
@@ -55,9 +55,16 @@ Enforced by `tests/tokens.test.ts` over every `src/**/*.css` file and every
 - **One breakpoint, one place**: the only width media query in the whole
   stylesheet set is `@media (min-width: 768px)`, in `computer.css`. Every
   phone/computer difference goes in that block.
-- **No background flag**: no stylesheet carries a `.bandiera` rule or uses a
-  `--color-flag-*` variable. `tokens.ts` generates those variables anyway,
-  because they are tokens of `design/tokens.json`.
+- **The dotted flag** (`.bandiera`, absolute bottom right, `z-index: -1`,
+  `pointer-events: none`; square on the phone, 75% of the page high on the
+  computer) is coloured only by `.bandiera-fondo` / `-diagonali` / `-croce`
+  with `--color-flag-blue|white|red` at opacity 0.35 / 0.4 / 0.6; the test
+  pins these values.
+- **List cards** (`.dizionario-lista`, `.grammatica-voce`) use the quieter
+  gradient from `--color-card-list-top` through `--color-peek`; the
+  wrong-answer card `.vocabolo-carta-sbagliata` uses `--color-wrong-*` for
+  gradient, border, divider, labels and lesson title. Both are pinned in
+  `tests/tokens.test.ts`.
 
 Other conventions:
 

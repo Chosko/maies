@@ -3,7 +3,8 @@
 ## Overview
 
 The lesson content: one JSON file per lesson under `contenuti/lezioni/`
-(written only by Claude through the `aggiunta-materiale` skill), the format
+for the main edition and `contenuti/kids/` for the kids one (words only;
+both written only by Claude through the `aggiunta-materiale` skill), the format
 that defines them, the build-time catalogue the app reads, and the validity
 check that gates publication.
 
@@ -13,14 +14,14 @@ check that gates publication.
 - `src/contenuti/validazione.ts` — `validaLezioni()` and `descriviErrori()`:
   schema plus the cross-file rules the schema cannot express.
 - `src/contenuti/catalogo.ts` — `costruisciCatalogo()` and the app's
-  `catalogo`, built with `import.meta.glob` over
-  `contenuti/lezioni/*.json`.
+  `catalogo`, built with `import.meta.glob` over `@lezioni/*.json`; the
+  alias points at the edition's folder (`build-test-deploy.md`).
 - `.claude/skills/aggiunta-materiale/SKILL.md` — project skill that turns a
   PDF, photo, word or correction into lesson files, runs `npm test` and
   commits.
 
-`contenuti/lezioni/` may not exist yet; every reader treats a missing folder
-as zero lessons.
+Either folder may not exist yet; every reader treats a missing folder as
+zero lessons.
 
 Tests: `tests/validazione.test.ts`, `tests/catalogo.test.ts`,
 `tests/contenuti.test.ts` (the validity check on the real folder),
@@ -60,9 +61,10 @@ Tests: `tests/validazione.test.ts`, `tests/catalogo.test.ts`,
   lower-casing, collapsing whitespace and dropping trailing punctuation.
   Files are checked in name order, so "already in" names the earlier file.
 - **Everything in the catalogue is frozen**, arrays included.
-- **The validity test reads the folder with `node:fs` on every run**, not
+- **The validity test reads each folder with `node:fs` on every run**, not
   with `import.meta.glob`, whose result Vitest caches; a file just written
-  is checked at once.
+  is checked at once. Each edition's folder is validated on its own: the
+  cross-file rules hold inside a folder, never across the two.
 
 ## Domain dependencies
 
