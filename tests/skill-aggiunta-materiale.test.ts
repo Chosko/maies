@@ -38,6 +38,12 @@ describe('skill aggiunta-materiale', () => {
     expect(corpo).toContain('npm test')
   })
 
+  it('manda il materiale per i kids nella sua cartella', () => {
+    const { campi, corpo } = leggiSkill()
+    expect(campi.get('description') ?? '').toContain('kids')
+    expect(corpo).toContain('contenuti/kids/')
+  })
+
   it('non ricopia il formato dei file di lezione', () => {
     const { corpo } = leggiSkill()
     for (const chiave of ['"sentences"', '"vocabulary"', '"grammar"', '"alternatives"']) {

@@ -69,3 +69,34 @@ describe('router', () => {
     expect(router.options.history.base).toContain('#')
   })
 })
+
+describe('router della versione kids', () => {
+  async function vaiA(path: string) {
+    const router = createAppRouter('kids')
+    await router.push(path)
+    await router.isReady()
+    return router
+  }
+
+  it('ha solo le rotte di Vocaboli e Dizionario', () => {
+    const router = createAppRouter('kids')
+    expect(router.hasRoute('vocaboli')).toBe(true)
+    expect(router.hasRoute('dizionario')).toBe(true)
+    expect(router.hasRoute('esercizi')).toBe(false)
+    expect(router.hasRoute('grammatica')).toBe(false)
+    expect(router.hasRoute('grammatica-lezione')).toBe(false)
+  })
+
+  it.each(['/', '/esercizi', '/grammatica', '/grammatica/01-lezione', '/indirizzo-inesistente'])(
+    'porta %s a /vocaboli',
+    async (path) => {
+      const router = await vaiA(path)
+      expect(router.currentRoute.value.path).toBe('/vocaboli')
+    },
+  )
+
+  it('apre il dizionario a /dizionario', async () => {
+    const router = await vaiA('/dizionario')
+    expect(router.currentRoute.value.path).toBe('/dizionario')
+  })
+})

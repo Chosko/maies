@@ -78,5 +78,5 @@ export function costruisciCatalogo(moduli: Readonly<Record<string, Lezione>>): C
 
 // Nessuna validazione qui: un file malformato ferma il test di validità prima della pubblicazione.
 export const catalogo = costruisciCatalogo(
-  import.meta.glob<Lezione>('../../contenuti/lezioni/*.json', { eager: true, import: 'default' }),
+  import.meta.glob<Lezione>('@lezioni/*.json', { eager: true, import: 'default' }),
 )

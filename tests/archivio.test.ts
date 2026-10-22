@@ -183,6 +183,25 @@ describe('archivio dei progressi', () => {
     expect(creaArchivio().leggiLivello('01-saluti/v01')).toBe('consolidato')
   })
 
+  it('con una chiave data legge e scrive solo quella', () => {
+    const salvataggio = new SalvataggioFinto()
+    salvataggio.dati.set(
+      CHIAVE_PROGRESSI,
+      JSON.stringify({ versione: 1, livelli: { '01-saluti/v01': 'consolidato' } }),
+    )
+    const archivio = creaArchivio(salvataggio, 'maies.kids.progressi')
+    expect(archivio.leggiLivello('01-saluti/v01')).toBe('normale')
+    archivio.salvaLivello('01-saluti/v01', 'da-ripassare')
+    expect(JSON.parse(salvataggio.dati.get('maies.kids.progressi') ?? 'null')).toEqual({
+      versione: 1,
+      livelli: { '01-saluti/v01': 'da-ripassare' },
+    })
+    expect(contenuto(salvataggio)).toEqual({
+      versione: 1,
+      livelli: { '01-saluti/v01': 'consolidato' },
+    })
+  })
+
   it('lavora in memoria quando localStorage non è disponibile', () => {
     vi.stubGlobal('localStorage', undefined)
     const archivio = creaArchivio()

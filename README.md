@@ -5,23 +5,35 @@ corso a scuola: esercizi di traduzione, allenamento sui vocaboli, un
 dizionario e schede di grammatica ricavati dal materiale delle lezioni. È
 un sito statico in Vue, pubblicato su <https://maies.chosko.com>.
 
+Lo stesso codice si compila in due edizioni:
+
+| Edizione | Indirizzo | Lezioni | Sezioni | Chiave dei progressi |
+| --- | --- | --- | --- | --- |
+| principale | <https://maies.chosko.com> | `contenuti/lezioni/` | Esercizi, Vocaboli, Dizionario, Grammatica | `maies.progressi` |
+| kids | <https://maies.chosko.com/kids/> | `contenuti/kids/` | Vocaboli, Dizionario | `maies.kids.progressi` |
+
+L'edizione kids è la modalità `kids` di Vite (`src/edizione.ts`): base
+`/kids/`, uscita in `dist/kids/` e alias `@lezioni` sulla sua cartella. Non
+ha login: ognuna apre il proprio indirizzo sul proprio dispositivo.
+
 ## Comandi
 
 Dopo `npm install`:
 
 | Comando | Cosa fa |
 | --- | --- |
-| `npm run dev` | Avvia il server di sviluppo di Vite. |
+| `npm run dev` | Avvia il server di sviluppo di Vite; `npm run dev -- --mode kids` avvia l'edizione kids. |
 | `npm test` | Esegue i test con Vitest. |
 | `npm run typecheck` | Controlla i tipi con `vue-tsc`. |
-| `npm run build` | Compila il sito statico in `dist/`. |
+| `npm run build` | Compila le due edizioni: la principale in `dist/`, la kids in `dist/kids/`. |
 
 ## Contenuti
 
-Il materiale di ripasso sta in `contenuti/lezioni/`, un file JSON per
-lezione. Lo scrive solo Claude, con la skill di progetto
-[`aggiunta-materiale`](.claude/skills/aggiunta-materiale/SKILL.md), quando
-in chat arriva un PDF, una foto o un vocabolo. I PDF e le foto originali non
+Il materiale di ripasso sta in `contenuti/lezioni/` per l'edizione
+principale e in `contenuti/kids/` per quella kids, un file JSON per lezione;
+le lezioni kids hanno solo vocaboli. Lo scrive solo Claude, con la skill di
+progetto [`aggiunta-materiale`](.claude/skills/aggiunta-materiale/SKILL.md),
+quando in chat arriva un PDF, una foto, un vocabolo o una lista per i kids. I PDF e le foto originali non
 entrano mai nel repository, che è pubblico.
 
 L'app legge le lezioni alla compilazione dal catalogo in sola lettura
@@ -30,7 +42,8 @@ l'unica definizione del formato: zod è una dipendenza di sviluppo e l'app
 importa dallo schema solo tipi, cosa che un test verifica.
 
 Il test di validità (`tests/contenuti.test.ts`) fa parte di `npm test`:
-rilegge la cartella con `node:fs` a ogni esecuzione, quindi controlla subito
+rilegge le due cartelle con `node:fs` a ogni esecuzione, ognuna per conto
+suo, quindi controlla subito
 un file appena scritto, e un file malformato ferma la pubblicazione. I test
 che leggono i file girano nell'ambiente `node` di Vitest, con i tipi di
 `@types/node`.
@@ -42,7 +55,7 @@ documento di feature
 ## Progressi e ripasso
 
 I progressi stanno nel `localStorage` del dispositivo, sotto la chiave
-`maies.progressi`: un livello per ogni frase e vocabolo, indicizzato per id
+dell'edizione (`maies.progressi` o `maies.kids.progressi`): un livello per ogni frase e vocabolo, indicizzato per id
 globale. Non si sincronizzano tra dispositivi e in navigazione privata vanno
 persi alla chiusura; se il browser non permette di leggerli, l'app lavora
 solo in memoria.
@@ -141,8 +154,8 @@ Il perché di queste scelte è nel documento di feature
 ## Pubblicazione
 
 Ogni push su `main` avvia la GitHub Action `.github/workflows/deploy.yml`,
-che controlla i tipi, esegue i test, compila e pubblica `dist/` su GitHub
-Pages. Se uno di questi passaggi fallisce, il sito resta alla versione
+che controlla i tipi, esegue i test, compila le due edizioni e pubblica
+`dist/`, con l'edizione kids in `dist/kids/`, su GitHub Pages. Se uno di questi passaggi fallisce, il sito resta alla versione
 precedente.
 
 La pubblicazione richiede una configurazione manuale, una volta sola, nelle

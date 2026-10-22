@@ -7,7 +7,7 @@
     "dev": "vite",
     "test": "vitest run",
     "typecheck": "vue-tsc --noEmit",
-    "build": "vite build"
+    "build": "vite build && vite build --mode kids"
   },
   "dependencies": {
     "markdown-it": "^15.0.3",

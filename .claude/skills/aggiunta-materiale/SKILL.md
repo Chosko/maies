@@ -1,6 +1,6 @@
 ---
 name: aggiunta-materiale
-description: Trasforma il materiale di una lezione d'inglese passato in chat da Sara — un PDF, una foto, un vocabolo — o la correzione di un elemento già scritto in file di lezione sotto contenuti/lezioni/, con frasi da tradurre, vocaboli e schede di grammatica, poi esegue il test di validità e fa commit. Usala quando in chat arriva un PDF o una foto di una lezione, un vocabolo da aggiungere o una correzione di una frase, di un vocabolo o di una scheda.
+description: Trasforma il materiale di una lezione d'inglese passato in chat da Sara — un PDF, una foto, un vocabolo — o la correzione di un elemento già scritto in file di lezione sotto contenuti/lezioni/, con frasi da tradurre, vocaboli e schede di grammatica, oppure una lista di vocaboli per i kids in contenuti/kids/, poi esegue il test di validità e fa commit. Usala quando in chat arriva un PDF o una foto di una lezione, una lista di vocaboli per i kids, un vocabolo da aggiungere o una correzione di una frase, di un vocabolo o di una scheda.
 ---
 
 # Aggiunta del materiale di una lezione
@@ -13,9 +13,17 @@ Claude*. Quel documento è l'unica fonte del formato dei file di lezione
 contracts* → *Test di validità*): leggili lì prima di scrivere un file, e non
 ricopiarli altrove.
 
-Con Sara si parla in italiano. I file di lezione stanno in
-`contenuti/lezioni/`, uno per lezione; il test di validità è `npm test`, che
-rilegge la cartella a ogni esecuzione.
+Con Sara si parla in italiano. Il sito ha due edizioni, ognuna con la sua
+cartella di lezioni, un file per lezione:
+
+- `contenuti/lezioni/` — l'edizione di Sara, la predefinita;
+- `contenuti/kids/` — l'edizione della figlia, servita sotto `/kids/`, con
+  sole liste di vocaboli. Ci va il materiale che Sara indica come per i kids.
+
+Ogni procedimento qui sotto lavora dentro una sola cartella, quella
+dell'edizione a cui va il materiale: numeri, duplicati e lezione più recente
+si cercano lì e mai nell'altra. Il test di validità è `npm test`, che rilegge
+le due cartelle a ogni esecuzione, ognuna per conto suo.
 
 ## L'originale non entra nel repository
 
@@ -49,6 +57,18 @@ arricchiti, aggiunti per percorso esplicito, mai con `git add -A` o
    correggere il file finché passa.
 7. **Commit** del nuovo file di lezione più le lezioni precedenti arricchite
    al passo 3, e nient'altro.
+
+## Una lista di vocaboli per i kids
+
+Una foto o un elenco di vocaboli che Sara indica come per i kids diventa una
+lezione nuova in `contenuti/kids/`, con i soli vocaboli:
+
+1. **Leggere il materiale**, chiedendo le parti illeggibili o incerte come al
+   passo 1 della lezione da PDF.
+2. **Numero e argomento** come al passo 2, sulle lezioni di `contenuti/kids/`.
+3. **Vocaboli** come al passo 3, cercando i duplicati in `contenuti/kids/`.
+   Nessuna frase da tradurre e nessuna scheda di grammatica.
+4. **Scrivere, verificare e fare commit** come ai passi 6 e 7.
 
 ## Un vocabolo singolo
 

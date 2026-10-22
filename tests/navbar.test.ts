@@ -67,6 +67,17 @@ describe('navigation bar', () => {
     wrapper.unmount()
   })
 
+  it('nella versione kids mostra solo Vocaboli e Dizionario', async () => {
+    const router = createAppRouter('kids')
+    await router.push('/vocaboli')
+    await router.isReady()
+    const wrapper = mount(NavBar, { global: { plugins: [router] } })
+    const links = wrapper.findAll('nav[aria-label="Sezioni"] a')
+    expect(links.map((link) => link.text())).toEqual(['Vocaboli', 'Dizionario'])
+    expect(links.map((link) => link.attributes('href'))).toEqual(['#/vocaboli', '#/dizionario'])
+    expect(wrapper.get('a[aria-current="page"]').text()).toBe('Vocaboli')
+  })
+
   it('shows the name maies beside the items', async () => {
     const router = createAppRouter()
     await router.push('/esercizi')

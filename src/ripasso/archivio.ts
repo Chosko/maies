@@ -1,7 +1,8 @@
+import { EDIZIONE, chiaveProgressi } from '../edizione'
 import { LIVELLO_INIZIALE, isLivello } from './livelli'
 import type { Livello } from './livelli'
 
-export const CHIAVE_PROGRESSI = 'maies.progressi'
+export const CHIAVE_PROGRESSI = chiaveProgressi(EDIZIONE)
 
 const VERSIONE = 1
 
@@ -34,11 +35,12 @@ function leggiMappa(testo: string | null): Map<string, unknown> {
 
 export function creaArchivio(
   salvataggio: Storage | null = salvataggioPredefinito(),
+  chiave: string = CHIAVE_PROGRESSI,
 ): ArchivioProgressi {
   let disponibile = salvataggio
   let livelli = new Map<string, unknown>()
   try {
-    livelli = leggiMappa(disponibile?.getItem(CHIAVE_PROGRESSI) ?? null)
+    livelli = leggiMappa(disponibile?.getItem(chiave) ?? null)
   } catch {
     disponibile = null
   }
@@ -53,7 +55,7 @@ export function creaArchivio(
       if (disponibile === null) return
       try {
         disponibile.setItem(
-          CHIAVE_PROGRESSI,
+          chiave,
           JSON.stringify({ versione: VERSIONE, livelli: Object.fromEntries(livelli) }),
         )
       } catch {
