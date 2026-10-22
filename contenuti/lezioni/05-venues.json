@@ -1,0 +1,600 @@
+{
+  "id": "05-venues",
+  "title": "Luoghi per eventi: i quantificatori",
+  "sentences": [
+    {
+      "id": "f01",
+      "it": "Quante sedie ci sono nel soggiorno?",
+      "en": "How many chairs are there in the living room?",
+      "alternatives": []
+    },
+    {
+      "id": "f02",
+      "it": "Quanto spazio c'è sul palco?",
+      "en": "How much space is there on the stage?",
+      "alternatives": [
+        "How much space is there on stage?"
+      ]
+    },
+    {
+      "id": "f03",
+      "it": "Non abbiamo molti strumenti musicali.",
+      "en": "We don't have many musical instruments.",
+      "alternatives": [
+        "We do not have many musical instruments.",
+        "We haven't got many musical instruments.",
+        "We don't have many instruments."
+      ]
+    },
+    {
+      "id": "f04",
+      "it": "Non c'è molta luce in questo appartamento.",
+      "en": "There isn't much light in this apartment.",
+      "alternatives": [
+        "There is not much light in this apartment.",
+        "There isn't much light in this flat.",
+        "There is not much light in this flat."
+      ]
+    },
+    {
+      "id": "f05",
+      "it": "C'è del formaggio nel frigorifero.",
+      "en": "There is some cheese in the fridge.",
+      "alternatives": [
+        "There's some cheese in the fridge."
+      ]
+    },
+    {
+      "id": "f06",
+      "it": "Hai delle cuffie? No, non ne ho.",
+      "en": "Do you have any headphones? No, I don't have any.",
+      "alternatives": [
+        "Do you have any headphones? No, I do not have any.",
+        "Have you got any headphones? No, I haven't got any."
+      ]
+    },
+    {
+      "id": "f07",
+      "it": "Non ci sono casse in questa sala.",
+      "en": "There aren't any speakers in this room.",
+      "alternatives": [
+        "There are not any speakers in this room.",
+        "There are no speakers in this room."
+      ]
+    },
+    {
+      "id": "f08",
+      "it": "Ci sono alcune poltrone nell'altra stanza.",
+      "en": "There are a few armchairs in the other room.",
+      "alternatives": [
+        "There are some armchairs in the other room."
+      ]
+    },
+    {
+      "id": "f09",
+      "it": "Potrei avere un po' di latte, per favore?",
+      "en": "May I have a little milk, please?",
+      "alternatives": [
+        "May I have a bit of milk, please?",
+        "Could I have a little milk, please?",
+        "Could I have a bit of milk, please?",
+        "Can I have a little milk, please?",
+        "Can I have a bit of milk, please?"
+      ]
+    },
+    {
+      "id": "f10",
+      "it": "C'è un sacco di gente al concerto.",
+      "en": "There are lots of people at the concert.",
+      "alternatives": [
+        "There are a lot of people at the concert.",
+        "There are loads of people at the concert."
+      ]
+    },
+    {
+      "id": "f11",
+      "it": "Questo locale ha molte luci.",
+      "en": "This venue has a lot of lights.",
+      "alternatives": [
+        "This venue has lots of lights.",
+        "This place has a lot of lights.",
+        "This place has lots of lights."
+      ]
+    },
+    {
+      "id": "f12",
+      "it": "La musica è troppo alta.",
+      "en": "The music is too loud.",
+      "alternatives": [
+        "The music's too loud."
+      ]
+    },
+    {
+      "id": "f13",
+      "it": "Ci sono troppe persone in questo locale.",
+      "en": "There are too many people in this venue.",
+      "alternatives": [
+        "There are too many people in this place."
+      ]
+    },
+    {
+      "id": "f14",
+      "it": "Il cantante ha bevuto troppo caffè.",
+      "en": "The singer drank too much coffee.",
+      "alternatives": [
+        "The singer has drunk too much coffee."
+      ]
+    },
+    {
+      "id": "f15",
+      "it": "Il mio appartamento è molto luminoso.",
+      "en": "My apartment is very bright.",
+      "alternatives": [
+        "My apartment is really bright.",
+        "My flat is very bright.",
+        "My flat is really bright."
+      ]
+    },
+    {
+      "id": "f16",
+      "it": "Questo palco è troppo buio.",
+      "en": "This stage is too dark.",
+      "alternatives": []
+    },
+    {
+      "id": "f17",
+      "it": "Ci sono abbastanza sedie per il pubblico?",
+      "en": "Are there enough chairs for the audience?",
+      "alternatives": []
+    },
+    {
+      "id": "f18",
+      "it": "Questa stanza non è abbastanza grande per il gruppo.",
+      "en": "This room isn't big enough for the band.",
+      "alternatives": [
+        "This room is not big enough for the band."
+      ]
+    },
+    {
+      "id": "f19",
+      "it": "C'è spazio in abbondanza sul palco.",
+      "en": "There's plenty of space on the stage.",
+      "alternatives": [
+        "There is plenty of space on the stage.",
+        "There's plenty of space on stage.",
+        "There is plenty of space on stage."
+      ]
+    },
+    {
+      "id": "f20",
+      "it": "Non abbiamo abbastanza membri per un gruppo al completo.",
+      "en": "We don't have enough bandmates for a full band.",
+      "alternatives": [
+        "We do not have enough bandmates for a full band.",
+        "We haven't got enough bandmates for a full band."
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "v01",
+      "it": "quantificatore",
+      "en": [
+        "quantifier"
+      ]
+    },
+    {
+      "id": "v02",
+      "it": "sostantivo numerabile",
+      "en": [
+        "countable noun"
+      ]
+    },
+    {
+      "id": "v03",
+      "it": "sostantivo non numerabile",
+      "en": [
+        "uncountable noun"
+      ]
+    },
+    {
+      "id": "v04",
+      "it": "luogo (per un evento)",
+      "en": [
+        "venue"
+      ]
+    },
+    {
+      "id": "v05",
+      "it": "evento",
+      "en": [
+        "event"
+      ]
+    },
+    {
+      "id": "v06",
+      "it": "concerto",
+      "en": [
+        "concert"
+      ]
+    },
+    {
+      "id": "v07",
+      "it": "mini concerto",
+      "en": [
+        "gig"
+      ]
+    },
+    {
+      "id": "v08",
+      "it": "palco",
+      "en": [
+        "stage"
+      ]
+    },
+    {
+      "id": "v09",
+      "it": "pubblico",
+      "en": [
+        "audience"
+      ]
+    },
+    {
+      "id": "v10",
+      "it": "amplificatore",
+      "en": [
+        "amplifier",
+        "amp"
+      ]
+    },
+    {
+      "id": "v11",
+      "it": "strumento musicale",
+      "en": [
+        "musical instrument",
+        "instrument"
+      ]
+    },
+    {
+      "id": "v12",
+      "it": "basso (strumento)",
+      "en": [
+        "bass guitar",
+        "bass"
+      ]
+    },
+    {
+      "id": "v13",
+      "it": "chitarra",
+      "en": [
+        "guitar"
+      ]
+    },
+    {
+      "id": "v14",
+      "it": "batteria (strumento)",
+      "en": [
+        "drums"
+      ]
+    },
+    {
+      "id": "v15",
+      "it": "violino",
+      "en": [
+        "violin"
+      ]
+    },
+    {
+      "id": "v16",
+      "it": "tastiera (strumento)",
+      "en": [
+        "keyboard"
+      ]
+    },
+    {
+      "id": "v17",
+      "it": "pianoforte",
+      "en": [
+        "piano"
+      ]
+    },
+    {
+      "id": "v18",
+      "it": "microfono",
+      "en": [
+        "microphone",
+        "mic"
+      ]
+    },
+    {
+      "id": "v19",
+      "it": "cuffie",
+      "en": [
+        "headphones"
+      ]
+    },
+    {
+      "id": "v20",
+      "it": "casse",
+      "en": [
+        "speakers"
+      ]
+    },
+    {
+      "id": "v21",
+      "it": "traccia",
+      "en": [
+        "track"
+      ]
+    },
+    {
+      "id": "v22",
+      "it": "canzone",
+      "en": [
+        "song",
+        "track"
+      ]
+    },
+    {
+      "id": "v23",
+      "it": "mixare",
+      "en": [
+        "to mix",
+        "mix"
+      ]
+    },
+    {
+      "id": "v24",
+      "it": "compilation",
+      "en": [
+        "mix"
+      ]
+    },
+    {
+      "id": "v25",
+      "it": "computer portatile",
+      "en": [
+        "laptop"
+      ]
+    },
+    {
+      "id": "v26",
+      "it": "cantante",
+      "en": [
+        "singer"
+      ]
+    },
+    {
+      "id": "v27",
+      "it": "gruppo (musicale)",
+      "en": [
+        "band"
+      ]
+    },
+    {
+      "id": "v28",
+      "it": "membri del gruppo",
+      "en": [
+        "bandmates"
+      ]
+    },
+    {
+      "id": "v29",
+      "it": "musicista",
+      "en": [
+        "musician"
+      ]
+    },
+    {
+      "id": "v30",
+      "it": "scrivere canzoni",
+      "en": [
+        "to write songs",
+        "write songs"
+      ]
+    },
+    {
+      "id": "v31",
+      "it": "musica classica",
+      "en": [
+        "classical music"
+      ]
+    },
+    {
+      "id": "v32",
+      "it": "luci (di uno spettacolo)",
+      "en": [
+        "lighting equipment",
+        "lights"
+      ]
+    },
+    {
+      "id": "v33",
+      "it": "luce",
+      "en": [
+        "light"
+      ]
+    },
+    {
+      "id": "v34",
+      "it": "fumo",
+      "en": [
+        "smoke"
+      ]
+    },
+    {
+      "id": "v35",
+      "it": "spazio",
+      "en": [
+        "space"
+      ]
+    },
+    {
+      "id": "v36",
+      "it": "mobili",
+      "en": [
+        "furniture"
+      ]
+    },
+    {
+      "id": "v37",
+      "it": "sedia",
+      "en": [
+        "chair"
+      ]
+    },
+    {
+      "id": "v38",
+      "it": "tavolo",
+      "en": [
+        "table"
+      ]
+    },
+    {
+      "id": "v39",
+      "it": "poltrona",
+      "en": [
+        "armchair"
+      ]
+    },
+    {
+      "id": "v40",
+      "it": "posti a sedere",
+      "en": [
+        "seats"
+      ]
+    },
+    {
+      "id": "v41",
+      "it": "palazzo (edificio)",
+      "en": [
+        "building"
+      ]
+    },
+    {
+      "id": "v42",
+      "it": "appartamento",
+      "en": [
+        "apartment",
+        "flat"
+      ]
+    },
+    {
+      "id": "v43",
+      "it": "soggiorno (stanza)",
+      "en": [
+        "living room"
+      ]
+    },
+    {
+      "id": "v44",
+      "it": "frigorifero",
+      "en": [
+        "fridge"
+      ]
+    },
+    {
+      "id": "v45",
+      "it": "formaggio",
+      "en": [
+        "cheese"
+      ]
+    },
+    {
+      "id": "v46",
+      "it": "formale",
+      "en": [
+        "formal"
+      ]
+    },
+    {
+      "id": "v47",
+      "it": "buio",
+      "en": [
+        "dark"
+      ]
+    },
+    {
+      "id": "v48",
+      "it": "luminoso",
+      "en": [
+        "bright"
+      ]
+    },
+    {
+      "id": "v49",
+      "it": "giusto (adatto)",
+      "en": [
+        "right"
+      ]
+    },
+    {
+      "id": "v50",
+      "it": "famoso",
+      "en": [
+        "famous"
+      ]
+    },
+    {
+      "id": "v51",
+      "it": "alto (di volume)",
+      "en": [
+        "loud"
+      ]
+    },
+    {
+      "id": "v52",
+      "it": "scomodo",
+      "en": [
+        "uncomfortable"
+      ]
+    },
+    {
+      "id": "v53",
+      "it": "costoso",
+      "en": [
+        "expensive"
+      ]
+    },
+    {
+      "id": "v54",
+      "it": "ballare",
+      "en": [
+        "to dance",
+        "dance"
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g01",
+      "title": "Much e many",
+      "body": "I **quantificatori** (*quantifiers*) indicano quanto c'è di qualcosa. Per scegliere quello giusto bisogna sapere se il sostantivo è **numerabile** (*countable*: *chairs*, *people*) o **non numerabile** (*uncountable*: *space*, *light*, *water*). Alcuni quantificatori vanno bene con tutti e due.\n\n*Much* e *many* significano tutti e due \"molto\":\n\n- *much* con i **non numerabili**;\n- *many* con i **numerabili**.\n\nSi usano soprattutto nelle **domande** e nelle **frasi negative**, poco nelle frasi affermative.\n\n- *How many people are invited?* — Quante persone sono invitate?\n- *How much light do you need?* — Quanta luce ti serve?\n- *I don't have many ideas at the moment.* — Non ho molte idee al momento.\n- *There isn't much space in here.* — Non c'è molto spazio qui dentro.\n\n## Attenzione al verbo\n\nCon *many* il verbo *to be* è **plurale**; con *much* è **singolare**.\n\n- *How many chairs **are** there?* — Quante sedie ci sono?\n- ***Is** there much space?* — C'è molto spazio?\n- *There **aren't** many people at the concert.* — Non c'è molta gente al concerto.\n- *There **isn't** much light in this venue.* — Non c'è molta luce in questo locale."
+    },
+    {
+      "id": "g02",
+      "title": "Some e any",
+      "body": "*Some* e *any* indicano una certa quantità, poca, oppure nessuna. Vanno bene con i numerabili e con i non numerabili.\n\n## Some\n\nNelle **frasi e risposte affermative**. Si traduce con *alcuni/alcune*, con gli articoli partitivi (*del*, *dei*, *dello*, *degli*, *della*, *delle*) e, nelle risposte brevi, con *qualcuno/a*.\n\n- *There is some smoke on stage.* — C'è del fumo sul palco.\n\n## Any\n\nNelle **domande** e nelle **frasi e risposte negative**.\n\n- Nelle domande si traduce con *qualche* o con gli articoli partitivi: *Do you have any guitars?* — Hai delle chitarre?\n- Nelle frasi negative si traduce con *alcun/alcuno*: *There aren't any musical instruments.* — Non c'è alcuno strumento musicale.\n- Con *at all* diventa *affatto*: *No, I don't have any (at all).* — No, non ne ho (affatto)."
+    },
+    {
+      "id": "g03",
+      "title": "A few, a little, a bit of",
+      "body": "Per le **piccole quantità**:\n\n- *a few* con i **numerabili**;\n- *a little* o *a bit of* con i **non numerabili**.\n\n- *There are a few chairs in the other room.* — Ci sono un po' di sedie di là.\n- *We have a few pictures in the living room.* — Abbiamo alcune foto in soggiorno.\n- *May I have a little water, please?* — Potrei avere un po' d'acqua, per favore?\n- *There is a bit of cheese left in the fridge.* — Nel frigorifero è rimasto un po' di formaggio.\n\n## Attenzione al verbo\n\nCome con *many* e *much*: con *a few* il verbo è **plurale** (*there **are** a few chairs*), con *a little* / *a bit of* è **singolare** (*there **is** a bit of cheese*)."
+    },
+    {
+      "id": "g04",
+      "title": "Lots of, a lot of",
+      "body": "*Lots of* e *a lot of* indicano una **grande quantità**. Sono intercambiabili e vanno bene con i numerabili e con i non numerabili, quindi sono comodi anche quando non sei sicuro se il sostantivo sia numerabile o no.\n\n*A lot of* **non** è il singolare di *lots of*: tutti e due indicano molta quantità.\n\nIn italiano si traducono con \"molto\" o, in modo informale, con \"un sacco di\" e \"un mucchio di\".\n\n- *This stage has lots of empty space.* — Questo palco ha un sacco di spazio vuoto.\n- *This place has a lot of lights.* — Questo posto ha molte luci.\n- *There are lots of chairs and there's a lot of light.* — Ci sono molte sedie e c'è molta luce.\n\nIn una conversazione molto informale si dice anche *loads of*: *There are loads of people.*"
+    },
+    {
+      "id": "g05",
+      "title": "Too, too much, too many",
+      "body": "*Too* indica una quantità **eccessiva**: \"troppo\".\n\n- *too* + **aggettivo**: *Your car is too big.* — La tua macchina è troppo grande.\n- *too many* + **numerabile**: *I have too many books.* — Ho troppi libri.\n- *too much* + **non numerabile**: *I ate too much (food).* — Ho mangiato troppo (cibo).\n\nAltri esempi:\n\n- *This stage is not a good place for a gig… there's too much water.* — Questo palco non è un buon posto per un concerto… c'è troppa acqua.\n- *There are too many people in a venue that's too small to hold everyone.* — Ci sono troppe persone in un posto che è troppo piccolo per contenere tutti.\n\n## Attenzione\n\nIn inglese *too* ha quasi sempre un senso **negativo**. Per dire \"troppo bello\" in senso positivo si usa *very*, *so* o *really* con gli aggettivi, e *a lot of* / *lots of* con i sostantivi.\n\n| Positivo | Negativo |\n| --- | --- |\n| *My apartment is **very** big.* — Il mio appartamento è molto grande. | *My car is **too** small.* — La mia auto è troppo piccola. |\n| *This venue is **so** nice!* — Questo locale è così bello! | *This place is **too** expensive.* — Questo posto è troppo costoso. |"
+    },
+    {
+      "id": "g06",
+      "title": "Plenty of, enough, not enough",
+      "body": "Dicono se di qualcosa **ce n'è abbastanza** o no. Vanno bene con i numerabili e con i non numerabili.\n\n- *enough* — abbastanza;\n- *not enough* — non abbastanza;\n- *plenty of* — abbastanza, in abbondanza.\n\n- *There's plenty of light on this stage.* — C'è luce in abbondanza su questo palco.\n- *There are enough speakers for a good concert.* — Ci sono abbastanza casse per un buon concerto.\n- *This venue isn't big enough to dance.* — Questo luogo non è grande abbastanza per ballare.\n\n## Dove va enough\n\n- **prima** del sostantivo: *enough speakers*;\n- **dopo** l'aggettivo: *big enough*.\n\n## Riepilogo dei quantificatori\n\n| Non numerabili | Numerabili |\n| --- | --- |\n| *too much* — troppo/a | *too many* — troppi/e |\n| *lots of*, *a lot of* — molto/a, tanto/a | *lots of*, *a lot of* — molti/e, tanti/e |\n| *plenty of* — abbastanza | *plenty of* — abbastanza |\n| *a little*, *a bit of* — poco/a | *a few* — pochi/e |\n| *not much* — non molto/a | *not many* — non molti/e |\n| *not enough* — non abbastanza | *not enough* — non abbastanza |"
+    }
+  ]
+}
