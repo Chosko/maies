@@ -1,0 +1,413 @@
+{
+  "id": "11-the-best-place-to-stay",
+  "title": "Il posto migliore dove alloggiare: l'ordine degli aggettivi",
+  "sentences": [
+    {
+      "id": "f01",
+      "it": "Abbiamo soggiornato in un grande albergo moderno e costoso.",
+      "en": "We stayed in an expensive large modern hotel.",
+      "alternatives": [
+        "We stayed in an expensive big modern hotel."
+      ]
+    },
+    {
+      "id": "f02",
+      "it": "Ho comprato un bel tavolo di legno rotondo.",
+      "en": "I bought a beautiful round wooden table.",
+      "alternatives": [
+        "I bought a nice round wooden table.",
+        "I've bought a beautiful round wooden table."
+      ]
+    },
+    {
+      "id": "f03",
+      "it": "Mia nonna ha una vecchia borsa di pelle italiana.",
+      "en": "My grandmother has an old Italian leather bag.",
+      "alternatives": [
+        "My grandma has an old Italian leather bag.",
+        "My grandmother has got an old Italian leather bag."
+      ]
+    },
+    {
+      "id": "f04",
+      "it": "Mi serve un sacco a pelo blu.",
+      "en": "I need a blue sleeping bag.",
+      "alternatives": []
+    },
+    {
+      "id": "f05",
+      "it": "Abbiamo visto una bellissima piccola chiesa greca.",
+      "en": "We saw a beautiful small Greek church.",
+      "alternatives": [
+        "We saw a beautiful little Greek church."
+      ]
+    },
+    {
+      "id": "f06",
+      "it": "Hai mai soggiornato in un ostello?",
+      "en": "Have you ever stayed in a hostel?",
+      "alternatives": []
+    },
+    {
+      "id": "f07",
+      "it": "Qual è il tuo tipo di alloggio preferito e perché?",
+      "en": "What is your favourite type of accommodation and why?",
+      "alternatives": [
+        "What's your favourite type of accommodation and why?",
+        "What is your favorite type of accommodation and why?",
+        "What's your favorite type of accommodation and why?",
+        "Which is your favourite type of accommodation and why?"
+      ]
+    },
+    {
+      "id": "f08",
+      "it": "Le camere sono piccole ma pulite e comode.",
+      "en": "The rooms are small but clean and comfortable.",
+      "alternatives": []
+    },
+    {
+      "id": "f09",
+      "it": "L'albergo ha una piccola piscina rettangolare all'aperto.",
+      "en": "The hotel has a small rectangular outdoor pool.",
+      "alternatives": [
+        "The hotel has a small, rectangular outdoor pool.",
+        "The hotel has a small rectangular outdoor swimming pool."
+      ]
+    },
+    {
+      "id": "f10",
+      "it": "Non è un albergo di lusso, ma è tranquillo ed elegante.",
+      "en": "It's not a luxury hotel, but it's quiet and stylish.",
+      "alternatives": [
+        "It isn't a luxury hotel, but it's quiet and stylish.",
+        "It is not a luxury hotel, but it is quiet and stylish."
+      ]
+    },
+    {
+      "id": "f11",
+      "it": "C'è il Wi-Fi gratuito e una scrivania se devi lavorare.",
+      "en": "There is free Wi-Fi and a desk if you need to work.",
+      "alternatives": [
+        "There's free Wi-Fi and a desk if you need to work.",
+        "There is free Wi-Fi and a desk if you have to work.",
+        "There's free Wi-Fi and a desk if you have to work."
+      ]
+    },
+    {
+      "id": "f12",
+      "it": "La piscina è perfetta per rinfrescarsi dopo una giornata impegnativa.",
+      "en": "The pool is perfect to cool down after a busy day.",
+      "alternatives": [
+        "The pool is perfect for cooling down after a busy day."
+      ]
+    },
+    {
+      "id": "f13",
+      "it": "È perfetto per i giovani che non vogliono spendere troppi soldi.",
+      "en": "It's perfect for young people who don't want to spend too much money.",
+      "alternatives": [
+        "It is perfect for young people who don't want to spend too much money.",
+        "It is perfect for young people who do not want to spend too much money."
+      ]
+    },
+    {
+      "id": "f14",
+      "it": "Il villaggio turistico ha una grande piscina blu.",
+      "en": "The resort has a large blue pool.",
+      "alternatives": [
+        "The resort has a big blue pool.",
+        "The resort has a large blue swimming pool.",
+        "The resort has a big blue swimming pool."
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "v01",
+      "it": "alloggio",
+      "en": [
+        "accommodation"
+      ]
+    },
+    {
+      "id": "v02",
+      "it": "tipo di alloggio",
+      "en": [
+        "accommodation type",
+        "type of accommodation"
+      ]
+    },
+    {
+      "id": "v03",
+      "it": "villaggio turistico",
+      "en": [
+        "resort"
+      ]
+    },
+    {
+      "id": "v04",
+      "it": "ostello",
+      "en": [
+        "hostel"
+      ]
+    },
+    {
+      "id": "v05",
+      "it": "motel",
+      "en": [
+        "motel"
+      ]
+    },
+    {
+      "id": "v06",
+      "it": "rifugio (di montagna)",
+      "en": [
+        "lodge"
+      ]
+    },
+    {
+      "id": "v07",
+      "it": "viaggiatore",
+      "en": [
+        "traveller",
+        "traveler"
+      ]
+    },
+    {
+      "id": "v08",
+      "it": "soggiornare",
+      "en": [
+        "to stay",
+        "stay"
+      ]
+    },
+    {
+      "id": "v09",
+      "it": "preferito",
+      "en": [
+        "favourite",
+        "favorite"
+      ]
+    },
+    {
+      "id": "v10",
+      "it": "ordine degli aggettivi",
+      "en": [
+        "adjective order"
+      ]
+    },
+    {
+      "id": "v11",
+      "it": "opinione",
+      "en": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "v12",
+      "it": "forma",
+      "en": [
+        "shape"
+      ]
+    },
+    {
+      "id": "v13",
+      "it": "colore",
+      "en": [
+        "colour",
+        "color"
+      ]
+    },
+    {
+      "id": "v14",
+      "it": "origine",
+      "en": [
+        "origin"
+      ]
+    },
+    {
+      "id": "v15",
+      "it": "materiale",
+      "en": [
+        "material"
+      ]
+    },
+    {
+      "id": "v16",
+      "it": "scopo",
+      "en": [
+        "purpose"
+      ]
+    },
+    {
+      "id": "v17",
+      "it": "vecchio",
+      "en": [
+        "old"
+      ]
+    },
+    {
+      "id": "v18",
+      "it": "quadrato",
+      "en": [
+        "square"
+      ]
+    },
+    {
+      "id": "v19",
+      "it": "rotondo",
+      "en": [
+        "round"
+      ]
+    },
+    {
+      "id": "v20",
+      "it": "rettangolare",
+      "en": [
+        "rectangular"
+      ]
+    },
+    {
+      "id": "v21",
+      "it": "blu",
+      "en": [
+        "blue"
+      ]
+    },
+    {
+      "id": "v22",
+      "it": "greco",
+      "en": [
+        "Greek"
+      ]
+    },
+    {
+      "id": "v23",
+      "it": "di plastica",
+      "en": [
+        "plastic"
+      ]
+    },
+    {
+      "id": "v24",
+      "it": "di legno",
+      "en": [
+        "wooden"
+      ]
+    },
+    {
+      "id": "v25",
+      "it": "pelle (materiale)",
+      "en": [
+        "leather"
+      ]
+    },
+    {
+      "id": "v26",
+      "it": "sacco a pelo",
+      "en": [
+        "sleeping bag"
+      ]
+    },
+    {
+      "id": "v27",
+      "it": "borsa",
+      "en": [
+        "bag"
+      ]
+    },
+    {
+      "id": "v28",
+      "it": "chiesa",
+      "en": [
+        "church"
+      ]
+    },
+    {
+      "id": "v29",
+      "it": "all'aperto",
+      "en": [
+        "outdoor"
+      ]
+    },
+    {
+      "id": "v30",
+      "it": "di lusso",
+      "en": [
+        "luxury"
+      ]
+    },
+    {
+      "id": "v31",
+      "it": "elegante",
+      "en": [
+        "stylish"
+      ]
+    },
+    {
+      "id": "v32",
+      "it": "semplice",
+      "en": [
+        "simple"
+      ]
+    },
+    {
+      "id": "v33",
+      "it": "scrivania",
+      "en": [
+        "desk"
+      ]
+    },
+    {
+      "id": "v34",
+      "it": "Wi-Fi gratuito",
+      "en": [
+        "free Wi-Fi"
+      ]
+    },
+    {
+      "id": "v35",
+      "it": "rinfrescarsi",
+      "en": [
+        "to cool down",
+        "cool down"
+      ]
+    },
+    {
+      "id": "v36",
+      "it": "giornata impegnativa",
+      "en": [
+        "busy day"
+      ]
+    },
+    {
+      "id": "v37",
+      "it": "giovani professionisti",
+      "en": [
+        "young professionals"
+      ]
+    },
+    {
+      "id": "v38",
+      "it": "spendere",
+      "en": [
+        "to spend",
+        "spend"
+      ]
+    },
+    {
+      "id": "v39",
+      "it": "soldi",
+      "en": [
+        "money"
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g01",
+      "title": "L'ordine degli aggettivi",
+      "body": "In inglese gli aggettivi vanno **prima del nome**, e quando sono più di uno seguono un **ordine preciso**:\n\n| Ordine | Esempio |\n| --- | --- |\n| 1. opinione (*opinion*) | *beautiful* |\n| 2. dimensione (*size*) | *large* |\n| 3. età (*age*) | *old* |\n| 4. forma (*shape*) | *square* |\n| 5. colore (*colour*) | *blue* |\n| 6. origine (*origin*) | *Greek* |\n| 7. materiale (*material*) | *plastic* |\n| 8. scopo (*purpose*) | *sleeping* |\n\n- *We stayed in an **expensive large modern** hotel.* — opinione, dimensione, età.\n- *The hotel has a **small, rectangular outdoor** pool.* — dimensione, forma, scopo.\n- *a **beautiful round wooden** table* — opinione, forma, materiale.\n\nIn italiano l'ordine è spesso al contrario e gli aggettivi stanno anche dopo il nome: \"un tavolo di legno rotondo\" diventa *a round wooden table*.\n\nL'aggettivo di **scopo** è quasi parte del nome e sta sempre per ultimo: *sleeping bag* (sacco a pelo), *swimming pool*."
+    }
+  ]
+}
