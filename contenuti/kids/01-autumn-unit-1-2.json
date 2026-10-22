@@ -1,0 +1,167 @@
+{
+  "id": "01-autumn-unit-1-2",
+  "title": "Autunno, Unit 1 e Unit 2",
+  "sentences": [],
+  "vocabulary": [
+    {
+      "id": "v01",
+      "it": "è autunno",
+      "en": [
+        "It's autumn",
+        "It is autumn"
+      ]
+    },
+    {
+      "id": "v02",
+      "it": "c'è vento",
+      "en": [
+        "It's windy",
+        "It is windy"
+      ]
+    },
+    {
+      "id": "v03",
+      "it": "una libreria",
+      "en": [
+        "a bookshop",
+        "bookshop"
+      ]
+    },
+    {
+      "id": "v04",
+      "it": "un bar, una caffetteria",
+      "en": [
+        "a cafe",
+        "cafe",
+        "a café",
+        "café"
+      ]
+    },
+    {
+      "id": "v05",
+      "it": "una casa",
+      "en": [
+        "a house",
+        "house"
+      ]
+    },
+    {
+      "id": "v06",
+      "it": "foglie",
+      "en": [
+        "leaves"
+      ]
+    },
+    {
+      "id": "v07",
+      "it": "ciao, salve (quando arrivi)",
+      "en": [
+        "Hello",
+        "Hi"
+      ]
+    },
+    {
+      "id": "v08",
+      "it": "come ti chiami?",
+      "en": [
+        "What's your name?",
+        "What is your name?"
+      ]
+    },
+    {
+      "id": "v09",
+      "it": "mi chiamo Fern",
+      "en": [
+        "I'm Fern",
+        "I am Fern",
+        "My name is Fern"
+      ]
+    },
+    {
+      "id": "v10",
+      "it": "ciao, arrivederci (quando vai via)",
+      "en": [
+        "Goodbye",
+        "Bye"
+      ]
+    },
+    {
+      "id": "v11",
+      "it": "uno",
+      "en": [
+        "one"
+      ]
+    },
+    {
+      "id": "v12",
+      "it": "due",
+      "en": [
+        "two"
+      ]
+    },
+    {
+      "id": "v13",
+      "it": "tre",
+      "en": [
+        "three"
+      ]
+    },
+    {
+      "id": "v14",
+      "it": "quattro",
+      "en": [
+        "four"
+      ]
+    },
+    {
+      "id": "v15",
+      "it": "cinque",
+      "en": [
+        "five"
+      ]
+    },
+    {
+      "id": "v16",
+      "it": "quanti? quante?",
+      "en": [
+        "How many?"
+      ]
+    },
+    {
+      "id": "v17",
+      "it": "marrone",
+      "en": [
+        "brown"
+      ]
+    },
+    {
+      "id": "v18",
+      "it": "rosso",
+      "en": [
+        "red"
+      ]
+    },
+    {
+      "id": "v19",
+      "it": "verde",
+      "en": [
+        "green"
+      ]
+    },
+    {
+      "id": "v20",
+      "it": "giallo",
+      "en": [
+        "yellow"
+      ]
+    },
+    {
+      "id": "v21",
+      "it": "arancione",
+      "en": [
+        "orange"
+      ]
+    }
+  ],
+  "grammar": []
+}
