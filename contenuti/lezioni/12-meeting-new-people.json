@@ -1,0 +1,352 @@
+{
+  "id": "12-meeting-new-people",
+  "title": "Conoscere persone nuove: iniziare una conversazione e fare domande",
+  "sentences": [
+    {
+      "id": "f01",
+      "it": "Piacere di conoscerti, ho sentito parlare molto di te.",
+      "en": "Nice to meet you, I've heard a lot about you.",
+      "alternatives": [
+        "Nice to meet you, I have heard a lot about you.",
+        "Nice to meet you. I've heard a lot about you.",
+        "Nice to meet you. I have heard a lot about you."
+      ]
+    },
+    {
+      "id": "f02",
+      "it": "Cosa ti porta a Milano?",
+      "en": "What brings you to Milan?",
+      "alternatives": []
+    },
+    {
+      "id": "f03",
+      "it": "Di dove sei? Sono di Roma.",
+      "en": "Where are you from? I'm from Rome.",
+      "alternatives": [
+        "Where are you from? I am from Rome."
+      ]
+    },
+    {
+      "id": "f04",
+      "it": "Sei sposata?",
+      "en": "Are you married?",
+      "alternatives": []
+    },
+    {
+      "id": "f05",
+      "it": "Hai fratelli o sorelle?",
+      "en": "Do you have any brothers or sisters?",
+      "alternatives": [
+        "Do you have brothers or sisters?",
+        "Have you got any brothers or sisters?",
+        "Do you have any siblings?"
+      ]
+    },
+    {
+      "id": "f06",
+      "it": "Dove sei nato?",
+      "en": "Where were you born?",
+      "alternatives": []
+    },
+    {
+      "id": "f07",
+      "it": "Ti piace il tuo lavoro?",
+      "en": "Do you like your job?",
+      "alternatives": []
+    },
+    {
+      "id": "f08",
+      "it": "Quando hai iniziato a lavorare qui?",
+      "en": "When did you start working here?",
+      "alternatives": [
+        "When did you start to work here?"
+      ]
+    },
+    {
+      "id": "f09",
+      "it": "Qual è l'ultimo film che hai visto?",
+      "en": "What's the last film you saw?",
+      "alternatives": [
+        "What is the last film you saw?",
+        "What's the last film you've seen?",
+        "What's the last movie you saw?",
+        "What is the last movie you saw?"
+      ]
+    },
+    {
+      "id": "f10",
+      "it": "Dove sei andato nel tuo ultimo viaggio?",
+      "en": "Where did you go on your last trip?",
+      "alternatives": []
+    },
+    {
+      "id": "f11",
+      "it": "Per quanto tempo viaggi? Per sei mesi.",
+      "en": "How long are you travelling for? For six months.",
+      "alternatives": [
+        "How long are you traveling for? For six months.",
+        "How long are you travelling for? For 6 months."
+      ]
+    },
+    {
+      "id": "f12",
+      "it": "Hai sentito la notizia?",
+      "en": "Have you heard the news?",
+      "alternatives": []
+    },
+    {
+      "id": "f13",
+      "it": "Cosa pensi che succederà?",
+      "en": "What do you think will happen?",
+      "alternatives": []
+    },
+    {
+      "id": "f14",
+      "it": "Sei d'accordo?",
+      "en": "Do you agree?",
+      "alternatives": []
+    },
+    {
+      "id": "f15",
+      "it": "Ho sempre voluto visitare San Francisco. Anch'io!",
+      "en": "I've always wanted to visit San Francisco. Me too!",
+      "alternatives": [
+        "I have always wanted to visit San Francisco. Me too!"
+      ]
+    },
+    {
+      "id": "f16",
+      "it": "Non mi piacciono i concerti. Neanche a me!",
+      "en": "I don't like concerts. Me neither!",
+      "alternatives": [
+        "I do not like concerts. Me neither!",
+        "I don't like concerts. Neither do I!"
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "v01",
+      "it": "piacere di conoscerti",
+      "en": [
+        "nice to meet you"
+      ]
+    },
+    {
+      "id": "v02",
+      "it": "ho sentito parlare molto di te",
+      "en": [
+        "I've heard a lot about you",
+        "I have heard a lot about you"
+      ]
+    },
+    {
+      "id": "v03",
+      "it": "cosa ti porta qui?",
+      "en": [
+        "what brings you here?"
+      ]
+    },
+    {
+      "id": "v04",
+      "it": "ci siamo già conosciuti?",
+      "en": [
+        "have we met before?"
+      ]
+    },
+    {
+      "id": "v05",
+      "it": "iniziare una conversazione",
+      "en": [
+        "to start a conversation",
+        "start a conversation"
+      ]
+    },
+    {
+      "id": "v06",
+      "it": "argomento (di conversazione)",
+      "en": [
+        "topic"
+      ]
+    },
+    {
+      "id": "v07",
+      "it": "famiglia",
+      "en": [
+        "family"
+      ]
+    },
+    {
+      "id": "v08",
+      "it": "relazioni",
+      "en": [
+        "relationships"
+      ]
+    },
+    {
+      "id": "v09",
+      "it": "sposato",
+      "en": [
+        "married"
+      ]
+    },
+    {
+      "id": "v10",
+      "it": "fratelli e sorelle",
+      "en": [
+        "brothers and sisters",
+        "siblings"
+      ]
+    },
+    {
+      "id": "v11",
+      "it": "nascere",
+      "en": [
+        "to be born",
+        "be born"
+      ]
+    },
+    {
+      "id": "v12",
+      "it": "lavoro",
+      "en": [
+        "job",
+        "work"
+      ]
+    },
+    {
+      "id": "v13",
+      "it": "data di inizio",
+      "en": [
+        "starting date",
+        "start date"
+      ]
+    },
+    {
+      "id": "v14",
+      "it": "non piacere",
+      "en": [
+        "to dislike",
+        "dislike"
+      ]
+    },
+    {
+      "id": "v15",
+      "it": "film",
+      "en": [
+        "film",
+        "movie"
+      ]
+    },
+    {
+      "id": "v16",
+      "it": "musica",
+      "en": [
+        "music"
+      ]
+    },
+    {
+      "id": "v17",
+      "it": "viaggio",
+      "en": [
+        "trip"
+      ]
+    },
+    {
+      "id": "v18",
+      "it": "notizie",
+      "en": [
+        "news"
+      ]
+    },
+    {
+      "id": "v19",
+      "it": "essere d'accordo",
+      "en": [
+        "to agree",
+        "agree"
+      ]
+    },
+    {
+      "id": "v20",
+      "it": "non essere d'accordo",
+      "en": [
+        "to disagree",
+        "disagree"
+      ]
+    },
+    {
+      "id": "v21",
+      "it": "succedere",
+      "en": [
+        "to happen",
+        "happen"
+      ]
+    },
+    {
+      "id": "v22",
+      "it": "progettare",
+      "en": [
+        "to plan",
+        "plan"
+      ]
+    },
+    {
+      "id": "v23",
+      "it": "avere cose in comune",
+      "en": [
+        "to have things in common",
+        "have things in common"
+      ]
+    },
+    {
+      "id": "v24",
+      "it": "anch'io",
+      "en": [
+        "me too"
+      ]
+    },
+    {
+      "id": "v25",
+      "it": "neanch'io",
+      "en": [
+        "me neither",
+        "neither do I"
+      ]
+    },
+    {
+      "id": "v26",
+      "it": "ma dai!",
+      "en": [
+        "no way!"
+      ]
+    },
+    {
+      "id": "v27",
+      "it": "non ci posso credere",
+      "en": [
+        "I can't believe it",
+        "I cannot believe it"
+      ]
+    },
+    {
+      "id": "v28",
+      "it": "davvero?",
+      "en": [
+        "really?"
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g01",
+      "title": "Iniziare una conversazione e reagire",
+      "body": "## Per cominciare\n\n- *Nice to meet you.* — Piacere di conoscerti. Si risponde *Nice to meet you too.*\n- *I've heard a lot about you.* — Ho sentito parlare molto di te.\n- *What brings you here?* — Cosa ti porta qui?\n- *Where are you from?* — Di dove sei?\n- *Have we met before?* — Ci siamo già conosciuti?\n\n## Argomenti di conversazione\n\n- **famiglia e relazioni**: *married?*, *brothers or sisters?*, *children?*\n- **città e casa**: *live?*, *born?*, *like/dislike?*\n- **lavoro e studio**: *job?*, *like/dislike?*, *starting date?*\n- **film**: *last film?*, *favorite?*, *Have you…?*\n- **viaggi**: *last trip?*, *next trip?*, *What did you…?*\n- **musica**: *like/dislike?*, *concerts?*, *Have you…?*\n- **notizie**: *Have you heard…?*, *agree/disagree?*, *What do you think will happen…?*\n\n## Reagire quando avete cose in comune\n\n- *Me too!* — Anch'io! (dopo una frase **affermativa**)\n- *Me neither!* — Neanch'io! (dopo una frase **negativa**)\n- *No way!* — Ma dai!\n- *I can't believe it!* — Non ci posso credere!\n- *Really?* — Davvero?\n\n*Me too* e *Me neither* sono le forme brevi e informali di *too* ed *either*: *I don't like concerts.* — *Me neither!*"
+    },
+    {
+      "id": "g02",
+      "title": "Fare domande a una persona nuova",
+      "body": "Gli spunti come *married?* o *born?* vanno trasformati in domande complete. Prima scegli l'ausiliare giusto.\n\n## Con to be\n\nCon aggettivi, provenienza e *born* l'ausiliare è *to be*, messo prima del soggetto:\n\n- *married?* → ***Are** you married?*\n- *from?* → *Where **are** you from?*\n- *born?* → *Where **were** you born?* (\"nascere\" in inglese è *to be born*, al passato: mai *Where are you born?*)\n\n## Con do / did\n\nCon gli altri verbi serve *do* al presente e *did* al passato:\n\n- *brothers or sisters?* → ***Do** you have any brothers or sisters?*\n- *like/dislike?* → ***Do** you like your job?*\n- *live?* → *Where **do** you live?*\n- *starting date?* → *When **did** you start?*\n- *last trip?* → *Where **did** you go on your last trip?*\n\n## Con have per le esperienze\n\n*Have you…?* usa il present perfect: *Have you heard the news?*, *Have you ever been to a concert?*\n\n## Esempio di dialogo\n\n- *Hi, have we met before?* — *No, I don't think so. I'm Sam, nice to meet you.*\n- *I'm Mike. Nice to meet you too. What brings you to Colorado?*\n- *I'm travelling around North America. Where are you from?* — *I'm from New York.*\n- *How long are you travelling for?* — *I'm travelling for 6 months.*\n- *No way! What's your next trip?* — *I'm going to California.*\n- *Really? What are you planning to do?* — *I've always wanted to visit San Francisco.*\n- *Me too!*"
+    }
+  ]
+}
