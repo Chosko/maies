@@ -1,6 +1,6 @@
 # Tasks
 
-Last task number: 27
+Last task number: 31
 
 ---
 
@@ -271,5 +271,45 @@ Target: claude
 Files: README.md
 Preconditions: 24, 25, 26
 Feature: schede-grammatica
+
+---
+
+## 28. Importanza degli elementi nell'archivio dei progressi
+
+Status: [MISSING]
+Target: claude
+Files: src/ripasso/importanza.ts, src/ripasso/archivio.ts, tests/importanza.test.ts, tests/archivio.test.ts
+Preconditions: none
+Feature: ripetizione-errori
+
+---
+
+## 29. Selettore pesato dall'importanza
+
+Status: [MISSING]
+Target: claude
+Files: src/ripasso/selettore.ts, tests/selettore.test.ts
+Preconditions: 28
+Feature: ripetizione-errori
+
+---
+
+## 30. Sessione: registrare l'importanza e distinguere i due casi vuoti
+
+Status: [MISSING]
+Target: claude
+Files: src/ripasso/sessione.ts, tests/sessione.test.ts, src/esercizi/ciclo.ts, src/vocaboli/ciclo.ts
+Preconditions: 28, 29
+Feature: ripetizione-errori
+
+---
+
+## 31. Update documentation for feature `ripetizione-errori`
+
+Status: [MISSING]
+Target: claude
+Files: .claude/context/ripasso.md, README.md
+Preconditions: 28, 29, 30
+Feature: ripetizione-errori
 
 ---
