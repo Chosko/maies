@@ -76,15 +76,24 @@ La schermata Esercizi propone frasi italiane, mescolate tra tutte le
 lezioni, da tradurre in inglese. Sara scrive la traduzione e la conferma,
 poi vede la traduzione corretta, le varianti accettabili e il titolo della
 lezione, e segna da sola se la risposta era giusta o sbagliata: l'app non
-confronta la risposta con le traduzioni. Ogni frase la sceglie la sessione
-di ripasso di tipo `'frasi'`, che registra anche l'esito; a ogni ingresso
-nella schermata si apre una sessione nuova. Senza frasi nel catalogo la
-schermata mostra un messaggio al posto dell'esercizio.
+confronta la risposta con le traduzioni. Nella soluzione Sara sceglie anche
+l'importanza della frase, da 0 a 3, partendo da quella attuale: 1, 2 e 3 si
+registrano subito, mentre lo 0 chiede prima una conferma ("Togli" o
+"Annulla") e, confermato, toglie la frase dagli esercizi senza registrare un
+esito e passa alla successiva. Ogni frase la sceglie la sessione di ripasso
+di tipo `'frasi'`, che registra anche l'esito e l'importanza; a ogni
+ingresso nella schermata si apre una sessione nuova. Senza frasi nel
+catalogo la schermata mostra un messaggio al posto dell'esercizio; quando
+invece le frasi ci sono ma Sara le ha tolte tutte, il messaggio dice che
+sono state tolte tutte dagli esercizi.
 
 La logica del ciclo, senza interfaccia, è `creaCiclo()` in
 `src/esercizi/ciclo.ts`; il componente della rotta `#/esercizi` è
 `src/views/EserciziView.vue`, che mostra la fase corrente del ciclo e gli
-inoltra le azioni.
+inoltra le azioni. La riga dell'importanza con la sua conferma è
+il componente `src/components/RigaImportanza.vue`, condiviso con la
+schermata Vocaboli, che mostra ed emette soltanto: l'importanza e la
+conferma aperta le tiene il ciclo.
 
 Il perché di queste scelte è nel documento di feature
 [`.claude/domain/features/esercizi-traduzione.md`](.claude/domain/features/esercizi-traduzione.md).

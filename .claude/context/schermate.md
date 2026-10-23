@@ -7,7 +7,8 @@ UI-free logic module. Three read the catalogue only; Esercizi and Vocaboli
 drive a review session.
 
 - `src/views/EserciziView.vue` + `src/esercizi/ciclo.ts` — translation
-  exercise: Sara types, sees the solution, marks herself right or wrong.
+  exercise: Sara types, sees the solution, marks herself right or wrong and
+  sets the sentence's importance, 0 removing it after a confirmation.
 - `src/views/VocaboliView.vue` + `src/vocaboli/ciclo.ts`,
   `src/vocaboli/verifica.ts` — vocabulary drill: the app checks the answer.
 - `src/views/DizionarioView.vue` + `src/dizionario/voci.ts`,
@@ -16,9 +17,12 @@ drive a review session.
   lessons that have grammar cards.
 - `src/views/GrammaticaLezioneView.vue` + `src/grammatica/markdown.ts` —
   one lesson's cards, Markdown rendered to HTML (route `#/grammatica/:id`).
+- `src/components/RigaImportanza.vue` — the 0–3 importance row and its
+  removal confirmation, shared by Esercizi (on the solution) and Vocaboli
+  (on the result).
 
-Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `vocaboli`,
-`ciclo-vocaboli`, `verifica`, `dizionario`, `voci`, `filtro`, `grammatica`,
+Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `riga-importanza`,
+`vocaboli`, `ciclo-vocaboli`, `verifica`, `dizionario`, `voci`, `filtro`, `grammatica`,
 `elenco-grammatica`, `grammatica-lezione`, `markdown` (all `tests/*.test.ts`).
 
 ## Public API
@@ -28,7 +32,12 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `vocaboli`,
   `nessun-materiale` | `tutti-tolti`; `frase`, `testo`, `titoloLezione`,
   `importanza`, `confermaRimozioneAperta`), `avvio()`, `conferma(testo)`,
   `segna('giusta' | 'sbagliata')`, `impostaImportanza(1 | 2 | 3)`,
-  `chiediRimozione()`, `annullaRimozione()`, `confermaRimozione()`.
+  `chiediRimozione()`, `annullaRimozione()`, `confermaRimozione()`. The
+  importance actions act only in `soluzione-mostrata`; `importanza` is the
+  sentence's current value (`null` without a sentence);
+  `confermaRimozione()` records importance 0, then proposes the next
+  sentence, landing on `tutti-tolti` when the session reports every
+  sentence removed.
 - `vocaboli/ciclo.ts::creaCiclo(opzioni?): CicloAllenamento` — `stato`
   (`fase`: `in-attesa-di-risposta` | `esito-mostrato` | `nessun-materiale` |
   `tutti-tolti`; `vocabolo`, `testo`, `esito`, `titoloLezione`,
@@ -50,6 +59,12 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `vocaboli`,
   at least one card, by id, each with its card titles by card id.
 - `grammatica/markdown.ts::html(body): string` — `markdown-it` in
   `commonmark` mode with `html: false`.
+- `components/RigaImportanza.vue` — props `importanza`, `confermaAperta`,
+  `messaggio` (the confirmation's question); emits `scegli(1 | 2 | 3)`,
+  `chiediRimozione` (on the 0 button), `confermaRimozione` ("Togli"),
+  `annullaRimozione` ("Annulla"). Display-only: the cycle holds the
+  importance and whether the confirmation is open. Buttons carry
+  `aria-pressed`; the confirmation is an inline `role="alertdialog"`.
 - Views: Esercizi and Vocaboli take an optional `creaCiclo` prop;
   Dizionario, Grammatica and GrammaticaLezione an optional `catalogo` prop.
   The app passes none; tests inject.
@@ -68,6 +83,11 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `vocaboli`,
   result, and `segna()` is a no-op while the removal confirmation is open);
   Vocaboli records the checked result on `conferma()`. Both key the session
   by `idGlobale`.
+- Esercizi shows `RigaImportanza` only in `soluzione-mostrata`, below the
+  Sbagliata/Giusta buttons, wiring its events straight to the cycle's
+  actions. Its empty card has two texts: `nessun-materiale` ("Ancora
+  nessuna frase da tradurre") and `tutti-tolti` ("Hai tolto tutte le frasi
+  dagli esercizi").
 - Vocaboli moves focus to "Avanti" on the result and ignores held-down
   Enter (`evento.repeat`), so one Enter never confirms and advances.
 - Vocaboli adds `vocabolo-carta-sbagliata` to the result card on a wrong

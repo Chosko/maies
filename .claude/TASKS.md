@@ -346,7 +346,7 @@ Feature: esercizi-traduzione
 
 ## 35. Update documentation for feature `esercizi-traduzione`
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: README.md, .claude/context/schermate.md
 Preconditions: 32, 33, 34
