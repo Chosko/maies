@@ -376,7 +376,7 @@ Feature: allenamento-vocaboli
 
 ## 38. Update documentation for feature `allenamento-vocaboli`
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: README.md, .claude/context/schermate.md
 Preconditions: 36, 37

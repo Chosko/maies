@@ -10,7 +10,9 @@ drive a review session.
   exercise: Sara types, sees the solution, marks herself right or wrong and
   sets the sentence's importance, 0 removing it after a confirmation.
 - `src/views/VocaboliView.vue` + `src/vocaboli/ciclo.ts`,
-  `src/vocaboli/verifica.ts` — vocabulary drill: the app checks the answer.
+  `src/vocaboli/verifica.ts` — vocabulary drill: the app checks the answer;
+  in the main edition the result also sets the word's importance, 0
+  removing it after a confirmation.
 - `src/views/DizionarioView.vue` + `src/dizionario/voci.ts`,
   `src/dizionario/filtro.ts` — sorted word list with a live search field.
 - `src/views/GrammaticaView.vue` + `src/grammatica/elenco.ts` — list of
@@ -44,8 +46,11 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `riga-importanza`,
   `importanza`, `confermaRimozioneAperta`), `avvio()`, `conferma(testo)`,
   `avanti()` (blocked while the removal confirmation is open),
   `impostaImportanza(1 | 2 | 3)`, `chiediRimozione()`, `annullaRimozione()`,
-  `confermaRimozione()` (records importance 0, then advances like
-  `avanti()`).
+  `confermaRimozione()`. The importance actions act only in
+  `esito-mostrato`; `importanza` is the word's current value (`null`
+  without a word); `confermaRimozione()` records importance 0 (the result
+  stays the one `conferma()` recorded), then advances like `avanti()`,
+  landing on `tutti-tolti` when the session reports every word removed.
 - Both cycles take `opzioni` `{ creaSessione?, catalogo? }` for tests.
 - `vocaboli/verifica.ts::verifica(risposta, traduzioniAccettate): Esito` —
   match after lower-casing, typographic apostrophes → `'`, collapsed
@@ -65,8 +70,9 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `riga-importanza`,
   `annullaRimozione` ("Annulla"). Display-only: the cycle holds the
   importance and whether the confirmation is open. Buttons carry
   `aria-pressed`; the confirmation is an inline `role="alertdialog"`.
-- Views: Esercizi and Vocaboli take an optional `creaCiclo` prop;
-  Dizionario, Grammatica and GrammaticaLezione an optional `catalogo` prop.
+- Views: Esercizi and Vocaboli take an optional `creaCiclo` prop, and
+  Vocaboli an optional `edizione` prop (default `EDIZIONE`); Dizionario,
+  Grammatica and GrammaticaLezione an optional `catalogo` prop.
   The app passes none; tests inject.
 
 ## Internal patterns
@@ -81,13 +87,20 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `riga-importanza`,
 - Esercizi records the self-assessment on `segna()`, an importance on
   `impostaImportanza()` and importance 0 on `confermaRimozione()` (no
   result, and `segna()` is a no-op while the removal confirmation is open);
-  Vocaboli records the checked result on `conferma()`. Both key the session
-  by `idGlobale`.
+  Vocaboli records the checked result on `conferma()`, an importance on
+  `impostaImportanza()` and importance 0 on `confermaRimozione()`. Both key
+  the session by `idGlobale`.
 - Esercizi shows `RigaImportanza` only in `soluzione-mostrata`, below the
   Sbagliata/Giusta buttons, wiring its events straight to the cycle's
   actions. Its empty card has two texts: `nessun-materiale` ("Ancora
   nessuna frase da tradurre") and `tutti-tolti` ("Hai tolto tutte le frasi
   dagli esercizi").
+- Vocaboli shows `RigaImportanza` only in `esito-mostrato` and only when
+  its `edizione` is `principale`, below "Avanti", wiring its events
+  straight to the cycle's actions. Its
+  empty card has two texts: `nessun-materiale` ("Ancora nessun vocabolo su
+  cui allenarti") and `tutti-tolti` ("Hai tolto tutti i vocaboli
+  dall'allenamento").
 - Vocaboli moves focus to "Avanti" on the result and ignores held-down
   Enter (`evento.repeat`), so one Enter never confirms and advances.
 - Vocaboli adds `vocabolo-carta-sbagliata` to the result card on a wrong

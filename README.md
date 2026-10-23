@@ -106,18 +106,27 @@ giusta se coincide con una delle traduzioni elencate in `en`, dopo aver
 normalizzato entrambe le parti allo stesso modo — senza badare a maiuscole,
 spazi superflui, apostrofi tipografici e punteggiatura finale. Poi Sara
 vede l'esito, la sua risposta, la traduzione principale, le altre accettate
-e il titolo della lezione, e con "Avanti" passa al vocabolo successivo. Ogni
-vocabolo lo sceglie la sessione di ripasso di tipo `'vocaboli'`, che
-registra anche l'esito; a ogni ingresso nella schermata si apre una sessione
+e il titolo della lezione, e con "Avanti" passa al vocabolo successivo.
+Nell'edizione principale l'esito mostra anche, sotto "Avanti", l'importanza
+del vocabolo, da 0 a 3, partendo da quella attuale: 1, 2 e 3 si registrano
+subito, mentre lo 0 chiede prima una conferma ("Togli" o "Annulla"), durante
+la quale "Avanti" non ha effetto, e, confermato, toglie il vocabolo
+dall'allenamento e passa al successivo; l'esito della risposta resta quello
+già registrato. L'edizione kids non mostra l'importanza. Ogni vocabolo lo
+sceglie la sessione di ripasso di tipo `'vocaboli'`, che registra anche
+l'esito e l'importanza; a ogni ingresso nella schermata si apre una sessione
 nuova. Senza vocaboli nel catalogo la schermata mostra un messaggio al posto
-dell'allenamento.
+dell'allenamento; quando invece i vocaboli ci sono ma Sara li ha tolti
+tutti, il messaggio dice che sono stati tolti tutti dall'allenamento.
 
 La logica sta in `src/vocaboli/`: la verifica con la normalizzazione è
 `verifica()` in `src/vocaboli/verifica.ts`, unico punto in cui vive la
 regola di confronto, e il ciclo senza interfaccia è `creaCiclo()` in
 `src/vocaboli/ciclo.ts`. Il componente della rotta `#/vocaboli` è
 `src/views/VocaboliView.vue`, che mostra la fase corrente del ciclo e gli
-inoltra le azioni.
+inoltra le azioni, e mostra la riga dell'importanza — il componente
+`src/components/RigaImportanza.vue`, condiviso con la schermata Esercizi —
+solo quando l'edizione (`src/edizione.ts`) è la principale.
 
 Il perché di queste scelte è nel documento di feature
 [`.claude/domain/features/allenamento-vocaboli.md`](.claude/domain/features/allenamento-vocaboli.md).
