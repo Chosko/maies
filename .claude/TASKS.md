@@ -1,6 +1,6 @@
 # Tasks
 
-Last task number: 35
+Last task number: 38
 
 ---
 
@@ -351,5 +351,35 @@ Target: claude
 Files: README.md, .claude/context/schermate.md
 Preconditions: 32, 33, 34
 Feature: esercizi-traduzione
+
+---
+
+## 36. Ciclo dell'allenamento: importanza, rimozione e vocaboli tutti tolti
+
+Status: [MISSING]
+Target: claude
+Files: src/vocaboli/ciclo.ts, tests/ciclo-vocaboli.test.ts
+Preconditions: 30
+Feature: allenamento-vocaboli
+
+---
+
+## 37. Schermata Vocaboli con l'importanza nell'esito e il messaggio dei vocaboli tolti
+
+Status: [MISSING]
+Target: claude
+Files: src/views/VocaboliView.vue, tests/vocaboli.test.ts
+Preconditions: 33, 36
+Feature: allenamento-vocaboli
+
+---
+
+## 38. Update documentation for feature `allenamento-vocaboli`
+
+Status: [MISSING]
+Target: claude
+Files: README.md, .claude/context/schermate.md
+Preconditions: 36, 37
+Feature: allenamento-vocaboli
 
 ---
