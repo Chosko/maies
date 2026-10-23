@@ -147,6 +147,16 @@
     width: 160px;
   }
 
+  /* Riga dell'importanza: sul computer la conferma tiene i bottoni affiancati. */
+  .importanza-conferma-bottoni {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .importanza-conferma-bottoni .bottone {
+    width: 120px;
+  }
+
   /* Grammatica: l'elenco nella colonna della carta degli esercizi. */
   .grammatica-voce {
     padding: var(--space-6) calc(var(--space-5) * 2);

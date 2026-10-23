@@ -326,7 +326,7 @@ Feature: esercizi-traduzione
 
 ## 33. Riga dell'importanza con conferma di rimozione
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/components/RigaImportanza.vue, tests/riga-importanza.test.ts
 Preconditions: none

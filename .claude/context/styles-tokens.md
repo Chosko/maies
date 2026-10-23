@@ -16,7 +16,9 @@ properties. No component carries scoped styles.
   `.bottone`, `.bottone-principale`, `.bottone-secondario`, `.etichetta`,
   `.campo`, `.cerchio-icona`, `.barra*` and `.voce*` (navigation); then one
   commented block per screen: `.esercizio-*` (including the
-  `.esercizio-vuoto*` empty state every screen reuses), `.grammatica-*`,
+  `.esercizio-vuoto*` empty state every screen reuses), `.importanza*`
+  (the shared `RigaImportanza.vue` row and removal confirmation),
+  `.grammatica-*`,
   `.dizionario-*`, `.vocabolo-*`, and the lesson page's
   `.grammatica-lezione*`, `.scheda*`.
 - `src/styles/computer.css` — the computer variants, all inside one
