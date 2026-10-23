@@ -1,4 +1,4 @@
-import { describe, it, expect, afterEach } from 'vitest'
+import { describe, it, expect, afterEach, vi } from 'vitest'
 import { mount, flushPromises } from '@vue/test-utils'
 import type { VueWrapper } from '@vue/test-utils'
 import { costruisciCatalogo } from '../src/contenuti/catalogo'
@@ -43,8 +43,11 @@ afterEach(() => {
 
 // Con casualità 0 la sessione propone il primo candidato ammesso: f1, poi f2.
 // `catalogoTitoli` sostituisce il catalogo da cui il ciclo ricava il titolo della lezione.
-function monta(catalogo: Catalogo, catalogoTitoli: Catalogo = catalogo) {
-  const archivio: ArchivioProgressi = creaArchivio(null)
+function monta(
+  catalogo: Catalogo,
+  catalogoTitoli: Catalogo = catalogo,
+  archivio: ArchivioProgressi = creaArchivio(null),
+) {
   let cicliCreati = 0
   const fabbrica = () => {
     cicliCreati++
@@ -68,6 +71,25 @@ function bottone(wrapper: VueWrapper, testo: string) {
   const trovato = wrapper.findAll('button').find((b) => b.text() === testo)
   if (!trovato) throw new Error(`Nessun bottone "${testo}"`)
   return trovato
+}
+
+function rigaImportanza(wrapper: VueWrapper) {
+  return wrapper.find('[role="group"][aria-label="Importanza"]')
+}
+
+function valoreImportanza(wrapper: VueWrapper, valore: number) {
+  const trovato = rigaImportanza(wrapper)
+    .findAll('button')
+    .find((b) => b.text() === String(valore))
+  if (!trovato) throw new Error(`Nessun valore d'importanza ${valore}`)
+  return trovato
+}
+
+function valoreSelezionato(wrapper: VueWrapper) {
+  return rigaImportanza(wrapper)
+    .findAll('button')
+    .filter((b) => b.attributes('aria-pressed') === 'true')
+    .map((b) => b.text())
 }
 
 async function conferma(wrapper: VueWrapper, testo: string) {
@@ -205,11 +227,176 @@ describe('schermata Esercizi', () => {
     )
     expect(wrapper.find('input').exists()).toBe(false)
     expect(wrapper.findAll('button')).toHaveLength(0)
+    expect(wrapper.text()).not.toContain('Hai tolto tutte le frasi dagli esercizi')
   })
 
   it('senza alcuna lezione mostra il messaggio di nessun materiale', async () => {
     const { wrapper } = monta(catalogoDi())
     await flushPromises()
     expect(wrapper.text()).toContain('Ancora nessuna frase da tradurre')
+  })
+})
+
+describe('schermata Esercizi: importanza', () => {
+  it('la riga dell’importanza c’è solo nella soluzione, sotto Giusta e Sbagliata e fuori dal loro gruppo', async () => {
+    const { wrapper } = monta(catalogoDi(lezione('01-a', 2)))
+    await flushPromises()
+    expect(rigaImportanza(wrapper).exists()).toBe(false)
+
+    await conferma(wrapper, 'x')
+
+    const riga = rigaImportanza(wrapper)
+    expect(riga.exists()).toBe(true)
+    expect(riga.findAll('button').map((b) => b.text())).toEqual(['0', '1', '2', '3'])
+    const esito = wrapper.get('.esercizio-esito')
+    expect(esito.find('[role="group"]').exists()).toBe(false)
+    expect(wrapper.get('main .carta').find('[role="group"]').exists()).toBe(false)
+    const posizione = bottone(wrapper, 'Giusta').element.compareDocumentPosition(riga.element)
+    expect(posizione & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+  })
+
+  it('seleziona il valore attuale della frase', async () => {
+    const archivio = creaArchivio(null)
+    archivio.salvaImportanza('01-a/f2', 3)
+    const { wrapper } = monta(catalogoDi(lezione('01-a', 2)), undefined, archivio)
+
+    await conferma(wrapper, 'x')
+    expect(valoreSelezionato(wrapper)).toEqual(['2'])
+
+    await bottone(wrapper, 'Giusta').trigger('click')
+    await flushPromises()
+    await conferma(wrapper, 'x')
+    expect(wrapper.text()).toContain('Frase 2.')
+    expect(valoreSelezionato(wrapper)).toEqual(['3'])
+  })
+
+  it.each([1, 2, 3])(
+    'toccare %i registra l’importanza, la seleziona e non cambia fase',
+    async (valore) => {
+      const { wrapper, archivio } = monta(catalogoDi(lezione('01-a', 2)))
+      await conferma(wrapper, 'My answer.')
+
+      await valoreImportanza(wrapper, valore).trigger('click')
+      await flushPromises()
+
+      expect(archivio.leggiImportanza('01-a/f1')).toBe(valore)
+      expect(valoreSelezionato(wrapper)).toEqual([String(valore)])
+      expect(wrapper.find('input').exists()).toBe(false)
+      expect(wrapper.text()).toContain('Frase 1.')
+      expect(wrapper.text()).toContain('My answer.')
+      expect(bottone(wrapper, 'Giusta').exists()).toBe(true)
+      expect(wrapper.find('[role="alertdialog"]').exists()).toBe(false)
+      expect(archivio.leggiLivello('01-a/f1')).toBe(creaArchivio(null).leggiLivello('01-a/f1'))
+    },
+  )
+
+  it('toccare 0 apre la conferma nella pagina e lascia la soluzione', async () => {
+    const confirm = vi.spyOn(window, 'confirm')
+    const { wrapper, archivio } = monta(catalogoDi(lezione('01-a', 2)))
+    await conferma(wrapper, 'x')
+
+    await valoreImportanza(wrapper, 0).trigger('click')
+    await flushPromises()
+
+    const dialogo = wrapper.get('[role="alertdialog"]')
+    expect(dialogo.text()).toContain('Togliere la frase dagli esercizi?')
+    expect(bottone(wrapper, 'Togli').exists()).toBe(true)
+    expect(bottone(wrapper, 'Annulla').exists()).toBe(true)
+    expect(confirm).not.toHaveBeenCalled()
+    expect(wrapper.text()).toContain('Frase 1.')
+    expect(archivio.leggiImportanza('01-a/f1')).toBe(2)
+    confirm.mockRestore()
+  })
+
+  it.each(['Giusta', 'Sbagliata'])(
+    'con la conferma aperta %s non ha effetto',
+    async (testo) => {
+      const { wrapper, archivio } = monta(catalogoDi(lezione('01-a', 2)))
+      await conferma(wrapper, 'x')
+      await valoreImportanza(wrapper, 0).trigger('click')
+      await flushPromises()
+
+      await bottone(wrapper, testo).trigger('click')
+      await flushPromises()
+
+      expect(wrapper.text()).toContain('Frase 1.')
+      expect(wrapper.find('input').exists()).toBe(false)
+      expect(wrapper.find('[role="alertdialog"]').exists()).toBe(true)
+      expect(archivio.leggiLivello('01-a/f1')).toBe(creaArchivio(null).leggiLivello('01-a/f1'))
+    },
+  )
+
+  it('Annulla chiude la conferma e non cambia nulla', async () => {
+    const { wrapper, archivio } = monta(catalogoDi(lezione('01-a', 2)))
+    await conferma(wrapper, 'x')
+    await valoreImportanza(wrapper, 0).trigger('click')
+    await flushPromises()
+
+    await bottone(wrapper, 'Annulla').trigger('click')
+    await flushPromises()
+
+    expect(wrapper.find('[role="alertdialog"]').exists()).toBe(false)
+    expect(archivio.leggiImportanza('01-a/f1')).toBe(2)
+    expect(valoreSelezionato(wrapper)).toEqual(['2'])
+    expect(wrapper.text()).toContain('Frase 1.')
+    expect(bottone(wrapper, 'Giusta').exists()).toBe(true)
+
+    await bottone(wrapper, 'Giusta').trigger('click')
+    await flushPromises()
+    expect(archivio.leggiLivello('01-a/f1')).toBe('consolidato')
+    expect(wrapper.text()).toContain('Frase 2.')
+  })
+
+  it('Togli toglie la frase senza registrare un esito e passa alla successiva', async () => {
+    const { wrapper, archivio } = monta(catalogoDi(lezione('01-a', 2)))
+    await conferma(wrapper, 'x')
+    await valoreImportanza(wrapper, 0).trigger('click')
+    await flushPromises()
+
+    await bottone(wrapper, 'Togli').trigger('click')
+    await flushPromises()
+
+    expect(archivio.leggiImportanza('01-a/f1')).toBe(0)
+    expect(archivio.leggiLivello('01-a/f1')).toBe(creaArchivio(null).leggiLivello('01-a/f1'))
+    expect(wrapper.text()).toContain('Frase 2.')
+    const input = wrapper.get('input')
+    expect((input.element as HTMLInputElement).value).toBe('')
+    expect(document.activeElement).toBe(input.element)
+    expect(rigaImportanza(wrapper).exists()).toBe(false)
+  })
+})
+
+describe('schermata Esercizi: tutte le frasi tolte', () => {
+  it('con tutte le frasi tolte mostra il suo messaggio, nella forma di quello senza materiale', async () => {
+    const archivio = creaArchivio(null)
+    archivio.salvaImportanza('01-a/f1', 0)
+    archivio.salvaImportanza('01-a/f2', 0)
+    const { wrapper } = monta(catalogoDi(lezione('01-a', 2)), undefined, archivio)
+    await flushPromises()
+
+    expect(wrapper.get('h1').text()).toBe('Esercizi')
+    const carta = wrapper.get('.esercizio-vuoto .carta.esercizio-vuoto-carta')
+    expect(carta.find('.esercizio-vuoto-icona svg').exists()).toBe(true)
+    expect(carta.get('h2.esercizio-vuoto-titolo').text()).toBe(
+      'Hai tolto tutte le frasi dagli esercizi',
+    )
+    expect(carta.find('.esercizio-vuoto-testo').exists()).toBe(true)
+    expect(wrapper.text()).not.toContain('Ancora nessuna frase da tradurre')
+    expect(wrapper.find('input').exists()).toBe(false)
+    expect(wrapper.findAll('button')).toHaveLength(0)
+  })
+
+  it('togliere l’ultima frase rimasta porta al messaggio delle frasi tolte', async () => {
+    const archivio = creaArchivio(null)
+    archivio.salvaImportanza('01-a/f2', 0)
+    const { wrapper } = monta(catalogoDi(lezione('01-a', 2)), undefined, archivio)
+    await conferma(wrapper, 'x')
+    await valoreImportanza(wrapper, 0).trigger('click')
+    await flushPromises()
+    await bottone(wrapper, 'Togli').trigger('click')
+    await flushPromises()
+
+    expect(wrapper.get('h2').text()).toBe('Hai tolto tutte le frasi dagli esercizi')
+    expect(wrapper.text()).not.toContain('Ancora nessuna frase da tradurre')
   })
 })

@@ -336,7 +336,7 @@ Feature: esercizi-traduzione
 
 ## 34. Schermata Esercizi con l'importanza nella soluzione e il messaggio delle frasi tolte
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/views/EserciziView.vue, tests/esercizi.test.ts
 Preconditions: 32, 33

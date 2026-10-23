@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { nextTick, ref, useId, watch } from 'vue'
+import RigaImportanza from '../components/RigaImportanza.vue'
 import { creaCiclo as creaCicloApp } from '../esercizi/ciclo'
 import type { CicloEsercizio } from '../esercizi/ciclo'
 
@@ -38,7 +39,7 @@ function conferma(): void {
   <main class="schermata">
     <h1 class="titolo-schermata">Esercizi</h1>
 
-    <div v-if="stato.fase === 'nessun-materiale' || !stato.frase" class="esercizio-vuoto">
+    <div v-if="!stato.frase" class="esercizio-vuoto">
       <section class="carta esercizio-vuoto-carta">
         <span class="esercizio-vuoto-icona">
           <svg
@@ -54,10 +55,18 @@ function conferma(): void {
             <path d="M14 6l4 4" />
           </svg>
         </span>
-        <h2 class="esercizio-vuoto-titolo">Ancora nessuna frase da tradurre</h2>
-        <p class="esercizio-vuoto-testo">
-          Le frasi compaiono qui quando arriva il materiale di una lezione.
-        </p>
+        <template v-if="stato.fase === 'tutti-tolti'">
+          <h2 class="esercizio-vuoto-titolo">Hai tolto tutte le frasi dagli esercizi</h2>
+          <p class="esercizio-vuoto-testo">
+            Le frasi nuove compaiono qui quando arriva il materiale di un'altra lezione.
+          </p>
+        </template>
+        <template v-else>
+          <h2 class="esercizio-vuoto-titolo">Ancora nessuna frase da tradurre</h2>
+          <p class="esercizio-vuoto-testo">
+            Le frasi compaiono qui quando arriva il materiale di una lezione.
+          </p>
+        </template>
       </section>
     </div>
 
@@ -135,6 +144,17 @@ function conferma(): void {
           </button>
         </div>
       </div>
+
+      <RigaImportanza
+        v-if="stato.fase === 'soluzione-mostrata' && stato.importanza !== null"
+        :importanza="stato.importanza"
+        :conferma-aperta="stato.confermaRimozioneAperta"
+        messaggio="Togliere la frase dagli esercizi?"
+        @scegli="ciclo.impostaImportanza"
+        @chiedi-rimozione="ciclo.chiediRimozione"
+        @annulla-rimozione="ciclo.annullaRimozione"
+        @conferma-rimozione="ciclo.confermaRimozione"
+      />
     </template>
   </main>
 </template>
