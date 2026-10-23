@@ -91,7 +91,8 @@ Vue Test Utils. È una schermata della parte "Interfaccia" della topologia.
     toccare 0 apre la conferma.
   - **Conferma della rimozione:** un messaggio dentro la pagina, non il
     popup nativo del browser, che chiede se togliere il vocabolo
-    dall'allenamento, con "Togli" e "Annulla".
+    dall'allenamento, con "Togli" e "Annulla". Mentre è aperta, i pulsanti
+    dell'importanza sono disabilitati: si può solo rispondere.
   - **Nessun materiale:** un messaggio che dice che non ci sono ancora
     vocaboli su cui allenarsi.
   - **Tutti tolti:** un messaggio che dice che tutti i vocaboli sono stati
@@ -162,10 +163,12 @@ lezione del vocabolo; non è uno stato a sé.
   chiusa. Chiede il prossimo elemento e torna a "in attesa di risposta" con
   il campo vuoto, oppure al caso vuoto restituito dalla sessione. In ogni
   altra fase non fa nulla.
-- **imposta importanza(1 | 2 | 3):** solo da "esito mostrato". Registra
+- **imposta importanza(1 | 2 | 3):** solo da "esito mostrato" con la
+  conferma della rimozione chiusa. Registra
   l'importanza con la funzione "registra importanza" della sessione e
   aggiorna il valore selezionato. Non cambia fase.
-- **chiedi rimozione():** solo da "esito mostrato". Apre la conferma.
+- **chiedi rimozione():** solo da "esito mostrato" con la conferma chiusa.
+  Apre la conferma.
 - **annulla rimozione():** chiude la conferma; nulla cambia.
 - **conferma rimozione():** solo con la conferma aperta. Registra
   l'importanza 0 per il vocabolo e passa al prossimo elemento come

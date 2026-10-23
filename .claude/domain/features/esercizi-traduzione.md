@@ -74,7 +74,8 @@ Vue Test Utils. È una schermata della parte "Interfaccia" della topologia.
     3 cambia subito il valore selezionato; toccare 0 apre la conferma.
   - **Conferma della rimozione:** un messaggio dentro la pagina, non il
     popup nativo del browser, che chiede se togliere la frase dagli esercizi,
-    con "Togli" e "Annulla".
+    con "Togli" e "Annulla". Mentre è aperta, i pulsanti dell'importanza sono
+    disabilitati: si può solo rispondere.
   - **Nessun materiale:** un messaggio che dice che non ci sono ancora frasi
     da tradurre.
   - **Tutti tolti:** un messaggio che dice che tutte le frasi sono state
@@ -130,10 +131,12 @@ lezione della frase; non è uno stato a sé.
   risposta" con il campo vuoto. In ogni altra fase, o con la conferma della
   rimozione aperta, non fa nulla, quindi un doppio tocco non registra due
   esiti.
-- **imposta importanza(1 | 2 | 3):** solo da "soluzione mostrata". Registra
+- **imposta importanza(1 | 2 | 3):** solo da "soluzione mostrata" con la
+  conferma della rimozione chiusa. Registra
   l'importanza con la funzione "registra importanza" della sessione e
   aggiorna il valore selezionato. Non registra esiti e non cambia fase.
-- **chiedi rimozione():** solo da "soluzione mostrata". Apre la conferma.
+- **chiedi rimozione():** solo da "soluzione mostrata" con la conferma
+  chiusa. Apre la conferma.
 - **annulla rimozione():** chiude la conferma; nulla cambia.
 - **conferma rimozione():** solo con la conferma aperta. Registra
   l'importanza 0 per la frase, senza registrare un esito, poi chiede il

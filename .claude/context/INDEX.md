@@ -1,7 +1,7 @@
 # Context index
 
 Layout: flat
-Last updated: 2026-10-22
+Last updated: 2026-10-23
 
 Map of the maies codebase: a Vue 3 + TypeScript single-page app built with
 Vite, tested with Vitest, published on GitHub Pages. Read this index, then

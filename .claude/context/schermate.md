@@ -35,8 +35,8 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `riga-importanza`,
   `importanza`, `confermaRimozioneAperta`), `avvio()`, `conferma(testo)`,
   `segna('giusta' | 'sbagliata')`, `impostaImportanza(1 | 2 | 3)`,
   `chiediRimozione()`, `annullaRimozione()`, `confermaRimozione()`. The
-  importance actions act only in `soluzione-mostrata`; `importanza` is the
-  sentence's current value (`null` without a sentence);
+  importance actions act only in `soluzione-mostrata`, confirmation closed;
+  `importanza` is the sentence's current value (`null` without a sentence);
   `confermaRimozione()` records importance 0, then proposes the next
   sentence, landing on `tutti-tolti` when the session reports every
   sentence removed.
@@ -46,8 +46,8 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `riga-importanza`,
   `importanza`, `confermaRimozioneAperta`), `avvio()`, `conferma(testo)`,
   `avanti()` (blocked while the removal confirmation is open),
   `impostaImportanza(1 | 2 | 3)`, `chiediRimozione()`, `annullaRimozione()`,
-  `confermaRimozione()`. The importance actions act only in
-  `esito-mostrato`; `importanza` is the word's current value (`null`
+  `confermaRimozione()`. Importance actions: `esito-mostrato` only, the
+  removal confirmation closed; `importanza` is the word's current value (`null`
   without a word); `confermaRimozione()` records importance 0 (the result
   stays the one `conferma()` recorded), then advances like `avanti()`,
   landing on `tutti-tolti` when the session reports every word removed.
@@ -69,7 +69,8 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `riga-importanza`,
   `chiediRimozione` (on the 0 button), `confermaRimozione` ("Togli"),
   `annullaRimozione` ("Annulla"). Display-only: the cycle holds the
   importance and whether the confirmation is open. Buttons carry
-  `aria-pressed`; the confirmation is an inline `role="alertdialog"`.
+  `aria-pressed` and are disabled while the confirmation is open; the
+  confirmation is an inline `role="alertdialog"`.
 - Views: Esercizi and Vocaboli take an optional `creaCiclo` prop, and
   Vocaboli an optional `edizione` prop (default `EDIZIONE`); Dizionario,
   Grammatica and GrammaticaLezione an optional `catalogo` prop.
