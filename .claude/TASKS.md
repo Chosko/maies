@@ -316,7 +316,7 @@ Feature: ripetizione-errori
 
 ## 32. Ciclo dell'esercizio: importanza, rimozione e frasi tutte tolte
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/esercizi/ciclo.ts, tests/ciclo-esercizi.test.ts
 Preconditions: 30

@@ -73,7 +73,7 @@ describe("ciclo dell'esercizio di traduzione", () => {
     expect(ciclo.stato.titoloLezione).toBeUndefined()
   })
 
-  it('avvio con frasi tutti tolti passa a nessun materiale', () => {
+  it('avvio con tutte le frasi già tolte passa a tutti tolti', () => {
     const archivio = creaArchivio(null)
     archivio.salvaImportanza('01-a/f1', 0)
     archivio.salvaImportanza('01-a/f2', 0)
@@ -81,8 +81,9 @@ describe("ciclo dell'esercizio di traduzione", () => {
 
     ciclo.avvio()
 
-    expect(ciclo.stato.fase).toBe('nessun-materiale')
+    expect(ciclo.stato.fase).toBe('tutti-tolti')
     expect(ciclo.stato.frase).toBeNull()
+    expect(ciclo.stato.importanza).toBeNull()
     expect(ciclo.stato.titoloLezione).toBeUndefined()
   })
 
@@ -194,6 +195,177 @@ describe("ciclo dell'esercizio di traduzione", () => {
     vuoto.avvio()
     expect(() => vuoto.segna('giusta')).not.toThrow()
     expect(vuoto.stato.fase).toBe('nessun-materiale')
+  })
+
+  it("espone l'importanza attuale della frase proposta", () => {
+    const archivio = creaArchivio(null)
+    archivio.salvaImportanza('01-a/f1', 3)
+    const { ciclo } = preparaCiclo(catalogoDi(lezione('01-a', 2)), archivio)
+
+    ciclo.avvio()
+
+    expect(ciclo.stato.frase?.idGlobale).toBe('01-a/f1')
+    expect(ciclo.stato.importanza).toBe(3)
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
+    ciclo.conferma('')
+    ciclo.segna('giusta')
+    expect(ciclo.stato.frase?.idGlobale).toBe('01-a/f2')
+    expect(ciclo.stato.importanza).toBe(2)
+  })
+
+  it("imposta importanza registra il valore e lo aggiorna nello stato, senza esiti né cambio di fase", () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    ciclo.avvio()
+    ciclo.conferma('Risposta.')
+
+    ciclo.impostaImportanza(3)
+    expect(archivio.leggiImportanza('01-a/f1')).toBe(3)
+    expect(ciclo.stato.importanza).toBe(3)
+
+    ciclo.impostaImportanza(1)
+    expect(archivio.leggiImportanza('01-a/f1')).toBe(1)
+    expect(ciclo.stato.importanza).toBe(1)
+
+    expect(archivio.leggiLivello('01-a/f1')).toBe('normale')
+    expect(ciclo.stato.fase).toBe('soluzione-mostrata')
+    expect(ciclo.stato.frase?.idGlobale).toBe('01-a/f1')
+    expect(ciclo.stato.testo).toBe('Risposta.')
+  })
+
+  it('imposta importanza fuori fase non fa nulla', () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+
+    ciclo.impostaImportanza(3)
+    expect(ciclo.stato.importanza).toBeNull()
+
+    ciclo.avvio()
+    ciclo.impostaImportanza(3)
+    expect(archivio.leggiImportanza('01-a/f1')).toBe(2)
+    expect(ciclo.stato.importanza).toBe(2)
+    expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
+  })
+
+  it('imposta importanza non accetta lo 0, che passa dalla conferma della rimozione', () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    ciclo.avvio()
+    ciclo.conferma('')
+
+    ciclo.impostaImportanza(0 as unknown as 1)
+
+    expect(archivio.leggiImportanza('01-a/f1')).toBe(2)
+    expect(ciclo.stato.importanza).toBe(2)
+    expect(ciclo.stato.fase).toBe('soluzione-mostrata')
+  })
+
+  it('chiedi rimozione apre la conferma solo dalla soluzione mostrata', () => {
+    const { ciclo } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+
+    ciclo.chiediRimozione()
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
+
+    ciclo.avvio()
+    ciclo.chiediRimozione()
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
+
+    ciclo.conferma('')
+    ciclo.chiediRimozione()
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(true)
+    expect(ciclo.stato.fase).toBe('soluzione-mostrata')
+  })
+
+  it('annulla rimozione chiude la conferma senza altri effetti', () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    ciclo.avvio()
+    ciclo.conferma('Risposta.')
+    ciclo.chiediRimozione()
+
+    ciclo.annullaRimozione()
+
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
+    expect(archivio.leggiImportanza('01-a/f1')).toBe(2)
+    expect(archivio.leggiLivello('01-a/f1')).toBe('normale')
+    expect(ciclo.stato.importanza).toBe(2)
+    expect(ciclo.stato.fase).toBe('soluzione-mostrata')
+    expect(ciclo.stato.frase?.idGlobale).toBe('01-a/f1')
+    expect(ciclo.stato.testo).toBe('Risposta.')
+
+    // Dopo l'annullamento la soluzione si segna come sempre.
+    ciclo.segna('giusta')
+    expect(archivio.leggiLivello('01-a/f1')).toBe('consolidato')
+  })
+
+  it('conferma rimozione registra importanza 0 senza esito e propone la frase successiva', () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    ciclo.avvio()
+    ciclo.conferma('Wrong.')
+    ciclo.chiediRimozione()
+
+    ciclo.confermaRimozione()
+
+    expect(archivio.leggiImportanza('01-a/f1')).toBe(0)
+    expect(archivio.leggiLivello('01-a/f1')).toBe('normale')
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
+    expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
+    expect(ciclo.stato.frase?.idGlobale).toBe('01-a/f2')
+    expect(ciclo.stato.importanza).toBe(2)
+    expect(ciclo.stato.testo).toBe('')
+  })
+
+  it('conferma rimozione senza la conferma aperta non fa nulla', () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+
+    ciclo.confermaRimozione()
+    expect(ciclo.stato.fase).toBe('nessun-materiale')
+
+    ciclo.avvio()
+    ciclo.conferma('')
+    ciclo.confermaRimozione()
+
+    expect(archivio.leggiImportanza('01-a/f1')).toBe(2)
+    expect(ciclo.stato.fase).toBe('soluzione-mostrata')
+    expect(ciclo.stato.frase?.idGlobale).toBe('01-a/f1')
+  })
+
+  it("togliere l'ultima frase rimasta porta a tutti tolti", () => {
+    const archivio = creaArchivio(null)
+    archivio.salvaImportanza('01-a/f2', 0)
+    const { ciclo } = preparaCiclo(catalogoDi(lezione('01-a', 2)), archivio)
+    ciclo.avvio()
+    expect(ciclo.stato.frase?.idGlobale).toBe('01-a/f1')
+    ciclo.conferma('')
+    ciclo.chiediRimozione()
+
+    ciclo.confermaRimozione()
+
+    expect(archivio.leggiImportanza('01-a/f1')).toBe(0)
+    expect(ciclo.stato.fase).toBe('tutti-tolti')
+    expect(ciclo.stato.frase).toBeNull()
+    expect(ciclo.stato.importanza).toBeNull()
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
+    expect(ciclo.stato.titoloLezione).toBeUndefined()
+
+    // In "tutti tolti" ogni azione è senza effetto.
+    ciclo.conferma('x')
+    ciclo.segna('giusta')
+    ciclo.impostaImportanza(3)
+    ciclo.chiediRimozione()
+    expect(ciclo.stato.fase).toBe('tutti-tolti')
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
+  })
+
+  it('segna non fa nulla mentre la conferma della rimozione è aperta', () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    ciclo.avvio()
+    ciclo.conferma('')
+    ciclo.chiediRimozione()
+
+    ciclo.segna('giusta')
+    ciclo.segna('sbagliata')
+
+    expect(archivio.leggiLivello('01-a/f1')).toBe('normale')
+    expect(ciclo.stato.fase).toBe('soluzione-mostrata')
+    expect(ciclo.stato.frase?.idGlobale).toBe('01-a/f1')
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(true)
   })
 
   it('ricava il titolo della lezione della frase dal catalogo', () => {

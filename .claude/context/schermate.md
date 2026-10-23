@@ -25,8 +25,10 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `vocaboli`,
 
 - `esercizi/ciclo.ts::creaCiclo(opzioni?): CicloEsercizio` — `stato`
   (`fase`: `in-attesa-di-risposta` | `soluzione-mostrata` |
-  `nessun-materiale`; `frase`, `testo`, `titoloLezione`), `avvio()`,
-  `conferma(testo)`, `segna('giusta' | 'sbagliata')`.
+  `nessun-materiale` | `tutti-tolti`; `frase`, `testo`, `titoloLezione`,
+  `importanza`, `confermaRimozioneAperta`), `avvio()`, `conferma(testo)`,
+  `segna('giusta' | 'sbagliata')`, `impostaImportanza(1 | 2 | 3)`,
+  `chiediRimozione()`, `annullaRimozione()`, `confermaRimozione()`.
 - `vocaboli/ciclo.ts::creaCiclo(opzioni?): CicloAllenamento` — `stato`
   (`fase`: `in-attesa-di-risposta` | `esito-mostrato` | `nessun-materiale`;
   `vocabolo`, `testo`, `esito`, `titoloLezione`), `avvio()`,
@@ -57,8 +59,11 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `vocaboli`,
 - **A cycle exposes a readonly reactive `stato`**; actions outside their
   phase are no-ops. `avvio()` is called synchronously in setup so the empty
   state never flashes; a new cycle (and session) per mount.
-- Esercizi records the self-assessment on `segna()`; Vocaboli records the
-  checked result on `conferma()`. Both key the session by `idGlobale`.
+- Esercizi records the self-assessment on `segna()`, an importance on
+  `impostaImportanza()` and importance 0 on `confermaRimozione()` (no
+  result, and `segna()` is a no-op while the removal confirmation is open);
+  Vocaboli records the checked result on `conferma()`. Both key the session
+  by `idGlobale`.
 - Vocaboli moves focus to "Avanti" on the result and ignores held-down
   Enter (`evento.repeat`), so one Enter never confirms and advances.
 - Vocaboli adds `vocabolo-carta-sbagliata` to the result card on a wrong
