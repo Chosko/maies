@@ -28,7 +28,9 @@ Tests: `tests/livelli.test.ts`, `tests/archivio.test.ts`,
   chiave = CHIAVE_PROGRESSI): ArchivioProgressi` with
   `leggiLivello(idGlobale)` and `salvaLivello(idGlobale, livello)`.
 - `selettore.ts` — `scegli(candidati, esclusi, casualita): T | null` over
-  `{ id, livello }` candidates; `Casualita` is `() => number` in [0, 1).
+  `{ id, livello, importanza }` candidates, each weighted
+  `PESI[livello] × FATTORI[importanza]`; importance 0 is never picked;
+  `Casualita` is `() => number` in [0, 1).
 - `sessione.ts` — `creaSessione('frasi' | 'vocaboli', opzioni?)` returns
   `prossimoElemento()` (a `FraseCatalogo` / `VocaboloCatalogo`, or `null`
   with no items) and `registraEsito(idGlobale, esito)`. `opzioni` injects

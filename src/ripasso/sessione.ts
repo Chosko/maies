@@ -52,6 +52,7 @@ export function creaSessione<T extends TipoSessione>(
       const candidati = elementi.map((elemento) => ({
         id: elemento.idGlobale,
         livello: archivio.leggiLivello(elemento.idGlobale),
+        importanza: archivio.leggiImportanza(elemento.idGlobale),
         elemento,
       }))
       const scelto = scegli(candidati, ultimi, casualita)

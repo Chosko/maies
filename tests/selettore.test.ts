@@ -16,9 +16,9 @@ function conSeme(seme: number): () => number {
 }
 
 const candidati: Candidato[] = [
-  { id: 'l/a', livello: 'da-ripassare' },
-  { id: 'l/b', livello: 'normale' },
-  { id: 'l/c', livello: 'consolidato' },
+  { id: 'l/a', livello: 'da-ripassare', importanza: 2 },
+  { id: 'l/b', livello: 'normale', importanza: 2 },
+  { id: 'l/c', livello: 'consolidato', importanza: 2 },
 ]
 
 afterEach(() => {
@@ -50,7 +50,7 @@ describe('selettore', () => {
   })
 
   it('restituisce il candidato stesso, con i suoi altri campi', () => {
-    const conDati = [{ id: 'l/x', livello: 'normale' as const, testo: 'ciao' }]
+    const conDati = [{ id: 'l/x', livello: 'normale' as const, importanza: 2 as const, testo: 'ciao' }]
     expect(scegli(conDati, [], fissa(0.5))).toBe(conDati[0])
   })
 
@@ -90,5 +90,66 @@ describe('selettore', () => {
     expect(conteggi['l/c'] / estrazioni).toBeCloseTo(0.1, 1)
     expect(Math.abs(conteggi['l/a'] / conteggi['l/c'] - 6)).toBeLessThan(0.3)
     expect(Math.abs(conteggi['l/b'] / conteggi['l/c'] - 3)).toBeLessThan(0.15)
+  })
+
+  describe("pesato dall'importanza", () => {
+    // Pesi combinati 12 : 3 : 0,5 (totale 15,5).
+    const combinati: Candidato[] = [
+      { id: 'l/a', livello: 'da-ripassare', importanza: 3 },
+      { id: 'l/b', livello: 'normale', importanza: 2 },
+      { id: 'l/c', livello: 'consolidato', importanza: 1 },
+    ]
+
+    it.each([
+      [0, 'l/a'],
+      [11.99 / 15.5, 'l/a'],
+      [12 / 15.5, 'l/b'],
+      [14.99 / 15.5, 'l/b'],
+      [15.01 / 15.5, 'l/c'],
+      [0.99999, 'l/c'],
+    ])('con casualità %f sceglie %s ai bordi degli intervalli di peso 12 : 3 : 0,5', (valore, atteso) => {
+      expect(scegli(combinati, [], fissa(valore))?.id).toBe(atteso)
+    })
+
+    it('un candidato da ripassare con importanza 3 pesa 12, uno consolidato con importanza 1 pesa 0,5', () => {
+      const coppia: Candidato[] = [
+        { id: 'l/a', livello: 'da-ripassare', importanza: 3 },
+        { id: 'l/c', livello: 'consolidato', importanza: 1 },
+      ]
+      expect(scegli(coppia, [], fissa(11.99 / 12.5))?.id).toBe('l/a')
+      expect(scegli(coppia, [], fissa(12.01 / 12.5))?.id).toBe('l/c')
+    })
+
+    it('non sceglie mai un candidato con importanza 0, qualunque sia il suo livello', () => {
+      const conTolto: Candidato[] = [
+        { id: 'l/a', livello: 'da-ripassare', importanza: 0 },
+        { id: 'l/b', livello: 'normale', importanza: 2 },
+        { id: 'l/c', livello: 'consolidato', importanza: 0 },
+      ]
+      for (const valore of [0, 0.25, 0.5, 0.75, 0.99999]) {
+        expect(scegli(conTolto, [], fissa(valore))?.id).toBe('l/b')
+      }
+    })
+
+    it('restituisce null se tutti i candidati hanno importanza 0', () => {
+      const tutti = candidati.map((c) => ({ ...c, importanza: 0 as const }))
+      expect(scegli(tutti, [], fissa(0))).toBeNull()
+      expect(scegli(tutti, [], fissa(0.99999))).toBeNull()
+    })
+
+    it("restituisce null se i candidati con importanza diversa da 0 sono tutti esclusi", () => {
+      const conTolto: Candidato[] = [
+        { id: 'l/a', livello: 'da-ripassare', importanza: 0 },
+        { id: 'l/b', livello: 'normale', importanza: 3 },
+      ]
+      expect(scegli(conTolto, ['l/b'], fissa(0))).toBeNull()
+    })
+
+    it("l'esclusione per id continua a funzionare con i pesi combinati", () => {
+      expect(scegli(combinati, ['l/a'], fissa(0))?.id).toBe('l/b')
+      expect(scegli(combinati, ['l/a'], fissa(2.99 / 3.5))?.id).toBe('l/b')
+      expect(scegli(combinati, ['l/a'], fissa(3.01 / 3.5))?.id).toBe('l/c')
+      expect(scegli(combinati, ['l/a', 'l/b'], fissa(0.99999))?.id).toBe('l/c')
+    })
   })
 })

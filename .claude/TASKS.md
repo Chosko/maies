@@ -286,7 +286,7 @@ Feature: ripetizione-errori
 
 ## 29. Selettore pesato dall'importanza
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/ripasso/selettore.ts, tests/selettore.test.ts
 Preconditions: 28
