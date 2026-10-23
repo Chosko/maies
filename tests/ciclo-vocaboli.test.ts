@@ -73,7 +73,7 @@ describe("ciclo dell'allenamento vocaboli", () => {
     expect(ciclo.stato.titoloLezione).toBeUndefined()
   })
 
-  it('avvio con vocaboli tutti tolti passa a nessun materiale', () => {
+  it('avvio con vocaboli tutti tolti passa a tutti tolti', () => {
     const archivio = creaArchivio(null)
     archivio.salvaImportanza('01-a/v1', 0)
     archivio.salvaImportanza('01-a/v2', 0)
@@ -81,10 +81,205 @@ describe("ciclo dell'allenamento vocaboli", () => {
 
     ciclo.avvio()
 
-    expect(ciclo.stato.fase).toBe('nessun-materiale')
+    expect(ciclo.stato.fase).toBe('tutti-tolti')
     expect(ciclo.stato.vocabolo).toBeNull()
     expect(ciclo.stato.esito).toBeNull()
+    expect(ciclo.stato.importanza).toBeNull()
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
     expect(ciclo.stato.titoloLezione).toBeUndefined()
+  })
+
+  it("lo stato porta l'importanza attuale del vocabolo proposto", () => {
+    const archivio = creaArchivio(null)
+    archivio.salvaImportanza('01-a/v1', 3)
+    const { ciclo } = preparaCiclo(catalogoDi(lezione('01-a', 2)), archivio)
+
+    ciclo.avvio()
+    expect(ciclo.stato.vocabolo?.idGlobale).toBe('01-a/v1')
+    expect(ciclo.stato.importanza).toBe(3)
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
+
+    ciclo.conferma('word 1')
+    ciclo.avanti()
+    expect(ciclo.stato.vocabolo?.idGlobale).toBe('01-a/v2')
+    expect(ciclo.stato.importanza).toBe(2)
+  })
+
+  it("imposta importanza registra l'importanza e aggiorna lo stato senza cambiare fase", () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    ciclo.avvio()
+    ciclo.conferma('wrong')
+
+    ciclo.impostaImportanza(3)
+    expect(archivio.leggiImportanza('01-a/v1')).toBe(3)
+    expect(ciclo.stato.importanza).toBe(3)
+    expect(ciclo.stato.fase).toBe('esito-mostrato')
+    expect(ciclo.stato.esito).toBe('sbagliato')
+    expect(ciclo.stato.testo).toBe('wrong')
+
+    ciclo.impostaImportanza(1)
+    expect(archivio.leggiImportanza('01-a/v1')).toBe(1)
+    expect(ciclo.stato.importanza).toBe(1)
+    // Cambiare importanza non registra un altro esito.
+    expect(archivio.leggiLivello('01-a/v1')).toBe('da-ripassare')
+  })
+
+  it('imposta importanza fuori da esito mostrato non fa nulla', () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+
+    ciclo.impostaImportanza(3)
+    expect(ciclo.stato.importanza).toBeNull()
+
+    ciclo.avvio()
+    ciclo.impostaImportanza(3)
+    expect(archivio.leggiImportanza('01-a/v1')).toBe(2)
+    expect(ciclo.stato.importanza).toBe(2)
+    expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
+  })
+
+  it('chiedi rimozione apre la conferma e annulla la chiude senza altri effetti', () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    ciclo.avvio()
+    ciclo.conferma('word 1')
+
+    ciclo.chiediRimozione()
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(true)
+    expect(ciclo.stato.fase).toBe('esito-mostrato')
+
+    ciclo.annullaRimozione()
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
+    expect(ciclo.stato.fase).toBe('esito-mostrato')
+    expect(ciclo.stato.vocabolo?.idGlobale).toBe('01-a/v1')
+    expect(ciclo.stato.esito).toBe('giusto')
+    expect(ciclo.stato.importanza).toBe(2)
+    expect(archivio.leggiImportanza('01-a/v1')).toBe(2)
+    expect(archivio.leggiLivello('01-a/v1')).toBe('consolidato')
+  })
+
+  it('chiedi e annulla rimozione fuori fase non fanno nulla', () => {
+    const { ciclo } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+
+    ciclo.chiediRimozione()
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
+
+    ciclo.avvio()
+    ciclo.chiediRimozione()
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
+    ciclo.annullaRimozione()
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
+    expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
+  })
+
+  it("conferma rimozione registra l'importanza 0 e passa al vocabolo successivo senza un secondo esito", () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 3)))
+    ciclo.avvio()
+    ciclo.conferma('wrong')
+    expect(archivio.leggiLivello('01-a/v1')).toBe('da-ripassare')
+    ciclo.chiediRimozione()
+
+    ciclo.confermaRimozione()
+
+    expect(archivio.leggiImportanza('01-a/v1')).toBe(0)
+    // Un secondo esito sbagliato non cambierebbe il livello: lo verifica il vocabolo successivo.
+    expect(archivio.leggiLivello('01-a/v1')).toBe('da-ripassare')
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
+    expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
+    expect(ciclo.stato.vocabolo?.idGlobale).toBe('01-a/v2')
+    expect(ciclo.stato.testo).toBe('')
+    expect(ciclo.stato.esito).toBeNull()
+    expect(ciclo.stato.importanza).toBe(2)
+  })
+
+  it('conferma rimozione dopo una risposta giusta non registra un secondo esito', () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    ciclo.avvio()
+    ciclo.conferma('word 1')
+    expect(archivio.leggiLivello('01-a/v1')).toBe('consolidato')
+    archivio.salvaLivello('01-a/v1', 'normale')
+    ciclo.chiediRimozione()
+
+    ciclo.confermaRimozione()
+
+    // Un secondo esito giusto porterebbe "normale" a "consolidato".
+    expect(archivio.leggiLivello('01-a/v1')).toBe('normale')
+    expect(archivio.leggiImportanza('01-a/v1')).toBe(0)
+  })
+
+  it('conferma rimozione senza la conferma aperta non fa nulla', () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    ciclo.confermaRimozione()
+    expect(ciclo.stato.fase).toBe('nessun-materiale')
+
+    ciclo.avvio()
+    ciclo.conferma('word 1')
+    ciclo.confermaRimozione()
+    expect(archivio.leggiImportanza('01-a/v1')).toBe(2)
+    expect(ciclo.stato.fase).toBe('esito-mostrato')
+    expect(ciclo.stato.vocabolo?.idGlobale).toBe('01-a/v1')
+
+    ciclo.chiediRimozione()
+    ciclo.annullaRimozione()
+    ciclo.confermaRimozione()
+    expect(archivio.leggiImportanza('01-a/v1')).toBe(2)
+    expect(ciclo.stato.fase).toBe('esito-mostrato')
+  })
+
+  it("togliere l'ultimo vocabolo rimasto porta a tutti tolti", () => {
+    const archivio = creaArchivio(null)
+    archivio.salvaImportanza('01-a/v2', 0)
+    const { ciclo } = preparaCiclo(catalogoDi(lezione('01-a', 2)), archivio)
+    ciclo.avvio()
+    expect(ciclo.stato.vocabolo?.idGlobale).toBe('01-a/v1')
+    ciclo.conferma('word 1')
+    ciclo.chiediRimozione()
+
+    ciclo.confermaRimozione()
+
+    expect(archivio.leggiImportanza('01-a/v1')).toBe(0)
+    expect(ciclo.stato.fase).toBe('tutti-tolti')
+    expect(ciclo.stato.vocabolo).toBeNull()
+    expect(ciclo.stato.importanza).toBeNull()
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
+    expect(ciclo.stato.titoloLezione).toBeUndefined()
+  })
+
+  it('avanti non fa nulla mentre la conferma della rimozione è aperta', () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    ciclo.avvio()
+    ciclo.conferma('word 1')
+    ciclo.chiediRimozione()
+
+    ciclo.avanti()
+
+    expect(ciclo.stato.fase).toBe('esito-mostrato')
+    expect(ciclo.stato.vocabolo?.idGlobale).toBe('01-a/v1')
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(true)
+    expect(archivio.leggiImportanza('01-a/v1')).toBe(2)
+
+    ciclo.annullaRimozione()
+    ciclo.avanti()
+    expect(ciclo.stato.vocabolo?.idGlobale).toBe('01-a/v2')
+  })
+
+  it('nella fase tutti tolti ogni azione non ha effetto', () => {
+    const archivio = creaArchivio(null)
+    archivio.salvaImportanza('01-a/v1', 0)
+    const { ciclo } = preparaCiclo(catalogoDi(lezione('01-a', 1)), archivio)
+    ciclo.avvio()
+    expect(ciclo.stato.fase).toBe('tutti-tolti')
+
+    expect(() => {
+      ciclo.conferma('word 1')
+      ciclo.avanti()
+      ciclo.impostaImportanza(3)
+      ciclo.chiediRimozione()
+      ciclo.confermaRimozione()
+      ciclo.annullaRimozione()
+    }).not.toThrow()
+    expect(ciclo.stato.fase).toBe('tutti-tolti')
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
+    expect(archivio.leggiImportanza('01-a/v1')).toBe(0)
+    expect(archivio.leggiLivello('01-a/v1')).toBe('normale')
   })
 
   it('ogni avvio crea una sessione nuova', () => {

@@ -356,7 +356,7 @@ Feature: esercizi-traduzione
 
 ## 36. Ciclo dell'allenamento: importanza, rimozione e vocaboli tutti tolti
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/vocaboli/ciclo.ts, tests/ciclo-vocaboli.test.ts
 Preconditions: 30

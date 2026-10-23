@@ -30,9 +30,13 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `vocaboli`,
   `segna('giusta' | 'sbagliata')`, `impostaImportanza(1 | 2 | 3)`,
   `chiediRimozione()`, `annullaRimozione()`, `confermaRimozione()`.
 - `vocaboli/ciclo.ts::creaCiclo(opzioni?): CicloAllenamento` — `stato`
-  (`fase`: `in-attesa-di-risposta` | `esito-mostrato` | `nessun-materiale`;
-  `vocabolo`, `testo`, `esito`, `titoloLezione`), `avvio()`,
-  `conferma(testo)`, `avanti()`.
+  (`fase`: `in-attesa-di-risposta` | `esito-mostrato` | `nessun-materiale` |
+  `tutti-tolti`; `vocabolo`, `testo`, `esito`, `titoloLezione`,
+  `importanza`, `confermaRimozioneAperta`), `avvio()`, `conferma(testo)`,
+  `avanti()` (blocked while the removal confirmation is open),
+  `impostaImportanza(1 | 2 | 3)`, `chiediRimozione()`, `annullaRimozione()`,
+  `confermaRimozione()` (records importance 0, then advances like
+  `avanti()`).
 - Both cycles take `opzioni` `{ creaSessione?, catalogo? }` for tests.
 - `vocaboli/verifica.ts::verifica(risposta, traduzioniAccettate): Esito` —
   match after lower-casing, typographic apostrophes → `'`, collapsed
