@@ -73,6 +73,19 @@ describe("ciclo dell'esercizio di traduzione", () => {
     expect(ciclo.stato.titoloLezione).toBeUndefined()
   })
 
+  it('avvio con frasi tutti tolti passa a nessun materiale', () => {
+    const archivio = creaArchivio(null)
+    archivio.salvaImportanza('01-a/f1', 0)
+    archivio.salvaImportanza('01-a/f2', 0)
+    const { ciclo } = preparaCiclo(catalogoDi(lezione('01-a', 2)), archivio)
+
+    ciclo.avvio()
+
+    expect(ciclo.stato.fase).toBe('nessun-materiale')
+    expect(ciclo.stato.frase).toBeNull()
+    expect(ciclo.stato.titoloLezione).toBeUndefined()
+  })
+
   it('ogni avvio crea una sessione nuova', () => {
     const catalogo = catalogoDi(lezione('01-a', 2))
     const { ciclo, sessioniCreate } = preparaCiclo(catalogo)

@@ -45,7 +45,9 @@ export function creaCiclo(opzioni: OpzioniCiclo = {}): CicloAllenamento {
   )
 
   function proponi(): void {
-    vocabolo.value = sessione?.prossimoElemento() ?? null
+    const proposta = sessione?.prossimoElemento()
+    // Nessun materiale e tutti tolti portano entrambi alla fase "nessun materiale".
+    vocabolo.value = proposta?.caso === 'elemento' ? proposta.elemento : null
     testo.value = ''
     esito.value = null
     fase.value = vocabolo.value === null ? 'nessun-materiale' : 'in-attesa-di-risposta'

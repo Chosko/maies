@@ -296,7 +296,7 @@ Feature: ripetizione-errori
 
 ## 30. Sessione: registrare l'importanza e distinguere i due casi vuoti
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/ripasso/sessione.ts, tests/sessione.test.ts, src/esercizi/ciclo.ts, src/vocaboli/ciclo.ts
 Preconditions: 28, 29

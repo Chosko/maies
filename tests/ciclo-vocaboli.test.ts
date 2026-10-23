@@ -73,6 +73,20 @@ describe("ciclo dell'allenamento vocaboli", () => {
     expect(ciclo.stato.titoloLezione).toBeUndefined()
   })
 
+  it('avvio con vocaboli tutti tolti passa a nessun materiale', () => {
+    const archivio = creaArchivio(null)
+    archivio.salvaImportanza('01-a/v1', 0)
+    archivio.salvaImportanza('01-a/v2', 0)
+    const { ciclo } = preparaCiclo(catalogoDi(lezione('01-a', 2)), archivio)
+
+    ciclo.avvio()
+
+    expect(ciclo.stato.fase).toBe('nessun-materiale')
+    expect(ciclo.stato.vocabolo).toBeNull()
+    expect(ciclo.stato.esito).toBeNull()
+    expect(ciclo.stato.titoloLezione).toBeUndefined()
+  })
+
   it('ogni avvio crea una sessione nuova', () => {
     const { ciclo, sessioniCreate } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
 
