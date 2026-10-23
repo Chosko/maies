@@ -368,6 +368,21 @@ describe("ciclo dell'esercizio di traduzione", () => {
     expect(ciclo.stato.confermaRimozioneAperta).toBe(true)
   })
 
+  it("imposta importanza e chiedi rimozione non fanno nulla mentre la conferma della rimozione è aperta", () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    ciclo.avvio()
+    ciclo.conferma('')
+    ciclo.chiediRimozione()
+
+    ciclo.impostaImportanza(3)
+    ciclo.chiediRimozione()
+
+    expect(archivio.leggiImportanza('01-a/f1')).toBe(2)
+    expect(ciclo.stato.importanza).toBe(2)
+    expect(ciclo.stato.fase).toBe('soluzione-mostrata')
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(true)
+  })
+
   it('ricava il titolo della lezione della frase dal catalogo', () => {
     const catalogo = catalogoDi(lezione('01-a', 1), lezione('02-b', 1))
     const { ciclo } = preparaCiclo(catalogo)

@@ -156,6 +156,21 @@ describe("ciclo dell'allenamento vocaboli", () => {
     expect(archivio.leggiLivello('01-a/v1')).toBe('consolidato')
   })
 
+  it('imposta importanza e chiedi rimozione non fanno nulla mentre la conferma della rimozione è aperta', () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    ciclo.avvio()
+    ciclo.conferma('word 1')
+    ciclo.chiediRimozione()
+
+    ciclo.impostaImportanza(3)
+    ciclo.chiediRimozione()
+
+    expect(archivio.leggiImportanza('01-a/v1')).toBe(2)
+    expect(ciclo.stato.importanza).toBe(2)
+    expect(ciclo.stato.fase).toBe('esito-mostrato')
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(true)
+  })
+
   it('chiedi e annulla rimozione fuori fase non fanno nulla', () => {
     const { ciclo } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
 

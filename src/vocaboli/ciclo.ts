@@ -90,12 +90,13 @@ export function creaCiclo(opzioni: OpzioniCiclo = {}): CicloAllenamento {
       proponi()
     },
     impostaImportanza(valore) {
-      if (fase.value !== 'esito-mostrato' || sessione === null || vocabolo.value === null) return
+      if (fase.value !== 'esito-mostrato' || confermaRimozioneAperta.value) return
+      if (sessione === null || vocabolo.value === null) return
       sessione.registraImportanza(vocabolo.value.idGlobale, valore)
       importanza.value = valore
     },
     chiediRimozione() {
-      if (fase.value !== 'esito-mostrato') return
+      if (fase.value !== 'esito-mostrato' || confermaRimozioneAperta.value) return
       confermaRimozioneAperta.value = true
     },
     annullaRimozione() {

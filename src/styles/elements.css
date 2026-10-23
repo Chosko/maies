@@ -408,6 +408,11 @@
   font-weight: 600;
 }
 
+.importanza-valore:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
 .importanza-conferma {
   display: flex;
   flex-direction: column;

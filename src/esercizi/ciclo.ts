@@ -100,12 +100,12 @@ export function creaCiclo(opzioni: OpzioniCiclo = {}): CicloEsercizio {
     },
     impostaImportanza(scelta) {
       const attuale = soluzione()
-      if (attuale === null || !IMPORTANZE_SCELTE.includes(scelta)) return
+      if (attuale === null || confermaRimozioneAperta.value || !IMPORTANZE_SCELTE.includes(scelta)) return
       attuale.sessione.registraImportanza(attuale.idGlobale, scelta)
       importanza.value = scelta
     },
     chiediRimozione() {
-      if (soluzione() === null) return
+      if (soluzione() === null || confermaRimozioneAperta.value) return
       confermaRimozioneAperta.value = true
     },
     annullaRimozione() {

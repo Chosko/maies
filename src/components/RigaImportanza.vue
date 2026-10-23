@@ -38,6 +38,7 @@ function tocca(valore: (typeof valori)[number]) {
           class="importanza-valore"
           :class="{ 'importanza-scelta': valore === importanza }"
           :aria-pressed="valore === importanza ? 'true' : 'false'"
+          :disabled="confermaAperta"
           @click="tocca(valore)"
         >
           {{ valore }}

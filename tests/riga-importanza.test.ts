@@ -37,6 +37,23 @@ describe('riga dell\'importanza', () => {
     })
   })
 
+  it('con la conferma aperta i pulsanti 0–3 sono disabilitati e non emettono nulla', async () => {
+    const { wrapper } = monta({ importanza: 2, confermaAperta: true })
+    for (const bottone of bottoniImportanza(wrapper)) {
+      expect(bottone.attributes('disabled')).toBeDefined()
+      await bottone.trigger('click')
+    }
+    expect(wrapper.emitted('scegli')).toBeUndefined()
+    expect(wrapper.emitted('chiediRimozione')).toBeUndefined()
+  })
+
+  it('con la conferma chiusa i pulsanti 0–3 sono attivi', () => {
+    const { wrapper } = monta({ confermaAperta: false })
+    for (const bottone of bottoniImportanza(wrapper)) {
+      expect(bottone.attributes('disabled')).toBeUndefined()
+    }
+  })
+
   it.each([1, 2, 3])('toccare %i emette la scelta di quel valore', async (valore) => {
     const { wrapper } = monta({ importanza: 2 })
     await bottoniImportanza(wrapper)[valore].trigger('click')
