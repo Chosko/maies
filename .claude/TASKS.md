@@ -276,7 +276,7 @@ Feature: schede-grammatica
 
 ## 28. Importanza degli elementi nell'archivio dei progressi
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/ripasso/importanza.ts, src/ripasso/archivio.ts, tests/importanza.test.ts, tests/archivio.test.ts
 Preconditions: none

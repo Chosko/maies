@@ -169,8 +169,8 @@ describe('sessione di ripasso', () => {
     sessione.registraEsito('01-a/f1', 'sbagliato')
     expect(archivio.leggiLivello('01-a/f1')).toBe('da-ripassare')
     expect(salvataggio.scritture).toBe(1)
-    expect(JSON.parse(salvataggio.getItem(CHIAVE_PROGRESSI) ?? '{}').livelli).toEqual({
-      '01-a/f1': 'da-ripassare',
+    expect(JSON.parse(salvataggio.getItem(CHIAVE_PROGRESSI) ?? '{}').elementi).toEqual({
+      '01-a/f1': { livello: 'da-ripassare' },
     })
 
     sessione.registraEsito('01-a/f1', 'giusto')
