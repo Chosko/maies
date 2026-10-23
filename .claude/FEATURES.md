@@ -22,7 +22,7 @@ Tasks: 6, 7, 8, 9
 
 ## ripetizione-errori — Progressi per dispositivo e scelta del prossimo elemento da ripassare
 
-Status: [DONE]
+Status: [ITERATED]
 Doc: .claude/domain/features/ripetizione-errori.md
 Source: product-design.md § Ripetizione degli errori
 Tasks: 10, 11, 12, 13
@@ -31,7 +31,7 @@ Tasks: 10, 11, 12, 13
 
 ## esercizi-traduzione — Schermata degli esercizi di traduzione con autovalutazione
 
-Status: [DONE]
+Status: [ITERATED]
 Doc: .claude/domain/features/esercizi-traduzione.md
 Source: product-design.md § Esercizi di traduzione
 Tasks: 14, 15, 16
@@ -40,7 +40,7 @@ Tasks: 14, 15, 16
 
 ## allenamento-vocaboli — Schermata dell'allenamento vocaboli con verifica automatica
 
-Status: [DONE]
+Status: [ITERATED]
 Doc: .claude/domain/features/allenamento-vocaboli.md
 Source: product-design.md § Allenamento vocaboli
 Tasks: 17, 18, 19, 20

@@ -47,7 +47,8 @@ il materiale di Sara.
 3. Sara scrive la traduzione inglese e la conferma.
 4. L'app mostra la traduzione corretta, con le eventuali varianti
    accettabili; Sara segna da sola se la sua risposta era giusta o
-   sbagliata.
+   sbagliata. Se vuole, dà alla frase un'importanza da 0 a 3, dove 0 la
+   toglie dagli esercizi.
 5. Si passa alla frase successiva; la sessione continua finché Sara non
    decide di fermarsi.
 
@@ -59,6 +60,8 @@ il materiale di Sara.
 3. L'app controlla da sola la risposta, ignorando maiuscole, spazi
    superflui, apostrofi tipografici e punteggiatura finale, e accettando ogni
    traduzione prevista per quella parola; poi mostra le traduzioni corrette.
+   Se vuole, Sara dà al vocabolo un'importanza da 0 a 3, dove 0 lo toglie
+   dall'allenamento.
 4. La sessione continua finché Sara non si ferma.
 
 Fuori dall'allenamento, Sara può consultare la lista completa dei vocaboli
@@ -97,6 +100,12 @@ cercarvi una parola in italiano o in inglese.
   programma generale.
 - **Ripetizione degli errori.** Ciò che è stato sbagliato viene riproposto
   più spesso.
+- **Importanza degli elementi.** Negli esercizi e nei vocaboli Sara dà a
+  ogni frase e a ogni vocabolo un'importanza da 0 a 3 (2 all'inizio), che
+  rende l'elemento più o meno frequente; 0 lo toglie dagli allenamenti, e un
+  elemento tolto non si recupera. L'importanza resta sul dispositivo, come i
+  progressi. Solo nell'edizione di Sara: nell'edizione kids ogni vocabolo ha
+  la stessa importanza.
 - **Sessioni aperte.** Una sessione di ripasso non ha una lunghezza fissa:
   continua finché Sara non si ferma.
 - **Funziona su telefono e computer**, adattandosi allo schermo.
@@ -121,8 +130,8 @@ contenuti nuovi.
 Una sessione aperta di frasi in italiano da tradurre in inglese, mescolate
 tra tutte le lezioni. Sara scrive la sua traduzione, la conferma, vede la
 traduzione corretta con le varianti accettabili e segna da sola se era
-giusta o sbagliata; poi arriva la frase successiva, finché non decide di
-fermarsi. Serve il flusso "Ripasso con gli esercizi".
+giusta o sbagliata, e può darle un'importanza da 0 a 3; poi arriva la
+frase successiva, finché non decide di fermarsi. Serve il flusso "Ripasso con gli esercizi".
 
 ### Allenamento vocaboli
 
@@ -130,7 +139,8 @@ Una sessione aperta sui vocaboli di tutte le lezioni: l'app mostra una
 parola in italiano, Sara scrive la traduzione inglese e l'app la verifica
 da sola, accettando ogni traduzione prevista e ignorando maiuscole, spazi
 superflui, apostrofi tipografici e punteggiatura finale; poi mostra le
-traduzioni corrette. Continua finché Sara non si ferma. Serve il flusso "Ripasso dei vocaboli".
+traduzioni corrette, e Sara può dare al vocabolo un'importanza da 0 a 3.
+Continua finché Sara non si ferma. Serve il flusso "Ripasso dei vocaboli".
 
 ### Dizionario dei vocaboli
 
@@ -150,6 +160,8 @@ grammatica".
 
 Su ogni dispositivo, l'app ricorda quali frasi e quali vocaboli Sara ha
 sbagliato e li ripropone più spesso negli esercizi di traduzione e
-nell'allenamento vocaboli, finché non li risponde correttamente. È
+nell'allenamento vocaboli, finché non li risponde correttamente; tiene
+conto anche dell'importanza che Sara ha dato a ciascuno, e non propone più
+quelli che ha tolto. È
 condivisa dalle due sessioni di allenamento, che le chiedono cosa
 proporre dopo.

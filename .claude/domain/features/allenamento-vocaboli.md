@@ -4,9 +4,10 @@ La schermata in cui Sara si allena sui vocaboli di tutte le lezioni. L'app
 mostra una parola italiana e Sara ne scrive la traduzione inglese. L'app la
 verifica da sola, accettando ogni traduzione prevista e senza badare a
 maiuscole, spazi superflui, apostrofi tipografici e punteggiatura finale.
-Poi mostra l'esito con le traduzioni corrette, e con "Avanti" si passa al
-vocabolo successivo, scelto dalla ripetizione degli errori, finché Sara non
-smette.
+Poi mostra l'esito con le traduzioni corrette, dove Sara può dare al
+vocabolo un'importanza da 0 a 3 (0 lo toglie dall'allenamento), e con
+"Avanti" si passa al vocabolo successivo, scelto dalla ripetizione degli
+errori, finché Sara non smette.
 
 ## Purpose
 
@@ -25,7 +26,10 @@ In:
 - La verifica della risposta e le regole di normalizzazione del testo.
 - La schermata Vocaboli al posto del segnaposto dello scheletro.
 - Il ciclo di ogni vocabolo: risposta, verifica, esito, vocabolo successivo.
-- Il caso in cui non c'è materiale.
+- La scelta dell'importanza del vocabolo nell'esito, con la conferma prima
+  di toglierlo, nella sola edizione principale.
+- Il caso in cui non c'è materiale e quello in cui tutti i vocaboli sono
+  stati tolti.
 
 Fuori:
 
@@ -38,9 +42,14 @@ Fuori:
   stringhe).
 - **Un secondo tentativo** sullo stesso vocabolo dopo un errore.
 - **La direzione inglese → italiano.**
-- **La scelta del vocabolo e il salvataggio dei progressi:** appartengono a
+- **La scelta del vocabolo, il salvataggio dei progressi e l'effetto
+  dell'importanza:** appartengono a
   [ripetizione-errori](./ripetizione-errori.md). Questa schermata li usa
   senza ridefinirli.
+- **L'importanza nell'edizione kids:** lì la riga dell'importanza non
+  compare e ogni vocabolo resta a importanza 2.
+- **Il recupero di un vocabolo tolto**, anche dal dizionario: resta
+  un'idea per il futuro.
 - **Il formato dei vocaboli:** è fissato da
   [aggiunta-materiale-lezione](./aggiunta-materiale-lezione.md).
 - **La lista completa dei vocaboli:** è del dizionario dei vocaboli.
@@ -75,12 +84,25 @@ Vue Test Utils. È una schermata della parte "Interfaccia" della topologia.
     Sara, la traduzione principale (la prima di `en`), le altre traduzioni
     accettate (se ci sono) e il titolo della lezione da cui viene il
     vocabolo, più il pulsante "Avanti". Anche Invio passa avanti. Il formato
-    è lo stesso dopo una risposta giusta e dopo una sbagliata.
+    è lo stesso dopo una risposta giusta e dopo una sbagliata. Nell'edizione
+    principale, sotto, in una riga secondaria ben separata da "Avanti", i
+    pulsanti dell'importanza 0, 1, 2 e 3, con il valore attuale del vocabolo
+    selezionato. Toccare 1, 2 o 3 cambia subito il valore selezionato;
+    toccare 0 apre la conferma.
+  - **Conferma della rimozione:** un messaggio dentro la pagina, non il
+    popup nativo del browser, che chiede se togliere il vocabolo
+    dall'allenamento, con "Togli" e "Annulla".
   - **Nessun materiale:** un messaggio che dice che non ci sono ancora
     vocaboli su cui allenarsi.
+  - **Tutti tolti:** un messaggio che dice che tutti i vocaboli sono stati
+    tolti dall'allenamento ("Hai tolto tutti i vocaboli dall'allenamento"),
+    nella forma del messaggio senza materiale.
   - **Aspetto:** segue `design/schermate/VocaboliDomanda.dc.html`,
     `VocaboliGiusta.dc.html` e `VocaboliSbagliata.dc.html`; il messaggio
-    senza materiale ha la forma di `EserciziVuoto.dc.html`.
+    senza materiale e quello dei vocaboli tolti hanno la forma di
+    `EserciziVuoto.dc.html`. La riga dell'importanza e la conferma della
+    rimozione non hanno una tavola: sono le stesse degli esercizi di
+    traduzione, con la riga visivamente secondaria rispetto ad "Avanti".
 
 ## Data and state
 
@@ -93,12 +115,15 @@ In memoria, per la durata della schermata:
   rientrare apre quindi una sessione nuova, con la finestra degli ultimi
   elementi proposti vuota;
 - il vocabolo corrente, come lo restituisce la sessione (id globale, parola
-  italiana, traduzioni accettate, id della lezione);
+  italiana, traduzioni accettate, id della lezione, importanza);
 - il testo scritto da Sara e l'esito della verifica;
+- l'importanza attuale del vocabolo, aggiornata a ogni scelta;
+- se la conferma della rimozione è aperta;
 - la fase, una tra:
   - **in attesa di risposta**: Sara scrive;
   - **esito mostrato**: la risposta è stata verificata e l'esito registrato;
-  - **nessun materiale**: la sessione non ha vocaboli da proporre.
+  - **nessun materiale**: il catalogo non ha vocaboli;
+  - **tutti tolti**: tutti i vocaboli hanno importanza 0.
 
 Il titolo della lezione si ricava dal catalogo a partire dall'id della
 lezione del vocabolo; non è uno stato a sé.
@@ -125,37 +150,53 @@ lezione del vocabolo; non è uno stato a sé.
 ### Ciclo dell'allenamento
 
 - **avvio:** crea la sessione di tipo "vocaboli" e chiede il prossimo
-  elemento. Passa a "in attesa di risposta", oppure a "nessun materiale" se
-  la sessione restituisce "nessuno".
+  elemento. Passa a "in attesa di risposta", oppure a "nessun materiale" o a
+  "tutti tolti" secondo il caso vuoto che restituisce la sessione.
 - **conferma(testo):** solo da "in attesa di risposta". Verifica il testo,
   registra l'esito per l'id globale del vocabolo con la funzione "registra
   esito" della sessione e passa a "esito mostrato" conservando testo ed
   esito. Una risposta vuota è ammessa e vale sbagliata: serve quando Sara
   non sa la parola. In ogni altra fase non fa nulla, quindi un doppio tocco
   o un doppio Invio non registra due esiti.
-- **avanti():** solo da "esito mostrato". Chiede il prossimo elemento e
-  torna a "in attesa di risposta" con il campo vuoto. In ogni altra fase non
-  fa nulla.
+- **avanti():** solo da "esito mostrato" con la conferma della rimozione
+  chiusa. Chiede il prossimo elemento e torna a "in attesa di risposta" con
+  il campo vuoto, oppure al caso vuoto restituito dalla sessione. In ogni
+  altra fase non fa nulla.
+- **imposta importanza(1 | 2 | 3):** solo da "esito mostrato". Registra
+  l'importanza con la funzione "registra importanza" della sessione e
+  aggiorna il valore selezionato. Non cambia fase.
+- **chiedi rimozione():** solo da "esito mostrato". Apre la conferma.
+- **annulla rimozione():** chiude la conferma; nulla cambia.
+- **conferma rimozione():** solo con la conferma aperta. Registra
+  l'importanza 0 per il vocabolo e passa al prossimo elemento come
+  "avanti". L'esito della risposta, già registrato alla conferma, resta
+  salvato.
 
 ### Contratto con le altre funzionalità
 
 - **Rotta:** occupa `#/vocaboli`, fissato da
   [scheletro-e-pubblicazione](./scheletro-e-pubblicazione.md). Non aggiunge
   sottorotte.
-- **Sessione di ripasso:** usa "crea sessione", "prossimo elemento" e
-  "registra esito" esattamente come li definisce
+- **Sessione di ripasso:** usa "crea sessione", "prossimo elemento",
+  "registra esito" e "registra importanza" esattamente come li definisce
   [ripetizione-errori](./ripetizione-errori.md).
 - **Catalogo:** legge dal vocabolo `it` ed `en`, e il titolo della lezione
   con la ricerca "una lezione per id" di
   [aggiunta-materiale-lezione](./aggiunta-materiale-lezione.md).
+- **Edizione:** mostra la riga dell'importanza solo quando l'edizione
+  stabilita dallo [scheletro](./scheletro-e-pubblicazione.md) è la
+  principale.
 
 ### Contratto di errore
 
 - **Nessun vocabolo nel catalogo:** la schermata mostra il messaggio di
   nessun materiale, senza errori.
+- **Tutti i vocaboli tolti:** la schermata mostra il messaggio "tutti
+  tolti", senza errori e senza modo di recuperarli.
 - **Uscita a metà:** l'esito si registra alla conferma. Se Sara cambia
   schermata o chiude la pagina prima di confermare, per quel vocabolo non si
-  registra nulla; se lo fa dopo, l'esito resta registrato.
+  registra nulla; se lo fa dopo, l'esito resta registrato. Un'importanza già
+  scelta resta registrata, e una rimozione non confermata non avviene.
 - **Progressi non salvabili** (`localStorage` assente o pieno): li gestisce
   l'archivio della ripetizione degli errori, e l'allenamento funziona senza
   differenze visibili.
@@ -166,11 +207,11 @@ lezione del vocabolo; non è uno stato a sé.
 ## Dependencies
 
 - **[scheletro-e-pubblicazione](./scheletro-e-pubblicazione.md):** la rotta
-  `#/vocaboli`, la barra di navigazione, lo stile di base e il progetto
-  Vitest.
+  `#/vocaboli`, la barra di navigazione, lo stile di base, l'edizione del
+  sito e il progetto Vitest.
 - **[aggiunta-materiale-lezione](./aggiunta-materiale-lezione.md):** i campi
   dei vocaboli e il titolo della lezione dal catalogo dei contenuti.
 - **[ripetizione-errori](./ripetizione-errori.md):** la sessione di ripasso,
-  che sceglie il vocabolo successivo e salva gli esiti.
+  che sceglie il vocabolo successivo e salva esiti e importanza.
 
 Nessuna dipendenza esterna oltre allo stack.
