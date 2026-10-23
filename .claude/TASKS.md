@@ -1,6 +1,6 @@
 # Tasks
 
-Last task number: 31
+Last task number: 35
 
 ---
 
@@ -311,5 +311,45 @@ Target: claude
 Files: .claude/context/ripasso.md, README.md
 Preconditions: 28, 29, 30
 Feature: ripetizione-errori
+
+---
+
+## 32. Ciclo dell'esercizio: importanza, rimozione e frasi tutte tolte
+
+Status: [MISSING]
+Target: claude
+Files: src/esercizi/ciclo.ts, tests/ciclo-esercizi.test.ts
+Preconditions: 30
+Feature: esercizi-traduzione
+
+---
+
+## 33. Riga dell'importanza con conferma di rimozione
+
+Status: [MISSING]
+Target: claude
+Files: src/components/RigaImportanza.vue, tests/riga-importanza.test.ts
+Preconditions: none
+Feature: esercizi-traduzione
+
+---
+
+## 34. Schermata Esercizi con l'importanza nella soluzione e il messaggio delle frasi tolte
+
+Status: [MISSING]
+Target: claude
+Files: src/views/EserciziView.vue, tests/esercizi.test.ts
+Preconditions: 32, 33
+Feature: esercizi-traduzione
+
+---
+
+## 35. Update documentation for feature `esercizi-traduzione`
+
+Status: [MISSING]
+Target: claude
+Files: README.md, .claude/context/schermate.md
+Preconditions: 32, 33, 34
+Feature: esercizi-traduzione
 
 ---

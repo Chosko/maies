@@ -31,10 +31,10 @@ Tasks: 10, 11, 12, 13, 28, 29, 30, 31
 
 ## esercizi-traduzione — Schermata degli esercizi di traduzione con autovalutazione
 
-Status: [ITERATED]
+Status: [PLANNED]
 Doc: .claude/domain/features/esercizi-traduzione.md
 Source: product-design.md § Esercizi di traduzione
-Tasks: 14, 15, 16
+Tasks: 14, 15, 16, 32, 33, 34, 35
 
 ---
 
