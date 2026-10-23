@@ -366,7 +366,7 @@ Feature: allenamento-vocaboli
 
 ## 37. Schermata Vocaboli con l'importanza nell'esito e il messaggio dei vocaboli tolti
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/views/VocaboliView.vue, tests/vocaboli.test.ts
 Preconditions: 33, 36

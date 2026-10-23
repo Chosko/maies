@@ -9,6 +9,7 @@ import type { ArchivioProgressi } from '../src/ripasso/archivio'
 import { creaSessione } from '../src/ripasso/sessione'
 import { creaCiclo } from '../src/vocaboli/ciclo'
 import VocaboliView from '../src/views/VocaboliView.vue'
+import type { Edizione } from '../src/edizione'
 
 const fissa = (valore: number) => () => valore
 
@@ -42,8 +43,12 @@ afterEach(() => {
 
 // Con casualità 0 la sessione propone il primo candidato ammesso: v1, poi v2.
 // `catalogoTitoli` sostituisce il catalogo da cui il ciclo ricava il titolo della lezione.
-function monta(catalogo: Catalogo, catalogoTitoli: Catalogo = catalogo) {
-  const archivio: ArchivioProgressi = creaArchivio(null)
+// `edizione` sostituisce quella di compilazione; senza, la schermata legge la costante.
+function monta(
+  catalogo: Catalogo,
+  catalogoTitoli: Catalogo = catalogo,
+  { edizione, archivio = creaArchivio(null) }: { edizione?: Edizione; archivio?: ArchivioProgressi } = {},
+) {
   let cicliCreati = 0
   const fabbrica = () => {
     cicliCreati++
@@ -54,7 +59,7 @@ function monta(catalogo: Catalogo, catalogoTitoli: Catalogo = catalogo) {
   }
   const nuovoMontaggio = () => {
     const wrapper = mount(VocaboliView, {
-      props: { creaCiclo: fabbrica },
+      props: edizione ? { creaCiclo: fabbrica, edizione } : { creaCiclo: fabbrica },
       attachTo: document.body,
     })
     montate.push(wrapper)
@@ -77,6 +82,16 @@ async function conferma(wrapper: VueWrapper, testo: string) {
 
 function testi(wrapper: VueWrapper, selettore: string) {
   return wrapper.findAll(selettore).map((e) => e.text())
+}
+
+function bottoniImportanza(wrapper: VueWrapper) {
+  return wrapper.get('.importanza [role="group"]').findAll('button')
+}
+
+function valoreScelto(wrapper: VueWrapper) {
+  return bottoniImportanza(wrapper)
+    .filter((b) => b.attributes('aria-pressed') === 'true')
+    .map((b) => b.text())
 }
 
 describe('schermata Vocaboli', () => {
@@ -293,5 +308,180 @@ describe('schermata Vocaboli', () => {
     const { wrapper } = monta(catalogoDi())
     await flushPromises()
     expect(wrapper.text()).toContain('Ancora nessun vocabolo su cui allenarti')
+  })
+})
+
+describe("schermata Vocaboli: l'importanza nell'esito", () => {
+  it("nell'edizione principale l'esito mostra la riga sotto Avanti, staccata da lui", async () => {
+    const { wrapper } = monta(catalogoDi(lezione('01-a', 2)), undefined, { edizione: 'principale' })
+    expect(wrapper.find('.importanza').exists()).toBe(false)
+
+    await conferma(wrapper, 'word 1')
+    const riga = wrapper.get('.importanza')
+    expect(riga.find('[role="group"]').attributes('aria-label')).toBe('Importanza')
+    expect(bottoniImportanza(wrapper).map((b) => b.text())).toEqual(['0', '1', '2', '3'])
+    // La riga non sta nella carta né accanto ad Avanti: viene dopo, come elemento a sé.
+    expect(wrapper.get('main .carta').find('.importanza').exists()).toBe(false)
+    const avanti = bottone(wrapper, 'Avanti').element
+    expect(avanti.contains(riga.element)).toBe(false)
+    expect(
+      avanti.compareDocumentPosition(riga.element) & Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy()
+  })
+
+  it("senza edizione passata la schermata legge quella di compilazione (la principale)", async () => {
+    const { wrapper } = monta(catalogoDi(lezione('01-a', 2)))
+    await conferma(wrapper, 'word 1')
+    expect(wrapper.find('.importanza').exists()).toBe(true)
+  })
+
+  it("nell'edizione kids la riga non compare", async () => {
+    const { wrapper } = monta(catalogoDi(lezione('01-a', 2)), undefined, { edizione: 'kids' })
+    await conferma(wrapper, 'word 1')
+
+    expect(wrapper.text()).toContain('Giusta')
+    expect(bottone(wrapper, 'Avanti').exists()).toBe(true)
+    expect(wrapper.find('.importanza').exists()).toBe(false)
+    expect(wrapper.findAll('button').map((b) => b.text())).toEqual(['Avanti'])
+  })
+
+  it('seleziona il valore attuale del vocabolo', async () => {
+    const archivio = creaArchivio(null)
+    archivio.salvaImportanza('01-a/v1', 3)
+    const { wrapper } = monta(catalogoDi(lezione('01-a', 2)), undefined, { archivio })
+    await conferma(wrapper, 'word 1')
+    expect(valoreScelto(wrapper)).toEqual(['3'])
+  })
+
+  it.each([1, 2, 3] as const)(
+    'toccare %i registra l’importanza, la seleziona e non passa avanti',
+    async (valore) => {
+      const archivio = creaArchivio(null)
+      archivio.salvaImportanza('01-a/v1', valore === 1 ? 3 : 1)
+      const { wrapper } = monta(catalogoDi(lezione('01-a', 2)), undefined, { archivio })
+      await conferma(wrapper, 'word 1')
+
+      await bottoniImportanza(wrapper)[valore].trigger('click')
+      await flushPromises()
+
+      expect(archivio.leggiImportanza('01-a/v1')).toBe(valore)
+      expect(valoreScelto(wrapper)).toEqual([String(valore)])
+      expect(wrapper.text()).toContain('Giusta')
+      expect(wrapper.text()).toContain('parola 1')
+      expect(bottone(wrapper, 'Avanti').exists()).toBe(true)
+      expect(wrapper.find('input').exists()).toBe(false)
+    },
+  )
+
+  it("0 apre la conferma dentro la pagina, che chiede di togliere il vocabolo dall'allenamento", async () => {
+    const { wrapper, archivio } = monta(catalogoDi(lezione('01-a', 2)))
+    await conferma(wrapper, 'word 1')
+
+    await bottoniImportanza(wrapper)[0].trigger('click')
+    await flushPromises()
+
+    const dialogo = wrapper.get('.importanza [role="alertdialog"]')
+    expect(dialogo.text()).toContain("Togliere il vocabolo dall'allenamento?")
+    expect(archivio.leggiImportanza('01-a/v1')).toBe(2)
+    expect(wrapper.text()).toContain('parola 1')
+    expect(bottone(wrapper, 'Avanti').exists()).toBe(true)
+  })
+
+  it('Annulla chiude la conferma senza togliere il vocabolo', async () => {
+    const { wrapper, archivio } = monta(catalogoDi(lezione('01-a', 2)))
+    await conferma(wrapper, 'word 1')
+    await bottoniImportanza(wrapper)[0].trigger('click')
+
+    await bottone(wrapper, 'Annulla').trigger('click')
+    await flushPromises()
+
+    expect(wrapper.find('[role="alertdialog"]').exists()).toBe(false)
+    expect(archivio.leggiImportanza('01-a/v1')).toBe(2)
+    expect(valoreScelto(wrapper)).toEqual(['2'])
+    expect(wrapper.text()).toContain('parola 1')
+    expect(bottone(wrapper, 'Avanti').exists()).toBe(true)
+  })
+
+  it('Togli registra 0 e passa al vocabolo successivo', async () => {
+    const { wrapper, archivio } = monta(catalogoDi(lezione('01-a', 2)))
+    await conferma(wrapper, 'word 1')
+    await bottoniImportanza(wrapper)[0].trigger('click')
+
+    await bottone(wrapper, 'Togli').trigger('click')
+    await flushPromises()
+
+    expect(archivio.leggiImportanza('01-a/v1')).toBe(0)
+    expect(archivio.leggiLivello('01-a/v1')).toBe('consolidato')
+    expect(wrapper.text()).toContain('parola 2')
+    const input = wrapper.get('input')
+    expect(document.activeElement).toBe(input.element)
+    expect(wrapper.find('.importanza').exists()).toBe(false)
+  })
+
+  it.each([
+    ['il pulsante', (b: ReturnType<typeof bottone>) => b.trigger('click')],
+    ['Invio', (b: ReturnType<typeof bottone>) => b.trigger('keydown', { key: 'Enter' })],
+  ])('a conferma aperta Avanti con %s non passa avanti', async (_, premi) => {
+    const { wrapper, archivio } = monta(catalogoDi(lezione('01-a', 2)))
+    await conferma(wrapper, 'word 1')
+    await bottoniImportanza(wrapper)[0].trigger('click')
+    await flushPromises()
+
+    await premi(bottone(wrapper, 'Avanti'))
+    await flushPromises()
+
+    expect(wrapper.text()).toContain('parola 1')
+    expect(wrapper.text()).not.toContain('parola 2')
+    expect(wrapper.find('[role="alertdialog"]').exists()).toBe(true)
+    expect(archivio.leggiImportanza('01-a/v1')).toBe(2)
+  })
+
+  it('a conferma chiusa Invio su Avanti passa ancora avanti', async () => {
+    const { wrapper } = monta(catalogoDi(lezione('01-a', 2)))
+    await conferma(wrapper, 'word 1')
+    await bottoniImportanza(wrapper)[3].trigger('click')
+    await bottoniImportanza(wrapper)[0].trigger('click')
+    await bottone(wrapper, 'Annulla').trigger('click')
+    await flushPromises()
+
+    await bottone(wrapper, 'Avanti').trigger('keydown', { key: 'Enter' })
+    await flushPromises()
+    expect(wrapper.text()).toContain('parola 2')
+  })
+
+  it("togliere l'ultimo vocabolo mostra il messaggio dei vocaboli tolti, distinto da quello senza materiale", async () => {
+    const archivio = creaArchivio(null)
+    archivio.salvaImportanza('01-a/v2', 0)
+    const { wrapper } = monta(catalogoDi(lezione('01-a', 2)), undefined, { archivio })
+    await conferma(wrapper, 'word 1')
+    await bottoniImportanza(wrapper)[0].trigger('click')
+    await bottone(wrapper, 'Togli').trigger('click')
+    await flushPromises()
+
+    expect(wrapper.get('h1').text()).toBe('Vocaboli')
+    const carta = wrapper.get('main .carta.esercizio-vuoto-carta')
+    expect(carta.get('h2.esercizio-vuoto-titolo').text()).toBe(
+      "Hai tolto tutti i vocaboli dall'allenamento",
+    )
+    expect(wrapper.text()).not.toContain('Ancora nessun vocabolo su cui allenarti')
+    expect(wrapper.text()).not.toContain(
+      'I vocaboli compaiono qui quando arriva il materiale di una lezione.',
+    )
+    expect(wrapper.find('input').exists()).toBe(false)
+    expect(wrapper.findAll('button')).toHaveLength(0)
+  })
+
+  it('con tutti i vocaboli già tolti la schermata si apre sul messaggio dei vocaboli tolti', async () => {
+    const archivio = creaArchivio(null)
+    archivio.salvaImportanza('01-a/v1', 0)
+    archivio.salvaImportanza('01-a/v2', 0)
+    const { wrapper } = monta(catalogoDi(lezione('01-a', 2)), undefined, {
+      archivio,
+      edizione: 'kids',
+    })
+    await flushPromises()
+
+    expect(wrapper.get('h2').text()).toBe("Hai tolto tutti i vocaboli dall'allenamento")
+    expect(wrapper.text()).not.toContain('Ancora nessun vocabolo')
   })
 })
