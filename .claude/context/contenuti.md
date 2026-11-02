@@ -17,8 +17,9 @@ check that gates publication.
   `catalogo`, built with `import.meta.glob` over `@lezioni/*.json`; the
   alias points at the edition's folder (`build-test-deploy.md`).
 - `.claude/skills/aggiunta-materiale/SKILL.md` — project skill that turns a
-  PDF, photo, word or correction into lesson files, runs `npm test` and
-  commits.
+  PDF, photo, word or correction into lesson files, or fills in missing
+  hints, example sentences and mnemonics in existing ones, runs `npm test`
+  and commits.
 
 Either folder may not exist yet; every reader treats a missing folder as
 zero lessons.

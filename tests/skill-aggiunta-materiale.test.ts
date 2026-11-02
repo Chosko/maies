@@ -44,6 +44,42 @@ describe('skill aggiunta-materiale', () => {
     expect(corpo).toContain('contenuti/kids/')
   })
 
+  function sezione(corpo: string, titolo: string) {
+    const inizio = corpo.indexOf(`## ${titolo}`)
+    if (inizio < 0) throw new Error(`sezione mancante: ${titolo}`)
+    const fine = corpo.indexOf('\n## ', inizio + 1)
+    return corpo.slice(inizio, fine < 0 ? undefined : fine)
+  }
+
+  it('dà un aiuto a ogni frase e frase d\'esempio e trucco ai vocaboli della lezione da PDF', () => {
+    const testo = sezione(leggiSkill().corpo, 'Una lezione da PDF o foto')
+    expect(testo).toContain('aiuto')
+    expect(testo).toContain("frase d'esempio")
+    expect(testo).toContain('trucco')
+    expect(testo).toMatch(/^8\. /m)
+  })
+
+  it('dà frasi d\'esempio e trucchi adatti a una bambina ai vocaboli dei kids', () => {
+    const testo = sezione(leggiSkill().corpo, 'Una lista di vocaboli per i kids')
+    expect(testo).toContain("frasi d'esempio")
+    expect(testo).toContain('trucchi')
+    expect(testo).toContain('bambina')
+  })
+
+  it('dà frase d\'esempio e trucco al vocabolo singolo', () => {
+    const testo = sezione(leggiSkill().corpo, 'Un vocabolo singolo')
+    expect(testo).toContain("frase d'esempio")
+    expect(testo).toContain('trucco')
+  })
+
+  it('descrive il completamento del materiale esistente senza cambiare gli id', () => {
+    const testo = sezione(leggiSkill().corpo, 'Il completamento del materiale esistente')
+    for (const parola of ['aiuto', "frase d'esempio", 'trucco', 'contenuti/lezioni/', 'contenuti/kids/']) {
+      expect(testo).toContain(parola)
+    }
+    expect(testo).toMatch(/id non cambiano/)
+  })
+
   it('non ricopia il formato dei file di lezione', () => {
     const { corpo } = leggiSkill()
     for (const chiave of ['"sentences"', '"vocabulary"', '"grammar"', '"alternatives"']) {

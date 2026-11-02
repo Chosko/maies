@@ -396,7 +396,7 @@ Feature: aggiunta-materiale-lezione
 
 ## 40. Aiuti, frasi d'esempio e trucchi nella skill di aggiunta del materiale
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: .claude/skills/aggiunta-materiale/SKILL.md, tests/skill-aggiunta-materiale.test.ts
 Preconditions: 39
