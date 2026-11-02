@@ -466,7 +466,7 @@ Feature: ripetizione-errori
 
 ## 47. Pianificatore del gruppo di lavoro e della scelta del prossimo elemento
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/ripasso/pianificatore.ts, tests/pianificatore.test.ts
 Preconditions: 45
