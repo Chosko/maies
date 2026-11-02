@@ -496,7 +496,7 @@ Feature: ripetizione-errori
 
 ## 50. Pulsante Aiuto negli esercizi di traduzione
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/esercizi/ciclo.ts, src/views/EserciziView.vue, tests/ciclo-esercizi.test.ts, tests/esercizi.test.ts
 Preconditions: 39

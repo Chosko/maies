@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { isReactive, isReadonly, watchEffect } from 'vue'
 import { costruisciCatalogo } from '../src/contenuti/catalogo'
 import type { Catalogo } from '../src/contenuti/catalogo'
@@ -22,6 +22,14 @@ function lezione(id: string, frasi: number): Lezione {
     })),
     vocabulary: [{ id: 'v1', it: 'parola', en: ['word'] }],
     grammar: [],
+  }
+}
+
+// La lezione con l'aiuto `hint` sulle frasi indicate per id.
+function conAiuti(base: Lezione, aiuti: Record<string, string>): Lezione {
+  return {
+    ...base,
+    sentences: base.sentences.map((f) => (f.id in aiuti ? { ...f, hint: aiuti[f.id] } : f)),
   }
 }
 
@@ -430,5 +438,115 @@ describe("ciclo dell'esercizio di traduzione", () => {
     const ciclo = creaCiclo()
     expect(() => ciclo.avvio()).not.toThrow()
     expect(['in-attesa-di-risposta', 'nessun-materiale']).toContain(ciclo.stato.fase)
+  })
+})
+
+describe("ciclo dell'esercizio di traduzione: aiuto", () => {
+  it("ogni frase proposta parte con l'aiuto nascosto", () => {
+    const { ciclo } = preparaCiclo(catalogoDi(conAiuti(lezione('01-a', 2), { f1: 'Pensa al passato.' })))
+    expect(ciclo.stato.aiutoMostrato).toBe(false)
+
+    ciclo.avvio()
+
+    expect(ciclo.stato.frase?.hint).toBe('Pensa al passato.')
+    expect(ciclo.stato.aiutoMostrato).toBe(false)
+  })
+
+  it("mostra aiuto in attesa di risposta mostra l'aiuto e lascia fase e testo", () => {
+    const { ciclo } = preparaCiclo(catalogoDi(conAiuti(lezione('01-a', 2), { f1: 'Pensa al passato.' })))
+    ciclo.avvio()
+
+    ciclo.mostraAiuto()
+
+    expect(ciclo.stato.aiutoMostrato).toBe(true)
+    expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
+    expect(ciclo.stato.frase?.idGlobale).toBe('01-a/f1')
+    expect(ciclo.stato.testo).toBe('')
+  })
+
+  it('mostra aiuto non registra né esiti né importanza', () => {
+    const catalogo = catalogoDi(conAiuti(lezione('01-a', 2), { f1: 'Pensa al passato.' }))
+    const archivio = creaArchivio(null)
+    const sessione = creaSessione('frasi', { catalogo, archivio, casualita: fissa(0) })
+    const registraEsito = vi.spyOn(sessione, 'registraEsito')
+    const registraImportanza = vi.spyOn(sessione, 'registraImportanza')
+    const ciclo = creaCiclo({ catalogo, creaSessione: () => sessione })
+    ciclo.avvio()
+    const importanzaPrima = archivio.leggiImportanza('01-a/f1')
+
+    ciclo.mostraAiuto()
+
+    expect(registraEsito).not.toHaveBeenCalled()
+    expect(registraImportanza).not.toHaveBeenCalled()
+    expect(archivio.leggiImportanza('01-a/f1')).toBe(importanzaPrima)
+  })
+
+  it('mostra aiuto per una frase senza aiuto non fa nulla', () => {
+    const { ciclo } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    ciclo.avvio()
+
+    ciclo.mostraAiuto()
+
+    expect(ciclo.stato.aiutoMostrato).toBe(false)
+  })
+
+  it('mostra aiuto fuori dalla fase di attesa della risposta non fa nulla', () => {
+    const { ciclo } = preparaCiclo(catalogoDi(conAiuti(lezione('01-a', 2), { f1: 'Pensa al passato.' })))
+    ciclo.mostraAiuto()
+    expect(ciclo.stato.aiutoMostrato).toBe(false)
+
+    ciclo.avvio()
+    ciclo.conferma('x')
+    ciclo.mostraAiuto()
+
+    expect(ciclo.stato.aiutoMostrato).toBe(false)
+    expect(ciclo.stato.fase).toBe('soluzione-mostrata')
+  })
+
+  it("la soluzione dopo l'aiuto lo tiene mostrato e l'esito si registra come sempre", () => {
+    const catalogo = catalogoDi(conAiuti(lezione('01-a', 2), { f1: 'Pensa al passato.' }))
+    const archivio = creaArchivio(null)
+    const sessione = creaSessione('frasi', { catalogo, archivio, casualita: fissa(0) })
+    const registraEsito = vi.spyOn(sessione, 'registraEsito')
+    const ciclo = creaCiclo({ catalogo, creaSessione: () => sessione })
+    ciclo.avvio()
+    ciclo.mostraAiuto()
+
+    ciclo.conferma('I went.')
+    expect(ciclo.stato.fase).toBe('soluzione-mostrata')
+    expect(ciclo.stato.testo).toBe('I went.')
+    ciclo.segna('giusta')
+
+    expect(registraEsito).toHaveBeenCalledExactlyOnceWith('01-a/f1', 'giusto')
+  })
+
+  it("la frase successiva riparte con l'aiuto nascosto, dopo segna e dopo la rimozione", () => {
+    const aiuti = { f1: 'Aiuto 1.', f2: 'Aiuto 2.' }
+    const { ciclo } = preparaCiclo(catalogoDi(conAiuti(lezione('01-a', 3), aiuti)))
+    ciclo.avvio()
+    ciclo.mostraAiuto()
+    ciclo.conferma('x')
+    ciclo.segna('sbagliata')
+
+    expect(ciclo.stato.frase?.idGlobale).toBe('01-a/f2')
+    expect(ciclo.stato.aiutoMostrato).toBe(false)
+
+    ciclo.mostraAiuto()
+    ciclo.conferma('x')
+    ciclo.chiediRimozione()
+    ciclo.confermaRimozione()
+
+    expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
+    expect(ciclo.stato.aiutoMostrato).toBe(false)
+  })
+
+  it("un nuovo avvio riparte con l'aiuto nascosto", () => {
+    const { ciclo } = preparaCiclo(catalogoDi(conAiuti(lezione('01-a', 2), { f1: 'Pensa al passato.' })))
+    ciclo.avvio()
+    ciclo.mostraAiuto()
+
+    ciclo.avvio()
+
+    expect(ciclo.stato.aiutoMostrato).toBe(false)
   })
 })

@@ -28,6 +28,14 @@ function lezione(id: string, frasi: number): Lezione {
   }
 }
 
+// La lezione con l'aiuto `hint` sulle frasi indicate per id.
+function conAiuti(base: Lezione, aiuti: Record<string, string>): Lezione {
+  return {
+    ...base,
+    sentences: base.sentences.map((f) => (f.id in aiuti ? { ...f, hint: aiuti[f.id] } : f)),
+  }
+}
+
 function catalogoDi(...lezioni: Lezione[]): Catalogo {
   return costruisciCatalogo(
     Object.fromEntries(lezioni.map((l) => [`../../contenuti/lezioni/${l.id}.json`, l])),
@@ -398,5 +406,86 @@ describe('schermata Esercizi: tutte le frasi tolte', () => {
 
     expect(wrapper.get('h2').text()).toBe('Hai tolto tutte le frasi dagli esercizi')
     expect(wrapper.text()).not.toContain('Ancora nessuna frase da tradurre')
+  })
+})
+
+describe('schermata Esercizi: aiuto', () => {
+  const conAiutoSullaPrima = () => catalogoDi(conAiuti(lezione('01-a', 2), { f1: 'Pensa al passato.' }))
+
+  it('mostra il pulsante Aiuto sotto la frase, nella carta, con l’aiuto nascosto', async () => {
+    const { wrapper } = monta(conAiutoSullaPrima())
+    await flushPromises()
+
+    const domanda = wrapper.get('main .carta .esercizio-domanda')
+    const aiuto = domanda.get('button.esercizio-aiuto')
+    expect(aiuto.text()).toBe('Aiuto')
+    expect(aiuto.attributes('type')).toBe('button')
+    const figli = domanda.element.children
+    expect(Array.from(figli).indexOf(aiuto.element)).toBeGreaterThan(
+      Array.from(figli).indexOf(domanda.get('.esercizio-frase').element),
+    )
+    expect(wrapper.text()).not.toContain('Pensa al passato.')
+  })
+
+  it('senza aiuto nella frase il pulsante Aiuto non compare', async () => {
+    const { wrapper } = monta(catalogoDi(lezione('01-a', 2)))
+    await flushPromises()
+
+    expect(wrapper.find('.esercizio-aiuto').exists()).toBe(false)
+    expect(wrapper.findAll('button').map((b) => b.text())).not.toContain('Aiuto')
+  })
+
+  it('toccare Aiuto lascia il posto al testo dell’aiuto e rimette il fuoco nel campo', async () => {
+    const { wrapper } = monta(conAiutoSullaPrima())
+    await flushPromises()
+    const input = wrapper.get('input')
+    await input.setValue('I ')
+
+    await bottone(wrapper, 'Aiuto').trigger('click')
+    await flushPromises()
+
+    expect(wrapper.findAll('button').map((b) => b.text())).not.toContain('Aiuto')
+    const testo = wrapper.get('main .carta .esercizio-domanda .esercizio-aiuto-testo')
+    expect(testo.text()).toBe('Pensa al passato.')
+    expect(testo.element.tagName).toBe('P')
+    expect(document.activeElement).toBe(input.element)
+    expect((input.element as HTMLInputElement).value).toBe('I ')
+  })
+
+  it('Aiuto non cambia esito né importanza e il flusso resta lo stesso', async () => {
+    const archivio = creaArchivio(null)
+    const { wrapper } = monta(conAiutoSullaPrima(), undefined, archivio)
+    await flushPromises()
+    const importanzaPrima = archivio.leggiImportanza('01-a/f1')
+
+    await bottone(wrapper, 'Aiuto').trigger('click')
+    await flushPromises()
+    expect(archivio.leggiImportanza('01-a/f1')).toBe(importanzaPrima)
+
+    await conferma(wrapper, 'I went.')
+    expect(wrapper.text()).toContain('I went.')
+    expect(wrapper.text()).toContain('Sentence 1.')
+    expect(wrapper.findAll('button').map((b) => b.text())).not.toContain('Aiuto')
+    await bottone(wrapper, 'Giusta').trigger('click')
+    await flushPromises()
+
+    expect(wrapper.get('.esercizio-frase').text()).toBe('Frase 2.')
+    expect(wrapper.find('.esercizio-aiuto').exists()).toBe(false)
+    expect(wrapper.find('.esercizio-aiuto-testo').exists()).toBe(false)
+  })
+
+  it('una frase nuova con aiuto riparte con il pulsante e l’aiuto nascosto', async () => {
+    const aiuti = { f1: 'Aiuto 1.', f2: 'Aiuto 2.' }
+    const { wrapper } = monta(catalogoDi(conAiuti(lezione('01-a', 2), aiuti)))
+    await flushPromises()
+    await bottone(wrapper, 'Aiuto').trigger('click')
+    await conferma(wrapper, 'x')
+    await bottone(wrapper, 'Sbagliata').trigger('click')
+    await flushPromises()
+
+    expect(wrapper.get('.esercizio-frase').text()).toBe('Frase 2.')
+    expect(bottone(wrapper, 'Aiuto').exists()).toBe(true)
+    expect(wrapper.text()).not.toContain('Aiuto 2.')
+    expect(document.activeElement).toBe(wrapper.get('input').element)
   })
 })

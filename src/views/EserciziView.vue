@@ -30,6 +30,13 @@ watch(
   { immediate: true, flush: 'post' },
 )
 
+// L'aiuto prende il posto del pulsante e il fuoco torna nel campo, per continuare a scrivere.
+async function mostraAiuto(): Promise<void> {
+  ciclo.mostraAiuto()
+  await nextTick()
+  campo.value?.focus()
+}
+
 function conferma(): void {
   ciclo.conferma(risposta.value)
 }
@@ -79,6 +86,15 @@ function conferma(): void {
               stato.titoloLezione
             }}</span>
             <p class="esercizio-frase">{{ stato.frase.it }}</p>
+            <p v-if="stato.aiutoMostrato" class="esercizio-aiuto-testo">{{ stato.frase.hint }}</p>
+            <button
+              v-else-if="stato.fase === 'in-attesa-di-risposta' && stato.frase.hint !== undefined"
+              type="button"
+              class="esercizio-aiuto"
+              @click="mostraAiuto"
+            >
+              Aiuto
+            </button>
           </div>
           <div class="esercizio-divisore" aria-hidden="true"></div>
 
