@@ -1,6 +1,6 @@
 # Tasks
 
-Last task number: 59
+Last task number: 63
 
 ---
 
@@ -591,5 +591,45 @@ Target: claude
 Files: README.md, .claude/context/schermate.md
 Preconditions: 58
 Feature: allenamento-vocaboli
+
+---
+
+## 60. Scelta della domanda a sorpresa e script di invio a ntfy
+
+Status: [MISSING]
+Target: claude
+Files: scripts/domanda-a-sorpresa.mjs, tests/domanda-a-sorpresa.test.ts, package.json
+Preconditions: none
+Feature: domanda-a-sorpresa
+
+---
+
+## 61. GitHub Action pianificata della domanda a sorpresa
+
+Status: [MISSING]
+Target: claude
+Files: .github/workflows/domanda-a-sorpresa.yml, tests/domanda-a-sorpresa-workflow.test.ts
+Preconditions: 60
+Feature: domanda-a-sorpresa
+
+---
+
+## 62. Attivare la domanda a sorpresa sul telefono di Sara
+
+Status: [MISSING]
+Target: human
+Files: none
+Preconditions: 61
+Feature: domanda-a-sorpresa
+
+---
+
+## 63. Update documentation for feature `domanda-a-sorpresa`
+
+Status: [MISSING]
+Target: claude
+Files: README.md, .claude/context/build-test-deploy.md, .claude/context/INDEX.md
+Preconditions: 60, 61
+Feature: domanda-a-sorpresa
 
 ---
