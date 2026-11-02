@@ -67,7 +67,7 @@ Tasks: 24, 25, 26, 27
 
 ## domanda-a-sorpresa — Notifica sul telefono con un vocabolo da tradurre, tre volte al giorno
 
-Status: [PLANNED]
+Status: [DONE]
 Doc: .claude/domain/features/domanda-a-sorpresa.md
 Source: product-design.md § Domanda a sorpresa
 Tasks: 60, 61, 62, 63
