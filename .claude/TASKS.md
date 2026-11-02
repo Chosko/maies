@@ -1,6 +1,6 @@
 # Tasks
 
-Last task number: 55
+Last task number: 57
 
 ---
 
@@ -551,5 +551,25 @@ Target: claude
 Files: README.md, .claude/context/schermate.md
 Preconditions: 52, 53, 54
 Feature: allenamento-vocaboli
+
+---
+
+## 56. Sessione: elemento per id
+
+Status: [MISSING]
+Target: claude
+Files: src/ripasso/sessione.ts, tests/sessione.test.ts
+Preconditions: none
+Feature: ripetizione-errori
+
+---
+
+## 57. Update documentation for feature `ripetizione-errori`
+
+Status: [MISSING]
+Target: claude
+Files: .claude/context/ripasso.md
+Preconditions: 56
+Feature: ripetizione-errori
 
 ---
