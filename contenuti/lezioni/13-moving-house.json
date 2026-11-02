@@ -1,0 +1,429 @@
+{
+  "id": "13-moving-house",
+  "title": "Traslocare: le collocazioni del trasloco e i piani per il futuro",
+  "sentences": [
+    {
+      "id": "f01",
+      "it": "Questo weekend impacchettiamo gli scatoloni della cucina.",
+      "en": "We're packing the kitchen boxes this weekend.",
+      "alternatives": [
+        "We are packing the kitchen boxes this weekend.",
+        "This weekend we're packing the kitchen boxes.",
+        "This weekend we are packing the kitchen boxes."
+      ],
+      "hint": "present continuous per un programma — pack, kitchen boxes, this weekend"
+    },
+    {
+      "id": "f02",
+      "it": "Non preoccuparti, ti aiuto io a traslocare la settimana prossima.",
+      "en": "Don't worry, I'll help you move next week.",
+      "alternatives": [
+        "Do not worry, I will help you move next week.",
+        "Don't worry, I'll help you move house next week.",
+        "Don't worry, I will help you move next week."
+      ],
+      "hint": "decisione spontanea: will — don't worry, help, move, next week"
+    },
+    {
+      "id": "f03",
+      "it": "Ritiro io le chiavi dal padrone di casa.",
+      "en": "I'll pick up the keys from the landlord.",
+      "alternatives": [
+        "I will pick up the keys from the landlord.",
+        "I'll pick the keys up from the landlord."
+      ],
+      "hint": "decisione spontanea: will — pick up, keys, landlord"
+    },
+    {
+      "id": "f04",
+      "it": "Il furgone arriva alle otto di mattina.",
+      "en": "The van is coming at eight in the morning.",
+      "alternatives": [
+        "The van's coming at eight in the morning.",
+        "The van is coming at 8 in the morning.",
+        "The moving van is coming at eight in the morning."
+      ],
+      "hint": "present continuous per un programma — van, come, at eight"
+    },
+    {
+      "id": "f05",
+      "it": "Domani noleggiamo un furgone per il trasloco.",
+      "en": "We're hiring a moving van tomorrow.",
+      "alternatives": [
+        "We are hiring a moving van tomorrow.",
+        "Tomorrow we're hiring a moving van.",
+        "We're renting a moving van tomorrow.",
+        "We are renting a moving van tomorrow."
+      ],
+      "hint": "present continuous per un programma — hire, moving van, tomorrow"
+    },
+    {
+      "id": "f06",
+      "it": "Prima di partire puliremo l'appartamento.",
+      "en": "We'll clean the apartment before we leave.",
+      "alternatives": [
+        "We will clean the apartment before we leave.",
+        "We'll clean the flat before we leave.",
+        "We will clean the flat before we leave."
+      ],
+      "hint": "will — clean, apartment, before we leave"
+    },
+    {
+      "id": "f07",
+      "it": "Lunedì l'agente immobiliare viene per definire tutto.",
+      "en": "The estate agent is coming on Monday to finalise everything.",
+      "alternatives": [
+        "The estate agent is visiting on Monday to finalise everything.",
+        "The estate agent is coming on Monday to finalize everything.",
+        "The estate agent's coming on Monday to finalise everything."
+      ],
+      "hint": "present continuous per un programma — estate agent, on Monday, finalise"
+    },
+    {
+      "id": "f08",
+      "it": "Se il divano è troppo grande, lo venderemo online.",
+      "en": "If the sofa is too big, we'll sell it online.",
+      "alternatives": [
+        "If the sofa's too big, we'll sell it online.",
+        "If the sofa is too big, we will sell it online."
+      ],
+      "hint": "if + present simple, will — sofa, too big, sell online"
+    },
+    {
+      "id": "f09",
+      "it": "Lo misuro io.",
+      "en": "I'll measure it.",
+      "alternatives": [
+        "I will measure it."
+      ],
+      "hint": "decisione spontanea: will — measure"
+    },
+    {
+      "id": "f10",
+      "it": "Domani chiamo la compagnia di internet per attivare la connessione.",
+      "en": "I'm calling the internet company tomorrow to set up the connection.",
+      "alternatives": [
+        "I am calling the internet company tomorrow to set up the connection.",
+        "Tomorrow I'm calling the internet company to set up the connection."
+      ],
+      "hint": "present continuous per un programma — internet company, set up, connection"
+    },
+    {
+      "id": "f11",
+      "it": "Dobbiamo disdire il contratto delle utenze prima di lasciare la vecchia casa.",
+      "en": "We need to cancel the utility contract before we leave the old house.",
+      "alternatives": [
+        "We have to cancel the utility contract before we leave the old house.",
+        "We need to cancel the utility contract before leaving the old house."
+      ],
+      "hint": "need to + infinito — cancel, utility contract, leave the old house"
+    },
+    {
+      "id": "f12",
+      "it": "Questo trasloco sarà un nuovo inizio per noi.",
+      "en": "This move will be a fresh start for us.",
+      "alternatives": [
+        "This move will be a new start for us."
+      ],
+      "hint": "will — move, fresh start"
+    },
+    {
+      "id": "f13",
+      "it": "Quando arriviamo etichetteremo tutti gli scatoloni.",
+      "en": "We'll label all the boxes when we arrive.",
+      "alternatives": [
+        "We will label all the boxes when we arrive.",
+        "When we arrive we'll label all the boxes."
+      ],
+      "hint": "will + when + present simple — label, boxes, arrive"
+    },
+    {
+      "id": "f14",
+      "it": "Hai mai traslocato? Qual è stata la cosa più difficile?",
+      "en": "Have you ever moved house? What was the most difficult thing?",
+      "alternatives": [
+        "Have you ever moved? What was the most difficult thing?",
+        "Have you ever moved house? What was the hardest thing?"
+      ],
+      "hint": "present perfect con ever, poi past simple — move house, most difficult"
+    },
+    {
+      "id": "f15",
+      "it": "Domani faccio ordine nella stanza degli ospiti.",
+      "en": "I'm sorting out the spare room tomorrow.",
+      "alternatives": [
+        "I am sorting out the spare room tomorrow.",
+        "I'm sorting through the spare room tomorrow.",
+        "Tomorrow I'm sorting out the spare room."
+      ],
+      "hint": "present continuous per un programma — sort out, spare room"
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "v01",
+      "it": "traslocare (cambiare casa)",
+      "en": [
+        "move house",
+        "move"
+      ],
+      "example": "We're moving house next month.",
+      "mnemonic": "«move» è muoversi: con la casa diventa «move house», si sposta tutta la casa."
+    },
+    {
+      "id": "v02",
+      "it": "trasloco",
+      "en": [
+        "move",
+        "house move"
+      ],
+      "example": "The move took all day."
+    },
+    {
+      "id": "v03",
+      "it": "impacchettare gli scatoloni",
+      "en": [
+        "pack boxes",
+        "pack the boxes"
+      ],
+      "example": "I spent the evening packing boxes."
+    },
+    {
+      "id": "v04",
+      "it": "etichettare gli scatoloni",
+      "en": [
+        "label boxes",
+        "label the boxes"
+      ],
+      "example": "Label the boxes with the name of each room."
+    },
+    {
+      "id": "v05",
+      "it": "pulire l'appartamento",
+      "en": [
+        "clean the apartment",
+        "clean the flat"
+      ],
+      "example": "We cleaned the apartment before we left."
+    },
+    {
+      "id": "v06",
+      "it": "noleggiare un furgone per il trasloco",
+      "en": [
+        "hire a moving van",
+        "rent a moving van"
+      ],
+      "example": "We hired a moving van for Saturday.",
+      "mnemonic": "«hire» non è «assumere» qui: con un furgone vuol dire noleggiare."
+    },
+    {
+      "id": "v07",
+      "it": "caricare il furgone",
+      "en": [
+        "load the van",
+        "load the moving van"
+      ],
+      "example": "It took two hours to load the van."
+    },
+    {
+      "id": "v08",
+      "it": "scaricare il furgone",
+      "en": [
+        "unload the van",
+        "unload the moving van"
+      ],
+      "example": "My brothers helped us unload the van.",
+      "mnemonic": "«un-» toglie: load è caricare, unload è scaricare."
+    },
+    {
+      "id": "v09",
+      "it": "disdire il contratto delle utenze",
+      "en": [
+        "cancel the utility contract"
+      ],
+      "example": "Don't forget to cancel the utility contract.",
+      "mnemonic": "«utility» sono le utenze (luce, gas, acqua): pensa a «utile» per la casa."
+    },
+    {
+      "id": "v10",
+      "it": "attivare il contratto delle utenze",
+      "en": [
+        "set up the utility contract"
+      ],
+      "example": "We set up the utility contract online."
+    },
+    {
+      "id": "v11",
+      "it": "consegnare le chiavi",
+      "en": [
+        "hand over the keys"
+      ],
+      "example": "We handed over the keys to the new owners.",
+      "mnemonic": "«hand over»: passare di mano in mano, la mano (hand) passa sopra (over)."
+    },
+    {
+      "id": "v12",
+      "it": "ritirare le chiavi",
+      "en": [
+        "pick up the keys"
+      ],
+      "example": "I'll pick up the keys from the landlord."
+    },
+    {
+      "id": "v13",
+      "it": "fare ordine tra le proprie cose",
+      "en": [
+        "sort out the stuff",
+        "sort out things"
+      ],
+      "example": "I need to sort out my stuff before the move.",
+      "mnemonic": "«sort» come «sorta»: dividere le cose per tipo."
+    },
+    {
+      "id": "v14",
+      "it": "comprare il materiale da imballaggio",
+      "en": [
+        "buy packing materials"
+      ],
+      "example": "We bought packing materials at the supermarket."
+    },
+    {
+      "id": "v15",
+      "it": "lasciare la vecchia casa",
+      "en": [
+        "leave the old house"
+      ],
+      "example": "It was sad to leave the old house."
+    },
+    {
+      "id": "v16",
+      "it": "organizzare il trasloco",
+      "en": [
+        "arrange the move"
+      ],
+      "example": "A company arranged the move for us.",
+      "mnemonic": "«arrange» non è arrangiarsi: è organizzare, sistemare per bene."
+    },
+    {
+      "id": "v17",
+      "it": "ambientarsi nella nuova casa",
+      "en": [
+        "settle in the new home",
+        "settle into the new home"
+      ],
+      "example": "It took us a month to settle into the new home.",
+      "mnemonic": "«settle» è sistemarsi, come un uccello che si posa: si posa nella nuova casa."
+    },
+    {
+      "id": "v18",
+      "it": "furgone",
+      "en": [
+        "van"
+      ],
+      "example": "The van is parked outside."
+    },
+    {
+      "id": "v19",
+      "it": "scatolone",
+      "en": [
+        "box"
+      ],
+      "example": "This box is very heavy."
+    },
+    {
+      "id": "v20",
+      "it": "padrone di casa",
+      "en": [
+        "landlord"
+      ],
+      "example": "Our landlord lives upstairs.",
+      "mnemonic": "«land» (terra) + «lord» (signore): il signore della casa."
+    },
+    {
+      "id": "v21",
+      "it": "agente immobiliare",
+      "en": [
+        "estate agent",
+        "real estate agent"
+      ],
+      "example": "The estate agent showed us three flats.",
+      "mnemonic": "«estate» qui non è la stagione: è la proprietà, come «stato» patrimoniale."
+    },
+    {
+      "id": "v22",
+      "it": "stanza degli ospiti",
+      "en": [
+        "spare room"
+      ],
+      "example": "My parents sleep in the spare room when they visit.",
+      "mnemonic": "«spare» è di scorta, in più, come la ruota di scorta (spare tyre)."
+    },
+    {
+      "id": "v23",
+      "it": "donare",
+      "en": [
+        "donate"
+      ],
+      "example": "We donated our old clothes to charity."
+    },
+    {
+      "id": "v24",
+      "it": "misurare",
+      "en": [
+        "measure"
+      ],
+      "example": "Can you measure the window?"
+    },
+    {
+      "id": "v25",
+      "it": "vendere online",
+      "en": [
+        "sell online"
+      ],
+      "example": "I sold my old bike online."
+    },
+    {
+      "id": "v26",
+      "it": "un nuovo inizio",
+      "en": [
+        "a fresh start",
+        "a new start"
+      ],
+      "example": "Moving abroad was a fresh start for her.",
+      "mnemonic": "«fresh» è fresco: un inizio fresco, appena fatto."
+    },
+    {
+      "id": "v27",
+      "it": "prenotare una pulizia a fondo",
+      "en": [
+        "book a deep clean"
+      ],
+      "example": "We booked a deep clean for the new flat.",
+      "mnemonic": "«deep» è profondo: una pulizia profonda, a fondo."
+    },
+    {
+      "id": "v28",
+      "it": "il giorno del trasloco",
+      "en": [
+        "moving day",
+        "move-in day"
+      ],
+      "example": "Moving day is always tiring."
+    },
+    {
+      "id": "v29",
+      "it": "collocazione (parole che vanno insieme)",
+      "en": [
+        "collocation"
+      ],
+      "example": "«Pack boxes» is a common collocation."
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g01",
+      "title": "Le collocazioni del trasloco",
+      "body": "Le **collocazioni** sono parole che in inglese si usano spesso **insieme**. Impararle a coppie aiuta a parlare in modo più naturale.\n\n## Verbo + nome per il trasloco\n\n| Verbo | Nome | Significato |\n| --- | --- | --- |\n| *pack* / *label* | *boxes* | impacchettare / etichettare gli scatoloni |\n| *clean* | *the apartment* | pulire l'appartamento |\n| *hire* / *load* / *unload* | *a moving van* | noleggiare / caricare / scaricare un furgone |\n| *cancel* / *set up* | *the utility contract* | disdire / attivare il contratto delle utenze |\n| *hand over* / *pick up* | *the keys* | consegnare / ritirare le chiavi |\n| *sort out* | *the stuff* | fare ordine tra le cose |\n| *buy* | *packing materials* | comprare il materiale da imballaggio |\n| *leave* | *the old house* | lasciare la vecchia casa |\n| *arrange* | *the move* | organizzare il trasloco |\n| *settle in* | *the new home* | ambientarsi nella nuova casa |\n\n## Parlare del futuro del trasloco\n\nPer i **programmi già organizzati** si usa il *present continuous*, per le **decisioni prese sul momento** *will* (vedi la lezione «A day trip»):\n\n- *I'm moving house next week.* — Trasloco la settimana prossima (è deciso).\n- *Don't worry, I'll help you.* — Non preoccuparti, ti aiuto io (decido ora).\n\n## Domanda di conversazione\n\n- *Have you ever moved house? What was the most difficult thing you had to do?*"
+    }
+  ]
+}
