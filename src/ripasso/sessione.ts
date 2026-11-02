@@ -29,8 +29,12 @@ export type Proposta<E> =
   | { readonly caso: 'nessun-materiale' }
   | { readonly caso: 'tutti-tolti' }
 
+export type PropostaElemento<E> = Extract<Proposta<E>, { readonly caso: 'elemento' }>
+
 export interface SessioneRipasso<E> {
   prossimoElemento(): Proposta<E>
+  /** L'elemento indicato da fuori, contato fra gli ultimi proposti; `null` se sconosciuto, di un altro tipo o tolto. */
+  elementoPerId(idGlobale: string): PropostaElemento<E> | null
   registraEsito(idGlobale: string, esito: Esito): void
   registraImportanza(idGlobale: string, importanza: Importanza): void
 }
@@ -72,9 +76,14 @@ export function creaSessione<T extends TipoSessione>(
   const collocati: Collocato<ElementiPerTipo[T]>[] = catalogo.lezioni.flatMap((lezione, numero) =>
     elementiDellaLezione(lezione, tipo).map((elemento, ordine) => ({ elemento, lezione: numero, ordine })),
   )
-  const perId = new Set(collocati.map(({ elemento }) => elemento.idGlobale))
+  const perId = new Map(collocati.map(({ elemento }) => [elemento.idGlobale, elemento]))
   const ultimi: string[] = []
   let turno: Turno = TURNO_INIZIALE
+
+  function ricordaProposto(idGlobale: string): void {
+    ultimi.push(idGlobale)
+    if (ultimi.length > FINESTRA) ultimi.splice(0, ultimi.length - FINESTRA)
+  }
 
   return {
     prossimoElemento() {
@@ -100,9 +109,16 @@ export function creaSessione<T extends TipoSessione>(
       turno = pianificazione.turno
       if (pianificazione.scelta === null) return { caso: 'tutti-tolti' }
       const { candidato } = pianificazione.scelta
-      ultimi.push(candidato.id)
-      if (ultimi.length > FINESTRA) ultimi.splice(0, ultimi.length - FINESTRA)
+      ricordaProposto(candidato.id)
       return { caso: 'elemento', elemento: candidato.elemento, importanza: candidato.importanza }
+    },
+    elementoPerId(idGlobale) {
+      const elemento = perId.get(idGlobale)
+      if (elemento === undefined) return null
+      const importanza = archivio.leggiImportanza(idGlobale)
+      if (importanza === 0) return null
+      ricordaProposto(idGlobale)
+      return { caso: 'elemento', elemento, importanza }
     },
     registraEsito(idGlobale, esito) {
       if (!perId.has(idGlobale)) return

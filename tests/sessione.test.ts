@@ -368,6 +368,96 @@ describe('sessione di ripasso', () => {
       sessione.registraEsito('01-a/f1', 'giusto')
       expect(archivio.leggiStato('01-a/f1')).toEqual({ stato: 'nuovo' })
     })
+
+    it('ignora l’esito di un elemento tolto mentre era nel gruppo o imparato, senza scrivere', () => {
+      const salvataggio = new SalvataggioFinto()
+      const archivio = creaArchivio(salvataggio)
+      archivio.salvaStato('01-a/f1', { stato: 'nel-gruppo', serie: 2 })
+      archivio.salvaStato('01-a/f2', imparato('2026-10-20'))
+      archivio.salvaImportanza('01-a/f1', 0)
+      archivio.salvaImportanza('01-a/f2', 0)
+      const sessione = creaSessione('frasi', { catalogo: catalogoDi(lezione('01-a', 2, 0)), archivio, oggi: () => OGGI })
+      const scritture = salvataggio.scritture
+
+      for (const esito of ['giusto', 'sbagliato'] as const) {
+        sessione.registraEsito('01-a/f1', esito)
+        sessione.registraEsito('01-a/f2', esito)
+      }
+      expect(salvataggio.scritture).toBe(scritture)
+      expect(archivio.leggiStato('01-a/f1')).toEqual({ stato: 'nel-gruppo', serie: 2 })
+      expect(archivio.leggiStato('01-a/f2')).toEqual(imparato('2026-10-20'))
+    })
+  })
+
+  describe('elemento per id', () => {
+    it("restituisce l'elemento del tipo della sessione con la sua importanza", () => {
+      const catalogo = catalogoDi(lezione('01-a', 0, 3))
+      const archivio = creaArchivio(null)
+      archivio.salvaImportanza('01-a/v2', 3)
+      const sessione = creaSessione('vocaboli', { catalogo, archivio })
+
+      const trovato = sessione.elementoPerId('01-a/v2')
+      expect(trovato).toEqual({ caso: 'elemento', elemento: catalogo.vocaboli[1], importanza: 3 })
+      expect(trovato?.elemento).toBe(catalogo.vocaboli[1])
+      expect(sessione.elementoPerId('01-a/v1')).toMatchObject({ caso: 'elemento', importanza: 2 })
+    })
+
+    it('restituisce nessuno per un id sconosciuto, di un altro tipo o con importanza 0', () => {
+      const archivio = creaArchivio(null)
+      const sessione = creaSessione('vocaboli', { catalogo: catalogoDi(lezione('01-a', 1, 2)), archivio })
+      archivio.salvaImportanza('01-a/v2', 0)
+
+      expect(sessione.elementoPerId('99-z/v1')).toBeNull()
+      expect(sessione.elementoPerId('01-a/f1')).toBeNull()
+      expect(sessione.elementoPerId('01-a/v2')).toBeNull()
+    })
+
+    it('non tocca i progressi salvati', () => {
+      const salvataggio = new SalvataggioFinto()
+      const archivio = creaArchivio(salvataggio)
+      const sessione = creaSessione('vocaboli', { catalogo: catalogoDi(lezione('01-a', 0, 10)), archivio })
+
+      sessione.elementoPerId('01-a/v10')
+      sessione.elementoPerId('99-z/v1')
+      expect(salvataggio.scritture).toBe(0)
+      expect(archivio.leggiStato('01-a/v10')).toEqual({ stato: 'nuovo' })
+    })
+
+    it('conta l’elemento fra gli ultimi proposti: la scelta successiva non lo ripete', () => {
+      const archivio = creaArchivio(null)
+      const sessione = creaSessione('frasi', {
+        catalogo: catalogoDi(lezione('01-a', 2, 0)),
+        archivio,
+        casualita: fissa(0),
+      })
+      // Senza la richiesta per id la prima proposta sarebbe f1.
+      expect(sessione.elementoPerId('01-a/f1')).toMatchObject({ caso: 'elemento' })
+      expect(proposte(sessione, 3)).toEqual(['01-a/f2', '01-a/f1', '01-a/f2'])
+    })
+
+    it('la finestra degli ultimi proposti resta di 3 anche con le richieste per id', () => {
+      const archivio = creaArchivio(null)
+      const sessione = creaSessione('frasi', {
+        catalogo: catalogoDi(lezione('01-a', 5, 0)),
+        archivio,
+        casualita: fissa(0),
+      })
+      for (const id of ['01-a/f1', '01-a/f2', '01-a/f3', '01-a/f4']) sessione.elementoPerId(id)
+      // Escluse le ultime 3 (f2, f3, f4): f1 è di nuovo proponibile.
+      expect(idDi(sessione.prossimoElemento())).toBe('01-a/f1')
+    })
+
+    it('una richiesta per nessuno non cambia gli ultimi proposti', () => {
+      const archivio = creaArchivio(null)
+      const sessione = creaSessione('frasi', {
+        catalogo: catalogoDi(lezione('01-a', 2, 1)),
+        archivio,
+        casualita: fissa(0),
+      })
+      expect(sessione.elementoPerId('01-a/v1')).toBeNull()
+      expect(sessione.elementoPerId('99-z/f1')).toBeNull()
+      expect(idDi(sessione.prossimoElemento())).toBe('01-a/f1')
+    })
   })
 
   it('tiene separate la sessione di frasi e quella di vocaboli', () => {

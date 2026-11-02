@@ -556,7 +556,7 @@ Feature: allenamento-vocaboli
 
 ## 56. Sessione: elemento per id
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/ripasso/sessione.ts, tests/sessione.test.ts
 Preconditions: none
