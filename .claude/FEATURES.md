@@ -13,7 +13,7 @@ Tasks: 1, 2, 3, 4, 5
 
 ## aggiunta-materiale-lezione — Formato dei file di lezione, catalogo dei contenuti e procedimento di aggiunta
 
-Status: [PLANNED]
+Status: [DONE]
 Doc: .claude/domain/features/aggiunta-materiale-lezione.md
 Source: product-design.md § Aggiunta del materiale da una lezione
 Tasks: 6, 7, 8, 9, 39, 40, 41, 42, 43, 44
@@ -22,7 +22,7 @@ Tasks: 6, 7, 8, 9, 39, 40, 41, 42, 43, 44
 
 ## ripetizione-errori — Progressi per dispositivo e scelta del prossimo elemento da ripassare
 
-Status: [PLANNED]
+Status: [DONE]
 Doc: .claude/domain/features/ripetizione-errori.md
 Source: product-design.md § Ripetizione degli errori
 Tasks: 10, 11, 12, 13, 28, 29, 30, 31, 45, 46, 47, 48, 49
@@ -31,7 +31,7 @@ Tasks: 10, 11, 12, 13, 28, 29, 30, 31, 45, 46, 47, 48, 49
 
 ## esercizi-traduzione — Schermata degli esercizi di traduzione con autovalutazione
 
-Status: [PLANNED]
+Status: [DONE]
 Doc: .claude/domain/features/esercizi-traduzione.md
 Source: product-design.md § Esercizi di traduzione
 Tasks: 14, 15, 16, 32, 33, 34, 35, 50, 51
@@ -40,7 +40,7 @@ Tasks: 14, 15, 16, 32, 33, 34, 35, 50, 51
 
 ## allenamento-vocaboli — Schermata dell'allenamento vocaboli con verifica automatica
 
-Status: [PLANNED]
+Status: [DONE]
 Doc: .claude/domain/features/allenamento-vocaboli.md
 Source: product-design.md § Allenamento vocaboli
 Tasks: 17, 18, 19, 20, 36, 37, 38, 52, 53, 54, 55
