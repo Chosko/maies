@@ -46,8 +46,11 @@ Tests: `tests/apprendimento.test.ts`, `tests/importanza.test.ts`,
 - `pianificatore.ts` — `pianifica(candidati, { dimensione, oggi, ultimi,
   turno, casualita })` returns `{ entrati, scelta: { candidato, fonte } |
   null, turno }`; `DIMENSIONE_GRUPPO` (5 sentences, 8 words), `FINESTRA`
-  (3), `TURNO_INIZIALE`, `completaGruppo()`; `Casualita` is
-  `() => number` in [0, 1).
+  (3), `TURNO_INIZIALE` (`controllo`), `completaGruppo(candidati,
+  dimensione)` (the items that enter the group), `ampiezzaFinestra(disponibili)`;
+  `Candidato` is `{ id, stato, importanza, lezione, ordine }`, `fonte` is
+  `gruppo` | `controllo` | `libero`, and `Casualita` is `() => number` in
+  [0, 1).
 - `sessione.ts` — `creaSessione('frasi' | 'vocaboli', opzioni?)` returns
   `prossimoElemento()`, `registraEsito(idGlobale, esito)` and
   `registraImportanza(idGlobale, importanza)`. `prossimoElemento()` returns
@@ -80,6 +83,13 @@ Tests: `tests/apprendimento.test.ts`, `tests/importanza.test.ts`,
   the value in memory.
 - **One store per page.** Sessions without an injected `archivio` share a
   lazily created module-level store, so all screens see the same progress.
+- **Planner order:** the group fills `da-riprendere` before `nuovo`, then
+  by higher importance, higher lesson, lower `ordine`; due checks go oldest
+  `controllo` first, then higher importance; free practice picks the
+  `imparato` item with the oldest `ultimaVista`. With due checks and a
+  non-empty group, `turno` alternates the two sources; the anti-repeat
+  window is `ampiezzaFinestra()` items, ignored when it excludes everything.
+  Importance-0 items are never candidates.
 - **Session memory.** The last proposed items and the group/check turn live
   in the session only; `prossimoElemento()` saves every item the planner
   adds to the group as `nel-gruppo` with `serie` 0. The planner gets each

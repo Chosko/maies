@@ -63,20 +63,49 @@ documento di feature
 
 ## Progressi e ripasso
 
+Frasi e vocaboli si ripassano con un gruppo di lavoro per tipo: **5 frasi**
+e **8 vocaboli**, su cui Sara si allena finché ogni elemento non è
+imparato. Un elemento del gruppo è imparato alla terza risposta giusta di
+fila; una risposta sbagliata riporta la serie a zero. Il posto liberato si
+riempie prima con gli elementi da riprendere, poi con i nuovi; a parità,
+prima quelli d'importanza più alta, poi della lezione più recente, poi
+nell'ordine del file della lezione.
+
+Un elemento imparato torna per un controllo dopo un intervallo di giorni
+che cresce a ogni controllo giusto — 1, 3, 7, 14 e poi 30 giorni —
+moltiplicato dall'importanza (1 raddoppia l'intervallo, 3 lo dimezza); un
+controllo sbagliato lo fa rientrare subito nel gruppo. Quando ci sono
+controlli scaduti, la sessione ne alterna uno a un elemento del gruppo;
+quando tutto è imparato e nessun controllo è scaduto, ripropone l'elemento
+imparato visto meno di recente. La sessione non ripropone uno degli
+ultimi tre elementi proposti, se c'è altro da proporre. L'importanza 0 toglie l'elemento dal
+ripasso.
+
 I progressi stanno nel `localStorage` del dispositivo, sotto la chiave
-dell'edizione (`maies.progressi` o `maies.kids.progressi`): per ogni frase e
-vocabolo si salvano livello e importanza, indicizzati per id globale. Non si sincronizzano tra dispositivi e in navigazione privata vanno
-persi alla chiusura; se il browser non permette di leggerli, l'app lavora
-solo in memoria.
+dell'edizione (`maies.progressi` o `maies.kids.progressi`), nel formato
+`{ versione: 3, elementi: { [idGlobale]: { stato?, importanza? } } }`:
+`stato` è lo stato di apprendimento con i suoi dati (la serie nel gruppo,
+oppure gradino, data del prossimo controllo e data dell'ultima volta per un
+imparato), e ogni campo manca quando vale il valore iniziale ("nuovo",
+importanza 2). I progressi salvati nel formato precedente a tre livelli si
+convertono alla lettura — "da ripassare" diventa da riprendere,
+"consolidato" diventa imparato con il controllo oggi, "normale" diventa
+nuovo — e la prima registrazione li riscrive nel formato nuovo. I progressi
+non si sincronizzano tra dispositivi e in navigazione privata vanno persi
+alla chiusura; se il browser non permette di leggerli, l'app lavora solo in
+memoria.
 
 Esercizi e vocaboli scelgono il prossimo elemento dalla sessione di ripasso
 in `src/ripasso/`: `creaSessione('frasi')` o `creaSessione('vocaboli')`
 propone un elemento con `prossimoElemento()`, ne registra l'esito con
 `registraEsito(idGlobale, esito)` e l'importanza con
-`registraImportanza(idGlobale, importanza)`. Tutte le sessioni dell'app condividono un
-solo archivio dei progressi.
+`registraImportanza(idGlobale, importanza)`. Gli stati e le transizioni
+sono in `apprendimento.ts`, il gruppo e la scelta del prossimo elemento in
+`pianificatore.ts`, il formato salvato e la conversione in `archivio.ts`.
+Tutte le sessioni dell'app condividono un solo archivio dei progressi.
 
-L'algoritmo a tre livelli, l'importanza e il perché sono nel documento di feature
+Il gruppo di lavoro, i controlli, l'importanza e il perché sono nel
+documento di feature
 [`.claude/domain/features/ripetizione-errori.md`](.claude/domain/features/ripetizione-errori.md).
 
 ## Esercizi

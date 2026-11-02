@@ -486,7 +486,7 @@ Feature: ripetizione-errori
 
 ## 49. Update documentation for feature `ripetizione-errori`
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: README.md, .claude/context/ripasso.md
 Preconditions: 45, 46, 47, 48
