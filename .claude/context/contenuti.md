@@ -30,9 +30,10 @@ Tests: `tests/validazione.test.ts`, `tests/catalogo.test.ts`,
 ## Public API
 
 - `schema.ts` — field names are English (`id`, `title`, `sentences`,
-  `vocabulary`, `grammar`; a sentence has `it`, `en`, `alternatives`; a word
-  has `it` and `en: string[]` with at least one entry; a card has `title`,
-  `body` in Markdown). Objects are strict; every text is non-empty with no
+  `vocabulary`, `grammar`; a sentence has `it`, `en`, `alternatives` and an
+  optional `hint`; a word has `it`, `en: string[]` with at least one entry
+  and optional `example` and `mnemonic`; a card has `title`, `body` in
+  Markdown). Objects are strict; every text is non-empty with no
   leading or trailing whitespace; a lesson needs at least one item.
 - `validaLezioni(files: FileLezione[]): ErroreValidazione[]` — takes
   `{ nome, contenuto }` pairs, returns `{ file, elemento?, messaggio }`
@@ -57,7 +58,8 @@ Tests: `tests/validazione.test.ts`, `tests/catalogo.test.ts`,
   lesson id shaped `NN-argomento`, `NN` unique across lessons, file name
   `<id>.json`; item ids `fNN` / `vNN` / `gNN` per list, unique in the
   lesson; an Italian sentence or word is unique across all lessons, and
-  translations of one item are not repeated — both compared after
+  translations of one item are not repeated, and a sentence's `hint` is
+  neither its `en` nor one of its `alternatives` — all compared after
   lower-casing, collapsing whitespace and dropping trailing punctuation.
   Files are checked in name order, so "already in" names the earlier file.
 - **Everything in the catalogue is frozen**, arrays included.

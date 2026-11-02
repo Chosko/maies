@@ -386,7 +386,7 @@ Feature: allenamento-vocaboli
 
 ## 39. Campi aiuto, frase d'esempio e trucco nel formato delle lezioni
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/contenuti/schema.ts, src/contenuti/validazione.ts, src/contenuti/catalogo.ts, tests/contenuti.test.ts, tests/validazione.test.ts, tests/catalogo.test.ts
 Preconditions: none

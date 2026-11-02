@@ -86,6 +86,44 @@ describe('costruisciCatalogo — frasi e vocaboli', () => {
     expect(c.vocaboli[2]).toMatchObject(progressivo.vocabulary[1])
   })
 
+  it('restituisce aiuto, frase d’esempio e trucco con frasi e vocaboli', () => {
+    const conAiuti: Lezione = {
+      id: '03-present-perfect',
+      title: 'Il present perfect',
+      sentences: [
+        {
+          id: 'f01',
+          it: 'Sei mai stato all’estero?',
+          en: 'Have you ever been abroad?',
+          alternatives: [],
+          hint: 'present perfect — ever, been, abroad',
+        },
+      ],
+      vocabulary: [
+        {
+          id: 'v01',
+          it: 'libreria',
+          en: ['bookshop'],
+          example: 'I bought a novel at the bookshop.',
+          mnemonic: 'Falso amico: library è la biblioteca.',
+        },
+      ],
+      grammar: [],
+    }
+    const c = costruisciCatalogo(moduli(essere, conAiuti))
+    const fraseConAiuto = c.frase('03-present-perfect/f01')
+    const vocaboloConAiuti = c.vocabolo('03-present-perfect/v01')
+    const hint: string | undefined = fraseConAiuto?.hint
+    const example: string | undefined = vocaboloConAiuti?.example
+    const mnemonic: string | undefined = vocaboloConAiuti?.mnemonic
+    expect(hint).toBe('present perfect — ever, been, abroad')
+    expect(example).toBe('I bought a novel at the bookshop.')
+    expect(mnemonic).toBe('Falso amico: library è la biblioteca.')
+    expect(c.frase('01-to-be/f01')?.hint).toBeUndefined()
+    expect(c.vocabolo('01-to-be/v01')?.example).toBeUndefined()
+    expect(c.vocabolo('01-to-be/v01')?.mnemonic).toBeUndefined()
+  })
+
   it('dà alle frasi di una lezione lo stesso id globale della lista di tutte le frasi', () => {
     const c = pieno()
     expect(c.lezione('01-to-be')?.sentences.map((f) => f.idGlobale)).toEqual([

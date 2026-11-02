@@ -266,6 +266,86 @@ describe('validaLezioni — traduzioni ripetute', () => {
   })
 })
 
+describe('validaLezioni — aiuto, frase d’esempio e trucco', () => {
+  it('accetta hint, example e mnemonic quando ci sono', () => {
+    const errori = soloLezione({
+      sentences: [{ ...frase('f01', 'Sei mai stato all’estero?', 'Have you ever been abroad?'), hint: 'present perfect — ever, been, abroad' }],
+      vocabulary: [
+        {
+          ...vocabolo('v01', 'libreria', ['bookshop']),
+          example: 'I bought a novel at the bookshop.',
+          mnemonic: 'Falso amico: library è la biblioteca.',
+        },
+      ],
+    })
+    expect(errori).toEqual([])
+  })
+
+  it('accetta frasi e vocaboli senza i campi facoltativi', () => {
+    expect(soloLezione({ sentences: [frase('f01', 'Ciao.')], vocabulary: [vocabolo('v01', 'casa')] })).toEqual([])
+  })
+
+  it.each([
+    ['vuoto', ''],
+    ['con spazio iniziale', ' Aiuto'],
+    ['con spazio finale', 'Aiuto '],
+  ])('rifiuta un hint, un example o un mnemonic %s', (_caso, testo) => {
+    const errori = soloLezione({
+      sentences: [{ ...frase('f01', 'Ciao.'), hint: testo }],
+      vocabulary: [{ ...vocabolo('v01', 'casa'), example: testo, mnemonic: testo }],
+    })
+    expect(errori.map((e) => e.elemento).sort()).toEqual(
+      ['sentences[0].hint', 'vocabulary[0].example', 'vocabulary[0].mnemonic'].sort(),
+    )
+  })
+
+  it('rifiuta un hint, un example o un mnemonic del tipo sbagliato', () => {
+    const errori = soloLezione({
+      sentences: [{ ...frase('f01', 'Ciao.'), hint: ['Aiuto'] }],
+      vocabulary: [{ ...vocabolo('v01', 'casa'), example: 3, mnemonic: null }],
+    })
+    expect(errori.map((e) => e.elemento).sort()).toEqual(
+      ['sentences[0].hint', 'vocabulary[0].example', 'vocabulary[0].mnemonic'].sort(),
+    )
+  })
+
+  it('rifiuta un hint sui vocaboli e un example o un mnemonic sulle frasi', () => {
+    const errori = soloLezione({
+      sentences: [{ ...frase('f01', 'Ciao.'), example: 'Hello there.', mnemonic: 'Trucco' }],
+      vocabulary: [{ ...vocabolo('v01', 'casa'), hint: 'Aiuto' }],
+    })
+    expect(errori.length).toBeGreaterThan(0)
+    expect(errori.every((e) => e.messaggio.startsWith('schema non rispettato'))).toBe(true)
+  })
+
+  it('rifiuta un hint che coincide con la traduzione en, ignorando maiuscole, spazi e punteggiatura finale', () => {
+    const errori = soloLezione({
+      sentences: [{ ...frase('f01', 'Noi siamo stanchi.', 'We are tired.'), hint: 'we  ARE tired' }],
+    })
+    expect(errori).toHaveLength(1)
+    expect(errori[0].file).toBe('02-prova.json')
+    expect(errori[0].elemento).toBe('f01')
+    expect(errori[0].messaggio).toContain('hint')
+  })
+
+  it('rifiuta un hint che coincide con una delle alternatives', () => {
+    const errori = soloLezione({
+      sentences: [{ ...frase('f01', 'Noi siamo stanchi.', 'We are tired.', ["We're tired."]), hint: "We're tired!" }],
+    })
+    expect(errori).toHaveLength(1)
+    expect(errori[0].file).toBe('02-prova.json')
+    expect(errori[0].elemento).toBe('f01')
+    expect(errori[0].messaggio).toContain('hint')
+  })
+
+  it('accetta un hint che contiene parole della traduzione senza coincidere', () => {
+    const errori = soloLezione({
+      sentences: [{ ...frase('f01', 'Noi siamo stanchi.', 'We are tired.'), hint: 'to be — tired' }],
+    })
+    expect(errori).toEqual([])
+  })
+})
+
 describe('validaLezioni — file non JSON', () => {
   it.each(['lezione.pdf', 'foto.jpg', 'appunti.txt', 'senza-estensione'])(
     'rifiuta il file %s',
