@@ -456,7 +456,7 @@ Feature: ripetizione-errori
 
 ## 46. Archivio dei progressi con gli stati di apprendimento e conversione dai livelli
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/ripasso/archivio.ts, tests/archivio.test.ts
 Preconditions: 45

@@ -9,10 +9,12 @@ item weighted by both.
 - `src/ripasso/apprendimento.ts` — learning states, outcome transitions,
   check scale and local calendar days.
 - `src/ripasso/livelli.ts` — levels, weights, initial level and the
-  transition rule, still used by the store, selector and session.
+  transition rule, still used by the selector, the session and the store's
+  level bridge.
 - `src/ripasso/importanza.ts` — importance values, initial importance and
   the check-interval factors.
-- `src/ripasso/archivio.ts` — progress store over `localStorage`.
+- `src/ripasso/archivio.ts` — progress store over `localStorage`: learning
+  state and importance per id.
 - `src/ripasso/selettore.ts` — weighted random pick with exclusions.
 - `src/ripasso/sessione.ts` — `creaSessione()`, the entry point the
   exercise and vocabulary screens use.
@@ -43,9 +45,15 @@ Tests: `tests/apprendimento.test.ts`, `tests/livelli.test.ts`, `tests/importanza
 - `archivio.ts` — `CHIAVE_PROGRESSI`, the edition's key
   (`chiaveProgressi(EDIZIONE)`: `maies.progressi`, or `maies.kids.progressi`
   in the kids edition); `creaArchivio(salvataggio?: Storage | null,
-  chiave = CHIAVE_PROGRESSI): ArchivioProgressi` with
-  `leggiLivello(idGlobale)`, `salvaLivello(idGlobale, livello)`,
-  `leggiImportanza(idGlobale)` and `salvaImportanza(idGlobale, importanza)`.
+  chiave = CHIAVE_PROGRESSI, oggi = giornoLocale(new Date())):
+  ArchivioProgressi` with `leggiStato(idGlobale)` (`nuovo` for an id never
+  recorded), `salvaStato(idGlobale, stato)`, `leggiImportanza(idGlobale)`
+  (2 for an id never recorded) and `salvaImportanza(idGlobale, importanza)`.
+  `oggi` dates the converted `consolidato` items. A bridge for the
+  three-level session: `leggiLivello()` reads `da-riprendere` and
+  `nel-gruppo` as `da-ripassare`, `imparato` as `consolidato`, `nuovo` as
+  `normale`; `salvaLivello()` saves a level as the state the conversion
+  gives it.
 - `selettore.ts` — `scegli(candidati, esclusi, casualita): T | null` over
   `{ id, livello, importanza }` candidates, each weighted
   `PESI[livello] ×` its own importance factor (0 / 0.5 / 1 / 2); a candidate of weight 0
@@ -65,15 +73,19 @@ Tests: `tests/apprendimento.test.ts`, `tests/livelli.test.ts`, `tests/importanza
 
 - **One key per edition**: both editions share the domain and their lesson
   ids overlap, so the kids edition never reads or writes the main key.
-- **Stored shape:** `{ versione: 2, elementi: { [idGlobale]: { livello?,
-  importanza? } } }`. A field equal to its initial value is not stored, and
-  an id with no field left is dropped. A missing, unparsable or
-  unknown-version value, or an unknown level or importance, reads as
-  `LIVELLO_INIZIALE` / `IMPORTANZA_INIZIALE`.
-- **Previous format converted on read:** a version-1 value
-  (`{ versione: 1, livelli: { [idGlobale]: Livello } }`) is read as
-  version 2 with each level kept and importance at its initial value; the
-  next write saves it as version 2.
+- **Stored shape:** `{ versione: 3, elementi: { [idGlobale]: { stato?,
+  importanza? } } }`, `stato` being a `StatoApprendimento` object holding
+  only its own kind's fields. A field equal to its initial value (`nuovo`,
+  2) is not stored, and an id with no field left is dropped. A missing,
+  unparsable or unknown-version value reads as empty; an unknown or
+  incomplete state (`serie` outside 0–2, `gradino` not a positive integer,
+  a date not `AAAA-MM-GG`) reads as `nuovo`, an unknown importance as 2.
+- **Three-level formats converted on read:** version 1
+  (`{ versione: 1, livelli: { [idGlobale]: Livello } }`) and version 2
+  (`{ versione: 2, elementi: { [idGlobale]: { livello?, importanza? } } }`)
+  map `da-ripassare` → `da-riprendere`, `consolidato` → `imparato` at step 1
+  with `controllo` and `ultimaVista` set to `oggi`, `normale` or an unknown
+  level → `nuovo`, keeping the importance; the next write saves version 3.
 - **Storage never throws to the caller.** Unreadable storage (private mode,
   blocked access) switches the store to memory only; a failed write keeps
   the value in memory.
@@ -112,5 +124,6 @@ Tests: `tests/apprendimento.test.ts`, `tests/livelli.test.ts`, `tests/importanza
   `tests/importanza.test.ts`).
 - Changing the stored format: `archivio.ts`; a new `VERSIONE` reads as
   empty every stored value it does not convert, so progress is lost unless
-  the previous version gets a conversion like the one from version 1.
+  the previous version gets a conversion like the ones from versions 1
+  and 2.
 - Changing the anti-repeat window or what a session offers: `sessione.ts`.
