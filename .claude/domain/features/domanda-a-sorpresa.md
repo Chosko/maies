@@ -54,7 +54,12 @@ test, nessuna dipendenza nuova.
   Vite, ma gli stessi file e lo stesso calcolo dell'id globale.
 - **GitHub Action pianificata:** un workflow separato da quello di
   pubblicazione, eseguito a orari fissi e anche a mano, che installa le
-  dipendenze ed esegue lo script con il segreto del canale.
+  dipendenze ed esegue lo script con il segreto del canale. Il repository
+  ne tiene il modello in `scripts/domanda-a-sorpresa.workflow.yml`, perché
+  il collegamento di Claude a GitHub non può scrivere in
+  `.github/workflows/`: il file attivo
+  `.github/workflows/domanda-a-sorpresa.yml` lo crea a mano una persona,
+  copiando il modello. Il test verifica il modello.
 
 ## Data and state
 
@@ -105,11 +110,15 @@ test, nessuna dipendenza nuova.
 
 ### Attivazione
 
-Due passi manuali, una volta sola:
+Tre passi manuali, una volta sola, dopo che il modello è sul branch
+principale:
 
-1. Creare il segreto `NTFY_TOPIC` nelle impostazioni del repository, con un
+1. Creare sul branch principale, dalla pagina web del repository, il file
+   `.github/workflows/domanda-a-sorpresa.yml` con il contenuto del modello.
+   Lo stesso vale per ogni modifica successiva del modello.
+2. Creare il segreto `NTFY_TOPIC` nelle impostazioni del repository, con un
    nome di canale lungo e casuale.
-2. Sul telefono di Sara, installare l'app ntfy e iscriversi a quel canale
+3. Sul telefono di Sara, installare l'app ntfy e iscriversi a quel canale
    sul server `ntfy.sh`.
 
 Un'esecuzione manuale della GitHub Action verifica che la notifica arrivi.

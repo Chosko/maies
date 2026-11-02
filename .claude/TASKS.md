@@ -606,9 +606,9 @@ Feature: domanda-a-sorpresa
 
 ## 61. GitHub Action pianificata della domanda a sorpresa
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
-Files: .github/workflows/domanda-a-sorpresa.yml, tests/domanda-a-sorpresa-workflow.test.ts
+Files: scripts/domanda-a-sorpresa.workflow.yml, tests/domanda-a-sorpresa-workflow.test.ts
 Preconditions: 60
 Feature: domanda-a-sorpresa
 
