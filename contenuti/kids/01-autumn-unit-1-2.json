@@ -9,7 +9,9 @@
       "en": [
         "It's autumn",
         "It is autumn"
-      ]
+      ],
+      "example": "Look at the leaves. It's autumn!",
+      "mnemonic": "\"Autumn\" si pronuncia \"òtom\": la n alla fine non si sente."
     },
     {
       "id": "v02",
@@ -17,7 +19,9 @@
       "en": [
         "It's windy",
         "It is windy"
-      ]
+      ],
+      "example": "It's windy. Hold your hat!",
+      "mnemonic": "\"Wind\" è il vento: \"windy\" vuol dire che c'è tanto vento."
     },
     {
       "id": "v03",
@@ -25,7 +29,9 @@
       "en": [
         "a bookshop",
         "bookshop"
-      ]
+      ],
+      "example": "I buy a book at the bookshop.",
+      "mnemonic": "\"Book\" è il libro e \"shop\" il negozio: il negozio dei libri."
     },
     {
       "id": "v04",
@@ -35,7 +41,9 @@
         "cafe",
         "a café",
         "café"
-      ]
+      ],
+      "example": "Mum has a hot drink at the cafe.",
+      "mnemonic": "Somiglia a \"caffè\": è il posto dove si beve il caffè."
     },
     {
       "id": "v05",
@@ -43,14 +51,17 @@
       "en": [
         "a house",
         "house"
-      ]
+      ],
+      "example": "This is my house."
     },
     {
       "id": "v06",
       "it": "foglie",
       "en": [
         "leaves"
-      ]
+      ],
+      "example": "The leaves are red and yellow.",
+      "mnemonic": "Una foglia è \"leaf\", tante foglie sono \"leaves\": la f diventa v."
     },
     {
       "id": "v07",
@@ -58,7 +69,8 @@
       "en": [
         "Hello",
         "Hi"
-      ]
+      ],
+      "example": "Hello! I'm Tom."
     },
     {
       "id": "v08",
@@ -66,7 +78,8 @@
       "en": [
         "What's your name?",
         "What is your name?"
-      ]
+      ],
+      "example": "Hi! What's your name?"
     },
     {
       "id": "v09",
@@ -75,7 +88,8 @@
         "I'm Fern",
         "I am Fern",
         "My name is Fern"
-      ]
+      ],
+      "example": "Hello, I'm Fern!"
     },
     {
       "id": "v10",
@@ -83,84 +97,104 @@
       "en": [
         "Goodbye",
         "Bye"
-      ]
+      ],
+      "example": "Goodbye, see you tomorrow!"
     },
     {
       "id": "v11",
       "it": "uno",
       "en": [
         "one"
-      ]
+      ],
+      "example": "I have one cat.",
+      "mnemonic": "Si legge \"uan\", come se fosse scritto senza la o."
     },
     {
       "id": "v12",
       "it": "due",
       "en": [
         "two"
-      ]
+      ],
+      "example": "I have two hands.",
+      "mnemonic": "Si legge \"tu\": la w non si sente."
     },
     {
       "id": "v13",
       "it": "tre",
       "en": [
         "three"
-      ]
+      ],
+      "example": "I see three birds.",
+      "mnemonic": "Si legge con la lingua fra i denti: \"thrii\"."
     },
     {
       "id": "v14",
       "it": "quattro",
       "en": [
         "four"
-      ]
+      ],
+      "example": "My dog has four legs.",
+      "mnemonic": "Si legge \"for\": quattro zampe, four legs."
     },
     {
       "id": "v15",
       "it": "cinque",
       "en": [
         "five"
-      ]
+      ],
+      "example": "I have five fingers on my hand.",
+      "mnemonic": "Si legge \"faiv\": conta le cinque dita della mano."
     },
     {
       "id": "v16",
       "it": "quanti? quante?",
       "en": [
         "How many?"
-      ]
+      ],
+      "example": "How many apples have you got?"
     },
     {
       "id": "v17",
       "it": "marrone",
       "en": [
         "brown"
-      ]
+      ],
+      "example": "The tree is brown.",
+      "mnemonic": "Pensa all'orso bruno: \"brown\" è marrone."
     },
     {
       "id": "v18",
       "it": "rosso",
       "en": [
         "red"
-      ]
+      ],
+      "example": "My apple is red."
     },
     {
       "id": "v19",
       "it": "verde",
       "en": [
         "green"
-      ]
+      ],
+      "example": "The grass is green."
     },
     {
       "id": "v20",
       "it": "giallo",
       "en": [
         "yellow"
-      ]
+      ],
+      "example": "The sun is yellow.",
+      "mnemonic": "Si legge \"ièlou\": il colore del sole."
     },
     {
       "id": "v21",
       "it": "arancione",
       "en": [
         "orange"
-      ]
+      ],
+      "example": "I like orange leaves.",
+      "mnemonic": "Come il frutto: l'arancia è arancione, \"orange\"."
     }
   ],
   "grammar": []

@@ -1,6 +1,6 @@
 # Tasks
 
-Last task number: 38
+Last task number: 63
 
 ---
 
@@ -381,5 +381,255 @@ Target: claude
 Files: README.md, .claude/context/schermate.md
 Preconditions: 36, 37
 Feature: allenamento-vocaboli
+
+---
+
+## 39. Campi aiuto, frase d'esempio e trucco nel formato delle lezioni
+
+Status: [DONE]
+Target: claude
+Files: src/contenuti/schema.ts, src/contenuti/validazione.ts, src/contenuti/catalogo.ts, tests/contenuti.test.ts, tests/validazione.test.ts, tests/catalogo.test.ts
+Preconditions: none
+Feature: aggiunta-materiale-lezione
+
+---
+
+## 40. Aiuti, frasi d'esempio e trucchi nella skill di aggiunta del materiale
+
+Status: [DONE]
+Target: claude
+Files: .claude/skills/aggiunta-materiale/SKILL.md, tests/skill-aggiunta-materiale.test.ts
+Preconditions: 39
+Feature: aggiunta-materiale-lezione
+
+---
+
+## 41. Aiuti per tutte le frasi delle lezioni esistenti
+
+Status: [DONE]
+Target: claude
+Files: contenuti/lezioni/*.json
+Preconditions: 39
+Feature: aggiunta-materiale-lezione
+
+---
+
+## 42. Frasi d'esempio e trucchi per i vocaboli delle lezioni 01–06
+
+Status: [DONE]
+Target: claude
+Files: contenuti/lezioni/01-a-day-trip.json, contenuti/lezioni/02-pet-peeves.json, contenuti/lezioni/03-health-dangers.json, contenuti/lezioni/04-getting-fit.json, contenuti/lezioni/05-venues.json, contenuti/lezioni/06-new-in-town.json
+Preconditions: 39
+Feature: aggiunta-materiale-lezione
+
+---
+
+## 43. Frasi d'esempio e trucchi per i vocaboli delle lezioni 07–12 e dei kids
+
+Status: [DONE]
+Target: claude
+Files: contenuti/lezioni/07-observations.json, contenuti/lezioni/08-a-hotel-review.json, contenuti/lezioni/09-have-you-ever.json, contenuti/lezioni/10-home-sweet-home.json, contenuti/lezioni/11-the-best-place-to-stay.json, contenuti/lezioni/12-meeting-new-people.json, contenuti/kids/01-autumn-unit-1-2.json
+Preconditions: 39
+Feature: aggiunta-materiale-lezione
+
+---
+
+## 44. Update documentation for feature `aggiunta-materiale-lezione`
+
+Status: [DONE]
+Target: claude
+Files: README.md, .claude/context/contenuti.md
+Preconditions: 39, 40, 41, 42, 43
+Feature: aggiunta-materiale-lezione
+
+---
+
+## 45. Regole di apprendimento e scala dei controlli
+
+Status: [DONE]
+Target: claude
+Files: src/ripasso/apprendimento.ts, src/ripasso/importanza.ts, tests/apprendimento.test.ts, tests/importanza.test.ts
+Preconditions: none
+Feature: ripetizione-errori
+
+---
+
+## 46. Archivio dei progressi con gli stati di apprendimento e conversione dai livelli
+
+Status: [DONE]
+Target: claude
+Files: src/ripasso/archivio.ts, tests/archivio.test.ts
+Preconditions: 45
+Feature: ripetizione-errori
+
+---
+
+## 47. Pianificatore del gruppo di lavoro e della scelta del prossimo elemento
+
+Status: [DONE]
+Target: claude
+Files: src/ripasso/pianificatore.ts, tests/pianificatore.test.ts
+Preconditions: 45
+Feature: ripetizione-errori
+
+---
+
+## 48. Sessione di ripasso sul gruppo di lavoro e sui controlli a giorni
+
+Status: [DONE]
+Target: claude
+Files: src/ripasso/sessione.ts, src/esercizi/ciclo.ts, src/vocaboli/ciclo.ts, tests/sessione.test.ts, tests/ciclo-esercizi.test.ts, tests/ciclo-vocaboli.test.ts
+Preconditions: 45, 46, 47
+Feature: ripetizione-errori
+
+---
+
+## 49. Update documentation for feature `ripetizione-errori`
+
+Status: [DONE]
+Target: claude
+Files: README.md, .claude/context/ripasso.md
+Preconditions: 45, 46, 47, 48
+Feature: ripetizione-errori
+
+---
+
+## 50. Pulsante Aiuto negli esercizi di traduzione
+
+Status: [DONE]
+Target: claude
+Files: src/esercizi/ciclo.ts, src/views/EserciziView.vue, tests/ciclo-esercizi.test.ts, tests/esercizi.test.ts
+Preconditions: 39
+Feature: esercizi-traduzione
+
+---
+
+## 51. Update documentation for feature `esercizi-traduzione`
+
+Status: [DONE]
+Target: claude
+Files: README.md, .claude/context/schermate.md
+Preconditions: 50
+Feature: esercizi-traduzione
+
+---
+
+## 52. Frase d'esempio e trucco nell'esito dei vocaboli
+
+Status: [DONE]
+Target: claude
+Files: src/views/VocaboliView.vue, tests/vocaboli.test.ts
+Preconditions: 39
+Feature: allenamento-vocaboli
+
+---
+
+## 53. Pronuncia inglese con la sintesi vocale del browser
+
+Status: [DONE]
+Target: claude
+Files: src/vocaboli/pronuncia.ts, src/views/VocaboliView.vue, tests/pronuncia.test.ts, tests/vocaboli.test.ts
+Preconditions: 52
+Feature: allenamento-vocaboli
+
+---
+
+## 54. Riscrittura della traduzione dopo un vocabolo sbagliato
+
+Status: [DONE]
+Target: claude
+Files: src/vocaboli/ciclo.ts, src/views/VocaboliView.vue, tests/ciclo-vocaboli.test.ts, tests/vocaboli.test.ts
+Preconditions: 52
+Feature: allenamento-vocaboli
+
+---
+
+## 55. Update documentation for feature `allenamento-vocaboli`
+
+Status: [DONE]
+Target: claude
+Files: README.md, .claude/context/schermate.md
+Preconditions: 52, 53, 54
+Feature: allenamento-vocaboli
+
+---
+
+## 56. Sessione: elemento per id
+
+Status: [DONE]
+Target: claude
+Files: src/ripasso/sessione.ts, tests/sessione.test.ts
+Preconditions: none
+Feature: ripetizione-errori
+
+---
+
+## 57. Update documentation for feature `ripetizione-errori`
+
+Status: [DONE]
+Target: claude
+Files: .claude/context/ripasso.md
+Preconditions: 56
+Feature: ripetizione-errori
+
+---
+
+## 58. Allenamento vocaboli aperto su una parola indicata nell'indirizzo
+
+Status: [DONE]
+Target: claude
+Files: src/vocaboli/ciclo.ts, src/views/VocaboliView.vue, tests/ciclo-vocaboli.test.ts, tests/vocaboli.test.ts
+Preconditions: 56
+Feature: allenamento-vocaboli
+
+---
+
+## 59. Update documentation for feature `allenamento-vocaboli`
+
+Status: [DONE]
+Target: claude
+Files: README.md, .claude/context/schermate.md
+Preconditions: 58
+Feature: allenamento-vocaboli
+
+---
+
+## 60. Scelta della domanda a sorpresa e script di invio a ntfy
+
+Status: [DONE]
+Target: claude
+Files: scripts/domanda-a-sorpresa.mjs, tests/domanda-a-sorpresa.test.ts, package.json
+Preconditions: none
+Feature: domanda-a-sorpresa
+
+---
+
+## 61. GitHub Action pianificata della domanda a sorpresa
+
+Status: [DONE]
+Target: claude
+Files: scripts/domanda-a-sorpresa.workflow.yml, tests/domanda-a-sorpresa-workflow.test.ts
+Preconditions: 60
+Feature: domanda-a-sorpresa
+
+---
+
+## 62. Attivare la domanda a sorpresa sul telefono di Sara
+
+Status: [MISSING]
+Target: human
+Files: none
+Preconditions: 61
+Feature: domanda-a-sorpresa
+
+---
+
+## 63. Update documentation for feature `domanda-a-sorpresa`
+
+Status: [DONE]
+Target: claude
+Files: README.md, .claude/context/build-test-deploy.md, .claude/context/INDEX.md
+Preconditions: 60, 61
+Feature: domanda-a-sorpresa
 
 ---

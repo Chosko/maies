@@ -1,7 +1,8 @@
 # Esercizi di traduzione
 
 La schermata in cui Sara si esercita a tradurre in inglese frasi italiane
-prese da tutte le lezioni. Scrive la sua traduzione e la conferma, poi vede
+prese da tutte le lezioni. Se non sa da dove partire chiede l'aiuto della
+frase. Scrive la sua traduzione e la conferma, poi vede
 la traduzione corretta con le varianti accettabili e segna da sola se la sua
 risposta era giusta o sbagliata; nella stessa schermata può dare alla frase
 un'importanza da 0 a 3, dove 0 la toglie dagli esercizi. Subito dopo arriva
@@ -25,6 +26,7 @@ In:
 - La schermata Esercizi al posto del segnaposto dello scheletro.
 - Il ciclo di ogni frase: risposta, soluzione, autovalutazione, frase
   successiva.
+- L'aiuto della frase, da mostrare prima di rispondere.
 - La scelta dell'importanza della frase nella soluzione, con la conferma
   prima di toglierla.
 - Il caso in cui non c'è materiale e quello in cui tutte le frasi sono state
@@ -45,7 +47,11 @@ Fuori:
 - **La spiegazione dell'errore**, come stabilito nel design del prodotto.
 - **Contatori, punteggi o statistiche della sessione.**
 - **La modifica di un esito già dato** e il ritorno alla frase precedente.
-- **I filtri per lezione:** le frasi arrivano mescolate tra tutte le lezioni.
+- **La scelta della lezione su cui esercitarsi:** il gruppo di lavoro della
+  ripetizione degli errori prende per prime le frasi della lezione più
+  recente.
+- **Un effetto dell'aiuto sull'esito:** chiedere l'aiuto non cambia nulla di
+  ciò che si registra.
 - **Altri tipi di esercizio**, compresa la direzione inglese → italiano.
 
 ## Architecture
@@ -65,7 +71,9 @@ Vue Test Utils. È una schermata della parte "Interfaccia" della topologia.
   stile e il layout responsivo dello scheletro.
   - **Domanda:** la frase italiana, un campo di testo per la traduzione e il
     pulsante "Conferma". Anche Invio nel campo conferma. Il campo riceve il
-    fuoco a ogni nuova frase.
+    fuoco a ogni nuova frase. Sotto la frase, un pulsante secondario "Aiuto"
+    che, toccato, lascia il posto al testo dell'aiuto e rimette il fuoco nel
+    campo; non compare per una frase senza aiuto.
   - **Soluzione:** la risposta scritta da Sara, la traduzione corretta, le
     varianti accettabili (se ci sono) e il titolo della lezione da cui viene
     la frase, più i pulsanti "Giusta" e "Sbagliata". Sotto, in una riga
@@ -89,7 +97,8 @@ Vue Test Utils. È una schermata della parte "Interfaccia" della topologia.
     `VocaboliGiusta.dc.html`. La riga dell'importanza e la conferma della
     rimozione non hanno una tavola: seguono le variabili di stile e i
     pulsanti esistenti, con la riga visivamente secondaria rispetto a
-    "Giusta" e "Sbagliata".
+    "Giusta" e "Sbagliata". L'aiuto non ha una tavola: è un testo
+    secondario sotto la frase, con le variabili di stile esistenti.
 
 ## Data and state
 
@@ -104,6 +113,7 @@ In memoria, per la durata della schermata:
 - la frase corrente, come la restituisce la sessione (id globale, frase
   italiana, traduzione corretta, varianti, id della lezione, importanza);
 - il testo scritto da Sara;
+- se l'aiuto della frase corrente è mostrato;
 - l'importanza attuale della frase, aggiornata a ogni scelta;
 - se la conferma della rimozione è aperta;
 - la fase, una tra:
@@ -118,6 +128,10 @@ lezione della frase; non è uno stato a sé.
 ## Interfaces and contracts
 
 ### Ciclo dell'esercizio
+
+- **mostra aiuto():** solo da "in attesa di risposta" e per una frase con
+  aiuto. Segna l'aiuto come mostrato; ogni nuova frase riparte con l'aiuto
+  nascosto. Non registra nulla.
 
 - **avvio:** crea la sessione di tipo "frasi" e chiede il prossimo
   elemento. Passa a "in attesa di risposta", oppure a "nessun materiale" o a
@@ -152,7 +166,8 @@ lezione della frase; non è uno stato a sé.
 - **Sessione di ripasso:** usa "crea sessione", "prossimo elemento",
   "registra esito" e "registra importanza" esattamente come li definisce
   [ripetizione-errori](./ripetizione-errori.md).
-- **Catalogo:** legge dalla frase `it`, `en` e `alternatives`, e il titolo
+- **Catalogo:** legge dalla frase `it`, `en`, `alternatives` e `hint`, e il
+  titolo
   della lezione con la ricerca "una lezione per id" di
   [aggiunta-materiale-lezione](./aggiunta-materiale-lezione.md).
 
@@ -169,6 +184,8 @@ lezione della frase; non è uno stato a sé.
 - **Progressi non salvabili** (`localStorage` assente o pieno): li gestisce
   l'archivio della ripetizione degli errori, e l'esercizio funziona senza
   differenze visibili.
+- **Frase senza aiuto** (materiale non ancora completato): il pulsante
+  "Aiuto" non compare.
 - **Lezione della frase non trovata** (non dovrebbe accadere, perché il
   catalogo è coerente per costruzione): la soluzione si mostra senza il
   titolo della lezione.

@@ -22,6 +22,7 @@ layer.
 | [features/allenamento-vocaboli.md](./features/allenamento-vocaboli.md) | Schermata dei vocaboli: verifica automatica con normalizzazione, ciclo risposta, esito con importanza 0–3 e Avanti, vocabolo successivo dalla sessione di ripasso |
 | [features/dizionario-vocaboli.md](./features/dizionario-vocaboli.md) | Schermata del dizionario: vocaboli in ordine alfabetico, ricerca in italiano e inglese |
 | [features/schede-grammatica.md](./features/schede-grammatica.md) | Schermata della grammatica: lezioni con schede in ordine di arrivo, schede di una lezione in un'unica pagina, Markdown convertito con markdown-it senza HTML |
+| [features/domanda-a-sorpresa.md](./features/domanda-a-sorpresa.md) | Notifica ntfy tre volte al giorno con un vocabolo da tradurre: scelta della parola, script di invio, GitHub Action pianificata, attivazione |
 
 ## Features
 

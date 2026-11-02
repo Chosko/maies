@@ -10,7 +10,8 @@
         "I cannot stand it when people arrive late.",
         "I can't stand it when people are late.",
         "I cannot stand it when people are late."
-      ]
+      ],
+      "hint": "can't stand it when — arrive late"
     },
     {
       "id": "f02",
@@ -18,7 +19,8 @@
       "en": "It gets on my nerves when someone eats noisily.",
       "alternatives": [
         "It gets on my nerves when somebody eats noisily."
-      ]
+      ],
+      "hint": "it gets on my nerves when — eat noisily"
     },
     {
       "id": "f03",
@@ -28,7 +30,8 @@
         "It drives me crazy to sit for hours in a traffic jam.",
         "Sitting in a traffic jam for hours drives me crazy.",
         "Sitting for hours in a traffic jam drives me crazy."
-      ]
+      ],
+      "hint": "it drives me crazy + to — sit, traffic jam, for hours"
     },
     {
       "id": "f04",
@@ -36,7 +39,8 @@
       "en": "I hate it when someone smokes near me.",
       "alternatives": [
         "I hate it when somebody smokes near me."
-      ]
+      ],
+      "hint": "hate it when — smoke, near"
     },
     {
       "id": "f05",
@@ -45,7 +49,8 @@
       "alternatives": [
         "One of my biggest pet peeves is when people talk loudly on their phone.",
         "One of my biggest pet peeves is when people talk loudly on their phones."
-      ]
+      ],
+      "hint": "one of my biggest pet peeves — talk loudly, on the phone"
     },
     {
       "id": "f06",
@@ -54,7 +59,8 @@
       "alternatives": [
         "It annoys me when my brother bites his nails.",
         "It bugs me when my brother bites his nails."
-      ]
+      ],
+      "hint": "it bothers me when — bite, nails"
     },
     {
       "id": "f07",
@@ -64,7 +70,8 @@
         "What is your pet peeve?",
         "What's your biggest pet peeve?",
         "What is your biggest pet peeve?"
-      ]
+      ],
+      "hint": "domanda con what's + pet peeve"
     },
     {
       "id": "f08",
@@ -72,7 +79,8 @@
       "en": "It annoys me to no end when couples kiss in public.",
       "alternatives": [
         "It really annoys me when couples kiss in public."
-      ]
+      ],
+      "hint": "it annoys me to no end when — couples, kiss, in public"
     },
     {
       "id": "f09",
@@ -80,7 +88,8 @@
       "en": "It drives me crazy to see someone smoking in public.",
       "alternatives": [
         "It drives me crazy to see somebody smoking in public."
-      ]
+      ],
+      "hint": "it drives me crazy + to — see, smoke, in public"
     },
     {
       "id": "f10",
@@ -88,7 +97,8 @@
       "en": "Could you please stop blowing bubbles?",
       "alternatives": [
         "Could you stop blowing bubbles, please?"
-      ]
+      ],
+      "hint": "richiesta gentile con could you please + stop -ing — blow bubbles"
     },
     {
       "id": "f11",
@@ -96,7 +106,8 @@
       "en": "Could you please stop biting your nails?",
       "alternatives": [
         "Could you stop biting your nails, please?"
-      ]
+      ],
+      "hint": "richiesta gentile con could you please + stop -ing — bite, nails"
     },
     {
       "id": "f12",
@@ -106,7 +117,8 @@
         "I would appreciate it if you could smoke elsewhere.",
         "I'd appreciate it if you could smoke somewhere else.",
         "I would appreciate it if you could smoke somewhere else."
-      ]
+      ],
+      "hint": "I'd appreciate it if you could — smoke, elsewhere"
     },
     {
       "id": "f13",
@@ -116,7 +128,8 @@
         "I would appreciate it if you could speak more quietly.",
         "I'd appreciate it if you could talk more quietly.",
         "I would appreciate it if you could talk more quietly."
-      ]
+      ],
+      "hint": "I'd appreciate it if you could — speak, more quietly"
     },
     {
       "id": "f14",
@@ -124,7 +137,8 @@
       "en": "Excuse me, but would you mind not smoking here?",
       "alternatives": [
         "Excuse me, would you mind not smoking here?"
-      ]
+      ],
+      "hint": "excuse me, but would you mind + not -ing — smoke, here"
     },
     {
       "id": "f15",
@@ -134,7 +148,8 @@
         "Excuse me, would you mind lowering your voice?",
         "Excuse me, but would you mind keeping your voice down?",
         "Excuse me, would you mind keeping your voice down?"
-      ]
+      ],
+      "hint": "excuse me, but would you mind + -ing — lower, voice"
     },
     {
       "id": "f16",
@@ -144,7 +159,8 @@
         "It'd be great if you could arrive on time.",
         "It would be great if you could be on time.",
         "It'd be great if you could be on time."
-      ]
+      ],
+      "hint": "it would be great if you could — arrive on time"
     }
   ],
   "vocabulary": [
@@ -153,28 +169,34 @@
       "it": "la cosa che dà più fastidio",
       "en": [
         "pet peeve"
-      ]
+      ],
+      "example": "My biggest pet peeve is people who talk in the cinema.",
+      "mnemonic": "Il pet è l'animaletto di casa: il pet peeve è il fastidio \"di casa\", quello che ti accompagna sempre."
     },
     {
       "id": "v02",
       "it": "fastidioso",
       "en": [
         "annoying"
-      ]
+      ],
+      "example": "It's so annoying when the bus is late.",
+      "mnemonic": "annoying ricorda \"noia\": quello che ti annoia e ti dà fastidio."
     },
     {
       "id": "v03",
       "it": "cattiva abitudine",
       "en": [
         "bad habit"
-      ]
+      ],
+      "example": "Biting your nails is a bad habit."
     },
     {
       "id": "v04",
       "it": "frustrato",
       "en": [
         "frustrated"
-      ]
+      ],
+      "example": "I feel frustrated when my computer is slow."
     },
     {
       "id": "v05",
@@ -184,21 +206,26 @@
         "bite your nails",
         "to bite one's nails",
         "bite one's nails"
-      ]
+      ],
+      "example": "Stop biting your nails!",
+      "mnemonic": "bite si legge \"bàit\", come il byte del computer: un \"morso\" di dati."
     },
     {
       "id": "v06",
       "it": "traffico",
       "en": [
         "traffic"
-      ]
+      ],
+      "example": "There's a lot of traffic in the morning."
     },
     {
       "id": "v07",
       "it": "ingorgo",
       "en": [
         "traffic jam"
-      ]
+      ],
+      "example": "We were stuck in a traffic jam for an hour.",
+      "mnemonic": "jam è anche la marmellata: le macchine sono appiccicate come nella marmellata."
     },
     {
       "id": "v08",
@@ -206,42 +233,51 @@
       "en": [
         "to smoke",
         "smoke"
-      ]
+      ],
+      "example": "Please don't smoke in here.",
+      "mnemonic": "smoke ricorda lo smog: fumo nell'aria."
     },
     {
       "id": "v09",
       "it": "in pubblico",
       "en": [
         "in public"
-      ]
+      ],
+      "example": "Some people talk loudly on the phone in public."
     },
     {
       "id": "v10",
       "it": "guidatore",
       "en": [
         "driver"
-      ]
+      ],
+      "example": "The driver didn't stop at the red light."
     },
     {
       "id": "v11",
       "it": "rumorosamente",
       "en": [
         "noisily"
-      ]
+      ],
+      "example": "He eats his soup noisily.",
+      "mnemonic": "noisily viene da noise, \"rumore\": pensa a un rumore noioso."
     },
     {
       "id": "v12",
       "it": "ad alta voce",
       "en": [
         "loudly"
-      ]
+      ],
+      "example": "Please don't speak so loudly.",
+      "mnemonic": "Il loudspeaker è l'altoparlante: loud vuol dire forte, ad alta voce."
     },
     {
       "id": "v13",
       "it": "coppia",
       "en": [
         "couple"
-      ]
+      ],
+      "example": "A young couple is sitting next to us."
     },
     {
       "id": "v14",
@@ -249,7 +285,8 @@
       "en": [
         "to kiss",
         "kiss"
-      ]
+      ],
+      "example": "The couple kissed in the middle of the street."
     },
     {
       "id": "v15",
@@ -259,7 +296,8 @@
         "arrive late",
         "to be late",
         "be late"
-      ]
+      ],
+      "example": "I hate it when people arrive late."
     },
     {
       "id": "v16",
@@ -267,7 +305,9 @@
       "en": [
         "to complain",
         "complain"
-      ]
+      ],
+      "example": "My neighbour always complains about the noise.",
+      "mnemonic": "complain ricorda \"compiangersi\": chi si lamenta si compiange."
     },
     {
       "id": "v17",
@@ -275,7 +315,9 @@
       "en": [
         "can't stand",
         "cannot stand"
-      ]
+      ],
+      "example": "I can't stand people who chew gum loudly.",
+      "mnemonic": "can't stand = \"non riesco a starci in piedi davanti\": non lo sopporto."
     },
     {
       "id": "v18",
@@ -283,7 +325,8 @@
       "en": [
         "to get on someone's nerves",
         "get on someone's nerves"
-      ]
+      ],
+      "example": "His jokes really get on my nerves."
     },
     {
       "id": "v19",
@@ -295,7 +338,9 @@
         "bother",
         "to bug",
         "bug"
-      ]
+      ],
+      "example": "Does the music annoy you?",
+      "mnemonic": "annoy ricorda \"noia\": annoiare e infastidire sono parenti."
     },
     {
       "id": "v20",
@@ -303,7 +348,8 @@
       "en": [
         "to hate",
         "hate"
-      ]
+      ],
+      "example": "I hate waiting in long queues."
     },
     {
       "id": "v21",
@@ -311,7 +357,9 @@
       "en": [
         "to drive crazy",
         "drive crazy"
-      ]
+      ],
+      "example": "That noise is driving me crazy!",
+      "mnemonic": "drive crazy = \"guidare verso la pazzia\": ti porta alla follia."
     },
     {
       "id": "v22",
@@ -319,7 +367,9 @@
       "en": [
         "to blow bubbles",
         "blow bubbles"
-      ]
+      ],
+      "example": "Please don't blow bubbles with your gum in class.",
+      "mnemonic": "blow è \"soffiare\", come nel blow-dryer, il phon: soffi le bolle."
     },
     {
       "id": "v23",
@@ -327,21 +377,24 @@
       "en": [
         "to stop",
         "stop"
-      ]
+      ],
+      "example": "Could you stop tapping your pen, please?"
     },
     {
       "id": "v24",
       "it": "richiesta gentile",
       "en": [
         "polite request"
-      ]
+      ],
+      "example": "\"Could you close the door, please?\" is a polite request."
     },
     {
       "id": "v25",
       "it": "irritazione",
       "en": [
         "irritation"
-      ]
+      ],
+      "example": "She couldn't hide her irritation."
     },
     {
       "id": "v26",
@@ -349,14 +402,17 @@
       "en": [
         "elsewhere",
         "somewhere else"
-      ]
+      ],
+      "example": "Could you smoke elsewhere, please?",
+      "mnemonic": "else = altro, where = dove: \"altro dove\", da un'altra parte."
     },
     {
       "id": "v27",
       "it": "in orario",
       "en": [
         "on time"
-      ]
+      ],
+      "example": "Please try to be on time tomorrow."
     }
   ],
   "grammar": [

@@ -1,4 +1,4 @@
-import type { Esito } from '../ripasso/livelli'
+import type { Esito } from '../ripasso/apprendimento'
 
 const APOSTROFI_TIPOGRAFICI = /[’‘ʼ]/g
 const PUNTEGGIATURA_FINALE = /[\s.!?,;:]+$/

@@ -50,12 +50,18 @@ arricchiti, aggiunti per percorso esplicito, mai con `git add -A` o
 5. **Frasi da tradurre.** Scriverne fra 10 e 20, in proporzione a quanta
    grammatica e quanti vocaboli contiene la lezione: frasi italiane
    originali che esercitano la grammatica e i vocaboli della lezione, mai
-   uguali a frasi già esistenti. Ognuna ha la traduzione corretta e le
+   uguali a frasi già esistenti. Ognuna ha la traduzione corretta, le
    varianti accettabili — forme contratte e non contratte, sinonimi
-   equivalenti, ordini alternativi ammessi.
-6. **Scrivere e verificare.** Scrivere il file, eseguire `npm test` e
+   equivalenti, ordini alternativi ammessi — e un aiuto: le parole chiave
+   inglesi della frase o il tempo verbale da usare, mai la traduzione
+   intera.
+6. **Frasi d'esempio e trucchi.** A ogni vocabolo nuovo dare
+   una frase d'esempio breve in inglese, adatta al livello della lezione,
+   e, se la parola è difficile da ricordare, un trucco in italiano:
+   un'assonanza, un collegamento con l'italiano, un falso amico da evitare.
+7. **Scrivere e verificare.** Scrivere il file, eseguire `npm test` e
    correggere il file finché passa.
-7. **Commit** del nuovo file di lezione più le lezioni precedenti arricchite
+8. **Commit** del nuovo file di lezione più le lezioni precedenti arricchite
    al passo 3, e nient'altro.
 
 ## Una lista di vocaboli per i kids
@@ -68,7 +74,9 @@ lezione nuova in `contenuti/kids/`, con i soli vocaboli:
 2. **Numero e argomento** come al passo 2, sulle lezioni di `contenuti/kids/`.
 3. **Vocaboli** come al passo 3, cercando i duplicati in `contenuti/kids/`.
    Nessuna frase da tradurre e nessuna scheda di grammatica.
-4. **Scrivere, verificare e fare commit** come ai passi 6 e 7.
+4. **Frasi d'esempio e trucchi** come al passo 6, con frasi d'esempio e
+   trucchi adatti a una bambina.
+5. **Scrivere, verificare e fare commit** come ai passi 7 e 8.
 
 ## Un vocabolo singolo
 
@@ -76,7 +84,8 @@ lezione nuova in `contenuti/kids/`, con i soli vocaboli:
    nuove al vocabolo esistente.
 2. Altrimenti aggiungerlo alla lezione che Sara indica o, se non ne indica
    nessuna, all'ultima lezione arrivata, con il numero successivo dei
-   vocaboli di quella lezione.
+   vocaboli di quella lezione, una frase d'esempio e, se la parola è
+   difficile, un trucco, come al passo 6 della lezione da PDF.
 3. Eseguire `npm test`, correggere finché passa, poi fare commit del solo
    file di lezione modificato.
 
@@ -86,3 +95,13 @@ Un refuso o una variante mancante in una frase, un vocabolo o una scheda si
 corregge modificando l'elemento e mantenendone l'id, secondo le regole di
 stabilità del documento di feature (§ *Identificatori* → *Stabilità*). Poi
 `npm test` e commit del solo file corretto, come sopra.
+
+## Il completamento del materiale esistente
+
+Lezione per lezione, in entrambe le cartelle — `contenuti/lezioni/` e
+`contenuti/kids/` — si aggiunge un aiuto a ogni frase che non ne ha e una
+frase d'esempio a ogni vocabolo che non ne ha, con un trucco per le parole
+difficili, come ai passi 5 e 6 della lezione da PDF; per i kids, adatti a
+una bambina. Si toccano solo i campi mancanti: gli id non cambiano, quindi i
+progressi restano. Poi `npm test` e commit dei soli file di lezione
+completati, come ai passi 7 e 8.

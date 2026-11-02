@@ -16,7 +16,7 @@ Tasks: 1, 2, 3, 4, 5
 Status: [DONE]
 Doc: .claude/domain/features/aggiunta-materiale-lezione.md
 Source: product-design.md § Aggiunta del materiale da una lezione
-Tasks: 6, 7, 8, 9
+Tasks: 6, 7, 8, 9, 39, 40, 41, 42, 43, 44
 
 ---
 
@@ -25,7 +25,7 @@ Tasks: 6, 7, 8, 9
 Status: [DONE]
 Doc: .claude/domain/features/ripetizione-errori.md
 Source: product-design.md § Ripetizione degli errori
-Tasks: 10, 11, 12, 13, 28, 29, 30, 31
+Tasks: 10, 11, 12, 13, 28, 29, 30, 31, 45, 46, 47, 48, 49, 56, 57
 
 ---
 
@@ -34,7 +34,7 @@ Tasks: 10, 11, 12, 13, 28, 29, 30, 31
 Status: [DONE]
 Doc: .claude/domain/features/esercizi-traduzione.md
 Source: product-design.md § Esercizi di traduzione
-Tasks: 14, 15, 16, 32, 33, 34, 35
+Tasks: 14, 15, 16, 32, 33, 34, 35, 50, 51
 
 ---
 
@@ -43,7 +43,7 @@ Tasks: 14, 15, 16, 32, 33, 34, 35
 Status: [DONE]
 Doc: .claude/domain/features/allenamento-vocaboli.md
 Source: product-design.md § Allenamento vocaboli
-Tasks: 17, 18, 19, 20, 36, 37, 38
+Tasks: 17, 18, 19, 20, 36, 37, 38, 52, 53, 54, 55, 58, 59
 
 ---
 
@@ -64,3 +64,10 @@ Source: product-design.md § Schede di grammatica
 Tasks: 24, 25, 26, 27
 
 ---
+
+## domanda-a-sorpresa — Notifica sul telefono con un vocabolo da tradurre, tre volte al giorno
+
+Status: [PLANNED]
+Doc: .claude/domain/features/domanda-a-sorpresa.md
+Source: product-design.md § Domanda a sorpresa
+Tasks: 60, 61, 62, 63

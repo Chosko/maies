@@ -131,6 +131,16 @@ export function validaLezioni(files: FileLezione[]): ErroreValidazione[] {
           messaggio: `la traduzione "${ripetuto}" è ripetuta fra en e alternatives`,
         }),
       )
+      if (frase.hint !== undefined) {
+        const aiuto = normalizza(frase.hint)
+        if ([frase.en, ...frase.alternatives].some((traduzione) => normalizza(traduzione) === aiuto)) {
+          errori.push({
+            file: nome,
+            elemento: frase.id,
+            messaggio: `l'hint "${frase.hint}" rivela la traduzione`,
+          })
+        }
+      }
     }
 
     for (const vocabolo of lezione.vocabulary) {

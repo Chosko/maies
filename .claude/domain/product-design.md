@@ -5,8 +5,9 @@ corso a scuola. Raccoglie il materiale delle lezioni — i PDF e le foto
 distribuiti a scuola — trasformato in tre strumenti di ripasso: esercizi di
 traduzione di frasi dall'italiano all'inglese, una lista di vocaboli su cui
 allenarsi scrivendo la traduzione inglese, e schede di grammatica che
-riassumono le regole viste a lezione. Le cose sbagliate tornano più spesso,
-finché non sono consolidate.
+riassumono le regole viste a lezione. Frasi e vocaboli si imparano pochi
+per volta, riproposti finché non sono imparati, e tornano dopo qualche
+giorno per verificare che non siano stati dimenticati.
 
 Technical foundations (stack, architecture, hosting) are recorded in
 [technical-direction.md](./technical-direction.md), not here.
@@ -33,7 +34,10 @@ il materiale di Sara.
 1. Sara riceve a scuola un PDF o un foglio (che fotografa).
 2. Lo passa a Claude nella chat di sviluppo del progetto.
 3. Claude ne ricava frasi da tradurre, vocaboli e una scheda di grammatica
-   per gli argomenti trattati, e li aggiunge al repository.
+   per gli argomenti trattati, e li aggiunge al repository. A ogni frase
+   aggiunge un aiuto (le parole chiave inglesi o il tempo verbale da
+   usare), a ogni vocabolo una frase d'esempio in inglese e, alle parole
+   difficili, un trucco per ricordarle.
 4. Alla pubblicazione successiva, Sara trova il nuovo materiale nell'app,
    su qualsiasi dispositivo. Allo stesso modo, un vocabolo che Sara vuole
    aggiungere a mano lo passa a Claude in chat: finisce nella lezione che
@@ -42,9 +46,10 @@ il materiale di Sara.
 ### Ripasso con gli esercizi
 
 1. Sara apre l'app e avvia una sessione di esercizi.
-2. L'app le propone una frase in italiano, scelta tra tutte le lezioni,
-   privilegiando le frasi sbagliate in passato.
-3. Sara scrive la traduzione inglese e la conferma.
+2. L'app le propone una frase in italiano dal suo gruppo di lavoro, oppure
+   una frase già imparata che è il momento di ricontrollare.
+3. Se non sa da dove partire, Sara tocca "Aiuto" e vede l'aiuto della
+   frase. Scrive la traduzione inglese e la conferma.
 4. L'app mostra la traduzione corretta, con le eventuali varianti
    accettabili; Sara segna da sola se la sua risposta era giusta o
    sbagliata. Se vuole, dà alla frase un'importanza da 0 a 3, dove 0 la
@@ -55,14 +60,26 @@ il materiale di Sara.
 ### Ripasso dei vocaboli
 
 1. Sara avvia una sessione sui vocaboli.
-2. L'app mostra una parola in italiano, privilegiando quelle sbagliate in
-   passato; Sara scrive la traduzione inglese.
+2. L'app mostra una parola in italiano dal suo gruppo di lavoro, oppure una
+   parola già imparata che è il momento di ricontrollare; Sara scrive la
+   traduzione inglese.
 3. L'app controlla da sola la risposta, ignorando maiuscole, spazi
    superflui, apostrofi tipografici e punteggiatura finale, e accettando ogni
-   traduzione prevista per quella parola; poi mostra le traduzioni corrette.
-   Se vuole, Sara dà al vocabolo un'importanza da 0 a 3, dove 0 lo toglie
-   dall'allenamento.
+   traduzione prevista per quella parola; poi mostra le traduzioni corrette,
+   la frase d'esempio e, se c'è, il trucco per ricordarla. Sara può
+   ascoltarne la pronuncia. Se la risposta era sbagliata, prima di andare
+   avanti Sara riscrive la traduzione corretta. Se vuole, dà al vocabolo
+   un'importanza da 0 a 3, dove 0 lo toglie dall'allenamento.
 4. La sessione continua finché Sara non si ferma.
+
+### Domanda a sorpresa
+
+1. Tre volte al giorno, fra le 9 e le 21, sul telefono di Sara arriva una
+   notifica che le chiede la traduzione di un vocabolo: "Come si dice
+   «cane»?".
+2. Sara ci pensa; se tocca la notifica, maies si apre sull'allenamento
+   vocaboli con quella parola come prima domanda, e la risposta conta come
+   ogni altra.
 
 Fuori dall'allenamento, Sara può consultare la lista completa dei vocaboli
 con le loro traduzioni, come un piccolo dizionario in ordine alfabetico, e
@@ -94,20 +111,41 @@ cercarvi una parola in italiano o in inglese.
   sono previste spiegazioni dell'errore.
 - **Vocaboli verificati automaticamente**, nella direzione italiano →
   inglese.
-- **Esercizi e vocaboli mescolati tra tutte le lezioni; grammatica divisa
-  per lezione.**
+- **Esercizi e vocaboli attingono a tutte le lezioni; grammatica divisa
+  per lezione.** Gli elementi nuovi entrano nel gruppo di lavoro a partire
+  dalla lezione più recente; non si sceglie una lezione su cui allenarsi.
 - **La grammatica copre solo gli argomenti del materiale ricevuto**, non un
   programma generale.
-- **Ripetizione degli errori.** Ciò che è stato sbagliato viene riproposto
-  più spesso.
+- **Gruppo di lavoro e ripasso a intervalli.** Ci si allena su un gruppo
+  ristretto — 8 vocaboli, 5 frasi — che si alternano senza che lo stesso
+  elemento torni subito. Un elemento è imparato dopo 3 risposte giuste di
+  fila (per le frasi, segnate giuste da Sara); un errore azzera il
+  conteggio. L'elemento imparato lascia il posto a uno nuovo: prima quelli
+  sbagliati in passato, poi quelli mai visti. Un elemento imparato torna per
+  un controllo dopo intervalli di giorni via via più lunghi (1, 3, 7…); se
+  il controllo è sbagliato, rientra nel gruppo. Quando non c'è niente da
+  imparare né da controllare, l'app ripropone gli elementi imparati, da
+  quelli non visti da più tempo.
+- **Aiuti per ricordare, scritti da Claude.** Ogni frase ha un aiuto da
+  mostrare prima di rispondere; ogni vocabolo ha una frase d'esempio, la
+  pronuncia inglese letta dal browser e, se è difficile, un trucco per
+  ricordarlo. Dopo un vocabolo sbagliato si riscrive la traduzione corretta:
+  è un esercizio di memoria, l'esito non cambia.
 - **Importanza degli elementi.** Negli esercizi e nei vocaboli Sara dà a
-  ogni frase e a ogni vocabolo un'importanza da 0 a 3 (2 all'inizio), che
-  rende l'elemento più o meno frequente; 0 lo toglie dagli allenamenti, e un
+  ogni frase e a ogni vocabolo un'importanza da 0 a 3 (2 all'inizio): più è
+  alta, prima l'elemento entra nel gruppo di lavoro e più spesso torna nei
+  controlli; 0 lo toglie dagli allenamenti, e un
   elemento tolto non si recupera. L'importanza resta sul dispositivo, come i
   progressi. Solo nell'edizione di Sara: nell'edizione kids ogni vocabolo ha
   la stessa importanza.
 - **Sessioni aperte.** Una sessione di ripasso non ha una lunghezza fissa:
   continua finché Sara non si ferma.
+- **Domande a sorpresa sul telefono, solo per Sara.** Le notifiche
+  arrivano attraverso l'app ntfy, a cui Sara si iscrive una volta su un
+  canale dal nome segreto. Il vocabolo lo sceglie un'automazione del
+  repository, che non vede i progressi del dispositivo: pesca fra tutti i
+  vocaboli dell'edizione principale, privilegiando le lezioni più recenti.
+  L'edizione kids non ha notifiche.
 - **Funziona su telefono e computer**, adattandosi allo schermo.
 - **Semplicità di realizzazione prima di tutto.** Il prodotto deve essere
   rapido da implementare; ciò che non serve al ripasso resta fuori.
@@ -119,28 +157,43 @@ cercarvi una parola in italiano o in inglese.
 Quando Sara passa in chat un PDF, una foto o un elenco di vocaboli, Claude
 ne ricava il materiale di ripasso e lo aggiunge al repository nel formato
 che l'app legge: frasi italiane da tradurre con la traduzione inglese
-corretta e le varianti accettabili, vocaboli con le loro traduzioni, e una
-scheda di grammatica per ogni argomento trattato. Il materiale resta
+corretta, le varianti accettabili e un aiuto, vocaboli con le loro
+traduzioni, una frase d'esempio e, per quelli difficili, un trucco per
+ricordarli, e una scheda di grammatica per ogni argomento trattato. Claude
+completa allo stesso modo il materiale già presente. Il materiale resta
 associato alla lezione da cui viene. Serve il flusso "Arriva una nuova
 lezione"; non è una schermata dell'app, ma il modo in cui l'app riceve
 contenuti nuovi.
 
 ### Esercizi di traduzione
 
-Una sessione aperta di frasi in italiano da tradurre in inglese, mescolate
-tra tutte le lezioni. Sara scrive la sua traduzione, la conferma, vede la
+Una sessione aperta di frasi in italiano da tradurre in inglese, scelte
+dalla ripetizione degli errori. Prima di rispondere Sara può chiedere
+l'aiuto della frase. Scrive la sua traduzione, la conferma, vede la
 traduzione corretta con le varianti accettabili e segna da sola se era
 giusta o sbagliata, e può darle un'importanza da 0 a 3; poi arriva la
 frase successiva, finché non decide di fermarsi. Serve il flusso "Ripasso con gli esercizi".
 
 ### Allenamento vocaboli
 
-Una sessione aperta sui vocaboli di tutte le lezioni: l'app mostra una
-parola in italiano, Sara scrive la traduzione inglese e l'app la verifica
-da sola, accettando ogni traduzione prevista e ignorando maiuscole, spazi
-superflui, apostrofi tipografici e punteggiatura finale; poi mostra le
-traduzioni corrette, e Sara può dare al vocabolo un'importanza da 0 a 3.
-Continua finché Sara non si ferma. Serve il flusso "Ripasso dei vocaboli".
+Una sessione aperta sui vocaboli scelti dalla ripetizione degli errori:
+l'app mostra una parola in italiano, Sara scrive la traduzione inglese e
+l'app la verifica da sola, accettando ogni traduzione prevista e ignorando
+maiuscole, spazi superflui, apostrofi tipografici e punteggiatura finale;
+poi mostra le traduzioni corrette, la frase d'esempio, l'eventuale trucco
+per ricordarla e un pulsante per ascoltarne la pronuncia. Dopo una risposta
+sbagliata Sara riscrive la traduzione corretta prima di andare avanti. Sara
+può dare al vocabolo un'importanza da 0 a 3. Continua finché Sara non si
+ferma. Serve il flusso "Ripasso dei vocaboli".
+
+### Domanda a sorpresa
+
+Tre volte al giorno, fra le 9 e le 21, una notifica sul telefono di Sara le
+chiede come si dice in inglese un vocabolo italiano. Toccandola si apre
+l'allenamento vocaboli con quella parola come prima domanda. Sara riceve le
+notifiche con l'app ntfy; il vocabolo è scelto fra quelli dell'edizione
+principale, più spesso dalle lezioni recenti. Serve il flusso "Domanda a
+sorpresa".
 
 ### Dizionario dei vocaboli
 
@@ -158,10 +211,10 @@ grammatica".
 
 ### Ripetizione degli errori
 
-Su ogni dispositivo, l'app ricorda quali frasi e quali vocaboli Sara ha
-sbagliato e li ripropone più spesso negli esercizi di traduzione e
-nell'allenamento vocaboli, finché non li risponde correttamente; tiene
-conto anche dell'importanza che Sara ha dato a ciascuno, e non propone più
-quelli che ha tolto. È
-condivisa dalle due sessioni di allenamento, che le chiedono cosa
-proporre dopo.
+Su ogni dispositivo, l'app tiene per le frasi e per i vocaboli un gruppo
+di lavoro ristretto, su cui Sara si allena finché ogni elemento non è
+imparato, e ripropone gli elementi imparati per un controllo dopo
+intervalli di giorni via via più lunghi, come descritto nelle decisioni di
+design. Tiene conto dell'importanza che Sara ha dato a ciascuno, e non
+propone più quelli che ha tolto. È condivisa dalle due sessioni di
+allenamento, che le chiedono cosa proporre dopo.

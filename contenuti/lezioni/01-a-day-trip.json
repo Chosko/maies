@@ -10,7 +10,8 @@
         "Are you cold? I will close the window.",
         "Are you cold? I'll shut the window.",
         "Are you cold? I will shut the window."
-      ]
+      ],
+      "hint": "will per una decisione presa sul momento — cold, close, window"
     },
     {
       "id": "f02",
@@ -19,7 +20,8 @@
       "alternatives": [
         "The phone is ringing: I will answer it!",
         "The phone's ringing: I'll answer it!"
-      ]
+      ],
+      "hint": "present continuous + will per un'offerta spontanea — ring, answer"
     },
     {
       "id": "f03",
@@ -28,7 +30,8 @@
       "alternatives": [
         "Great idea! I will bring the sandwiches.",
         "That's a great idea! I'll bring the sandwiches."
-      ]
+      ],
+      "hint": "will per un'offerta spontanea — great idea, bring, sandwiches"
     },
     {
       "id": "f04",
@@ -36,7 +39,8 @@
       "en": "Marco is going to visit London with his parents this summer.",
       "alternatives": [
         "This summer Marco is going to visit London with his parents."
-      ]
+      ],
+      "hint": "be going to per un'intenzione — visit, parents, this summer"
     },
     {
       "id": "f05",
@@ -46,7 +50,8 @@
         "I am going to buy a new car next year.",
         "Next year I'm going to buy a new car.",
         "Next year I am going to buy a new car."
-      ]
+      ],
+      "hint": "be going to per un'intenzione — buy, new car, next year"
     },
     {
       "id": "f06",
@@ -55,7 +60,8 @@
       "alternatives": [
         "Are your friends going to come to the party? No, they aren't.",
         "Are your friends going to come to the party? No, they are not."
-      ]
+      ],
+      "hint": "domanda e risposta breve con be going to — come, party"
     },
     {
       "id": "f07",
@@ -64,7 +70,8 @@
       "alternatives": [
         "Tonight I'm having dinner at a restaurant with my sister.",
         "I am having dinner at a restaurant with my sister tonight."
-      ]
+      ],
+      "hint": "present continuous per un programma già fissato — have dinner, restaurant, tonight"
     },
     {
       "id": "f08",
@@ -73,7 +80,8 @@
       "alternatives": [
         "On Saturday I'm going to the beach with my best friend.",
         "I am going to the beach with my best friend on Saturday."
-      ]
+      ],
+      "hint": "present continuous per un programma già fissato — beach, best friend, on Saturday"
     },
     {
       "id": "f09",
@@ -83,7 +91,8 @@
         "I'm sorry, I'm meeting my grandparents tomorrow.",
         "Sorry, I'm seeing my grandparents tomorrow.",
         "I am sorry, I am seeing my grandparents tomorrow."
-      ]
+      ],
+      "hint": "present continuous per un appuntamento — sorry, see, grandparents"
     },
     {
       "id": "f10",
@@ -92,7 +101,8 @@
       "alternatives": [
         "Have you got any plans for Sunday?",
         "Do you have plans for Sunday?"
-      ]
+      ],
+      "hint": "present simple con do — have any plans, for Sunday"
     },
     {
       "id": "f11",
@@ -101,7 +111,8 @@
       "alternatives": [
         "Let's go on a day trip to Rome!",
         "Let's go to Rome for the day!"
-      ]
+      ],
+      "hint": "proposta con let's — day trip"
     },
     {
       "id": "f12",
@@ -109,7 +120,8 @@
       "en": "We could visit the main museum.",
       "alternatives": [
         "We could go to the main museum."
-      ]
+      ],
+      "hint": "proposta con could — visit, main museum"
     },
     {
       "id": "f13",
@@ -117,7 +129,8 @@
       "en": "What about leaving on Sunday morning?",
       "alternatives": [
         "How about leaving on Sunday morning?"
-      ]
+      ],
+      "hint": "proposta con what about + -ing — leave, on Sunday morning"
     },
     {
       "id": "f14",
@@ -126,7 +139,8 @@
       "alternatives": [
         "Why don't we invite your cousins as well?",
         "Why don't we also invite your cousins?"
-      ]
+      ],
+      "hint": "proposta con why don't we — invite, cousins, too"
     },
     {
       "id": "f15",
@@ -135,7 +149,8 @@
       "alternatives": [
         "Shall we go to the cinema this evening?",
         "Shall we go to the movies tonight?"
-      ]
+      ],
+      "hint": "proposta con shall we — cinema, tonight"
     },
     {
       "id": "f16",
@@ -143,7 +158,8 @@
       "en": "Do you think we should book a table?",
       "alternatives": [
         "Do you think we should reserve a table?"
-      ]
+      ],
+      "hint": "do you think + should — book a table"
     }
   ],
   "vocabulary": [
@@ -152,14 +168,16 @@
       "it": "gita di un giorno",
       "en": [
         "day trip"
-      ]
+      ],
+      "example": "We went on a day trip to the sea."
     },
     {
       "id": "v02",
       "it": "finestra",
       "en": [
         "window"
-      ]
+      ],
+      "example": "Can you open the window, please?"
     },
     {
       "id": "v03",
@@ -169,14 +187,16 @@
         "close",
         "to shut",
         "shut"
-      ]
+      ],
+      "example": "It's cold. I'll close the door."
     },
     {
       "id": "v04",
       "it": "stazione",
       "en": [
         "station"
-      ]
+      ],
+      "example": "I'll meet you at the station at nine."
     },
     {
       "id": "v05",
@@ -186,21 +206,26 @@
         "come and get",
         "to pick up",
         "pick up"
-      ]
+      ],
+      "example": "My dad will pick me up after school.",
+      "mnemonic": "pick up = \"raccogliere su\": raccogli qualcuno e lo porti via in macchina."
     },
     {
       "id": "v06",
       "it": "fidanzata",
       "en": [
         "girlfriend"
-      ]
+      ],
+      "example": "His girlfriend is coming to the party."
     },
     {
       "id": "v07",
       "it": "genitori",
       "en": [
         "parents"
-      ]
+      ],
+      "example": "My parents live in Rome.",
+      "mnemonic": "Falso amico: parents sono solo i genitori, non i parenti (relatives)."
     },
     {
       "id": "v08",
@@ -209,14 +234,16 @@
         "holidays",
         "holiday",
         "vacation"
-      ]
+      ],
+      "example": "We're going to Spain for the holidays."
     },
     {
       "id": "v09",
       "it": "festa",
       "en": [
         "party"
-      ]
+      ],
+      "example": "Are you coming to my party on Saturday?"
     },
     {
       "id": "v10",
@@ -224,7 +251,8 @@
       "en": [
         "tonight",
         "this evening"
-      ]
+      ],
+      "example": "What are you doing tonight?"
     },
     {
       "id": "v11",
@@ -232,56 +260,64 @@
       "en": [
         "to meet",
         "meet"
-      ]
+      ],
+      "example": "Let's meet in front of the cinema."
     },
     {
       "id": "v12",
       "it": "cena",
       "en": [
         "dinner"
-      ]
+      ],
+      "example": "We're having pizza for dinner."
     },
     {
       "id": "v13",
       "it": "programmi",
       "en": [
         "plans"
-      ]
+      ],
+      "example": "Have you got any plans for the weekend?"
     },
     {
       "id": "v14",
       "it": "fine settimana",
       "en": [
         "weekend"
-      ]
+      ],
+      "example": "I'm going to relax this weekend."
     },
     {
       "id": "v15",
       "it": "spiaggia",
       "en": [
         "beach"
-      ]
+      ],
+      "example": "Let's go to the beach tomorrow."
     },
     {
       "id": "v16",
       "it": "migliore amico",
       "en": [
         "best friend"
-      ]
+      ],
+      "example": "Anna is my best friend."
     },
     {
       "id": "v17",
       "it": "cattedrale",
       "en": [
         "cathedral"
-      ]
+      ],
+      "example": "We're going to visit the cathedral in the morning."
     },
     {
       "id": "v18",
       "it": "principale",
       "en": [
         "main"
-      ]
+      ],
+      "example": "The main square is very beautiful."
     },
     {
       "id": "v19",
@@ -289,35 +325,40 @@
       "en": [
         "to invite",
         "invite"
-      ]
+      ],
+      "example": "I'm going to invite all my friends."
     },
     {
       "id": "v20",
       "it": "sabato",
       "en": [
         "Saturday"
-      ]
+      ],
+      "example": "The party is on Saturday."
     },
     {
       "id": "v21",
       "it": "decisione spontanea",
       "en": [
         "spontaneous decision"
-      ]
+      ],
+      "example": "\"I'll have the pasta\" is a spontaneous decision."
     },
     {
       "id": "v22",
       "it": "intenzione",
       "en": [
         "intention"
-      ]
+      ],
+      "example": "We use \"going to\" for an intention."
     },
     {
       "id": "v23",
       "it": "suggerimento",
       "en": [
         "suggestion"
-      ]
+      ],
+      "example": "That's a good suggestion: let's go to the park!"
     }
   ],
   "grammar": [

@@ -4,7 +4,7 @@ import type { Catalogo, FraseCatalogo } from '../contenuti/catalogo'
 import { creaSessione as creaSessioneApp } from '../ripasso/sessione'
 import type { SessioneRipasso } from '../ripasso/sessione'
 import type { Importanza } from '../ripasso/importanza'
-import type { Esito } from '../ripasso/livelli'
+import type { Esito } from '../ripasso/apprendimento'
 
 export type FaseCiclo = 'in-attesa-di-risposta' | 'soluzione-mostrata' | 'nessun-materiale' | 'tutti-tolti'
 
@@ -19,6 +19,7 @@ export interface StatoCiclo {
   readonly titoloLezione: string | undefined
   readonly importanza: Importanza | null
   readonly confermaRimozioneAperta: boolean
+  readonly aiutoMostrato: boolean
 }
 
 export type CreaSessioneFrasi = (tipo: 'frasi') => SessioneRipasso<FraseCatalogo>
@@ -31,6 +32,7 @@ export interface OpzioniCiclo {
 export interface CicloEsercizio {
   readonly stato: StatoCiclo
   avvio(): void
+  mostraAiuto(): void
   conferma(testo: string): void
   segna(valutazione: Autovalutazione): void
   impostaImportanza(importanza: ImportanzaScelta): void
@@ -54,6 +56,7 @@ export function creaCiclo(opzioni: OpzioniCiclo = {}): CicloEsercizio {
   const testo = ref('')
   const importanza = ref<Importanza | null>(null)
   const confermaRimozioneAperta = ref(false)
+  const aiutoMostrato = ref(false)
   const titoloLezione = computed(() =>
     frase.value === null ? undefined : catalogo.lezione(frase.value.idLezione)?.title,
   )
@@ -62,6 +65,7 @@ export function creaCiclo(opzioni: OpzioniCiclo = {}): CicloEsercizio {
     const proposta = sessione?.prossimoElemento() ?? { caso: 'nessun-materiale' as const }
     testo.value = ''
     confermaRimozioneAperta.value = false
+    aiutoMostrato.value = false
     if (proposta.caso === 'elemento') {
       frase.value = proposta.elemento
       importanza.value = proposta.importanza
@@ -81,11 +85,15 @@ export function creaCiclo(opzioni: OpzioniCiclo = {}): CicloEsercizio {
 
   return {
     stato: readonly(
-      reactive({ fase, frase, testo, titoloLezione, importanza, confermaRimozioneAperta }),
+      reactive({ fase, frase, testo, titoloLezione, importanza, confermaRimozioneAperta, aiutoMostrato }),
     ) as StatoCiclo,
     avvio() {
       sessione = creaSessione('frasi')
       proponi()
+    },
+    mostraAiuto() {
+      if (fase.value !== 'in-attesa-di-risposta' || frase.value?.hint === undefined) return
+      aiutoMostrato.value = true
     },
     conferma(risposta) {
       if (fase.value !== 'in-attesa-di-risposta') return

@@ -12,7 +12,8 @@
         "I live in a small flat just outside the city center.",
         "I live in a small apartment just outside the centre of the city.",
         "I live in a small apartment just outside the center of the city."
-      ]
+      ],
+      "hint": "present simple — live, small apartment, just outside, city centre"
     },
     {
       "id": "f02",
@@ -20,7 +21,8 @@
       "en": "My neighbourhood is calm and quiet.",
       "alternatives": [
         "My neighborhood is calm and quiet."
-      ]
+      ],
+      "hint": "present simple — neighbourhood, calm, quiet"
     },
     {
       "id": "f03",
@@ -30,13 +32,15 @@
         "There's a small balcony where my cat watches the birds.",
         "There is a little balcony where my cat watches the birds.",
         "There's a little balcony where my cat watches the birds."
-      ]
+      ],
+      "hint": "there is + where — small balcony, cat, watch, birds"
     },
     {
       "id": "f04",
       "it": "Ci sono negozi e ristoranti nelle vicinanze.",
       "en": "There are shops and restaurants nearby.",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "there are — shops, restaurants, nearby"
     },
     {
       "id": "f05",
@@ -44,7 +48,8 @@
       "en": "If I could change one thing, I would make the kitchen bigger.",
       "alternatives": [
         "If I could change one thing, I'd make the kitchen bigger."
-      ]
+      ],
+      "hint": "if + could, poi would — change, one thing, make, kitchen, bigger"
     },
     {
       "id": "f06",
@@ -54,7 +59,8 @@
         "I'd add a bathtub to the bathroom.",
         "I would add a bath to the bathroom.",
         "I'd add a bath to the bathroom."
-      ]
+      ],
+      "hint": "would — add, bathtub, bathroom"
     },
     {
       "id": "f07",
@@ -63,7 +69,8 @@
       "alternatives": [
         "Would you prefer a penthouse in the city or a cabin near a lake?",
         "Do you prefer a penthouse in the city or a cabin by a lake?"
-      ]
+      ],
+      "hint": "domanda al present simple con prefer — penthouse, city, cabin, near a lake"
     },
     {
       "id": "f08",
@@ -73,7 +80,8 @@
         "My dream home is massive and spacious.",
         "My dream house is huge and spacious.",
         "My dream house is massive and spacious."
-      ]
+      ],
+      "hint": "present simple — dream home, huge, spacious"
     },
     {
       "id": "f09",
@@ -81,7 +89,8 @@
       "en": "My daughter's bedroom is tiny but cute.",
       "alternatives": [
         "My daughter's room is tiny but cute."
-      ]
+      ],
+      "hint": "genitivo sassone — daughter's, bedroom, tiny, cute"
     },
     {
       "id": "f10",
@@ -89,7 +98,8 @@
       "en": "The living room is warm and cozy.",
       "alternatives": [
         "The living room is warm and cosy."
-      ]
+      ],
+      "hint": "present simple — living room, warm, cozy"
     },
     {
       "id": "f11",
@@ -99,7 +109,8 @@
         "What kind of style does your home have?",
         "What style does your house have?",
         "What kind of style does your house have?"
-      ]
+      ],
+      "hint": "domanda al present simple con does — style, home"
     },
     {
       "id": "f12",
@@ -107,7 +118,8 @@
       "en": "This is a beautiful two-bedroom flat in the heart of the city.",
       "alternatives": [
         "This is a beautiful two-bedroom apartment in the heart of the city."
-      ]
+      ],
+      "hint": "this is + aggettivi prima del nome — beautiful, two-bedroom flat, in the heart of"
     },
     {
       "id": "f13",
@@ -119,7 +131,8 @@
         "It's close to a park and a farmers' market.",
         "It is near a park and a farmers market.",
         "It's near a park and a farmers market."
-      ]
+      ],
+      "hint": "it is + close to — park, farmers market"
     },
     {
       "id": "f14",
@@ -129,7 +142,8 @@
         "You will enjoy walking to the theatre.",
         "You'll enjoy walking to the theater.",
         "You will enjoy walking to the theater."
-      ]
+      ],
+      "hint": "will + enjoy -ing — walk, theatre"
     },
     {
       "id": "f15",
@@ -140,7 +154,8 @@
         "You'll be able to relax in your own cosy space.",
         "You will be able to relax in your own cosy space.",
         "You'll be able to relax in your cozy space."
-      ]
+      ],
+      "hint": "will be able to — relax, own, cozy space"
     }
   ],
   "vocabulary": [
@@ -150,14 +165,16 @@
       "en": [
         "dream home",
         "dream house"
-      ]
+      ],
+      "example": "My dream home has a garden and a big kitchen."
     },
     {
       "id": "v02",
       "it": "descrizione",
       "en": [
         "description"
-      ]
+      ],
+      "example": "The description of the house was very detailed."
     },
     {
       "id": "v03",
@@ -166,35 +183,43 @@
         "advertisement",
         "advert",
         "ad"
-      ]
+      ],
+      "example": "I saw an advertisement for a flat in the newspaper.",
+      "mnemonic": "Pensa ad \"avvertire\": un annuncio avverte la gente che qualcosa è in vendita."
     },
     {
       "id": "v04",
       "it": "attico",
       "en": [
         "penthouse"
-      ]
+      ],
+      "example": "They live in a penthouse with a view of the whole city."
     },
     {
       "id": "v05",
       "it": "baita",
       "en": [
         "cabin"
-      ]
+      ],
+      "example": "We stayed in a wooden cabin in the mountains.",
+      "mnemonic": "Somiglia a \"cabina\": una piccola casetta di legno."
     },
     {
       "id": "v06",
       "it": "lago",
       "en": [
         "lake"
-      ]
+      ],
+      "example": "There is a small lake behind the house.",
+      "mnemonic": "Somiglia a \"lago\": stessa radice latina."
     },
     {
       "id": "v07",
       "it": "dimensioni",
       "en": [
         "size"
-      ]
+      ],
+      "example": "The size of the bedroom is perfect for me."
     },
     {
       "id": "v08",
@@ -202,7 +227,9 @@
       "en": [
         "neighbours",
         "neighbors"
-      ]
+      ],
+      "example": "Our neighbours are very friendly.",
+      "mnemonic": "Pensa a \"near\", vicino: il neighbour è chi abita vicino."
     },
     {
       "id": "v09",
@@ -210,42 +237,50 @@
       "en": [
         "quiet",
         "calm"
-      ]
+      ],
+      "example": "The street is very quiet at night.",
+      "mnemonic": "Non confonderlo con \"quite\" (abbastanza): \"quiet\" ha due sillabe, \"qua-iet\"."
     },
     {
       "id": "v10",
       "it": "balcone",
       "en": [
         "balcony"
-      ]
+      ],
+      "example": "We have breakfast on the balcony in summer."
     },
     {
       "id": "v11",
       "it": "gatto",
       "en": [
         "cat"
-      ]
+      ],
+      "example": "Our cat sleeps on the sofa all day."
     },
     {
       "id": "v12",
       "it": "uccelli",
       "en": [
         "birds"
-      ]
+      ],
+      "example": "I can hear the birds singing in the morning."
     },
     {
       "id": "v13",
       "it": "negozi",
       "en": [
         "shops"
-      ]
+      ],
+      "example": "There are lots of shops near my flat."
     },
     {
       "id": "v14",
       "it": "nelle vicinanze",
       "en": [
         "nearby"
-      ]
+      ],
+      "example": "Is there a supermarket nearby?",
+      "mnemonic": "\"Near\" + \"by\": vicino vicino."
     },
     {
       "id": "v15",
@@ -254,7 +289,8 @@
         "cinema",
         "movie theater",
         "movie theatre"
-      ]
+      ],
+      "example": "There is a cinema just round the corner."
     },
     {
       "id": "v16",
@@ -262,14 +298,16 @@
       "en": [
         "theatre",
         "theater"
-      ]
+      ],
+      "example": "We went to the theatre to see a musical."
     },
     {
       "id": "v17",
       "it": "parco",
       "en": [
         "park"
-      ]
+      ],
+      "example": "The children play in the park after school."
     },
     {
       "id": "v18",
@@ -277,21 +315,26 @@
       "en": [
         "farmers market",
         "farmers' market"
-      ]
+      ],
+      "example": "I buy fresh vegetables at the farmers market.",
+      "mnemonic": "\"Farmer\" è il contadino, quello che lavora la \"farm\", la fattoria."
     },
     {
       "id": "v19",
       "it": "cucina (stanza)",
       "en": [
         "kitchen"
-      ]
+      ],
+      "example": "The kitchen is the biggest room in the house.",
+      "mnemonic": "Falso amico: \"kitchen\" è la stanza, la cucina come cibo è \"cooking\" o \"cuisine\"."
     },
     {
       "id": "v20",
       "it": "camera da letto",
       "en": [
         "bedroom"
-      ]
+      ],
+      "example": "The flat has two bedrooms and a living room."
     },
     {
       "id": "v21",
@@ -299,7 +342,9 @@
       "en": [
         "bathtub",
         "bath"
-      ]
+      ],
+      "example": "I love relaxing in a hot bathtub.",
+      "mnemonic": "\"Bath\" + \"tub\": la vasca (tub) per il bagno."
     },
     {
       "id": "v22",
@@ -307,21 +352,24 @@
       "en": [
         "small",
         "little"
-      ]
+      ],
+      "example": "The garden is small but very pretty."
     },
     {
       "id": "v23",
       "it": "minuscolo",
       "en": [
         "tiny"
-      ]
+      ],
+      "example": "The bathroom is tiny, there's only room for a shower."
     },
     {
       "id": "v24",
       "it": "carino",
       "en": [
         "cute"
-      ]
+      ],
+      "example": "What a cute little house!"
     },
     {
       "id": "v25",
@@ -329,7 +377,8 @@
       "en": [
         "big",
         "large"
-      ]
+      ],
+      "example": "They have a big garden with a pool."
     },
     {
       "id": "v26",
@@ -337,14 +386,18 @@
       "en": [
         "huge",
         "massive"
-      ]
+      ],
+      "example": "Their living room is huge.",
+      "mnemonic": "Si pronuncia \"hiùg\": una parola corta per una cosa enorme."
     },
     {
       "id": "v27",
       "it": "spazioso",
       "en": [
         "spacious"
-      ]
+      ],
+      "example": "The new flat is bright and spacious.",
+      "mnemonic": "Contiene \"space\", lo spazio: spacious vuol dire pieno di spazio."
     },
     {
       "id": "v28",
@@ -352,63 +405,74 @@
       "en": [
         "cozy",
         "cosy"
-      ]
+      ],
+      "example": "The living room is small but very cozy."
     },
     {
       "id": "v29",
       "it": "caldo (accogliente)",
       "en": [
         "warm"
-      ]
+      ],
+      "example": "The kitchen has a warm, friendly feeling."
     },
     {
       "id": "v30",
       "it": "piacevole",
       "en": [
         "pleasant"
-      ]
+      ],
+      "example": "It's a pleasant house in a quiet street.",
+      "mnemonic": "Viene da \"please\", piacere: pleasant è ciò che piace."
     },
     {
       "id": "v31",
       "it": "stile",
       "en": [
         "style"
-      ]
+      ],
+      "example": "I like the style of your furniture."
     },
     {
       "id": "v32",
       "it": "moderno",
       "en": [
         "modern"
-      ]
+      ],
+      "example": "They live in a modern flat in the city centre."
     },
     {
       "id": "v33",
       "it": "d'epoca",
       "en": [
         "vintage"
-      ]
+      ],
+      "example": "She found a vintage lamp at the market."
     },
     {
       "id": "v34",
       "it": "classico",
       "en": [
         "classic"
-      ]
+      ],
+      "example": "The house has a classic style."
     },
     {
       "id": "v35",
       "it": "rilassato",
       "en": [
         "relaxed"
-      ]
+      ],
+      "example": "The atmosphere in the café is very relaxed."
     },
     {
       "id": "v36",
       "it": "antico",
       "en": [
         "antique"
-      ]
+      ],
+      "example": "My grandmother has an antique clock.",
+      "mnemonic": "Somiglia ad \"antico\": si usa per oggetti vecchi e di valore."
     },
     {
       "id": "v37",
@@ -416,14 +480,16 @@
       "en": [
         "two-bedroom flat",
         "two-bedroom apartment"
-      ]
+      ],
+      "example": "They are looking for a two-bedroom flat."
     },
     {
       "id": "v38",
       "it": "nel cuore della città",
       "en": [
         "in the heart of the city"
-      ]
+      ],
+      "example": "Our hotel was in the heart of the city."
     },
     {
       "id": "v39",
@@ -431,7 +497,8 @@
       "en": [
         "close to",
         "near"
-      ]
+      ],
+      "example": "We live close to the station."
     },
     {
       "id": "v40",
@@ -439,7 +506,8 @@
       "en": [
         "to relax",
         "relax"
-      ]
+      ],
+      "example": "I like to relax with a good book."
     },
     {
       "id": "v41",
@@ -447,7 +515,9 @@
       "en": [
         "to escape",
         "escape"
-      ]
+      ],
+      "example": "We go to the country to escape the noise of the city.",
+      "mnemonic": "Pensa a \"scappare\": escape è la fuga, come nell'\"escape room\"."
     },
     {
       "id": "v42",
@@ -455,7 +525,9 @@
       "en": [
         "excitement",
         "hustle and bustle"
-      ]
+      ],
+      "example": "I love the hustle and bustle of the big city.",
+      "mnemonic": "\"Hustle and bustle\": due parole in rima che suonano come la gente che corre di qua e di là."
     }
   ],
   "grammar": [

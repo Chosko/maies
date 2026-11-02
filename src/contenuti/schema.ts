@@ -9,12 +9,15 @@ export const schemaFrase = z.strictObject({
   it: testo,
   en: testo,
   alternatives: z.array(testo),
+  hint: testo.optional(),
 })
 
 export const schemaVocabolo = z.strictObject({
   id: testo,
   it: testo,
   en: z.array(testo).min(1, 'serve almeno una traduzione'),
+  example: testo.optional(),
+  mnemonic: testo.optional(),
 })
 
 export const schemaScheda = z.strictObject({

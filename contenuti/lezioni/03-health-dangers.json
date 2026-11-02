@@ -8,7 +8,8 @@
       "en": "You should wear a mask when the air is polluted.",
       "alternatives": [
         "You should wear a mask when the air's polluted."
-      ]
+      ],
+      "hint": "should per un consiglio — wear, mask, polluted"
     },
     {
       "id": "f02",
@@ -18,7 +19,8 @@
         "You shouldn't eat so many hamburgers: they are unhealthy.",
         "You should not eat so many hamburgers: they're unhealthy.",
         "You should not eat so many hamburgers: they are unhealthy."
-      ]
+      ],
+      "hint": "shouldn't per un consiglio — so many, hamburgers, unhealthy"
     },
     {
       "id": "f03",
@@ -27,7 +29,8 @@
       "alternatives": [
         "You must drive on the left side of the road in England.",
         "In England you must drive on the left-hand side of the road."
-      ]
+      ],
+      "hint": "must per un obbligo — drive, left side, road"
     },
     {
       "id": "f04",
@@ -37,7 +40,8 @@
         "Factories must not throw waste into the river.",
         "Factories mustn't throw waste in the river.",
         "Factories must not throw waste in the river."
-      ]
+      ],
+      "hint": "mustn't per un divieto — factories, throw waste, river"
     },
     {
       "id": "f05",
@@ -49,7 +53,8 @@
         "It might rain this evening.",
         "It may rain this evening.",
         "It could rain this evening."
-      ]
+      ],
+      "hint": "might per una possibilità — rain, tonight"
     },
     {
       "id": "f06",
@@ -58,7 +63,8 @@
       "alternatives": [
         "I may go to the gym later.",
         "I could go to the gym later."
-      ]
+      ],
+      "hint": "might per una possibilità — gym, later"
     },
     {
       "id": "f07",
@@ -67,13 +73,15 @@
       "alternatives": [
         "Can I open the window?",
         "Could I open the window?"
-      ]
+      ],
+      "hint": "may per chiedere il permesso — open, window"
     },
     {
       "id": "f08",
       "it": "Mio fratello sa nuotare molto bene.",
       "en": "My brother can swim very well.",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "can per un'abilità — swim, very well"
     },
     {
       "id": "f09",
@@ -83,13 +91,15 @@
         "I am very stressed about work: what should I do?",
         "I'm very stressed about my work: what should I do?",
         "I am very stressed about my work: what should I do?"
-      ]
+      ],
+      "hint": "stressed about + should nella domanda — work"
     },
     {
       "id": "f10",
       "it": "Potresti metterti a dieta.",
       "en": "You could go on a diet.",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "could per un suggerimento — go on a diet"
     },
     {
       "id": "f11",
@@ -98,7 +108,8 @@
       "alternatives": [
         "Why don't you go to the doctor's?",
         "Why don't you see a doctor?"
-      ]
+      ],
+      "hint": "suggerimento con why don't you — go to the doctor"
     },
     {
       "id": "f12",
@@ -106,7 +117,8 @@
       "en": "How about doing more exercise?",
       "alternatives": [
         "What about doing more exercise?"
-      ]
+      ],
+      "hint": "suggerimento con how about + -ing — do, more exercise"
     },
     {
       "id": "f13",
@@ -116,7 +128,8 @@
         "What about going running tomorrow morning?",
         "How about going for a jog tomorrow morning?",
         "What about going for a jog tomorrow morning?"
-      ]
+      ],
+      "hint": "suggerimento con how about + -ing — go running, tomorrow morning"
     },
     {
       "id": "f14",
@@ -127,7 +140,8 @@
         "Don't drink alcohol if you're taking medicine.",
         "Don't drink alcohol if you are taking medicine.",
         "Do not drink alcohol if you are taking medicine."
-      ]
+      ],
+      "hint": "imperativo negativo con don't — drink alcohol, take medicine"
     },
     {
       "id": "f15",
@@ -136,7 +150,8 @@
       "alternatives": [
         "You should take breaks while you are working.",
         "You should take breaks while you work."
-      ]
+      ],
+      "hint": "should + while con il present continuous — take breaks"
     },
     {
       "id": "f16",
@@ -144,7 +159,8 @@
       "en": "Do you think your neighbourhood is polluted? Yes, I think so.",
       "alternatives": [
         "Do you think your neighborhood is polluted? Yes, I think so."
-      ]
+      ],
+      "hint": "do you think + risposta breve I think so — neighbourhood, polluted"
     },
     {
       "id": "f17",
@@ -154,7 +170,8 @@
         "Do you think fertilisers are harmful? I don't think so.",
         "Do you think fertilizers are harmful? I do not think so.",
         "Do you think fertilisers are harmful? I do not think so."
-      ]
+      ],
+      "hint": "do you think + risposta breve I don't think so — fertilizers, harmful"
     },
     {
       "id": "f18",
@@ -162,7 +179,8 @@
       "en": "Do you think you'll pass the exam? I hope so.",
       "alternatives": [
         "Do you think you will pass the exam? I hope so."
-      ]
+      ],
+      "hint": "do you think + will, risposta breve I hope so — pass the exam"
     },
     {
       "id": "f19",
@@ -170,7 +188,8 @@
       "en": "Do you think the beach will be crowded tomorrow? I hope not.",
       "alternatives": [
         "Do you think the beach is going to be crowded tomorrow? I hope not."
-      ]
+      ],
+      "hint": "do you think + will, risposta breve I hope not — beach, crowded"
     },
     {
       "id": "f20",
@@ -180,7 +199,8 @@
         "My father is very fit because he exercises every day.",
         "My dad is very fit because he does exercise every day.",
         "My dad is very fit because he exercises every day."
-      ]
+      ],
+      "hint": "present simple — fit, because, do exercise, every day"
     }
   ],
   "vocabulary": [
@@ -189,84 +209,100 @@
       "it": "salute",
       "en": [
         "health"
-      ]
+      ],
+      "example": "Smoking is bad for your health."
     },
     {
       "id": "v02",
       "it": "rischio per la salute",
       "en": [
         "health risk"
-      ]
+      ],
+      "example": "Air pollution is a serious health risk."
     },
     {
       "id": "v03",
       "it": "verbo modale",
       "en": [
         "modal verb"
-      ]
+      ],
+      "example": "\"Should\" is a modal verb."
     },
     {
       "id": "v04",
       "it": "consiglio",
       "en": [
         "advice"
-      ]
+      ],
+      "example": "Can I give you some advice?",
+      "mnemonic": "Falso amico: advice non è \"avviso\" ma consiglio, ed è non numerabile: some advice, mai an advice."
     },
     {
       "id": "v05",
       "it": "bloccato",
       "en": [
         "stuck"
-      ]
+      ],
+      "example": "I was stuck in traffic for two hours.",
+      "mnemonic": "stuck ricorda lo stucco: resti attaccato e non ti muovi."
     },
     {
       "id": "v06",
       "it": "inquinamento dell'acqua",
       "en": [
         "water pollution"
-      ]
+      ],
+      "example": "Water pollution kills a lot of fish."
     },
     {
       "id": "v07",
       "it": "inquinamento dell'aria",
       "en": [
         "air pollution"
-      ]
+      ],
+      "example": "Air pollution is a big problem in cities."
     },
     {
       "id": "v08",
       "it": "gola",
       "en": [
         "throat"
-      ]
+      ],
+      "example": "I have a sore throat.",
+      "mnemonic": "throat ricorda \"trota\": una lisca di trota che ti resta in gola."
     },
     {
       "id": "v09",
       "it": "mascherina",
       "en": [
         "mask"
-      ]
+      ],
+      "example": "You should wear a mask on the bus."
     },
     {
       "id": "v10",
       "it": "pesticida",
       "en": [
         "pesticide"
-      ]
+      ],
+      "example": "Farmers shouldn't use too many pesticides."
     },
     {
       "id": "v11",
       "it": "nocivo",
       "en": [
         "harmful"
-      ]
+      ],
+      "example": "Smoking is harmful to your lungs.",
+      "mnemonic": "harm è il danno: harmful, pieno di danno, nocivo."
     },
     {
       "id": "v12",
       "it": "stress",
       "en": [
         "stress"
-      ]
+      ],
+      "example": "Too much stress is bad for you."
     },
     {
       "id": "v13",
@@ -274,14 +310,16 @@
       "en": [
         "fertilizer",
         "fertiliser"
-      ]
+      ],
+      "example": "This fertilizer helps plants grow."
     },
     {
       "id": "v14",
       "it": "vegetariano",
       "en": [
         "vegetarian"
-      ]
+      ],
+      "example": "My sister is vegetarian, so she doesn't eat meat."
     },
     {
       "id": "v15",
@@ -289,28 +327,34 @@
       "en": [
         "cellphone radiation",
         "mobile phone radiation"
-      ]
+      ],
+      "example": "Some people worry about cellphone radiation."
     },
     {
       "id": "v16",
       "it": "auricolari",
       "en": [
         "earphones"
-      ]
+      ],
+      "example": "You shouldn't listen to loud music with earphones."
     },
     {
       "id": "v17",
       "it": "abitudine",
       "en": [
         "habit"
-      ]
+      ],
+      "example": "Eating fruit every day is a good habit.",
+      "mnemonic": "habit ha la stessa radice di \"abitudine\", ma senza la -udine."
     },
     {
       "id": "v18",
       "it": "fabbrica",
       "en": [
         "factory"
-      ]
+      ],
+      "example": "The factory near the river pollutes the water.",
+      "mnemonic": "Falso amico: factory non è la fattoria (farm) ma la fabbrica."
     },
     {
       "id": "v19",
@@ -318,28 +362,34 @@
       "en": [
         "to pollute",
         "pollute"
-      ]
+      ],
+      "example": "Cars pollute the air."
     },
     {
       "id": "v20",
       "it": "pettegolezzo",
       "en": [
         "gossip"
-      ]
+      ],
+      "example": "Don't believe all the gossip you hear."
     },
     {
       "id": "v21",
       "it": "rifiuti",
       "en": [
         "waste"
-      ]
+      ],
+      "example": "We should recycle our waste.",
+      "mnemonic": "waste ricorda \"guasto\": roba guasta da buttare."
     },
     {
       "id": "v22",
       "it": "legge",
       "en": [
         "law"
-      ]
+      ],
+      "example": "There should be a law against smoking in parks.",
+      "mnemonic": "law si legge \"lò\": \"lo dice la legge\"."
     },
     {
       "id": "v23",
@@ -347,14 +397,16 @@
       "en": [
         "to take medicine",
         "take medicine"
-      ]
+      ],
+      "example": "You should take your medicine after dinner."
     },
     {
       "id": "v24",
       "it": "droghe",
       "en": [
         "drugs"
-      ]
+      ],
+      "example": "Drugs are very dangerous."
     },
     {
       "id": "v25",
@@ -364,7 +416,8 @@
         "have a massage",
         "to get a massage",
         "get a massage"
-      ]
+      ],
+      "example": "You should have a massage to relax."
     },
     {
       "id": "v26",
@@ -374,7 +427,8 @@
         "do exercise",
         "to exercise",
         "exercise"
-      ]
+      ],
+      "example": "You should do exercise three times a week."
     },
     {
       "id": "v27",
@@ -382,7 +436,8 @@
       "en": [
         "to go on a diet",
         "go on a diet"
-      ]
+      ],
+      "example": "My dad went on a diet after the holidays."
     },
     {
       "id": "v28",
@@ -390,7 +445,8 @@
       "en": [
         "to lose weight",
         "lose weight"
-      ]
+      ],
+      "example": "She wants to lose weight before the summer."
     },
     {
       "id": "v29",
@@ -400,7 +456,9 @@
         "gain weight",
         "to put on weight",
         "put on weight"
-      ]
+      ],
+      "example": "I always gain weight at Christmas.",
+      "mnemonic": "put on weight = \"mettersi addosso\" peso, come un vestito in più."
     },
     {
       "id": "v30",
@@ -408,70 +466,82 @@
       "en": [
         "to drink alcohol",
         "drink alcohol"
-      ]
+      ],
+      "example": "You mustn't drink alcohol before you drive."
     },
     {
       "id": "v31",
       "it": "inquinato",
       "en": [
         "polluted"
-      ]
+      ],
+      "example": "This river is very polluted."
     },
     {
       "id": "v32",
       "it": "stressato",
       "en": [
         "stressed"
-      ]
+      ],
+      "example": "I feel stressed before exams."
     },
     {
       "id": "v33",
       "it": "affollato",
       "en": [
         "crowded"
-      ]
+      ],
+      "example": "The bus is always crowded in the morning.",
+      "mnemonic": "crowd è la folla: crowded, pieno di folla, affollato."
     },
     {
       "id": "v34",
       "it": "in forma",
       "en": [
         "fit"
-      ]
+      ],
+      "example": "My grandmother is very fit for her age.",
+      "mnemonic": "fit ricorda il fitness: chi fa fitness è in forma."
     },
     {
       "id": "v35",
       "it": "che fa bene alla salute",
       "en": [
         "good for your health"
-      ]
+      ],
+      "example": "Fresh fruit is good for your health."
     },
     {
       "id": "v36",
       "it": "che fa male alla salute",
       "en": [
         "bad for your health"
-      ]
+      ],
+      "example": "Too much sugar is bad for your health."
     },
     {
       "id": "v37",
       "it": "sano",
       "en": [
         "healthy"
-      ]
+      ],
+      "example": "I try to eat healthy food."
     },
     {
       "id": "v38",
       "it": "malsano",
       "en": [
         "unhealthy"
-      ]
+      ],
+      "example": "Fast food is very unhealthy."
     },
     {
       "id": "v39",
       "it": "palestra",
       "en": [
         "gym"
-      ]
+      ],
+      "example": "I go to the gym after work."
     },
     {
       "id": "v40",
@@ -479,7 +549,8 @@
       "en": [
         "to swim",
         "swim"
-      ]
+      ],
+      "example": "I swim every Tuesday."
     },
     {
       "id": "v41",
@@ -491,14 +562,16 @@
         "go for a jog",
         "to go jogging",
         "go jogging"
-      ]
+      ],
+      "example": "Let's go running in the park."
     },
     {
       "id": "v42",
       "it": "medico",
       "en": [
         "doctor"
-      ]
+      ],
+      "example": "You should see a doctor."
     },
     {
       "id": "v43",
@@ -506,14 +579,16 @@
       "en": [
         "to take a break",
         "take a break"
-      ]
+      ],
+      "example": "You look tired: you should take a break."
     },
     {
       "id": "v44",
       "it": "esame",
       "en": [
         "exam"
-      ]
+      ],
+      "example": "I have an English exam on Friday."
     },
     {
       "id": "v45",
@@ -523,14 +598,17 @@
         "revise",
         "to review",
         "review"
-      ]
+      ],
+      "example": "I need to revise for my exam.",
+      "mnemonic": "Falso amico: revise non è revisionare un'auto ma ripassare per un esame."
     },
     {
       "id": "v46",
       "it": "compagno di classe",
       "en": [
         "classmate"
-      ]
+      ],
+      "example": "My classmate helped me with my homework."
     },
     {
       "id": "v47",
@@ -538,14 +616,17 @@
       "en": [
         "to ban",
         "ban"
-      ]
+      ],
+      "example": "The city should ban cars from the centre.",
+      "mnemonic": "ban ricorda il bando: mettere al bando, cioè vietare."
     },
     {
       "id": "v48",
       "it": "cambiamento climatico",
       "en": [
         "climate change"
-      ]
+      ],
+      "example": "Climate change is a big problem for everyone."
     },
     {
       "id": "v49",
@@ -553,7 +634,9 @@
       "en": [
         "neighbourhood",
         "neighborhood"
-      ]
+      ],
+      "example": "My neighbourhood is quiet and safe.",
+      "mnemonic": "neighbour è il vicino: neighbourhood è il vicinato, il quartiere."
     }
   ],
   "grammar": [
