@@ -32,7 +32,7 @@ build is a static site.
   typed by JSDoc, no dependencies beyond Node modules. Pure exports
   `scegliVocabolo` (lessons of the three highest lesson numbers weigh 3,
   the rest 1), `componiNotifica` (title, `Come si dice «<it>»?`, click URL
-  `#/vocaboli?parola=<encoded global id>`, tag `speech_balloon`),
+  `#/vocaboli?parola=<encoded global id>`, icon `https://maies.chosko.com/maies-icona-512.png` via the `Icon` header),
   `scegliDomanda`, `leggiLezioni` (the `.json` files of a folder, missing
   folder → none) and `esegui` (one POST to `https://ntfy.sh/<NTFY_TOPIC>`;
   no topic or no vocabulary → logs why and exits 0; ntfy error or no

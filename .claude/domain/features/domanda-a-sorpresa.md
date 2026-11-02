@@ -88,7 +88,8 @@ test, nessuna dipendenza nuova.
   - indirizzo da aprire al tocco
     `https://maies.chosko.com/#/vocaboli?parola=<id globale>`, con l'id
     codificato per un indirizzo;
-  - un'etichetta di ntfy che mostra un'icona a fumetto.
+  - come icona il logo di maies, il PNG `maies-icona-512.png` pubblicato
+    dal sito (ntfy accetta solo icone PNG o JPEG).
 - Senza vocaboli non c'è notifica.
 
 ### Script di invio
