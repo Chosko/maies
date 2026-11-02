@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import {
-  FATTORI,
+  FATTORI_INTERVALLO,
   IMPORTANZA_INIZIALE,
   IMPORTANZE,
   isImportanza,
@@ -15,11 +15,13 @@ describe('importanza', () => {
     expect(IMPORTANZA_INIZIALE).toBe(2)
   })
 
-  it('dà a ogni importanza il suo fattore, con 0 escluso', () => {
-    expect(FATTORI[0]).toBe(0)
-    expect(FATTORI[1]).toBe(0.5)
-    expect(FATTORI[2]).toBe(1)
-    expect(FATTORI[3]).toBe(2)
+  it('moltiplica l\'intervallo dei controlli: 1 → ×2, 2 → ×1, 3 → ×0,5', () => {
+    expect(FATTORI_INTERVALLO).toEqual({ 1: 2, 2: 1, 3: 0.5 })
+  })
+
+  it('non ha più i fattori di peso', async () => {
+    const modulo: Record<string, unknown> = await import('../src/ripasso/importanza')
+    expect(modulo.FATTORI).toBeUndefined()
   })
 
   it('riconosce solo le quattro importanze', () => {

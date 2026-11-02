@@ -6,28 +6,39 @@ Spaced review: each sentence and word has one of three levels and one of
 four importance values, stored in the browser, and a session picks the next
 item weighted by both.
 
+- `src/ripasso/apprendimento.ts` — learning states, outcome transitions,
+  check scale and local calendar days.
 - `src/ripasso/livelli.ts` — levels, weights, initial level and the
-  transition rule.
+  transition rule, still used by the store, selector and session.
 - `src/ripasso/importanza.ts` — importance values, initial importance and
-  the weight factors.
+  the check-interval factors.
 - `src/ripasso/archivio.ts` — progress store over `localStorage`.
 - `src/ripasso/selettore.ts` — weighted random pick with exclusions.
 - `src/ripasso/sessione.ts` — `creaSessione()`, the entry point the
   exercise and vocabulary screens use.
 
-Tests: `tests/livelli.test.ts`, `tests/importanza.test.ts`,
+Tests: `tests/apprendimento.test.ts`, `tests/livelli.test.ts`, `tests/importanza.test.ts`,
 `tests/archivio.test.ts`, `tests/selettore.test.ts`,
 `tests/sessione.test.ts`.
 
 ## Public API
 
+- `apprendimento.ts` — `Esito` (`giusto` | `sbagliato`), `Giorno`
+  (`AAAA-MM-GG` local day), `StatoApprendimento` (`nuovo`, `da-riprendere`,
+  `nel-gruppo` with `serie` 0–2, `imparato` with `gradino`, `controllo`,
+  `ultimaVista`), `STATO_INIZIALE` (`nuovo`), `SCALA` (1, 3, 7, 14, 30),
+  `intervallo(gradino, importanza)`, `giornoLocale(data)`,
+  `aggiungiGiorni(giorno, n)`, `controlloScaduto(stato, oggi)` and
+  `applicaEsito(stato, esito, importanza, oggi)`, which applies the
+  feature's *Transizioni*.
 - `livelli.ts` — `LIVELLI` (`da-ripassare`, `normale`, `consolidato`),
-  `Livello`, `Esito` (`giusto` | `sbagliato`), `LIVELLO_INIZIALE`
+  `Livello`, `Esito` (re-exported from `apprendimento.ts`), `LIVELLO_INIZIALE`
   (`normale`), `PESI` (6 / 3 / 1), `isLivello()`,
   `nuovoLivello(attuale, esito)`: wrong → `da-ripassare`; right → one step
   up (`da-ripassare` → `normale` → `consolidato`).
 - `importanza.ts` — `IMPORTANZE` (0, 1, 2, 3), `Importanza`,
-  `IMPORTANZA_INIZIALE` (2), `FATTORI` (0 / 0.5 / 1 / 2), `isImportanza()`.
+  `ImportanzaAttiva` (1–3), `IMPORTANZA_INIZIALE` (2), `FATTORI_INTERVALLO`
+  (1 → ×2, 2 → ×1, 3 → ×0.5), `isImportanza()`.
   Importance 0 means the item is removed from review.
 - `archivio.ts` — `CHIAVE_PROGRESSI`, the edition's key
   (`chiaveProgressi(EDIZIONE)`: `maies.progressi`, or `maies.kids.progressi`
@@ -37,7 +48,7 @@ Tests: `tests/livelli.test.ts`, `tests/importanza.test.ts`,
   `leggiImportanza(idGlobale)` and `salvaImportanza(idGlobale, importanza)`.
 - `selettore.ts` — `scegli(candidati, esclusi, casualita): T | null` over
   `{ id, livello, importanza }` candidates, each weighted
-  `PESI[livello] × FATTORI[importanza]`; a candidate of weight 0
+  `PESI[livello] ×` its own importance factor (0 / 0.5 / 1 / 2); a candidate of weight 0
   (importance 0) is never picked, and `null` means no excluded-free
   candidate with positive weight is left; `Casualita` is `() => number` in
   [0, 1).
@@ -95,7 +106,9 @@ Tests: `tests/livelli.test.ts`, `tests/importanza.test.ts`,
 
 - Changing weights, levels or transitions: `livelli.ts` (and
   `tests/livelli.test.ts`, which pins the values).
-- Changing weights or values of importance: `importanza.ts` (and
+- Changing learning states, transitions or the check scale:
+  `apprendimento.ts` (and `tests/apprendimento.test.ts`, which pins them).
+- Changing interval factors or values of importance: `importanza.ts` (and
   `tests/importanza.test.ts`).
 - Changing the stored format: `archivio.ts`; a new `VERSIONE` reads as
   empty every stored value it does not convert, so progress is lost unless

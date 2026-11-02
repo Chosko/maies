@@ -446,7 +446,7 @@ Feature: aggiunta-materiale-lezione
 
 ## 45. Regole di apprendimento e scala dei controlli
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/ripasso/apprendimento.ts, src/ripasso/importanza.ts, tests/apprendimento.test.ts, tests/importanza.test.ts
 Preconditions: none

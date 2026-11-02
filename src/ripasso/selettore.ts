@@ -1,6 +1,5 @@
 import { PESI } from './livelli'
 import type { Livello } from './livelli'
-import { FATTORI } from './importanza'
 import type { Importanza } from './importanza'
 
 export interface Candidato {
@@ -11,8 +10,15 @@ export interface Candidato {
 
 export type Casualita = () => number
 
+const FATTORI_PESO: Readonly<Record<Importanza, number>> = {
+  0: 0,
+  1: 0.5,
+  2: 1,
+  3: 2,
+}
+
 function peso(candidato: Candidato): number {
-  return PESI[candidato.livello] * FATTORI[candidato.importanza]
+  return PESI[candidato.livello] * FATTORI_PESO[candidato.importanza]
 }
 
 export function scegli<T extends Candidato>(

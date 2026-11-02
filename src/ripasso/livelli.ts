@@ -1,8 +1,10 @@
+import type { Esito } from './apprendimento'
+
+export type { Esito }
+
 export const LIVELLI = ['da-ripassare', 'normale', 'consolidato'] as const
 
 export type Livello = (typeof LIVELLI)[number]
-
-export type Esito = 'giusto' | 'sbagliato'
 
 export const LIVELLO_INIZIALE: Livello = 'normale'
 
