@@ -576,7 +576,7 @@ Feature: ripetizione-errori
 
 ## 58. Allenamento vocaboli aperto su una parola indicata nell'indirizzo
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/vocaboli/ciclo.ts, src/views/VocaboliView.vue, tests/ciclo-vocaboli.test.ts, tests/vocaboli.test.ts
 Preconditions: 56

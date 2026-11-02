@@ -1,5 +1,6 @@
 import { describe, it, expect, afterEach } from 'vitest'
 import { mount, flushPromises } from '@vue/test-utils'
+import { createRouter, createWebHashHistory, RouterView } from 'vue-router'
 import type { VueWrapper } from '@vue/test-utils'
 import { costruisciCatalogo } from '../src/contenuti/catalogo'
 import type { Catalogo } from '../src/contenuti/catalogo'
@@ -957,5 +958,104 @@ describe('schermata Vocaboli: la riscrittura dopo una risposta sbagliata', () =>
     expect(wrapper.find('.vocabolo-riscrittura-campo').exists()).toBe(true)
     expect(wrapper.find('.importanza').exists()).toBe(false)
     expect(wrapper.findAll('button').map((b) => b.text())).toEqual(['Controlla'])
+  })
+})
+
+// Monta la schermata dietro un router vero, aperta all'indirizzo `indirizzo`.
+async function montaA(
+  indirizzo: string,
+  catalogo: Catalogo,
+  { edizione, archivio = creaArchivio(null) }: { edizione?: Edizione; archivio?: ArchivioProgressi } = {},
+) {
+  const fabbrica = () =>
+    creaCiclo({
+      catalogo,
+      creaSessione: (tipo) => creaSessione(tipo, { catalogo, archivio, casualita: fissa(0) }),
+    })
+  const router = createRouter({
+    history: createWebHashHistory(),
+    routes: [
+      {
+        path: '/vocaboli',
+        component: VocaboliView,
+        props: { creaCiclo: fabbrica, ...(edizione ? { edizione } : {}) },
+      },
+      { path: '/dizionario', component: { template: '<p>Dizionario</p>' } },
+    ],
+  })
+  await router.push('/dizionario')
+  await router.isReady()
+  const voci = window.history.length
+  await router.push(indirizzo)
+  const wrapper = mount(RouterView, { global: { plugins: [router] }, attachTo: document.body })
+  montate.push(wrapper)
+  await flushPromises()
+  return { router, wrapper, archivio, vociAggiunte: () => window.history.length - voci }
+}
+
+describe('schermata Vocaboli aperta su una parola indicata nell’indirizzo', () => {
+  it.each<Edizione>(['principale', 'kids'])(
+    'nell’edizione %s la parola indicata è la prima domanda',
+    async (edizione) => {
+      const { wrapper } = await montaA('/vocaboli?parola=01-a/v3', catalogoDi(lezione('01-a', 3)), {
+        edizione,
+      })
+
+      expect(wrapper.get('.vocabolo-parola').text()).toBe('parola 3')
+      expect(document.activeElement).toBe(wrapper.get('input').element)
+    },
+  )
+
+  it.each<Edizione>(['principale', 'kids'])(
+    'nell’edizione %s il parametro sparisce dall’indirizzo senza una voce in più nella cronologia',
+    async (edizione) => {
+      const { router, vociAggiunte } = await montaA(
+        '/vocaboli?parola=01-a/v3',
+        catalogoDi(lezione('01-a', 3)),
+        { edizione },
+      )
+
+      expect(router.currentRoute.value.path).toBe('/vocaboli')
+      expect(router.currentRoute.value.query).toEqual({})
+      // La sola voce aggiunta è quella dell'ingresso: togliere il parametro la sostituisce.
+      expect(vociAggiunte()).toBe(1)
+    },
+  )
+
+  it('dopo la parola indicata il ciclo continua come sempre', async () => {
+    const { wrapper } = await montaA('/vocaboli?parola=01-a/v3', catalogoDi(lezione('01-a', 3)))
+
+    await conferma(wrapper, 'word 3')
+    await bottone(wrapper, 'Avanti').trigger('click')
+    await flushPromises()
+
+    expect(wrapper.get('.vocabolo-parola').text()).toBe('parola 1')
+  })
+
+  it('una parola sconosciuta apre il prossimo elemento senza messaggi', async () => {
+    const { wrapper, router } = await montaA('/vocaboli?parola=09-z/v1', catalogoDi(lezione('01-a', 2)))
+
+    expect(wrapper.get('.vocabolo-parola').text()).toBe('parola 1')
+    expect(wrapper.find('[role="alert"]').exists()).toBe(false)
+    expect(router.currentRoute.value.query).toEqual({})
+  })
+
+  it('una parola tolta dall’allenamento apre il prossimo elemento senza messaggi', async () => {
+    const archivio = creaArchivio(null)
+    archivio.salvaImportanza('01-a/v2', 0)
+    const { wrapper } = await montaA('/vocaboli?parola=01-a/v2', catalogoDi(lezione('01-a', 2)), {
+      archivio,
+    })
+
+    expect(wrapper.get('.vocabolo-parola').text()).toBe('parola 1')
+    expect(wrapper.find('[role="alert"]').exists()).toBe(false)
+  })
+
+  it('senza parametro l’indirizzo resta com’è', async () => {
+    const { wrapper, router, vociAggiunte } = await montaA('/vocaboli', catalogoDi(lezione('01-a', 2)))
+
+    expect(wrapper.get('.vocabolo-parola').text()).toBe('parola 1')
+    expect(router.currentRoute.value.fullPath).toBe('/vocaboli')
+    expect(vociAggiunte()).toBe(1)
   })
 })

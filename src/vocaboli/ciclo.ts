@@ -35,7 +35,7 @@ export interface OpzioniCiclo {
 
 export interface CicloAllenamento {
   readonly stato: StatoCiclo
-  avvio(): void
+  avvio(parolaIniziale?: string): void
   conferma(testo: string): void
   riscrivi(testo: string): void
   avanti(): void
@@ -63,8 +63,10 @@ export function creaCiclo(opzioni: OpzioniCiclo = {}): CicloAllenamento {
     vocabolo.value === null ? undefined : catalogo.lezione(vocabolo.value.idLezione)?.title,
   )
 
-  function proponi(): void {
-    const proposta = sessione?.prossimoElemento() ?? { caso: 'nessun-materiale' }
+  function proponi(parolaIniziale?: string): void {
+    // Una parola iniziale sconosciuta o tolta non è un errore: si parte dal prossimo elemento.
+    const iniziale = parolaIniziale ? sessione?.elementoPerId(parolaIniziale) : null
+    const proposta = iniziale ?? sessione?.prossimoElemento() ?? { caso: 'nessun-materiale' }
     testo.value = ''
     esito.value = null
     riscrittura.value = ''
@@ -99,9 +101,9 @@ export function creaCiclo(opzioni: OpzioniCiclo = {}): CicloAllenamento {
         titoloLezione,
       }),
     ) as StatoCiclo,
-    avvio() {
+    avvio(parolaIniziale) {
       sessione = creaSessione('vocaboli')
-      proponi()
+      proponi(parolaIniziale)
     },
     conferma(risposta) {
       if (fase.value !== 'in-attesa-di-risposta' || sessione === null || vocabolo.value === null) return

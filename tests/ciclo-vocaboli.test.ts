@@ -102,6 +102,66 @@ describe("ciclo dell'allenamento vocaboli", () => {
     expect(ciclo.stato.titoloLezione).toBeUndefined()
   })
 
+  it('avvio con una parola iniziale la propone per prima, poi il ciclo continua come sempre', () => {
+    const catalogo = catalogoDi(lezione('01-a', 3))
+    const { ciclo } = preparaCiclo(catalogo)
+
+    ciclo.avvio('01-a/v3')
+
+    expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
+    expect(ciclo.stato.vocabolo?.idGlobale).toBe('01-a/v3')
+    expect(ciclo.stato.importanza).toBe(2)
+    expect(ciclo.stato.titoloLezione).toBe('Lezione 01-a')
+
+    ciclo.conferma('word 3')
+    expect(ciclo.stato.fase).toBe('esito-mostrato')
+    ciclo.avanti()
+    expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
+    expect(ciclo.stato.vocabolo?.idGlobale).toBe('01-a/v1')
+  })
+
+  it("con una parola iniziale l'esito si registra su quella parola", () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 3)))
+
+    ciclo.avvio('01-a/v2')
+    ciclo.conferma('wrong')
+
+    expect(archivio.leggiStato('01-a/v2')).toEqual(serie(0))
+    expect(archivio.leggiStato('01-a/v1')).toEqual(NUOVO)
+  })
+
+  it.each([
+    ['sconosciuta', '09-z/v1'],
+    ['vuota', ''],
+  ])('avvio con una parola iniziale %s propone il prossimo elemento', (_caso, parola) => {
+    const { ciclo } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+
+    ciclo.avvio(parola)
+
+    expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
+    expect(ciclo.stato.vocabolo?.idGlobale).toBe('01-a/v1')
+  })
+
+  it('avvio con una parola iniziale tolta propone il prossimo elemento', () => {
+    const archivio = creaArchivio(null)
+    archivio.salvaImportanza('01-a/v2', 0)
+    const { ciclo } = preparaCiclo(catalogoDi(lezione('01-a', 2)), archivio)
+
+    ciclo.avvio('01-a/v2')
+
+    expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
+    expect(ciclo.stato.vocabolo?.idGlobale).toBe('01-a/v1')
+  })
+
+  it('avvio con una parola iniziale sconosciuta e senza vocaboli passa a nessun materiale', () => {
+    const { ciclo } = preparaCiclo(catalogoDi(lezione('01-a', 0)))
+
+    ciclo.avvio('01-a/v1')
+
+    expect(ciclo.stato.fase).toBe('nessun-materiale')
+    expect(ciclo.stato.vocabolo).toBeNull()
+  })
+
   it("lo stato porta l'importanza attuale del vocabolo proposto", () => {
     const archivio = creaArchivio(null)
     archivio.salvaImportanza('01-a/v1', 3)

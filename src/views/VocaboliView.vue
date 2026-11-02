@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { nextTick, onBeforeUnmount, ref, useId, watch } from 'vue'
+import { inject, nextTick, onBeforeUnmount, ref, useId, watch } from 'vue'
+import { routeLocationKey, routerKey } from 'vue-router'
+import type { LocationQuery } from 'vue-router'
 import { creaCiclo as creaCicloApp } from '../vocaboli/ciclo'
 import type { CicloAllenamento } from '../vocaboli/ciclo'
 import { creaPronuncia } from '../vocaboli/pronuncia'
@@ -17,10 +19,27 @@ const props = withDefaults(
   },
 )
 
+// `#/vocaboli?parola=<id globale>` apre l'allenamento su quella parola: il parametro si legge una
+// volta all'ingresso e si toglie dall'indirizzo sostituendo la voce, così ricaricare non lo
+// ripropone. Montata fuori da un router, la schermata parte senza parola iniziale.
+const router = inject(routerKey, null)
+const route = inject(routeLocationKey, null)
+
+function primoValore(valore: LocationQuery[string] | undefined): string | undefined {
+  const primo = Array.isArray(valore) ? valore[0] : valore
+  return primo ?? undefined
+}
+
+const parolaIniziale = primoValore(route?.query.parola)
+if (router !== null && route !== null && route.query.parola !== undefined) {
+  const { parola: _tolta, ...altri } = route.query
+  void router.replace({ path: route.path, query: altri, hash: route.hash })
+}
+
 // Un ciclo nuovo a ogni montaggio: uscire e rientrare apre una sessione nuova.
 // L'avvio è sincrono, così la schermata non mostra mai il nessun materiale per un attimo.
 const ciclo = props.creaCiclo()
-ciclo.avvio()
+ciclo.avvio(parolaIniziale)
 const stato = ciclo.stato
 
 // Il browser può caricare le voci dopo l'apertura: i pulsanti della pronuncia seguono i cambi.
