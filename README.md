@@ -26,6 +26,7 @@ Dopo `npm install`:
 | `npm test` | Esegue i test con Vitest. |
 | `npm run typecheck` | Controlla i tipi con `vue-tsc`. |
 | `npm run build` | Compila le due edizioni: la principale in `dist/`, la kids in `dist/kids/`. |
+| `npm run domanda-a-sorpresa` | Invia una domanda a sorpresa al canale ntfy della variabile `NTFY_TOPIC`; senza la variabile non invia nulla. |
 
 ## Contenuti
 
@@ -253,3 +254,53 @@ impostazioni Pages del repository:
 
 Il perché di queste scelte è nel documento di feature
 [`.claude/domain/features/scheletro-e-pubblicazione.md`](.claude/domain/features/scheletro-e-pubblicazione.md).
+
+## Domanda a sorpresa
+
+Tre volte al giorno una notifica sul telefono di Sara le chiede come si dice
+in inglese un vocabolo italiano: "Come si dice «cane»?". Toccandola si apre
+l'allenamento vocaboli con quella parola come prima domanda, all'indirizzo
+`https://maies.chosko.com/#/vocaboli?parola=<id globale>`. Il vocabolo viene
+dalle lezioni dell'edizione principale: quelli delle tre lezioni più recenti
+pesano 3, gli altri 1. Nessuno stato passa da una domanda all'altra e i
+progressi non contano, perché restano nel browser; l'edizione kids non ha
+notifiche.
+
+Lo script `scripts/domanda-a-sorpresa.mjs`, avviato con
+`npm run domanda-a-sorpresa`, legge i file di `contenuti/lezioni/` con
+`node:fs`, sceglie il vocabolo e pubblica la notifica con una sola richiesta
+a `https://ntfy.sh/<canale>`, dove il canale è la variabile d'ambiente
+`NTFY_TOPIC`. Senza la variabile o senza vocaboli non pubblica nulla e
+termina senza errore, scrivendo il motivo nel log; se ntfy.sh risponde con
+un errore o non risponde, termina con errore. Il nome del canale non
+compare mai nel log né nel repository. Lo script esporta le funzioni pure
+della scelta e dell'invio, provate da `tests/domanda-a-sorpresa.test.ts`.
+
+Lo esegue una GitHub Action separata dalla pubblicazione, alle 09:17, 13:47
+e 18:23 UTC — fra le 9 e le 21 in Italia sia con l'ora solare sia con quella
+legale — e anche a mano; ha permessi di sola lettura, non pubblica il sito e
+gira solo sul branch principale. GitHub può ritardare un'esecuzione
+pianificata di qualche minuto, e una domanda non inviata per un errore di
+ntfy.sh si perde, mentre le successive partono normalmente. Il repository
+ne tiene il modello in `scripts/domanda-a-sorpresa.workflow.yml`, verificato
+da `tests/domanda-a-sorpresa-workflow.test.ts`: il file attivo
+`.github/workflows/domanda-a-sorpresa.yml` lo crea a mano una persona,
+perché Claude non può scrivere in `.github/workflows/`.
+
+L'attivazione richiede tre passi manuali, una volta sola, dopo che il
+modello è sul branch principale:
+
+1. Dalla pagina web del repository, creare sul branch principale il file
+   `.github/workflows/domanda-a-sorpresa.yml` con il contenuto di
+   `scripts/domanda-a-sorpresa.workflow.yml`. Ogni modifica successiva del
+   modello va copiata allo stesso modo.
+2. Nelle impostazioni del repository, creare il segreto `NTFY_TOPIC` con un
+   nome di canale lungo e casuale.
+3. Sul telefono di Sara, installare l'app ntfy e iscriversi a quel canale
+   sul server `ntfy.sh`.
+
+Un'esecuzione manuale della GitHub Action, dalla scheda Actions, verifica
+che la notifica arrivi.
+
+Il perché di queste scelte è nel documento di feature
+[`.claude/domain/features/domanda-a-sorpresa.md`](.claude/domain/features/domanda-a-sorpresa.md).

@@ -626,7 +626,7 @@ Feature: domanda-a-sorpresa
 
 ## 63. Update documentation for feature `domanda-a-sorpresa`
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: README.md, .claude/context/build-test-deploy.md, .claude/context/INDEX.md
 Preconditions: 60, 61
