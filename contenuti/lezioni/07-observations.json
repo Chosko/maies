@@ -10,7 +10,8 @@
         "I watched a film with my sister last night.",
         "Last night I watched a movie with my sister.",
         "I watched a movie with my sister last night."
-      ]
+      ],
+      "hint": "past simple — last night, watch, film, sister"
     },
     {
       "id": "f02",
@@ -18,7 +19,8 @@
       "en": "Yesterday I went to the supermarket.",
       "alternatives": [
         "I went to the supermarket yesterday."
-      ]
+      ],
+      "hint": "past simple — yesterday, go, supermarket"
     },
     {
       "id": "f03",
@@ -26,7 +28,8 @@
       "en": "I was reading the newspaper when the phone rang.",
       "alternatives": [
         "I was reading the paper when the phone rang."
-      ]
+      ],
+      "hint": "past continuous + when + past simple — read, newspaper, phone, ring"
     },
     {
       "id": "f04",
@@ -36,7 +39,8 @@
         "While I was having a shower, the water turned off.",
         "The water turned off while I was taking a shower.",
         "The water turned off while I was having a shower."
-      ]
+      ],
+      "hint": "while + past continuous, poi past simple — take a shower, water, turn off"
     },
     {
       "id": "f05",
@@ -44,7 +48,8 @@
       "en": "While I was walking home, I saw a rainbow.",
       "alternatives": [
         "I saw a rainbow while I was walking home."
-      ]
+      ],
+      "hint": "while + past continuous, poi past simple — walk home, see, rainbow"
     },
     {
       "id": "f06",
@@ -55,13 +60,15 @@
         "It began to rain while the president was speaking.",
         "It started to rain while the president was talking.",
         "It started raining while the president was talking."
-      ]
+      ],
+      "hint": "past simple + while + past continuous — start, rain, president, speak"
     },
     {
       "id": "f07",
       "it": "Cosa hai visto mentre camminavi?",
       "en": "What did you see while you were walking?",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "domanda al past simple + while + past continuous — see, walk"
     },
     {
       "id": "f08",
@@ -71,7 +78,8 @@
         "While we were driving we got a flat tyre.",
         "We got a flat tire while we were driving.",
         "We got a flat tyre while we were driving."
-      ]
+      ],
+      "hint": "while + past continuous, poi past simple — drive, get, flat tire"
     },
     {
       "id": "f09",
@@ -81,7 +89,8 @@
         "My husband was setting the table while I was cooking.",
         "While I was cooking, my husband was laying the table.",
         "My husband was laying the table while I was cooking."
-      ]
+      ],
+      "hint": "while + due azioni al past continuous — cook, husband, set the table"
     },
     {
       "id": "f10",
@@ -91,7 +100,8 @@
         "While we were sleeping, somebody knocked on the door.",
         "Someone knocked on the door while we were sleeping.",
         "Somebody knocked on the door while we were sleeping."
-      ]
+      ],
+      "hint": "while + past continuous, poi past simple — sleep, someone, knock on the door"
     },
     {
       "id": "f11",
@@ -101,7 +111,8 @@
         "When I was a child, I loved the rain.",
         "When I was little I loved the rain.",
         "When I was little, I loved the rain."
-      ]
+      ],
+      "hint": "past simple — when, child, love, rain"
     },
     {
       "id": "f12",
@@ -110,7 +121,8 @@
       "alternatives": [
         "First, we went to California, then we drove to Los Angeles.",
         "First we went to California and then we drove to Los Angeles."
-      ]
+      ],
+      "hint": "past simple + first, then — go, California, drive, Los Angeles"
     },
     {
       "id": "f13",
@@ -119,7 +131,8 @@
       "alternatives": [
         "After that we visited a huge forest.",
         "After that, we visited an enormous forest."
-      ]
+      ],
+      "hint": "past simple — after that, visit, huge, forest"
     },
     {
       "id": "f14",
@@ -129,7 +142,8 @@
         "Next I took a walk outside.",
         "Next, I went for a walk outside.",
         "Next I went for a walk outside."
-      ]
+      ],
+      "hint": "past simple — next, take a walk, outside"
     },
     {
       "id": "f15",
@@ -139,7 +153,8 @@
         "Finally we went back home.",
         "Finally, we came back home.",
         "Finally, we returned home."
-      ]
+      ],
+      "hint": "past simple — finally, go back home"
     }
   ],
   "vocabulary": [

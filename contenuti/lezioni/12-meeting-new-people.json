@@ -10,13 +10,15 @@
         "Nice to meet you, I have heard a lot about you.",
         "Nice to meet you. I've heard a lot about you.",
         "Nice to meet you. I have heard a lot about you."
-      ]
+      ],
+      "hint": "nice to meet you + present perfect — hear, a lot about"
     },
     {
       "id": "f02",
       "it": "Cosa ti porta a Milano?",
       "en": "What brings you to Milan?",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "domanda al present simple con what — bring, Milan"
     },
     {
       "id": "f03",
@@ -24,13 +26,15 @@
       "en": "Where are you from? I'm from Rome.",
       "alternatives": [
         "Where are you from? I am from Rome."
-      ]
+      ],
+      "hint": "domanda con where + be from, risposta con be from — Rome"
     },
     {
       "id": "f04",
       "it": "Sei sposata?",
       "en": "Are you married?",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "domanda con be — married"
     },
     {
       "id": "f05",
@@ -40,19 +44,22 @@
         "Do you have brothers or sisters?",
         "Have you got any brothers or sisters?",
         "Do you have any siblings?"
-      ]
+      ],
+      "hint": "domanda al present simple con any — brothers, sisters"
     },
     {
       "id": "f06",
       "it": "Dove sei nato?",
       "en": "Where were you born?",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "domanda al passato con were — born"
     },
     {
       "id": "f07",
       "it": "Ti piace il tuo lavoro?",
       "en": "Do you like your job?",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "domanda al present simple con do — like, job"
     },
     {
       "id": "f08",
@@ -60,7 +67,8 @@
       "en": "When did you start working here?",
       "alternatives": [
         "When did you start to work here?"
-      ]
+      ],
+      "hint": "domanda al past simple con when — start, work, here"
     },
     {
       "id": "f09",
@@ -71,13 +79,15 @@
         "What's the last film you've seen?",
         "What's the last movie you saw?",
         "What is the last movie you saw?"
-      ]
+      ],
+      "hint": "what's + the last + past simple — film, see"
     },
     {
       "id": "f10",
       "it": "Dove sei andato nel tuo ultimo viaggio?",
       "en": "Where did you go on your last trip?",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "domanda al past simple con where — go, on your last trip"
     },
     {
       "id": "f11",
@@ -86,25 +96,29 @@
       "alternatives": [
         "How long are you traveling for? For six months.",
         "How long are you travelling for? For 6 months."
-      ]
+      ],
+      "hint": "how long + present continuous + for — travel, six months"
     },
     {
       "id": "f12",
       "it": "Hai sentito la notizia?",
       "en": "Have you heard the news?",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "domanda al present perfect — hear, news"
     },
     {
       "id": "f13",
       "it": "Cosa pensi che succederà?",
       "en": "What do you think will happen?",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "what do you think + will — happen"
     },
     {
       "id": "f14",
       "it": "Sei d'accordo?",
       "en": "Do you agree?",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "domanda al present simple con do — agree"
     },
     {
       "id": "f15",
@@ -112,7 +126,8 @@
       "en": "I've always wanted to visit San Francisco. Me too!",
       "alternatives": [
         "I have always wanted to visit San Francisco. Me too!"
-      ]
+      ],
+      "hint": "present perfect con always, risposta con too — want, visit, San Francisco"
     },
     {
       "id": "f16",
@@ -121,7 +136,8 @@
       "alternatives": [
         "I do not like concerts. Me neither!",
         "I don't like concerts. Neither do I!"
-      ]
+      ],
+      "hint": "present simple negativo, risposta con neither — like, concerts"
     }
   ],
   "vocabulary": [

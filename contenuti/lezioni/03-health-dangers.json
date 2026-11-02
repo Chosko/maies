@@ -8,7 +8,8 @@
       "en": "You should wear a mask when the air is polluted.",
       "alternatives": [
         "You should wear a mask when the air's polluted."
-      ]
+      ],
+      "hint": "should per un consiglio — wear, mask, polluted"
     },
     {
       "id": "f02",
@@ -18,7 +19,8 @@
         "You shouldn't eat so many hamburgers: they are unhealthy.",
         "You should not eat so many hamburgers: they're unhealthy.",
         "You should not eat so many hamburgers: they are unhealthy."
-      ]
+      ],
+      "hint": "shouldn't per un consiglio — so many, hamburgers, unhealthy"
     },
     {
       "id": "f03",
@@ -27,7 +29,8 @@
       "alternatives": [
         "You must drive on the left side of the road in England.",
         "In England you must drive on the left-hand side of the road."
-      ]
+      ],
+      "hint": "must per un obbligo — drive, left side, road"
     },
     {
       "id": "f04",
@@ -37,7 +40,8 @@
         "Factories must not throw waste into the river.",
         "Factories mustn't throw waste in the river.",
         "Factories must not throw waste in the river."
-      ]
+      ],
+      "hint": "mustn't per un divieto — factories, throw waste, river"
     },
     {
       "id": "f05",
@@ -49,7 +53,8 @@
         "It might rain this evening.",
         "It may rain this evening.",
         "It could rain this evening."
-      ]
+      ],
+      "hint": "might per una possibilità — rain, tonight"
     },
     {
       "id": "f06",
@@ -58,7 +63,8 @@
       "alternatives": [
         "I may go to the gym later.",
         "I could go to the gym later."
-      ]
+      ],
+      "hint": "might per una possibilità — gym, later"
     },
     {
       "id": "f07",
@@ -67,13 +73,15 @@
       "alternatives": [
         "Can I open the window?",
         "Could I open the window?"
-      ]
+      ],
+      "hint": "may per chiedere il permesso — open, window"
     },
     {
       "id": "f08",
       "it": "Mio fratello sa nuotare molto bene.",
       "en": "My brother can swim very well.",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "can per un'abilità — swim, very well"
     },
     {
       "id": "f09",
@@ -83,13 +91,15 @@
         "I am very stressed about work: what should I do?",
         "I'm very stressed about my work: what should I do?",
         "I am very stressed about my work: what should I do?"
-      ]
+      ],
+      "hint": "stressed about + should nella domanda — work"
     },
     {
       "id": "f10",
       "it": "Potresti metterti a dieta.",
       "en": "You could go on a diet.",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "could per un suggerimento — go on a diet"
     },
     {
       "id": "f11",
@@ -98,7 +108,8 @@
       "alternatives": [
         "Why don't you go to the doctor's?",
         "Why don't you see a doctor?"
-      ]
+      ],
+      "hint": "suggerimento con why don't you — go to the doctor"
     },
     {
       "id": "f12",
@@ -106,7 +117,8 @@
       "en": "How about doing more exercise?",
       "alternatives": [
         "What about doing more exercise?"
-      ]
+      ],
+      "hint": "suggerimento con how about + -ing — do, more exercise"
     },
     {
       "id": "f13",
@@ -116,7 +128,8 @@
         "What about going running tomorrow morning?",
         "How about going for a jog tomorrow morning?",
         "What about going for a jog tomorrow morning?"
-      ]
+      ],
+      "hint": "suggerimento con how about + -ing — go running, tomorrow morning"
     },
     {
       "id": "f14",
@@ -127,7 +140,8 @@
         "Don't drink alcohol if you're taking medicine.",
         "Don't drink alcohol if you are taking medicine.",
         "Do not drink alcohol if you are taking medicine."
-      ]
+      ],
+      "hint": "imperativo negativo con don't — drink alcohol, take medicine"
     },
     {
       "id": "f15",
@@ -136,7 +150,8 @@
       "alternatives": [
         "You should take breaks while you are working.",
         "You should take breaks while you work."
-      ]
+      ],
+      "hint": "should + while con il present continuous — take breaks"
     },
     {
       "id": "f16",
@@ -144,7 +159,8 @@
       "en": "Do you think your neighbourhood is polluted? Yes, I think so.",
       "alternatives": [
         "Do you think your neighborhood is polluted? Yes, I think so."
-      ]
+      ],
+      "hint": "do you think + risposta breve I think so — neighbourhood, polluted"
     },
     {
       "id": "f17",
@@ -154,7 +170,8 @@
         "Do you think fertilisers are harmful? I don't think so.",
         "Do you think fertilizers are harmful? I do not think so.",
         "Do you think fertilisers are harmful? I do not think so."
-      ]
+      ],
+      "hint": "do you think + risposta breve I don't think so — fertilizers, harmful"
     },
     {
       "id": "f18",
@@ -162,7 +179,8 @@
       "en": "Do you think you'll pass the exam? I hope so.",
       "alternatives": [
         "Do you think you will pass the exam? I hope so."
-      ]
+      ],
+      "hint": "do you think + will, risposta breve I hope so — pass the exam"
     },
     {
       "id": "f19",
@@ -170,7 +188,8 @@
       "en": "Do you think the beach will be crowded tomorrow? I hope not.",
       "alternatives": [
         "Do you think the beach is going to be crowded tomorrow? I hope not."
-      ]
+      ],
+      "hint": "do you think + will, risposta breve I hope not — beach, crowded"
     },
     {
       "id": "f20",
@@ -180,7 +199,8 @@
         "My father is very fit because he exercises every day.",
         "My dad is very fit because he does exercise every day.",
         "My dad is very fit because he exercises every day."
-      ]
+      ],
+      "hint": "present simple — fit, because, do exercise, every day"
     }
   ],
   "vocabulary": [

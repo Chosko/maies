@@ -12,7 +12,8 @@
         "I live in a small flat just outside the city center.",
         "I live in a small apartment just outside the centre of the city.",
         "I live in a small apartment just outside the center of the city."
-      ]
+      ],
+      "hint": "present simple — live, small apartment, just outside, city centre"
     },
     {
       "id": "f02",
@@ -20,7 +21,8 @@
       "en": "My neighbourhood is calm and quiet.",
       "alternatives": [
         "My neighborhood is calm and quiet."
-      ]
+      ],
+      "hint": "present simple — neighbourhood, calm, quiet"
     },
     {
       "id": "f03",
@@ -30,13 +32,15 @@
         "There's a small balcony where my cat watches the birds.",
         "There is a little balcony where my cat watches the birds.",
         "There's a little balcony where my cat watches the birds."
-      ]
+      ],
+      "hint": "there is + where — small balcony, cat, watch, birds"
     },
     {
       "id": "f04",
       "it": "Ci sono negozi e ristoranti nelle vicinanze.",
       "en": "There are shops and restaurants nearby.",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "there are — shops, restaurants, nearby"
     },
     {
       "id": "f05",
@@ -44,7 +48,8 @@
       "en": "If I could change one thing, I would make the kitchen bigger.",
       "alternatives": [
         "If I could change one thing, I'd make the kitchen bigger."
-      ]
+      ],
+      "hint": "if + could, poi would — change, one thing, make, kitchen, bigger"
     },
     {
       "id": "f06",
@@ -54,7 +59,8 @@
         "I'd add a bathtub to the bathroom.",
         "I would add a bath to the bathroom.",
         "I'd add a bath to the bathroom."
-      ]
+      ],
+      "hint": "would — add, bathtub, bathroom"
     },
     {
       "id": "f07",
@@ -63,7 +69,8 @@
       "alternatives": [
         "Would you prefer a penthouse in the city or a cabin near a lake?",
         "Do you prefer a penthouse in the city or a cabin by a lake?"
-      ]
+      ],
+      "hint": "domanda al present simple con prefer — penthouse, city, cabin, near a lake"
     },
     {
       "id": "f08",
@@ -73,7 +80,8 @@
         "My dream home is massive and spacious.",
         "My dream house is huge and spacious.",
         "My dream house is massive and spacious."
-      ]
+      ],
+      "hint": "present simple — dream home, huge, spacious"
     },
     {
       "id": "f09",
@@ -81,7 +89,8 @@
       "en": "My daughter's bedroom is tiny but cute.",
       "alternatives": [
         "My daughter's room is tiny but cute."
-      ]
+      ],
+      "hint": "genitivo sassone — daughter's, bedroom, tiny, cute"
     },
     {
       "id": "f10",
@@ -89,7 +98,8 @@
       "en": "The living room is warm and cozy.",
       "alternatives": [
         "The living room is warm and cosy."
-      ]
+      ],
+      "hint": "present simple — living room, warm, cozy"
     },
     {
       "id": "f11",
@@ -99,7 +109,8 @@
         "What kind of style does your home have?",
         "What style does your house have?",
         "What kind of style does your house have?"
-      ]
+      ],
+      "hint": "domanda al present simple con does — style, home"
     },
     {
       "id": "f12",
@@ -107,7 +118,8 @@
       "en": "This is a beautiful two-bedroom flat in the heart of the city.",
       "alternatives": [
         "This is a beautiful two-bedroom apartment in the heart of the city."
-      ]
+      ],
+      "hint": "this is + aggettivi prima del nome — beautiful, two-bedroom flat, in the heart of"
     },
     {
       "id": "f13",
@@ -119,7 +131,8 @@
         "It's close to a park and a farmers' market.",
         "It is near a park and a farmers market.",
         "It's near a park and a farmers market."
-      ]
+      ],
+      "hint": "it is + close to — park, farmers market"
     },
     {
       "id": "f14",
@@ -129,7 +142,8 @@
         "You will enjoy walking to the theatre.",
         "You'll enjoy walking to the theater.",
         "You will enjoy walking to the theater."
-      ]
+      ],
+      "hint": "will + enjoy -ing — walk, theatre"
     },
     {
       "id": "f15",
@@ -140,7 +154,8 @@
         "You'll be able to relax in your own cosy space.",
         "You will be able to relax in your own cosy space.",
         "You'll be able to relax in your cozy space."
-      ]
+      ],
+      "hint": "will be able to — relax, own, cozy space"
     }
   ],
   "vocabulary": [

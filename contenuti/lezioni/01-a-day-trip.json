@@ -10,7 +10,8 @@
         "Are you cold? I will close the window.",
         "Are you cold? I'll shut the window.",
         "Are you cold? I will shut the window."
-      ]
+      ],
+      "hint": "will per una decisione presa sul momento — cold, close, window"
     },
     {
       "id": "f02",
@@ -19,7 +20,8 @@
       "alternatives": [
         "The phone is ringing: I will answer it!",
         "The phone's ringing: I'll answer it!"
-      ]
+      ],
+      "hint": "present continuous + will per un'offerta spontanea — ring, answer"
     },
     {
       "id": "f03",
@@ -28,7 +30,8 @@
       "alternatives": [
         "Great idea! I will bring the sandwiches.",
         "That's a great idea! I'll bring the sandwiches."
-      ]
+      ],
+      "hint": "will per un'offerta spontanea — great idea, bring, sandwiches"
     },
     {
       "id": "f04",
@@ -36,7 +39,8 @@
       "en": "Marco is going to visit London with his parents this summer.",
       "alternatives": [
         "This summer Marco is going to visit London with his parents."
-      ]
+      ],
+      "hint": "be going to per un'intenzione — visit, parents, this summer"
     },
     {
       "id": "f05",
@@ -46,7 +50,8 @@
         "I am going to buy a new car next year.",
         "Next year I'm going to buy a new car.",
         "Next year I am going to buy a new car."
-      ]
+      ],
+      "hint": "be going to per un'intenzione — buy, new car, next year"
     },
     {
       "id": "f06",
@@ -55,7 +60,8 @@
       "alternatives": [
         "Are your friends going to come to the party? No, they aren't.",
         "Are your friends going to come to the party? No, they are not."
-      ]
+      ],
+      "hint": "domanda e risposta breve con be going to — come, party"
     },
     {
       "id": "f07",
@@ -64,7 +70,8 @@
       "alternatives": [
         "Tonight I'm having dinner at a restaurant with my sister.",
         "I am having dinner at a restaurant with my sister tonight."
-      ]
+      ],
+      "hint": "present continuous per un programma già fissato — have dinner, restaurant, tonight"
     },
     {
       "id": "f08",
@@ -73,7 +80,8 @@
       "alternatives": [
         "On Saturday I'm going to the beach with my best friend.",
         "I am going to the beach with my best friend on Saturday."
-      ]
+      ],
+      "hint": "present continuous per un programma già fissato — beach, best friend, on Saturday"
     },
     {
       "id": "f09",
@@ -83,7 +91,8 @@
         "I'm sorry, I'm meeting my grandparents tomorrow.",
         "Sorry, I'm seeing my grandparents tomorrow.",
         "I am sorry, I am seeing my grandparents tomorrow."
-      ]
+      ],
+      "hint": "present continuous per un appuntamento — sorry, see, grandparents"
     },
     {
       "id": "f10",
@@ -92,7 +101,8 @@
       "alternatives": [
         "Have you got any plans for Sunday?",
         "Do you have plans for Sunday?"
-      ]
+      ],
+      "hint": "present simple con do — have any plans, for Sunday"
     },
     {
       "id": "f11",
@@ -101,7 +111,8 @@
       "alternatives": [
         "Let's go on a day trip to Rome!",
         "Let's go to Rome for the day!"
-      ]
+      ],
+      "hint": "proposta con let's — day trip"
     },
     {
       "id": "f12",
@@ -109,7 +120,8 @@
       "en": "We could visit the main museum.",
       "alternatives": [
         "We could go to the main museum."
-      ]
+      ],
+      "hint": "proposta con could — visit, main museum"
     },
     {
       "id": "f13",
@@ -117,7 +129,8 @@
       "en": "What about leaving on Sunday morning?",
       "alternatives": [
         "How about leaving on Sunday morning?"
-      ]
+      ],
+      "hint": "proposta con what about + -ing — leave, on Sunday morning"
     },
     {
       "id": "f14",
@@ -126,7 +139,8 @@
       "alternatives": [
         "Why don't we invite your cousins as well?",
         "Why don't we also invite your cousins?"
-      ]
+      ],
+      "hint": "proposta con why don't we — invite, cousins, too"
     },
     {
       "id": "f15",
@@ -135,7 +149,8 @@
       "alternatives": [
         "Shall we go to the cinema this evening?",
         "Shall we go to the movies tonight?"
-      ]
+      ],
+      "hint": "proposta con shall we — cinema, tonight"
     },
     {
       "id": "f16",
@@ -143,7 +158,8 @@
       "en": "Do you think we should book a table?",
       "alternatives": [
         "Do you think we should reserve a table?"
-      ]
+      ],
+      "hint": "do you think + should — book a table"
     }
   ],
   "vocabulary": [

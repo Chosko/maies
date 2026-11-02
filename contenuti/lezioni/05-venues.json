@@ -6,7 +6,8 @@
       "id": "f01",
       "it": "Quante sedie ci sono nel soggiorno?",
       "en": "How many chairs are there in the living room?",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "how many con un nome numerabile + are there — chairs, living room"
     },
     {
       "id": "f02",
@@ -14,7 +15,8 @@
       "en": "How much space is there on the stage?",
       "alternatives": [
         "How much space is there on stage?"
-      ]
+      ],
+      "hint": "how much con un nome non numerabile + is there — space, stage"
     },
     {
       "id": "f03",
@@ -24,7 +26,8 @@
         "We do not have many musical instruments.",
         "We haven't got many musical instruments.",
         "We don't have many instruments."
-      ]
+      ],
+      "hint": "not many con un nome numerabile — musical instruments"
     },
     {
       "id": "f04",
@@ -34,7 +37,8 @@
         "There is not much light in this apartment.",
         "There isn't much light in this flat.",
         "There is not much light in this flat."
-      ]
+      ],
+      "hint": "not much con un nome non numerabile — there isn't, light, apartment"
     },
     {
       "id": "f05",
@@ -42,7 +46,8 @@
       "en": "There is some cheese in the fridge.",
       "alternatives": [
         "There's some cheese in the fridge."
-      ]
+      ],
+      "hint": "some in una frase affermativa — there is, cheese, fridge"
     },
     {
       "id": "f06",
@@ -51,7 +56,8 @@
       "alternatives": [
         "Do you have any headphones? No, I do not have any.",
         "Have you got any headphones? No, I haven't got any."
-      ]
+      ],
+      "hint": "any nella domanda e nella risposta negativa — headphones"
     },
     {
       "id": "f07",
@@ -60,7 +66,8 @@
       "alternatives": [
         "There are not any speakers in this room.",
         "There are no speakers in this room."
-      ]
+      ],
+      "hint": "any in una frase negativa — there aren't, speakers, room"
     },
     {
       "id": "f08",
@@ -68,7 +75,8 @@
       "en": "There are a few armchairs in the other room.",
       "alternatives": [
         "There are some armchairs in the other room."
-      ]
+      ],
+      "hint": "a few con un nome numerabile — armchairs, other room"
     },
     {
       "id": "f09",
@@ -80,7 +88,8 @@
         "Could I have a bit of milk, please?",
         "Can I have a little milk, please?",
         "Can I have a bit of milk, please?"
-      ]
+      ],
+      "hint": "a little con un nome non numerabile, may per chiedere — milk, please"
     },
     {
       "id": "f10",
@@ -89,7 +98,8 @@
       "alternatives": [
         "There are a lot of people at the concert.",
         "There are loads of people at the concert."
-      ]
+      ],
+      "hint": "lots of — there are, people, concert"
     },
     {
       "id": "f11",
@@ -99,7 +109,8 @@
         "This venue has lots of lights.",
         "This place has a lot of lights.",
         "This place has lots of lights."
-      ]
+      ],
+      "hint": "a lot of — venue, lights"
     },
     {
       "id": "f12",
@@ -107,7 +118,8 @@
       "en": "The music is too loud.",
       "alternatives": [
         "The music's too loud."
-      ]
+      ],
+      "hint": "too + aggettivo — music, loud"
     },
     {
       "id": "f13",
@@ -115,7 +127,8 @@
       "en": "There are too many people in this venue.",
       "alternatives": [
         "There are too many people in this place."
-      ]
+      ],
+      "hint": "too many con un nome numerabile — people, venue"
     },
     {
       "id": "f14",
@@ -123,7 +136,8 @@
       "en": "The singer drank too much coffee.",
       "alternatives": [
         "The singer has drunk too much coffee."
-      ]
+      ],
+      "hint": "past simple + too much con un nome non numerabile — singer, drink, coffee"
     },
     {
       "id": "f15",
@@ -133,19 +147,22 @@
         "My apartment is really bright.",
         "My flat is very bright.",
         "My flat is really bright."
-      ]
+      ],
+      "hint": "very + aggettivo — apartment, bright"
     },
     {
       "id": "f16",
       "it": "Questo palco è troppo buio.",
       "en": "This stage is too dark.",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "too + aggettivo — stage, dark"
     },
     {
       "id": "f17",
       "it": "Ci sono abbastanza sedie per il pubblico?",
       "en": "Are there enough chairs for the audience?",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "enough prima del nome — are there, chairs, audience"
     },
     {
       "id": "f18",
@@ -153,7 +170,8 @@
       "en": "This room isn't big enough for the band.",
       "alternatives": [
         "This room is not big enough for the band."
-      ]
+      ],
+      "hint": "aggettivo + enough — room, big, band"
     },
     {
       "id": "f19",
@@ -163,7 +181,8 @@
         "There is plenty of space on the stage.",
         "There's plenty of space on stage.",
         "There is plenty of space on stage."
-      ]
+      ],
+      "hint": "plenty of — there's, space, stage"
     },
     {
       "id": "f20",
@@ -172,7 +191,8 @@
       "alternatives": [
         "We do not have enough bandmates for a full band.",
         "We haven't got enough bandmates for a full band."
-      ]
+      ],
+      "hint": "enough prima del nome — don't have, bandmates, full band"
     }
   ],
   "vocabulary": [

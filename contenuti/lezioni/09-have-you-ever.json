@@ -10,7 +10,8 @@
         "I have been to Japan, but I have never been to China.",
         "I've been to Japan, but I haven't been to China.",
         "I have been to Japan, but I have not been to China."
-      ]
+      ],
+      "hint": "present perfect con been to e never — Japan, China"
     },
     {
       "id": "f02",
@@ -18,13 +19,15 @@
       "en": "My brother has run a marathon.",
       "alternatives": [
         "My brother's run a marathon."
-      ]
+      ],
+      "hint": "present perfect — brother, run, marathon"
     },
     {
       "id": "f03",
       "it": "Hai mai mangiato il sushi? Sì.",
       "en": "Have you ever eaten sushi? Yes, I have.",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "present perfect con ever + risposta breve — eat, sushi"
     },
     {
       "id": "f04",
@@ -35,7 +38,8 @@
         "Has your mum ever flown in a helicopter? No, she hasn't.",
         "Has your mum ever flown by helicopter? No, she hasn't.",
         "Has your mother ever flown in a helicopter? No, she has not."
-      ]
+      ],
+      "hint": "present perfect con ever + risposta breve negativa — mother, fly, helicopter"
     },
     {
       "id": "f05",
@@ -43,7 +47,8 @@
       "en": "I've never broken a bone.",
       "alternatives": [
         "I have never broken a bone."
-      ]
+      ],
+      "hint": "present perfect con never — break, bone"
     },
     {
       "id": "f06",
@@ -51,7 +56,8 @@
       "en": "Have your friends ever been camping? Yes, they have.",
       "alternatives": [
         "Have your friends ever gone camping? Yes, they have."
-      ]
+      ],
+      "hint": "present perfect con ever + risposta breve — friends, go camping"
     },
     {
       "id": "f07",
@@ -60,7 +66,8 @@
       "alternatives": [
         "Luca has gone to London and he is there now.",
         "Luca's gone to London and he's there now."
-      ]
+      ],
+      "hint": "present perfect con gone to: è ancora lì — London, there now"
     },
     {
       "id": "f08",
@@ -70,7 +77,8 @@
         "Luca has been to London, but now he is back.",
         "Luca has been to London, but he's back now.",
         "Luca's been to London, but now he's back."
-      ]
+      ],
+      "hint": "present perfect con been to: è tornato — London, but now, back"
     },
     {
       "id": "f09",
@@ -78,7 +86,8 @@
       "en": "I went to Australia last year.",
       "alternatives": [
         "Last year I went to Australia."
-      ]
+      ],
+      "hint": "past simple con un tempo preciso — go, Australia, last year"
     },
     {
       "id": "f10",
@@ -86,13 +95,15 @@
       "en": "Have you ever been to Paris? Yes, I went there three years ago.",
       "alternatives": [
         "Have you ever been to Paris? Yes, I have. I went there three years ago."
-      ]
+      ],
+      "hint": "present perfect con ever, poi past simple con ago — Paris, three years"
     },
     {
       "id": "f11",
       "it": "Hai mai vinto un premio? Quando l'hai vinto?",
       "en": "Have you ever won a prize? When did you win it?",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "present perfect con ever, poi past simple con when — win, prize"
     },
     {
       "id": "f12",
@@ -100,7 +111,8 @@
       "en": "I won a trophy when I was in high school.",
       "alternatives": [
         "I won a trophy when I was at high school."
-      ]
+      ],
+      "hint": "past simple — win, trophy, when, high school"
     },
     {
       "id": "f13",
@@ -108,7 +120,8 @@
       "en": "I've never stolen anything!",
       "alternatives": [
         "I have never stolen anything!"
-      ]
+      ],
+      "hint": "present perfect con never + anything — steal"
     },
     {
       "id": "f14",
@@ -116,13 +129,15 @@
       "en": "She has never broken the law.",
       "alternatives": [
         "She's never broken the law."
-      ]
+      ],
+      "hint": "present perfect con never — break the law"
     },
     {
       "id": "f15",
       "it": "Hai mai visto una stella cadente?",
       "en": "Have you ever seen a shooting star?",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "present perfect con ever — see, shooting star"
     },
     {
       "id": "f16",
@@ -132,7 +147,8 @@
         "I drank tequila once when I was at university.",
         "I drank tequila once, when I was in college.",
         "I drank tequila once when I was in college."
-      ]
+      ],
+      "hint": "past simple con once — drink, tequila, when, university"
     },
     {
       "id": "f17",
@@ -143,7 +159,8 @@
         "I've travelled around Europe too.",
         "I have travelled around Europe too.",
         "I've traveled around Europe too."
-      ]
+      ],
+      "hint": "present perfect + too — travel, round Europe"
     },
     {
       "id": "f18",
@@ -153,13 +170,15 @@
         "I have never driven a Porsche. I haven't either.",
         "I've never driven a Porsche. Neither have I.",
         "I've never driven a Porsche. Me neither."
-      ]
+      ],
+      "hint": "present perfect con never + risposta breve con either — drive, Porsche"
     },
     {
       "id": "f19",
       "it": "Hai conosciuto la tua anima gemella?",
       "en": "Have you met your soulmate?",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "domanda al present perfect — meet, soulmate"
     },
     {
       "id": "f20",
@@ -168,7 +187,8 @@
       "alternatives": [
         "I have not studied for tomorrow's exam.",
         "I haven't studied for the exam tomorrow."
-      ]
+      ],
+      "hint": "present perfect negativo — study, tomorrow's exam"
     }
   ],
   "vocabulary": [

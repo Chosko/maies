@@ -8,7 +8,8 @@
       "en": "We stayed in an expensive large modern hotel.",
       "alternatives": [
         "We stayed in an expensive big modern hotel."
-      ]
+      ],
+      "hint": "past simple + ordine degli aggettivi: opinione, dimensione, età — stay, hotel, expensive, large, modern"
     },
     {
       "id": "f02",
@@ -17,7 +18,8 @@
       "alternatives": [
         "I bought a nice round wooden table.",
         "I've bought a beautiful round wooden table."
-      ]
+      ],
+      "hint": "past simple + ordine degli aggettivi: opinione, forma, materiale — buy, beautiful, round, wooden, table"
     },
     {
       "id": "f03",
@@ -26,13 +28,15 @@
       "alternatives": [
         "My grandma has an old Italian leather bag.",
         "My grandmother has got an old Italian leather bag."
-      ]
+      ],
+      "hint": "ordine degli aggettivi: età, origine, materiale — grandmother, old, Italian, leather, bag"
     },
     {
       "id": "f04",
       "it": "Mi serve un sacco a pelo blu.",
       "en": "I need a blue sleeping bag.",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "need + colore prima del nome composto — blue, sleeping bag"
     },
     {
       "id": "f05",
@@ -40,13 +44,15 @@
       "en": "We saw a beautiful small Greek church.",
       "alternatives": [
         "We saw a beautiful little Greek church."
-      ]
+      ],
+      "hint": "past simple + ordine degli aggettivi: opinione, dimensione, origine — see, beautiful, small, Greek, church"
     },
     {
       "id": "f06",
       "it": "Hai mai soggiornato in un ostello?",
       "en": "Have you ever stayed in a hostel?",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "present perfect con ever — stay, hostel"
     },
     {
       "id": "f07",
@@ -57,13 +63,15 @@
         "What is your favorite type of accommodation and why?",
         "What's your favorite type of accommodation and why?",
         "Which is your favourite type of accommodation and why?"
-      ]
+      ],
+      "hint": "domanda con what is + favourite — type of accommodation, why"
     },
     {
       "id": "f08",
       "it": "Le camere sono piccole ma pulite e comode.",
       "en": "The rooms are small but clean and comfortable.",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "present simple + but, and — rooms, small, clean, comfortable"
     },
     {
       "id": "f09",
@@ -72,7 +80,8 @@
       "alternatives": [
         "The hotel has a small, rectangular outdoor pool.",
         "The hotel has a small rectangular outdoor swimming pool."
-      ]
+      ],
+      "hint": "ordine degli aggettivi: dimensione, forma, tipo — small, rectangular, outdoor, pool"
     },
     {
       "id": "f10",
@@ -81,7 +90,8 @@
       "alternatives": [
         "It isn't a luxury hotel, but it's quiet and stylish.",
         "It is not a luxury hotel, but it is quiet and stylish."
-      ]
+      ],
+      "hint": "it's not + but — luxury hotel, quiet, stylish"
     },
     {
       "id": "f11",
@@ -91,7 +101,8 @@
         "There's free Wi-Fi and a desk if you need to work.",
         "There is free Wi-Fi and a desk if you have to work.",
         "There's free Wi-Fi and a desk if you have to work."
-      ]
+      ],
+      "hint": "there is + if — free Wi-Fi, desk, need, work"
     },
     {
       "id": "f12",
@@ -99,7 +110,8 @@
       "en": "The pool is perfect to cool down after a busy day.",
       "alternatives": [
         "The pool is perfect for cooling down after a busy day."
-      ]
+      ],
+      "hint": "perfect + to — pool, cool down, after, busy day"
     },
     {
       "id": "f13",
@@ -108,7 +120,8 @@
       "alternatives": [
         "It is perfect for young people who don't want to spend too much money.",
         "It is perfect for young people who do not want to spend too much money."
-      ]
+      ],
+      "hint": "perfect for + who — young people, spend, too much money"
     },
     {
       "id": "f14",
@@ -118,7 +131,8 @@
         "The resort has a big blue pool.",
         "The resort has a large blue swimming pool.",
         "The resort has a big blue swimming pool."
-      ]
+      ],
+      "hint": "present simple + dimensione prima del colore — resort, large, blue, pool"
     }
   ],
   "vocabulary": [

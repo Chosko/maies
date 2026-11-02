@@ -9,13 +9,15 @@
       "alternatives": [
         "The hotel is in a poor location: it's not near any restaurants.",
         "The hotel is in a poor location: it is not near any restaurants."
-      ]
+      ],
+      "hint": "present simple + any nella negativa — poor location, near, restaurants"
     },
     {
       "id": "f02",
       "it": "Il bar dell'albergo era troppo caro per quello che offriva.",
       "en": "The hotel bar was overpriced.",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "past simple, una sola parola per «troppo caro per quello che offriva» — overpriced"
     },
     {
       "id": "f03",
@@ -23,7 +25,8 @@
       "en": "The room was spotless, but the bathroom was filthy.",
       "alternatives": [
         "The bedroom was spotless, but the bathroom was filthy."
-      ]
+      ],
+      "hint": "past simple + but — spotless, bathroom, filthy"
     },
     {
       "id": "f04",
@@ -31,7 +34,8 @@
       "en": "The staff were very helpful and polite.",
       "alternatives": [
         "The staff was very helpful and polite."
-      ]
+      ],
+      "hint": "past simple con il plurale per staff — helpful, polite"
     },
     {
       "id": "f05",
@@ -39,7 +43,8 @@
       "en": "Was breakfast included in the price?",
       "alternatives": [
         "Was the breakfast included in the price?"
-      ]
+      ],
+      "hint": "domanda al passivo con was — breakfast, include, price"
     },
     {
       "id": "f06",
@@ -49,7 +54,8 @@
         "The hotel has a pool, a gym, and a sauna.",
         "The hotel has a swimming pool, a gym and a sauna.",
         "The hotel has a swimming pool, a gym, and a sauna."
-      ]
+      ],
+      "hint": "present simple con has — pool, gym, sauna"
     },
     {
       "id": "f07",
@@ -58,7 +64,8 @@
       "alternatives": [
         "It was great value for money.",
         "The value for money was excellent."
-      ]
+      ],
+      "hint": "past simple con it — excellent value for money"
     },
     {
       "id": "f08",
@@ -66,7 +73,8 @@
       "en": "I slept well because the bed was very comfortable.",
       "alternatives": [
         "I slept well because the bed was really comfortable."
-      ]
+      ],
+      "hint": "past simple + because — sleep well, bed, comfortable"
     },
     {
       "id": "f09",
@@ -74,13 +82,15 @@
       "en": "They should buy new mattresses.",
       "alternatives": [
         "They should buy some new mattresses."
-      ]
+      ],
+      "hint": "should per un consiglio — buy, new, mattresses"
     },
     {
       "id": "f10",
       "it": "Potrebbero migliorare la pulizia delle camere.",
       "en": "They could improve the cleanliness of the rooms.",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "could per un suggerimento — improve, cleanliness, rooms"
     },
     {
       "id": "f11",
@@ -90,7 +100,8 @@
         "I'd recommend installing an air conditioner in every room.",
         "I would recommend installing an air conditioner in each room.",
         "I'd recommend installing an air conditioner in each room."
-      ]
+      ],
+      "hint": "would recommend + -ing — install, air conditioner, every room"
     },
     {
       "id": "f12",
@@ -99,7 +110,8 @@
       "alternatives": [
         "I would recommend booking a room with a sea view.",
         "I'd recommend booking a room with a sea view."
-      ]
+      ],
+      "hint": "recommend + -ing — book, sea view"
     },
     {
       "id": "f13",
@@ -107,7 +119,8 @@
       "en": "The guests would be happier with a better breakfast.",
       "alternatives": [
         "Guests would be happier with a better breakfast."
-      ]
+      ],
+      "hint": "would + comparativo — guests, happy, better breakfast"
     },
     {
       "id": "f14",
@@ -117,7 +130,8 @@
         "They should also open the pool in the evening.",
         "They should open the swimming pool in the evening too.",
         "They should also open the swimming pool in the evening."
-      ]
+      ],
+      "hint": "should per un consiglio — open, pool, in the evening, too"
     }
   ],
   "vocabulary": [

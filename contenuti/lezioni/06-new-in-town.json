@@ -9,7 +9,8 @@
       "alternatives": [
         "The dry cleaners is on this street, isn't it?",
         "The dry cleaner is on this street, isn't it?"
-      ]
+      ],
+      "hint": "tag question con be — dry cleaner's, on this street"
     },
     {
       "id": "f02",
@@ -17,7 +18,8 @@
       "en": "You're new in town, aren't you?",
       "alternatives": [
         "You are new in town, aren't you?"
-      ]
+      ],
+      "hint": "tag question con be — new in town"
     },
     {
       "id": "f03",
@@ -26,7 +28,8 @@
       "alternatives": [
         "You're not from Glasgow, are you?",
         "You are not from Glasgow, are you?"
-      ]
+      ],
+      "hint": "frase negativa + tag question positiva — from Glasgow"
     },
     {
       "id": "f04",
@@ -34,7 +37,8 @@
       "en": "Your sister works in a coffee shop, doesn't she?",
       "alternatives": [
         "Your sister works at a coffee shop, doesn't she?"
-      ]
+      ],
+      "hint": "tag question con does — sister, work, coffee shop"
     },
     {
       "id": "f05",
@@ -44,7 +48,8 @@
         "The mechanic can repair my car tomorrow, can't he?",
         "The auto mechanic can fix my car tomorrow, can't he?",
         "The auto mechanic can repair my car tomorrow, can't he?"
-      ]
+      ],
+      "hint": "tag question con can — mechanic, fix, car, tomorrow"
     },
     {
       "id": "f06",
@@ -54,7 +59,8 @@
         "You will not come to the surprise party, will you?",
         "You aren't coming to the surprise party, are you?",
         "You're not coming to the surprise party, are you?"
-      ]
+      ],
+      "hint": "frase con won't + tag question positiva — come, surprise party"
     },
     {
       "id": "f07",
@@ -62,13 +68,15 @@
       "en": "We've met before, haven't we?",
       "alternatives": [
         "We have met before, haven't we?"
-      ]
+      ],
+      "hint": "present perfect + tag question con have — meet, before"
     },
     {
       "id": "f08",
       "it": "Ci siamo conosciuti alla festa di Sara il mese scorso, vero?",
       "en": "We met at Sara's party last month, didn't we?",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "past simple + tag question con did — meet, Sara's party, last month"
     },
     {
       "id": "f09",
@@ -76,7 +84,8 @@
       "en": "You didn't tell Lucy, did you?",
       "alternatives": [
         "You did not tell Lucy, did you?"
-      ]
+      ],
+      "hint": "past simple negativo + tag question positiva — tell, Lucy"
     },
     {
       "id": "f10",
@@ -86,13 +95,15 @@
         "Of course I didn't! I know it is a secret.",
         "Of course not! I know it's a secret.",
         "Of course not! I know it is a secret."
-      ]
+      ],
+      "hint": "risposta breve al past simple — of course, know, secret"
     },
     {
       "id": "f11",
       "it": "La vostra azienda è stata fondata nel 2005, vero?",
       "en": "Your company was founded in 2005, wasn't it?",
-      "alternatives": []
+      "alternatives": [],
+      "hint": "passivo al past simple + tag question con was — company, found, in 2005"
     },
     {
       "id": "f12",
@@ -102,7 +113,8 @@
         "You have done a lot of work in Spain, haven't you?",
         "You've worked a lot in Spain, haven't you?",
         "You have worked a lot in Spain, haven't you?"
-      ]
+      ],
+      "hint": "present perfect + tag question con have — do a lot of work, Spain"
     },
     {
       "id": "f13",
@@ -112,7 +124,8 @@
         "I moved to Spain and worked as a sales representative.",
         "I transferred to Spain and worked as a sales rep.",
         "I moved to Spain and worked as a sales rep."
-      ]
+      ],
+      "hint": "past simple — transfer, Spain, work as, sales representative"
     },
     {
       "id": "f14",
@@ -122,7 +135,8 @@
         "Your children go to primary school, don't they?",
         "Your kids go to elementary school, don't they?",
         "Your kids go to primary school, don't they?"
-      ]
+      ],
+      "hint": "tag question con do — children, go, elementary school"
     },
     {
       "id": "f15",
@@ -131,7 +145,8 @@
       "alternatives": [
         "She cannot find out!",
         "She mustn't find out!"
-      ]
+      ],
+      "hint": "can't per un divieto — find out"
     },
     {
       "id": "f16",
@@ -141,7 +156,8 @@
         "You took the dog to the groomer, didn't you?",
         "You've taken the dog to the pet groomer, haven't you?",
         "You have taken the dog to the pet groomer, haven't you?"
-      ]
+      ],
+      "hint": "past simple + tag question con did — take, dog, pet groomer"
     }
   ],
   "vocabulary": [

@@ -10,7 +10,8 @@
         "I cannot stand it when people arrive late.",
         "I can't stand it when people are late.",
         "I cannot stand it when people are late."
-      ]
+      ],
+      "hint": "can't stand it when — arrive late"
     },
     {
       "id": "f02",
@@ -18,7 +19,8 @@
       "en": "It gets on my nerves when someone eats noisily.",
       "alternatives": [
         "It gets on my nerves when somebody eats noisily."
-      ]
+      ],
+      "hint": "it gets on my nerves when — eat noisily"
     },
     {
       "id": "f03",
@@ -28,7 +30,8 @@
         "It drives me crazy to sit for hours in a traffic jam.",
         "Sitting in a traffic jam for hours drives me crazy.",
         "Sitting for hours in a traffic jam drives me crazy."
-      ]
+      ],
+      "hint": "it drives me crazy + to — sit, traffic jam, for hours"
     },
     {
       "id": "f04",
@@ -36,7 +39,8 @@
       "en": "I hate it when someone smokes near me.",
       "alternatives": [
         "I hate it when somebody smokes near me."
-      ]
+      ],
+      "hint": "hate it when — smoke, near"
     },
     {
       "id": "f05",
@@ -45,7 +49,8 @@
       "alternatives": [
         "One of my biggest pet peeves is when people talk loudly on their phone.",
         "One of my biggest pet peeves is when people talk loudly on their phones."
-      ]
+      ],
+      "hint": "one of my biggest pet peeves — talk loudly, on the phone"
     },
     {
       "id": "f06",
@@ -54,7 +59,8 @@
       "alternatives": [
         "It annoys me when my brother bites his nails.",
         "It bugs me when my brother bites his nails."
-      ]
+      ],
+      "hint": "it bothers me when — bite, nails"
     },
     {
       "id": "f07",
@@ -64,7 +70,8 @@
         "What is your pet peeve?",
         "What's your biggest pet peeve?",
         "What is your biggest pet peeve?"
-      ]
+      ],
+      "hint": "domanda con what's + pet peeve"
     },
     {
       "id": "f08",
@@ -72,7 +79,8 @@
       "en": "It annoys me to no end when couples kiss in public.",
       "alternatives": [
         "It really annoys me when couples kiss in public."
-      ]
+      ],
+      "hint": "it annoys me to no end when — couples, kiss, in public"
     },
     {
       "id": "f09",
@@ -80,7 +88,8 @@
       "en": "It drives me crazy to see someone smoking in public.",
       "alternatives": [
         "It drives me crazy to see somebody smoking in public."
-      ]
+      ],
+      "hint": "it drives me crazy + to — see, smoke, in public"
     },
     {
       "id": "f10",
@@ -88,7 +97,8 @@
       "en": "Could you please stop blowing bubbles?",
       "alternatives": [
         "Could you stop blowing bubbles, please?"
-      ]
+      ],
+      "hint": "richiesta gentile con could you please + stop -ing — blow bubbles"
     },
     {
       "id": "f11",
@@ -96,7 +106,8 @@
       "en": "Could you please stop biting your nails?",
       "alternatives": [
         "Could you stop biting your nails, please?"
-      ]
+      ],
+      "hint": "richiesta gentile con could you please + stop -ing — bite, nails"
     },
     {
       "id": "f12",
@@ -106,7 +117,8 @@
         "I would appreciate it if you could smoke elsewhere.",
         "I'd appreciate it if you could smoke somewhere else.",
         "I would appreciate it if you could smoke somewhere else."
-      ]
+      ],
+      "hint": "I'd appreciate it if you could — smoke, elsewhere"
     },
     {
       "id": "f13",
@@ -116,7 +128,8 @@
         "I would appreciate it if you could speak more quietly.",
         "I'd appreciate it if you could talk more quietly.",
         "I would appreciate it if you could talk more quietly."
-      ]
+      ],
+      "hint": "I'd appreciate it if you could — speak, more quietly"
     },
     {
       "id": "f14",
@@ -124,7 +137,8 @@
       "en": "Excuse me, but would you mind not smoking here?",
       "alternatives": [
         "Excuse me, would you mind not smoking here?"
-      ]
+      ],
+      "hint": "excuse me, but would you mind + not -ing — smoke, here"
     },
     {
       "id": "f15",
@@ -134,7 +148,8 @@
         "Excuse me, would you mind lowering your voice?",
         "Excuse me, but would you mind keeping your voice down?",
         "Excuse me, would you mind keeping your voice down?"
-      ]
+      ],
+      "hint": "excuse me, but would you mind + -ing — lower, voice"
     },
     {
       "id": "f16",
@@ -144,7 +159,8 @@
         "It'd be great if you could arrive on time.",
         "It would be great if you could be on time.",
         "It'd be great if you could be on time."
-      ]
+      ],
+      "hint": "it would be great if you could — arrive on time"
     }
   ],
   "vocabulary": [

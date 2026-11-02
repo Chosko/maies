@@ -406,7 +406,7 @@ Feature: aggiunta-materiale-lezione
 
 ## 41. Aiuti per tutte le frasi delle lezioni esistenti
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: contenuti/lezioni/*.json
 Preconditions: 39
