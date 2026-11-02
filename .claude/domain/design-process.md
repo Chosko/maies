@@ -32,7 +32,7 @@ Business modelling: out of scope
 - product-design.md — prodotto, utente, flussi, decisioni e sei funzionalità di alto livello.
 - technical-direction.md — Vue 3 + Vite + TypeScript, contenuti JSON per lezione, progressi in localStorage, GitHub Pages su maies.chosko.com.
 
-Funzionalità architettate e ordinate in `.claude/PLAN.md`. Prossimo passo: `/runbook-run pianificazione-task`, dopo il design della UI.
+Funzionalità architettate e ordinate in `.claude/PLAN.md`. Prossimo passo: `/architect` per riportare nei documenti delle funzionalità il gruppo di lavoro, il ripasso a giorni e gli aiuti per ricordare.
 
 ## Decisions worth keeping
 
@@ -46,3 +46,5 @@ Funzionalità architettate e ordinate in `.claude/PLAN.md`. Prossimo passo: `/ru
 - Nessun test in un browser reale: appesantisce lo sviluppo, e per un'app di queste dimensioni il DOM simulato basta.
 - La figlia di Sara ha una seconda edizione del sito, non un account: usano dispositivi diversi, e un login richiederebbe un server.
 - Il design approvato vive copiato in `design/`: chi implementa lo legge dal repository, senza dipendere dagli artifact di Claude Design.
+- Gruppo di lavoro al posto del ripasso a tre livelli pesato: mescolando centinaia di elementi, uno nuovo tornava troppo di rado per essere imparato; i controlli a giorni evitano di dimenticare quelli imparati.
+- Nessuna scelta della lezione su cui allenarsi: il gruppo di lavoro prende già per primi gli elementi della lezione più recente.
