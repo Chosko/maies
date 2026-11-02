@@ -66,11 +66,11 @@ test, nessuna dipendenza nuova.
 - **Canale:** il nome del canale ntfy è il segreto del repository
   `NTFY_TOPIC`, una stringa lunga e casuale. Non compare mai nel
   repository né nei log.
-- **Orari:** tre esecuzioni al giorno con l'orario in UTC, scelte perché
-  cadano fra le 9 e le 21 in Italia sia con l'ora solare sia con quella
-  legale: 09:17, 13:47 e 18:23 UTC (10:17, 14:47, 19:23 d'inverno; 11:17,
-  15:47, 20:23 d'estate). GitHub può ritardare un'esecuzione pianificata di
-  qualche minuto.
+- **Orari:** tre domande al giorno. Le prime due alle 09:17 e 13:47 UTC
+  (10:17 e 14:47 d'inverno, 11:17 e 15:47 d'estate). La terza sempre alle
+  21:30 italiane: GitHub pianifica solo in UTC, quindi il workflow parte
+  alle 19:30 e alle 20:30 UTC e solo l'esecuzione che cade alle 21 in Italia
+  invia. GitHub può ritardare un'esecuzione pianificata di qualche minuto.
 - Nessuno stato fra un'esecuzione e l'altra: ogni domanda è indipendente, e
   la stessa parola può tornare.
 
@@ -98,11 +98,14 @@ test, nessuna dipendenza nuova.
 - Senza la variabile del canale, o senza vocaboli, non pubblica nulla e
   termina senza errore, scrivendo il motivo nel log, così un repository non
   ancora configurato non segnala fallimenti.
+- Con la variabile `SOLO_ALLE` (un'ora 0–23) pubblica solo se in Italia
+  (fuso `Europe/Rome`) è quell'ora; altrimenti termina senza errore,
+  scrivendo il motivo.
 - Non scrive mai il nome del canale nel log.
 
 ### GitHub Action
 
-- Eseguita alle tre ore di *Data and state* e su richiesta manuale.
+- Eseguita agli orari di *Data and state* e su richiesta manuale.
 - Non pubblica il sito e non scrive nel repository: permessi di sola
   lettura.
 - Gira solo sul branch principale, come ogni workflow pianificato di

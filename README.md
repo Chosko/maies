@@ -287,9 +287,11 @@ un errore o non risponde, termina con errore. Il nome del canale non
 compare mai nel log né nel repository. Lo script esporta le funzioni pure
 della scelta e dell'invio, provate da `tests/domanda-a-sorpresa.test.ts`.
 
-Lo esegue una GitHub Action separata dalla pubblicazione, alle 09:17, 13:47
-e 18:23 UTC — fra le 9 e le 21 in Italia sia con l'ora solare sia con quella
-legale — e anche a mano; ha permessi di sola lettura, non pubblica il sito e
+Lo esegue una GitHub Action separata dalla pubblicazione, anche a mano, con
+tre domande al giorno in Italia: le prime due alle 09:17 e 13:47 UTC (10:17 e
+14:47 con l'ora solare, 11:17 e 15:47 con quella legale), la terza sempre
+alle 21:30. Per quest'ultima l'Action parte alle 19:30 e alle 20:30 UTC con
+`SOLO_ALLE=21`, e lo script invia solo quando in Italia sono le 21; ha permessi di sola lettura, non pubblica il sito e
 gira solo sul branch principale. GitHub può ritardare un'esecuzione
 pianificata di qualche minuto, e una domanda non inviata per un errore di
 ntfy.sh si perde, mentre le successive partono normalmente. Il repository

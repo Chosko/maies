@@ -74,7 +74,7 @@ il materiale di Sara.
 
 ### Domanda a sorpresa
 
-1. Tre volte al giorno, fra le 9 e le 21, sul telefono di Sara arriva una
+1. Tre volte al giorno, fra le 10 e le 21:30, sul telefono di Sara arriva una
    notifica che le chiede la traduzione di un vocabolo: "Come si dice
    «cane»?".
 2. Sara ci pensa; se tocca la notifica, maies si apre sull'allenamento
@@ -188,7 +188,7 @@ ferma. Serve il flusso "Ripasso dei vocaboli".
 
 ### Domanda a sorpresa
 
-Tre volte al giorno, fra le 9 e le 21, una notifica sul telefono di Sara le
+Tre volte al giorno, fra le 10 e le 21:30, una notifica sul telefono di Sara le
 chiede come si dice in inglese un vocabolo italiano. Toccandola si apre
 l'allenamento vocaboli con quella parola come prima domanda. Sara riceve le
 notifiche con l'app ntfy; il vocabolo è scelto fra quelli dell'edizione

@@ -39,10 +39,11 @@ build is a static site.
   answer → throws, never naming the topic). Run directly, it reads
   `contenuti/lezioni/` and sets exit code 1 on error.
 - `scripts/domanda-a-sorpresa.workflow.yml` — the TEMPLATE of the
-  scheduled workflow: cron `17 9`, `47 13`, `23 18` UTC plus
+  scheduled workflow: cron `17 9`, `47 13`, `30 19`, `30 20` UTC plus
   `workflow_dispatch`, `contents: read`, `npm ci` then
   `npm run domanda-a-sorpresa` with `NTFY_TOPIC` from the repository
-  secret. The active `.github/workflows/domanda-a-sorpresa.yml` is a copy a
+  secret and `SOLO_ALLE=21` on the two `30 ` runs, so only the one at 21:00
+  Italian time sends (the script's `soloAlle`, `Europe/Rome`). The active `.github/workflows/domanda-a-sorpresa.yml` is a copy a
   person creates by hand on the main branch.
 - `tests/` — flat folder of `*.test.ts`, one per module or area, named
   after it (`router`, `navbar`, `tokens`, `catalogo`, `sessione`, …).
