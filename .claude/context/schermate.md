@@ -7,7 +7,7 @@ UI-free logic module. Three read the catalogue only; Esercizi and Vocaboli
 drive a review session.
 
 - `src/views/EserciziView.vue` + `src/esercizi/ciclo.ts` — translation
-  exercise: Sara types, sees the solution, marks herself right or wrong and
+  exercise: Sara may reveal the sentence's hint, types, sees the solution, marks herself right or wrong and
   sets the sentence's importance, 0 removing it after a confirmation.
 - `src/views/VocaboliView.vue` + `src/vocaboli/ciclo.ts`,
   `src/vocaboli/verifica.ts` — vocabulary drill: the app checks the answer;
@@ -32,10 +32,13 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `riga-importanza`,
 - `esercizi/ciclo.ts::creaCiclo(opzioni?): CicloEsercizio` — `stato`
   (`fase`: `in-attesa-di-risposta` | `soluzione-mostrata` |
   `nessun-materiale` | `tutti-tolti`; `frase`, `testo`, `titoloLezione`,
-  `importanza`, `confermaRimozioneAperta`), `avvio()`, `conferma(testo)`,
-  `segna('giusta' | 'sbagliata')`, `impostaImportanza(1 | 2 | 3)`,
-  `chiediRimozione()`, `annullaRimozione()`, `confermaRimozione()`. The
-  importance actions act only in `soluzione-mostrata`, confirmation closed;
+  `importanza`, `confermaRimozioneAperta`, `aiutoMostrato`), `avvio()`,
+  `mostraAiuto()`, `conferma(testo)`, `segna('giusta' | 'sbagliata')`,
+  `impostaImportanza(1 | 2 | 3)`, `chiediRimozione()`, `annullaRimozione()`,
+  `confermaRimozione()`. `mostraAiuto()` acts only in
+  `in-attesa-di-risposta` and for a sentence with a `hint`, sets
+  `aiutoMostrato` and records nothing; every proposed sentence starts with
+  it `false`. The importance actions act only in `soluzione-mostrata`, confirmation closed;
   `importanza` is the sentence's current value (`null` without a sentence);
   `confermaRimozione()` records importance 0, then proposes the next
   sentence, landing on `tutti-tolti` when the session reports every
@@ -91,6 +94,11 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `riga-importanza`,
   Vocaboli records the checked result on `conferma()`, an importance on
   `impostaImportanza()` and importance 0 on `confermaRimozione()`. Both key
   the session by `idGlobale`.
+- Esercizi shows the secondary "Aiuto" button (`.esercizio-aiuto`) under
+  the sentence only in `in-attesa-di-risposta` and only for a sentence with
+  a `hint`; tapping it calls `mostraAiuto()`, the hint text
+  (`.esercizio-aiuto-testo`) takes the button's place and stays until the
+  next sentence, and focus goes back to the answer field after `nextTick()`.
 - Esercizi shows `RigaImportanza` only in `soluzione-mostrata`, below the
   Sbagliata/Giusta buttons, wiring its events straight to the cycle's
   actions. Its empty card has two texts: `nessun-materiale` ("Ancora

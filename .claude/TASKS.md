@@ -506,7 +506,7 @@ Feature: esercizi-traduzione
 
 ## 51. Update documentation for feature `esercizi-traduzione`
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: README.md, .claude/context/schermate.md
 Preconditions: 50

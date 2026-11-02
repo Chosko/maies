@@ -73,7 +73,11 @@ L'algoritmo a tre livelli, l'importanza e il perché sono nel documento di featu
 ## Esercizi
 
 La schermata Esercizi propone frasi italiane, mescolate tra tutte le
-lezioni, da tradurre in inglese. Sara scrive la traduzione e la conferma,
+lezioni, da tradurre in inglese. Prima di rispondere, per una frase che ha
+un aiuto, Sara può toccare il pulsante "Aiuto" sotto la frase: il pulsante
+lascia il posto al testo dell'aiuto, il fuoco torna nel campo e l'esito non
+cambia; ogni frase nuova riparte con l'aiuto nascosto, e per una frase senza
+aiuto il pulsante non compare. Sara scrive la traduzione e la conferma,
 poi vede la traduzione corretta, le varianti accettabili e il titolo della
 lezione, e segna da sola se la risposta era giusta o sbagliata: l'app non
 confronta la risposta con le traduzioni. Nella soluzione Sara sceglie anche
