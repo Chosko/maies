@@ -41,6 +41,15 @@ L'app legge le lezioni alla compilazione dal catalogo in sola lettura
 l'unica definizione del formato: zod è una dipendenza di sviluppo e l'app
 importa dallo schema solo tipi, cosa che un test verifica.
 
+Oltre alla traduzione, ogni elemento può portare un aiuto per chi ripassa,
+facoltativo: una frase ha `hint`, l'aiuto in italiano mostrato prima di
+rispondere, con le parole chiave o il tempo verbale ma mai la traduzione
+intera (il test di validità rifiuta un `hint` uguale a `en` o a una delle
+`alternatives`); un vocabolo ha `example`, una breve frase d'esempio in inglese, e
+per le parole difficili `mnemonic`, un trucco in italiano per ricordarlo.
+Chiesta in chat, la skill completa con questi campi le frasi e i vocaboli
+delle lezioni già scritte che non li hanno, senza cambiarne gli id.
+
 Il test di validità (`tests/contenuti.test.ts`) fa parte di `npm test`:
 rilegge le due cartelle con `node:fs` a ogni esecuzione, ognuna per conto
 suo, quindi controlla subito

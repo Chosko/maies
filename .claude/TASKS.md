@@ -436,7 +436,7 @@ Feature: aggiunta-materiale-lezione
 
 ## 44. Update documentation for feature `aggiunta-materiale-lezione`
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: README.md, .claude/context/contenuti.md
 Preconditions: 39, 40, 41, 42, 43
