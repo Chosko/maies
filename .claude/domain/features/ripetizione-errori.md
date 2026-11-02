@@ -138,8 +138,9 @@ TypeScript e Vitest, logica pura senza componenti Vue. È la parte
 Prima si completa il gruppo, poi:
 
 1. Se ci sono controlli scaduti e il gruppo non è vuoto, si alternano: un
-   controllo ogni due elementi proposti dalla sessione. Con il gruppo vuoto
-   si propongono solo controlli.
+   controllo ogni due elementi proposti dalla sessione, cominciando con un
+   controllo. Con il gruppo vuoto si propongono solo controlli. Il ripasso
+   libero non fa avanzare l'alternanza.
 2. Un elemento del gruppo si sceglie a caso, con la stessa probabilità, fra
    quelli che non sono fra gli ultimi proposti.
 3. Un controllo si sceglie fra quelli scaduti, dal più vecchio; a parità di
@@ -150,8 +151,14 @@ Prima si completa il gruppo, poi:
 
 La finestra degli ultimi proposti è di 3 elementi, ridotta al numero di
 elementi disponibili meno uno quando sono pochi, così con un solo elemento
-questo si ripropone. Se la finestra esclude tutto il gruppo, si passa al
-controllo o al ripasso libero; se esclude tutto, si ignora.
+questo si ripropone. Gli elementi disponibili sono quelli del gruppo più gli
+imparati, sempre con importanza diversa da 0, e la finestra vale per il
+gruppo, per i controlli e per il ripasso libero. Se la finestra esclude
+tutto il gruppo, si passa al controllo o al ripasso libero; se esclude
+tutto, si ignora.
+
+Il numero di lezione che ordina l'ingresso nel gruppo è la posizione della
+lezione nel catalogo, che le ordina per id.
 
 ### Importanza
 
@@ -206,9 +213,14 @@ Esposta a esercizi di traduzione e allenamento vocaboli:
   diversi:
   - **nessun materiale:** il catalogo non ha elementi di quel tipo;
   - **tutti tolti:** il catalogo ne ha, ma tutti con importanza 0.
+- **elemento per id(id globale)**: restituisce l'elemento del catalogo del
+  tipo della sessione con quell'id e la sua importanza, e lo conta fra gli
+  ultimi proposti; restituisce "nessuno" per un id sconosciuto, di un altro
+  tipo o con importanza 0. Serve ad aprire l'allenamento su un elemento
+  indicato da fuori, come la [domanda a sorpresa](./domanda-a-sorpresa.md).
 - **registra esito(id globale, giusto | sbagliato)**: applica le
-  transizioni con la data di oggi e salva. Un id sconosciuto al catalogo
-  viene ignorato.
+  transizioni con la data di oggi e salva. Un id sconosciuto al catalogo o
+  con importanza 0 viene ignorato.
 - **registra importanza(id globale, 0 | 1 | 2 | 3)**: salva l'importanza
   dell'elemento, che vale dalla prossima scelta; con 0 l'elemento lascia il
   gruppo. Non tocca lo stato di apprendimento. Un id sconosciuto al catalogo

@@ -28,6 +28,8 @@ In:
 
 - La verifica della risposta e le regole di normalizzazione del testo.
 - La schermata Vocaboli al posto del segnaposto dello scheletro.
+- L'apertura dell'allenamento su una parola indicata nell'indirizzo, usata
+  dalla [domanda a sorpresa](./domanda-a-sorpresa.md).
 - Il ciclo di ogni vocabolo: risposta, verifica, riscrittura dopo un errore,
   esito, vocabolo successivo.
 - La frase d'esempio e il trucco per ricordare nell'esito.
@@ -181,9 +183,13 @@ lezione del vocabolo; non è uno stato a sé.
 
 ### Ciclo dell'allenamento
 
-- **avvio:** crea la sessione di tipo "vocaboli" e chiede il prossimo
-  elemento. Passa a "in attesa di risposta", oppure a "nessun materiale" o a
-  "tutti tolti" secondo il caso vuoto che restituisce la sessione.
+- **avvio(parola iniziale?):** crea la sessione di tipo "vocaboli". Con
+  una parola iniziale, chiede alla sessione quell'elemento con "elemento per
+  id" e, se c'è, passa a "in attesa di risposta" su di esso; altrimenti, o
+  senza parola iniziale, chiede il prossimo elemento e passa a "in attesa di
+  risposta", oppure a "nessun materiale" o a "tutti tolti" secondo il caso
+  vuoto che restituisce la sessione. Dopo la parola iniziale il ciclo
+  continua come sempre.
 - **conferma(testo):** solo da "in attesa di risposta". Verifica il testo,
   registra l'esito per l'id globale del vocabolo con la funzione "registra
   esito" della sessione e passa a "esito mostrato" se era giusta, a
@@ -215,9 +221,14 @@ lezione del vocabolo; non è uno stato a sé.
 
 - **Rotta:** occupa `#/vocaboli`, fissato da
   [scheletro-e-pubblicazione](./scheletro-e-pubblicazione.md). Non aggiunge
-  sottorotte.
+  sottorotte. Il parametro `parola` dell'indirizzo
+  (`#/vocaboli?parola=<id globale>`) è la parola iniziale dell'avvio: la
+  schermata lo legge una volta all'ingresso e poi lo toglie dall'indirizzo
+  senza aggiungere una voce alla cronologia, così ricaricare la pagina non
+  ripropone la stessa parola. Vale in entrambe le edizioni.
 - **Sessione di ripasso:** usa "crea sessione", "prossimo elemento",
-  "registra esito" e "registra importanza" esattamente come li definisce
+  "elemento per id", "registra esito" e "registra importanza" esattamente
+  come li definisce
   [ripetizione-errori](./ripetizione-errori.md).
 - **Catalogo:** legge dal vocabolo `it`, `en`, `example` e `mnemonic`, e il
   titolo della lezione
@@ -247,6 +258,8 @@ lezione del vocabolo; non è uno stato a sé.
   pronuncia non compaiono. Una lettura che fallisce non mostra errori.
 - **Uscita durante la riscrittura:** l'esito sbagliato resta registrato; al
   rientro arriva un vocabolo nuovo dalla sessione.
+- **Parola iniziale sconosciuta, eliminata o tolta** (importanza 0):
+  l'allenamento parte con il prossimo elemento, senza messaggi.
 - **Lezione del vocabolo non trovata** (non dovrebbe accadere, perché il
   catalogo è coerente per costruzione): l'esito si mostra senza il titolo
   della lezione.
