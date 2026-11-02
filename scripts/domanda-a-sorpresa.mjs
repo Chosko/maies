@@ -7,12 +7,14 @@ import { fileURLToPath, pathToFileURL } from 'node:url'
 
 /** @typedef {{ id: string, vocabulary: { id: string, it: string }[] }} Lezione */
 /** @typedef {{ idGlobale: string, it: string }} VocaboloScelto */
-/** @typedef {{ titolo: string, testo: string, indirizzo: string, etichette: string[] }} Notifica */
+/** @typedef {{ titolo: string, testo: string, indirizzo: string, icona: string }} Notifica */
 
 const LEZIONI_RECENTI = 3
 const PESO_RECENTI = 3
 const PESO_ALTRE = 1
 const SITO = 'https://maies.chosko.com'
+// Il logo di maies, pubblicato dal sito da public/: ntfy accetta solo PNG e JPEG.
+const ICONA = `${SITO}/maies-icona-512.png`
 const NTFY = 'https://ntfy.sh'
 const FUSO = 'Europe/Rome'
 
@@ -80,7 +82,7 @@ export function componiNotifica(vocabolo) {
     titolo: 'maies',
     testo: `Come si dice «${vocabolo.it}»?`,
     indirizzo: `${SITO}/#/vocaboli?parola=${encodeURIComponent(vocabolo.idGlobale)}`,
-    etichette: ['speech_balloon'],
+    icona: ICONA,
   }
 }
 
@@ -154,7 +156,7 @@ export async function esegui({
       headers: {
         Title: notifica.titolo,
         Click: notifica.indirizzo,
-        Tags: notifica.etichette.join(','),
+        Icon: notifica.icona,
       },
     })
   } catch {

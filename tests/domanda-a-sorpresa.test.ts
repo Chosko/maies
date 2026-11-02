@@ -86,11 +86,17 @@ describe('scegliVocabolo', () => {
 })
 
 describe('componiNotifica', () => {
-  it('ha titolo maies, la domanda con la parola com’è scritta e l’icona a fumetto', () => {
+  it('ha titolo maies, la domanda con la parola com’è scritta e il logo di maies come icona', () => {
     const notifica = componiNotifica({ idGlobale: '03-salute/v07', it: 'pesca (frutto)' })
     expect(notifica.titolo).toBe('maies')
     expect(notifica.testo).toBe('Come si dice «pesca (frutto)»?')
-    expect(notifica.etichette).toEqual(['speech_balloon'])
+    expect(notifica.icona).toBe('https://maies.chosko.com/maies-icona-512.png')
+  })
+
+  it('l’icona è il PNG pubblicato dal sito', () => {
+    const notifica = componiNotifica({ idGlobale: '03-salute/v07', it: 'cane' })
+    const nome = new URL(notifica.icona).pathname.slice(1)
+    expect(readFileSync(fileURLToPath(new URL(`../public/${nome}`, import.meta.url))).subarray(1, 4).toString()).toBe('PNG')
   })
 
   it('apre l’allenamento vocaboli sulla parola, con l’id codificato', () => {
@@ -154,7 +160,7 @@ describe('esegui', () => {
     expect(opzioni.headers).toEqual({
       Title: 'maies',
       Click: 'https://maies.chosko.com/#/vocaboli?parola=01-lezione%2Fv01',
-      Tags: 'speech_balloon',
+      Icon: 'https://maies.chosko.com/maies-icona-512.png',
     })
     expect(righe.join('\n')).not.toContain(canale)
   })
