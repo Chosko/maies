@@ -1,6 +1,6 @@
 # Tasks
 
-Last task number: 38
+Last task number: 44
 
 ---
 
@@ -381,5 +381,65 @@ Target: claude
 Files: README.md, .claude/context/schermate.md
 Preconditions: 36, 37
 Feature: allenamento-vocaboli
+
+---
+
+## 39. Campi aiuto, frase d'esempio e trucco nel formato delle lezioni
+
+Status: [MISSING]
+Target: claude
+Files: src/contenuti/schema.ts, src/contenuti/validazione.ts, src/contenuti/catalogo.ts, tests/contenuti.test.ts, tests/validazione.test.ts, tests/catalogo.test.ts
+Preconditions: none
+Feature: aggiunta-materiale-lezione
+
+---
+
+## 40. Aiuti, frasi d'esempio e trucchi nella skill di aggiunta del materiale
+
+Status: [MISSING]
+Target: claude
+Files: .claude/skills/aggiunta-materiale/SKILL.md, tests/skill-aggiunta-materiale.test.ts
+Preconditions: 39
+Feature: aggiunta-materiale-lezione
+
+---
+
+## 41. Aiuti per tutte le frasi delle lezioni esistenti
+
+Status: [MISSING]
+Target: claude
+Files: contenuti/lezioni/*.json
+Preconditions: 39
+Feature: aggiunta-materiale-lezione
+
+---
+
+## 42. Frasi d'esempio e trucchi per i vocaboli delle lezioni 01–06
+
+Status: [MISSING]
+Target: claude
+Files: contenuti/lezioni/01-a-day-trip.json, contenuti/lezioni/02-pet-peeves.json, contenuti/lezioni/03-health-dangers.json, contenuti/lezioni/04-getting-fit.json, contenuti/lezioni/05-venues.json, contenuti/lezioni/06-new-in-town.json
+Preconditions: 39
+Feature: aggiunta-materiale-lezione
+
+---
+
+## 43. Frasi d'esempio e trucchi per i vocaboli delle lezioni 07–12 e dei kids
+
+Status: [MISSING]
+Target: claude
+Files: contenuti/lezioni/07-observations.json, contenuti/lezioni/08-a-hotel-review.json, contenuti/lezioni/09-have-you-ever.json, contenuti/lezioni/10-home-sweet-home.json, contenuti/lezioni/11-the-best-place-to-stay.json, contenuti/lezioni/12-meeting-new-people.json, contenuti/kids/01-autumn-unit-1-2.json
+Preconditions: 39
+Feature: aggiunta-materiale-lezione
+
+---
+
+## 44. Update documentation for feature `aggiunta-materiale-lezione`
+
+Status: [MISSING]
+Target: claude
+Files: README.md, .claude/context/contenuti.md
+Preconditions: 39, 40, 41, 42, 43
+Feature: aggiunta-materiale-lezione
 
 ---
