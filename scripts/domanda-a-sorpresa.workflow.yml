@@ -4,7 +4,10 @@ on:
   schedule:
     - cron: '17 9 * * *'
     - cron: '47 13 * * *'
-    - cron: '23 18 * * *'
+    # La domanda delle 21:30 italiane: 19:30 UTC con l'ora legale, 20:30 UTC
+    # con quella solare. Parte a entrambe e SOLO_ALLE fa inviare solo quella giusta.
+    - cron: '30 19 * * *'
+    - cron: '30 20 * * *'
   workflow_dispatch:
 
 permissions:
@@ -25,3 +28,4 @@ jobs:
       - run: npm run domanda-a-sorpresa
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          SOLO_ALLE: ${{ startsWith(github.event.schedule, '30 ') && '21' || '' }}

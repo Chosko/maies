@@ -10,8 +10,7 @@ import {
   esegui,
   leggiLezioni,
   scegliDomanda,
-  scegliVocabolo,
-} from '../scripts/domanda-a-sorpresa.mjs'
+  scegliVocabolo, oraDaVariabile } from '../scripts/domanda-a-sorpresa.mjs'
 
 type LezioneMinima = { id: string; vocabulary: { id: string; it: string }[] }
 
@@ -158,6 +157,34 @@ describe('esegui', () => {
       Tags: 'speech_balloon',
     })
     expect(righe.join('\n')).not.toContain(canale)
+  })
+
+  it('con soloAlle invia solo se in Italia è quell\'ora, con l\'ora solare e con quella legale', async () => {
+    const inverno = new Date('2026-12-15T20:30:00Z') // 21:30 a Roma (CET)
+    const estate = new Date('2026-07-15T19:30:00Z') // 21:30 a Roma (CEST)
+    for (const adesso of [inverno, estate]) {
+      const fetch = vi.fn(async () => new Response('{}', { status: 200 }))
+      await esegui({ canale, lezioni, casuale: fissa(0.5), fetch, log: () => {}, soloAlle: 21, adesso })
+      expect(fetch).toHaveBeenCalledTimes(1)
+    }
+  })
+
+  it('con soloAlle non invia in un\'altra ora e scrive il motivo', async () => {
+    const fetch = vi.fn()
+    const { righe, log } = registro()
+    const adesso = new Date('2026-12-15T19:30:00Z') // 20:30 a Roma
+    await esegui({ canale, lezioni, fetch, log, soloAlle: 21, adesso })
+    expect(fetch).not.toHaveBeenCalled()
+    expect(righe.join('\n')).toMatch(/non sono le 21/)
+    expect(righe.join('\n')).not.toContain(canale)
+  })
+
+  it('oraDaVariabile accetta un\'ora 0–23 e ignora valori vuoti o non validi', () => {
+    expect(oraDaVariabile('21')).toBe(21)
+    expect(oraDaVariabile('')).toBeUndefined()
+    expect(oraDaVariabile(undefined)).toBeUndefined()
+    expect(oraDaVariabile('25')).toBeUndefined()
+    expect(oraDaVariabile('sera')).toBeUndefined()
   })
 
   it('senza canale non pubblica e termina senza errore, scrivendo il motivo', async () => {

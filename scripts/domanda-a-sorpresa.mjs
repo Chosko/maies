@@ -14,6 +14,28 @@ const PESO_RECENTI = 3
 const PESO_ALTRE = 1
 const SITO = 'https://maies.chosko.com'
 const NTFY = 'https://ntfy.sh'
+const FUSO = 'Europe/Rome'
+
+/**
+ * L'ora del valore della variabile SOLO_ALLE, oppure undefined se è vuota o
+ * non è un'ora fra 0 e 23.
+ * @param {string | undefined} valore
+ * @returns {number | undefined}
+ */
+export function oraDaVariabile(valore) {
+  if (!valore || !/^\d{1,2}$/.test(valore)) return undefined
+  const ora = Number(valore)
+  return ora <= 23 ? ora : undefined
+}
+
+/**
+ * L'ora in Italia, 0–23, del momento dato.
+ * @param {Date} adesso
+ */
+function oraInItalia(adesso) {
+  const testo = new Intl.DateTimeFormat('it-IT', { timeZone: FUSO, hour: '2-digit', hourCycle: 'h23' }).format(adesso)
+  return Number(testo)
+}
 
 /** @param {Lezione} lezione */
 const numeroLezione = (lezione) => Number.parseInt(lezione.id, 10)
@@ -86,18 +108,33 @@ export function leggiLezioni(cartella) {
 }
 
 /**
- * Pubblica la domanda. Senza canale o senza vocaboli scrive il motivo e non
- * pubblica; un errore di ntfy.sh è un'eccezione. Il canale non va mai nel log.
+ * Pubblica la domanda. Senza canale, senza vocaboli o, con `soloAlle`, fuori
+ * da quell'ora in Italia scrive il motivo e non pubblica; un errore di ntfy.sh
+ * è un'eccezione. Il canale non va mai nel log.
  * @param {{
  *   canale: string | undefined,
  *   lezioni: Lezione[],
  *   casuale?: () => number,
  *   fetch?: typeof globalThis.fetch,
  *   log?: (riga: string) => void,
+ *   soloAlle?: number,
+ *   adesso?: Date,
  * }} opzioni
  * @returns {Promise<void>}
  */
-export async function esegui({ canale, lezioni, casuale = Math.random, fetch = globalThis.fetch, log = console.log }) {
+export async function esegui({
+  canale,
+  lezioni,
+  casuale = Math.random,
+  fetch = globalThis.fetch,
+  log = console.log,
+  soloAlle,
+  adesso = new Date(),
+}) {
+  if (soloAlle !== undefined && oraInItalia(adesso) !== soloAlle) {
+    log(`In Italia non sono le ${soloAlle}: nessuna domanda inviata da questa esecuzione.`)
+    return
+  }
   if (!canale) {
     log('NTFY_TOPIC non è impostata: nessuna domanda inviata.')
     return
@@ -130,7 +167,11 @@ export async function esegui({ canale, lezioni, casuale = Math.random, fetch = g
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const cartella = fileURLToPath(new URL('../contenuti/lezioni/', import.meta.url))
-  esegui({ canale: process.env.NTFY_TOPIC, lezioni: leggiLezioni(cartella) }).catch((errore) => {
+  esegui({
+    canale: process.env.NTFY_TOPIC,
+    lezioni: leggiLezioni(cartella),
+    soloAlle: oraDaVariabile(process.env.SOLO_ALLE),
+  }).catch((errore) => {
     console.error(errore instanceof Error ? errore.message : 'Invio della domanda non riuscito.')
     process.exitCode = 1
   })

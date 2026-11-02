@@ -616,7 +616,7 @@ Feature: domanda-a-sorpresa
 
 ## 62. Attivare la domanda a sorpresa sul telefono di Sara
 
-Status: [MISSING]
+Status: [DONE]
 Target: human
 Files: none
 Preconditions: 61

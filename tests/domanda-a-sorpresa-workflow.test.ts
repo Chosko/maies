@@ -22,11 +22,16 @@ function blocco(chiave: string): string[] {
 }
 
 describe('workflow della domanda a sorpresa', () => {
-  it('gira alle 09:17, 13:47 e 18:23 UTC', () => {
+  it('gira alle 09:17 e 13:47 UTC, e alle 19:30 e 20:30 UTC per la domanda delle 21:30', () => {
     const orari = blocco('on')
       .map((riga) => /^- cron: ['"](.+)['"]$/.exec(riga)?.[1])
       .filter((orario): orario is string => orario !== undefined)
-    expect(orari.sort()).toEqual(['17 9 * * *', '23 18 * * *', '47 13 * * *'])
+    expect(orari.sort()).toEqual(['17 9 * * *', '30 19 * * *', '30 20 * * *', '47 13 * * *'])
+  })
+
+  it('alle esecuzioni delle :30 passa SOLO_ALLE=21, così ne invia una sola a seconda dell\'ora legale', () => {
+    const passi = righe.map((riga) => riga.trim())
+    expect(passi).toContain("SOLO_ALLE: ${{ startsWith(github.event.schedule, '30 ') && '21' || '' }}")
   })
 
   it('si può avviare a mano e non parte a ogni push', () => {
