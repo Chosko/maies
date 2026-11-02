@@ -1,0 +1,351 @@
+{
+  "id": "14-art-gallery",
+  "title": "Alla galleria d'arte: descrivere un dipinto e parlare di esperienze",
+  "sentences": [
+    {
+      "id": "f01",
+      "it": "Questo dipinto è molto vivace.",
+      "en": "This painting is very vibrant.",
+      "alternatives": [
+        "This picture is very vibrant."
+      ],
+      "hint": "to be + aggettivo — painting, vibrant"
+    },
+    {
+      "id": "f02",
+      "it": "I colori di questo quadro sono vividi.",
+      "en": "The colours in this painting are vivid.",
+      "alternatives": [
+        "The colors in this painting are vivid.",
+        "The colours of this painting are vivid.",
+        "The colors of this painting are vivid."
+      ],
+      "hint": "to be + aggettivo — colours, painting, vivid"
+    },
+    {
+      "id": "f03",
+      "it": "Preferisco l'arte astratta a quella realistica.",
+      "en": "I prefer abstract art to realistic art.",
+      "alternatives": [
+        "I prefer abstract art over realistic art."
+      ],
+      "hint": "prefer … to … — abstract art, realistic"
+    },
+    {
+      "id": "f04",
+      "it": "Il suo ultimo quadro è un acquerello dall'atmosfera onirica.",
+      "en": "His latest painting is a dreamlike watercolour.",
+      "alternatives": [
+        "His latest painting is a dreamlike watercolor.",
+        "Her latest painting is a dreamlike watercolour.",
+        "Her latest painting is a dreamlike watercolor."
+      ],
+      "hint": "aggettivo prima del nome — latest, dreamlike, watercolour"
+    },
+    {
+      "id": "f05",
+      "it": "Ho trovato la mostra piuttosto noiosa.",
+      "en": "I found the exhibition quite dull.",
+      "alternatives": [
+        "I thought the exhibition was quite dull.",
+        "I found the exhibition rather dull."
+      ],
+      "hint": "find + nome + aggettivo — exhibition, quite, dull"
+    },
+    {
+      "id": "f06",
+      "it": "Lui ha visitato il Louvre a Parigi.",
+      "en": "He has visited the Louvre in Paris.",
+      "alternatives": [
+        "He's visited the Louvre in Paris.",
+        "He has been to the Louvre in Paris.",
+        "He's been to the Louvre in Paris."
+      ],
+      "hint": "present perfect per un'esperienza — visit, Louvre"
+    },
+    {
+      "id": "f07",
+      "it": "Non hanno mai visto la Gioconda.",
+      "en": "They have never seen the Mona Lisa.",
+      "alternatives": [
+        "They've never seen the Mona Lisa."
+      ],
+      "hint": "present perfect con never — see, Mona Lisa"
+    },
+    {
+      "id": "f08",
+      "it": "Non hanno visto l'Ultima Cena.",
+      "en": "They haven't seen the Last Supper.",
+      "alternatives": [
+        "They have not seen the Last Supper."
+      ],
+      "hint": "present perfect negativo — see, Last Supper"
+    },
+    {
+      "id": "f09",
+      "it": "Sei mai stato al museo Guggenheim?",
+      "en": "Have you ever been to the Guggenheim Museum?",
+      "alternatives": [
+        "Have you ever visited the Guggenheim Museum?",
+        "Have you ever been to the Guggenheim?",
+        "Have you ever visited the Guggenheim?"
+      ],
+      "hint": "domanda con have you ever + participio — be/visit, Guggenheim"
+    },
+    {
+      "id": "f10",
+      "it": "Sì, ci sono stata anch'io!",
+      "en": "Yes, I have too!",
+      "alternatives": [
+        "Yes, I have, too!",
+        "Yes, I've been there too!"
+      ],
+      "hint": "risposta breve + too — yes, I have"
+    },
+    {
+      "id": "f11",
+      "it": "No, non ci sono stato neanch'io.",
+      "en": "No, I haven't either.",
+      "alternatives": [
+        "No, I have not either.",
+        "No, I haven't been there either."
+      ],
+      "hint": "risposta breve negativa + either — no, I haven't"
+    },
+    {
+      "id": "f12",
+      "it": "Lei ha visitato il MoMA. Ci è andata l'anno scorso con la sua famiglia.",
+      "en": "She has visited the MoMA. She went last year with her family.",
+      "alternatives": [
+        "She's visited the MoMA. She went last year with her family.",
+        "She has visited the MoMA. She went there last year with her family.",
+        "She's visited the MoMA. She went there last year with her family."
+      ],
+      "hint": "present perfect per l'esperienza, poi past simple per i dettagli — visit, go, last year"
+    },
+    {
+      "id": "f13",
+      "it": "Hai un dipinto preferito? Come lo descriveresti?",
+      "en": "Do you have a favourite painting? How would you describe it?",
+      "alternatives": [
+        "Do you have a favorite painting? How would you describe it?",
+        "Have you got a favourite painting? How would you describe it?"
+      ],
+      "hint": "do you have + would per la domanda — favourite painting, describe"
+    },
+    {
+      "id": "f14",
+      "it": "Mia sorella dipinge con la pittura acrilica, io preferisco la pittura a olio.",
+      "en": "My sister paints with acrylic, I prefer oil.",
+      "alternatives": [
+        "My sister paints with acrylics, I prefer oil.",
+        "My sister paints in acrylic, I prefer oil.",
+        "My sister paints with acrylic paint, I prefer oil paint."
+      ],
+      "hint": "present simple — paint, acrylic, prefer, oil"
+    },
+    {
+      "id": "f15",
+      "it": "Non sono mai stata alla Tate Modern di Londra.",
+      "en": "I have never been to the Tate Modern in London.",
+      "alternatives": [
+        "I've never been to the Tate Modern in London.",
+        "I have never visited the Tate Modern in London.",
+        "I've never visited the Tate Modern in London."
+      ],
+      "hint": "present perfect con never — be/visit, Tate Modern"
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "v01",
+      "it": "galleria d'arte",
+      "en": [
+        "art gallery"
+      ],
+      "example": "We spent the afternoon at an art gallery."
+    },
+    {
+      "id": "v02",
+      "it": "dipinto, quadro",
+      "en": [
+        "painting"
+      ],
+      "example": "There's a beautiful painting above the sofa.",
+      "mnemonic": "«painting» viene da «paint» (dipingere): la cosa dipinta."
+    },
+    {
+      "id": "v03",
+      "it": "vivace (pieno di energia)",
+      "en": [
+        "vibrant"
+      ],
+      "example": "The city has a vibrant art scene.",
+      "mnemonic": "«vibrant» come vibrare: un colore che vibra di energia."
+    },
+    {
+      "id": "v04",
+      "it": "realistico",
+      "en": [
+        "realistic"
+      ],
+      "example": "His portraits are very realistic."
+    },
+    {
+      "id": "v05",
+      "it": "onirico, come in un sogno",
+      "en": [
+        "dreamlike"
+      ],
+      "example": "The film has a strange, dreamlike atmosphere.",
+      "mnemonic": "dream (sogno) + like (come): come un sogno."
+    },
+    {
+      "id": "v06",
+      "it": "vivido (dai colori intensi)",
+      "en": [
+        "vivid"
+      ],
+      "example": "She painted the flowers in vivid colours."
+    },
+    {
+      "id": "v07",
+      "it": "noioso, spento",
+      "en": [
+        "dull"
+      ],
+      "example": "The lecture was long and dull."
+    },
+    {
+      "id": "v08",
+      "it": "astratto",
+      "en": [
+        "abstract"
+      ],
+      "example": "I don't understand abstract art."
+    },
+    {
+      "id": "v09",
+      "it": "pittura acrilica",
+      "en": [
+        "acrylic",
+        "acrylic paint"
+      ],
+      "example": "Acrylic dries very quickly."
+    },
+    {
+      "id": "v10",
+      "it": "pittura spray",
+      "en": [
+        "spray",
+        "spray paint"
+      ],
+      "example": "The artist used spray paint on the wall."
+    },
+    {
+      "id": "v11",
+      "it": "acquerello",
+      "en": [
+        "watercolour",
+        "watercolor"
+      ],
+      "example": "She painted the lake in watercolour.",
+      "mnemonic": "water (acqua) + colour (colore): colore ad acqua."
+    },
+    {
+      "id": "v12",
+      "it": "arte digitale",
+      "en": [
+        "digital art",
+        "digital"
+      ],
+      "example": "He makes digital art on his tablet."
+    },
+    {
+      "id": "v13",
+      "it": "pittura a olio",
+      "en": [
+        "oil",
+        "oil paint"
+      ],
+      "example": "This portrait is painted in oil."
+    },
+    {
+      "id": "v14",
+      "it": "tempera",
+      "en": [
+        "tempera"
+      ],
+      "example": "Children often paint with tempera at school."
+    },
+    {
+      "id": "v15",
+      "it": "museo d'arte",
+      "en": [
+        "art museum"
+      ],
+      "example": "The art museum is free on Sundays."
+    },
+    {
+      "id": "v16",
+      "it": "la Gioconda",
+      "en": [
+        "the Mona Lisa",
+        "Mona Lisa"
+      ],
+      "example": "The Mona Lisa is smaller than I expected.",
+      "mnemonic": "In inglese è «Mona Lisa», da «Monna Lisa», il nome della donna ritratta."
+    },
+    {
+      "id": "v17",
+      "it": "l'Ultima Cena",
+      "en": [
+        "the Last Supper",
+        "Last Supper"
+      ],
+      "example": "The Last Supper is in Milan.",
+      "mnemonic": "«supper» è la cena della sera, come «soup» (zuppa) per cena."
+    },
+    {
+      "id": "v18",
+      "it": "dipinto preferito",
+      "en": [
+        "favourite painting",
+        "favorite painting"
+      ],
+      "example": "What's your favourite painting?"
+    },
+    {
+      "id": "v19",
+      "it": "descrivere",
+      "en": [
+        "describe"
+      ],
+      "example": "Can you describe the painting?"
+    },
+    {
+      "id": "v20",
+      "it": "mostra",
+      "en": [
+        "exhibition"
+      ],
+      "example": "The exhibition opens next Friday.",
+      "mnemonic": "non è «show» come spettacolo: per l'arte si dice «exhibition», come esibizione."
+    },
+    {
+      "id": "v21",
+      "it": "visitare",
+      "en": [
+        "visit"
+      ],
+      "example": "We visited the Uffizi Gallery in Florence."
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g01",
+      "title": "Descrivere un dipinto",
+      "body": "## Gli aggettivi\n\n| Aggettivo | Significato |\n| --- | --- |\n| *vibrant* | vivace, pieno di energia e di vita |\n| *realistic* | realistico, molto simile alla realtà |\n| *dreamlike* | onirico, irreale come un sogno |\n| *vivid* | vivido, dai colori intensi che restano in mente |\n| *dull* | noioso, spento, che annoia |\n| *abstract* | astratto, fatto di forme e colori, non rappresenta la realtà |\n\n## Le tecniche\n\n- *acrylic* — pittura acrilica\n- *spray* — pittura spray\n- *watercolour* (americano *watercolor*) — acquerello\n- *digital* — arte digitale\n- *oil* — pittura a olio\n- *tempera* — tempera\n\n## Frasi utili\n\n- *It's a vibrant abstract painting.* — È un dipinto astratto vivace.\n- *The colours are very vivid.* — I colori sono molto vividi.\n- *I found it quite dull.* — L'ho trovato piuttosto noioso.\n\nPer parlare dei musei che hai visitato si usa il *present perfect* (vedi la lezione «Have you ever…?»): *Have you ever been to the Louvre?* — *Yes, I have!*"
+    }
+  ]
+}
