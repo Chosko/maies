@@ -29,7 +29,8 @@ In:
 - Lo schema dei file e il test che li valida e blocca la pubblicazione di un
   file malformato.
 - Il procedimento di Claude per una lezione da PDF o foto, per un vocabolo
-  singolo e per la correzione di un elemento.
+  singolo, per la correzione di un elemento e per il completamento degli
+  aiuti nel materiale esistente.
 - Una skill del progetto che esegue quel procedimento quando una sessione
   riceve materiale in chat.
 
@@ -94,13 +95,22 @@ Ogni file contiene una lezione, con queste chiavi:
   - `id`;
   - `it`, la frase italiana;
   - `en`, la traduzione inglese corretta;
-  - `alternatives`, le altre traduzioni accettabili (eventualmente vuoto).
+  - `alternatives`, le altre traduzioni accettabili (eventualmente vuoto);
+  - `hint`, facoltativo: l'aiuto mostrato prima di rispondere, in italiano,
+    con le parole chiave inglesi della frase o il tempo verbale da usare
+    (per esempio "present perfect — ever, been, abroad"), senza la
+    traduzione intera.
 - `vocabulary`: i vocaboli. Ogni vocabolo ha:
   - `id`;
   - `it`, la parola o espressione italiana; un significato ambiguo si
     distingue fra parentesi, per esempio "pesca (frutto)";
   - `en`, le traduzioni inglesi accettate. Ce n'è almeno una e la prima è
-    quella mostrata come risposta.
+    quella mostrata come risposta;
+  - `example`, facoltativo: una frase d'esempio breve in inglese che usa il
+    vocabolo, adatta al livello della lezione;
+  - `mnemonic`, facoltativo: per le parole difficili, un trucco in italiano
+    per ricordare la traduzione (un'assonanza, un collegamento con
+    l'italiano, un falso amico da evitare).
 - `grammar`: le schede di grammatica. Ogni scheda ha:
   - `id`;
   - `title`, il titolo dell'argomento;
@@ -165,6 +175,9 @@ colpevoli, quando:
   spazi superflui e la punteggiatura finale.
 - la traduzione `en` di una frase compare anche fra le sue `alternatives`,
   o un vocabolo ripete una traduzione;
+- l'`hint` di una frase coincide con la sua traduzione `en` o con una delle
+  sue `alternatives`, a meno di maiuscole, spazi superflui e punteggiatura
+  finale;
 - nella cartella c'è un file che non è JSON, perché un PDF o una foto non
   devono entrare per sbaglio.
 
@@ -192,27 +205,35 @@ Lo esegue la skill di aggiunta del materiale.
    originali che esercitano la grammatica e i vocaboli della lezione, mai
    uguali a frasi già esistenti. Ognuna ha la traduzione corretta e le
    varianti accettabili (forme contratte e non contratte, sinonimi
-   equivalenti, ordini alternativi ammessi).
-6. Scrivere il file, eseguire il test di validità e correggere finché passa.
-7. Fare commit del solo file di lezione, più le eventuali lezioni precedenti
+   equivalenti, ordini alternativi ammessi) e un aiuto.
+6. A ogni vocabolo nuovo dare una frase d'esempio e, se la parola è
+   difficile da ricordare, un trucco.
+7. Scrivere il file, eseguire il test di validità e correggere finché passa.
+8. Fare commit del solo file di lezione, più le eventuali lezioni precedenti
    arricchite al passo 3. L'originale non si salva mai nel repository: se è
    arrivato come file nella cartella di lavoro, si lascia fuori dal commit.
 
 **Una lista di vocaboli per i kids** (una foto o un elenco che Sara indica
 come per i kids): una lezione nuova in `contenuti/kids/` con i soli
-vocaboli, secondo i passi 1–3 e 6–7 qui sopra applicati a quella cartella.
-Numeri, duplicati e lezione più recente si cercano solo lì.
+vocaboli, secondo i passi 1–3 e 6–8 qui sopra applicati a quella cartella,
+con frasi d'esempio e trucchi adatti a una bambina. Numeri, duplicati e
+lezione più recente si cercano solo lì.
 
 **Un vocabolo singolo passato in chat:**
 
 1. Se il vocabolo esiste già, si aggiungono solo le traduzioni nuove.
 2. Altrimenti va nella lezione che Sara indica; se non ne indica nessuna,
    nell'ultima lezione arrivata. Prende il numero successivo dei vocaboli di
-   quella lezione.
+   quella lezione, una frase d'esempio e, se serve, un trucco.
 3. Test e commit come sopra.
 
 **Una correzione** (un refuso, una variante mancante) modifica l'elemento
 mantenendone l'id.
+
+**Il completamento del materiale esistente:** alle frasi senza `hint` e ai
+vocaboli senza `example` si aggiungono, lezione per lezione e in entrambe le
+cartelle, l'aiuto, la frase d'esempio e, per le parole difficili, il trucco,
+con i passi 7–8. Gli id non cambiano, quindi i progressi restano.
 
 ### Contratto di errore
 
