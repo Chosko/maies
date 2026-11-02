@@ -182,14 +182,25 @@ Senza vocaboli nel catalogo la schermata mostra un messaggio al posto
 dell'allenamento; quando invece i vocaboli ci sono ma Sara li ha tolti
 tutti, il messaggio dice che sono stati tolti tutti dall'allenamento.
 
+L'indirizzo `#/vocaboli?parola=<id globale>` apre l'allenamento con quel
+vocabolo come prima domanda, in entrambe le edizioni; dopo la prima domanda
+l'allenamento continua come sempre. È l'indirizzo che apre la
+[domanda a sorpresa](#domanda-a-sorpresa). La schermata legge il parametro
+una volta all'ingresso e lo toglie dall'indirizzo senza aggiungere una voce
+alla cronologia, così ricaricare la pagina non ripropone la stessa parola.
+Un id sconosciuto, di un vocabolo eliminato o di uno tolto dall'allenamento
+non è un errore: l'allenamento parte dal vocabolo che sceglie la sessione,
+senza messaggi.
+
 La logica sta in `src/vocaboli/`: la verifica con la normalizzazione è
 `verifica()` in `src/vocaboli/verifica.ts`, unico punto in cui vive la
 regola di confronto, usata sia per la risposta sia per la riscrittura; il
 ciclo senza interfaccia, con la fase di riscrittura, è `creaCiclo()` in
 `src/vocaboli/ciclo.ts`; la lettura della pronuncia e la scelta della voce
 sono `creaPronuncia()` in `src/vocaboli/pronuncia.ts`. Il componente della
-rotta `#/vocaboli` è `src/views/VocaboliView.vue`, che mostra la fase
-corrente del ciclo e gli inoltra le azioni, mostra i pulsanti della
+rotta `#/vocaboli` è `src/views/VocaboliView.vue`, che passa il parametro
+`parola` all'avvio del ciclo come parola iniziale, mostra la fase corrente
+del ciclo e gli inoltra le azioni, mostra i pulsanti della
 pronuncia solo quando c'è una voce inglese, e mostra la riga
 dell'importanza — il componente `src/components/RigaImportanza.vue`,
 condiviso con la schermata Esercizi — solo quando l'edizione

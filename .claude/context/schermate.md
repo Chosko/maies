@@ -50,10 +50,13 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `riga-importanza`,
   (`fase`: `in-attesa-di-risposta` | `riscrittura` | `esito-mostrato` |
   `nessun-materiale` | `tutti-tolti`; `vocabolo`, `testo`, `esito`,
   `riscrittura`, `riscritturaRespinta`, `titoloLezione`, `importanza`,
-  `confermaRimozioneAperta`), `avvio()`, `conferma(testo)`,
+  `confermaRimozioneAperta`), `avvio(parolaIniziale?)`, `conferma(testo)`,
   `riscrivi(testo)`, `avanti()`, `impostaImportanza(1 | 2 | 3)`,
   `chiediRimozione()`, `annullaRimozione()`, `confermaRimozione()`.
-  `conferma()` records the checked result and goes to `esito-mostrato` on
+  `avvio()` with a `parolaIniziale` (an `idGlobale`) proposes that word
+  first via the session's `elementoPerId()`; an unknown, deleted or removed
+  id falls back silently to `prossimoElemento()`, and after the first word
+  the cycle runs as usual. `conferma()` records the checked result and goes to `esito-mostrato` on
   `giusto`, to `riscrittura` on `sbagliato`. `riscrivi()` acts only in
   `riscrittura` with the removal confirmation closed, checks the text with
   `verifica()`, records nothing, and goes to `esito-mostrato` when it
@@ -110,6 +113,13 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `riga-importanza`,
 - **A cycle exposes a readonly reactive `stato`**; actions outside their
   phase are no-ops. `avvio()` is called synchronously in setup so the empty
   state never flashes; a new cycle (and session) per mount.
+- Vocaboli reads `#/vocaboli?parola=<id globale>` once in setup, through
+  `inject(routerKey)` / `inject(routeLocationKey)` (first value when the
+  query repeats), passes it to `avvio()`, and removes it from the address
+  with `router.replace()`, keeping the other query keys and the hash, so a
+  reload does not repeat the word. Mounted outside a router, it starts with
+  no starting word. Tests: the "aperta su una parola indicata
+  nell’indirizzo" block of `tests/vocaboli.test.ts`.
 - Esercizi records the self-assessment on `segna()`, an importance on
   `impostaImportanza()` and importance 0 on `confermaRimozione()` (no
   result, and `segna()` is a no-op while the removal confirmation is open);
