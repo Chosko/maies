@@ -416,7 +416,7 @@ Feature: aggiunta-materiale-lezione
 
 ## 42. Frasi d'esempio e trucchi per i vocaboli delle lezioni 01–06
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: contenuti/lezioni/01-a-day-trip.json, contenuti/lezioni/02-pet-peeves.json, contenuti/lezioni/03-health-dangers.json, contenuti/lezioni/04-getting-fit.json, contenuti/lezioni/05-venues.json, contenuti/lezioni/06-new-in-town.json
 Preconditions: 39

@@ -143,7 +143,8 @@
       "en": [
         "to get fit",
         "get fit"
-      ]
+      ],
+      "example": "I want to get fit before the summer."
     },
     {
       "id": "v02",
@@ -151,7 +152,8 @@
       "en": [
         "to stretch",
         "stretch"
-      ]
+      ],
+      "example": "Stretch your arms slowly."
     },
     {
       "id": "v03",
@@ -159,7 +161,8 @@
       "en": [
         "to march",
         "march"
-      ]
+      ],
+      "example": "March on the spot for one minute."
     },
     {
       "id": "v04",
@@ -167,7 +170,9 @@
       "en": [
         "to lift",
         "lift"
-      ]
+      ],
+      "example": "Lift the weights slowly.",
+      "mnemonic": "In inglese britannico il lift è l'ascensore: ti solleva."
     },
     {
       "id": "v05",
@@ -175,7 +180,9 @@
       "en": [
         "to breathe",
         "breathe"
-      ]
+      ],
+      "example": "Breathe deeply and relax.",
+      "mnemonic": "Il verbo breathe (\"brìið\") ha una e in più del nome breath (\"brèθ\"), il respiro."
     },
     {
       "id": "v06",
@@ -183,7 +190,8 @@
       "en": [
         "to jog",
         "jog"
-      ]
+      ],
+      "example": "I jog in the park every morning."
     },
     {
       "id": "v07",
@@ -191,21 +199,25 @@
       "en": [
         "to move",
         "move"
-      ]
+      ],
+      "example": "Move your arms energetically."
     },
     {
       "id": "v08",
       "it": "obiettivo",
       "en": [
         "goal"
-      ]
+      ],
+      "example": "My goal is to run five kilometres.",
+      "mnemonic": "Come il goal nel calcio: il traguardo da raggiungere."
     },
     {
       "id": "v09",
       "it": "obiettivo di forma fisica",
       "en": [
         "fitness goal"
-      ]
+      ],
+      "example": "What's your fitness goal this year?"
     },
     {
       "id": "v10",
@@ -215,70 +227,82 @@
         "achieve",
         "to reach",
         "reach"
-      ]
+      ],
+      "example": "You can achieve your goal if you train steadily.",
+      "mnemonic": "achieve ricorda \"venire a capo\": arrivi in fondo a quello che vuoi."
     },
     {
       "id": "v11",
       "it": "avverbio di modo",
       "en": [
         "adverb of manner"
-      ]
+      ],
+      "example": "\"Slowly\" is an adverb of manner."
     },
     {
       "id": "v12",
       "it": "profondo",
       "en": [
         "deep"
-      ]
+      ],
+      "example": "Take a deep breath."
     },
     {
       "id": "v13",
       "it": "profondamente",
       "en": [
         "deeply"
-      ]
+      ],
+      "example": "Breathe deeply through your nose."
     },
     {
       "id": "v14",
       "it": "potente",
       "en": [
         "powerful"
-      ]
+      ],
+      "example": "He has very powerful legs."
     },
     {
       "id": "v15",
       "it": "con forza",
       "en": [
         "powerfully"
-      ]
+      ],
+      "example": "Lift your arms powerfully."
     },
     {
       "id": "v16",
       "it": "lentamente",
       "en": [
         "slowly"
-      ]
+      ],
+      "example": "Walk slowly to warm up."
     },
     {
       "id": "v17",
       "it": "energicamente",
       "en": [
         "energetically"
-      ]
+      ],
+      "example": "Jump energetically for thirty seconds."
     },
     {
       "id": "v18",
       "it": "a ritmo regolare",
       "en": [
         "steadily"
-      ]
+      ],
+      "example": "Run steadily and don't stop.",
+      "mnemonic": "steady ricorda \"stare\" fermo, stabile: steadily, con passo stabile e regolare."
     },
     {
       "id": "v19",
       "it": "con calma",
       "en": [
         "calmly"
-      ]
+      ],
+      "example": "Breathe calmly after the workout."
     },
     {
       "id": "v20",
@@ -286,7 +310,8 @@
       "en": [
         "training routine",
         "workout routine"
-      ]
+      ],
+      "example": "My training routine takes thirty minutes."
     },
     {
       "id": "v21",
@@ -294,14 +319,16 @@
       "en": [
         "workout",
         "training"
-      ]
+      ],
+      "example": "That was a hard workout!"
     },
     {
       "id": "v22",
       "it": "allenamento aerobico",
       "en": [
         "aerobic workout"
-      ]
+      ],
+      "example": "An aerobic workout is good for your heart."
     },
     {
       "id": "v23",
@@ -311,14 +338,17 @@
         "boost",
         "to increase",
         "increase"
-      ]
+      ],
+      "example": "Exercise boosts your energy.",
+      "mnemonic": "boost ricorda il booster: la spinta in più che fa aumentare."
     },
     {
       "id": "v24",
       "it": "energia",
       "en": [
         "energy"
-      ]
+      ],
+      "example": "I have more energy when I exercise."
     },
     {
       "id": "v25",
@@ -326,14 +356,17 @@
       "en": [
         "to burn calories",
         "burn calories"
-      ]
+      ],
+      "example": "Jogging is a great way to burn calories."
     },
     {
       "id": "v26",
       "it": "attrezzatura",
       "en": [
         "equipment"
-      ]
+      ],
+      "example": "You don't need any equipment for this workout.",
+      "mnemonic": "equipment ricorda \"equipaggiamento\", ed è non numerabile: mai an equipment."
     },
     {
       "id": "v27",
@@ -341,56 +374,67 @@
       "en": [
         "to warm up",
         "warm up"
-      ]
+      ],
+      "example": "Always warm up before you run.",
+      "mnemonic": "warm è caldo: warm up, scaldarsi."
     },
     {
       "id": "v28",
       "it": "gambe",
       "en": [
         "legs"
-      ]
+      ],
+      "example": "Stretch your legs after running."
     },
     {
       "id": "v29",
       "it": "braccia",
       "en": [
         "arms"
-      ]
+      ],
+      "example": "Lift your arms above your head."
     },
     {
       "id": "v30",
       "it": "corpo",
       "en": [
         "body"
-      ]
+      ],
+      "example": "Exercise is good for your body and your mind."
     },
     {
       "id": "v31",
       "it": "flessibilità",
       "en": [
         "flexibility"
-      ]
+      ],
+      "example": "Stretching improves your flexibility."
     },
     {
       "id": "v32",
       "it": "sul posto",
       "en": [
         "on the spot"
-      ]
+      ],
+      "example": "Jog on the spot for two minutes.",
+      "mnemonic": "spot è un punto preciso: on the spot, sempre sullo stesso punto."
     },
     {
       "id": "v33",
       "it": "stanza",
       "en": [
         "room"
-      ]
+      ],
+      "example": "You can do this workout in your room."
     },
     {
       "id": "v34",
       "it": "pesi",
       "en": [
         "weights"
-      ]
+      ],
+      "example": "I lift weights at the gym twice a week.",
+      "mnemonic": "weight si legge come wait (\"uèit\"): aspetta che il peso scenda."
     }
   ],
   "grammar": [

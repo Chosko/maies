@@ -201,63 +201,76 @@
       "it": "quantificatore",
       "en": [
         "quantifier"
-      ]
+      ],
+      "example": "\"A lot of\" is a quantifier."
     },
     {
       "id": "v02",
       "it": "sostantivo numerabile",
       "en": [
         "countable noun"
-      ]
+      ],
+      "example": "\"Chair\" is a countable noun."
     },
     {
       "id": "v03",
       "it": "sostantivo non numerabile",
       "en": [
         "uncountable noun"
-      ]
+      ],
+      "example": "\"Furniture\" is an uncountable noun."
     },
     {
       "id": "v04",
       "it": "luogo (per un evento)",
       "en": [
         "venue"
-      ]
+      ],
+      "example": "This venue is perfect for a concert.",
+      "mnemonic": "venue ricorda \"venire\": il posto dove la gente viene per l'evento."
     },
     {
       "id": "v05",
       "it": "evento",
       "en": [
         "event"
-      ]
+      ],
+      "example": "How many people are coming to the event?"
     },
     {
       "id": "v06",
       "it": "concerto",
       "en": [
         "concert"
-      ]
+      ],
+      "example": "There's a concert in the park tonight."
     },
     {
       "id": "v07",
       "it": "mini concerto",
       "en": [
         "gig"
-      ]
+      ],
+      "example": "My band has a gig on Friday night.",
+      "mnemonic": "gig è breve come il concerto che indica: una serata in un locale."
     },
     {
       "id": "v08",
       "it": "palco",
       "en": [
         "stage"
-      ]
+      ],
+      "example": "The band is on stage now.",
+      "mnemonic": "Falso amico: stage non è un tirocinio ma il palco, come nello stage diving."
     },
     {
       "id": "v09",
       "it": "pubblico",
       "en": [
         "audience"
-      ]
+      ],
+      "example": "The audience loved the show.",
+      "mnemonic": "audience ricorda \"audio\" e \"udienza\": chi ascolta, il pubblico."
     },
     {
       "id": "v10",
@@ -265,7 +278,8 @@
       "en": [
         "amplifier",
         "amp"
-      ]
+      ],
+      "example": "We need a bigger amplifier for this room."
     },
     {
       "id": "v11",
@@ -273,7 +287,8 @@
       "en": [
         "musical instrument",
         "instrument"
-      ]
+      ],
+      "example": "Do you play a musical instrument?"
     },
     {
       "id": "v12",
@@ -281,42 +296,49 @@
       "en": [
         "bass guitar",
         "bass"
-      ]
+      ],
+      "example": "He plays the bass in a rock band."
     },
     {
       "id": "v13",
       "it": "chitarra",
       "en": [
         "guitar"
-      ]
+      ],
+      "example": "There are three guitars on the stage."
     },
     {
       "id": "v14",
       "it": "batteria (strumento)",
       "en": [
         "drums"
-      ]
+      ],
+      "example": "My brother plays the drums very loudly.",
+      "mnemonic": "drums fa \"drum drum\" come i tamburi: la batteria non è battery."
     },
     {
       "id": "v15",
       "it": "violino",
       "en": [
         "violin"
-      ]
+      ],
+      "example": "She plays the violin in an orchestra."
     },
     {
       "id": "v16",
       "it": "tastiera (strumento)",
       "en": [
         "keyboard"
-      ]
+      ],
+      "example": "There isn't much space for the keyboard."
     },
     {
       "id": "v17",
       "it": "pianoforte",
       "en": [
         "piano"
-      ]
+      ],
+      "example": "There's an old piano in the living room."
     },
     {
       "id": "v18",
@@ -324,28 +346,33 @@
       "en": [
         "microphone",
         "mic"
-      ]
+      ],
+      "example": "Can you give me the microphone, please?"
     },
     {
       "id": "v19",
       "it": "cuffie",
       "en": [
         "headphones"
-      ]
+      ],
+      "example": "I listen to music with my headphones."
     },
     {
       "id": "v20",
       "it": "casse",
       "en": [
         "speakers"
-      ]
+      ],
+      "example": "We need some speakers for the party.",
+      "mnemonic": "speak è parlare: gli speakers sono le casse che \"parlano\"."
     },
     {
       "id": "v21",
       "it": "traccia",
       "en": [
         "track"
-      ]
+      ],
+      "example": "This is the best track on the album."
     },
     {
       "id": "v22",
@@ -353,7 +380,8 @@
       "en": [
         "song",
         "track"
-      ]
+      ],
+      "example": "She sings a few songs every night."
     },
     {
       "id": "v23",
@@ -361,49 +389,58 @@
       "en": [
         "to mix",
         "mix"
-      ]
+      ],
+      "example": "The DJ mixes songs all night."
     },
     {
       "id": "v24",
       "it": "compilation",
       "en": [
         "mix"
-      ]
+      ],
+      "example": "I made a mix of my favourite songs."
     },
     {
       "id": "v25",
       "it": "computer portatile",
       "en": [
         "laptop"
-      ]
+      ],
+      "example": "I can play the music from my laptop.",
+      "mnemonic": "lap è il grembo: il laptop è il computer che tieni sulle ginocchia."
     },
     {
       "id": "v26",
       "it": "cantante",
       "en": [
         "singer"
-      ]
+      ],
+      "example": "The singer has a beautiful voice."
     },
     {
       "id": "v27",
       "it": "gruppo (musicale)",
       "en": [
         "band"
-      ]
+      ],
+      "example": "How many people are there in your band?",
+      "mnemonic": "Falso amico: band è il gruppo musicale; la banda del paese è una brass band."
     },
     {
       "id": "v28",
       "it": "membri del gruppo",
       "en": [
         "bandmates"
-      ]
+      ],
+      "example": "I practise with my bandmates every Thursday."
     },
     {
       "id": "v29",
       "it": "musicista",
       "en": [
         "musician"
-      ]
+      ],
+      "example": "There are a lot of musicians in my family."
     },
     {
       "id": "v30",
@@ -411,14 +448,16 @@
       "en": [
         "to write songs",
         "write songs"
-      ]
+      ],
+      "example": "She writes songs about love."
     },
     {
       "id": "v31",
       "it": "musica classica",
       "en": [
         "classical music"
-      ]
+      ],
+      "example": "My grandfather loves classical music."
     },
     {
       "id": "v32",
@@ -426,70 +465,83 @@
       "en": [
         "lighting equipment",
         "lights"
-      ]
+      ],
+      "example": "We don't have much lighting equipment."
     },
     {
       "id": "v33",
       "it": "luce",
       "en": [
         "light"
-      ]
+      ],
+      "example": "There isn't enough light in this room."
     },
     {
       "id": "v34",
       "it": "fumo",
       "en": [
         "smoke"
-      ]
+      ],
+      "example": "There's too much smoke on the stage."
     },
     {
       "id": "v35",
       "it": "spazio",
       "en": [
         "space"
-      ]
+      ],
+      "example": "There isn't much space in this venue."
     },
     {
       "id": "v36",
       "it": "mobili",
       "en": [
         "furniture"
-      ]
+      ],
+      "example": "There's a lot of furniture in the room.",
+      "mnemonic": "Falso amico: furniture non è una fornitura ma l'insieme dei mobili, ed è non numerabile."
     },
     {
       "id": "v37",
       "it": "sedia",
       "en": [
         "chair"
-      ]
+      ],
+      "example": "We need a few more chairs."
     },
     {
       "id": "v38",
       "it": "tavolo",
       "en": [
         "table"
-      ]
+      ],
+      "example": "Put the drinks on the table."
     },
     {
       "id": "v39",
       "it": "poltrona",
       "en": [
         "armchair"
-      ]
+      ],
+      "example": "My dad is sleeping in the armchair.",
+      "mnemonic": "arm è il braccio: l'armchair è la sedia con i braccioli, la poltrona."
     },
     {
       "id": "v40",
       "it": "posti a sedere",
       "en": [
         "seats"
-      ]
+      ],
+      "example": "Are there enough seats for everyone?"
     },
     {
       "id": "v41",
       "it": "palazzo (edificio)",
       "en": [
         "building"
-      ]
+      ],
+      "example": "The venue is in an old building.",
+      "mnemonic": "building viene da build, costruire: è una costruzione, un palazzo."
     },
     {
       "id": "v42",
@@ -497,84 +549,99 @@
       "en": [
         "apartment",
         "flat"
-      ]
+      ],
+      "example": "They live in a small apartment in the centre."
     },
     {
       "id": "v43",
       "it": "soggiorno (stanza)",
       "en": [
         "living room"
-      ]
+      ],
+      "example": "We can have the party in the living room."
     },
     {
       "id": "v44",
       "it": "frigorifero",
       "en": [
         "fridge"
-      ]
+      ],
+      "example": "There isn't any milk in the fridge."
     },
     {
       "id": "v45",
       "it": "formaggio",
       "en": [
         "cheese"
-      ]
+      ],
+      "example": "There's some cheese in the fridge."
     },
     {
       "id": "v46",
       "it": "formale",
       "en": [
         "formal"
-      ]
+      ],
+      "example": "This venue is too formal for a rock concert."
     },
     {
       "id": "v47",
       "it": "buio",
       "en": [
         "dark"
-      ]
+      ],
+      "example": "The room is very dark."
     },
     {
       "id": "v48",
       "it": "luminoso",
       "en": [
         "bright"
-      ]
+      ],
+      "example": "The kitchen is big and bright.",
+      "mnemonic": "bright ricorda \"brillare\": luminoso, brillante."
     },
     {
       "id": "v49",
       "it": "giusto (adatto)",
       "en": [
         "right"
-      ]
+      ],
+      "example": "This is the right venue for our party."
     },
     {
       "id": "v50",
       "it": "famoso",
       "en": [
         "famous"
-      ]
+      ],
+      "example": "She's a famous singer."
     },
     {
       "id": "v51",
       "it": "alto (di volume)",
       "en": [
         "loud"
-      ]
+      ],
+      "example": "The music is too loud!",
+      "mnemonic": "Come nel loudspeaker, l'altoparlante: loud è forte, ad alto volume."
     },
     {
       "id": "v52",
       "it": "scomodo",
       "en": [
         "uncomfortable"
-      ]
+      ],
+      "example": "These chairs are very uncomfortable."
     },
     {
       "id": "v53",
       "it": "costoso",
       "en": [
         "expensive"
-      ]
+      ],
+      "example": "This venue is too expensive for us.",
+      "mnemonic": "expensive ricorda le spese: costa tante spese."
     },
     {
       "id": "v54",
@@ -582,7 +649,8 @@
       "en": [
         "to dance",
         "dance"
-      ]
+      ],
+      "example": "Everyone danced all night."
     }
   ],
   "grammar": [

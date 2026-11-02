@@ -167,14 +167,16 @@
       "en": [
         "tag question",
         "question tag"
-      ]
+      ],
+      "example": "\"You're new here, aren't you?\" ends with a tag question."
     },
     {
       "id": "v02",
       "it": "nuovo in città",
       "en": [
         "new in town"
-      ]
+      ],
+      "example": "You're new in town, aren't you?"
     },
     {
       "id": "v03",
@@ -182,14 +184,16 @@
       "en": [
         "to get around town",
         "get around town"
-      ]
+      ],
+      "example": "It's easy to get around town by bike, isn't it?"
     },
     {
       "id": "v04",
       "it": "via",
       "en": [
         "street"
-      ]
+      ],
+      "example": "The coffee shop is on Main Street."
     },
     {
       "id": "v05",
@@ -197,14 +201,17 @@
       "en": [
         "pet groomer",
         "groomer"
-      ]
+      ],
+      "example": "Is there a pet groomer near here?",
+      "mnemonic": "groom vuol dire strigliare, curare l'aspetto: il groomer fa bello il tuo animale."
     },
     {
       "id": "v06",
       "it": "caffetteria",
       "en": [
         "coffee shop"
-      ]
+      ],
+      "example": "Let's meet at the coffee shop, shall we?"
     },
     {
       "id": "v07",
@@ -213,7 +220,8 @@
         "daycare center",
         "daycare centre",
         "daycare"
-      ]
+      ],
+      "example": "My son goes to the daycare center every morning."
     },
     {
       "id": "v08",
@@ -222,7 +230,9 @@
         "dry cleaner's",
         "dry cleaners",
         "dry cleaner"
-      ]
+      ],
+      "example": "I need to take my jacket to the dry cleaner's.",
+      "mnemonic": "dry è asciutto: il lavaggio a secco è dry cleaning."
     },
     {
       "id": "v09",
@@ -230,7 +240,8 @@
       "en": [
         "elementary school",
         "primary school"
-      ]
+      ],
+      "example": "My daughter goes to the elementary school on this street."
     },
     {
       "id": "v10",
@@ -238,7 +249,8 @@
       "en": [
         "auto mechanic",
         "mechanic"
-      ]
+      ],
+      "example": "The auto mechanic fixed my car yesterday."
     },
     {
       "id": "v11",
@@ -248,21 +260,26 @@
         "fix",
         "to repair",
         "repair"
-      ]
+      ],
+      "example": "Can you fix my bike?",
+      "mnemonic": "fix ricorda \"fissare\": rimettere a posto quello che è rotto."
     },
     {
       "id": "v12",
       "it": "colloquio di lavoro",
       "en": [
         "job interview"
-      ]
+      ],
+      "example": "I've got a job interview tomorrow morning."
     },
     {
       "id": "v13",
       "it": "azienda",
       "en": [
         "company"
-      ]
+      ],
+      "example": "He works for a big company.",
+      "mnemonic": "Falso amico: company è soprattutto l'azienda, non solo la compagnia di amici."
     },
     {
       "id": "v14",
@@ -270,7 +287,9 @@
       "en": [
         "to found",
         "found"
-      ]
+      ],
+      "example": "My grandfather founded the company in 1970.",
+      "mnemonic": "found ricorda \"fondare\", ma è anche il passato di find: fondare fa founded."
     },
     {
       "id": "v15",
@@ -280,7 +299,8 @@
         "transfer",
         "to move",
         "move"
-      ]
+      ],
+      "example": "She transferred to the London office last year."
     },
     {
       "id": "v16",
@@ -288,7 +308,8 @@
       "en": [
         "sales representative",
         "sales rep"
-      ]
+      ],
+      "example": "He's a sales representative for a car company."
     },
     {
       "id": "v17",
@@ -298,7 +319,8 @@
         "participate",
         "to take part",
         "take part"
-      ]
+      ],
+      "example": "Everyone can participate in the competition."
     },
     {
       "id": "v18",
@@ -306,21 +328,24 @@
       "en": [
         "dialogue",
         "dialog"
-      ]
+      ],
+      "example": "Read the dialogue and answer the questions."
     },
     {
       "id": "v19",
       "it": "festa a sorpresa",
       "en": [
         "surprise party"
-      ]
+      ],
+      "example": "We're having a surprise party for Tom, aren't we?"
     },
     {
       "id": "v20",
       "it": "segreto",
       "en": [
         "secret"
-      ]
+      ],
+      "example": "Can you keep a secret?"
     },
     {
       "id": "v21",
@@ -328,14 +353,18 @@
       "en": [
         "to find out",
         "find out"
-      ]
+      ],
+      "example": "She found out about the party, didn't she?",
+      "mnemonic": "find out = \"trovare fuori\": tirare fuori una cosa nascosta, scoprirla."
     },
     {
       "id": "v22",
       "it": "il mese scorso",
       "en": [
         "last month"
-      ]
+      ],
+      "example": "They moved here last month, didn't they?",
+      "mnemonic": "last qui è \"scorso\", non \"ultimo\": last month è il mese appena passato."
     },
     {
       "id": "v23",
@@ -343,7 +372,9 @@
       "en": [
         "children",
         "kids"
-      ]
+      ],
+      "example": "How many children have you got?",
+      "mnemonic": "child al singolare, children al plurale irregolare; kids è la forma informale."
     }
   ],
   "grammar": [
