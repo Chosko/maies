@@ -808,6 +808,13 @@
   color: var(--color-accent);
 }
 
+/* La riscrittura dopo un errore: il campo riprende quello della domanda. */
+.vocabolo-riscrittura-avviso {
+  color: var(--color-wrong);
+  font-size: var(--type-lesson-size);
+  line-height: var(--type-lesson-line);
+}
+
 /* Grammatica: la pagina della lezione. */
 .grammatica-lezione {
   gap: var(--space-5);

@@ -71,6 +71,8 @@ describe("ciclo dell'allenamento vocaboli", () => {
     })
     expect(ciclo.stato.testo).toBe('')
     expect(ciclo.stato.esito).toBeNull()
+    expect(ciclo.stato.riscrittura).toBe('')
+    expect(ciclo.stato.riscritturaRespinta).toBe(false)
   })
 
   it('avvio senza vocaboli passa a nessun materiale', () => {
@@ -124,7 +126,7 @@ describe("ciclo dell'allenamento vocaboli", () => {
     ciclo.impostaImportanza(3)
     expect(archivio.leggiImportanza('01-a/v1')).toBe(3)
     expect(ciclo.stato.importanza).toBe(3)
-    expect(ciclo.stato.fase).toBe('esito-mostrato')
+    expect(ciclo.stato.fase).toBe('riscrittura')
     expect(ciclo.stato.esito).toBe('sbagliato')
     expect(ciclo.stato.testo).toBe('wrong')
 
@@ -296,6 +298,7 @@ describe("ciclo dell'allenamento vocaboli", () => {
 
     expect(() => {
       ciclo.conferma('word 1')
+      ciclo.riscrivi('word 1')
       ciclo.avanti()
       ciclo.impostaImportanza(3)
       ciclo.chiediRimozione()
@@ -333,13 +336,15 @@ describe("ciclo dell'allenamento vocaboli", () => {
     expect(archivio.leggiStato('01-a/v1')).toEqual(serie(1))
   })
 
-  it("conferma sbagliata registra l'esito e mostra l'esito con il testo", () => {
+  it("conferma sbagliata registra l'esito e passa alla riscrittura con il testo", () => {
     const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)), conSerie2())
     ciclo.avvio()
 
     ciclo.conferma('wrong')
 
-    expect(ciclo.stato.fase).toBe('esito-mostrato')
+    expect(ciclo.stato.fase).toBe('riscrittura')
+    expect(ciclo.stato.riscrittura).toBe('')
+    expect(ciclo.stato.riscritturaRespinta).toBe(false)
     expect(ciclo.stato.esito).toBe('sbagliato')
     expect(ciclo.stato.testo).toBe('wrong')
     expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
@@ -352,7 +357,7 @@ describe("ciclo dell'allenamento vocaboli", () => {
 
     ciclo.conferma('')
 
-    expect(ciclo.stato.fase).toBe('esito-mostrato')
+    expect(ciclo.stato.fase).toBe('riscrittura')
     expect(ciclo.stato.esito).toBe('sbagliato')
     expect(ciclo.stato.testo).toBe('')
     expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
@@ -368,7 +373,7 @@ describe("ciclo dell'allenamento vocaboli", () => {
 
     // Un secondo esito giusto porterebbe la serie a 1.
     expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
-    expect(ciclo.stato.fase).toBe('esito-mostrato')
+    expect(ciclo.stato.fase).toBe('riscrittura')
     expect(ciclo.stato.esito).toBe('sbagliato')
     expect(ciclo.stato.testo).toBe('wrong')
   })
@@ -432,6 +437,7 @@ describe("ciclo dell'allenamento vocaboli", () => {
 
     ciclo.conferma('')
     expect(ciclo.stato.titoloLezione).toBe('Lezione 01-a')
+    ciclo.riscrivi('word 1')
     ciclo.avanti()
     expect(ciclo.stato.vocabolo?.idGlobale).toBe('02-b/v1')
     expect(ciclo.stato.titoloLezione).toBe('Lezione 02-b')
@@ -463,11 +469,13 @@ describe("ciclo dell'allenamento vocaboli", () => {
     const ferma = watchEffect(() => fasi.push(ciclo.stato.fase), { flush: 'sync' })
     ciclo.avvio()
     ciclo.conferma('x')
+    ciclo.riscrivi('word 1')
     ciclo.avanti()
     ferma()
     expect(fasi).toEqual([
       'nessun-materiale',
       'in-attesa-di-risposta',
+      'riscrittura',
       'esito-mostrato',
       'in-attesa-di-risposta',
     ])
@@ -477,5 +485,171 @@ describe("ciclo dell'allenamento vocaboli", () => {
     const ciclo = creaCiclo()
     expect(() => ciclo.avvio()).not.toThrow()
     expect(['in-attesa-di-risposta', 'nessun-materiale']).toContain(ciclo.stato.fase)
+  })
+})
+
+describe("ciclo dell'allenamento vocaboli: la riscrittura dopo un errore", () => {
+  it('una riscrittura che passa la verifica mostra l’esito, che resta sbagliato, senza un altro esito', () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)), conSerie2())
+    ciclo.avvio()
+    ciclo.conferma('wrong')
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
+
+    ciclo.riscrivi('word 1')
+
+    expect(ciclo.stato.fase).toBe('esito-mostrato')
+    expect(ciclo.stato.esito).toBe('sbagliato')
+    expect(ciclo.stato.testo).toBe('wrong')
+    expect(ciclo.stato.riscrittura).toBe('word 1')
+    expect(ciclo.stato.riscritturaRespinta).toBe(false)
+    expect(ciclo.stato.vocabolo?.idGlobale).toBe('01-a/v1')
+    // Un esito giusto registrato porterebbe la serie a 1.
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
+  })
+
+  it('la riscrittura usa la stessa regola della risposta e ogni traduzione accettata', () => {
+    const { ciclo } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    ciclo.avvio()
+    ciclo.conferma('wrong')
+
+    ciclo.riscrivi('  Term 1. ')
+
+    expect(ciclo.stato.fase).toBe('esito-mostrato')
+  })
+
+  it('una riscrittura che non passa resta in riscrittura e la segna respinta, senza registrare esiti', () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)), conSerie2())
+    ciclo.avvio()
+    ciclo.conferma('wrong')
+
+    ciclo.riscrivi('wrd 1')
+
+    expect(ciclo.stato.fase).toBe('riscrittura')
+    expect(ciclo.stato.riscrittura).toBe('wrd 1')
+    expect(ciclo.stato.riscritturaRespinta).toBe(true)
+    expect(ciclo.stato.esito).toBe('sbagliato')
+    expect(ciclo.stato.testo).toBe('wrong')
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
+    expect(archivio.leggiStato('01-a/v2')).toEqual(serie(0))
+
+    ciclo.riscrivi('')
+    expect(ciclo.stato.fase).toBe('riscrittura')
+    expect(ciclo.stato.riscritturaRespinta).toBe(true)
+
+    ciclo.riscrivi('word 1')
+    expect(ciclo.stato.fase).toBe('esito-mostrato')
+    expect(ciclo.stato.riscritturaRespinta).toBe(false)
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
+  })
+
+  it('in riscrittura avanti e conferma non fanno nulla', () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)), conSerie2())
+    ciclo.avvio()
+    ciclo.conferma('wrong')
+
+    ciclo.avanti()
+    ciclo.conferma('word 1')
+
+    expect(ciclo.stato.fase).toBe('riscrittura')
+    expect(ciclo.stato.vocabolo?.idGlobale).toBe('01-a/v1')
+    expect(ciclo.stato.testo).toBe('wrong')
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
+  })
+
+  it('riscrivi fuori dalla riscrittura non fa nulla', () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    ciclo.riscrivi('word 1')
+    expect(ciclo.stato.fase).toBe('nessun-materiale')
+    expect(ciclo.stato.riscrittura).toBe('')
+
+    ciclo.avvio()
+    ciclo.riscrivi('word 1')
+    expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
+    expect(ciclo.stato.riscrittura).toBe('')
+    // Proposto entra nel gruppo di lavoro; nessun esito lo ha spostato da lì.
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
+
+    ciclo.conferma('word 1')
+    ciclo.riscrivi('nope')
+    expect(ciclo.stato.fase).toBe('esito-mostrato')
+    expect(ciclo.stato.riscritturaRespinta).toBe(false)
+    expect(ciclo.stato.riscrittura).toBe('')
+
+    const vuoto = preparaCiclo(catalogoDi(lezione('01-a', 0))).ciclo
+    vuoto.avvio()
+    expect(() => vuoto.riscrivi('word')).not.toThrow()
+    expect(vuoto.stato.fase).toBe('nessun-materiale')
+  })
+
+  it('riscrivi non fa nulla mentre la conferma della rimozione è aperta', () => {
+    const { ciclo } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    ciclo.avvio()
+    ciclo.conferma('wrong')
+    ciclo.chiediRimozione()
+
+    ciclo.riscrivi('word 1')
+    ciclo.riscrivi('nope')
+
+    expect(ciclo.stato.fase).toBe('riscrittura')
+    expect(ciclo.stato.riscritturaRespinta).toBe(false)
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(true)
+
+    ciclo.annullaRimozione()
+    ciclo.riscrivi('word 1')
+    expect(ciclo.stato.fase).toBe('esito-mostrato')
+  })
+
+  it("in riscrittura si sceglie l'importanza senza cambiare fase", () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    ciclo.avvio()
+    ciclo.conferma('wrong')
+    ciclo.riscrivi('nope')
+
+    ciclo.impostaImportanza(1)
+
+    expect(archivio.leggiImportanza('01-a/v1')).toBe(1)
+    expect(ciclo.stato.importanza).toBe(1)
+    expect(ciclo.stato.fase).toBe('riscrittura')
+    expect(ciclo.stato.riscritturaRespinta).toBe(true)
+
+    ciclo.chiediRimozione()
+    ciclo.annullaRimozione()
+    expect(ciclo.stato.fase).toBe('riscrittura')
+    expect(ciclo.stato.importanza).toBe(1)
+  })
+
+  it('in riscrittura la rimozione confermata passa al vocabolo successivo, con la riscrittura azzerata', () => {
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)), conSerie2())
+    ciclo.avvio()
+    ciclo.conferma('wrong')
+    ciclo.riscrivi('nope')
+    ciclo.chiediRimozione()
+
+    ciclo.confermaRimozione()
+
+    expect(archivio.leggiImportanza('01-a/v1')).toBe(0)
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
+    expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
+    expect(ciclo.stato.vocabolo?.idGlobale).toBe('01-a/v2')
+    expect(ciclo.stato.testo).toBe('')
+    expect(ciclo.stato.esito).toBeNull()
+    expect(ciclo.stato.riscrittura).toBe('')
+    expect(ciclo.stato.riscritturaRespinta).toBe(false)
+    expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
+  })
+
+  it('dopo la riscrittura passata avanti propone il vocabolo successivo con la riscrittura azzerata', () => {
+    const { ciclo } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    ciclo.avvio()
+    ciclo.conferma('wrong')
+    ciclo.riscrivi('nope')
+    ciclo.riscrivi('word 1')
+
+    ciclo.avanti()
+
+    expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
+    expect(ciclo.stato.vocabolo?.idGlobale).toBe('01-a/v2')
+    expect(ciclo.stato.riscrittura).toBe('')
+    expect(ciclo.stato.riscritturaRespinta).toBe(false)
   })
 })

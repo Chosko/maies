@@ -32,18 +32,24 @@ const smettiDiAscoltare = pronuncia.quandoCambia(() => {
 onBeforeUnmount(smettiDiAscoltare)
 
 const idCampo = useId()
+const idRiscrittura = useId()
 const campo = ref<HTMLInputElement | null>(null)
+const campoRiscrittura = ref<HTMLInputElement | null>(null)
 const avanti = ref<HTMLButtonElement | null>(null)
 const risposta = ref('')
+const riscrittura = ref('')
 
-// A ogni nuovo vocabolo il campo torna vuoto e riceve il fuoco; all'esito il fuoco va su
-// "Avanti", così l'Invio che passa avanti è quello del pulsante e non quello che ha confermato.
+// A ogni nuovo vocabolo il campo torna vuoto e riceve il fuoco, e così il campo della
+// riscrittura dopo un errore; all'esito il fuoco va su "Avanti", così l'Invio che passa avanti
+// è quello del pulsante e non quello che ha confermato o controllato.
 watch(
   () => [stato.fase, stato.vocabolo] as const,
   async ([fase]) => {
     if (fase === 'in-attesa-di-risposta') risposta.value = ''
+    if (fase === 'riscrittura') riscrittura.value = ''
     await nextTick()
     if (fase === 'in-attesa-di-risposta') campo.value?.focus()
+    else if (fase === 'riscrittura') campoRiscrittura.value?.focus()
     else if (fase === 'esito-mostrato') avanti.value?.focus()
   },
   { immediate: true, flush: 'post' },
@@ -62,6 +68,14 @@ const ICONA_ALTOPARLANTE = {
 
 function conferma(): void {
   ciclo.conferma(risposta.value)
+}
+
+// Una riscrittura respinta lascia il campo com'è e gli riporta il fuoco, per riprovare subito.
+async function controlla(): Promise<void> {
+  ciclo.riscrivi(riscrittura.value)
+  if (stato.fase !== 'riscrittura' || !stato.riscritturaRespinta) return
+  await nextTick()
+  campoRiscrittura.value?.focus()
 }
 
 // Un Invio tenuto premuto non conferma né passa avanti: conta solo la pressione.
@@ -230,6 +244,25 @@ function invio(azione: () => void): (evento: KeyboardEvent) => void {
               {{ alternativa }}
             </p>
           </div>
+          <div v-if="stato.fase === 'riscrittura'" class="esercizio-campo vocabolo-riscrittura">
+            <label :for="idRiscrittura" class="etichetta">Riscrivi la traduzione</label>
+            <input
+              :id="idRiscrittura"
+              ref="campoRiscrittura"
+              v-model="riscrittura"
+              class="campo vocabolo-riscrittura-campo"
+              type="text"
+              lang="en"
+              autocomplete="off"
+              autocapitalize="off"
+              autocorrect="off"
+              spellcheck="false"
+              @keydown.enter.prevent="invio(controlla)($event)"
+            />
+            <p v-if="stato.riscritturaRespinta" role="alert" class="vocabolo-riscrittura-avviso">
+              Non è ancora giusta: riprova.
+            </p>
+          </div>
           <div v-if="stato.vocabolo.example" class="vocabolo-risposta">
             <div class="etichetta">Esempio</div>
             <div class="vocabolo-ascoltabile">
@@ -257,6 +290,16 @@ function invio(azione: () => void): (evento: KeyboardEvent) => void {
       </div>
 
       <button
+        v-if="stato.fase === 'riscrittura'"
+        type="button"
+        class="bottone bottone-principale esercizio-azione"
+        @click="controlla"
+      >
+        Controlla
+      </button>
+
+      <button
+        v-else
         ref="avanti"
         type="button"
         class="bottone bottone-principale esercizio-azione"

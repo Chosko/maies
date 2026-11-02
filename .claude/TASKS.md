@@ -536,7 +536,7 @@ Feature: allenamento-vocaboli
 
 ## 54. Riscrittura della traduzione dopo un vocabolo sbagliato
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/vocaboli/ciclo.ts, src/views/VocaboliView.vue, tests/ciclo-vocaboli.test.ts, tests/vocaboli.test.ts
 Preconditions: 52
