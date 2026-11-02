@@ -10,6 +10,17 @@ import { creaCiclo } from '../src/vocaboli/ciclo'
 
 const fissa = (valore: number) => () => valore
 
+const NUOVO = { stato: 'nuovo' }
+
+const serie = (valore: 0 | 1 | 2) => ({ stato: 'nel-gruppo' as const, serie: valore })
+
+// v1 a un passo dall'essere imparato: un esito sbagliato riporta la serie a 0.
+function conSerie2(): ArchivioProgressi {
+  const archivio = creaArchivio(null)
+  archivio.salvaStato('01-a/v1', serie(2))
+  return archivio
+}
+
 function lezione(id: string, vocaboli: number): Lezione {
   return {
     id,
@@ -121,7 +132,7 @@ describe("ciclo dell'allenamento vocaboli", () => {
     expect(archivio.leggiImportanza('01-a/v1')).toBe(1)
     expect(ciclo.stato.importanza).toBe(1)
     // Cambiare importanza non registra un altro esito.
-    expect(archivio.leggiLivello('01-a/v1')).toBe('da-ripassare')
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
   })
 
   it('imposta importanza fuori da esito mostrato non fa nulla', () => {
@@ -153,7 +164,7 @@ describe("ciclo dell'allenamento vocaboli", () => {
     expect(ciclo.stato.esito).toBe('giusto')
     expect(ciclo.stato.importanza).toBe(2)
     expect(archivio.leggiImportanza('01-a/v1')).toBe(2)
-    expect(archivio.leggiLivello('01-a/v1')).toBe('consolidato')
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(1))
   })
 
   it('imposta importanza e chiedi rimozione non fanno nulla mentre la conferma della rimozione è aperta', () => {
@@ -189,14 +200,14 @@ describe("ciclo dell'allenamento vocaboli", () => {
     const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 3)))
     ciclo.avvio()
     ciclo.conferma('wrong')
-    expect(archivio.leggiLivello('01-a/v1')).toBe('da-ripassare')
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
     ciclo.chiediRimozione()
 
     ciclo.confermaRimozione()
 
     expect(archivio.leggiImportanza('01-a/v1')).toBe(0)
-    // Un secondo esito sbagliato non cambierebbe il livello: lo verifica il vocabolo successivo.
-    expect(archivio.leggiLivello('01-a/v1')).toBe('da-ripassare')
+    // Un secondo esito sbagliato non cambierebbe lo stato: lo verifica il vocabolo successivo.
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
     expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
     expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
     expect(ciclo.stato.vocabolo?.idGlobale).toBe('01-a/v2')
@@ -209,14 +220,14 @@ describe("ciclo dell'allenamento vocaboli", () => {
     const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
     ciclo.avvio()
     ciclo.conferma('word 1')
-    expect(archivio.leggiLivello('01-a/v1')).toBe('consolidato')
-    archivio.salvaLivello('01-a/v1', 'normale')
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(1))
+    archivio.salvaStato('01-a/v1', serie(0))
     ciclo.chiediRimozione()
 
     ciclo.confermaRimozione()
 
-    // Un secondo esito giusto porterebbe "normale" a "consolidato".
-    expect(archivio.leggiLivello('01-a/v1')).toBe('normale')
+    // Un secondo esito giusto riporterebbe la serie a 1.
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
     expect(archivio.leggiImportanza('01-a/v1')).toBe(0)
   })
 
@@ -294,7 +305,7 @@ describe("ciclo dell'allenamento vocaboli", () => {
     expect(ciclo.stato.fase).toBe('tutti-tolti')
     expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
     expect(archivio.leggiImportanza('01-a/v1')).toBe(0)
-    expect(archivio.leggiLivello('01-a/v1')).toBe('normale')
+    expect(archivio.leggiStato('01-a/v1')).toEqual(NUOVO)
   })
 
   it('ogni avvio crea una sessione nuova', () => {
@@ -319,11 +330,11 @@ describe("ciclo dell'allenamento vocaboli", () => {
     expect(ciclo.stato.esito).toBe('giusto')
     expect(ciclo.stato.testo).toBe('  Term 1. ')
     expect(ciclo.stato.vocabolo?.idGlobale).toBe('01-a/v1')
-    expect(archivio.leggiLivello('01-a/v1')).toBe('consolidato')
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(1))
   })
 
   it("conferma sbagliata registra l'esito e mostra l'esito con il testo", () => {
-    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)), conSerie2())
     ciclo.avvio()
 
     ciclo.conferma('wrong')
@@ -331,12 +342,12 @@ describe("ciclo dell'allenamento vocaboli", () => {
     expect(ciclo.stato.fase).toBe('esito-mostrato')
     expect(ciclo.stato.esito).toBe('sbagliato')
     expect(ciclo.stato.testo).toBe('wrong')
-    expect(archivio.leggiLivello('01-a/v1')).toBe('da-ripassare')
-    expect(archivio.leggiLivello('01-a/v2')).toBe('normale')
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
+    expect(archivio.leggiStato('01-a/v2')).toEqual(serie(0))
   })
 
   it('conferma con testo vuoto vale sbagliato', () => {
-    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)), conSerie2())
     ciclo.avvio()
 
     ciclo.conferma('')
@@ -344,19 +355,19 @@ describe("ciclo dell'allenamento vocaboli", () => {
     expect(ciclo.stato.fase).toBe('esito-mostrato')
     expect(ciclo.stato.esito).toBe('sbagliato')
     expect(ciclo.stato.testo).toBe('')
-    expect(archivio.leggiLivello('01-a/v1')).toBe('da-ripassare')
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
   })
 
   it('una doppia conferma registra un solo esito', () => {
-    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)), conSerie2())
     ciclo.avvio()
     ciclo.conferma('wrong')
-    expect(archivio.leggiLivello('01-a/v1')).toBe('da-ripassare')
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
 
     ciclo.conferma('word 1')
 
-    // Un secondo esito giusto porterebbe da "da ripassare" a "normale".
-    expect(archivio.leggiLivello('01-a/v1')).toBe('da-ripassare')
+    // Un secondo esito giusto porterebbe la serie a 1.
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
     expect(ciclo.stato.fase).toBe('esito-mostrato')
     expect(ciclo.stato.esito).toBe('sbagliato')
     expect(ciclo.stato.testo).toBe('wrong')
@@ -369,7 +380,7 @@ describe("ciclo dell'allenamento vocaboli", () => {
     expect(ciclo.stato.fase).toBe('nessun-materiale')
     expect(ciclo.stato.testo).toBe('')
     expect(ciclo.stato.esito).toBeNull()
-    expect(archivio.leggiLivello('01-a/v1')).toBe('normale')
+    expect(archivio.leggiStato('01-a/v1')).toEqual(NUOVO)
 
     const vuoto = preparaCiclo(catalogoDi(lezione('01-a', 0))).ciclo
     vuoto.avvio()
@@ -403,7 +414,7 @@ describe("ciclo dell'allenamento vocaboli", () => {
     ciclo.avanti()
     expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
     expect(ciclo.stato.vocabolo?.idGlobale).toBe('01-a/v1')
-    expect(archivio.leggiLivello('01-a/v1')).toBe('normale')
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
 
     const vuoto = preparaCiclo(catalogoDi(lezione('01-a', 0))).ciclo
     vuoto.avvio()

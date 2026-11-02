@@ -1,13 +1,13 @@
 import { catalogo as catalogoApp } from '../contenuti/catalogo'
-import type { Catalogo, FraseCatalogo, VocaboloCatalogo } from '../contenuti/catalogo'
+import type { Catalogo, FraseCatalogo, LezioneCatalogo, VocaboloCatalogo } from '../contenuti/catalogo'
+import { applicaEsito, giornoLocale } from './apprendimento'
+import type { Esito, Giorno } from './apprendimento'
 import { creaArchivio } from './archivio'
 import type { ArchivioProgressi } from './archivio'
 import { isImportanza } from './importanza'
 import type { Importanza } from './importanza'
-import { nuovoLivello } from './livelli'
-import type { Esito } from './livelli'
-import { scegli } from './selettore'
-import type { Casualita } from './selettore'
+import { DIMENSIONE_GRUPPO, FINESTRA, TURNO_INIZIALE, pianifica } from './pianificatore'
+import type { Candidato, Casualita, Turno } from './pianificatore'
 
 interface ElementiPerTipo {
   frasi: FraseCatalogo
@@ -20,6 +20,8 @@ export interface OpzioniSessione {
   catalogo?: Catalogo
   archivio?: ArchivioProgressi
   casualita?: Casualita
+  /** La data di oggi, chiesta a ogni scelta e a ogni esito. */
+  oggi?: () => Giorno
 }
 
 export type Proposta<E> =
@@ -33,7 +35,12 @@ export interface SessioneRipasso<E> {
   registraImportanza(idGlobale: string, importanza: Importanza): void
 }
 
-const FINESTRA = 3
+interface Collocato<E> {
+  readonly elemento: E
+  /** Posizione della lezione nel catalogo, ordinato per id: più alta è più recente. */
+  readonly lezione: number
+  readonly ordine: number
+}
 
 let archivioApp: ArchivioProgressi | undefined
 
@@ -43,6 +50,17 @@ function archivioPredefinito(): ArchivioProgressi {
   return archivioApp
 }
 
+function oggiLocale(): Giorno {
+  return giornoLocale(new Date())
+}
+
+function elementiDellaLezione<T extends TipoSessione>(
+  lezione: LezioneCatalogo,
+  tipo: T,
+): readonly ElementiPerTipo[T][] {
+  return (tipo === 'frasi' ? lezione.sentences : lezione.vocabulary) as readonly ElementiPerTipo[T][]
+}
+
 export function creaSessione<T extends TipoSessione>(
   tipo: T,
   opzioni: OpzioniSessione = {},
@@ -50,31 +68,48 @@ export function creaSessione<T extends TipoSessione>(
   const catalogo = opzioni.catalogo ?? catalogoApp
   const archivio = opzioni.archivio ?? archivioPredefinito()
   const casualita = opzioni.casualita ?? Math.random
-  const elementi = (tipo === 'frasi' ? catalogo.frasi : catalogo.vocaboli) as readonly ElementiPerTipo[T][]
-  const perId = new Map(elementi.map((elemento) => [elemento.idGlobale, elemento]))
+  const oggi = opzioni.oggi ?? oggiLocale
+  const collocati: Collocato<ElementiPerTipo[T]>[] = catalogo.lezioni.flatMap((lezione, numero) =>
+    elementiDellaLezione(lezione, tipo).map((elemento, ordine) => ({ elemento, lezione: numero, ordine })),
+  )
+  const perId = new Set(collocati.map(({ elemento }) => elemento.idGlobale))
   const ultimi: string[] = []
+  let turno: Turno = TURNO_INIZIALE
 
   return {
     prossimoElemento() {
-      if (elementi.length === 0) return { caso: 'nessun-materiale' }
-      const candidati = elementi.map((elemento) => ({
-        id: elemento.idGlobale,
-        livello: archivio.leggiLivello(elemento.idGlobale),
-        importanza: archivio.leggiImportanza(elemento.idGlobale),
-        elemento,
-      }))
-      // La finestra si calcola a ogni richiesta: i candidati diminuiscono quando un elemento viene tolto.
-      const rimasti = candidati.filter((candidato) => candidato.importanza !== 0).length
-      const ampiezza = Math.min(FINESTRA, Math.max(rimasti - 1, 0))
-      const scelto = scegli(candidati, ultimi.slice(Math.max(ultimi.length - ampiezza, 0)), casualita)
-      if (scelto === null) return { caso: 'tutti-tolti' }
-      ultimi.push(scelto.id)
+      if (collocati.length === 0) return { caso: 'nessun-materiale' }
+      const candidati = collocati.map(
+        ({ elemento, lezione, ordine }): Candidato & { readonly elemento: ElementiPerTipo[T] } => ({
+          id: elemento.idGlobale,
+          stato: archivio.leggiStato(elemento.idGlobale),
+          importanza: archivio.leggiImportanza(elemento.idGlobale),
+          lezione,
+          ordine,
+          elemento,
+        }),
+      )
+      const pianificazione = pianifica(candidati, {
+        dimensione: DIMENSIONE_GRUPPO[tipo],
+        oggi: oggi(),
+        ultimi,
+        turno,
+        casualita,
+      })
+      for (const entrato of pianificazione.entrati) archivio.salvaStato(entrato.id, { stato: 'nel-gruppo', serie: 0 })
+      turno = pianificazione.turno
+      if (pianificazione.scelta === null) return { caso: 'tutti-tolti' }
+      const { candidato } = pianificazione.scelta
+      ultimi.push(candidato.id)
       if (ultimi.length > FINESTRA) ultimi.splice(0, ultimi.length - FINESTRA)
-      return { caso: 'elemento', elemento: scelto.elemento, importanza: scelto.importanza }
+      return { caso: 'elemento', elemento: candidato.elemento, importanza: candidato.importanza }
     },
     registraEsito(idGlobale, esito) {
       if (!perId.has(idGlobale)) return
-      archivio.salvaLivello(idGlobale, nuovoLivello(archivio.leggiLivello(idGlobale), esito))
+      const importanza = archivio.leggiImportanza(idGlobale)
+      // Un elemento tolto non torna negli allenamenti: il suo esito non conta.
+      if (importanza === 0) return
+      archivio.salvaStato(idGlobale, applicaEsito(archivio.leggiStato(idGlobale), esito, importanza, oggi()))
     },
     registraImportanza(idGlobale, importanza) {
       if (!perId.has(idGlobale) || !isImportanza(importanza)) return

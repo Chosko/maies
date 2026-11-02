@@ -2,25 +2,23 @@
 
 ## Overview
 
-Spaced review: each sentence and word has one of three levels and one of
-four importance values, stored in the browser, and a session picks the next
-item weighted by both.
+Spaced review: each sentence and word has a learning state and one of four
+importance values, stored in the browser, and a session asks the planner for
+the next item of the working group or of the day-based checks.
 
 - `src/ripasso/apprendimento.ts` — learning states, outcome transitions,
   check scale and local calendar days.
-- `src/ripasso/livelli.ts` — levels, weights, initial level and the
-  transition rule, still used by the selector, the session and the store's
-  level bridge.
 - `src/ripasso/importanza.ts` — importance values, initial importance and
   the check-interval factors.
 - `src/ripasso/archivio.ts` — progress store over `localStorage`: learning
   state and importance per id.
-- `src/ripasso/selettore.ts` — weighted random pick with exclusions.
+- `src/ripasso/pianificatore.ts` — `pianifica()`: fills the working group
+  and picks the next item.
 - `src/ripasso/sessione.ts` — `creaSessione()`, the entry point the
   exercise and vocabulary screens use.
 
-Tests: `tests/apprendimento.test.ts`, `tests/livelli.test.ts`, `tests/importanza.test.ts`,
-`tests/archivio.test.ts`, `tests/selettore.test.ts`,
+Tests: `tests/apprendimento.test.ts`, `tests/importanza.test.ts`,
+`tests/archivio.test.ts`, `tests/pianificatore.test.ts`,
 `tests/sessione.test.ts`.
 
 ## Public API
@@ -33,11 +31,6 @@ Tests: `tests/apprendimento.test.ts`, `tests/livelli.test.ts`, `tests/importanza
   `aggiungiGiorni(giorno, n)`, `controlloScaduto(stato, oggi)` and
   `applicaEsito(stato, esito, importanza, oggi)`, which applies the
   feature's *Transizioni*.
-- `livelli.ts` — `LIVELLI` (`da-ripassare`, `normale`, `consolidato`),
-  `Livello`, `Esito` (re-exported from `apprendimento.ts`), `LIVELLO_INIZIALE`
-  (`normale`), `PESI` (6 / 3 / 1), `isLivello()`,
-  `nuovoLivello(attuale, esito)`: wrong → `da-ripassare`; right → one step
-  up (`da-ripassare` → `normale` → `consolidato`).
 - `importanza.ts` — `IMPORTANZE` (0, 1, 2, 3), `Importanza`,
   `ImportanzaAttiva` (1–3), `IMPORTANZA_INIZIALE` (2), `FATTORI_INTERVALLO`
   (1 → ×2, 2 → ×1, 3 → ×0.5), `isImportanza()`.
@@ -49,17 +42,12 @@ Tests: `tests/apprendimento.test.ts`, `tests/livelli.test.ts`, `tests/importanza
   ArchivioProgressi` with `leggiStato(idGlobale)` (`nuovo` for an id never
   recorded), `salvaStato(idGlobale, stato)`, `leggiImportanza(idGlobale)`
   (2 for an id never recorded) and `salvaImportanza(idGlobale, importanza)`.
-  `oggi` dates the converted `consolidato` items. A bridge for the
-  three-level session: `leggiLivello()` reads `da-riprendere` and
-  `nel-gruppo` as `da-ripassare`, `imparato` as `consolidato`, `nuovo` as
-  `normale`; `salvaLivello()` saves a level as the state the conversion
-  gives it.
-- `selettore.ts` — `scegli(candidati, esclusi, casualita): T | null` over
-  `{ id, livello, importanza }` candidates, each weighted
-  `PESI[livello] ×` its own importance factor (0 / 0.5 / 1 / 2); a candidate of weight 0
-  (importance 0) is never picked, and `null` means no excluded-free
-  candidate with positive weight is left; `Casualita` is `() => number` in
-  [0, 1).
+  `oggi` dates the converted `consolidato` items.
+- `pianificatore.ts` — `pianifica(candidati, { dimensione, oggi, ultimi,
+  turno, casualita })` returns `{ entrati, scelta: { candidato, fonte } |
+  null, turno }`; `DIMENSIONE_GRUPPO` (5 sentences, 8 words), `FINESTRA`
+  (3), `TURNO_INIZIALE`, `completaGruppo()`; `Casualita` is
+  `() => number` in [0, 1).
 - `sessione.ts` — `creaSessione('frasi' | 'vocaboli', opzioni?)` returns
   `prossimoElemento()`, `registraEsito(idGlobale, esito)` and
   `registraImportanza(idGlobale, importanza)`. `prossimoElemento()` returns
@@ -67,7 +55,8 @@ Tests: `tests/apprendimento.test.ts`, `tests/livelli.test.ts`, `tests/importanza
   `FraseCatalogo` / `VocaboloCatalogo` with its current importance),
   `{ caso: 'nessun-materiale' }` when the catalogue has no items of that
   kind, or `{ caso: 'tutti-tolti' }` when every item has importance 0.
-  `opzioni` injects `catalogo`, `archivio` and `casualita` for tests.
+  `opzioni` injects `catalogo`, `archivio`, `casualita` and `oggi`
+  (`() => Giorno`, asked on every pick and outcome) for tests.
 
 ## Internal patterns
 
@@ -91,20 +80,21 @@ Tests: `tests/apprendimento.test.ts`, `tests/livelli.test.ts`, `tests/importanza
   the value in memory.
 - **One store per page.** Sessions without an injected `archivio` share a
   lazily created module-level store, so all screens see the same progress.
-- **No immediate repeats.** A session excludes its last
-  `min(3, remaining − 1)` picks, where `remaining` is the number of items
-  with importance other than 0, recomputed on every `prossimoElemento()`
-  call because removing an item shrinks it; with one remaining item it
-  always returns that item.
+- **Session memory.** The last proposed items and the group/check turn live
+  in the session only; `prossimoElemento()` saves every item the planner
+  adds to the group as `nel-gruppo` with `serie` 0. The planner gets each
+  item's lesson as its position in the catalogue and its order in the
+  lesson file.
 - `registraEsito()` and `registraImportanza()` ignore ids not in the
-  session's own item list; `registraImportanza()` also ignores a value that
-  is not an `Importanza`.
+  session's own item list; `registraEsito()` also ignores an item with
+  importance 0 and `registraImportanza()` a value that is not an
+  `Importanza`.
 - Tests pass a seeded `casualita` and a fake `Storage` class; reuse those
   helpers from `tests/sessione.test.ts` / `tests/archivio.test.ts`.
 
 ## Domain dependencies
 
-- The three-level algorithm, importance and their reasons:
+- The working group, the checks, importance and their reasons:
   `.claude/domain/features/ripetizione-errori.md`.
 
 ## Cross-references
@@ -116,8 +106,6 @@ Tests: `tests/apprendimento.test.ts`, `tests/livelli.test.ts`, `tests/importanza
 
 ## When to read the source
 
-- Changing weights, levels or transitions: `livelli.ts` (and
-  `tests/livelli.test.ts`, which pins the values).
 - Changing learning states, transitions or the check scale:
   `apprendimento.ts` (and `tests/apprendimento.test.ts`, which pins them).
 - Changing interval factors or values of importance: `importanza.ts` (and
@@ -126,4 +114,6 @@ Tests: `tests/apprendimento.test.ts`, `tests/livelli.test.ts`, `tests/importanza
   empty every stored value it does not convert, so progress is lost unless
   the previous version gets a conversion like the ones from versions 1
   and 2.
-- Changing the anti-repeat window or what a session offers: `sessione.ts`.
+- Changing the group, the anti-repeat window or how the next item is
+  chosen: `pianificatore.ts`; what a session saves or keeps in memory:
+  `sessione.ts`.

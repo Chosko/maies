@@ -10,6 +10,15 @@ import { creaCiclo } from '../src/esercizi/ciclo'
 
 const fissa = (valore: number) => () => valore
 
+const serie = (valore: 0 | 1 | 2) => ({ stato: 'nel-gruppo' as const, serie: valore })
+
+// f1 a un passo dall'essere imparata: un esito sbagliato riporta la serie a 0.
+function conSerie2(): ArchivioProgressi {
+  const archivio = creaArchivio(null)
+  archivio.salvaStato('01-a/f1', serie(2))
+  return archivio
+}
+
 function lezione(id: string, frasi: number): Lezione {
   return {
     id,
@@ -152,21 +161,21 @@ describe("ciclo dell'esercizio di traduzione", () => {
 
     ciclo.segna('giusta')
 
-    expect(archivio.leggiLivello('01-a/f1')).toBe('consolidato')
+    expect(archivio.leggiStato('01-a/f1')).toEqual(serie(1))
     expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
     expect(ciclo.stato.frase?.idGlobale).toBe('01-a/f2')
     expect(ciclo.stato.testo).toBe('')
   })
 
   it("segna sbagliata registra l'esito e propone la frase successiva", () => {
-    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)))
+    const { ciclo, archivio } = preparaCiclo(catalogoDi(lezione('01-a', 2)), conSerie2())
     ciclo.avvio()
     ciclo.conferma('Wrong.')
 
     ciclo.segna('sbagliata')
 
-    expect(archivio.leggiLivello('01-a/f1')).toBe('da-ripassare')
-    expect(archivio.leggiLivello('01-a/f2')).toBe('normale')
+    expect(archivio.leggiStato('01-a/f1')).toEqual(serie(0))
+    expect(archivio.leggiStato('01-a/f2')).toEqual(serie(0))
     expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
     expect(ciclo.stato.frase?.idGlobale).toBe('01-a/f2')
     expect(ciclo.stato.testo).toBe('')
@@ -180,9 +189,9 @@ describe("ciclo dell'esercizio di traduzione", () => {
     ciclo.segna('giusta')
     ciclo.segna('giusta')
 
-    expect(archivio.leggiLivello('01-a/f1')).toBe('consolidato')
+    expect(archivio.leggiStato('01-a/f1')).toEqual(serie(1))
     // Il secondo segna, fuori fase, non registra nulla per la frase appena proposta.
-    expect(archivio.leggiLivello('01-a/f2')).toBe('normale')
+    expect(archivio.leggiStato('01-a/f2')).toEqual(serie(0))
     expect(ciclo.stato.frase?.idGlobale).toBe('01-a/f2')
     expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
   })
@@ -195,7 +204,7 @@ describe("ciclo dell'esercizio di traduzione", () => {
 
     ciclo.avvio()
     ciclo.segna('sbagliata')
-    expect(archivio.leggiLivello('01-a/f1')).toBe('normale')
+    expect(archivio.leggiStato('01-a/f1')).toEqual(serie(0))
     expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
     expect(ciclo.stato.frase?.idGlobale).toBe('01-a/f1')
 
@@ -234,7 +243,7 @@ describe("ciclo dell'esercizio di traduzione", () => {
     expect(archivio.leggiImportanza('01-a/f1')).toBe(1)
     expect(ciclo.stato.importanza).toBe(1)
 
-    expect(archivio.leggiLivello('01-a/f1')).toBe('normale')
+    expect(archivio.leggiStato('01-a/f1')).toEqual(serie(0))
     expect(ciclo.stato.fase).toBe('soluzione-mostrata')
     expect(ciclo.stato.frase?.idGlobale).toBe('01-a/f1')
     expect(ciclo.stato.testo).toBe('Risposta.')
@@ -291,7 +300,7 @@ describe("ciclo dell'esercizio di traduzione", () => {
 
     expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
     expect(archivio.leggiImportanza('01-a/f1')).toBe(2)
-    expect(archivio.leggiLivello('01-a/f1')).toBe('normale')
+    expect(archivio.leggiStato('01-a/f1')).toEqual(serie(0))
     expect(ciclo.stato.importanza).toBe(2)
     expect(ciclo.stato.fase).toBe('soluzione-mostrata')
     expect(ciclo.stato.frase?.idGlobale).toBe('01-a/f1')
@@ -299,7 +308,7 @@ describe("ciclo dell'esercizio di traduzione", () => {
 
     // Dopo l'annullamento la soluzione si segna come sempre.
     ciclo.segna('giusta')
-    expect(archivio.leggiLivello('01-a/f1')).toBe('consolidato')
+    expect(archivio.leggiStato('01-a/f1')).toEqual(serie(1))
   })
 
   it('conferma rimozione registra importanza 0 senza esito e propone la frase successiva', () => {
@@ -311,7 +320,7 @@ describe("ciclo dell'esercizio di traduzione", () => {
     ciclo.confermaRimozione()
 
     expect(archivio.leggiImportanza('01-a/f1')).toBe(0)
-    expect(archivio.leggiLivello('01-a/f1')).toBe('normale')
+    expect(archivio.leggiStato('01-a/f1')).toEqual(serie(0))
     expect(ciclo.stato.confermaRimozioneAperta).toBe(false)
     expect(ciclo.stato.fase).toBe('in-attesa-di-risposta')
     expect(ciclo.stato.frase?.idGlobale).toBe('01-a/f2')
@@ -370,7 +379,7 @@ describe("ciclo dell'esercizio di traduzione", () => {
     ciclo.segna('giusta')
     ciclo.segna('sbagliata')
 
-    expect(archivio.leggiLivello('01-a/f1')).toBe('normale')
+    expect(archivio.leggiStato('01-a/f1')).toEqual(serie(0))
     expect(ciclo.stato.fase).toBe('soluzione-mostrata')
     expect(ciclo.stato.frase?.idGlobale).toBe('01-a/f1')
     expect(ciclo.stato.confermaRimozioneAperta).toBe(true)

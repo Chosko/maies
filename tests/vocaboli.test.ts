@@ -15,6 +15,8 @@ import type { Pronuncia } from '../src/vocaboli/pronuncia'
 
 const fissa = (valore: number) => () => valore
 
+const serie = (valore: 0 | 1 | 2) => ({ stato: 'nel-gruppo' as const, serie: valore })
+
 // Il primo vocabolo ha due traduzioni, gli altri una sola.
 function lezione(id: string, vocaboli: number): Lezione {
   return {
@@ -161,11 +163,13 @@ describe('schermata Vocaboli', () => {
     expect(bottone(wrapper, 'Avanti').exists()).toBe(true)
     expect(wrapper.findAll('button').map((b) => b.text())).not.toContain('Conferma')
     expect(carta.classes()).not.toContain('vocabolo-carta-sbagliata')
-    expect(archivio.leggiLivello('01-a/v1')).toBe('consolidato')
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(1))
   })
 
   it('una risposta sbagliata mostra l’esito nello stesso formato', async () => {
-    const { wrapper, archivio } = monta(catalogoDi(lezione('01-a', 2)))
+    const archivio = creaArchivio(null)
+    archivio.salvaStato('01-a/v1', serie(1))
+    const { wrapper } = monta(catalogoDi(lezione('01-a', 2)), undefined, { archivio })
     await conferma(wrapper, 'wrd')
 
     const carta = wrapper.get('main .carta')
@@ -178,7 +182,7 @@ describe('schermata Vocaboli', () => {
     expect(testi(wrapper, '.vocabolo-alternativa')).toEqual(['term 1'])
     expect(bottone(wrapper, 'Avanti').exists()).toBe(true)
     expect(carta.classes()).toContain('vocabolo-carta-sbagliata')
-    expect(archivio.leggiLivello('01-a/v1')).toBe('da-ripassare')
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
   })
 
   it('senza altre traduzioni l’esito non mostra "Accettata anche"', async () => {
@@ -280,8 +284,8 @@ describe('schermata Vocaboli', () => {
     expect(wrapper.text()).toContain('Giusta')
     expect(wrapper.text()).toContain('parola 1')
     expect(bottone(wrapper, 'Avanti').exists()).toBe(true)
-    expect(archivio.leggiLivello('01-a/v1')).toBe('consolidato')
-    expect(archivio.leggiLivello('01-a/v2')).toBe('normale')
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(1))
+    expect(archivio.leggiStato('01-a/v2')).toEqual(serie(0))
   })
 
   it('un Invio tenuto premuto non conferma né passa avanti', async () => {
@@ -291,7 +295,7 @@ describe('schermata Vocaboli', () => {
     await input.trigger('keydown', { key: 'Enter', repeat: true })
     await flushPromises()
     expect(wrapper.find('input').exists()).toBe(true)
-    expect(archivio.leggiLivello('01-a/v1')).toBe('normale')
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(0))
 
     await input.trigger('keydown', { key: 'Enter' })
     await flushPromises()
@@ -422,7 +426,7 @@ describe("schermata Vocaboli: l'importanza nell'esito", () => {
     await flushPromises()
 
     expect(archivio.leggiImportanza('01-a/v1')).toBe(0)
-    expect(archivio.leggiLivello('01-a/v1')).toBe('consolidato')
+    expect(archivio.leggiStato('01-a/v1')).toEqual(serie(1))
     expect(wrapper.text()).toContain('parola 2')
     const input = wrapper.get('input')
     expect(document.activeElement).toBe(input.element)

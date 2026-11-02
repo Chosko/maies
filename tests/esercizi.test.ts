@@ -12,6 +12,8 @@ import EserciziView from '../src/views/EserciziView.vue'
 
 const fissa = (valore: number) => () => valore
 
+const serie = (valore: 0 | 1 | 2) => ({ stato: 'nel-gruppo' as const, serie: valore })
+
 // La prima frase ha una variante, le altre nessuna.
 function lezione(id: string, frasi: number): Lezione {
   return {
@@ -204,17 +206,19 @@ describe('schermata Esercizi', () => {
   })
 
   it.each([
-    ['Giusta', 'consolidato'],
-    ['Sbagliata', 'da-ripassare'],
+    ['Giusta', serie(2)],
+    ['Sbagliata', serie(0)],
   ])(
     '%s registra l’esito e porta alla frase successiva con il campo vuoto e a fuoco',
-    async (testo, livello) => {
-      const { wrapper, archivio } = monta(catalogoDi(lezione('01-a', 2)))
+    async (testo, stato) => {
+      const archivio = creaArchivio(null)
+      archivio.salvaStato('01-a/f1', serie(1))
+      const { wrapper } = monta(catalogoDi(lezione('01-a', 2)), undefined, archivio)
       await conferma(wrapper, 'Something.')
       await bottone(wrapper, testo).trigger('click')
       await flushPromises()
 
-      expect(archivio.leggiLivello('01-a/f1')).toBe(livello)
+      expect(archivio.leggiStato('01-a/f1')).toEqual(stato)
       expect(wrapper.text()).toContain('Frase 2.')
       expect(wrapper.text()).not.toContain('Frase 1.')
       const input = wrapper.get('input')
@@ -294,7 +298,7 @@ describe('schermata Esercizi: importanza', () => {
       expect(wrapper.text()).toContain('My answer.')
       expect(bottone(wrapper, 'Giusta').exists()).toBe(true)
       expect(wrapper.find('[role="alertdialog"]').exists()).toBe(false)
-      expect(archivio.leggiLivello('01-a/f1')).toBe(creaArchivio(null).leggiLivello('01-a/f1'))
+      expect(archivio.leggiStato('01-a/f1')).toEqual(serie(0))
     },
   )
 
@@ -330,7 +334,7 @@ describe('schermata Esercizi: importanza', () => {
       expect(wrapper.text()).toContain('Frase 1.')
       expect(wrapper.find('input').exists()).toBe(false)
       expect(wrapper.find('[role="alertdialog"]').exists()).toBe(true)
-      expect(archivio.leggiLivello('01-a/f1')).toBe(creaArchivio(null).leggiLivello('01-a/f1'))
+      expect(archivio.leggiStato('01-a/f1')).toEqual(serie(0))
     },
   )
 
@@ -351,7 +355,7 @@ describe('schermata Esercizi: importanza', () => {
 
     await bottone(wrapper, 'Giusta').trigger('click')
     await flushPromises()
-    expect(archivio.leggiLivello('01-a/f1')).toBe('consolidato')
+    expect(archivio.leggiStato('01-a/f1')).toEqual(serie(1))
     expect(wrapper.text()).toContain('Frase 2.')
   })
 
@@ -365,7 +369,7 @@ describe('schermata Esercizi: importanza', () => {
     await flushPromises()
 
     expect(archivio.leggiImportanza('01-a/f1')).toBe(0)
-    expect(archivio.leggiLivello('01-a/f1')).toBe(creaArchivio(null).leggiLivello('01-a/f1'))
+    expect(archivio.leggiStato('01-a/f1')).toEqual(serie(0))
     expect(wrapper.text()).toContain('Frase 2.')
     const input = wrapper.get('input')
     expect((input.element as HTMLInputElement).value).toBe('')

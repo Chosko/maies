@@ -3,7 +3,7 @@ import { catalogo as catalogoApp } from '../contenuti/catalogo'
 import type { Catalogo, VocaboloCatalogo } from '../contenuti/catalogo'
 import { creaSessione as creaSessioneApp } from '../ripasso/sessione'
 import type { SessioneRipasso } from '../ripasso/sessione'
-import type { Esito } from '../ripasso/livelli'
+import type { Esito } from '../ripasso/apprendimento'
 import type { Importanza } from '../ripasso/importanza'
 import { verifica } from './verifica'
 

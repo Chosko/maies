@@ -3,7 +3,6 @@ import { STATO_INIZIALE, giornoLocale } from './apprendimento'
 import type { Giorno, StatoApprendimento } from './apprendimento'
 import { IMPORTANZA_INIZIALE, isImportanza } from './importanza'
 import type { Importanza } from './importanza'
-import type { Livello } from './livelli'
 
 export const CHIAVE_PROGRESSI = chiaveProgressi(EDIZIONE)
 
@@ -16,10 +15,6 @@ export interface ArchivioProgressi {
   salvaStato(idGlobale: string, stato: StatoApprendimento): void
   leggiImportanza(idGlobale: string): Importanza
   salvaImportanza(idGlobale: string, importanza: Importanza): void
-  /** Ponte per la sessione a tre livelli: legge lo stato come livello. */
-  leggiLivello(idGlobale: string): Livello
-  /** Ponte per la sessione a tre livelli: salva il livello come lo stato in cui lo converte la lettura. */
-  salvaLivello(idGlobale: string, livello: Livello): void
 }
 
 type StatoSalvato = Record<string, unknown>
@@ -174,20 +169,6 @@ export function creaArchivio(
     },
     salvaImportanza(idGlobale, importanza) {
       salvaCampo(idGlobale, 'importanza', importanza === IMPORTANZA_INIZIALE ? null : importanza)
-    },
-    leggiLivello(idGlobale) {
-      switch (leggiStato(idGlobale).stato) {
-        case 'da-riprendere':
-        case 'nel-gruppo':
-          return 'da-ripassare'
-        case 'imparato':
-          return 'consolidato'
-        default:
-          return 'normale'
-      }
-    },
-    salvaLivello(idGlobale, livello) {
-      salvaStato(idGlobale, statoDaLivello(livello, oggi))
     },
   }
 }

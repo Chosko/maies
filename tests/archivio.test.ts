@@ -457,37 +457,4 @@ describe('archivio dei progressi', () => {
     expect(archivio.leggiStato('01-saluti/v01')).toEqual({ stato: 'da-riprendere' })
     expect(archivio.leggiImportanza('01-saluti/v01')).toBe(1)
   })
-
-  describe('ponte verso i livelli usati dalla sessione', () => {
-    it('legge lo stato come livello', () => {
-      const archivio = creaArchivio(null, CHIAVE_PROGRESSI, OGGI)
-      expect(archivio.leggiLivello('01-saluti/v01')).toBe('normale')
-      archivio.salvaStato('01-saluti/v01', { stato: 'da-riprendere' })
-      expect(archivio.leggiLivello('01-saluti/v01')).toBe('da-ripassare')
-      archivio.salvaStato('01-saluti/v01', { stato: 'nel-gruppo', serie: 1 })
-      expect(archivio.leggiLivello('01-saluti/v01')).toBe('da-ripassare')
-      archivio.salvaStato('01-saluti/v01', IMPARATO)
-      expect(archivio.leggiLivello('01-saluti/v01')).toBe('consolidato')
-    })
-
-    it('salva un livello come lo stato in cui la conversione lo trasforma', () => {
-      const salvataggio = new SalvataggioFinto()
-      const archivio = creaArchivio(salvataggio, CHIAVE_PROGRESSI, OGGI)
-      archivio.salvaLivello('01-saluti/v01', 'consolidato')
-      archivio.salvaLivello('01-saluti/v02', 'da-ripassare')
-      archivio.salvaLivello('01-saluti/v03', 'normale')
-      expect(contenuto(salvataggio)).toEqual({
-        versione: 3,
-        elementi: {
-          '01-saluti/v01': {
-            stato: { stato: 'imparato', gradino: 1, controllo: OGGI, ultimaVista: OGGI },
-          },
-          '01-saluti/v02': { stato: { stato: 'da-riprendere' } },
-        },
-      })
-      expect(archivio.leggiLivello('01-saluti/v01')).toBe('consolidato')
-      expect(archivio.leggiLivello('01-saluti/v02')).toBe('da-ripassare')
-      expect(archivio.leggiLivello('01-saluti/v03')).toBe('normale')
-    })
-  })
 })

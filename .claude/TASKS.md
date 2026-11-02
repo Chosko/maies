@@ -476,7 +476,7 @@ Feature: ripetizione-errori
 
 ## 48. Sessione di ripasso sul gruppo di lavoro e sui controlli a giorni
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/ripasso/sessione.ts, src/esercizi/ciclo.ts, src/vocaboli/ciclo.ts, tests/sessione.test.ts, tests/ciclo-esercizi.test.ts, tests/ciclo-vocaboli.test.ts
 Preconditions: 45, 46, 47

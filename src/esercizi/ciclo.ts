@@ -4,7 +4,7 @@ import type { Catalogo, FraseCatalogo } from '../contenuti/catalogo'
 import { creaSessione as creaSessioneApp } from '../ripasso/sessione'
 import type { SessioneRipasso } from '../ripasso/sessione'
 import type { Importanza } from '../ripasso/importanza'
-import type { Esito } from '../ripasso/livelli'
+import type { Esito } from '../ripasso/apprendimento'
 
 export type FaseCiclo = 'in-attesa-di-risposta' | 'soluzione-mostrata' | 'nessun-materiale' | 'tutti-tolti'
 
