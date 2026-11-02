@@ -1,16 +1,19 @@
 <script setup lang="ts">
-import { nextTick, ref, useId, watch } from 'vue'
+import { nextTick, onBeforeUnmount, ref, useId, watch } from 'vue'
 import { creaCiclo as creaCicloApp } from '../vocaboli/ciclo'
 import type { CicloAllenamento } from '../vocaboli/ciclo'
+import { creaPronuncia } from '../vocaboli/pronuncia'
+import type { Pronuncia } from '../vocaboli/pronuncia'
 import { EDIZIONE } from '../edizione'
 import type { Edizione } from '../edizione'
 import RigaImportanza from '../components/RigaImportanza.vue'
 
 const props = withDefaults(
-  defineProps<{ creaCiclo?: () => CicloAllenamento; edizione?: Edizione }>(),
+  defineProps<{ creaCiclo?: () => CicloAllenamento; edizione?: Edizione; pronuncia?: Pronuncia }>(),
   {
     creaCiclo: () => creaCicloApp(),
     edizione: EDIZIONE,
+    pronuncia: () => creaPronuncia(),
   },
 )
 
@@ -19,6 +22,14 @@ const props = withDefaults(
 const ciclo = props.creaCiclo()
 ciclo.avvio()
 const stato = ciclo.stato
+
+// Il browser può caricare le voci dopo l'apertura: i pulsanti della pronuncia seguono i cambi.
+const pronuncia = props.pronuncia
+const pronunciaDisponibile = ref(pronuncia.disponibile())
+const smettiDiAscoltare = pronuncia.quandoCambia(() => {
+  pronunciaDisponibile.value = pronuncia.disponibile()
+})
+onBeforeUnmount(smettiDiAscoltare)
 
 const idCampo = useId()
 const campo = ref<HTMLInputElement | null>(null)
@@ -37,6 +48,17 @@ watch(
   },
   { immediate: true, flush: 'post' },
 )
+
+const ICONA_ALTOPARLANTE = {
+  viewBox: '0 0 24 24',
+  width: 20,
+  height: 20,
+  fill: 'none',
+  stroke: 'currentColor',
+  'stroke-width': 2,
+  'stroke-linecap': 'round',
+  'stroke-linejoin': 'round',
+} as const
 
 function conferma(): void {
   ciclo.conferma(risposta.value)
@@ -180,7 +202,22 @@ function invio(azione: () => void): (evento: KeyboardEvent) => void {
           </div>
           <div class="vocabolo-risposta">
             <div class="etichetta">Traduzione</div>
-            <p lang="en" class="vocabolo-traduzione">{{ stato.vocabolo.en[0] }}</p>
+            <div class="vocabolo-ascoltabile">
+              <p lang="en" class="vocabolo-traduzione">{{ stato.vocabolo.en[0] }}</p>
+              <button
+                v-if="pronunciaDisponibile"
+                type="button"
+                class="cerchio-icona vocabolo-ascolta"
+                aria-label="Ascolta la traduzione"
+                @click="pronuncia.leggi(stato.vocabolo.en[0])"
+              >
+                <svg v-bind="ICONA_ALTOPARLANTE" aria-hidden="true">
+                  <path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" />
+                  <path d="M15.5 9a4 4 0 0 1 0 6" />
+                  <path d="M18 6.5a7.5 7.5 0 0 1 0 11" />
+                </svg>
+              </button>
+            </div>
           </div>
           <div v-if="stato.vocabolo.en.length > 1" class="vocabolo-risposta">
             <div class="etichetta">Accettata anche</div>
@@ -195,7 +232,22 @@ function invio(azione: () => void): (evento: KeyboardEvent) => void {
           </div>
           <div v-if="stato.vocabolo.example" class="vocabolo-risposta">
             <div class="etichetta">Esempio</div>
-            <p lang="en" class="vocabolo-esempio">{{ stato.vocabolo.example }}</p>
+            <div class="vocabolo-ascoltabile">
+              <p lang="en" class="vocabolo-esempio">{{ stato.vocabolo.example }}</p>
+              <button
+                v-if="pronunciaDisponibile"
+                type="button"
+                class="cerchio-icona vocabolo-ascolta"
+                aria-label="Ascolta la frase d'esempio"
+                @click="pronuncia.leggi(stato.vocabolo.example)"
+              >
+                <svg v-bind="ICONA_ALTOPARLANTE" aria-hidden="true">
+                  <path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" />
+                  <path d="M15.5 9a4 4 0 0 1 0 6" />
+                  <path d="M18 6.5a7.5 7.5 0 0 1 0 11" />
+                </svg>
+              </button>
+            </div>
           </div>
           <div v-if="stato.vocabolo.mnemonic" class="vocabolo-risposta">
             <div class="etichetta">Trucco per ricordare</div>

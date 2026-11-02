@@ -10,6 +10,8 @@ import { creaSessione } from '../src/ripasso/sessione'
 import { creaCiclo } from '../src/vocaboli/ciclo'
 import VocaboliView from '../src/views/VocaboliView.vue'
 import type { Edizione } from '../src/edizione'
+import { creaPronuncia } from '../src/vocaboli/pronuncia'
+import type { Pronuncia } from '../src/vocaboli/pronuncia'
 
 const fissa = (valore: number) => () => valore
 
@@ -44,10 +46,15 @@ afterEach(() => {
 // Con casualità 0 la sessione propone il primo candidato ammesso: v1, poi v2.
 // `catalogoTitoli` sostituisce il catalogo da cui il ciclo ricava il titolo della lezione.
 // `edizione` sostituisce quella di compilazione; senza, la schermata legge la costante.
+// `pronuncia` sostituisce la sintesi vocale del browser; senza, la schermata usa quella vera.
 function monta(
   catalogo: Catalogo,
   catalogoTitoli: Catalogo = catalogo,
-  { edizione, archivio = creaArchivio(null) }: { edizione?: Edizione; archivio?: ArchivioProgressi } = {},
+  {
+    edizione,
+    archivio = creaArchivio(null),
+    pronuncia,
+  }: { edizione?: Edizione; archivio?: ArchivioProgressi; pronuncia?: Pronuncia } = {},
 ) {
   let cicliCreati = 0
   const fabbrica = () => {
@@ -59,7 +66,11 @@ function monta(
   }
   const nuovoMontaggio = () => {
     const wrapper = mount(VocaboliView, {
-      props: edizione ? { creaCiclo: fabbrica, edizione } : { creaCiclo: fabbrica },
+      props: {
+        creaCiclo: fabbrica,
+        ...(edizione ? { edizione } : {}),
+        ...(pronuncia ? { pronuncia } : {}),
+      },
       attachTo: document.body,
     })
     montate.push(wrapper)
@@ -579,5 +590,181 @@ describe("schermata Vocaboli: frase d'esempio e trucco nell'esito", () => {
     expect(wrapper.find('.vocabolo-esempio').exists()).toBe(false)
     expect(wrapper.find('.vocabolo-trucco').exists()).toBe(false)
     expect(wrapper.text()).not.toContain(esempio)
+  })
+})
+
+describe("schermata Vocaboli: la pronuncia nell'esito", () => {
+  const esempio = 'This venue is perfect for a concert.'
+
+  function lezioneCon(campi: { example?: string }): Lezione {
+    return {
+      id: '01-a',
+      title: 'Lezione 01-a',
+      sentences: [],
+      vocabulary: [
+        { id: 'v1', it: 'luogo', en: ['venue', 'place'], ...campi },
+        { id: 'v2', it: 'parola 2', en: ['word 2'] },
+      ],
+      grammar: [],
+    }
+  }
+
+  // Sostituto del modulo di pronuncia: registra le letture e permette di cambiare la disponibilità.
+  function pronunciaFinta(disponibile: boolean) {
+    const letti: string[] = []
+    const ascoltatori: (() => void)[] = []
+    let stato = disponibile
+    const pronuncia: Pronuncia = {
+      disponibile: () => stato,
+      leggi: (testo) => {
+        letti.push(testo)
+      },
+      quandoCambia: (ascoltatore) => {
+        ascoltatori.push(ascoltatore)
+        return () => {
+          const i = ascoltatori.indexOf(ascoltatore)
+          if (i >= 0) ascoltatori.splice(i, 1)
+        }
+      },
+    }
+    const cambia = (nuovo: boolean) => {
+      stato = nuovo
+      for (const a of [...ascoltatori]) a()
+    }
+    return { pronuncia, letti, cambia, ascoltatori }
+  }
+
+  const ascoltaTraduzione = (wrapper: VueWrapper) =>
+    wrapper.find('button[aria-label="Ascolta la traduzione"]')
+  const ascoltaEsempio = (wrapper: VueWrapper) =>
+    wrapper.find('button[aria-label="Ascolta la frase d\'esempio"]')
+
+  it.each(['venue', 'x'])(
+    'rispondendo %s, accanto alla traduzione principale e alla frase d’esempio c’è un pulsante che le legge',
+    async (risposta) => {
+      const { pronuncia, letti } = pronunciaFinta(true)
+      const { wrapper } = monta(catalogoDi(lezioneCon({ example: esempio })), undefined, { pronuncia })
+      await conferma(wrapper, risposta)
+
+      const traduzione = ascoltaTraduzione(wrapper)
+      const frase = ascoltaEsempio(wrapper)
+      expect(traduzione.exists()).toBe(true)
+      expect(frase.exists()).toBe(true)
+      expect(traduzione.attributes('type')).toBe('button')
+      // Ogni pulsante sta nel blocco del testo che legge.
+      expect(traduzione.element.closest('.vocabolo-risposta')?.querySelector('.vocabolo-traduzione')).not.toBeNull()
+      expect(frase.element.closest('.vocabolo-risposta')?.querySelector('.vocabolo-esempio')).not.toBeNull()
+
+      await traduzione.trigger('click')
+      await frase.trigger('click')
+      expect(letti).toEqual(['venue', esempio])
+      // I testi mostrati restano quelli di prima.
+      expect(wrapper.get('.vocabolo-traduzione').text()).toBe('venue')
+      expect(wrapper.get('.vocabolo-esempio').text()).toBe(esempio)
+    },
+  )
+
+  it("le altre traduzioni accettate non hanno pulsante", async () => {
+    const { pronuncia } = pronunciaFinta(true)
+    const { wrapper } = monta(catalogoDi(lezioneCon({ example: esempio })), undefined, { pronuncia })
+    await conferma(wrapper, 'venue')
+
+    expect(wrapper.findAll('button[aria-label^="Ascolta"]')).toHaveLength(2)
+  })
+
+  it("senza frase d'esempio manca il suo pulsante, resta quello della traduzione", async () => {
+    const { pronuncia } = pronunciaFinta(true)
+    const { wrapper } = monta(catalogoDi(lezioneCon({})), undefined, { pronuncia })
+    await conferma(wrapper, 'venue')
+
+    expect(ascoltaTraduzione(wrapper).exists()).toBe(true)
+    expect(ascoltaEsempio(wrapper).exists()).toBe(false)
+  })
+
+  it('senza lettura disponibile i pulsanti non compaiono', async () => {
+    const { pronuncia } = pronunciaFinta(false)
+    const { wrapper } = monta(catalogoDi(lezioneCon({ example: esempio })), undefined, { pronuncia })
+    await conferma(wrapper, 'venue')
+
+    expect(wrapper.find('button[aria-label^="Ascolta"]').exists()).toBe(false)
+    expect(wrapper.get('.vocabolo-traduzione').text()).toBe('venue')
+    expect(wrapper.get('.vocabolo-esempio').text()).toBe(esempio)
+  })
+
+  it('senza sintesi vocale nel browser i pulsanti non compaiono', async () => {
+    const { wrapper } = monta(catalogoDi(lezioneCon({ example: esempio })))
+    await conferma(wrapper, 'venue')
+
+    expect(wrapper.find('button[aria-label^="Ascolta"]').exists()).toBe(false)
+  })
+
+  it('i pulsanti compaiono quando le voci inglesi arrivano dopo, e spariscono se se ne vanno', async () => {
+    const { pronuncia, cambia } = pronunciaFinta(false)
+    const { wrapper } = monta(catalogoDi(lezioneCon({ example: esempio })), undefined, { pronuncia })
+    await conferma(wrapper, 'venue')
+    expect(ascoltaTraduzione(wrapper).exists()).toBe(false)
+
+    cambia(true)
+    await flushPromises()
+    expect(ascoltaTraduzione(wrapper).exists()).toBe(true)
+    expect(ascoltaEsempio(wrapper).exists()).toBe(true)
+
+    cambia(false)
+    await flushPromises()
+    expect(ascoltaTraduzione(wrapper).exists()).toBe(false)
+  })
+
+  it('smette di ascoltare i cambi delle voci quando la schermata si chiude', async () => {
+    const { pronuncia, ascoltatori } = pronunciaFinta(true)
+    const { wrapper } = monta(catalogoDi(lezioneCon({})), undefined, { pronuncia })
+    expect(ascoltatori).toHaveLength(1)
+
+    wrapper.unmount()
+    montate = montate.filter((w) => w !== wrapper)
+    expect(ascoltatori).toHaveLength(0)
+  })
+
+  it('una lettura che fallisce non mostra errori', async () => {
+    // Il modulo vero, su una sintesi che ha una voce inglese ma fallisce a ogni lettura.
+    const pronuncia = creaPronuncia({
+      sintesi: {
+        getVoices: () => [{ name: 'Daniel', lang: 'en-GB' }],
+        cancel: () => {},
+        speak: () => {
+          throw new Error('rotto')
+        },
+        addEventListener: () => {},
+        removeEventListener: () => {},
+      },
+      Enunciato: class {
+        voice = null
+        lang = ''
+        onerror = null
+        constructor(public text: string) {}
+      },
+    })
+    const { wrapper } = monta(catalogoDi(lezioneCon({ example: esempio })), undefined, { pronuncia })
+    await conferma(wrapper, 'venue')
+    const prima = wrapper.get('main').text()
+
+    await ascoltaTraduzione(wrapper).trigger('click')
+    await flushPromises()
+    expect(wrapper.get('main').text()).toBe(prima)
+  })
+
+  it('la domanda non mostra i pulsanti della pronuncia', async () => {
+    const { pronuncia } = pronunciaFinta(true)
+    const { wrapper } = monta(catalogoDi(lezioneCon({ example: esempio })), undefined, { pronuncia })
+    await flushPromises()
+
+    expect(wrapper.find('button[aria-label^="Ascolta"]').exists()).toBe(false)
+  })
+
+  it('Avanti resta il pulsante con il fuoco dopo la conferma', async () => {
+    const { pronuncia } = pronunciaFinta(true)
+    const { wrapper } = monta(catalogoDi(lezioneCon({ example: esempio })), undefined, { pronuncia })
+    await conferma(wrapper, 'venue')
+
+    expect(document.activeElement).toBe(bottone(wrapper, 'Avanti').element)
   })
 })

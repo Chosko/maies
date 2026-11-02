@@ -792,6 +792,22 @@
   text-wrap: balance;
 }
 
+/* Un testo inglese con accanto il pulsante che lo legge. */
+.vocabolo-ascoltabile {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.vocabolo-ascoltabile > p {
+  flex: 1;
+  min-width: 0;
+}
+
+.vocabolo-ascolta {
+  color: var(--color-accent);
+}
+
 /* Grammatica: la pagina della lezione. */
 .grammatica-lezione {
   gap: var(--space-5);

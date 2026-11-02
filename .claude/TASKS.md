@@ -526,7 +526,7 @@ Feature: allenamento-vocaboli
 
 ## 53. Pronuncia inglese con la sintesi vocale del browser
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: src/vocaboli/pronuncia.ts, src/views/VocaboliView.vue, tests/pronuncia.test.ts, tests/vocaboli.test.ts
 Preconditions: 52
