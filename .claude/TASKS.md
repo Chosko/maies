@@ -1,6 +1,6 @@
 # Tasks
 
-Last task number: 49
+Last task number: 51
 
 ---
 
@@ -491,5 +491,25 @@ Target: claude
 Files: README.md, .claude/context/ripasso.md
 Preconditions: 45, 46, 47, 48
 Feature: ripetizione-errori
+
+---
+
+## 50. Pulsante Aiuto negli esercizi di traduzione
+
+Status: [MISSING]
+Target: claude
+Files: src/esercizi/ciclo.ts, src/views/EserciziView.vue, tests/ciclo-esercizi.test.ts, tests/esercizi.test.ts
+Preconditions: 39
+Feature: esercizi-traduzione
+
+---
+
+## 51. Update documentation for feature `esercizi-traduzione`
+
+Status: [MISSING]
+Target: claude
+Files: README.md, .claude/context/schermate.md
+Preconditions: 50
+Feature: esercizi-traduzione
 
 ---
