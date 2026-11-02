@@ -485,3 +485,99 @@ describe("schermata Vocaboli: l'importanza nell'esito", () => {
     expect(wrapper.text()).not.toContain('Ancora nessun vocabolo')
   })
 })
+
+describe("schermata Vocaboli: frase d'esempio e trucco nell'esito", () => {
+  // Una lezione con un solo vocabolo, che porta i campi facoltativi richiesti.
+  function lezioneCon(campi: { example?: string; mnemonic?: string }): Lezione {
+    return {
+      id: '01-a',
+      title: 'Lezione 01-a',
+      sentences: [],
+      vocabulary: [{ id: 'v1', it: 'luogo', en: ['venue'], ...campi }],
+      grammar: [],
+    }
+  }
+
+  const esempio = 'This venue is perfect for a concert.'
+  const trucco = 'venue ricorda "venire": il posto dove la gente viene.'
+
+  it.each([
+    ['principale', 'venue'],
+    ['principale', 'place'],
+    ['kids', 'venue'],
+    ['kids', 'place'],
+  ] as const)(
+    "nell'edizione %s, rispondendo %s, l'esito mostra frase d'esempio e trucco dopo le traduzioni",
+    async (edizione, risposta) => {
+      const { wrapper } = monta(catalogoDi(lezioneCon({ example: esempio, mnemonic: trucco })), undefined, {
+        edizione,
+      })
+      await conferma(wrapper, risposta)
+
+      const carta = wrapper.get('main .carta')
+      const frase = carta.get('.vocabolo-esempio')
+      expect(frase.text()).toBe(esempio)
+      expect(frase.attributes('lang')).toBe('en')
+      const ricordo = carta.get('.vocabolo-trucco')
+      expect(ricordo.text()).toBe(trucco)
+      expect(ricordo.attributes('lang')).toBeUndefined()
+      expect(carta.text()).toContain('Esempio')
+      expect(carta.text()).toContain('Trucco per ricordare')
+      // Prima le traduzioni, poi la frase d'esempio, poi il trucco.
+      const traduzione = carta.get('.vocabolo-traduzione').element
+      expect(
+        traduzione.compareDocumentPosition(frase.element) & Node.DOCUMENT_POSITION_FOLLOWING,
+      ).toBeTruthy()
+      expect(
+        frase.element.compareDocumentPosition(ricordo.element) & Node.DOCUMENT_POSITION_FOLLOWING,
+      ).toBeTruthy()
+    },
+  )
+
+  it.each(['principale', 'kids'] as const)(
+    "nell'edizione %s un vocabolo senza i due campi li omette, senza blocchi vuoti",
+    async (edizione) => {
+      const { wrapper } = monta(catalogoDi(lezioneCon({})), undefined, { edizione })
+      await conferma(wrapper, 'venue')
+
+      const carta = wrapper.get('main .carta')
+      expect(carta.find('.vocabolo-esempio').exists()).toBe(false)
+      expect(carta.find('.vocabolo-trucco').exists()).toBe(false)
+      expect(carta.text()).not.toContain('Esempio')
+      expect(carta.text()).not.toContain('Trucco per ricordare')
+      // Restano solo i blocchi della risposta e della traduzione.
+      expect(carta.findAll('.vocabolo-risposta')).toHaveLength(2)
+    },
+  )
+
+  it("con la sola frase d'esempio l'esito omette il trucco", async () => {
+    const { wrapper } = monta(catalogoDi(lezioneCon({ example: esempio })))
+    await conferma(wrapper, 'x')
+
+    const carta = wrapper.get('main .carta')
+    expect(carta.get('.vocabolo-esempio').text()).toBe(esempio)
+    expect(carta.find('.vocabolo-trucco').exists()).toBe(false)
+    expect(carta.text()).not.toContain('Trucco per ricordare')
+    expect(carta.findAll('.vocabolo-risposta')).toHaveLength(3)
+  })
+
+  it("con il solo trucco l'esito omette la frase d'esempio", async () => {
+    const { wrapper } = monta(catalogoDi(lezioneCon({ mnemonic: trucco })))
+    await conferma(wrapper, 'venue')
+
+    const carta = wrapper.get('main .carta')
+    expect(carta.get('.vocabolo-trucco').text()).toBe(trucco)
+    expect(carta.find('.vocabolo-esempio').exists()).toBe(false)
+    expect(carta.text()).not.toContain('Esempio')
+    expect(carta.findAll('.vocabolo-risposta')).toHaveLength(3)
+  })
+
+  it("la domanda non mostra né la frase d'esempio né il trucco", async () => {
+    const { wrapper } = monta(catalogoDi(lezioneCon({ example: esempio, mnemonic: trucco })))
+    await flushPromises()
+
+    expect(wrapper.find('.vocabolo-esempio').exists()).toBe(false)
+    expect(wrapper.find('.vocabolo-trucco').exists()).toBe(false)
+    expect(wrapper.text()).not.toContain(esempio)
+  })
+})

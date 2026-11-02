@@ -193,6 +193,14 @@ function invio(azione: () => void): (evento: KeyboardEvent) => void {
               {{ alternativa }}
             </p>
           </div>
+          <div v-if="stato.vocabolo.example" class="vocabolo-risposta">
+            <div class="etichetta">Esempio</div>
+            <p lang="en" class="vocabolo-esempio">{{ stato.vocabolo.example }}</p>
+          </div>
+          <div v-if="stato.vocabolo.mnemonic" class="vocabolo-risposta">
+            <div class="etichetta">Trucco per ricordare</div>
+            <p class="vocabolo-trucco">{{ stato.vocabolo.mnemonic }}</p>
+          </div>
         </article>
       </div>
 

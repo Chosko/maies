@@ -378,7 +378,7 @@
   color: var(--color-ink-muted);
   font-size: var(--type-body-size);
   line-height: var(--type-body-line);
-  text-wrap: pretty;
+  text-wrap: balance;
 }
 
 /* Riga dell'importanza e conferma della rimozione (esercizi e vocaboli):
@@ -780,6 +780,16 @@
   color: var(--color-ink-soft);
   font-size: var(--type-body-size);
   line-height: calc(var(--type-lesson-line) + var(--space-1) / 2);
+}
+
+/* Frase d'esempio e trucco: testo secondario rispetto alle traduzioni. */
+.vocabolo-esempio,
+.vocabolo-trucco {
+  color: var(--color-ink-muted);
+  font-size: var(--type-lesson-size);
+  line-height: var(--type-lesson-line);
+  font-weight: var(--type-lesson-weight);
+  text-wrap: balance;
 }
 
 /* Grammatica: la pagina della lezione. */
