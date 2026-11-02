@@ -546,7 +546,7 @@ Feature: allenamento-vocaboli
 
 ## 55. Update documentation for feature `allenamento-vocaboli`
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: README.md, .claude/context/schermate.md
 Preconditions: 52, 53, 54

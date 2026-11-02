@@ -10,9 +10,12 @@ drive a review session.
   exercise: Sara may reveal the sentence's hint, types, sees the solution, marks herself right or wrong and
   sets the sentence's importance, 0 removing it after a confirmation.
 - `src/views/VocaboliView.vue` + `src/vocaboli/ciclo.ts`,
-  `src/vocaboli/verifica.ts` — vocabulary drill: the app checks the answer;
-  in the main edition the result also sets the word's importance, 0
-  removing it after a confirmation.
+  `src/vocaboli/verifica.ts`, `src/vocaboli/pronuncia.ts` — vocabulary
+  drill: the app checks the answer; the result shows the translations, the
+  word's example sentence and mnemonic, and buttons that speak the main
+  translation and the example; a wrong answer must be rewritten correctly
+  before "Avanti"; in the main edition the result also sets the word's
+  importance, 0 removing it after a confirmation.
 - `src/views/DizionarioView.vue` + `src/dizionario/voci.ts`,
   `src/dizionario/filtro.ts` — sorted word list with a live search field.
 - `src/views/GrammaticaView.vue` + `src/grammatica/elenco.ts` — list of
@@ -24,7 +27,7 @@ drive a review session.
   (on the result).
 
 Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `riga-importanza`,
-`vocaboli`, `ciclo-vocaboli`, `verifica`, `dizionario`, `voci`, `filtro`, `grammatica`,
+`vocaboli`, `ciclo-vocaboli`, `verifica`, `pronuncia`, `dizionario`, `voci`, `filtro`, `grammatica`,
 `elenco-grammatica`, `grammatica-lezione`, `markdown` (all `tests/*.test.ts`).
 
 ## Public API
@@ -44,16 +47,33 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `riga-importanza`,
   sentence, landing on `tutti-tolti` when the session reports every
   sentence removed.
 - `vocaboli/ciclo.ts::creaCiclo(opzioni?): CicloAllenamento` — `stato`
-  (`fase`: `in-attesa-di-risposta` | `esito-mostrato` | `nessun-materiale` |
-  `tutti-tolti`; `vocabolo`, `testo`, `esito`, `titoloLezione`,
-  `importanza`, `confermaRimozioneAperta`), `avvio()`, `conferma(testo)`,
-  `avanti()` (blocked while the removal confirmation is open),
-  `impostaImportanza(1 | 2 | 3)`, `chiediRimozione()`, `annullaRimozione()`,
-  `confermaRimozione()`. Importance actions: `esito-mostrato` only, the
-  removal confirmation closed; `importanza` is the word's current value (`null`
-  without a word); `confermaRimozione()` records importance 0 (the result
-  stays the one `conferma()` recorded), then advances like `avanti()`,
-  landing on `tutti-tolti` when the session reports every word removed.
+  (`fase`: `in-attesa-di-risposta` | `riscrittura` | `esito-mostrato` |
+  `nessun-materiale` | `tutti-tolti`; `vocabolo`, `testo`, `esito`,
+  `riscrittura`, `riscritturaRespinta`, `titoloLezione`, `importanza`,
+  `confermaRimozioneAperta`), `avvio()`, `conferma(testo)`,
+  `riscrivi(testo)`, `avanti()`, `impostaImportanza(1 | 2 | 3)`,
+  `chiediRimozione()`, `annullaRimozione()`, `confermaRimozione()`.
+  `conferma()` records the checked result and goes to `esito-mostrato` on
+  `giusto`, to `riscrittura` on `sbagliato`. `riscrivi()` acts only in
+  `riscrittura` with the removal confirmation closed, checks the text with
+  `verifica()`, records nothing, and goes to `esito-mostrato` when it
+  passes, otherwise sets `riscritturaRespinta`. `avanti()` acts only in
+  `esito-mostrato`, the removal confirmation closed. Importance actions:
+  `esito-mostrato` or `riscrittura`, the removal confirmation closed;
+  `importanza` is the word's current value (`null` without a word);
+  `confermaRimozione()` records importance 0 (the result stays the one
+  `conferma()` recorded), then proposes the next word — from `riscrittura`
+  too — landing on `tutti-tolti` when the session reports every word
+  removed.
+- `vocaboli/pronuncia.ts::creaPronuncia(opzioni?): Pronuncia` —
+  `disponibile()` (an English voice exists), `leggi(testo)` (cancels the
+  reading in progress, then speaks), `quandoCambia(ascoltatore)` (listens
+  to `voiceschanged`, returns the unsubscribe). Prefers an `en-GB` / `en_GB`
+  voice, else any `en*` voice; voices are re-read on every call. Without
+  `speechSynthesis`, `SpeechSynthesisUtterance` or an English voice it is
+  unavailable; every browser call is wrapped so nothing throws. `opzioni`
+  `{ sintesi?, Enunciato? }` inject the narrow `SintesiVocale` /
+  `CostruttoreEnunciato` interfaces for tests.
 - Both cycles take `opzioni` `{ creaSessione?, catalogo? }` for tests.
 - `vocaboli/verifica.ts::verifica(risposta, traduzioniAccettate): Esito` —
   match after lower-casing, typographic apostrophes → `'`, collapsed
@@ -75,14 +95,16 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `riga-importanza`,
   `aria-pressed` and are disabled while the confirmation is open; the
   confirmation is an inline `role="alertdialog"`.
 - Views: Esercizi and Vocaboli take an optional `creaCiclo` prop, and
-  Vocaboli an optional `edizione` prop (default `EDIZIONE`); Dizionario,
+  Vocaboli optional `edizione` (default `EDIZIONE`) and `pronuncia`
+  (default `creaPronuncia()`) props; Dizionario,
   Grammatica and GrammaticaLezione an optional `catalogo` prop.
   The app passes none; tests inject.
 
 ## Internal patterns
 
 - **Logic out of the view.** Each rule lives in one module, never in the
-  `.vue`: the vocabulary check only in `verifica()`, the dictionary search
+  `.vue`: the vocabulary check only in `verifica()` (answer and rewrite
+  alike), the voice choice only in `creaPronuncia()`, the dictionary search
   only in `filtra()` (a different rule from `verifica()`), Markdown → HTML
   only in `html()`.
 - **A cycle exposes a readonly reactive `stato`**; actions outside their
@@ -92,8 +114,8 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `riga-importanza`,
   `impostaImportanza()` and importance 0 on `confermaRimozione()` (no
   result, and `segna()` is a no-op while the removal confirmation is open);
   Vocaboli records the checked result on `conferma()`, an importance on
-  `impostaImportanza()` and importance 0 on `confermaRimozione()`. Both key
-  the session by `idGlobale`.
+  `impostaImportanza()` and importance 0 on `confermaRimozione()`, and
+  nothing on `riscrivi()`. Both key the session by `idGlobale`.
 - Esercizi shows the secondary "Aiuto" button (`.esercizio-aiuto`) under
   the sentence only in `in-attesa-di-risposta` and only for a sentence with
   a `hint`; tapping it calls `mostraAiuto()`, the hint text
@@ -104,16 +126,33 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `riga-importanza`,
   actions. Its empty card has two texts: `nessun-materiale` ("Ancora
   nessuna frase da tradurre") and `tutti-tolti` ("Hai tolto tutte le frasi
   dagli esercizi").
-- Vocaboli shows `RigaImportanza` only in `esito-mostrato` and only when
-  its `edizione` is `principale`, below "Avanti", wiring its events
-  straight to the cycle's actions. Its
-  empty card has two texts: `nessun-materiale` ("Ancora nessun vocabolo su
-  cui allenarti") and `tutti-tolti` ("Hai tolto tutti i vocaboli
-  dall'allenamento").
-- Vocaboli moves focus to "Avanti" on the result and ignores held-down
-  Enter (`evento.repeat`), so one Enter never confirms and advances.
+- Vocaboli renders one result card for `riscrittura` and `esito-mostrato`:
+  the result, the answer, the main translation, "Accettata anche" for the
+  other `en`, then — in `riscrittura` only — the rewrite field ("Riscrivi la
+  traduzione", `.vocabolo-riscrittura`) with the `role="alert"` notice
+  "Non è ancora giusta: riprova." (`.vocabolo-riscrittura-avviso`) when
+  `riscritturaRespinta`, then "Esempio" (`.vocabolo-esempio`) and "Trucco
+  per ricordare" (`.vocabolo-trucco`), each only when the word has
+  `example` / `mnemonic`. Below the card the main button is "Controlla"
+  (calls `riscrivi()`) in `riscrittura` and "Avanti" in `esito-mostrato`.
+- Vocaboli puts a speaker button (`.cerchio-icona.vocabolo-ascolta`, inside
+  a `.vocabolo-ascoltabile` row) beside the main translation ("Ascolta la
+  traduzione") and the example ("Ascolta la frase d'esempio"), calling
+  `pronuncia.leggi()`; both appear only while `pronuncia.disponibile()`,
+  held in a ref refreshed by `quandoCambia()` and unsubscribed on unmount.
+- Vocaboli shows `RigaImportanza` in `riscrittura` and `esito-mostrato`,
+  only when its `edizione` is `principale`, below the main button, wiring
+  its events straight to the cycle's actions. Its empty card has two
+  texts: `nessun-materiale` ("Ancora nessun vocabolo su cui allenarti") and
+  `tutti-tolti` ("Hai tolto tutti i vocaboli dall'allenamento").
+- Vocaboli moves focus to the answer field on each new word, to the
+  rewrite field on `riscrittura` (and back to it, text kept, after a
+  rejected rewrite) and to "Avanti" on `esito-mostrato`, and ignores
+  held-down Enter (`evento.repeat`), so one Enter never confirms, checks
+  and advances.
 - Vocaboli adds `vocabolo-carta-sbagliata` to the result card on a wrong
-  answer; the red styling is all CSS (`styles-tokens.md`).
+  answer, rewrite included; the red styling is all CSS
+  (`styles-tokens.md`).
 - **The only `v-html`** is the lesson page's `.scheda-testo`, fed by
   `html()`, which never passes raw HTML through.
 - The lesson page reads `route.params.id`, scrolls to top on each id change,
@@ -143,6 +182,9 @@ Tests: `tests/esercizi.test.ts`, `ciclo-esercizi`, `riga-importanza`,
 
 - Changing what counts as a correct word: `verifica()` and
   `tests/verifica.test.ts`.
+- Changing which voice speaks or how a reading starts: `pronuncia.ts` and
+  `tests/pronuncia.test.ts`. jsdom has no `speechSynthesis`, so screen
+  tests pass Vocaboli a stand-in `pronuncia` prop.
 - Changing dictionary search or ordering: `filtro.ts` / `voci.ts`.
 - Changing a screen's phases or what it records: the matching `ciclo.ts`
   and its `tests/ciclo-*.test.ts`.
