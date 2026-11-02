@@ -426,7 +426,7 @@ Feature: aggiunta-materiale-lezione
 
 ## 43. Frasi d'esempio e trucchi per i vocaboli delle lezioni 07–12 e dei kids
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: contenuti/lezioni/07-observations.json, contenuti/lezioni/08-a-hotel-review.json, contenuti/lezioni/09-have-you-ever.json, contenuti/lezioni/10-home-sweet-home.json, contenuti/lezioni/11-the-best-place-to-stay.json, contenuti/lezioni/12-meeting-new-people.json, contenuti/kids/01-autumn-unit-1-2.json
 Preconditions: 39

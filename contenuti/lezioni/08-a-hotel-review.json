@@ -140,77 +140,94 @@
       "it": "recensione",
       "en": [
         "review"
-      ]
+      ],
+      "example": "I read a lot of reviews before booking.",
+      "mnemonic": "Un \"re-view\" è un \"ri-vedere\": si guarda di nuovo un posto e si dà un giudizio."
     },
     {
       "id": "v02",
       "it": "recensione di un albergo",
       "en": [
         "hotel review"
-      ]
+      ],
+      "example": "She wrote a hotel review after her holiday."
     },
     {
       "id": "v03",
       "it": "albergo",
       "en": [
         "hotel"
-      ]
+      ],
+      "example": "Our hotel was right next to the beach."
     },
     {
       "id": "v04",
       "it": "scadente",
       "en": [
         "poor"
-      ]
+      ],
+      "example": "The service at the hotel was poor.",
+      "mnemonic": "\"Poor\" vuol dire povero: un servizio scadente è un servizio povero."
     },
     {
       "id": "v05",
       "it": "posizione",
       "en": [
         "location"
-      ]
+      ],
+      "example": "The hotel is in a great location near the centre.",
+      "mnemonic": "Pensa a \"locale\" e \"località\": è il posto dove si trova qualcosa."
     },
     {
       "id": "v06",
       "it": "troppo caro (per quello che offre)",
       "en": [
         "overpriced"
-      ]
+      ],
+      "example": "The drinks at the bar were overpriced.",
+      "mnemonic": "\"Over\" vuol dire troppo, sopra: un prezzo che va sopra quello giusto."
     },
     {
       "id": "v07",
       "it": "pulitissimo",
       "en": [
         "spotless"
-      ]
+      ],
+      "example": "Our room was spotless when we arrived.",
+      "mnemonic": "\"Spot\" è una macchia, \"-less\" vuol dire senza: senza nemmeno una macchia."
     },
     {
       "id": "v08",
       "it": "sporchissimo",
       "en": [
         "filthy"
-      ]
+      ],
+      "example": "The carpet in the room was filthy.",
+      "mnemonic": "Pensa a \"filth\", sporcizia: filthy è pieno di sporcizia, più forte di \"dirty\"."
     },
     {
       "id": "v09",
       "it": "pulito",
       "en": [
         "clean"
-      ]
+      ],
+      "example": "The towels were clean and soft."
     },
     {
       "id": "v10",
       "it": "sporco",
       "en": [
         "dirty"
-      ]
+      ],
+      "example": "The windows were dirty and we couldn't see the sea."
     },
     {
       "id": "v11",
       "it": "bagno",
       "en": [
         "bathroom"
-      ]
+      ],
+      "example": "The bathroom had a big shower."
     },
     {
       "id": "v12",
@@ -218,7 +235,8 @@
       "en": [
         "pool",
         "swimming pool"
-      ]
+      ],
+      "example": "The kids spent all day in the pool."
     },
     {
       "id": "v13",
@@ -226,105 +244,129 @@
       "en": [
         "Jacuzzi",
         "hot tub"
-      ]
+      ],
+      "example": "After dinner we relaxed in the Jacuzzi."
     },
     {
       "id": "v14",
       "it": "sauna",
       "en": [
         "sauna"
-      ]
+      ],
+      "example": "The hotel has a sauna on the top floor."
     },
     {
       "id": "v15",
       "it": "servizi",
       "en": [
         "services"
-      ]
+      ],
+      "example": "The hotel offers many services, like laundry and room service."
     },
     {
       "id": "v16",
       "it": "personale",
       "en": [
         "staff"
-      ]
+      ],
+      "example": "The staff were friendly and very helpful.",
+      "mnemonic": "Pensa allo \"staff\" di un'azienda: è tutto il personale."
     },
     {
       "id": "v17",
       "it": "atteggiamento",
       "en": [
         "attitude"
-      ]
+      ],
+      "example": "The receptionist had a very positive attitude.",
+      "mnemonic": "Somiglia ad \"attitudine\", ma è un falso amico: vuol dire atteggiamento, non talento."
     },
     {
       "id": "v18",
       "it": "disponibile (che aiuta)",
       "en": [
         "helpful"
-      ]
+      ],
+      "example": "The waiter was really helpful with the menu.",
+      "mnemonic": "\"Help\" + \"-ful\": pieno di aiuto, quindi disponibile."
     },
     {
       "id": "v19",
       "it": "educato",
       "en": [
         "polite"
-      ]
+      ],
+      "example": "The staff were always polite with the guests.",
+      "mnemonic": "Pensa a \"pulito\": una persona polite ha modi puliti, educati."
     },
     {
       "id": "v20",
       "it": "pulizia",
       "en": [
         "cleanliness"
-      ]
+      ],
+      "example": "We gave the hotel five stars for cleanliness.",
+      "mnemonic": "Si legge \"clenliness\": è la parola \"clean\" diventata un nome."
     },
     {
       "id": "v21",
       "it": "comodità",
       "en": [
         "comfort"
-      ]
+      ],
+      "example": "The beds were chosen for the guests' comfort."
     },
     {
       "id": "v22",
       "it": "comodo",
       "en": [
         "comfortable"
-      ]
+      ],
+      "example": "The sofa in our room was very comfortable.",
+      "mnemonic": "Contiene \"comfort\", la comodità: comfortable è ciò che dà comfort."
     },
     {
       "id": "v23",
       "it": "rapporto qualità-prezzo",
       "en": [
         "value for money"
-      ]
+      ],
+      "example": "The hotel was small but good value for money.",
+      "mnemonic": "Alla lettera \"valore per i soldi\": quanto vale quello che paghi."
     },
     {
       "id": "v24",
       "it": "prezzo",
       "en": [
         "price"
-      ]
+      ],
+      "example": "The price includes breakfast and parking."
     },
     {
       "id": "v25",
       "it": "ragionevole",
       "en": [
         "reasonable"
-      ]
+      ],
+      "example": "The rooms are clean and the prices are reasonable.",
+      "mnemonic": "Viene da \"reason\", la ragione: un prezzo ragionevole."
     },
     {
       "id": "v26",
       "it": "incluso",
       "en": [
         "included"
-      ]
+      ],
+      "example": "Breakfast is included in the price."
     },
     {
       "id": "v27",
       "it": "colazione",
       "en": [
         "breakfast"
-      ]
+      ],
+      "example": "We had breakfast on the terrace.",
+      "mnemonic": "\"Break\" + \"fast\": si \"rompe\" il digiuno (fast) della notte."
     },
     {
       "id": "v28",
@@ -332,7 +374,9 @@
       "en": [
         "complimentary",
         "free"
-      ]
+      ],
+      "example": "Every guest gets a complimentary bottle of water.",
+      "mnemonic": "Pensa a un \"complimento\": l'albergo ti fa un regalo, gratis."
     },
     {
       "id": "v29",
@@ -342,28 +386,33 @@
         "shopping center",
         "shopping mall",
         "mall"
-      ]
+      ],
+      "example": "There is a big shopping centre near the hotel."
     },
     {
       "id": "v30",
       "it": "ospite (di un albergo)",
       "en": [
         "guest"
-      ]
+      ],
+      "example": "Hotel guests can use the gym for free."
     },
     {
       "id": "v31",
       "it": "materasso",
       "en": [
         "mattress"
-      ]
+      ],
+      "example": "The mattress was too hard and I couldn't sleep.",
+      "mnemonic": "Somiglia a \"materasso\": stessa origine, solo più corto."
     },
     {
       "id": "v32",
       "it": "condizionatore",
       "en": [
         "air conditioner"
-      ]
+      ],
+      "example": "The air conditioner in our room was very noisy."
     },
     {
       "id": "v33",
@@ -371,7 +420,8 @@
       "en": [
         "to install",
         "install"
-      ]
+      ],
+      "example": "They are going to install a new lift."
     },
     {
       "id": "v34",
@@ -379,21 +429,25 @@
       "en": [
         "to improve",
         "improve"
-      ]
+      ],
+      "example": "The hotel needs to improve its breakfast.",
+      "mnemonic": "\"Im-prove\": mettersi alla \"prova\" per diventare migliori."
     },
     {
       "id": "v35",
       "it": "miglioramento",
       "en": [
         "improvement"
-      ]
+      ],
+      "example": "The new beds are a big improvement."
     },
     {
       "id": "v36",
       "it": "qualità",
       "en": [
         "quality"
-      ]
+      ],
+      "example": "The quality of the food was excellent."
     },
     {
       "id": "v37",
@@ -401,14 +455,17 @@
       "en": [
         "to recommend",
         "recommend"
-      ]
+      ],
+      "example": "I would recommend this hotel to my friends.",
+      "mnemonic": "Pensa a \"raccomandare\": consigliare qualcosa a qualcuno."
     },
     {
       "id": "v38",
       "it": "vista sul mare",
       "en": [
         "sea view"
-      ]
+      ],
+      "example": "We asked for a room with a sea view."
     }
   ],
   "grammar": [

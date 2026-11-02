@@ -141,7 +141,9 @@
       "it": "alloggio",
       "en": [
         "accommodation"
-      ]
+      ],
+      "example": "We found cheap accommodation near the beach.",
+      "mnemonic": "Pensa ad \"accomodarsi\": l'alloggio è il posto dove ti accomodi. Si scrive con due c e due m."
     },
     {
       "id": "v02",
@@ -149,35 +151,41 @@
       "en": [
         "accommodation type",
         "type of accommodation"
-      ]
+      ],
+      "example": "What accommodation type do you prefer?"
     },
     {
       "id": "v03",
       "it": "villaggio turistico",
       "en": [
         "resort"
-      ]
+      ],
+      "example": "We spent a week at a beach resort."
     },
     {
       "id": "v04",
       "it": "ostello",
       "en": [
         "hostel"
-      ]
+      ],
+      "example": "Students often stay in a hostel because it's cheap.",
+      "mnemonic": "Non confonderlo con \"hotel\": l'hostel ha una s in più ed è l'ostello, più economico."
     },
     {
       "id": "v05",
       "it": "motel",
       "en": [
         "motel"
-      ]
+      ],
+      "example": "We stopped at a motel on the highway."
     },
     {
       "id": "v06",
       "it": "rifugio (di montagna)",
       "en": [
         "lodge"
-      ]
+      ],
+      "example": "We slept in a lodge in the mountains."
     },
     {
       "id": "v07",
@@ -185,7 +193,8 @@
       "en": [
         "traveller",
         "traveler"
-      ]
+      ],
+      "example": "The hostel is popular with young travellers."
     },
     {
       "id": "v08",
@@ -193,7 +202,9 @@
       "en": [
         "to stay",
         "stay"
-      ]
+      ],
+      "example": "We stayed at a small hotel by the sea.",
+      "mnemonic": "Falso amico: \"stay\" vuol dire restare, soggiornare, non \"stare\" nel senso di sentirsi."
     },
     {
       "id": "v09",
@@ -201,28 +212,33 @@
       "en": [
         "favourite",
         "favorite"
-      ]
+      ],
+      "example": "This is my favourite hotel in Rome."
     },
     {
       "id": "v10",
       "it": "ordine degli aggettivi",
       "en": [
         "adjective order"
-      ]
+      ],
+      "example": "Adjective order in English is quite strict."
     },
     {
       "id": "v11",
       "it": "opinione",
       "en": [
         "opinion"
-      ]
+      ],
+      "example": "In my opinion, the resort is too expensive."
     },
     {
       "id": "v12",
       "it": "forma",
       "en": [
         "shape"
-      ]
+      ],
+      "example": "The pool has a strange shape.",
+      "mnemonic": "Pensa a \"in shape\", in forma: shape è la forma di un oggetto."
     },
     {
       "id": "v13",
@@ -230,154 +246,184 @@
       "en": [
         "colour",
         "color"
-      ]
+      ],
+      "example": "What colour is your bag?"
     },
     {
       "id": "v14",
       "it": "origine",
       "en": [
         "origin"
-      ]
+      ],
+      "example": "The origin of the word is Greek."
     },
     {
       "id": "v15",
       "it": "materiale",
       "en": [
         "material"
-      ]
+      ],
+      "example": "What material is this jacket made of?"
     },
     {
       "id": "v16",
       "it": "scopo",
       "en": [
         "purpose"
-      ]
+      ],
+      "example": "The purpose of the trip was to relax.",
+      "mnemonic": "Pensa a \"proporsi\": lo scopo è ciò che ti proponi di fare."
     },
     {
       "id": "v17",
       "it": "vecchio",
       "en": [
         "old"
-      ]
+      ],
+      "example": "We stayed in an old stone house."
     },
     {
       "id": "v18",
       "it": "quadrato",
       "en": [
         "square"
-      ]
+      ],
+      "example": "There is a square table in the kitchen."
     },
     {
       "id": "v19",
       "it": "rotondo",
       "en": [
         "round"
-      ]
+      ],
+      "example": "We had dinner at a round wooden table.",
+      "mnemonic": "Pensa a \"rotondo\": anche \"round\" comincia con la r."
     },
     {
       "id": "v20",
       "it": "rettangolare",
       "en": [
         "rectangular"
-      ]
+      ],
+      "example": "The room had a rectangular window."
     },
     {
       "id": "v21",
       "it": "blu",
       "en": [
         "blue"
-      ]
+      ],
+      "example": "The hotel has a blue swimming pool."
     },
     {
       "id": "v22",
       "it": "greco",
       "en": [
         "Greek"
-      ]
+      ],
+      "example": "We ate at a lovely Greek restaurant."
     },
     {
       "id": "v23",
       "it": "di plastica",
       "en": [
         "plastic"
-      ]
+      ],
+      "example": "Please don't use plastic bags."
     },
     {
       "id": "v24",
       "it": "di legno",
       "en": [
         "wooden"
-      ]
+      ],
+      "example": "The cabin has a big wooden table.",
+      "mnemonic": "Viene da \"wood\", il legno: \"wooden\" vuol dire fatto di legno."
     },
     {
       "id": "v25",
       "it": "pelle (materiale)",
       "en": [
         "leather"
-      ]
+      ],
+      "example": "He bought a brown leather bag.",
+      "mnemonic": "Non confonderlo con \"letter\" (lettera): leather, con la th, è la pelle di scarpe e borse."
     },
     {
       "id": "v26",
       "it": "sacco a pelo",
       "en": [
         "sleeping bag"
-      ]
+      ],
+      "example": "Don't forget your sleeping bag when you go camping."
     },
     {
       "id": "v27",
       "it": "borsa",
       "en": [
         "bag"
-      ]
+      ],
+      "example": "I left my bag in the hotel room."
     },
     {
       "id": "v28",
       "it": "chiesa",
       "en": [
         "church"
-      ]
+      ],
+      "example": "There is an old church in the village."
     },
     {
       "id": "v29",
       "it": "all'aperto",
       "en": [
         "outdoor"
-      ]
+      ],
+      "example": "The resort has a large outdoor pool.",
+      "mnemonic": "\"Out\" + \"door\": fuori dalla porta, all'aperto."
     },
     {
       "id": "v30",
       "it": "di lusso",
       "en": [
         "luxury"
-      ]
+      ],
+      "example": "They stayed in a luxury hotel in Dubai.",
+      "mnemonic": "Falso amico: \"luxury\" vuol dire lusso, non \"lussuria\"."
     },
     {
       "id": "v31",
       "it": "elegante",
       "en": [
         "stylish"
-      ]
+      ],
+      "example": "She always wears stylish clothes.",
+      "mnemonic": "Contiene \"style\": chi è stylish ha stile."
     },
     {
       "id": "v32",
       "it": "semplice",
       "en": [
         "simple"
-      ]
+      ],
+      "example": "The room was simple but clean."
     },
     {
       "id": "v33",
       "it": "scrivania",
       "en": [
         "desk"
-      ]
+      ],
+      "example": "There is a desk by the window.",
+      "mnemonic": "Pensa a \"desco\", la vecchia parola italiana per tavola."
     },
     {
       "id": "v34",
       "it": "Wi-Fi gratuito",
       "en": [
         "free Wi-Fi"
-      ]
+      ],
+      "example": "The hostel offers free Wi-Fi to all guests."
     },
     {
       "id": "v35",
@@ -385,21 +431,25 @@
       "en": [
         "to cool down",
         "cool down"
-      ]
+      ],
+      "example": "After the walk we cooled down in the pool."
     },
     {
       "id": "v36",
       "it": "giornata impegnativa",
       "en": [
         "busy day"
-      ]
+      ],
+      "example": "I had a busy day at work.",
+      "mnemonic": "Si scrive con la u ma si legge \"bisi\"."
     },
     {
       "id": "v37",
       "it": "giovani professionisti",
       "en": [
         "young professionals"
-      ]
+      ],
+      "example": "The flats are popular with young professionals."
     },
     {
       "id": "v38",
@@ -407,14 +457,17 @@
       "en": [
         "to spend",
         "spend"
-      ]
+      ],
+      "example": "We spent too much money on holiday.",
+      "mnemonic": "Falso amico: \"spend\" vuol dire spendere soldi, ma anche passare il tempo (spend a day)."
     },
     {
       "id": "v39",
       "it": "soldi",
       "en": [
         "money"
-      ]
+      ],
+      "example": "I don't have much money left."
     }
   ],
   "grammar": [

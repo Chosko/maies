@@ -197,56 +197,70 @@
       "it": "esperienza",
       "en": [
         "experience"
-      ]
+      ],
+      "example": "Living abroad was a great experience."
     },
     {
       "id": "v02",
       "it": "participio passato",
       "en": [
         "past participle"
-      ]
+      ],
+      "example": "\"Eaten\" is the past participle of \"eat\"."
     },
     {
       "id": "v03",
       "it": "mai (nelle domande)",
       "en": [
         "ever"
-      ]
+      ],
+      "example": "Have you ever been to Japan?",
+      "mnemonic": "\"Ever\" sta nelle domande (\"hai mai...?\"), \"never\" nelle risposte negative: \"never\" è \"not ever\"."
     },
     {
       "id": "v04",
       "it": "mai (nelle frasi affermative)",
       "en": [
         "never"
-      ]
+      ],
+      "example": "I have never seen snow.",
+      "mnemonic": "\"Never\" contiene già il no: \"not ever\". Quindi niente \"not\" in più nella frase."
     },
     {
       "id": "v05",
       "it": "anche (in fondo alla frase)",
       "en": [
         "too"
-      ]
+      ],
+      "example": "I like chocolate too.",
+      "mnemonic": "Non confonderlo con \"to\" e \"two\": \"too\" con due o vuol dire anche, o troppo."
     },
     {
       "id": "v06",
       "it": "neanche (in fondo alla frase)",
       "en": [
         "either"
-      ]
+      ],
+      "example": "I haven't seen that film either.",
+      "mnemonic": "\"Too\" va con le frasi affermative, \"either\" con quelle negative."
     },
     {
       "id": "v07",
       "it": "una volta",
       "en": [
         "once"
-      ]
+      ],
+      "example": "I have been to London once.",
+      "mnemonic": "Pensa a \"one\": once vuol dire una volta sola."
     },
     {
       "id": "v08",
       "it": "fa (tre anni fa)",
       "en": [
         "ago"
-      ]
+      ],
+      "example": "I visited Paris three years ago.",
+      "mnemonic": "\"Ago\" va dopo il tempo, proprio come \"fa\": \"tre anni fa\" diventa \"three years ago\"."
     },
     {
       "id": "v09",
@@ -254,7 +268,9 @@
       "en": [
         "to climb",
         "climb"
-      ]
+      ],
+      "example": "Have you ever climbed a mountain?",
+      "mnemonic": "La \"b\" finale non si pronuncia: si dice \"claim\"."
     },
     {
       "id": "v10",
@@ -262,7 +278,8 @@
       "en": [
         "to study",
         "study"
-      ]
+      ],
+      "example": "I have studied English for two years."
     },
     {
       "id": "v11",
@@ -270,7 +287,8 @@
       "en": [
         "to travel",
         "travel"
-      ]
+      ],
+      "example": "She has travelled all over Europe."
     },
     {
       "id": "v12",
@@ -278,7 +296,9 @@
       "en": [
         "to break",
         "break"
-      ]
+      ],
+      "example": "I have never broken a bone.",
+      "mnemonic": "Irregolare: break, broke, broken."
     },
     {
       "id": "v13",
@@ -286,7 +306,9 @@
       "en": [
         "to drink",
         "drink"
-      ]
+      ],
+      "example": "Have you ever drunk coconut milk?",
+      "mnemonic": "Irregolare: drink, drank, drunk."
     },
     {
       "id": "v14",
@@ -294,7 +316,9 @@
       "en": [
         "to fly",
         "fly"
-      ]
+      ],
+      "example": "I have never flown in a helicopter.",
+      "mnemonic": "Irregolare: fly, flew, flown. Pensa alla \"mosca\", fly, che vola."
     },
     {
       "id": "v15",
@@ -302,7 +326,9 @@
       "en": [
         "to eat",
         "eat"
-      ]
+      ],
+      "example": "Have you ever eaten snails?",
+      "mnemonic": "Irregolare: eat, ate, eaten."
     },
     {
       "id": "v16",
@@ -310,7 +336,9 @@
       "en": [
         "to lose",
         "lose"
-      ]
+      ],
+      "example": "I have lost my keys again!",
+      "mnemonic": "Non confonderlo con \"loose\" (largo, allentato): \"lose\" con una sola o vuol dire perdere."
     },
     {
       "id": "v17",
@@ -318,7 +346,9 @@
       "en": [
         "to run",
         "run"
-      ]
+      ],
+      "example": "Have you ever run a marathon?",
+      "mnemonic": "Irregolare: run, ran, run. Il participio è uguale al verbo."
     },
     {
       "id": "v18",
@@ -326,7 +356,9 @@
       "en": [
         "to see",
         "see"
-      ]
+      ],
+      "example": "I have never seen a shooting star.",
+      "mnemonic": "Irregolare: see, saw, seen."
     },
     {
       "id": "v19",
@@ -334,7 +366,9 @@
       "en": [
         "to sleep",
         "sleep"
-      ]
+      ],
+      "example": "Have you ever slept in a tent?",
+      "mnemonic": "Irregolare: sleep, slept, slept."
     },
     {
       "id": "v20",
@@ -342,7 +376,9 @@
       "en": [
         "to steal",
         "steal"
-      ]
+      ],
+      "example": "Someone has stolen my bike!",
+      "mnemonic": "Irregolare: steal, stole, stolen."
     },
     {
       "id": "v21",
@@ -350,7 +386,9 @@
       "en": [
         "to win",
         "win"
-      ]
+      ],
+      "example": "Our team has never won a match.",
+      "mnemonic": "Irregolare: win, won, won. \"Won\" si pronuncia come \"one\": vinci e arrivi primo."
     },
     {
       "id": "v22",
@@ -358,7 +396,8 @@
       "en": [
         "to break the law",
         "break the law"
-      ]
+      ],
+      "example": "He has never broken the law."
     },
     {
       "id": "v23",
@@ -366,56 +405,66 @@
       "en": [
         "to go camping",
         "go camping"
-      ]
+      ],
+      "example": "We go camping in the mountains every summer."
     },
     {
       "id": "v24",
       "it": "osso",
       "en": [
         "bone"
-      ]
+      ],
+      "example": "The dog is playing with a bone."
     },
     {
       "id": "v25",
       "it": "elicottero",
       "en": [
         "helicopter"
-      ]
+      ],
+      "example": "Have you ever flown in a helicopter?"
     },
     {
       "id": "v26",
       "it": "stella",
       "en": [
         "star"
-      ]
+      ],
+      "example": "You can see a lot of stars tonight."
     },
     {
       "id": "v27",
       "it": "stella cadente",
       "en": [
         "shooting star"
-      ]
+      ],
+      "example": "I made a wish when I saw a shooting star.",
+      "mnemonic": "\"Shoot\" vuol dire sparare: una stella \"sparata\" nel cielo."
     },
     {
       "id": "v28",
       "it": "premio",
       "en": [
         "prize"
-      ]
+      ],
+      "example": "She won first prize in the competition.",
+      "mnemonic": "Pensa a \"prezzo\" e \"premio\": il prize è quello che vinci, il \"price\" quello che paghi."
     },
     {
       "id": "v29",
       "it": "trofeo",
       "en": [
         "trophy"
-      ]
+      ],
+      "example": "The captain lifted the trophy."
     },
     {
       "id": "v30",
       "it": "recitazione",
       "en": [
         "acting"
-      ]
+      ],
+      "example": "She has always loved acting."
     },
     {
       "id": "v31",
@@ -423,70 +472,87 @@
       "en": [
         "to act",
         "act"
-      ]
+      ],
+      "example": "He has acted in three films.",
+      "mnemonic": "Falso amico: \"to act\" vuol dire recitare o agire, non fare un \"atto\" scritto."
     },
     {
       "id": "v32",
       "it": "commedia (a teatro)",
       "en": [
         "play"
-      ]
+      ],
+      "example": "We saw a play at the theatre last night.",
+      "mnemonic": "\"Play\" vuol dire anche giocare: a teatro gli attori \"giocano\" una storia."
     },
     {
       "id": "v33",
       "it": "adolescente",
       "en": [
         "teenager"
-      ]
+      ],
+      "example": "When I was a teenager, I played the guitar.",
+      "mnemonic": "Gli anni da \"thir-teen\" a \"nine-teen\" finiscono tutti in -teen: un teenager ha quegli anni."
     },
     {
       "id": "v34",
       "it": "barzelletta",
       "en": [
         "joke"
-      ]
+      ],
+      "example": "My uncle always tells funny jokes.",
+      "mnemonic": "Viene dal latino \"iocus\", come \"gioco\": una barzelletta è un gioco di parole."
     },
     {
       "id": "v35",
       "it": "incidente stradale",
       "en": [
         "car accident"
-      ]
+      ],
+      "example": "Have you ever had a car accident?"
     },
     {
       "id": "v36",
       "it": "cuore spezzato",
       "en": [
         "broken heart"
-      ]
+      ],
+      "example": "He has had a broken heart since she left."
     },
     {
       "id": "v37",
       "it": "maratona",
       "en": [
         "marathon"
-      ]
+      ],
+      "example": "She has run three marathons."
     },
     {
       "id": "v38",
       "it": "anima gemella",
       "en": [
         "soulmate"
-      ]
+      ],
+      "example": "I think I have found my soulmate.",
+      "mnemonic": "\"Soul\" è l'anima, \"mate\" il compagno: il compagno dell'anima."
     },
     {
       "id": "v39",
       "it": "pollo",
       "en": [
         "chicken"
-      ]
+      ],
+      "example": "We had roast chicken for dinner.",
+      "mnemonic": "Pensa a \"chick\", il pulcino: il chicken è il pulcino diventato grande."
     },
     {
       "id": "v40",
       "it": "liceo",
       "en": [
         "high school"
-      ]
+      ],
+      "example": "I met my best friend in high school.",
+      "mnemonic": "Alla lettera \"scuola alta\": la scuola superiore."
     },
     {
       "id": "v41",
@@ -494,7 +560,8 @@
       "en": [
         "university",
         "college"
-      ]
+      ],
+      "example": "My brother is studying at university."
     }
   ],
   "grammar": [

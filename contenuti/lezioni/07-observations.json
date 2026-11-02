@@ -163,35 +163,41 @@
       "it": "mentre",
       "en": [
         "while"
-      ]
+      ],
+      "example": "I was cooking while my sister was reading."
     },
     {
       "id": "v02",
       "it": "nello stesso momento",
       "en": [
         "at the same time"
-      ]
+      ],
+      "example": "We both started talking at the same time."
     },
     {
       "id": "v03",
       "it": "ieri",
       "en": [
         "yesterday"
-      ]
+      ],
+      "example": "I saw Marco at the station yesterday."
     },
     {
       "id": "v04",
       "it": "ieri sera",
       "en": [
         "last night"
-      ]
+      ],
+      "example": "Last night I was watching TV when the phone rang.",
+      "mnemonic": "Non è \"ieri notte\" parola per parola: \"last\" vuol dire \"ultima\", quindi è l'ultima notte passata."
     },
     {
       "id": "v05",
       "it": "il fine settimana scorso",
       "en": [
         "last weekend"
-      ]
+      ],
+      "example": "Last weekend we went to the seaside."
     },
     {
       "id": "v06",
@@ -201,14 +207,16 @@
         "watch a film",
         "to watch a movie",
         "watch a movie"
-      ]
+      ],
+      "example": "We were watching a film when the lights went out."
     },
     {
       "id": "v07",
       "it": "supermercato",
       "en": [
         "supermarket"
-      ]
+      ],
+      "example": "I met my neighbour at the supermarket."
     },
     {
       "id": "v08",
@@ -216,7 +224,8 @@
       "en": [
         "to read the newspaper",
         "read the newspaper"
-      ]
+      ],
+      "example": "My dad reads the newspaper every morning."
     },
     {
       "id": "v09",
@@ -226,7 +235,9 @@
         "take a shower",
         "to have a shower",
         "have a shower"
-      ]
+      ],
+      "example": "I was taking a shower when you called.",
+      "mnemonic": "In inglese la doccia si \"prende\" (take) o si \"ha\" (have), non si \"fa\": niente \"make a shower\"."
     },
     {
       "id": "v10",
@@ -234,14 +245,18 @@
       "en": [
         "to turn off",
         "turn off"
-      ]
+      ],
+      "example": "The computer turned off in the middle of my work.",
+      "mnemonic": "Pensa all'interruttore: \"off\" è la posizione spenta, \"on\" quella accesa."
     },
     {
       "id": "v11",
       "it": "arcobaleno",
       "en": [
         "rainbow"
-      ]
+      ],
+      "example": "After the storm we saw a beautiful rainbow.",
+      "mnemonic": "È un \"arco\" (bow) fatto di \"pioggia\" (rain): rain + bow."
     },
     {
       "id": "v12",
@@ -249,21 +264,25 @@
       "en": [
         "to rain",
         "rain"
-      ]
+      ],
+      "example": "It was raining when we left the house."
     },
     {
       "id": "v13",
       "it": "presidente",
       "en": [
         "president"
-      ]
+      ],
+      "example": "The president was giving a speech on TV."
     },
     {
       "id": "v14",
       "it": "attento (che osserva)",
       "en": [
         "observant"
-      ]
+      ],
+      "example": "She is very observant and notices every detail.",
+      "mnemonic": "Viene da \"observe\", osservare: chi è observant osserva tutto con attenzione."
     },
     {
       "id": "v15",
@@ -273,14 +292,17 @@
         "take a walk",
         "to go for a walk",
         "go for a walk"
-      ]
+      ],
+      "example": "We took a walk in the park after lunch."
     },
     {
       "id": "v16",
       "it": "fuori",
       "en": [
         "outside"
-      ]
+      ],
+      "example": "The children were playing outside.",
+      "mnemonic": "\"Out\" + \"side\": il lato di fuori."
     },
     {
       "id": "v17",
@@ -288,7 +310,8 @@
       "en": [
         "to interrupt",
         "interrupt"
-      ]
+      ],
+      "example": "Sorry to interrupt, but dinner is ready."
     },
     {
       "id": "v18",
@@ -296,7 +319,9 @@
       "en": [
         "to drive",
         "drive"
-      ]
+      ],
+      "example": "I was driving to work when it started to snow.",
+      "mnemonic": "Pensa al \"driver\", l'autista: è quello che guida."
     },
     {
       "id": "v19",
@@ -306,14 +331,17 @@
         "get a flat tire",
         "to get a flat tyre",
         "get a flat tyre"
-      ]
+      ],
+      "example": "We got a flat tire on the way to the airport.",
+      "mnemonic": "\"Flat\" vuol dire piatto: la gomma bucata si sgonfia e diventa piatta."
     },
     {
       "id": "v20",
       "it": "foresta",
       "en": [
         "forest"
-      ]
+      ],
+      "example": "They were walking through the forest when they heard a noise."
     },
     {
       "id": "v21",
@@ -323,7 +351,9 @@
         "set the table",
         "to lay the table",
         "lay the table"
-      ]
+      ],
+      "example": "Can you set the table while I finish cooking?",
+      "mnemonic": "Il verbo è \"set\", sistemare: la tavola si sistema, non si \"prepara\"."
     },
     {
       "id": "v22",
@@ -331,21 +361,26 @@
       "en": [
         "to knock",
         "knock"
-      ]
+      ],
+      "example": "Someone knocked on the door while we were having dinner.",
+      "mnemonic": "La \"k\" iniziale non si pronuncia: si dice \"nock\", come il rumore del colpo sulla porta."
     },
     {
       "id": "v23",
       "it": "racconto",
       "en": [
         "story"
-      ]
+      ],
+      "example": "My grandmother told us a funny story.",
+      "mnemonic": "Falso amico: \"story\" è un racconto, la storia come materia è \"history\"."
     },
     {
       "id": "v24",
       "it": "avverbio di sequenza",
       "en": [
         "adverb of sequencing"
-      ]
+      ],
+      "example": "\"Then\" is an adverb of sequencing."
     },
     {
       "id": "v25",
@@ -353,35 +388,42 @@
       "en": [
         "first",
         "first of all"
-      ]
+      ],
+      "example": "First of all, I switched on the oven."
     },
     {
       "id": "v26",
       "it": "poi",
       "en": [
         "then"
-      ]
+      ],
+      "example": "I had breakfast and then I went to school.",
+      "mnemonic": "Non confonderlo con \"than\" (di, nei paragoni): \"then\" con la e indica il tempo."
     },
     {
       "id": "v27",
       "it": "dopo di che",
       "en": [
         "after that"
-      ]
+      ],
+      "example": "We visited the museum. After that, we had lunch."
     },
     {
       "id": "v28",
       "it": "successivamente",
       "en": [
         "next"
-      ]
+      ],
+      "example": "Next, add the eggs and mix well."
     },
     {
       "id": "v29",
       "it": "infine",
       "en": [
         "finally"
-      ]
+      ],
+      "example": "Finally, we arrived at the hotel.",
+      "mnemonic": "Falso amico: \"finally\" vuol dire \"finalmente, alla fine\", non \"finale\"."
     }
   ],
   "grammar": [
