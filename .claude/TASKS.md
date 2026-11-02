@@ -1,6 +1,6 @@
 # Tasks
 
-Last task number: 51
+Last task number: 55
 
 ---
 
@@ -511,5 +511,45 @@ Target: claude
 Files: README.md, .claude/context/schermate.md
 Preconditions: 50
 Feature: esercizi-traduzione
+
+---
+
+## 52. Frase d'esempio e trucco nell'esito dei vocaboli
+
+Status: [MISSING]
+Target: claude
+Files: src/views/VocaboliView.vue, tests/vocaboli.test.ts
+Preconditions: 39
+Feature: allenamento-vocaboli
+
+---
+
+## 53. Pronuncia inglese con la sintesi vocale del browser
+
+Status: [MISSING]
+Target: claude
+Files: src/vocaboli/pronuncia.ts, src/views/VocaboliView.vue, tests/pronuncia.test.ts, tests/vocaboli.test.ts
+Preconditions: 52
+Feature: allenamento-vocaboli
+
+---
+
+## 54. Riscrittura della traduzione dopo un vocabolo sbagliato
+
+Status: [MISSING]
+Target: claude
+Files: src/vocaboli/ciclo.ts, src/views/VocaboliView.vue, tests/ciclo-vocaboli.test.ts, tests/vocaboli.test.ts
+Preconditions: 52
+Feature: allenamento-vocaboli
+
+---
+
+## 55. Update documentation for feature `allenamento-vocaboli`
+
+Status: [MISSING]
+Target: claude
+Files: README.md, .claude/context/schermate.md
+Preconditions: 52, 53, 54
+Feature: allenamento-vocaboli
 
 ---
