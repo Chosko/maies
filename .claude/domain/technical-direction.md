@@ -52,9 +52,15 @@ dizionario. Al suo interno, tre parti con confini netti:
 
 ## Async / queueing
 
-Nessuno. Non c'è nulla fuori dal ciclo dell'interfaccia: niente processi in
-background, code o lavori pianificati. La generazione dei contenuti avviene
-fuori dall'app, quando Claude scrive i file delle lezioni.
+Nell'app nessuno: niente processi in background né code. La generazione
+dei contenuti avviene fuori dall'app, quando Claude scrive i file delle
+lezioni.
+
+Un solo lavoro pianificato, fuori dall'app: una GitHub Action con un
+orario fisso tre volte al giorno sceglie un vocabolo dai file delle lezioni
+dell'edizione principale e pubblica la domanda su un canale di
+[ntfy.sh](https://ntfy.sh), il servizio pubblico di notifiche che Sara
+riceve con l'app ntfy. Il nome del canale è un segreto del repository.
 
 ## Hosting and deployment
 
@@ -77,7 +83,9 @@ una single-page application.
 - **Autenticazione:** nessuna; ogni utente apre la propria edizione, nessun
   dato personale sul server.
 - **Privacy:** il repository e il sito sono pubblici; vi entra solo
-  materiale rielaborato, mai i documenti originali della scuola.
+  materiale rielaborato, mai i documenti originali della scuola. Il nome del
+  canale ntfy non entra nel repository: chi lo conosce potrebbe leggere o
+  mandare notifiche sul canale.
 - **Osservabilità:** nessuna.
 - **Test:** Vitest per la logica (controllo delle risposte ai vocaboli,
   scelta degli elementi da riproporre, salvataggio dei progressi), per la

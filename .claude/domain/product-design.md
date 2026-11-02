@@ -72,6 +72,15 @@ il materiale di Sara.
    un'importanza da 0 a 3, dove 0 lo toglie dall'allenamento.
 4. La sessione continua finché Sara non si ferma.
 
+### Domanda a sorpresa
+
+1. Tre volte al giorno, fra le 9 e le 21, sul telefono di Sara arriva una
+   notifica che le chiede la traduzione di un vocabolo: "Come si dice
+   «cane»?".
+2. Sara ci pensa; se tocca la notifica, maies si apre sull'allenamento
+   vocaboli con quella parola come prima domanda, e la risposta conta come
+   ogni altra.
+
 Fuori dall'allenamento, Sara può consultare la lista completa dei vocaboli
 con le loro traduzioni, come un piccolo dizionario in ordine alfabetico, e
 cercarvi una parola in italiano o in inglese.
@@ -131,6 +140,12 @@ cercarvi una parola in italiano o in inglese.
   la stessa importanza.
 - **Sessioni aperte.** Una sessione di ripasso non ha una lunghezza fissa:
   continua finché Sara non si ferma.
+- **Domande a sorpresa sul telefono, solo per Sara.** Le notifiche
+  arrivano attraverso l'app ntfy, a cui Sara si iscrive una volta su un
+  canale dal nome segreto. Il vocabolo lo sceglie un'automazione del
+  repository, che non vede i progressi del dispositivo: pesca fra tutti i
+  vocaboli dell'edizione principale, privilegiando le lezioni più recenti.
+  L'edizione kids non ha notifiche.
 - **Funziona su telefono e computer**, adattandosi allo schermo.
 - **Semplicità di realizzazione prima di tutto.** Il prodotto deve essere
   rapido da implementare; ciò che non serve al ripasso resta fuori.
@@ -170,6 +185,15 @@ per ricordarla e un pulsante per ascoltarne la pronuncia. Dopo una risposta
 sbagliata Sara riscrive la traduzione corretta prima di andare avanti. Sara
 può dare al vocabolo un'importanza da 0 a 3. Continua finché Sara non si
 ferma. Serve il flusso "Ripasso dei vocaboli".
+
+### Domanda a sorpresa
+
+Tre volte al giorno, fra le 9 e le 21, una notifica sul telefono di Sara le
+chiede come si dice in inglese un vocabolo italiano. Toccandola si apre
+l'allenamento vocaboli con quella parola come prima domanda. Sara riceve le
+notifiche con l'app ntfy; il vocabolo è scelto fra quelli dell'edizione
+principale, più spesso dalle lezioni recenti. Serve il flusso "Domanda a
+sorpresa".
 
 ### Dizionario dei vocaboli
 

@@ -48,3 +48,4 @@ Funzionalità architettate e ordinate in `.claude/PLAN.md`. Prossimo passo: `/ar
 - Il design approvato vive copiato in `design/`: chi implementa lo legge dal repository, senza dipendere dagli artifact di Claude Design.
 - Gruppo di lavoro al posto del ripasso a tre livelli pesato: mescolando centinaia di elementi, uno nuovo tornava troppo di rado per essere imparato; i controlli a giorni evitano di dimenticare quelli imparati.
 - Nessuna scelta della lezione su cui allenarsi: il gruppo di lavoro prende già per primi gli elementi della lezione più recente.
+- Domande a sorpresa con ntfy e una GitHub Action pianificata: un sito statico non può mandare notifiche a pagina chiusa, e le notifiche web richiederebbero comunque un servizio esterno e l'installazione come app.
