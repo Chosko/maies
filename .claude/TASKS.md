@@ -596,7 +596,7 @@ Feature: allenamento-vocaboli
 
 ## 60. Scelta della domanda a sorpresa e script di invio a ntfy
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: scripts/domanda-a-sorpresa.mjs, tests/domanda-a-sorpresa.test.ts, package.json
 Preconditions: none

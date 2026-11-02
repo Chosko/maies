@@ -14,8 +14,9 @@ Tooling and publication. No server: the build is a static site.
   block: `environment: 'jsdom'`, `include: ['tests/**/*.test.ts']`,
   `css: true`.
 - `tsconfig.json` — strict, bundler resolution, `verbatimModuleSyntax`
-  (type-only imports must use `import type`), `noEmit`; covers `src/`,
-  `tests/`, `vite.config.ts`.
+  (type-only imports must use `import type`), `noEmit`, `allowJs` (tests
+  import the `.mjs` scripts under `scripts/`, typed by their JSDoc); covers
+  `src/`, `tests/`, `vite.config.ts`.
 - `index.html` — `lang="it"`, favicon `/maies-icona.svg` and
   `apple-touch-icon` `/maies-icona-512.png`, loads Poppins from Google Fonts,
   mounts `/src/main.ts` on `#app`.
