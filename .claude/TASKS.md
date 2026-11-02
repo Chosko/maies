@@ -1,6 +1,6 @@
 # Tasks
 
-Last task number: 57
+Last task number: 59
 
 ---
 
@@ -571,5 +571,25 @@ Target: claude
 Files: .claude/context/ripasso.md
 Preconditions: 56
 Feature: ripetizione-errori
+
+---
+
+## 58. Allenamento vocaboli aperto su una parola indicata nell'indirizzo
+
+Status: [MISSING]
+Target: claude
+Files: src/vocaboli/ciclo.ts, src/views/VocaboliView.vue, tests/ciclo-vocaboli.test.ts, tests/vocaboli.test.ts
+Preconditions: 56
+Feature: allenamento-vocaboli
+
+---
+
+## 59. Update documentation for feature `allenamento-vocaboli`
+
+Status: [MISSING]
+Target: claude
+Files: README.md, .claude/context/schermate.md
+Preconditions: 58
+Feature: allenamento-vocaboli
 
 ---
