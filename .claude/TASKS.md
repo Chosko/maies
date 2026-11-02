@@ -1,6 +1,6 @@
 # Tasks
 
-Last task number: 44
+Last task number: 49
 
 ---
 
@@ -441,5 +441,55 @@ Target: claude
 Files: README.md, .claude/context/contenuti.md
 Preconditions: 39, 40, 41, 42, 43
 Feature: aggiunta-materiale-lezione
+
+---
+
+## 45. Regole di apprendimento e scala dei controlli
+
+Status: [MISSING]
+Target: claude
+Files: src/ripasso/apprendimento.ts, src/ripasso/importanza.ts, tests/apprendimento.test.ts, tests/importanza.test.ts
+Preconditions: none
+Feature: ripetizione-errori
+
+---
+
+## 46. Archivio dei progressi con gli stati di apprendimento e conversione dai livelli
+
+Status: [MISSING]
+Target: claude
+Files: src/ripasso/archivio.ts, tests/archivio.test.ts
+Preconditions: 45
+Feature: ripetizione-errori
+
+---
+
+## 47. Pianificatore del gruppo di lavoro e della scelta del prossimo elemento
+
+Status: [MISSING]
+Target: claude
+Files: src/ripasso/pianificatore.ts, tests/pianificatore.test.ts
+Preconditions: 45
+Feature: ripetizione-errori
+
+---
+
+## 48. Sessione di ripasso sul gruppo di lavoro e sui controlli a giorni
+
+Status: [MISSING]
+Target: claude
+Files: src/ripasso/sessione.ts, src/esercizi/ciclo.ts, src/vocaboli/ciclo.ts, tests/sessione.test.ts, tests/ciclo-esercizi.test.ts, tests/ciclo-vocaboli.test.ts
+Preconditions: 45, 46, 47
+Feature: ripetizione-errori
+
+---
+
+## 49. Update documentation for feature `ripetizione-errori`
+
+Status: [MISSING]
+Target: claude
+Files: README.md, .claude/context/ripasso.md
+Preconditions: 45, 46, 47, 48
+Feature: ripetizione-errori
 
 ---

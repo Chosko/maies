@@ -22,10 +22,10 @@ Tasks: 6, 7, 8, 9, 39, 40, 41, 42, 43, 44
 
 ## ripetizione-errori — Progressi per dispositivo e scelta del prossimo elemento da ripassare
 
-Status: [ITERATED]
+Status: [PLANNED]
 Doc: .claude/domain/features/ripetizione-errori.md
 Source: product-design.md § Ripetizione degli errori
-Tasks: 10, 11, 12, 13, 28, 29, 30, 31
+Tasks: 10, 11, 12, 13, 28, 29, 30, 31, 45, 46, 47, 48, 49
 
 ---
 
