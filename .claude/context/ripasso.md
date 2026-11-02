@@ -52,12 +52,18 @@ Tests: `tests/apprendimento.test.ts`, `tests/importanza.test.ts`,
   `gruppo` | `controllo` | `libero`, and `Casualita` is `() => number` in
   [0, 1).
 - `sessione.ts` — `creaSessione('frasi' | 'vocaboli', opzioni?)` returns
-  `prossimoElemento()`, `registraEsito(idGlobale, esito)` and
+  `prossimoElemento()`, `elementoPerId(idGlobale)`,
+  `registraEsito(idGlobale, esito)` and
   `registraImportanza(idGlobale, importanza)`. `prossimoElemento()` returns
   a `Proposta`: `{ caso: 'elemento', elemento, importanza }` (a
   `FraseCatalogo` / `VocaboloCatalogo` with its current importance),
   `{ caso: 'nessun-materiale' }` when the catalogue has no items of that
   kind, or `{ caso: 'tutti-tolti' }` when every item has importance 0.
+  `elementoPerId()` returns the `'elemento'` case (`PropostaElemento`) for
+  an item of the session's kind with importance other than 0, counting it
+  among the last proposed, and `null` for an unknown id, an id of the other
+  kind or an importance-0 item; it opens training on an item named from
+  outside, such as the surprise question.
   `opzioni` injects `catalogo`, `archivio`, `casualita` and `oggi`
   (`() => Giorno`, asked on every pick and outcome) for tests.
 
@@ -87,14 +93,22 @@ Tests: `tests/apprendimento.test.ts`, `tests/importanza.test.ts`,
   by higher importance, higher lesson, lower `ordine`; due checks go oldest
   `controllo` first, then higher importance; free practice picks the
   `imparato` item with the oldest `ultimaVista`. With due checks and a
-  non-empty group, `turno` alternates the two sources; the anti-repeat
-  window is `ampiezzaFinestra()` items, ignored when it excludes everything.
-  Importance-0 items are never candidates.
-- **Session memory.** The last proposed items and the group/check turn live
-  in the session only; `prossimoElemento()` saves every item the planner
-  adds to the group as `nel-gruppo` with `serie` 0. The planner gets each
-  item's lesson as its position in the catalogue and its order in the
-  lesson file.
+  non-empty group, `turno` alternates the two sources starting with a check
+  (`TURNO_INIZIALE`); a free-practice pick leaves `turno` unchanged. With
+  an empty group only checks are proposed. Importance-0 items are never
+  candidates.
+- **Anti-repeat window:** `ampiezzaFinestra()` of the available items — the
+  group plus every `imparato` item, importance 0 excluded — so `FINESTRA`
+  (3) shrinks to available minus one and a single item repeats. The window
+  applies to group, checks and free practice alike: the sources are tried
+  in turn order and the next one is used when the window excludes all of
+  the current one; when it excludes everything it is ignored.
+- **Session memory.** The last proposed items (at most `FINESTRA`) and the
+  group/check turn live in the session only; `elementoPerId()` does not
+  advance the turn and saves nothing. `prossimoElemento()` saves every item
+  the planner adds to the group as `nel-gruppo` with `serie` 0. The planner
+  gets each item's lesson as its position in the catalogue and its order in
+  the lesson file.
 - `registraEsito()` and `registraImportanza()` ignore ids not in the
   session's own item list; `registraEsito()` also ignores an item with
   importance 0 and `registraImportanza()` a value that is not an

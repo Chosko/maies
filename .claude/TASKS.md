@@ -566,7 +566,7 @@ Feature: ripetizione-errori
 
 ## 57. Update documentation for feature `ripetizione-errori`
 
-Status: [MISSING]
+Status: [DONE]
 Target: claude
 Files: .claude/context/ripasso.md
 Preconditions: 56
